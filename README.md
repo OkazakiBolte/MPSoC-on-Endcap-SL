@@ -1,5 +1,5 @@
 - [enclustra/Mercury_XU5_PE1_Reference_Design](https://github.com/enclustra/Mercury_XU5_PE1_Reference_Design.git)
-  - tag `2020.1_v1.1.0`
+  - tag `2020.1_v10.0`
 
 
 - Edit `Mercury_XU5_PE1_Reference_Design/reference_design/scripts/settings.tcl`
