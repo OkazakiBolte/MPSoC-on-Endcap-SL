@@ -1,0 +1,12 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/tools/Xilinx/Vivado/2020.1/tps/lnx64/jre9.0.4/lib//server/libjvm.so(+0xb6aadb) [0x7f5fdadb0adb]
+/tools/Xilinx/Vivado/2020.1/tps/lnx64/jre9.0.4/lib//server/libjvm.so(JVM_handle_linux_signal+0xbb) [0x7f5fdadb5e1b]
+/tools/Xilinx/Vivado/2020.1/tps/lnx64/jre9.0.4/lib//server/libjvm.so(+0xb647b8) [0x7f5fdadaa7b8]
+/lib/x86_64-linux-gnu/libc.so.6(+0x3f040) [0x7f602c3df040]
+/tools/Xilinx/Vivado/2020.1/lib/lnx64.o/librdi_filemgmt.so(HADGDesignGraph::getUltimateParent()+0xb) [0x7f5ffd031bbb]
+/tools/Xilinx/Vivado/2020.1/lib/lnx64.o/librdi_filemgmt.so(HADGNode::getElementPrimaryName[abi:cxx11]() const+0x34) [0x7f5ffd0b83a4]
+/tools/Xilinx/Vivado/2020.1/lib/lnx64.o/librdi_filemgmt.so(Java_ui_data_designgraph_designgraphi_Node_1getElementPrimaryName+0x19) [0x7f5ffd0f0f09]
+[0x7f5fcb7ecb91]
