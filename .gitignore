@@ -109,6 +109,10 @@
 !*.log
 vivado.log
 vivado*.log
+
 !BOOT.BIN
 !image.ub
 !boot.scr
+
+!*.xsa
+!*.edn
