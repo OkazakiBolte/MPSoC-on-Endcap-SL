@@ -1,23 +1,5 @@
----------------------------------------------------------------------------------------------------
--- Copyright (c) 2021 by Enclustra GmbH, Switzerland.
---
--- Permission is hereby granted, free of charge, to any person obtaining a copy of
--- this hardware, software, firmware, and associated documentation files (the
--- "Product"), to deal in the Product without restriction, including without
--- limitation the rights to use, copy, modify, merge, publish, distribute,
--- sublicense, and/or sell copies of the Product, and to permit persons to whom the
--- Product is furnished to do so, subject to the following conditions:
---
--- The above copyright notice and this permission notice shall be included in all
--- copies or substantial portions of the Product.
---
--- THE PRODUCT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
--- INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
--- PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
--- HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
--- OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
--- PRODUCT OR THE USE OR OTHER DEALINGS IN THE PRODUCT.
----------------------------------------------------------------------------------------------------
+-- This logic is created based on Mercury XU5 PE1 reference design.
+-- https://github.com/enclustra/Mercury_XU5_PE1_Reference_Design.git
 
 ---------------------------------------------------------------------------------------------------
 -- libraries
@@ -29,13 +11,11 @@ use ieee.numeric_std.all;
 ---------------------------------------------------------------------------------------------------
 -- entity declaration
 ---------------------------------------------------------------------------------------------------
-entity Mercury_XU5_PE1 is
+entity Mercury_XU5_Endcap_SL is
     generic (
         BG_WIDTH : natural
     );
-
     port (
-
         -- Anios_A
         IOA_D0_P                       : inout   std_logic;
         IOA_D1_N                       : inout   std_logic;
@@ -63,7 +43,6 @@ entity Mercury_XU5_PE1 is
         IOA_D23_N                      : inout   std_logic;
         IOA_CLK1_N                     : inout   std_logic;
         IOA_CLK0_P                     : inout   std_logic;
-
         -- Anios_B
         IOB_D0_P                       : inout   std_logic;
         IOB_D1_N                       : inout   std_logic;
@@ -91,7 +70,6 @@ entity Mercury_XU5_PE1 is
         IOB_D23_SC7_BTN3_N             : inout   std_logic;
         IOB_CLK1_N                     : inout   std_logic;
         IOB_CLK0_P                     : inout   std_logic;
-
         -- FMC0
         FMC_LA02_N                     : inout   std_logic;
         FMC_LA02_P                     : inout   std_logic;
@@ -165,11 +143,9 @@ entity Mercury_XU5_PE1 is
         FMC_CLK0_M2C_P                 : inout   std_logic;
         FMC_CLK1_M2C_N                 : inout   std_logic;
         FMC_CLK1_M2C_P                 : inout   std_logic;
-
         -- I2C_PL
         I2C_SCL_PL                     : inout   std_logic;
         I2C_SDA_PL                     : inout   std_logic;
-
         -- IOC
         IOC_D0_P                       : inout   std_logic; -- Only available on G1 modules
         IOC_D1_N                       : inout   std_logic; -- Only available on G1 modules
@@ -179,7 +155,6 @@ entity Mercury_XU5_PE1 is
         IOC_D5_N                       : inout   std_logic; -- Only available on G1 modules
         IOC_D6_P                       : inout   std_logic; -- Only available on G1 modules
         IOC_D7_N                       : inout   std_logic; -- Only available on G1 modules
-
         -- IOD
         IOD_D0_P                       : inout   std_logic; -- Only available on G1 modules
         IOD_D1_N                       : inout   std_logic; -- Only available on G1 modules
@@ -189,22 +164,18 @@ entity Mercury_XU5_PE1 is
         IOD_D5_N                       : inout   std_logic; -- Only available on G1 modules
         IOD_D6_P                       : inout   std_logic; -- Only available on G1 modules
         IOD_D7_N                       : inout   std_logic; -- Only available on G1 modules
-
         -- IOE
         IOE_D0_LED0_N                  : inout   std_logic; -- Only available on G1 modules
         IOE_D1_LED1_N                  : inout   std_logic; -- Only available on G1 modules
         IOE_D2_LED2_N                  : inout   std_logic; -- Only available on G1 modules
         IOE_D3_LED3_N                  : inout   std_logic; -- Only available on G1 modules
-
         -- LED
         LED1_N                         : out     std_logic;
         LED2_N                         : out     std_logic;
         LED3_N                         : out     std_logic;
-
         -- PL_100_MHz_Oscillator
         CLK100_PL_N                    : in      std_logic;
         CLK100_PL_P                    : in      std_logic;
-
         -- PL_DDR4_Memory
         DDR4PL_ACT_N                   : out     std_logic;
         DDR4PL_RST_N                   : out     std_logic;
@@ -220,7 +191,6 @@ entity Mercury_XU5_PE1 is
         DDR4PL_DM                      : inout   std_logic_vector(1 downto 0);
         DDR4PL_DQS_N                   : inout   std_logic_vector(1 downto 0);
         DDR4PL_DQS_P                   : inout   std_logic_vector(1 downto 0);
-
         -- PL_Gigabit_Ethernet
         ETH1_MDC                       : out     std_logic;
         ETH1_RXCLK                     : in      std_logic;
@@ -283,8 +253,8 @@ architecture rtl of Mercury_XU5_PE1 is
             GMII_tx_er          : out    std_logic;
             GMII_txd            : out    std_logic_vector(7 downto 0)
         );
-
     end component Mercury_XU5;
+
     component IOBUF is
     port (
         I : in STD_LOGIC;

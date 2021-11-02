@@ -20,7 +20,7 @@
 # ----------------------------------------------------------------------------------
 
 set_property BITSTREAM.CONFIG.OVERTEMPSHUTDOWN ENABLE [current_design]
- 
+
 # ----------------------------------------------------------------------------------
 # Important! Do not remove this constraint!
 # This property ensures that all unused pins are set to high impedance.
@@ -82,8 +82,8 @@ set_property -dict {PACKAGE_PIN D11   IOSTANDARD LVCMOS18  } [get_ports {IOB_D23
 set_property -dict {PACKAGE_PIN AC13  IOSTANDARD LVCMOS18  } [get_ports {IOB_CLK1_N}]
 set_property -dict {PACKAGE_PIN AC14  IOSTANDARD LVCMOS18  } [get_ports {IOB_CLK0_P}]
 if {$MGT_routing == "G1"} {
-  set_property -dict {PACKAGE_PIN F15   IOSTANDARD LVCMOS18  } [get_ports {IOB_D18_SC2_DIP3_N}]
-  set_property -dict {PACKAGE_PIN E15   IOSTANDARD LVCMOS18  } [get_ports {IOB_D19_SC3_DIP4_N}]
+    set_property -dict {PACKAGE_PIN F15   IOSTANDARD LVCMOS18  } [get_ports {IOB_D18_SC2_DIP3_N}]
+    set_property -dict {PACKAGE_PIN E15   IOSTANDARD LVCMOS18  } [get_ports {IOB_D19_SC3_DIP4_N}]
 }
 
 # FMC0
@@ -166,34 +166,34 @@ set_property -dict {PACKAGE_PIN C12   IOSTANDARD LVCMOS18  } [get_ports {I2C_SDA
 
 # IOC
 if {$MGT_routing == "G1"} {
-  set_property -dict {PACKAGE_PIN E1    IOSTANDARD LVCMOS18  } [get_ports {IOC_D0_P}]
-  set_property -dict {PACKAGE_PIN D1    IOSTANDARD LVCMOS18  } [get_ports {IOC_D1_N}]
-  set_property -dict {PACKAGE_PIN K4    IOSTANDARD LVCMOS18  } [get_ports {IOC_D2_P}]
-  set_property -dict {PACKAGE_PIN K3    IOSTANDARD LVCMOS18  } [get_ports {IOC_D3_N}]
-  set_property -dict {PACKAGE_PIN F2    IOSTANDARD LVCMOS18  } [get_ports {IOC_D4_P}]
-  set_property -dict {PACKAGE_PIN E2    IOSTANDARD LVCMOS18  } [get_ports {IOC_D5_N}]
-  set_property -dict {PACKAGE_PIN U8    IOSTANDARD LVCMOS18  } [get_ports {IOC_D6_P}]
-  set_property -dict {PACKAGE_PIN V8    IOSTANDARD LVCMOS18  } [get_ports {IOC_D7_N}]
+    set_property -dict {PACKAGE_PIN E1    IOSTANDARD LVCMOS18  } [get_ports {IOC_D0_P}]
+    set_property -dict {PACKAGE_PIN D1    IOSTANDARD LVCMOS18  } [get_ports {IOC_D1_N}]
+    set_property -dict {PACKAGE_PIN K4    IOSTANDARD LVCMOS18  } [get_ports {IOC_D2_P}]
+    set_property -dict {PACKAGE_PIN K3    IOSTANDARD LVCMOS18  } [get_ports {IOC_D3_N}]
+    set_property -dict {PACKAGE_PIN F2    IOSTANDARD LVCMOS18  } [get_ports {IOC_D4_P}]
+    set_property -dict {PACKAGE_PIN E2    IOSTANDARD LVCMOS18  } [get_ports {IOC_D5_N}]
+    set_property -dict {PACKAGE_PIN U8    IOSTANDARD LVCMOS18  } [get_ports {IOC_D6_P}]
+    set_property -dict {PACKAGE_PIN V8    IOSTANDARD LVCMOS18  } [get_ports {IOC_D7_N}]
 }
 
 # IOD
 if {$MGT_routing == "G1"} {
-  set_property -dict {PACKAGE_PIN G3    IOSTANDARD LVCMOS18  } [get_ports {IOD_D0_P}]
-  set_property -dict {PACKAGE_PIN F3    IOSTANDARD LVCMOS18  } [get_ports {IOD_D1_N}]
-  set_property -dict {PACKAGE_PIN R8    IOSTANDARD LVCMOS18  } [get_ports {IOD_D2_P}]
-  set_property -dict {PACKAGE_PIN T8    IOSTANDARD LVCMOS18  } [get_ports {IOD_D3_N}]
-  set_property -dict {PACKAGE_PIN E4    IOSTANDARD LVCMOS18  } [get_ports {IOD_D4_P}]
-  set_property -dict {PACKAGE_PIN E3    IOSTANDARD LVCMOS18  } [get_ports {IOD_D5_N}]
-  set_property -dict {PACKAGE_PIN R7    IOSTANDARD LVCMOS18  } [get_ports {IOD_D6_P}]
-  set_property -dict {PACKAGE_PIN T7    IOSTANDARD LVCMOS18  } [get_ports {IOD_D7_N}]
+    set_property -dict {PACKAGE_PIN G3    IOSTANDARD LVCMOS18  } [get_ports {IOD_D0_P}]
+    set_property -dict {PACKAGE_PIN F3    IOSTANDARD LVCMOS18  } [get_ports {IOD_D1_N}]
+    set_property -dict {PACKAGE_PIN R8    IOSTANDARD LVCMOS18  } [get_ports {IOD_D2_P}]
+    set_property -dict {PACKAGE_PIN T8    IOSTANDARD LVCMOS18  } [get_ports {IOD_D3_N}]
+    set_property -dict {PACKAGE_PIN E4    IOSTANDARD LVCMOS18  } [get_ports {IOD_D4_P}]
+    set_property -dict {PACKAGE_PIN E3    IOSTANDARD LVCMOS18  } [get_ports {IOD_D5_N}]
+    set_property -dict {PACKAGE_PIN R7    IOSTANDARD LVCMOS18  } [get_ports {IOD_D6_P}]
+    set_property -dict {PACKAGE_PIN T7    IOSTANDARD LVCMOS18  } [get_ports {IOD_D7_N}]
 }
 
 # IOE
 if {$MGT_routing == "G1"} {
-  set_property -dict {PACKAGE_PIN D4    IOSTANDARD LVCMOS18  } [get_ports {IOE_D0_LED0_N}]
-  set_property -dict {PACKAGE_PIN C4    IOSTANDARD LVCMOS18  } [get_ports {IOE_D1_LED1_N}]
-  set_property -dict {PACKAGE_PIN G1    IOSTANDARD LVCMOS18  } [get_ports {IOE_D2_LED2_N}]
-  set_property -dict {PACKAGE_PIN F1    IOSTANDARD LVCMOS18  } [get_ports {IOE_D3_LED3_N}]
+    set_property -dict {PACKAGE_PIN D4    IOSTANDARD LVCMOS18  } [get_ports {IOE_D0_LED0_N}]
+    set_property -dict {PACKAGE_PIN C4    IOSTANDARD LVCMOS18  } [get_ports {IOE_D1_LED1_N}]
+    set_property -dict {PACKAGE_PIN G1    IOSTANDARD LVCMOS18  } [get_ports {IOE_D2_LED2_N}]
+    set_property -dict {PACKAGE_PIN F1    IOSTANDARD LVCMOS18  } [get_ports {IOE_D3_LED3_N}]
 }
 
 # LED
