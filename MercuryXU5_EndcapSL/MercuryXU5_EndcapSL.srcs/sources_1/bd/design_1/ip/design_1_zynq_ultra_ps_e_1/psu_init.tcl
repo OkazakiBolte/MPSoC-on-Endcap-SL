@@ -526,47 +526,6 @@ set psu_pll_init_data {
 
 set psu_clock_init_data {
 		# : CLOCK CONTROL SLCR REGISTER
-		# Register : GEM0_REF_CTRL @ 0XFF5E0050</p>
-
-		# Clock active for the RX channel
-		# PSU_CRL_APB_GEM0_REF_CTRL_RX_CLKACT                                             0x1
-
-		# Clock active signal. Switch to 0 to disable the clock
-		# PSU_CRL_APB_GEM0_REF_CTRL_CLKACT                                                0x1
-
-		# 6 bit divider
-		# PSU_CRL_APB_GEM0_REF_CTRL_DIVISOR1                                              0x1
-
-		# 6 bit divider
-		# PSU_CRL_APB_GEM0_REF_CTRL_DIVISOR0                                              0xc
-
-		# 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
-    # ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
-    #  usually an issue, but designers must be aware.)
-		# PSU_CRL_APB_GEM0_REF_CTRL_SRCSEL                                                0x0
-
-		# This register controls this reference clock
-		#(OFFSET, MASK, VALUE)      (0XFF5E0050, 0x063F3F07U ,0x06010C00U)  */
-    mask_write 0XFF5E0050 0x063F3F07 0x06010C00
-		# Register : GEM_TSU_REF_CTRL @ 0XFF5E0100</p>
-
-		# 6 bit divider
-		# PSU_CRL_APB_GEM_TSU_REF_CTRL_DIVISOR0                                           0x6
-
-		# 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
-    # ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
-    #  usually an issue, but designers must be aware.)
-		# PSU_CRL_APB_GEM_TSU_REF_CTRL_SRCSEL                                             0x0
-
-		# 6 bit divider
-		# PSU_CRL_APB_GEM_TSU_REF_CTRL_DIVISOR1                                           0x1
-
-		# Clock active signal. Switch to 0 to disable the clock
-		# PSU_CRL_APB_GEM_TSU_REF_CTRL_CLKACT                                             0x1
-
-		# This register controls this reference clock
-		#(OFFSET, MASK, VALUE)      (0XFF5E0100, 0x013F3F07U ,0x01010600U)  */
-    mask_write 0XFF5E0100 0x013F3F07 0x01010600
 		# Register : USB0_BUS_REF_CTRL @ 0XFF5E0060</p>
 
 		# Clock active signal. Switch to 0 to disable the clock
@@ -10583,7 +10542,7 @@ set psu_mio_init_data {
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_tx_
     # clk- (TX RGMII clock)
-		# PSU_IOU_SLCR_MIO_PIN_26_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_26_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= nand, Output, nfc_ce[1]- (NA
     # ND chip enable)
@@ -10606,13 +10565,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_26_L3_SEL                                                  0
 
 		# Configures MIO Pin 26 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180068, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF180068 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF180068, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180068 0x000000FE 0x00000000
 		# Register : MIO_PIN_27 @ 0XFF18006C</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_txd
     # [0]- (TX RGMII data)
-		# PSU_IOU_SLCR_MIO_PIN_27_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_27_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= nand, Input, nfc_rb_n[0]- (N
     # AND Ready/Busy)
@@ -10635,13 +10594,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_27_L3_SEL                                                  0
 
 		# Configures MIO Pin 27 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF18006C, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF18006C 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF18006C, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF18006C 0x000000FE 0x00000000
 		# Register : MIO_PIN_28 @ 0XFF180070</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_txd
     # [1]- (TX RGMII data)
-		# PSU_IOU_SLCR_MIO_PIN_28_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_28_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= nand, Input, nfc_rb_n[1]- (N
     # AND Ready/Busy)
@@ -10663,13 +10622,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_28_L3_SEL                                                  0
 
 		# Configures MIO Pin 28 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180070, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF180070 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF180070, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180070 0x000000FE 0x00000000
 		# Register : MIO_PIN_29 @ 0XFF180074</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_txd
     # [2]- (TX RGMII data)
-		# PSU_IOU_SLCR_MIO_PIN_29_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_29_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
     # PCIE Reset signal)
@@ -10692,13 +10651,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_29_L3_SEL                                                  0
 
 		# Configures MIO Pin 29 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180074, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF180074 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF180074, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180074 0x000000FE 0x00000000
 		# Register : MIO_PIN_30 @ 0XFF180078</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_txd
     # [3]- (TX RGMII data)
-		# PSU_IOU_SLCR_MIO_PIN_30_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_30_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
     # PCIE Reset signal)
@@ -10721,13 +10680,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_30_L3_SEL                                                  0
 
 		# Configures MIO Pin 30 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180078, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF180078 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF180078, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180078 0x000000FE 0x00000000
 		# Register : MIO_PIN_31 @ 0XFF18007C</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Output, gem0_rgmii_tx_
     # ctl- (TX RGMII control)
-		# PSU_IOU_SLCR_MIO_PIN_31_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_31_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
     # PCIE Reset signal)
@@ -10750,13 +10709,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_31_L3_SEL                                                  0
 
 		# Configures MIO Pin 31 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF18007C, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF18007C 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF18007C, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF18007C 0x000000FE 0x00000000
 		# Register : MIO_PIN_32 @ 0XFF180080</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Input, gem0_rgmii_rx_c
     # lk- (RX RGMII clock)
-		# PSU_IOU_SLCR_MIO_PIN_32_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_32_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= nand, Input, nfc_dqs_in- (NA
     # ND Strobe) 1= nand, Output, nfc_dqs_out- (NAND Strobe)
@@ -10779,13 +10738,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_32_L3_SEL                                                  0
 
 		# Configures MIO Pin 32 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180080, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF180080 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF180080, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180080 0x000000FE 0x00000000
 		# Register : MIO_PIN_33 @ 0XFF180084</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Input, gem0_rgmii_rxd[
     # 0]- (RX RGMII data)
-		# PSU_IOU_SLCR_MIO_PIN_33_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_33_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
     # PCIE Reset signal)
@@ -10808,13 +10767,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_33_L3_SEL                                                  0
 
 		# Configures MIO Pin 33 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180084, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF180084 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF180084, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180084 0x000000FE 0x00000000
 		# Register : MIO_PIN_34 @ 0XFF180088</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Input, gem0_rgmii_rxd[
     # 1]- (RX RGMII data)
-		# PSU_IOU_SLCR_MIO_PIN_34_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_34_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
     # PCIE Reset signal)
@@ -10837,13 +10796,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_34_L3_SEL                                                  0
 
 		# Configures MIO Pin 34 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180088, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF180088 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF180088, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180088 0x000000FE 0x00000000
 		# Register : MIO_PIN_35 @ 0XFF18008C</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Input, gem0_rgmii_rxd[
     # 2]- (RX RGMII data)
-		# PSU_IOU_SLCR_MIO_PIN_35_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_35_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
     # PCIE Reset signal)
@@ -10867,13 +10826,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_35_L3_SEL                                                  0
 
 		# Configures MIO Pin 35 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF18008C, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF18008C 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF18008C, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF18008C 0x000000FE 0x00000000
 		# Register : MIO_PIN_36 @ 0XFF180090</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Input, gem0_rgmii_rxd[
     # 3]- (RX RGMII data)
-		# PSU_IOU_SLCR_MIO_PIN_36_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_36_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
     # PCIE Reset signal)
@@ -10896,13 +10855,13 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_36_L3_SEL                                                  0
 
 		# Configures MIO Pin 36 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180090, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF180090 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF180090, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180090 0x000000FE 0x00000000
 		# Register : MIO_PIN_37 @ 0XFF180094</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem0, Input, gem0_rgmii_rx_c
     # tl- (RX RGMII control )
-		# PSU_IOU_SLCR_MIO_PIN_37_L0_SEL                                                  1
+		# PSU_IOU_SLCR_MIO_PIN_37_L0_SEL                                                  0
 
 		# Level 1 Mux Select 0= Level 2 Mux Output 1= pcie, Input, pcie_reset_n- (
     # PCIE Reset signal)
@@ -10925,8 +10884,8 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_PIN_37_L3_SEL                                                  0
 
 		# Configures MIO Pin 37 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180094, 0x000000FEU ,0x00000002U)  */
-    mask_write 0XFF180094 0x000000FE 0x00000002
+		#(OFFSET, MASK, VALUE)      (0XFF180094, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180094 0x000000FE 0x00000000
 		# Register : MIO_PIN_38 @ 0XFF180098</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= gem1, Output, gem1_rgmii_tx_
@@ -11996,11 +11955,11 @@ set psu_mio_init_data {
     # 2c1, Output, i2c1_scl_out- (SCL signal) 3= mdio0, Output, gem0_mdc- (MDI
     # O Clock) 4= mdio1, Output, gem1_mdc- (MDIO Clock) 5= mdio2, Output, gem2
     # _mdc- (MDIO Clock) 6= mdio3, Output, gem3_mdc- (MDIO Clock) 7= Not Used
-		# PSU_IOU_SLCR_MIO_PIN_76_L3_SEL                                                  3
+		# PSU_IOU_SLCR_MIO_PIN_76_L3_SEL                                                  0
 
 		# Configures MIO Pin 76 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180130, 0x000000FEU ,0x00000060U)  */
-    mask_write 0XFF180130 0x000000FE 0x00000060
+		#(OFFSET, MASK, VALUE)      (0XFF180130, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180130 0x000000FE 0x00000000
 		# Register : MIO_PIN_77 @ 0XFF180134</p>
 
 		# Level 0 Mux Select 0= Level 1 Mux Output 1= Not Used
@@ -12022,11 +11981,11 @@ set psu_mio_init_data {
     # = mdio2, Input, gem2_mdio_in- (MDIO Data) 5= mdio2, Output, gem2_mdio_ou
     # t- (MDIO Data) 6= mdio3, Input, gem3_mdio_in- (MDIO Data) 6= mdio3, Outp
     # ut, gem3_mdio_out- (MDIO Data) 7= Not Used
-		# PSU_IOU_SLCR_MIO_PIN_77_L3_SEL                                                  3
+		# PSU_IOU_SLCR_MIO_PIN_77_L3_SEL                                                  0
 
 		# Configures MIO Pin 77 peripheral interface mapping
-		#(OFFSET, MASK, VALUE)      (0XFF180134, 0x000000FEU ,0x00000060U)  */
-    mask_write 0XFF180134 0x000000FE 0x00000060
+		#(OFFSET, MASK, VALUE)      (0XFF180134, 0x000000FEU ,0x00000000U)  */
+    mask_write 0XFF180134 0x000000FE 0x00000000
 		# Register : MIO_MST_TRI0 @ 0XFF180204</p>
 
 		# Master Tri-state Enable for pin 0, active high
@@ -12131,22 +12090,22 @@ set psu_mio_init_data {
 		# Register : MIO_MST_TRI1 @ 0XFF180208</p>
 
 		# Master Tri-state Enable for pin 32, active high
-		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_32_TRI                                            1
+		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_32_TRI                                            0
 
 		# Master Tri-state Enable for pin 33, active high
-		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_33_TRI                                            1
+		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_33_TRI                                            0
 
 		# Master Tri-state Enable for pin 34, active high
-		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_34_TRI                                            1
+		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_34_TRI                                            0
 
 		# Master Tri-state Enable for pin 35, active high
-		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_35_TRI                                            1
+		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_35_TRI                                            0
 
 		# Master Tri-state Enable for pin 36, active high
-		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_36_TRI                                            1
+		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_36_TRI                                            0
 
 		# Master Tri-state Enable for pin 37, active high
-		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_37_TRI                                            1
+		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_37_TRI                                            0
 
 		# Master Tri-state Enable for pin 38, active high
 		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_38_TRI                                            1
@@ -12227,8 +12186,8 @@ set psu_mio_init_data {
 		# PSU_IOU_SLCR_MIO_MST_TRI1_PIN_63_TRI                                            0
 
 		# MIO pin Tri-state Enables, 63:32
-		#(OFFSET, MASK, VALUE)      (0XFF180208, 0xFFFFFFFFU ,0x00B0207FU)  */
-    mask_write 0XFF180208 0xFFFFFFFF 0x00B0207F
+		#(OFFSET, MASK, VALUE)      (0XFF180208, 0xFFFFFFFFU ,0x00B02040U)  */
+    mask_write 0XFF180208 0xFFFFFFFF 0x00B02040
 		# Register : MIO_MST_TRI2 @ 0XFF18020C</p>
 
 		# Master Tri-state Enable for pin 64, active high
@@ -13904,14 +13863,6 @@ set psu_peripherals_init_data {
 		#(OFFSET, MASK, VALUE)      (0XFF5E023C, 0x0093C018U ,0x00000000U)  */
     mask_write 0XFF5E023C 0x0093C018 0x00000000
 		# : ENET
-		# Register : RST_LPD_IOU0 @ 0XFF5E0230</p>
-
-		# GEM 0 reset
-		# PSU_CRL_APB_RST_LPD_IOU0_GEM0_RESET                                             0
-
-		# Software controlled reset for the GEMs
-		#(OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000001U ,0x00000000U)  */
-    mask_write 0XFF5E0230 0x00000001 0x00000000
 		# : QSPI
 		# Register : RST_LPD_IOU2 @ 0XFF5E0238</p>
 
@@ -15629,15 +15580,6 @@ set psu_resetout_init_data {
 		# Software control register for the LPD block.
 		#(OFFSET, MASK, VALUE)      (0XFF5E023C, 0x00000280U ,0x00000000U)  */
     mask_write 0XFF5E023C 0x00000280 0x00000000
-		# : PUTTING GEM0 IN RESET
-		# Register : RST_LPD_IOU0 @ 0XFF5E0230</p>
-
-		# GEM 0 reset
-		# PSU_CRL_APB_RST_LPD_IOU0_GEM0_RESET                                             0X0
-
-		# Software controlled reset for the GEMs
-		#(OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000001U ,0x00000000U)  */
-    mask_write 0XFF5E0230 0x00000001 0x00000000
 		# : USB0 GFLADJ
 		# Register : GUSB2PHYCFG @ 0XFE20C200</p>
 
@@ -16057,15 +15999,6 @@ set psu_resetin_init_data {
 		# Software control register for the LPD block.
 		#(OFFSET, MASK, VALUE)      (0XFF5E023C, 0x00000A80U ,0x00000A80U)  */
     mask_write 0XFF5E023C 0x00000A80 0x00000A80
-		# : PUTTING GEM0 IN RESET
-		# Register : RST_LPD_IOU0 @ 0XFF5E0230</p>
-
-		# GEM 0 reset
-		# PSU_CRL_APB_RST_LPD_IOU0_GEM0_RESET                                             0X1
-
-		# Software controlled reset for the GEMs
-		#(OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000001U ,0x00000001U)  */
-    mask_write 0XFF5E0230 0x00000001 0x00000001
 }
 
 set psu_ps_pl_isolation_removal_data {

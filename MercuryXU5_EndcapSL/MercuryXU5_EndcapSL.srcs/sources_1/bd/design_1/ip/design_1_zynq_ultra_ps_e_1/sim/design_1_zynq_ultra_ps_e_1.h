@@ -120,7 +120,6 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
-  sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 
@@ -189,7 +188,6 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
-  sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 
@@ -258,7 +256,6 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
-  sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 
@@ -329,7 +326,6 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
-  sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 
@@ -406,7 +402,6 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
-  sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
 

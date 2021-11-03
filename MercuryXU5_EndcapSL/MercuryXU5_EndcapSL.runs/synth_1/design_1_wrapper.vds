@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Nov  2 23:53:35 2021
-# Process ID: 45232
+# Start of session at: Wed Nov  3 18:21:18 2021
+# Process ID: 4746
 # Current directory: /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/design_1_wrapper.vds
@@ -16,7 +16,7 @@ INFO: settings.tcl file loaded.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.1/data/ip'.
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2158.078 ; gain = 0.000 ; free physical = 31414 ; free virtual = 46121
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2158.074 ; gain = 0.000 ; free physical = 13900 ; free virtual = 45834
 Command: synth_design -top design_1_wrapper -part xczu5ev-sfvc784-2-i
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu5ev'
@@ -24,41 +24,41 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu5ev
 INFO: [Device 21-403] Loading part xczu5ev-sfvc784-2-i
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 45476
+INFO: [Synth 8-7075] Helper process launched with PID 4956
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 2612.414 ; gain = 7.934 ; free physical = 30336 ; free virtual = 45043
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2612.410 ; gain = 7.934 ; free physical = 12259 ; free virtual = 44193
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:20]
 WARNING: [Synth 8-3819] Generic 'BG_WIDTH' not present in instantiated entity will be ignored
 INFO: [Synth 8-3491] module 'design_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:27]
 INFO: [Synth 8-638] synthesizing module 'design_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:24]
-INFO: [Synth 8-3491] module 'design_1_axi_bram_ctrl_0_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_axi_bram_ctrl_0_1_stub.vhdl:5' bound to instance 'axi_bram_ctrl_0' of component 'design_1_axi_bram_ctrl_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:402]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_bram_ctrl_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_axi_bram_ctrl_0_1_stub.vhdl:58]
-INFO: [Synth 8-3491] module 'design_1_axi_smc_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_axi_smc_1_stub.vhdl:5' bound to instance 'axi_smc' of component 'design_1_axi_smc_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:452]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_smc_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_axi_smc_1_stub.vhdl:106]
-INFO: [Synth 8-3491] module 'design_1_blk_mem_gen_0_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_blk_mem_gen_0_1_stub.vhdl:5' bound to instance 'blk_mem_gen_0' of component 'design_1_blk_mem_gen_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:550]
-INFO: [Synth 8-638] synthesizing module 'design_1_blk_mem_gen_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_blk_mem_gen_0_1_stub.vhdl:27]
-INFO: [Synth 8-3491] module 'design_1_led_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_led_1_stub.vhdl:5' bound to instance 'led' of component 'design_1_led_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:571]
-INFO: [Synth 8-638] synthesizing module 'design_1_led_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_led_1_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'design_1_rst_ps8_99M_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_rst_ps8_99M_1_stub.vhdl:5' bound to instance 'rst_ps8_99M' of component 'design_1_rst_ps8_99M_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:594]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps8_99M_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_rst_ps8_99M_1_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_1_zynq_ultra_ps_e_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_zynq_ultra_ps_e_1_stub.vhdl:5' bound to instance 'zynq_ultra_ps_e' of component 'design_1_zynq_ultra_ps_e_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:607]
-INFO: [Synth 8-638] synthesizing module 'design_1_zynq_ultra_ps_e_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-45232-lhcelec01/realtime/design_1_zynq_ultra_ps_e_1_stub.vhdl:54]
+INFO: [Synth 8-3491] module 'design_1_axi_bram_ctrl_0_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_axi_bram_ctrl_0_1_stub.vhdl:5' bound to instance 'axi_bram_ctrl_0' of component 'design_1_axi_bram_ctrl_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:400]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_bram_ctrl_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_axi_bram_ctrl_0_1_stub.vhdl:58]
+INFO: [Synth 8-3491] module 'design_1_axi_smc_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_axi_smc_1_stub.vhdl:5' bound to instance 'axi_smc' of component 'design_1_axi_smc_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:450]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_smc_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_axi_smc_1_stub.vhdl:106]
+INFO: [Synth 8-3491] module 'design_1_blk_mem_gen_0_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_blk_mem_gen_0_1_stub.vhdl:5' bound to instance 'blk_mem_gen_0' of component 'design_1_blk_mem_gen_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:548]
+INFO: [Synth 8-638] synthesizing module 'design_1_blk_mem_gen_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_blk_mem_gen_0_1_stub.vhdl:27]
+INFO: [Synth 8-3491] module 'design_1_led_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_led_1_stub.vhdl:5' bound to instance 'led' of component 'design_1_led_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:569]
+INFO: [Synth 8-638] synthesizing module 'design_1_led_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_led_1_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'design_1_rst_ps8_99M_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_rst_ps8_99M_1_stub.vhdl:5' bound to instance 'rst_ps8_99M' of component 'design_1_rst_ps8_99M_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:592]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps8_99M_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_rst_ps8_99M_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_zynq_ultra_ps_e_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_zynq_ultra_ps_e_1_stub.vhdl:5' bound to instance 'zynq_ultra_ps_e' of component 'design_1_zynq_ultra_ps_e_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:605]
+INFO: [Synth 8-638] synthesizing module 'design_1_zynq_ultra_ps_e_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-4746-lhcelec01/realtime/design_1_zynq_ultra_ps_e_1_stub.vhdl:53]
 INFO: [Synth 8-256] done synthesizing module 'design_1' (1#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:24]
 INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (2#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:20]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2656.320 ; gain = 51.840 ; free physical = 30439 ; free virtual = 45147
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2655.316 ; gain = 50.840 ; free physical = 12938 ; free virtual = 44873
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2673.164 ; gain = 68.684 ; free physical = 30434 ; free virtual = 45142
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2672.160 ; gain = 67.684 ; free physical = 12932 ; free virtual = 44867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2673.164 ; gain = 68.684 ; free physical = 30434 ; free virtual = 45142
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2672.160 ; gain = 67.684 ; free physical = 12932 ; free virtual = 44867
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2673.164 ; gain = 0.000 ; free physical = 30429 ; free virtual = 45137
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2672.160 ; gain = 0.000 ; free physical = 12926 ; free virtual = 44861
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -85,14 +85,14 @@ Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2779.883 ; gain = 0.000 ; free physical = 30356 ; free virtual = 45064
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2778.879 ; gain = 0.000 ; free physical = 12835 ; free virtual = 44769
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2779.883 ; gain = 0.000 ; free physical = 30356 ; free virtual = 45064
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2778.879 ; gain = 0.000 ; free physical = 12835 ; free virtual = 44769
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 2782.852 ; gain = 178.371 ; free physical = 30425 ; free virtual = 45133
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2781.848 ; gain = 177.371 ; free physical = 12910 ; free virtual = 44845
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -100,7 +100,7 @@ Start Loading Part and Timing Information
 Loading part: xczu5ev-sfvc784-2-i
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2782.852 ; gain = 178.371 ; free physical = 30425 ; free virtual = 45133
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2781.848 ; gain = 177.371 ; free physical = 12909 ; free virtual = 44844
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -113,10 +113,10 @@ Applied set_property DONT_TOUCH = true for design_1_i/led. (constraint file  aut
 Applied set_property DONT_TOUCH = true for design_1_i/axi_smc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/rst_ps8_99M. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2782.852 ; gain = 178.371 ; free physical = 30425 ; free virtual = 45133
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 2781.848 ; gain = 177.371 ; free physical = 12913 ; free virtual = 44848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2782.852 ; gain = 178.371 ; free physical = 30423 ; free virtual = 45132
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2781.848 ; gain = 177.371 ; free physical = 12912 ; free virtual = 44848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -138,25 +138,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 2782.852 ; gain = 178.371 ; free physical = 30421 ; free virtual = 45133
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2781.848 ; gain = 177.371 ; free physical = 12910 ; free virtual = 44848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:01:05 . Memory (MB): peak = 3223.703 ; gain = 619.223 ; free physical = 29837 ; free virtual = 44549
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:59 . Memory (MB): peak = 3222.699 ; gain = 618.223 ; free physical = 12324 ; free virtual = 44262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:01:05 . Memory (MB): peak = 3223.703 ; gain = 619.223 ; free physical = 29837 ; free virtual = 44549
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:59 . Memory (MB): peak = 3222.699 ; gain = 618.223 ; free physical = 12324 ; free virtual = 44262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:01:05 . Memory (MB): peak = 3242.734 ; gain = 638.254 ; free physical = 29835 ; free virtual = 44547
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:59 . Memory (MB): peak = 3241.730 ; gain = 637.254 ; free physical = 12322 ; free virtual = 44261
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -174,37 +174,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3248.672 ; gain = 644.191 ; free physical = 29836 ; free virtual = 44548
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 3247.668 ; gain = 643.191 ; free physical = 12323 ; free virtual = 44262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3248.672 ; gain = 644.191 ; free physical = 29836 ; free virtual = 44548
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 3247.668 ; gain = 643.191 ; free physical = 12323 ; free virtual = 44262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3248.672 ; gain = 644.191 ; free physical = 29836 ; free virtual = 44548
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 3247.668 ; gain = 643.191 ; free physical = 12323 ; free virtual = 44262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3248.672 ; gain = 644.191 ; free physical = 29836 ; free virtual = 44548
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 3247.668 ; gain = 643.191 ; free physical = 12323 ; free virtual = 44262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3248.672 ; gain = 644.191 ; free physical = 29836 ; free virtual = 44548
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 3247.668 ; gain = 643.191 ; free physical = 12323 ; free virtual = 44262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3248.672 ; gain = 644.191 ; free physical = 29836 ; free virtual = 44548
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 3247.668 ; gain = 643.191 ; free physical = 12323 ; free virtual = 44262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -235,23 +235,23 @@ Report Cell Usage:
 |7     |OBUF                            |     3|
 +------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3248.672 ; gain = 644.191 ; free physical = 29836 ; free virtual = 44548
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 3247.668 ; gain = 643.191 ; free physical = 12323 ; free virtual = 44262
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:01:00 . Memory (MB): peak = 3248.672 ; gain = 534.504 ; free physical = 29873 ; free virtual = 44585
-Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3248.680 ; gain = 644.191 ; free physical = 29873 ; free virtual = 44585
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 3247.668 ; gain = 533.504 ; free physical = 12360 ; free virtual = 44299
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:01:02 . Memory (MB): peak = 3247.676 ; gain = 643.191 ; free physical = 12360 ; free virtual = 44299
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3254.609 ; gain = 0.000 ; free physical = 29948 ; free virtual = 44660
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3253.605 ; gain = 0.000 ; free physical = 12431 ; free virtual = 44370
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3274.422 ; gain = 0.000 ; free physical = 29887 ; free virtual = 44599
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3276.387 ; gain = 0.000 ; free physical = 12371 ; free virtual = 44310
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 34 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:28 . Memory (MB): peak = 3274.422 ; gain = 1116.344 ; free physical = 30014 ; free virtual = 44726
+synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:01:19 . Memory (MB): peak = 3276.387 ; gain = 1118.312 ; free physical = 12502 ; free virtual = 44440
 INFO: [Common 17-1381] The checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Nov  2 23:55:19 2021...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  3 18:22:51 2021...

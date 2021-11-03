@@ -98,7 +98,6 @@ maxigp2_rvalid,
 maxigp2_rready, 
 maxigp2_awqos, 
 maxigp2_arqos, 
-emio_enet0_enet_tsu_timer_cnt, 
 pl_resetn0, 
 pl_clk0 
 );
@@ -142,7 +141,6 @@ input maxigp2_rvalid;
 output maxigp2_rready;
 output [3 : 0] maxigp2_awqos;
 output [3 : 0] maxigp2_arqos;
-output [93 : 0] emio_enet0_enet_tsu_timer_cnt;
 output pl_resetn0;
 output pl_clk0;
 wire pl_clk_t[3:0] ;

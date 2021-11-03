@@ -95,7 +95,6 @@ ENTITY design_1_zynq_ultra_ps_e_1 IS
     maxigp2_rready : OUT STD_LOGIC;
     maxigp2_awqos : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     maxigp2_arqos : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    emio_enet0_enet_tsu_timer_cnt : OUT STD_LOGIC_VECTOR(93 DOWNTO 0);
     pl_resetn0 : OUT STD_LOGIC;
     pl_clk0 : OUT STD_LOGIC
   );
@@ -2176,7 +2175,6 @@ BEGIN
       emio_enet3_tsu_inc_ctrl => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       fmio_gem_tsu_clk_from_pl => '0',
       emio_enet_tsu_clk => '0',
-      emio_enet0_enet_tsu_timer_cnt => emio_enet0_enet_tsu_timer_cnt,
       emio_enet0_ext_int_in => '0',
       emio_enet1_ext_int_in => '0',
       emio_enet2_ext_int_in => '0',
