@@ -26,7 +26,6 @@ int main (int argc , char* argv[]){
                       int   fd;
              unsigned int   page_size = sysconf( _SC_PAGESIZE );
              unsigned int   phys_addr, page_addr, page_offset;
-             unsigned int   initial_val;
 	volatile unsigned int * gpio_ptr;
 
     // Open /dev/mem with read-write mode.
@@ -64,28 +63,27 @@ int main (int argc , char* argv[]){
     bool is_write = false;
     unsigned int val = 0;
     while (
-        (opt = getopt_long(argc, argv, optstring, longopts, &longindex)) != -1)
-    {
-        switch (opt)
-        {
-        case 'r':
-            is_read = true;
-            break;
-        case 'w':
-            is_write = true;
-            break;
-        case 'v':
-            val = (unsigned int)strtol(optarg, NULL, 0);
-            if (val > 0b111){
-                printf("Value must be 3-bit number.\n");
+        (opt = getopt_long(argc, argv, optstring, longopts, &longindex)) != -1
+    ){
+        switch (opt){
+            case 'r':
+                is_read = true;
+                break;
+            case 'w':
+                is_write = true;
+                break;
+            case 'v':
+                val = (unsigned int)strtol(optarg, NULL, 0);
+                if (val > 0b111){
+                    printf("Value must be 3-bit number.\n");
+                    close(fd);
+                    return 1;
+                }
+                break;
+            default:
+                printf("Invalid option.\n");
                 close(fd);
                 return 1;
-            }
-            break;
-        default:
-            printf("Invalid option.\n");
-            close(fd);
-            return 1;
         }
     }
 
@@ -94,7 +92,7 @@ int main (int argc , char* argv[]){
         printf("value = 0x%x\n", *gpio_ptr);
     }
     else if (is_write && !is_read){
-        *gpio_ptr = val;
+        *gpio_ptr = ~val; // 3 user LEDs on Mercury XU5 are active-low.
     }
     else{
         help();
