@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date             : Thu Nov  4 14:21:34 2021
+| Date             : Thu Nov  4 15:22:22 2021
 | Host             : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.381        |
+| Total On-Chip Power (W)  | 3.387        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 2.925        |
+| Dynamic (W)              | 2.930        |
 | Device Static (W)        | 0.457        |
 | Effective TJA (C/W)      | 2.3          |
-| Max Ambient (C)          | 92.2         |
-| Junction Temperature (C) | 32.8         |
+| Max Ambient (C)          | 92.1         |
+| Junction Temperature (C) | 32.9         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -63,11 +63,11 @@ Table of Contents
 | Signals                  |     0.016 |     8038 |       --- |             --- |
 | Block RAM                |     0.002 |        2 |       144 |            1.39 |
 | I/O                      |    <0.001 |        3 |       252 |            1.19 |
-| PS8                      |     2.859 |        1 |       --- |             --- |
+| PS8                      |     2.865 |        1 |       --- |             --- |
 | Static Power             |     0.457 |          |           |                 |
 |   PS Static              |     0.103 |          |           |                 |
 |   PL Static              |     0.354 |          |           |                 |
-| Total                    |     3.381 |          |           |                 |
+| Total                    |     3.387 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -91,7 +91,7 @@ Table of Contents
 | Vcco10          |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc          |       1.800 |     0.008 |       0.000 |      0.008 |       NA    | Unspecified | NA         |
 | VCC_PSINTFP     |       0.850 |     1.081 |       1.042 |      0.039 |       NA    | Unspecified | NA         |
-| VCC_PSINTLP     |       0.850 |     0.267 |       0.259 |      0.008 |       NA    | Unspecified | NA         |
+| VCC_PSINTLP     |       0.850 |     0.274 |       0.266 |      0.008 |       NA    | Unspecified | NA         |
 | VPS_MGTRAVCC    |       0.850 |     0.068 |       0.067 |      0.001 |       NA    | Unspecified | NA         |
 | VCC_PSINTFP_DDR |       0.850 |     0.878 |       0.873 |      0.005 |       NA    | Unspecified | NA         |
 | VCC_PSPLL       |       1.200 |     0.071 |       0.069 |      0.002 |       NA    | Unspecified | NA         |
@@ -165,16 +165,16 @@ Table of Contents
 +---------------------+-----------+
 | Name                | Power (W) |
 +---------------------+-----------+
-| design_1_wrapper    |     2.925 |
-|   design_1_i        |     2.924 |
+| design_1_wrapper    |     2.930 |
+|   design_1_i        |     2.930 |
 |     axi_bram_ctrl_0 |     0.002 |
 |       U0            |     0.002 |
 |     axi_smc         |     0.059 |
 |       inst          |     0.059 |
 |     blk_mem_gen_0   |     0.003 |
 |       U0            |     0.003 |
-|     zynq_ultra_ps_e |     2.859 |
-|       U0            |     2.859 |
+|     zynq_ultra_ps_e |     2.865 |
+|       U0            |     2.865 |
 +---------------------+-----------+
 
 
