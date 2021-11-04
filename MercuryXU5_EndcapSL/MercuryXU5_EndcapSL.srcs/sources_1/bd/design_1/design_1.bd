@@ -2549,10 +2549,7 @@
             "value": "4Bit"
           },
           "PSU__SD1__GRP_CD__ENABLE": {
-            "value": "1"
-          },
-          "PSU__SD1__GRP_CD__IO": {
-            "value": "MIO 45"
+            "value": "0"
           },
           "PSU__SD1__GRP_POW__ENABLE": {
             "value": "0"
@@ -3051,16 +3048,16 @@
           "axi_bram_ctrl_0/BRAM_PORTA"
         ]
       },
-      "zynq_ultra_ps_e_M_AXI_HPM0_LPD": {
-        "interface_ports": [
-          "zynq_ultra_ps_e/M_AXI_HPM0_LPD",
-          "axi_smc/S00_AXI"
-        ]
-      },
       "axi_smc_M00_AXI": {
         "interface_ports": [
           "axi_smc/M00_AXI",
           "axi_bram_ctrl_0/S_AXI"
+        ]
+      },
+      "zynq_ultra_ps_e_M_AXI_HPM0_LPD": {
+        "interface_ports": [
+          "zynq_ultra_ps_e/M_AXI_HPM0_LPD",
+          "axi_smc/S00_AXI"
         ]
       },
       "axi_bram_ctrl_0_BRAM_PORTB": {
@@ -3069,16 +3066,16 @@
           "axi_bram_ctrl_0/BRAM_PORTB"
         ]
       },
-      "axi_smc_M01_AXI": {
-        "interface_ports": [
-          "axi_smc/M01_AXI",
-          "led/S_AXI"
-        ]
-      },
       "led_GPIO": {
         "interface_ports": [
           "LED_N",
           "led/GPIO"
+        ]
+      },
+      "axi_smc_M01_AXI": {
+        "interface_ports": [
+          "axi_smc/M01_AXI",
+          "led/S_AXI"
         ]
       }
     },
