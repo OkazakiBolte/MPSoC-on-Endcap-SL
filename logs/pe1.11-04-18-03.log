@@ -1,0 +1,761 @@
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2020.1   Nov  4 2021  -  06:51:28
+NOTICE:  ATF running on XCZU5EV/silicon v4/RTL5.1 at 0xfffea000
+NOTICE:  BL31: v2.2(release):xilinx_rebase_v2.2_2020.1
+NOTICE:  BL31: Built : 06:49:24, Nov  4 2021
+
+
+U-Boot 2020.01 (Nov 04 2021 - 06:50:03 +0000)
+
+Board: Xilinx ZynqMP
+DRAM:  4 GiB
+usb dr_mode not found
+usb dr_mode not found
+PMUFW:	v1.1
+EL Level:	EL2
+Chip ID:	zu5ev
+NAND:  0 MiB
+MMC:   mmc@ff160000: 0, mmc@ff170000: 1
+In:    serial@ff000000
+Out:   serial@ff000000
+Err:   serial@ff000000
+Bootmode: SD_MODE1
+Reset reason:	EXTERNAL 
+Net:   
+ZYNQ GEM: ff0b0000, mdio bus ff0b0000, phyaddr -1, interface rgmii-id
+
+Warning: ethernet@ff0b0000 (eth0) using random MAC address - 92:bc:21:eb:fb:00
+eth0: ethernet@ff0b0000
+Hit any key to stop autoboot:  2  1  0 
+switch to partitions #0, OK
+mmc1 is current device
+Scanning mmc 1:1...
+Found U-Boot script /boot.scr
+2007 bytes read in 18 ms (108.4 KiB/s)
+## Executing script at 20000000
+8165256 bytes read in 609 ms (12.8 MiB/s)
+## Loading kernel from FIT Image at 10000000 ...
+   Using 'conf@system-top.dtb' configuration
+   Trying 'kernel@1' kernel subimage
+     Description:  Linux kernel
+     Type:         Kernel Image
+     Compression:  gzip compressed
+     Data Start:   0x100000f8
+     Data Size:    8124466 Bytes = 7.7 MiB
+     Architecture: AArch64
+     OS:           Linux
+     Load Address: 0x00080000
+     Entry Point:  0x00080000
+     Hash algo:    sha256
+     Hash value:   a03d6bed01b9ff8fb18c30b1a7198b8e638541e22ec1f32a1305718cffbbbf5b
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 10000000 ...
+   Using 'conf@system-top.dtb' configuration
+   Trying 'fdt@system-top.dtb' fdt subimage
+     Description:  Flattened Device Tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x107bfa3c
+     Data Size:    38884 Bytes = 38 KiB
+     Architecture: AArch64
+     Hash algo:    sha256
+     Hash value:   391b0489196ca383ea5c01b5bbcf58ac7af584ad3b42af85198071f359304aea
+   Verifying Hash Integrity ... sha256+ OK
+   Booting using the fdt blob at 0x107bfa3c
+   Uncompressing Kernel Image
+   Loading Device Tree to 000000000fff3000, end 000000000ffff7e3 ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+[    0.000000] Linux version 5.4.0-xilinx-v2020.1 (oe-user@oe-host) (gcc version 9.2.0 (GCC)) #1 SMP Tue Nov 2 15:10:11 UTC 2021
+[    0.000000] Machine model: xlnx,zynqmp
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 256 MiB at 0x000000006fc00000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 22 pages/cpu s49944 r8192 d31976 u90112
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: ARM erratum 845719
+[    0.000000] Speculative Store Bypass Disable mitigation not required
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1031940
+[    0.000000] Kernel command line: console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk1p2 rootfstype=ext4 rw rootwait earlyprintk
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] software IO TLB: mapped [mem 0x6bc00000-0x6fc00000] (64MB)
+[    0.000000] Memory: 3767708K/4193280K available (11644K kernel code, 672K rwdata, 3624K rodata, 704K init, 323K bss, 163428K reserved, 262144K cma-reserved)
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GIC: Adjusting CPU interface base to 0x00000000f902f000
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] random: get_random_bytes called from start_kernel+0x2a8/0x42c with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 33.33MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x7b0074340, max_idle_ns: 440795202884 ns
+[    0.000003] sched_clock: 56 bits at 33MHz, resolution 30ns, wraps every 2199023255543ns
+[    0.000262] Console: colour dummy device 80x25
+[    0.000282] Calibrating delay loop (skipped), value calculated using timer frequency.. 66.66 BogoMIPS (lpj=133332)
+[    0.000289] pid_max: default: 32768 minimum: 301
+[    0.000422] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.000435] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.001307] ASID allocator initialised with 32768 entries
+[    0.001357] rcu: Hierarchical SRCU implementation.
+[    0.001518] EFI services will not be available.
+[    0.001634] smp: Bringing up secondary CPUs ...
+[    0.001935] Detected VIPT I-cache on CPU1
+[    0.001963] CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+[    0.002280] Detected VIPT I-cache on CPU2
+[    0.002297] CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+[    0.002594] Detected VIPT I-cache on CPU3
+[    0.002611] CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+[    0.002655] smp: Brought up 1 node, 4 CPUs
+[    0.002666] SMP: Total of 4 processors activated.
+[    0.002670] CPU features: detected: 32-bit EL0 Support
+[    0.002675] CPU features: detected: CRC32 instructions
+[    0.002704] CPU: All CPU(s) started at EL2
+[    0.002716] alternatives: patching kernel code
+[    0.003716] devtmpfs: initialized
+[    0.007500] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.007511] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.013042] xor: measuring software checksum speed
+[    0.052036]    8regs     :  2639.000 MB/sec
+[    0.092060]    32regs    :  3027.000 MB/sec
+[    0.132088]    arm64_neon:  2628.000 MB/sec
+[    0.132091] xor: using function: 32regs (3027.000 MB/sec)
+[    0.132101] pinctrl core: initialized pinctrl subsystem
+[    0.132664] NET: Registered protocol family 16
+[    0.133570] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.133591] audit: initializing netlink subsys (disabled)
+[    0.133708] audit: type=2000 audit(0.132:1): state=initialized audit_enabled=0 res=1
+[    0.134001] cpuidle: using governor menu
+[    0.134162] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.144483] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.144489] HugeTLB registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.144493] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.144498] HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
+[    1.110665] DRBG: Continuing without Jitter RNG
+[    1.184716] raid6: neonx8   gen()  1716 MB/s
+[    1.252752] raid6: neonx8   xor()  1624 MB/s
+[    1.320789] raid6: neonx4   gen()  1641 MB/s
+[    1.388835] raid6: neonx4   xor()  1577 MB/s
+[    1.456902] raid6: neonx2   gen()  1249 MB/s
+[    1.524903] raid6: neonx2   xor()  1303 MB/s
+[    1.592978] raid6: neonx1   gen()   810 MB/s
+[    1.660991] raid6: neonx1   xor()   978 MB/s
+[    1.729045] raid6: int64x8  gen()  1291 MB/s
+[    1.797080] raid6: int64x8  xor()   844 MB/s
+[    1.865132] raid6: int64x4  gen()  1085 MB/s
+[    1.933168] raid6: int64x4  xor()   815 MB/s
+[    2.001177] raid6: int64x2  gen()   752 MB/s
+[    2.069260] raid6: int64x2  xor()   658 MB/s
+[    2.137296] raid6: int64x1  gen()   499 MB/s
+[    2.205301] raid6: int64x1  xor()   500 MB/s
+[    2.205305] raid6: using algorithm neonx8 gen() 1716 MB/s
+[    2.205308] raid6: .... xor() 1624 MB/s, rmw enabled
+[    2.205311] raid6: using neon recovery algorithm
+[    2.205606] iommu: Default domain type: Translated 
+[    2.205796] SCSI subsystem initialized
+[    2.205925] usbcore: registered new interface driver usbfs
+[    2.205950] usbcore: registered new interface driver hub
+[    2.205975] usbcore: registered new device driver usb
+[    2.206017] mc: Linux media interface: v0.10
+[    2.206034] videodev: Linux video capture interface: v2.00
+[    2.206051] pps_core: LinuxPPS API ver. 1 registered
+[    2.206055] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    2.206064] PTP clock support registered
+[    2.206082] EDAC MC: Ver: 3.0.0
+[    2.206428] zynqmp-ipi-mbox mailbox@ff990400: Registered ZynqMP IPI mbox with TX/RX channels.
+[    2.206580] FPGA manager framework
+[    2.206695] Advanced Linux Sound Architecture Driver Initialized.
+[    2.206933] Bluetooth: Core ver 2.22
+[    2.206955] NET: Registered protocol family 31
+[    2.206959] Bluetooth: HCI device and connection manager initialized
+[    2.206965] Bluetooth: HCI socket layer initialized
+[    2.206971] Bluetooth: L2CAP socket layer initialized
+[    2.206981] Bluetooth: SCO socket layer initialized
+[    2.207302] clocksource: Switched to clocksource arch_sys_counter
+[    2.207387] VFS: Disk quotas dquot_6.6.0
+[    2.207427] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.211033] NET: Registered protocol family 2
+[    2.211369] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    2.211410] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    2.211595] TCP bind hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[    2.211945] TCP: Hash tables configured (established 32768 bind 32768)
+[    2.212008] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    2.212075] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    2.212218] NET: Registered protocol family 1
+[    2.212463] RPC: Registered named UNIX socket transport module.
+[    2.212466] RPC: Registered udp transport module.
+[    2.212469] RPC: Registered tcp transport module.
+[    2.212472] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.212696] PCI: CLS 0 bytes, default 64
+[    2.213108] hw perfevents: no interrupt-affinity property for /pmu, guessing.
+[    2.213243] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    2.213902] Initialise system trusted keyrings
+[    2.213981] workingset: timestamp_bits=46 max_order=20 bucket_order=0
+[    2.214661] NFS: Registering the id_resolver key type
+[    2.214671] Key type id_resolver registered
+[    2.214675] Key type id_legacy registered
+[    2.214683] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    2.214697] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    2.226415] NET: Registered protocol family 38
+[    2.226421] Key type asymmetric registered
+[    2.226425] Asymmetric key parser 'x509' registered
+[    2.226446] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 247)
+[    2.226451] io scheduler mq-deadline registered
+[    2.226455] io scheduler kyber registered
+[    2.249560] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    2.252028] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    2.255848] brd: module loaded
+[    2.259848] loop: module loaded
+[    2.260411] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    2.261354] libphy: Fixed MDIO Bus: probed
+[    2.262208] tun: Universal TUN/TAP device driver, 1.6
+[    2.262293] CAN device driver interface
+[    2.262883] usbcore: registered new interface driver asix
+[    2.262919] usbcore: registered new interface driver ax88179_178a
+[    2.262939] usbcore: registered new interface driver cdc_ether
+[    2.262960] usbcore: registered new interface driver net1080
+[    2.262980] usbcore: registered new interface driver cdc_subset
+[    2.262999] usbcore: registered new interface driver zaurus
+[    2.263027] usbcore: registered new interface driver cdc_ncm
+[    2.263646] usbcore: registered new interface driver uas
+[    2.263675] usbcore: registered new interface driver usb-storage
+[    2.264165] rtc_zynqmp ffa60000.rtc: registered as rtc0
+[    2.264205] i2c /dev entries driver
+[    2.265371] usbcore: registered new interface driver uvcvideo
+[    2.265375] USB Video Class driver (1.1.1)
+[    2.265656] Bluetooth: HCI UART driver ver 2.3
+[    2.265661] Bluetooth: HCI UART protocol H4 registered
+[    2.265664] Bluetooth: HCI UART protocol BCSP registered
+[    2.265681] Bluetooth: HCI UART protocol LL registered
+[    2.265684] Bluetooth: HCI UART protocol ATH3K registered
+[    2.265698] Bluetooth: HCI UART protocol Three-wire (H5) registered
+[    2.265728] Bluetooth: HCI UART protocol Intel registered
+[    2.265746] Bluetooth: HCI UART protocol QCA registered
+[    2.265771] usbcore: registered new interface driver bcm203x
+[    2.265795] usbcore: registered new interface driver bpa10x
+[    2.265817] usbcore: registered new interface driver bfusb
+[    2.265841] usbcore: registered new interface driver btusb
+[    2.265874] usbcore: registered new interface driver ath3k
+[    2.266018] EDAC MC0: 13 UE BankGroup Number 0 Block Number 0 on mc#0csrow#0channel#0 (csrow:0 channel:0 page:0x0 offset:0x0 grain:1)
+[    2.266084] EDAC MC0: Giving out device to module 1 controller synps_ddr_controller: DEV synps_edac (INTERRUPT)
+[    2.266219] EDAC DEVICE0: Giving out device to module zynqmp-ocm-edac controller zynqmp_ocm: DEV ff960000.memory-controller (INTERRUPT)
+[    2.266540] sdhci: Secure Digital Host Controller Interface driver
+[    2.266544] sdhci: Copyright(c) Pierre Ossman
+[    2.266547] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.266815] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.266854] zynqmp_firmware_probe Platform Management API v1.1
+[    2.266859] zynqmp_firmware_probe Trustzone version v1.0
+[    2.289040] alg: No test for xilinx-zynqmp-aes (zynqmp-aes)
+[    2.289186] zynqmp_aes zynqmp_aes: AES Successfully Registered
+[    2.289186] 
+[    2.289315] alg: No test for xilinx-keccak-384 (zynqmp-keccak-384)
+[    2.289510] alg: No test for xilinx-zynqmp-rsa (zynqmp-rsa)
+[    2.289722] usbcore: registered new interface driver usbhid
+[    2.289725] usbhid: USB HID core driver
+[    2.291793] fpga_manager fpga0: Xilinx ZynqMP FPGA Manager registered
+[    2.292045] usbcore: registered new interface driver snd-usb-audio
+[    2.292705] pktgen: Packet Generator for packet performance testing. Version: 2.75
+[    2.293212] Initializing XFRM netlink socket
+[    2.293293] NET: Registered protocol family 10
+[    2.293653] Segment Routing with IPv6
+[    2.293749] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    2.294047] NET: Registered protocol family 17
+[    2.294060] NET: Registered protocol family 15
+[    2.294078] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    2.294082] can: controller area network core (rev 20170425 abi 9)
+[    2.294106] NET: Registered protocol family 29
+[    2.294111] can: raw protocol (rev 20170425)
+[    2.294115] can: broadcast manager protocol (rev 20170425 t)
+[    2.294121] can: netlink gateway (rev 20190810) max_hops=1
+[    2.294185] Bluetooth: RFCOMM TTY layer initialized
+[    2.294193] Bluetooth: RFCOMM socket layer initialized
+[    2.294206] Bluetooth: RFCOMM ver 1.11
+[    2.294213] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    2.294216] Bluetooth: BNEP filters: protocol multicast
+[    2.294221] Bluetooth: BNEP socket layer initialized
+[    2.294225] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    2.294230] Bluetooth: HIDP socket layer initialized
+[    2.294329] 9pnet: Installing 9P2000 support
+[    2.294347] Key type dns_resolver registered
+[    2.294626] registered taskstats version 1
+[    2.294629] Loading compiled-in X.509 certificates
+[    2.294985] Btrfs loaded, crc32c=crc32c-generic
+[    2.302772] ff000000.serial: ttyPS0 at MMIO 0xff000000 (irq = 40, base_baud = 6249999) is a xuartps
+[    3.546923] printk: console [ttyPS0] enabled
+[    3.551510] of-fpga-region fpga-full: FPGA Region probed
+[    3.557323] GPIO IRQ not connected
+[    3.560716] XGpio: gpio@80010000: registered, base is 509
+[    3.566686] xilinx-zynqmp-dma fd500000.dma: ZynqMP DMA driver Probe success
+[    3.573774] xilinx-zynqmp-dma fd510000.dma: ZynqMP DMA driver Probe success
+[    3.580866] xilinx-zynqmp-dma fd520000.dma: ZynqMP DMA driver Probe success
+[    3.587954] xilinx-zynqmp-dma fd530000.dma: ZynqMP DMA driver Probe success
+[    3.595034] xilinx-zynqmp-dma fd540000.dma: ZynqMP DMA driver Probe success
+[    3.602117] xilinx-zynqmp-dma fd550000.dma: ZynqMP DMA driver Probe success
+[    3.609203] xilinx-zynqmp-dma fd560000.dma: ZynqMP DMA driver Probe success
+[    3.616298] xilinx-zynqmp-dma fd570000.dma: ZynqMP DMA driver Probe success
+[    3.623459] xilinx-zynqmp-dma ffa80000.dma: ZynqMP DMA driver Probe success
+[    3.630547] xilinx-zynqmp-dma ffa90000.dma: ZynqMP DMA driver Probe success
+[    3.637627] xilinx-zynqmp-dma ffaa0000.dma: ZynqMP DMA driver Probe success
+[    3.644714] xilinx-zynqmp-dma ffab0000.dma: ZynqMP DMA driver Probe success
+[    3.651794] xilinx-zynqmp-dma ffac0000.dma: ZynqMP DMA driver Probe success
+[    3.658880] xilinx-zynqmp-dma ffad0000.dma: ZynqMP DMA driver Probe success
+[    3.665963] xilinx-zynqmp-dma ffae0000.dma: ZynqMP DMA driver Probe success
+[    3.673045] xilinx-zynqmp-dma ffaf0000.dma: ZynqMP DMA driver Probe success
+[    3.680241] zynqmp-qspi ff0f0000.spi: rx bus width not found
+[    3.685897] zynqmp-qspi ff0f0000.spi: tx bus width not found
+[    3.691707] spi_master spi0: cannot find modalias for /amba/spi@ff0f0000/flash@0
+[    3.699096] spi_master spi0: Failed to create SPI device for /amba/spi@ff0f0000/flash@0
+[    3.707372] macb ff0b0000.ethernet: Not enabling partial store and forward
+[    3.714725] libphy: MACB_mii_bus: probed
+[    3.727182] zynqmp_pll_disable() clock disable failed for dpll_int, ret = -13
+[    3.791959] Micrel KSZ9031 Gigabit PHY ff0b0000.ethernet-ffffffff:03: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=ff0b0000.ethernet-ffffffff:03, irq=POLL)
+[    3.807780] macb ff0b0000.ethernet eth0: Cadence GEM rev 0x50070106 at 0xff0b0000 irq 29 (92:bc:21:eb:fb:00)
+[    3.817929] xilinx-axipmon ffa00000.perf-monitor: Probed Xilinx APM
+[    3.824421] xilinx-axipmon fd0b0000.perf-monitor: Probed Xilinx APM
+[    3.830874] xilinx-axipmon fd490000.perf-monitor: Probed Xilinx APM
+[    3.837318] xilinx-axipmon ffa10000.perf-monitor: Probed Xilinx APM
+[    3.843788] dwc3-of-simple ff9d0000.usb0: dwc3_simple_set_phydata: Can't find usb3-phy
+[    3.852058] dwc3 fe200000.dwc3: Failed to get clk 'ref': -2
+[    3.858012] dwc3-of-simple ff9e0000.usb1: dwc3_simple_set_phydata: Can't find usb3-phy
+[    3.866234] dwc3 fe300000.dwc3: Failed to get clk 'ref': -2
+[    3.872541] cdns-i2c ff020000.i2c: 400 kHz mmio ff020000 irq 31
+[    3.877164] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.878796] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 1333333 KHz
+[    3.883935] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    3.891312] cpu cpu0: dev_pm_opp_set_rate: failed to find current OPP for freq 1333333320 (-34)
+[    3.899042] xhci-hcd xhci-hcd.0.auto: hcc params 0x0238f625 hci version 0x100 quirks 0x0000000202010010
+[    3.907676] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 1199999 KHz
+[    3.917035] xhci-hcd xhci-hcd.0.auto: irq 45, io mem 0xfe300000
+[    3.925547] cpu cpu0: dev_pm_opp_set_rate: failed to find current OPP for freq 1333333320 (-34)
+[    3.931857] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.945685] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    3.953942] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.961155] usb usb1: Product: xHCI Host Controller
+[    3.966022] usb usb1: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    3.971952] mmc0: SDHCI controller on ff160000.mmc [ff160000.mmc] using ADMA 64-bit
+[    3.972627] usb usb1: SerialNumber: xhci-hcd.0.auto
+[    3.985436] hub 1-0:1.0: USB hub found
+[    3.989251] hub 1-0:1.0: 1 port detected
+[    3.993337] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.998827] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    4.006479] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0 SuperSpeed
+[    4.011843] mmc1: SDHCI controller on ff170000.mmc [ff170000.mmc] using ADMA 64-bit
+[    4.013109] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.028721] rtc_zynqmp ffa60000.rtc: setting system clock to 1970-01-01T00:00:08 UTC (8)
+[    4.028725] of_cfs_init
+[    4.036921] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.04
+[    4.039258] of_cfs_init: OK
+[    4.047487] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.050377] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    4.057477] usb usb2: Product: xHCI Host Controller
+[    4.070089] usb usb2: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.076695] usb usb2: SerialNumber: xhci-hcd.0.auto
+[    4.081912] hub 2-0:1.0: USB hub found
+[    4.085770] hub 2-0:1.0: 1 port detected
+[    4.089945] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+[    4.097708] xhci-hcd xhci-hcd.1.auto: hcc params 0x0238f625 hci version 0x100 quirks 0x0000000202010010
+[    4.107123] xhci-hcd xhci-hcd.1.auto: irq 42, io mem 0xfe200000
+[    4.113320] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    4.121588] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.128808] usb usb3: Product: xHCI Host Controller
+[    4.133679] usb usb3: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.140284] usb usb3: SerialNumber: xhci-hcd.1.auto
+[    4.145456] hub 3-0:1.0: USB hub found
+[    4.149316] hub 3-0:1.0: 1 port detected
+[    4.153488] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    4.158978] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 4
+[    4.166637] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0 SuperSpeed
+[    4.173209] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.181354] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.04
+[    4.186386] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    4.189621] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.196134] clk: Not disabling unused clocks
+[    4.203344] usb usb4: Product: xHCI Host Controller
+[    4.207596] ALSA device list:
+[    4.212466] usb usb4: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.215415]   No soundcards found.
+[    4.215544] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    4.222022] usb usb4: SerialNumber: xhci-hcd.1.auto
+[    4.222397] hub 4-0:1.0: USB hub found
+[    4.225416] cfg80211: failed to load regulatory.db
+[    4.247422] hub 4-0:1.0: 1 port detected
+[    4.251601] Waiting for root device /dev/mmcblk1p2...
+[    4.265521] mmc1: new high speed SDHC card at address 5048
+[    4.271368] mmcblk1: mmc1:5048 SD16G 14.4 GiB 
+[    4.277173]  mmcblk1: p1 p2
+[    4.293587] mmc0: new HS200 MMC card at address 0001
+[    4.298858] mmcblk0: mmc0:0001 W52516 14.3 GiB 
+[    4.303558] mmcblk0boot0: mmc0:0001 W52516 partition 1 4.00 MiB
+[    4.309633] mmcblk0boot1: mmc0:0001 W52516 partition 2 4.00 MiB
+[    4.315621] mmcblk0rpmb: mmc0:0001 W52516 partition 3 4.00 MiB, chardev (245:0)
+[    4.323756]  mmcblk0: p1
+[    4.351318] usb 1-1: new high-speed USB device number 2 using xhci-hcd
+[    4.503444] usb 1-1: New USB device found, idVendor=0424, idProduct=2514, bcdDevice= b.b3
+[    4.511620] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    4.557131] hub 1-1:1.0: USB hub found
+[    4.560909] hub 1-1:1.0: 4 ports detected
+[    4.582512] random: fast init done
+[    9.487482] EXT4-fs (mmcblk1p2): recovery complete
+[    9.608952] EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)
+[    9.617068] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[    9.624790] devtmpfs: mounted
+[    9.627914] Freeing unused kernel memory: 704K
+[    9.632384] Run /sbin/init as init process
+[   10.009766] random: systemd: uninitialized urandom read (16 bytes read)
+[   10.023392] random: systemd: uninitialized urandom read (16 bytes read)
+[   10.044176] systemd[1]: systemd 219 running in system mode. (+PAM +AUDIT +SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ -LZ4 -SECCOMP +BLKID +ELFUTILS +KMOD +IDN)
+[   10.062497] systemd[1]: Detected architecture arm64.
+
+Welcome to [0;31mCentOS Linux 7 (AltArch)[0m!
+
+[   10.079352] systemd[1]: No hostname configured.
+[   10.083890] systemd[1]: Set hostname to <localhost>.
+[   10.100308] random: systemd: uninitialized urandom read (16 bytes read)
+[[32m  OK  [0m] Created slice Root Slice.
+[   10.595389] systemd[1]: Created slice Root Slice.
+[   10.600130] systemd[1]: Starting Root Slice.
+[[32m  OK  [0m] Listening on udev Kernel Socket.
+[   10.615336] systemd[1]: Listening on udev Kernel Socket.
+[   10.620668] systemd[1]: Starting udev Kernel Socket.
+[[32m  OK  [0m] Listening on Delayed Shutdown Socket.
+[   10.635335] systemd[1]: Listening on Delayed Shutdown Socket.
+[   10.641101] systemd[1]: Starting Delayed Shutdown Socket.
+[[32m  OK  [0m] Created slice User and Session Slice.
+[[32m  OK  [0m] Listening on LVM2 metadata daemon socket.
+[[32m  OK  [0m] Created slice System Slice.
+[[32m  OK  [0m] Created slice system-getty.slice.
+         Starting Collect Read-Ahead Data...
+[   10.703623] systemd-readahead[157]: Failed to create fanotify object: Function not implemented
+[[32m  OK  [0m] Listening on udev Control Socket.
+[[32m  OK  [0m] Created slice system-selinux\x2dpol...grate\x2dlocal\x2dchanges.slice.
+[[32m  OK  [0m] Listening on LVM2 poll daemon socket.
+[[32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
+[[32m  OK  [0m] Listening on Device-mapper event daemon FIFOs.
+[[32m  OK  [0m] Reached target Swap.
+[[32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
+[[32m  OK  [0m] Listening on Journal Socket.
+         Mounting POSIX Message Queue File System...
+         Starting Journal Service...
+         Mounting Huge Pages File System...
+         Starting Monitoring of LVM2 mirrors... dmeventd or progress polling...
+[[32m  OK  [0m] Reached target Slices.
+         Mounting Debug File System...
+[[32m  OK  [0m] Mounted POSIX Message Queue File System.
+[[32m  OK  [0m] Mounted Huge Pages File System.
+[[32m  OK  [0m] Mounted Debug File System.
+[[32m  OK  [0m] Started Collect Read-Ahead Data.
+         Mounting Configuration File System...
+         Starting Apply Kernel Variables...
+         Starting Configure read-only root support...
+         Starting Load/Save Random Seed...
+         Starting Setup Virtual Console...
+         Starting udev Coldplug all Devices...
+         Starting Create Static Device Nodes in /dev...
+[[32m  OK  [0m] Mounted Configuration File System.
+[[32m  OK  [0m] Started Journal Service.
+[[32m  OK  [0m] Started Apply Kernel Variables.
+[[32m  OK  [0m] Started Load/Save Random Seed.
+[[32m  OK  [0m] Started LVM2 metadata daemon.
+         Starting LVM2 metadata daemon...
+         Starting Flush Journal to Persistent Storage...
+[[32m  OK  [0m] Started Configure read-only root support.
+[[32m  OK  [0m] Started Create Static Device Nodes in /dev.
+[[32m  OK  [0m] Started udev Coldplug all Devices.
+         Starting udev Wait for Complete Device Initialization...
+         Starting udev Kernel Device Manager...
+[   11.314192] systemd-journald[160]: Received request to flush runtime journal from PID 1
+[[32m  OK  [0m] Started Flush Journal to Persistent Storage.
+[[32m  OK  [0m] Started Setup Virtual Console.
+[[32m  OK  [0m] Started udev Kernel Device Manager.
+         Starting Show Plymouth Boot Screen...
+[[32m  OK  [0m] Found device /dev/ttyPS0.
+[[32m  OK  [0m] Started Show Plymouth Boot Screen.
+%G[[32m  OK  [0m] Started udev Wait for Complete Device Initialization.
+[[32m  OK  [0m] Started Monitoring of LVM2 mirrors,...ng dmeventd or progress polling.
+[[32m  OK  [0m] Reached target Local File Systems (Pre).
+         Starting Activation of DM RAID sets...
+[[32m  OK  [0m] Started Activation of DM RAID sets.
+[[32m  OK  [0m] Reached target Local File Systems.
+         Starting Tell Plymouth To Write Out Runtime Data...
+         Starting Create Volatile Files and Directories...
+[[32m  OK  [0m] Reached target Encrypted Volumes.
+[[32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
+[[32m  OK  [0m] Started Create Volatile Files and Directories.
+         Starting Security Auditing Service...
+[[32m  OK  [0m] Started Security Auditing Service.
+         Starting Update UTMP about System Boot/Shutdown...
+[[32m  OK  [0m] Started Update UTMP about System Boot/Shutdown.
+[[32m  OK  [0m] Reached target System Initialization.
+[[32m  OK  [0m] Reached target Timers.
+[[32m  OK  [0m] Listening on Open-iSCSI iscsid Socket.
+[[32m  OK  [0m] Listening on PC/SC Smart Card Daemon Activation Socket.
+[[32m  OK  [0m] Reached target Paths.
+[[32m  OK  [0m] Listening on D-Bus System Message Bus Socket.
+[[32m  OK  [0m] Listening on Open-iSCSI iscsiuio Socket.
+[[32m  OK  [0m] Reached target Sockets.
+[[32m  OK  [0m] Reached target Basic System.
+         Starting Authorization Manager...
+         Starting System Logging Service...
+         Starting Dump dmesg to /var/log/dmesg...
+[[32m  OK  [0m] Started D-Bus System Message Bus.
+         Starting D-Bus System Message Bus...
+         Starting NTP client/server...
+         Starting Login Service...
+[[32m  OK  [0m] Started irqbalance daemon.
+         Starting irqbalance daemon...
+[[32m  OK  [0m] Started System Logging Service.
+[[32m  OK  [0m] Started Dump dmesg to /var/log/dmesg.
+[[32m  OK  [0m] Started Login Service.
+[[32m  OK  [0m] Started NTP client/server.
+[[32m  OK  [0m] Started Authorization Manager.
+         Starting firewalld - dynamic firewall daemon...
+[[32m  OK  [0m] Started firewalld - dynamic firewall daemon.
+[[32m  OK  [0m] Reached target Network (Pre).
+         Starting Network Manager...
+[[32m  OK  [0m] Started Network Manager.
+         Starting Network Manager Wait Online...
+         Starting Network Manager Script Dispatcher Service...
+[[32m  OK  [0m] Started Network Manager Script Dispatcher Service.
+         Starting Hostname Service...
+[[32m  OK  [0m] Started Hostname Service.
+[   17.990721] pps pps0: new PPS source ptp0
+[   17.994774] macb ff0b0000.ethernet: gem-ptp-timer ptp clock registered.
+[   22.079857] macb ff0b0000.ethernet eth0: link up (1000/Full)
+[   22.085530] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[[0m[31m*     [0m] A start job is running for Network ...ger Wait Online (12s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (13s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (13s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (14s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (14s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (15s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (15s / no limit)[K[     [31m*[0m] A start job is running for Network ...ger Wait Online (16s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (16s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (17s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (17s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (17s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (18s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (18s / no limit)[K[[0m[31m*     [0m] A start job is running for Network ...ger Wait Online (19s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (19s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (20s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (20s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (21s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (21s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (22s / no limit)[K[     [31m*[0m] A start job is running for Network ...ger Wait Online (22s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (23s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (23s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (24s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (24s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (25s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (25s / no limit)[K[[0m[31m*     [0m] A start job is running for Network ...ger Wait Online (26s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (26s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (27s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (27s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (28s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (28s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (29s / no limit)[K[     [31m*[0m] A start job is running for Network ...ger Wait Online (29s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (30s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (30s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (31s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (31s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (32s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (32s / no limit)[K[[0m[31m*     [0m] A start job is running for Network ...ger Wait Online (33s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (33s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (34s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (34s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (35s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (35s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (36s / no limit)[K[     [31m*[0m] A start job is running for Network ...ger Wait Online (36s / no limit)[K[[1;31mFAILED[0m] Failed to start Network Manager Wait Online.
+See 'systemctl status NetworkManager-wait-online.service' for details.
+         Starting LSB: Bring up/down networking...
+[[1;31mFAILED[0m] Failed to start LSB: Bring up/down networking.
+See 'systemctl status network.service' for details.
+[[32m  OK  [0m] Reached target Network.
+         Starting Logout off all iSCSI sessions on shutdown...
+         Starting OpenSSH server daemon...
+         Starting Dynamic System Tuning Daemon...
+         Starting Postfix Mail Transport Agent...
+[[32m  OK  [0m] Reached target Network is Online.
+[[32m  OK  [0m] Started Logout off all iSCSI sessions on shutdown.
+         Starting Availability of block devices...
+[[32m  OK  [0m] Reached target Remote File Systems (Pre).
+[[32m  OK  [0m] Reached target Remote File Systems.
+         Starting Crash recovery kernel arming...
+         Starting Permit User Sessions...
+[[32m  OK  [0m] Started Availability of block devices.
+[[32m  OK  [0m] Started Permit User Sessions.
+         Starting Wait for Plymouth Boot Screen to Quit...
+[[32m  OK  [0m] Started Command Scheduler.
+         Starting Command Scheduler...
+         Starting Terminate Plymouth Boot Screen...
+
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+localhost login: root
+Password: 
+Last login: Thu Jan  1 00:01:01 on ttyPS0
+[root@localhost ~]# ls
+anaconda-ks.cfg  apps
+[root@localhost ~]# ip a 
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 92:bc:21:eb:fb:00 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::90bc:21ff:feeb:fb00/64 scope link 
+       valid_lft forever preferred_lft forever
+[root@localhost ~]# nmcli
+[33meth0: connecting (getting IP configuration) to eth0[0m
+	"eth0"
+	ethernet (macb), 92:BC:21:EB:FB:00, hw, mtu 1500
+
+[2msit0: unmanaged[0m
+	"sit0"
+	iptunnel (sit), sw, mtu 1480
+
+[2mlo: unmanaged[0m
+	"lo"
+	loopback (unknown), 00:00:00:00:00:00, sw, mtu 65536
+
+Use "nmcli device show" to get complete information about known devices and
+"nmcli connection show" to get an overview on active connection profiles.
+
+Consult nmcli(1) and nmcli-examples(5) manual pages for complete usage details.
+[root@localhost ~]# nmu[Ktui
+[1;24r[4l)0[m(B[1;24r[H[J[1;1H[7;27H[1K ┌─┤ NetworkManager TUI ├──┐[8;27H[1K │[25C│[9;27H[1K │ Please select an option │[10;27H[1K │[25C│[11;27H[1K │ [1m[7mEdit a connection      [m(B │[12;27H[1K │ Activate a connection   │[13;27H[1K │ Set system hostname[5C│[14;27H[1K │[25C│[15;27H[1K │ Quit[20C│[16;27H[1K │[25C│[17;27H[1K │[20C<OK> │[18;27H[1K │[25C│[19;27H[1K └─────────────────────────┘[11;30H[2;26H[1K ┌───────────────────────────┐[3;26H[1K │[27C│[4;26H[1K │ [7m┌─────────────┐[11C[m(B│[5;26H[1K │ [7m│[m(B Ethernet  ↑ [7m│[m(B <Add>[5C│[6;26H[1K │ [7m│[m(B [1m[7m  eth0  [m(B  ▒ [7m│[11C[m(B│[7;26H[1K │ [7m│[m(B           ▒ [7m│[m(B <Edit...> │[8;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[9;26H[1K │ [7m│[m(B           ▒ [7m│[m(B <Delete>  │[10;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[11;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[12;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[13;26H[1K │ [7m│[m(B           ▒ [7m│[m(B     [5C │[14;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[15;26H[1K │ [7m│[m(B    [7C▒ [7m│[10C[m(B │[16;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[17;26H[1K │ [7m│[11C[m(B▒ [7m│[5C[m(B      │[18;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[19;26H[1K │ [7m│[m(B           ▮ [7m│[m(B           │[20;26H[1K │ [7m│[11C[m(B↓ [7m│[m(B <Back>    │[21;26H[1K │ [7m└─────────────┘[11C[m(B│[22;26H[1K │[27C│[23;26H[1K └───────────────────────────┘[6;31H[2;4H┌───────────────────────────┤ Edit Connection ├───────────────────────────┐[3;4H│[22C [27C [21C↑│[4;4H│[9CProfile name eth0____________________________________[10C▮│[5;4H│[15CDevice eth0 (92:BC:21:EB:FB:00)________________[10C▒│[6;4H│[22C                 [11C [21C▒│[7;4H│ ═ ETHERNET[11C   [11C               [12C<Show>   ▒│[8;4H│[22C   [11C   [11C [21C▒│[9;4H│ ╤ IPv4 CONFIGURATION <Automatic>                  [12C<Hide>   ▒│[10;4H│ │[10CAddresses 192.168.2.203/24_________ <Remove>[16C▒│[11;4H│ │[20C<Add...>[6C   [11C [21C▒│[12;4H│ │[12CGateway _________________________    [21C▒│[13;4H│ │[8CDNS servers <Add...>[6C   [11C [21C▒│[14;4H│ │[5CSearch domains <Add...>[6C   [11C [21C▒│[15;4H│ │[20C   [11C   [11C [21C▒│[16;4H│ │[12CRouting [7m(No custom routes)[m(B <Edit...> [21C▒│[17;4H│ │ [ ] Never use this network for default route    [21C▒│[18;4H│ │ [ ] Ignore automatically obtained routes[7C [21C▒│[19;4H│ │[20C   [11C   [11C [21C▒│[20;4H│ │ [ ] Require IPv4 addressing for this connection [21C▒│[21;4H│ └[20C                 [11C [21C▒│[22;4H│[22C [27C [21C↓│[23;4H└───────────────────────[27C───────────────────────┘[4;31H[5;51H[7;68H[7m<Show>[m(B   [7;69H<Show>   [9;27H[7m<Automatic>[30C[9;28H[m(B<Automatic>[30C[7m<Hide>[m(B   [9;69H<Hide>   [10;43H[10;53H[7m<Remove>[16C[10;54H[m(B<Remove>[16C[11;27H[7m<Add...>[42C[11;28H[m(B<Add...>[42C[12;27H[13;27H[7m<Add...>[42C[13;28H[m(B<Add...>[42C[14;27H[7m<Add...>[42C[14;28H[m(B<Add...>[42C[16;46H[7m<Edit...>[22C[16;47H[m(B<Edit...>[22C[17;9H[7m [17;12H[17;9H[m(B [18;9H[7m [18;12H[18;9H[m(B [20;9H[7m [20;12H[m(B[4;9r[4;1H[2M[1;24r[9;19r[9;1H[2M[1;24r[8;4H│ │[10CAddresses 192.168.2.203/24_________ <Remove>[16C▮│[18;4H│ │ [ ] Require IPv4 addressing for this connection[22C▒│[19;4H│ └[70C▒│[20;6H                                                 [22C[21;6H═ IPv6 CONFIGURATION [7m<Ignore>[33C[m(B<Show>   [21;28H<Ignore>[33C[7m<Show>[m(B   [21;69H[7;14r[7;1H[2M[1;24r[14;19r[14;1H[2M[1;24r[5;6H╤ IPv4 CONFIGURATION <Automatic>[30C<Hide[6;6H│[10CAddresses 192.168.2.203/24_________ <Remove>[16C[13;4H│ │ [ ] Never use this network for default route[25C▮│[18;4H│[72C▒│[19;4H│ ═ IPv6 CONFIGURATION <Ignore>[33C<Show>   ▒│[21;6H[[7mX[m(B] Automatically connect    [33C         [21;10H[4;12r[4;1H[1M[1;24r[13;16r[13;1H[1M[1;24r[17;20r[17;1H[1M[1;24r[12;4H│ │ [ ] Never use this network for default route[25C▒│[16;4H│ └[70C▮│[20;4H│ [X] Automatically connect[46C▒│[21;11Hvailable to all users[45C[21;10H[4;15r[4;1H[2M[1;24r[15;20r[15;1H[2M[1;24r[14;4H│ └[70C▒│[19;4H│ [X] Available to all users[45C▒│[20;4H│[72C▒│[21;6H                          [32C[7m<Cancel>[m(B <OK>▮[21;65H<Cancel> [7m<OK>[21;74H[21;64H<Cancel>[m(B <OK>[21;65H[2;26H[1K ┌───────────────────────────┐[K[3;26H[1K │[27C│[K[4;26H[1K │ [7m┌─────────────┐[11C[m(B│[K[5;26H[1K │ [7m│[m(B Ethernet  ↑ [7m│[m(B <Add>     │[K[6;26H[1K │ [7m│[m(B [1m[7m  eth0  [m(B  ▒ [7m│[11C[m(B│[K[7;26H[1K │ [7m│[m(B     [6C▒ [7m│[m(B <Edit...> │[K[8;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[9;26H[1K │ [7m│[m(B           ▒ [7m│[m(B <Delete>  │[K[10;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[K[11;26H[1K │ [7m│[m(B           ▒ [7m│[m(B    [7C│[K[12;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[13;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[K[14;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[15;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[16;26H[1K │ [7m│[m(B     [6C▒ [7m│[11C[m(B│[K[17;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[18;26H[1K │ [7m│[m(B [10C▒ [7m│[11C[m(B│[K[19;26H[1K │ [7m│[m(B  [9C▮ [7m│[11C[m(B│[K[20;26H[1K │ [7m│[11C[m(B↓ [7m│[m(B <Back>    │[K[21;26H[1K │ [7m└─────────────┘[11C[m(B│[K[22;26H[1K │[27C│[K[23;26H[1K └[27C┘[K[6;31H[4;29H┌─────────────┐[11C[5;29H│ [12C│ [7m<Add>[5C[6;29H[m(B│ [7m  eth0  [m(B  ▒ │[11C[7;29H│[11C▒ │ [8;29H│[11C▒ │[11C[9;29H│[11C▒ │ [10;29H│[11C▒ │[11C[11;29H│[11C▒ │[11C[12;29H│[11C▒ │[11C[13;29H│[11C▒ │[11C[14;29H│[11C▒ │[11C[15;29H│[11C▒ │[11C[16;29H│[11C▒ │[11C[17;29H│[11C▒ │[11C[18;29H│[11C▒ │[11C[19;29H│[11C▮ │[11C[20;29H│[11C↓ │ [21;29H└─────────────┘[11C[5;46H<Add>[5C[7;45H[7m<Edit...>[m(B [7;46H<Edit...> [9;45H[7m<Delete>[m(B  [9;46H<Delete>  [20;45H[7m<Back>[m(B    [20;46H[  248.936883] random: crng init done
+[  248.940279] random: 7 urandom warning(s) missed due to ratelimiting
+[9;45H[7m<Delete>[m(B  [20;45H<Back>    [9;46H<Delete>  [20;45H[7m<Back>[m(B    [20;46H[2;26H[1K [K[3;26H[1K [K[4;26H[1K [K[5;26H[1K [K[6;26H[1K [K[7;27H[1K ┌─┤ NetworkManager TUI ├──┐[K[8;27H[1K │ [11C   [10C│[K[9;27H[1K │ Please select an option │[K[10;27H[1K │ [11C   [10C│[K[11;27H[1K │ [1m[7mEdit a connection      [m(B │[K[12;27H[1K │ Activate a connection   │[K[13;27H[1K │ Set system hostname[5C│[K[14;27H[1K │ [11C   [10C│[K[15;27H[1K │ Quit[7C   [10C│[K[16;27H[1K │ [11C   [10C│[K[17;27H[1K │ [11C   [5C<OK> │[K[18;27H[1K │ [11C   [10C│[K[19;27H[1K └─────────────────────────┘[K[20;26H[1K [K[21;26H[1K [K[22;26H[1K [K[23;26H[1K [K[11;30HEdit a connection       [12;30H[1m[7mActivate a connection  [m(B [12;30HActivate a connection   [13;30H[1m[7mSet system hostname    [m(B [13;30HSet system hostname     [15;30H[1m[7mQuit                   [m(B [15;30H[7;27H[1K [K[8;27H[1K [K[9;27H[1K [K[10;27H[1K [K[11;27H[1K [K[12;27H[1K [K[13;27H[1K [K[14;27H[1K [K[15;27H[1K [K[16;27H[1K [K[17;27H[1K [K[18;27H[1K [K[19;27H[1K [K[24;1H[m(B                                                                               [root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 92:bc:21:eb:fb:00 brd ff:ff:ff:ff:ff:ff
+[root@localhost ~]# ip anmtui
+[1;24r[4l)0[m(B[1;24r[H[J[1;1H[7;27H[1K ┌─┤ NetworkManager TUI ├──┐[8;27H[1K │[25C│[9;27H[1K │ Please select an option │[10;27H[1K │[25C│[11;27H[1K │ [1m[7mEdit a connection      [m(B │[12;27H[1K │ Activate a connection   │[13;27H[1K │ Set system hostname[5C│[14;27H[1K │[25C│[15;27H[1K │ Quit[20C│[16;27H[1K │[25C│[17;27H[1K │[20C<OK> │[18;27H[1K │[25C│[19;27H[1K └─────────────────────────┘[11;30H[2;26H[1K ┌───────────────────────────┐[3;26H[1K │[27C│[4;26H[1K │ [7m┌─────────────┐[11C[m(B│[5;26H[1K │ [7m│[m(B Ethernet  ↑ [7m│[m(B <Add>[5C│[6;26H[1K │ [7m│[m(B [1m[7m  eth0  [m(B  ▒ [7m│[11C[m(B│[7;26H[1K │ [7m│[m(B           ▒ [7m│[m(B <Edit...> │[8;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[9;26H[1K │ [7m│[m(B           ▒ [7m│[m(B <Delete>  │[10;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[11;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[12;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[13;26H[1K │ [7m│[m(B           ▒ [7m│[m(B     [5C │[14;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[15;26H[1K │ [7m│[m(B    [7C▒ [7m│[10C[m(B │[16;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[17;26H[1K │ [7m│[11C[m(B▒ [7m│[5C[m(B      │[18;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[19;26H[1K │ [7m│[m(B           ▮ [7m│[m(B           │[20;26H[1K │ [7m│[11C[m(B↓ [7m│[m(B <Back>    │[21;26H[1K │ [7m└─────────────┘[11C[m(B│[22;26H[1K │[27C│[23;26H[1K └───────────────────────────┘[6;31H[2;4H┌───────────────────────────┤ Edit Connection ├───────────────────────────┐[3;4H│[22C [27C [21C↑│[4;4H│[9CProfile name eth0____________________________________[10C▮│[5;4H│[15CDevice eth0 (92:BC:21:EB:FB:00)________________[10C▒│[6;4H│[22C                 [11C [21C▒│[7;4H│ ═ ETHERNET[11C   [11C               [12C<Show>   ▒│[8;4H│[22C   [11C   [11C [21C▒│[9;4H│ ╤ IPv4 CONFIGURATION <Automatic>                  [12C<Hide>   ▒│[10;4H│ │[10CAddresses 192.168.2.203/24_________ <Remove>[16C▒│[11;4H│ │[20C<Add...>[6C   [11C [21C▒│[12;4H│ │[12CGateway _________________________    [21C▒│[13;4H│ │[8CDNS servers <Add...>[6C   [11C [21C▒│[14;4H│ │[5CSearch domains <Add...>[6C   [11C [21C▒│[15;4H│ │[20C   [11C   [11C [21C▒│[16;4H│ │[12CRouting [7m(No custom routes)[m(B <Edit...> [21C▒│[17;4H│ │ [ ] Never use this network for default route    [21C▒│[18;4H│ │ [ ] Ignore automatically obtained routes[7C [21C▒│[19;4H│ │[20C   [11C   [11C [21C▒│[20;4H│ │ [ ] Require IPv4 addressing for this connection [21C▒│[21;4H│ └[20C                 [11C [21C▒│[22;4H│[22C [27C [21C↓│[23;4H└───────────────────────[27C───────────────────────┘[4;31H[5;51H[7;68H[7m<Show>[m(B   [7;69H<Show>   [9;27H[7m<Automatic>[30C[9;28H[m(B<Automatic>[30C[7m<Hide>[m(B   [9;69H[9;27H[7m<Automatic>[30C[m(B<Hide>   [9;28H[7;26H┌────────────┐[28C[8;26H│ Disabled   │[37C[9;26H│ [1m[7mAutomatic [m(B │[28C[10;26H│ Link-Local │ [11;26H│ Manual     │[37C[12;26H│ Shared     │ [13;26H└────────────┘[37C[14;27H        [42C[9;28HAutomatic  [10;28H[1m[7mLink-Local[m(B [10;28HLink-Local [11;28H[1m[7mManual    [m(B [11;28H[7;26H              [28C[8;26H              [37C[9;26H [7m<Automatic>[m(B  [28C[10;26H 192.168.2.203/[11;26H <Add...>     [37C[12;26H ______________[13;26H <Add...>     [37C[14;27H<Add...>[42C[9;28H[7mManual>[m(B   [30C[9;28H<Manual>[33C[7m<Hide>[m(B   [9;69H<Hide>   [10;43H[10;43H[9;68H[7m<Hide>[m(B   [9;69H<Hide>   [10;43H[10;42H[10;43H__[10;17H[7mAddresses[m(B [11;26H[7m <Add...>[42C[10;41H[m(B_[10;17HAddresses [11;26H <Add...>[42C[10;40H___[10;17H[7mAddresses[m(B [11;26H[7m <Add...>[42C[10;37H[m(B__10.5[10;17HAddresses [11;26H <Add...>[42C[10;39H[10;53H[7m<Remove>[16C[10;54H[m(B<Remove>[16C[11;27H[7m<Add...>[42C[11;28H[m(B<Add...>[42C[12;27H[13;27H[7m<Add...>[42C[13;28H[m(B<Add...>[42C[14;27H[7m<Add...>[42C[14;28H[m(B<Add...>[42C[16;46H[7m<Edit...>[22C[16;47H[m(B<Edit...>[22C[17;9H[7m [17;12H[17;9H[m(B [18;9H[7m [18;12H[18;9H[m(B [20;9H[7m [20;12H[m(B[4;9r[4;1H[2M[1;24r[9;19r[9;1H[2M[1;24r[8;4H│ │[10CAddresses 192.168.10.5_____________ <Remove>[16C▮│[18;4H│ │ [ ] Require IPv4 addressing for this connection[22C▒│[19;4H│ └[70C▒│[20;6H                                                 [22C[21;6H═ IPv6 CONFIGURATION [7m<Ignore>[33C[m(B<Show>   [21;28H<Ignore>[33C[7m<Show>[m(B   [21;69H[7;14r[7;1H[2M[1;24r[14;19r[14;1H[2M[1;24r[5;6H╤ IPv4 CONFIGURATION <Manual>[33C<Hide[6;6H│[10CAddresses 192.168.10.5_____________ <Remove>[16C[13;4H│ │ [ ] Never use this network for default route[25C▮│[18;4H│[72C▒│[19;4H│ ═ IPv6 CONFIGURATION <Ignore>[33C<Show>   ▒│[21;6H[[7mX[m(B] Automatically connect    [33C         [21;10H[4;12r[4;1H[1M[1;24r[13;16r[13;1H[1M[1;24r[17;20r[17;1H[1M[1;24r[12;4H│ │ [ ] Never use this network for default route[25C▒│[16;4H│ └[70C▮│[20;4H│ [X] Automatically connect[46C▒│[21;11Hvailable to all users[45C[21;10H[4;15r[4;1H[2M[1;24r[15;20r[15;1H[2M[1;24r[14;4H│ └[70C▒│[19;4H│ [X] Available to all users[45C▒│[20;4H│[72C▒│[21;6H                          [32C[7m<Cancel>[m(B <OK>▮[21;65H<Cancel> [7m<OK>[21;74H[2;26H[m(B[1K ┌───────────────────────────┐[K[3;26H[1K │[27C│[K[4;26H[1K │ [7m┌─────────────┐[11C[m(B│[K[5;26H[1K │ [7m│[m(B Ethernet  ↑ [7m│[m(B <Add>     │[K[6;26H[1K │ [7m│[m(B [1m[7m  eth0  [m(B  ▒ [7m│[11C[m(B│[K[7;26H[1K │ [7m│[m(B     [6C▒ [7m│[m(B <Edit...> │[K[8;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[9;26H[1K │ [7m│[m(B           ▒ [7m│[m(B <Delete>  │[K[10;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[K[11;26H[1K │ [7m│[m(B           ▒ [7m│[m(B    [7C│[K[12;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[13;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[K[14;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[15;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[16;26H[1K │ [7m│[m(B     [6C▒ [7m│[11C[m(B│[K[17;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[18;26H[1K │ [7m│[m(B [10C▒ [7m│[11C[m(B│[K[19;26H[1K │ [7m│[m(B  [9C▮ [7m│[11C[m(B│[K[20;26H[1K │ [7m│[11C[m(B↓ [7m│[m(B <Back>    │[K[21;26H[1K │ [7m└─────────────┘[11C[m(B│[K[22;26H[1K │[27C│[K[23;26H[1K └[27C┘[K[6;31H[4;29H┌─────────────┐[11C[5;29H│ [12C│ [7m<Add>[5C[6;29H[m(B│ [7m  eth0  [m(B  ▒ │[11C[7;29H│[11C▒ │ [8;29H│[11C▒ │[11C[9;29H│[11C▒ │ [10;29H│[11C▒ │[11C[11;29H│[11C▒ │[11C[12;29H│[11C▒ │[11C[13;29H│[11C▒ │[11C[14;29H│[11C▒ │[11C[15;29H│[11C▒ │[11C[16;29H│[11C▒ │[11C[17;29H│[11C▒ │[11C[18;29H│[11C▒ │[11C[19;29H│[11C▮ │[11C[20;29H│[11C↓ │ [21;29H└─────────────┘[11C[5;46H<Add>[5C[7;45H[7m<Edit...>[m(B [7;46H<Edit...> [9;45H[7m<Delete>[m(B  [9;46H<Delete>  [20;45H[7m<Back>[m(B    [20;46H[2;26H[1K [K[3;26H[1K [K[4;26H[1K [K[5;26H[1K [K[6;26H[1K [K[7;27H[1K ┌─┤ NetworkManager TUI ├──┐[K[8;27H[1K │ [11C   [10C│[K[9;27H[1K │ Please select an option │[K[10;27H[1K │ [11C   [10C│[K[11;27H[1K │ [1m[7mEdit a connection      [m(B │[K[12;27H[1K │ Activate a connection   │[K[13;27H[1K │ Set system hostname[5C│[K[14;27H[1K │ [11C   [10C│[K[15;27H[1K │ Quit[7C   [10C│[K[16;27H[1K │ [11C   [10C│[K[17;27H[1K │ [11C   [5C<OK> │[K[18;27H[1K │ [11C   [10C│[K[19;27H[1K └─────────────────────────┘[K[20;26H[1K [K[21;26H[1K [K[22;26H[1K [K[23;26H[1K [K[11;30HEdit a connection       [12;30H[1m[7mActivate a connection  [m(B [12;30HActivate a connection   [13;30H[1m[7mSet system hostname    [m(B [13;30H[A[1m[7mActivate a connection  [m(B [13;30HSet system hostname     [12;30HActivate a connection   [13;30H[1m[7mSet system hostname    [m(B [13;30HSet system hostname     [15;30H[1m[7mQuit                   [m(B [15;30H[7mQuit                   [m(B [17;49H[7m<OK>[m(B [17;50H[7;27H[1K [K[8;27H[1K [K[9;27H[1K [K[10;27H[1K [K[11;27H[1K [K[12;27H[1K [K[13;27H[1K [K[14;27H[1K [K[15;27H[1K [K[16;27H[1K [K[17;27H[1K [K[18;27H[1K [K[19;27H[1K [K[24;1H[m(B                                                                               [root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 92:bc:21:eb:fb:00 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.10.5/32 brd 192.168.10.5 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::90bc:21ff:feeb:fb00/64 scope link 
+       valid_lft forever preferred_lft forever
+ [root@localhost ~]#  ping 192.168.10.5
+PING 192.168.10.5 (192.168.10.5) 56(84) bytes of data.
+64 bytes from 192.168.10.5: icmp_seq=1 ttl=64 time=0.065 ms
+64 bytes from 192.168.10.5: icmp_seq=2 ttl=64 time=0.022 ms
+64 bytes from 192.168.10.5: icmp_seq=3 ttl=64 time=0.020 ms
+
+--- 192.168.10.5 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2055ms
+rtt min/avg/max/mdev = 0.020/0.035/0.065/0.021 ms
+[root@localhost ~]#  ping 192.168.10.5ip a[Knmtui
+[1;24r[4l)0[m(B[1;24r[H[J[1;1H[7;27H[1K ┌─┤ NetworkManager TUI ├──┐[8;27H[1K │[25C│[9;27H[1K │ Please select an option │[10;27H[1K │[25C│[11;27H[1K │ [1m[7mEdit a connection      [m(B │[12;27H[1K │ Activate a connection   │[13;27H[1K │ Set system hostname[5C│[14;27H[1K │[25C│[15;27H[1K │ Quit[20C│[16;27H[1K │[25C│[17;27H[1K │[20C<OK> │[18;27H[1K │[25C│[19;27H[1K └─────────────────────────┘[11;30H[2;26H[1K ┌───────────────────────────┐[3;26H[1K │[27C│[4;26H[1K │ [7m┌─────────────┐[11C[m(B│[5;26H[1K │ [7m│[m(B Ethernet  ↑ [7m│[m(B <Add>[5C│[6;26H[1K │ [7m│[m(B [1m[7m  eth0  [m(B  ▒ [7m│[11C[m(B│[7;26H[1K │ [7m│[m(B           ▒ [7m│[m(B <Edit...> │[8;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[9;26H[1K │ [7m│[m(B           ▒ [7m│[m(B <Delete>  │[10;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[11;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[12;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[13;26H[1K │ [7m│[m(B           ▒ [7m│[m(B     [5C │[14;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[15;26H[1K │ [7m│[m(B    [7C▒ [7m│[10C[m(B │[16;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[17;26H[1K │ [7m│[11C[m(B▒ [7m│[5C[m(B      │[18;26H[1K │ [7m│[11C[m(B▒ [7m│[10C[m(B │[19;26H[1K │ [7m│[m(B           ▮ [7m│[m(B           │[20;26H[1K │ [7m│[11C[m(B↓ [7m│[m(B <Back>    │[21;26H[1K │ [7m└─────────────┘[11C[m(B│[22;26H[1K │[27C│[23;26H[1K └───────────────────────────┘[6;31H[2;4H┌───────────────────────────┤ Edit Connection ├───────────────────────────┐[3;4H│[22C [27C [21C↑│[4;4H│[9CProfile name eth0____________________________________[10C▮│[5;4H│[15CDevice eth0 (92:BC:21:EB:FB:00)________________[10C▒│[6;4H│[22C                 [11C [21C▒│[7;4H│ ═ ETHERNET[11C   [11C               [12C<Show>   ▒│[8;4H│[22C   [11C   [11C [21C▒│[9;4H│ ╤ IPv4 CONFIGURATION <Manual>[6C               [12C<Hide>   ▒│[10;4H│ │[10CAddresses 192.168.10.5/32__________ <Remove>[16C▒│[11;4H│ │[20C<Add...>[6C   [11C [21C▒│[12;4H│ │[12CGateway _________________________    [21C▒│[13;4H│ │[8CDNS servers <Add...>[6C   [11C [21C▒│[14;4H│ │[5CSearch domains <Add...>[6C   [11C [21C▒│[15;4H│ │[20C   [11C   [11C [21C▒│[16;4H│ │[12CRouting [7m(No custom routes)[m(B <Edit...> [21C▒│[17;4H│ │ [ ] Never use this network for default route    [21C▒│[18;4H│ │ [ ] Ignore automatically obtained routes[7C [21C▒│[19;4H│ │[20C   [11C   [11C [21C▒│[20;4H│ │ [ ] Require IPv4 addressing for this connection [21C▒│[21;4H│ └[20C                 [11C [21C▒│[22;4H│[22C [27C [21C↓│[23;4H└───────────────────────[27C───────────────────────┘[4;31H[5;51H[7;68H[7m<Show>[m(B   [7;69H<Show>   [9;27H[7m<Manual>[33C[9;28H[m(B<Manual>[33C[7m<Hide>[m(B   [9;69H<Hide>   [10;42H__[10;17H[7mAddresses[m(B [11;26H[7m <Add...>[42C[10;40H[m(B3[10;17HAddresses [11;26H <Add...>[42C[10;41H4[10;17H[7mAddresses[m(B [11;26H[7m <Add...>[42C[10;42H[10;53H<Remove>[16C[10;54H[m(B<Remove>[16C[10;42H_[10;17HAddresses [11;26H <Add...>[42C[10;41H_[10;17H[7mAddresses[m(B [11;26H[7m <Add...>[42C[10;40H[m(B2[10;17HAddresses [11;26H <Add...>[42C[10;41H[10;53H[7m<Remove>[16C[10;54H[m(B<Remove>[16C[10;41H4[10;53H[7m<Remove>[16C[10;54H[m(B<Remove>[16C[11;27H[7m<Add...>[42C[11;28H[m(B<Add...>[42C[12;27H[13;27H[7m<Add...>[42C[13;28H[m(B<Add...>[42C[14;27H[7m<Add...>[42C[14;28H[m(B<Add...>[42C[16;46H[7m<Edit...>[22C[16;47H[m(B<Edit...>[22C[17;9H[7m [17;12H[17;9H[m(B [18;9H[7m [18;12H[18;9H[m(B [20;9H[7m [20;12H[m(B[4;9r[4;1H[2M[1;24r[9;19r[9;1H[2M[1;24r[8;4H│ │[10CAddresses 192.168.10.5/24__________ <Remove>[16C▮│[18;4H│ │ [ ] Require IPv4 addressing for this connection[22C▒│[19;4H│ └[70C▒│[20;6H                                                 [22C[21;6H═ IPv6 CONFIGURATION [7m<Ignore>[33C[m(B<Show>   [21;28H<Ignore>[33C[7m<Show>[m(B   [21;69H[7;14r[7;1H[2M[1;24r[14;19r[14;1H[2M[1;24r[5;6H╤ IPv4 CONFIGURATION <Manual>[33C<Hide[6;6H│[10CAddresses 192.168.10.5/24__________ <Remove>[16C[13;4H│ │ [ ] Never use this network for default route[25C▮│[18;4H│[72C▒│[19;4H│ ═ IPv6 CONFIGURATION <Ignore>[33C<Show>   ▒│[21;6H[[7mX[m(B] Automatically connect    [33C         [21;10H[4;12r[4;1H[1M[1;24r[13;16r[13;1H[1M[1;24r[17;20r[17;1H[1M[1;24r[12;4H│ │ [ ] Never use this network for default route[25C▒│[16;4H│ └[70C▮│[20;4H│ [X] Automatically connect[46C▒│[21;11Hvailable to all users[45C[21;10H[4;15r[4;1H[2M[1;24r[15;20r[15;1H[2M[1;24r[14;4H│ └[70C▒│[19;4H│ [X] Available to all users[45C▒│[20;4H│[72C▒│[21;6H                          [32C[7m<Cancel>[m(B <OK>▮[21;65H<Cancel> [7m<OK>[21;74H[2;26H[m(B[1K ┌───────────────────────────┐[K[3;26H[1K │[27C│[K[4;26H[1K │ [7m┌─────────────┐[11C[m(B│[K[5;26H[1K │ [7m│[m(B Ethernet  ↑ [7m│[m(B <Add>     │[K[6;26H[1K │ [7m│[m(B [1m[7m  eth0  [m(B  ▒ [7m│[11C[m(B│[K[7;26H[1K │ [7m│[m(B     [6C▒ [7m│[m(B <Edit...> │[K[8;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[9;26H[1K │ [7m│[m(B           ▒ [7m│[m(B <Delete>  │[K[10;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[K[11;26H[1K │ [7m│[m(B           ▒ [7m│[m(B    [7C│[K[12;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[13;26H[1K │ [7m│[m(B           ▒ [7m│[m(B           │[K[14;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[15;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[16;26H[1K │ [7m│[m(B     [6C▒ [7m│[11C[m(B│[K[17;26H[1K │ [7m│[11C[m(B▒ [7m│[11C[m(B│[K[18;26H[1K │ [7m│[m(B [10C▒ [7m│[11C[m(B│[K[19;26H[1K │ [7m│[m(B  [9C▮ [7m│[11C[m(B│[K[20;26H[1K │ [7m│[11C[m(B↓ [7m│[m(B <Back>    │[K[21;26H[1K │ [7m└─────────────┘[11C[m(B│[K[22;26H[1K │[27C│[K[23;26H[1K └[27C┘[K[6;31H[4;29H┌─────────────┐[11C[5;29H│ [12C│ [7m<Add>[5C[6;29H[m(B│ [7m  eth0  [m(B  ▒ │[11C[7;29H│[11C▒ │ [8;29H│[11C▒ │[11C[9;29H│[11C▒ │ [10;29H│[11C▒ │[11C[11;29H│[11C▒ │[11C[12;29H│[11C▒ │[11C[13;29H│[11C▒ │[11C[14;29H│[11C▒ │[11C[15;29H│[11C▒ │[11C[16;29H│[11C▒ │[11C[17;29H│[11C▒ │[11C[18;29H│[11C▒ │[11C[19;29H│[11C▮ │[11C[20;29H│[11C↓ │ [21;29H└─────────────┘[11C[5;46H<Add>[5C[7;45H[7m<Edit...>[m(B [7;46H<Edit...> [9;45H[7m<Delete>[m(B  [9;46H<Delete>  [20;45H[7m<Back>[m(B    [20;46H[2;26H[1K [K[3;26H[1K [K[4;26H[1K [K[5;26H[1K [K[6;26H[1K [K[7;27H[1K ┌─┤ NetworkManager TUI ├──┐[K[8;27H[1K │ [11C   [10C│[K[9;27H[1K │ Please select an option │[K[10;27H[1K │ [11C   [10C│[K[11;27H[1K │ [1m[7mEdit a connection      [m(B │[K[12;27H[1K │ Activate a connection   │[K[13;27H[1K │ Set system hostname[5C│[K[14;27H[1K │ [11C   [10C│[K[15;27H[1K │ Quit[7C   [10C│[K[16;27H[1K │ [11C   [10C│[K[17;27H[1K │ [11C   [5C<OK> │[K[18;27H[1K │ [11C   [10C│[K[19;27H[1K └─────────────────────────┘[K[20;26H[1K [K[21;26H[1K [K[22;26H[1K [K[23;26H[1K [K[11;30HEdit a connection       [12;30H[1m[7mActivate a connection  [m(B [12;30H[2;26H[1K ┌────────────────────────────┐[3;26H[1K │[28C│[4;26H[1K │ [7m┌───────────┐[14C[m(B│[5;26H[1K │ [7m│[m(B Wired   ↑ [7m│[m(B <Deactivate> │[6;26H[1K │ [7m│[m(B [1m[7m* eth0[m(B  ▒ [7m│[14C[m(B│[7;26H[1K │ [7m│[m(B         ▒ [7m│[m(B              │[8;26H[1K │ [7m│[9C[m(B▒ [7m│[12C[m(B  │[9;26H[1K │ [7m│[m(B         ▒ [7m│[m(B              │[10;26H[1K │ [7m│[9C[m(B▒ [7m│[12C[m(B  │[11;26H[1K │ [7m│[m(B         ▒ [7m│[m(B     [7C  │[12;26H[1K │ [7m│[m(B         ▒ [7m│[m(B              │[13;26H[1K │ [7m│[m(B         ▒ [7m│[m(B       [5C  │[14;26H[1K │ [7m│[9C[m(B▒ [7m│[12C[m(B  │[15;26H[1K │ [7m│[m(B    [5C▒ [7m│[12C[m(B  │[16;26H[1K │ [7m│[9C[m(B▒ [7m│[12C[m(B  │[17;26H[1K │ [7m│[9C[m(B▒ [7m│[7C[m(B       │[18;26H[1K │ [7m│[9C[m(B▒ [7m│[12C[m(B  │[19;26H[1K │ [7m│[m(B         ▮ [7m│[m(B              │[20;26H[1K │ [7m│[9C[m(B↓ [7m│[m(B <Back>[7C│[21;26H[1K │ [7m└───────────┘[14C[m(B│[22;26H[1K │[28C│[23;26H[1K └────────────────────────────┘[6;31H[5;44HActivate>   [6;31H[1m[7m [11;33H[m(B┌───────────────┐[6C[12;33H│[5C   [7C│[6C[13;33H│ Connecting... │[6C[14;33H│[5C   [7C│[6C[15;33H└───────────────┘[6C[16;39H   [14C[13;48H[7;16r[7;1H[6L[1;24r[5;44HDeactivate> [6;31H[1m[7m*[7;26H[m(B[1K │ [7m│[9C[m(B▒ [7m│[14C[m(B│[8;26H[1K │ [7m│[9C[m(B▒ [7m│[14C[m(B│[9;26H[1K │ [7m│[9C[m(B▒ [7m│[14C[m(B│[10;26H[1K │ [7m│[9C[m(B▒ [7m│[14C[m(B│[11;26H[1K │ [7m│[9C[m(B▒ [7m│[14C[m(B│[12;26H[1K │ [7m│[9C[m(B▒ [7m│[14C[m(B│[6;31H[4;29H┌───────────┐[14C[5;29H│ [10C│ [7m<Deactivate>[m(B [6;29H│ [7m* eth0[m(B  ▒ │[14C[7;29H│[9C▒ │[14C[8;29H│[9C▒ │[14C[9;29H│[9C▒ │[14C[10;29H│[9C▒ │[14C[11;29H│[9C▒ │[14C[12;29H│[9C▒ │[14C[13;29H│[9C▒ │[14C[14;29H│[9C▒ │[14C[15;29H│[9C▒ │[14C[16;29H│[9C▒ │[14C[17;29H│[9C▒ │[14C[18;29H│[9C▒ │[14C[19;29H│[9C▮ │[14C[20;29H│[9C↓ │ [21;29H└───────────┘[14C[5;44H<Deactivate> [20;43H[7m<Back>[7C[20;44H[2;26H[m(B[1K [K[3;26H[1K [K[4;26H[1K [K[5;26H[1K [K[6;26H[1K [K[7;27H[1K ┌─┤ NetworkManager TUI ├──┐[K[8;27H[1K │ [9C   [12C│[K[9;27H[1K │ Please select an option │[K[10;27H[1K │ [9C   [12C│[K[11;27H[1K │ Edit a connection[7C│[K[12;27H[1K │ [1m[7mActivate a connection  [m(B │[K[13;27H[1K │ Set system hostname[5C│[K[14;27H[1K │ [9C   [12C│[K[15;27H[1K │ Quit[5C   [12C│[K[16;27H[1K │ [9C   [12C│[K[17;27H[1K │ [9C   [7C<OK> │[K[18;27H[1K │ [9C   [12C│[K[19;27H[1K └─────────────────────────┘[K[20;26H[1K [K[21;26H[1K [K[22;26H[1K [K[23;26H[1K [K[12;30HActivate a connection   [13;30H[1m[7mSet system hostname    [m(B [13;30H[10;14H[1K ┌─────────────────┤ Set Hostname ├──────────────────┐[11;14H[1K │[12C                   [7C [12C│[12;14H[1K │ Hostname ________________________________________ │[13;14H[1K │[12C                           [12C│[14;14H[1K │[12C [24C<Cancel> <OK> │[15;14H[1K │[12C      [20C [12C│[16;14H[1K └───────────────────────────────────────────────────┘[17;27H[1K [K[12;26H[14;53H[7m<Cancel>[m(B [14;54H<Cancel> [7m<OK>[m(B [14;63H[10;27H[1K │                         │[K[11;27H[1K │ Edit a connection[7C│[K[12;27H[1K │ Activate a connection   │[K[13;27H[1K │ [1m[7mSet system hostname    [m(B │[K[14;27H[1K │[24C │[K[15;27H[1K │ Quit[20C│[K[16;27H[1K │                         │[K[17;27H[1K │[20C<OK> │[13;30H[7;20H[1K ┌──────────────────────────────────────┐[8;20H[1K │[6C [25C [5C│[9;20H[1K │ Unable to set hostname: The hostname │[10;20H[1K │ was too long or contained invalid    │[11;20H[1K │ characters.             [7C [5C│[12;20H[1K │[6C                           [5C│[13;20H[1K │[6C         ┌────┐            [5C│[14;20H[1K │[6C [8C│[7m OK [m(B│[11C [5C│[15;20H[1K │[6C         └────┘[11C [5C│[16;20H[1K │[6C [25C [5C│[17;20H[1K │[6C [20C      [5C│[18;20H[1K └──────────────────────────────────────┘[19;27H[1K [K[14;39H[13;37H      [17C[14;37H ┌────┐[16C[15;37H │[7m OK [m(B│[16C[16;38H└────┘[16C[15;40H[13;37H┌────┐[17C[14;37H│[7m OK [m(B│ [16C[15;37H└────┘ [16C[16;38H      [16C[14;39H[7;27H[1K ┌─┤ NetworkManager TUI ├──┐[K[8;27H[1K │[25C│[K[9;27H[1K │ Please select an option │[K[10;27H[1K │                         │[K[11;27H[1K │ Edit a connection[7C│[K[12;27H[1K │ Activate a connection   │[K[13;27H[1K │ [1m[7mSet system hostname    [m(B │[K[14;27H[1K │[8C      [11C│[K[15;27H[1K │ Quit         [11C│[K[16;27H[1K │[25C│[K[17;27H[1K │[20C<OK> │[K[18;27H[1K │                         │[K[19;27H[1K └─────────────────────────┘[19;20H[13;30HSet system hostname     [15;30H[1m[7mQuit                   [m(B [15;30H[7mQuit                   [m(B [17;49H[7m<OK>[m(B [17;50H[7;27H[1K [K[8;27H[1K [K[9;27H[1K [K[10;27H[1K [K[11;27H[1K [K[12;27H[1K [K[13;27H[1K [K[14;27H[1K [K[15;27H[1K [K[16;27H[1K [K[17;27H[1K [K[18;27H[1K [K[19;27H[1K [K[24;1H[m(B                                                                               [root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# ip a 
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+    link/ether 92:bc:21:eb:fb:00 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.10.5/24 brd 192.168.10.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::90bc:21ff:feeb:fb00/64 scope link 
+       valid_lft forever preferred_lft forever
+[root@localhost ~]# ip a nmtui ping 192.168.10.5
+PING 192.168.10.5 (192.168.10.5) 56(84) bytes of data.
+64 bytes from 192.168.10.5: icmp_seq=1 ttl=64 time=0.064 ms
+64 bytes from 192.168.10.5: icmp_seq=2 ttl=64 time=0.026 ms
+64 bytes from 192.168.10.5: icmp_seq=3 ttl=64 time=0.022 ms
+
+--- 192.168.10.5 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2044ms
+rtt min/avg/max/mdev = 0.022/0.037/0.064/0.019 ms
+[root@localhost ~]# e[Kping 192.168.10.6
+PING 192.168.10.6 (192.168.10.6) 56(84) bytes of data.
+64 bytes from 192.168.10.6: icmp_seq=1 ttl=64 time=0.273 ms
+64 bytes from 192.168.10.6: icmp_seq=2 ttl=64 time=0.516 ms
+
+--- 192.168.10.6 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1008ms
+rtt min/avg/max/mdev = 0.273/0.394/0.516/0.123 ms
+[root@localhost ~]# ssh okazaki@192.168.1.5
+ssh: connect to host 192.168.1.5 port 22: Network is unreachable
+[root@localhost ~]# ssh okazaki@192.168.1.50.5[C[C[K6
+The authenticity of host '192.168.10.6 (192.168.10.6)' can't be established.
+ECDSA key fingerprint is SHA256:vil9OP10cngZYwFwuzwlWDfVgvXwWawHYor9mgqQm+8.
+ECDSA key fingerprint is MD5:0a:87:a8:59:49:30:c0:4e:ba:8a:cb:cf:c3:c0:e5:57.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.10.6' (ECDSA) to the list of known hosts.
+okazaki@192.168.10.6's password: 
+Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 5.4.0-89-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+219 packages can be updated.
+1 update is a security update.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2023.
+Last login: Mon Oct 18 14:02:35 2021 from 192.168.1.14
+[01;32m(okazaki-CFSV8-2L)[0m ~ [01;32m$[0m 
+
+[01;32m(okazaki-CFSV8-2L)[0m ~ [01;32m$[0m 
+
+[01;32m(okazaki-CFSV8-2L)[0m ~ [01;32m$[0m ls
+total 276K
+-rw-r--r--  1 okazaki okazaki  807 Jul  1 23:45 .profile
+-rw-r--r--  1 okazaki okazaki  220 Jul  1 23:45 .bash_logout
+drwx------  3 okazaki okazaki 4.0K Jul  1 23:51 .local/
+drwxr-xr-x  2 okazaki okazaki 4.0K Jul  1 23:51 Videos/
+drwxr-xr-x  2 okazaki okazaki 4.0K Jul  1 23:51 Templates/
+drwxr-xr-x  2 okazaki okazaki 4.0K Jul  1 23:51 Public/
+drwxr-xr-x  2 okazaki okazaki 4.0K Jul  1 23:51 Music/
+drwxr-xr-x  2 okazaki okazaki 4.0K Jul  1 23:51 Documents/
+drwxr-xr-x  2 okazaki okazaki 4.0K Jul  1 23:51 Desktop/
+-rw-r--r--  1 okazaki okazaki    0 Jul  1 23:52 .sudo_as_admin_successful
+drwx------  3 okazaki okazaki 4.0K Jul  2 00:21 .dbus/
+drwxr-xr-x  2 okazaki okazaki 4.0K Jul  2 00:40 Pictures/
+drwx------  5 okazaki okazaki 4.0K Jul  2 00:40 .mozilla/
+drwxrwxr-x  3 okazaki okazaki 4.0K Jul  2 00:52 .vscode/
+drwx------  3 okazaki okazaki 4.0K Jul  2 00:52 .pki/
+drwxrwxr-x  2 okazaki okazaki 4.0K Jul  2 01:04 test/
+-rw-r--r--  1 okazaki okazaki 4.2K Jul  3 23:35 .bashrc
+-rw-------  1 okazaki okazaki  110 Jul  3 23:47 .Xauthority
+drwxrwxr-x  2 okazaki okazaki 4.0K Jul  3 23:47 .vnc/
+drwxrwxr-x  4 okazaki okazaki 4.0K Jul  4 00:17 .themes/
+drwxrwxr-x  3 okazaki okazaki 4.0K Jul  4 00:17 .icons/
+-rw-r--r--  1 okazaki okazaki  306 Jul  4 00:34 .pam_environment
+drwxr-xr-x 17 okazaki okazaki 4.0K Jul  4 20:11 PetaLinux-OS_rootfs/
+drwxrwxr-x  2 okazaki okazaki 4.0K Aug  5 18:26 .keras/
+drwx------ 18 okazaki okazaki 4.0K Aug  5 18:26 .config/
+drwxrwxr-x  6 okazaki okazaki 4.0K Aug  5 18:26 ppcc-ss-2021/
+-rw-------  1 okazaki okazaki  103 Aug  5 18:32 .python_history
+drwxrwxr-x  3 okazaki okazaki 4.0K Oct  4 02:06 petalinux/
+drwxrwxr-x  2 okazaki okazaki 4.0K Oct  4 02:12 .PetaLinux/
+drwx------  3 okazaki okazaki 4.0K Oct 20 17:09 .gnupg/
+drwxrwxr-x  2 okazaki okazaki 4.0K Oct 20 17:09 .oracle_jre_usage/
+drwxrwxr-x  3 okazaki okazaki 4.0K Oct 20 17:09 .java/
+-rwxrwxr-x  1 okazaki okazaki   43 Oct 24 19:15 .flexlmrc*
+drwx------  2 okazaki okazaki 4.0K Oct 24 20:36 .ssh/
+drwxrwxrwx  5 root    root    4.0K Oct 25 12:32 .Xilinx/
+-rw-rw-rw-  1 okazaki okazaki    0 Oct 27 22:01 .digilent_dvctbl.txt
+drwx------  3 okazaki okazaki 4.0K Oct 28 14:12 snap/
+drwxrwxr-x  4 okazaki okazaki 4.0K Nov  2 18:23 projects/
+-rw-------  1 okazaki okazaki    0 Nov  2 19:19 .python-history
+drwxrwxr-x  2 okazaki okazaki 4.0K Nov  3 17:18 screenlogs/
+drwx------ 20 okazaki okazaki 4.0K Nov  3 17:26 .cache/
+-rw-------  1 okazaki okazaki 6.0K Nov  3 17:46 .ICEauthority
+-rw-r--r--  1 root    root     68K Nov  3 20:14 screenlog.0
+drwxr-xr-x  2 okazaki okazaki 4.0K Nov  4 12:33 Downloads/
+-rw-------  1 okazaki okazaki  34K Nov  4 12:43 .bash_history
+
+[01;32m(okazaki-CFSV8-2L)[0m ~ [01;32m$[0m exit
+logout
+Connection to 192.168.10.6 closed.
+[root@localhost ~]# exit
+logout
+
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+localhost login: 
