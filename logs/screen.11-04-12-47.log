@@ -1,0 +1,191 @@
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2020.1   Nov  4 2021  -  02:46:26
+NOTICE:  ATF running on XCZU5EV/silicon v4/RTL5.1 at 0xfffea000
+NOTICE:  BL31: v2.2(release):xilinx_rebase_v2.2_2020.1
+NOTICE:  BL31: Built : 09:34:51, Nov  3 2021
+
+
+U-Boot 2020.01 (Nov 04 2021 - 02:45:04 +0000)
+
+Board: Xilinx ZynqMP
+DRAM:  4 GiB
+usb dr_mode not found
+usb dr_mode not found
+PMUFW:	v1.1
+EL Level:	EL2
+Chip ID:	zu5ev
+NAND:  0 MiB
+MMC:   mmc@ff160000: 0, mmc@ff170000: 1
+In:    serial@ff000000
+Out:   serial@ff000000
+Err:   serial@ff000000
+Bootmode: SD_MODE1
+Reset reason:	SRST 
+Net:   No ethernet found.
+Hit any key to stop autoboot:  2  1  0 
+MMC: no card present
+## Executing script at 20000000
+Wrong image format for "source" command
+SCRIPT FAILED: continuing...
+switch to partitions #0, OK
+mmc0(part 0) is current device
+** Unrecognized filesystem type **
+MMC: no card present
+Warning: SPI speed fallback to 100 kHz
+SF: Detected s25fl512s_256k with page size 256 Bytes, erase size 256 KiB, total 64 MiB
+device 0 offset 0x3e80000, size 0x80000
+SF: 524288 bytes @ 0x3e80000 Read: OK
+## Executing script at 20000000
+Wrong image format for "source" command
+SCRIPT FAILED: continuing...
+
+
+no devices available
+SCRIPT FAILED: continuing...
+starting USB...
+No working controllers found
+USB is stopped. Please issue 'usb start' first.
+starting USB...
+No working controllers found
+USB is stopped. Please issue 'usb start' first.
+scanning bus for devices...
+
+Device 0: unknown device
+starting USB...
+No working controllers found
+No ethernet found.
+missing environment variable: pxeuuid
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/00000000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/0000000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/000000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/00000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/0000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/00
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/0
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/default-arm-zynqmp-zynqmp
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/default-arm-zynqmp
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/default-arm
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/default
+No ethernet found.
+Config file not found
+starting USB...
+No working controllers found
+No ethernet found.
+No ethernet found.
+ZynqMP> print env
+## Error: "env" not defined
+ZynqMP> env print
+arch=arm
+baudrate=115200
+board=zynqmp
+board_name=zynqmp
+boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; source ${scriptaddr}
+boot_efi_binary=if fdt addr ${fdt_addr_r}; then bootefi bootmgr ${fdt_addr_r};else bootefi bootmgr ${fdtcontroladdr};fi;load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} efi/boot/bootaa64.efi; if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r};else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi
+boot_extlinux=sysboot ${devtype} ${devnum}:${distro_bootpart} any ${scriptaddr} ${prefix}${boot_syslinux_conf}
+boot_net_usb_start=usb start
+boot_prefixes=/ /boot/
+boot_script_dhcp=boot.scr.uimg
+boot_scripts=boot.scr.uimg boot.scr
+boot_syslinux_conf=extlinux/extlinux.conf
+boot_targets=mmc1 jtag mmc0 mmc1 qspi0 nand0 usb0 usb1 scsi0 pxe dhcp 
+bootcmd=run distro_bootcmd
+bootcmd_dhcp=run boot_net_usb_start; if dhcp ${scriptaddr} ${boot_script_dhcp}; then source ${scriptaddr}; fi;setenv efi_fdtfile ${fdtfile}; setenv efi_old_vci ${bootp_vci};setenv efi_old_arch ${bootp_arch};setenv bootp_vci PXEClient:Arch:00011:UNDI:003000;setenv bootp_arch 0xb;if dhcp ${kernel_addr_r}; then tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};if fdt addr ${fdt_addr_r}; then bootefi ${kernel_addr_r} ${fdt_addr_r}; else bootefi ${kernel_addr_r} ${fdtcontroladdr};fi;fi;setenv bootp_vci ${efi_old_vci};setenv bootp_arch ${efi_old_arch};setenv efi_fdtfile;setenv efi_old_arch;setenv efi_old_vci;
+bootcmd_jtag=source $scriptaddr; echo SCRIPT FAILED: continuing...;
+bootcmd_mmc0=devnum=0; run mmc_boot
+bootcmd_mmc1=devnum=1; run mmc_boot
+bootcmd_nand0= nand info && nand read $scriptaddr $script_offset_f $script_size_f && source ${scriptaddr}; echo SCRIPT FAILED: continuing...;
+bootcmd_pxe=run boot_net_usb_start; dhcp; if pxe get; then pxe boot; fi
+bootcmd_qspi0=sf probe 0 0 0 && sf read $scriptaddr $script_offset_f $script_size_f && source ${scriptaddr}; echo SCRIPT FAILED: continuing...;
+bootcmd_scsi0=devnum=0; run scsi_boot
+bootcmd_usb0=devnum=0; run usb_boot
+bootcmd_usb1=devnum=1; run usb_boot
+bootdelay=2
+cpu=armv8
+dfu_ram=run dfu_ram_info && dfu 0 ram 0
+dfu_ram_info=setenv dfu_alt_info Image ram $kernel_addr $kernel_size\\;system.dtb ram $fdt_addr $fdt_size
+distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+efi_dtb_prefixes=/ /dtb/ /dtb/current/
+fdt_addr_r=0x40000000
+fdt_high=10000000
+fdtcontroladdr=7ddca648
+fdtfile=xilinx/zynqmp.dtb
+initrd_high=79000000
+kernel_addr_r=0x18000000
+load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix}${efi_fdtfile}
+mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
+modeboot=sdboot
+pxefile_addr_r=0x10000000
+ramdisk_addr_r=0x02100000
+reset_reason=SRST
+scan_dev_for_boot=echo Scanning ${devtype} ${devnum}:${distro_bootpart}...; for prefix in ${boot_prefixes}; do run scan_dev_for_extlinux; run scan_dev_for_scripts; done;run scan_dev_for_efi;
+scan_dev_for_boot_part=part list ${devtype} ${devnum} -bootable devplist; env exists devplist || setenv devplist 1; for distro_bootpart in ${devplist}; do if fstype ${devtype} ${devnum}:${distro_bootpart} bootfstype; then run scan_dev_for_boot; fi; done; setenv devplist
+scan_dev_for_efi=setenv efi_fdtfile ${fdtfile}; for prefix in ${efi_dtb_prefixes}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${efi_fdtfile}; then run load_efi_dtb; fi;done;if test -e ${devtype} ${devnum}:${distro_bootpart} efi/boot/bootaa64.efi; then echo Found EFI removable media binary efi/boot/bootaa64.efi; run boot_efi_binary; echo EFI LOAD FAILED: continuing...; fi; setenv efi_fdtfile
+scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
+scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
+script_offset_f=3e80000
+script_size_f=0x80000
+scriptaddr=0x20000000
+scsi_boot=run scsi_init; if scsi dev ${devnum}; then devtype=scsi; run scan_dev_for_boot_part; fi
+scsi_init=if ${scsi_need_init}; then scsi_need_init=false; scsi scan; fi
+soc=zynqmp
+stderr=serial@ff000000
+stdin=serial@ff000000
+stdout=serial@ff000000
+thor_ram=run dfu_ram_info && thordown 0 ram 0
+usb_boot=usb start; if usb dev ${devnum}; then devtype=usb; run scan_dev_for_boot_part; fi
+vendor=xilinx
+
+Environment size: 4572/32764 bytes
+ZynqMP> mmc list
+mmc@ff160000: 0 (eMMC)
+mmc@ff170000: 1
+ZynqMP> mmc dev 0
+switch to partitions #0, OK
+mmc0(part 0) is current device
+ZynqMP> mmc dev 0 1
+MMC: no card present
+ZynqMP> 
+ZynqMP> 
+ZynqMP> 
+ZynqMP> mmc info 
+Device: mmc@ff160000
+Manufacturer ID: 70
+OEM: 100
+Name: W5251 
+Bus Speed: 199999998
+Mode: HS200 (200MHz)
+Rd Block Len: 512
+MMC version 5.0
+High Capacity: Yes
+Capacity: 14.3 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 KiB
+HC WP Group Size: 16 MiB
+User Capacity: 14.3 GiB
+Boot Capacity: 4 MiB ENH
+RPMB Capacity: 4 MiB ENH
+ZynqMP> 

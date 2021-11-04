@@ -1,0 +1,97 @@
+NOTICE:  ATF running on XCZU5EV/silicon v4/RTL5.1 at 0xfffea000
+NOTICE:  BL31: v2.2(release):xilinx_rebase_v2.2_2020.1
+NOTICE:  BL31: Built : 09:34:51, Nov  3 2021
+
+
+U-Boot 2020.01 (Nov 03 2021 - 09:35:27 +0000)
+
+Board: Xilinx ZynqMP
+DRAM:  4 GiB
+usb dr_mode not found
+usb dr_mode not found
+PMUFW:	v1.1
+EL Level:	EL2
+Chip ID:	zu5ev
+NAND:  0 MiB
+MMC:   mmc@ff160000: 0, mmc@ff170000: 1
+In:    serial@ff000000
+Out:   serial@ff000000
+Err:   serial@ff000000
+Bootmode: SD_MODE1
+Reset reason:	EXTERNAL
+Net:   No ethernet found.
+Hit any key to stop autoboot:  0
+MMC: no card present
+## Executing script at 20000000
+Wrong image format for "source" command
+SCRIPT FAILED: continuing...
+switch to partitions #0, OK
+mmc0(part 0) is current device
+** Unrecognized filesystem type **
+MMC: no card present
+Warning: SPI speed fallback to 100 kHz
+SF: Detected s25fl512s_256k with page size 256 Bytes, erase size 256 KiB, total 64 MiB
+device 0 offset 0x3e80000, size 0x80000
+SF: 524288 bytes @ 0x3e80000 Read: OK
+## Executing script at 20000000
+Wrong image format for "source" command
+SCRIPT FAILED: continuing...
+
+
+no devices available
+SCRIPT FAILED: continuing...
+starting USB...
+No working controllers found
+USB is stopped. Please issue 'usb start' first.
+starting USB...
+No working controllers found
+USB is stopped. Please issue 'usb start' first.
+scanning bus for devices...
+
+Device 0: unknown device
+starting USB...
+No working controllers found
+No ethernet found.
+missing environment variable: pxeuuid
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/00000000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/0000000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/000000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/00000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/0000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/000
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/00
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/0
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/default-arm-zynqmp-zynqmp
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/default-arm-zynqmp
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/default-arm
+No ethernet found.
+missing environment variable: bootfile
+Retrieving file: pxelinux.cfg/default
+No ethernet found.
+Config file not found
+starting USB...
+No working controllers found
+No ethernet found.
+No ethernet found.
+ZynqMP>
