@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date                      : Wed Nov  3 18:25:49 2021
+| Date                      : Thu Nov  4 11:27:10 2021
 | Host                      : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -502,7 +502,7 @@ Table of Contents
 | J17        | GPIO1_GPIO1[37]       |                  | PS_MIO37_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
 | J18        |                       |                  | GND                                | GND           |             |         |            |                         |      |                   |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | J19        | GPIO1_GPIO1[41]       |                  | PS_MIO41_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
-| J20        | GPIO1_GPIO1[44]       |                  | PS_MIO44_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
+| J20        | SD1_SDIO1_WP          |                  | PS_MIO44_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
 | J21        | SD1_SDIO1_DATA_OUT[2] |                  | PS_MIO48_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
 | J22        | DDR4_DQ44             |                  | PS_DDR_DQ44_504                    | PSS IO        | DDR4        |         |            |                      34 |      |            40 Ohm |                      |           |            |           |          |      |                  |              |                   |              |
 | J23        |                       |                  | GND                                | GND           |             |         |            |                         |      |                   |                      |       0.0 |            |           |          |      |                  |              |                   |              |
