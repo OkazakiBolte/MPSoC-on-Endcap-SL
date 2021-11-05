@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Thu Nov  4 15:13:43 2021
+--Date        : Fri Nov  5 16:19:11 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -13,10 +13,26 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1 is
   port (
+    ETH_CLK10 : out STD_LOGIC;
+    ETH_CLK125 : out STD_LOGIC;
+    ETH_CLK125_90 : out STD_LOGIC;
+    ETH_CLK25 : out STD_LOGIC;
+    ETH_resetn : out STD_LOGIC;
+    GMII_col : in STD_LOGIC;
+    GMII_crs : in STD_LOGIC;
+    GMII_rx_clk : in STD_LOGIC;
+    GMII_rx_dv : in STD_LOGIC;
+    GMII_rx_er : in STD_LOGIC;
+    GMII_rxd : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    GMII_speed_mode : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    GMII_tx_clk : in STD_LOGIC;
+    GMII_tx_en : out STD_LOGIC;
+    GMII_tx_er : out STD_LOGIC;
+    GMII_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
     LED_N_tri_o : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=6,da_bram_cntlr_cnt=4,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=6,da_bram_cntlr_cnt=4,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -64,9 +80,25 @@ architecture STRUCTURE of design_1 is
     maxigp2_rready : out STD_LOGIC;
     maxigp2_awqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
     maxigp2_arqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    emio_enet1_gmii_rx_clk : in STD_LOGIC;
+    emio_enet1_speed_mode : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    emio_enet1_gmii_crs : in STD_LOGIC;
+    emio_enet1_gmii_col : in STD_LOGIC;
+    emio_enet1_gmii_rxd : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    emio_enet1_gmii_rx_er : in STD_LOGIC;
+    emio_enet1_gmii_rx_dv : in STD_LOGIC;
+    emio_enet1_gmii_tx_clk : in STD_LOGIC;
+    emio_enet1_gmii_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    emio_enet1_gmii_tx_en : out STD_LOGIC;
+    emio_enet1_gmii_tx_er : out STD_LOGIC;
+    emio_enet1_tsu_inc_ctrl : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    emio_enet1_tsu_timer_cmp_val : out STD_LOGIC;
     emio_enet0_enet_tsu_timer_cnt : out STD_LOGIC_VECTOR ( 93 downto 0 );
+    emio_enet1_ext_int_in : in STD_LOGIC;
+    emio_enet1_dma_bus_width : out STD_LOGIC_VECTOR ( 1 downto 0 );
     pl_resetn0 : out STD_LOGIC;
-    pl_clk0 : out STD_LOGIC
+    pl_clk0 : out STD_LOGIC;
+    pl_clk1 : out STD_LOGIC
   );
   end component design_1_zynq_ultra_ps_e_1;
   component design_1_axi_bram_ctrl_0_1 is
@@ -277,6 +309,17 @@ architecture STRUCTURE of design_1 is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_rst_ps8_99M_1;
+  component design_1_clk_wiz_0_0 is
+  port (
+    resetn : in STD_LOGIC;
+    clk_in1 : in STD_LOGIC;
+    clk_out1 : out STD_LOGIC;
+    clk_out2 : out STD_LOGIC;
+    clk_out3 : out STD_LOGIC;
+    clk_out4 : out STD_LOGIC;
+    locked : out STD_LOGIC
+  );
+  end component design_1_clk_wiz_0_0;
   signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -339,8 +382,24 @@ architecture STRUCTURE of design_1 is
   signal axi_smc_M01_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M01_AXI_WVALID : STD_LOGIC;
+  signal clk_wiz_0_clk_out1 : STD_LOGIC;
+  signal clk_wiz_0_clk_out2 : STD_LOGIC;
+  signal clk_wiz_0_clk_out3 : STD_LOGIC;
+  signal clk_wiz_0_clk_out4 : STD_LOGIC;
+  signal clk_wiz_0_locked : STD_LOGIC;
   signal led_GPIO_TRI_O : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal rst_ps8_99M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal zynq_ultra_ps_e_GMII_ENET1_COL : STD_LOGIC;
+  signal zynq_ultra_ps_e_GMII_ENET1_CRS : STD_LOGIC;
+  signal zynq_ultra_ps_e_GMII_ENET1_RXD : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal zynq_ultra_ps_e_GMII_ENET1_RX_CLK : STD_LOGIC;
+  signal zynq_ultra_ps_e_GMII_ENET1_RX_DV : STD_LOGIC;
+  signal zynq_ultra_ps_e_GMII_ENET1_RX_ER : STD_LOGIC;
+  signal zynq_ultra_ps_e_GMII_ENET1_SPEED_MODE : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal zynq_ultra_ps_e_GMII_ENET1_TXD : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal zynq_ultra_ps_e_GMII_ENET1_TX_CLK : STD_LOGIC;
+  signal zynq_ultra_ps_e_GMII_ENET1_TX_EN : STD_LOGIC;
+  signal zynq_ultra_ps_e_GMII_ENET1_TX_ER : STD_LOGIC;
   signal zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARADDR : STD_LOGIC_VECTOR ( 39 downto 0 );
   signal zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -381,6 +440,7 @@ architecture STRUCTURE of design_1 is
   signal zynq_ultra_ps_e_M_AXI_HPM0_LPD_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal zynq_ultra_ps_e_M_AXI_HPM0_LPD_WVALID : STD_LOGIC;
   signal zynq_ultra_ps_e_pl_clk0 : STD_LOGIC;
+  signal zynq_ultra_ps_e_pl_clk1 : STD_LOGIC;
   signal zynq_ultra_ps_e_pl_resetn0 : STD_LOGIC;
   signal NLW_axi_smc_M00_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axi_smc_M00_AXI_aruser_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -394,11 +454,51 @@ architecture STRUCTURE of design_1 is
   signal NLW_rst_ps8_99M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps8_99M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps8_99M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_zynq_ultra_ps_e_emio_enet1_tsu_timer_cmp_val_UNCONNECTED : STD_LOGIC;
   signal NLW_zynq_ultra_ps_e_emio_enet0_enet_tsu_timer_cnt_UNCONNECTED : STD_LOGIC_VECTOR ( 93 downto 0 );
+  signal NLW_zynq_ultra_ps_e_emio_enet1_dma_bus_width_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of ETH_CLK10 : signal is "xilinx.com:signal:clock:1.0 CLK.ETH_CLK10 CLK";
+  attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of ETH_CLK10 : signal is "XIL_INTERFACENAME CLK.ETH_CLK10, CLK_DOMAIN design_1_clk_wiz_0_0_clk_out1, FREQ_HZ 9999900, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_INFO of ETH_CLK125 : signal is "xilinx.com:signal:clock:1.0 CLK.ETH_CLK125 CLK";
+  attribute X_INTERFACE_PARAMETER of ETH_CLK125 : signal is "XIL_INTERFACENAME CLK.ETH_CLK125, CLK_DOMAIN design_1_clk_wiz_0_0_clk_out1, FREQ_HZ 124998750, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_INFO of ETH_CLK125_90 : signal is "xilinx.com:signal:clock:1.0 CLK.ETH_CLK125_90 CLK";
+  attribute X_INTERFACE_PARAMETER of ETH_CLK125_90 : signal is "XIL_INTERFACENAME CLK.ETH_CLK125_90, CLK_DOMAIN design_1_clk_wiz_0_0_clk_out1, FREQ_HZ 124998750, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_INFO of ETH_CLK25 : signal is "xilinx.com:signal:clock:1.0 CLK.ETH_CLK25 CLK";
+  attribute X_INTERFACE_PARAMETER of ETH_CLK25 : signal is "XIL_INTERFACENAME CLK.ETH_CLK25, CLK_DOMAIN design_1_clk_wiz_0_0_clk_out1, FREQ_HZ 24999750, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_INFO of ETH_resetn : signal is "xilinx.com:signal:reset:1.0 RST.ETH_RESETN RST";
+  attribute X_INTERFACE_PARAMETER of ETH_resetn : signal is "XIL_INTERFACENAME RST.ETH_RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of GMII_col : signal is "xilinx.com:interface:gmii:1.0 GMII COL";
+  attribute X_INTERFACE_INFO of GMII_crs : signal is "xilinx.com:interface:gmii:1.0 GMII CRS";
+  attribute X_INTERFACE_INFO of GMII_rx_clk : signal is "xilinx.com:interface:gmii:1.0 GMII RX_CLK";
+  attribute X_INTERFACE_INFO of GMII_rx_dv : signal is "xilinx.com:interface:gmii:1.0 GMII RX_DV";
+  attribute X_INTERFACE_INFO of GMII_rx_er : signal is "xilinx.com:interface:gmii:1.0 GMII RX_ER";
+  attribute X_INTERFACE_INFO of GMII_tx_clk : signal is "xilinx.com:interface:gmii:1.0 GMII TX_CLK";
+  attribute X_INTERFACE_INFO of GMII_tx_en : signal is "xilinx.com:interface:gmii:1.0 GMII TX_EN";
+  attribute X_INTERFACE_INFO of GMII_tx_er : signal is "xilinx.com:interface:gmii:1.0 GMII TX_ER";
+  attribute X_INTERFACE_INFO of GMII_rxd : signal is "xilinx.com:interface:gmii:1.0 GMII RXD";
+  attribute X_INTERFACE_INFO of GMII_speed_mode : signal is "xilinx.com:interface:gmii:1.0 GMII SPEED_MODE";
+  attribute X_INTERFACE_INFO of GMII_txd : signal is "xilinx.com:interface:gmii:1.0 GMII TXD";
   attribute X_INTERFACE_INFO of LED_N_tri_o : signal is "xilinx.com:interface:gpio:1.0 LED_N TRI_O";
 begin
+  ETH_CLK10 <= clk_wiz_0_clk_out4;
+  ETH_CLK125 <= clk_wiz_0_clk_out1;
+  ETH_CLK125_90 <= clk_wiz_0_clk_out2;
+  ETH_CLK25 <= clk_wiz_0_clk_out3;
+  ETH_resetn <= clk_wiz_0_locked;
+  GMII_speed_mode(2 downto 0) <= zynq_ultra_ps_e_GMII_ENET1_SPEED_MODE(2 downto 0);
+  GMII_tx_en <= zynq_ultra_ps_e_GMII_ENET1_TX_EN;
+  GMII_tx_er <= zynq_ultra_ps_e_GMII_ENET1_TX_ER;
+  GMII_txd(7 downto 0) <= zynq_ultra_ps_e_GMII_ENET1_TXD(7 downto 0);
   LED_N_tri_o(2 downto 0) <= led_GPIO_TRI_O(2 downto 0);
+  zynq_ultra_ps_e_GMII_ENET1_COL <= GMII_col;
+  zynq_ultra_ps_e_GMII_ENET1_CRS <= GMII_crs;
+  zynq_ultra_ps_e_GMII_ENET1_RXD(7 downto 0) <= GMII_rxd(7 downto 0);
+  zynq_ultra_ps_e_GMII_ENET1_RX_CLK <= GMII_rx_clk;
+  zynq_ultra_ps_e_GMII_ENET1_RX_DV <= GMII_rx_dv;
+  zynq_ultra_ps_e_GMII_ENET1_RX_ER <= GMII_rx_er;
+  zynq_ultra_ps_e_GMII_ENET1_TX_CLK <= GMII_tx_clk;
 axi_bram_ctrl_0: component design_1_axi_bram_ctrl_0_1
      port map (
       bram_addr_a(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(12 downto 0),
@@ -568,6 +668,16 @@ blk_mem_gen_0: component design_1_blk_mem_gen_0_1
       wea(3 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_WE(3 downto 0),
       web(3 downto 0) => axi_bram_ctrl_0_BRAM_PORTB_WE(3 downto 0)
     );
+clk_wiz_0: component design_1_clk_wiz_0_0
+     port map (
+      clk_in1 => zynq_ultra_ps_e_pl_clk1,
+      clk_out1 => clk_wiz_0_clk_out1,
+      clk_out2 => clk_wiz_0_clk_out2,
+      clk_out3 => clk_wiz_0_clk_out3,
+      clk_out4 => clk_wiz_0_clk_out4,
+      locked => clk_wiz_0_locked,
+      resetn => zynq_ultra_ps_e_pl_resetn0
+    );
 led: component design_1_led_1
      port map (
       gpio_io_o(2 downto 0) => led_GPIO_TRI_O(2 downto 0),
@@ -607,6 +717,21 @@ rst_ps8_99M: component design_1_rst_ps8_99M_1
 zynq_ultra_ps_e: component design_1_zynq_ultra_ps_e_1
      port map (
       emio_enet0_enet_tsu_timer_cnt(93 downto 0) => NLW_zynq_ultra_ps_e_emio_enet0_enet_tsu_timer_cnt_UNCONNECTED(93 downto 0),
+      emio_enet1_dma_bus_width(1 downto 0) => NLW_zynq_ultra_ps_e_emio_enet1_dma_bus_width_UNCONNECTED(1 downto 0),
+      emio_enet1_ext_int_in => '0',
+      emio_enet1_gmii_col => zynq_ultra_ps_e_GMII_ENET1_COL,
+      emio_enet1_gmii_crs => zynq_ultra_ps_e_GMII_ENET1_CRS,
+      emio_enet1_gmii_rx_clk => zynq_ultra_ps_e_GMII_ENET1_RX_CLK,
+      emio_enet1_gmii_rx_dv => zynq_ultra_ps_e_GMII_ENET1_RX_DV,
+      emio_enet1_gmii_rx_er => zynq_ultra_ps_e_GMII_ENET1_RX_ER,
+      emio_enet1_gmii_rxd(7 downto 0) => zynq_ultra_ps_e_GMII_ENET1_RXD(7 downto 0),
+      emio_enet1_gmii_tx_clk => zynq_ultra_ps_e_GMII_ENET1_TX_CLK,
+      emio_enet1_gmii_tx_en => zynq_ultra_ps_e_GMII_ENET1_TX_EN,
+      emio_enet1_gmii_tx_er => zynq_ultra_ps_e_GMII_ENET1_TX_ER,
+      emio_enet1_gmii_txd(7 downto 0) => zynq_ultra_ps_e_GMII_ENET1_TXD(7 downto 0),
+      emio_enet1_speed_mode(2 downto 0) => zynq_ultra_ps_e_GMII_ENET1_SPEED_MODE(2 downto 0),
+      emio_enet1_tsu_inc_ctrl(1 downto 0) => B"00",
+      emio_enet1_tsu_timer_cmp_val => NLW_zynq_ultra_ps_e_emio_enet1_tsu_timer_cmp_val_UNCONNECTED,
       maxigp2_araddr(39 downto 0) => zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARADDR(39 downto 0),
       maxigp2_arburst(1 downto 0) => zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARBURST(1 downto 0),
       maxigp2_arcache(3 downto 0) => zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARCACHE(3 downto 0),
@@ -648,6 +773,7 @@ zynq_ultra_ps_e: component design_1_zynq_ultra_ps_e_1
       maxigp2_wvalid => zynq_ultra_ps_e_M_AXI_HPM0_LPD_WVALID,
       maxihpm0_lpd_aclk => zynq_ultra_ps_e_pl_clk0,
       pl_clk0 => zynq_ultra_ps_e_pl_clk0,
+      pl_clk1 => zynq_ultra_ps_e_pl_clk1,
       pl_resetn0 => zynq_ultra_ps_e_pl_resetn0
     );
 end STRUCTURE;
