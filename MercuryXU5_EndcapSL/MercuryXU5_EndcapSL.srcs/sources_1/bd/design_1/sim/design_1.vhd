@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Fri Nov  5 16:19:11 2021
+--Date        : Fri Nov  5 16:53:08 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -29,7 +29,11 @@ entity design_1 is
     GMII_tx_en : out STD_LOGIC;
     GMII_tx_er : out STD_LOGIC;
     GMII_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    LED_N_tri_o : out STD_LOGIC_VECTOR ( 2 downto 0 )
+    LED_N_tri_o : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    MDIO_mdc : out STD_LOGIC;
+    MDIO_mdio_i : in STD_LOGIC;
+    MDIO_mdio_o : out STD_LOGIC;
+    MDIO_mdio_t : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
   attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=6,da_bram_cntlr_cnt=4,synth_mode=OOC_per_IP}";
@@ -91,6 +95,10 @@ architecture STRUCTURE of design_1 is
     emio_enet1_gmii_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
     emio_enet1_gmii_tx_en : out STD_LOGIC;
     emio_enet1_gmii_tx_er : out STD_LOGIC;
+    emio_enet1_mdio_mdc : out STD_LOGIC;
+    emio_enet1_mdio_i : in STD_LOGIC;
+    emio_enet1_mdio_o : out STD_LOGIC;
+    emio_enet1_mdio_t : out STD_LOGIC;
     emio_enet1_tsu_inc_ctrl : in STD_LOGIC_VECTOR ( 1 downto 0 );
     emio_enet1_tsu_timer_cmp_val : out STD_LOGIC;
     emio_enet0_enet_tsu_timer_cnt : out STD_LOGIC_VECTOR ( 93 downto 0 );
@@ -400,6 +408,10 @@ architecture STRUCTURE of design_1 is
   signal zynq_ultra_ps_e_GMII_ENET1_TX_CLK : STD_LOGIC;
   signal zynq_ultra_ps_e_GMII_ENET1_TX_EN : STD_LOGIC;
   signal zynq_ultra_ps_e_GMII_ENET1_TX_ER : STD_LOGIC;
+  signal zynq_ultra_ps_e_MDIO_ENET1_MDC : STD_LOGIC;
+  signal zynq_ultra_ps_e_MDIO_ENET1_MDIO_I : STD_LOGIC;
+  signal zynq_ultra_ps_e_MDIO_ENET1_MDIO_O : STD_LOGIC;
+  signal zynq_ultra_ps_e_MDIO_ENET1_MDIO_T : STD_LOGIC;
   signal zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARADDR : STD_LOGIC_VECTOR ( 39 downto 0 );
   signal zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -477,6 +489,11 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of GMII_tx_clk : signal is "xilinx.com:interface:gmii:1.0 GMII TX_CLK";
   attribute X_INTERFACE_INFO of GMII_tx_en : signal is "xilinx.com:interface:gmii:1.0 GMII TX_EN";
   attribute X_INTERFACE_INFO of GMII_tx_er : signal is "xilinx.com:interface:gmii:1.0 GMII TX_ER";
+  attribute X_INTERFACE_INFO of MDIO_mdc : signal is "xilinx.com:interface:mdio:1.0 MDIO MDC";
+  attribute X_INTERFACE_PARAMETER of MDIO_mdc : signal is "XIL_INTERFACENAME MDIO, CAN_DEBUG false";
+  attribute X_INTERFACE_INFO of MDIO_mdio_i : signal is "xilinx.com:interface:mdio:1.0 MDIO MDIO_I";
+  attribute X_INTERFACE_INFO of MDIO_mdio_o : signal is "xilinx.com:interface:mdio:1.0 MDIO MDIO_O";
+  attribute X_INTERFACE_INFO of MDIO_mdio_t : signal is "xilinx.com:interface:mdio:1.0 MDIO MDIO_T";
   attribute X_INTERFACE_INFO of GMII_rxd : signal is "xilinx.com:interface:gmii:1.0 GMII RXD";
   attribute X_INTERFACE_INFO of GMII_speed_mode : signal is "xilinx.com:interface:gmii:1.0 GMII SPEED_MODE";
   attribute X_INTERFACE_INFO of GMII_txd : signal is "xilinx.com:interface:gmii:1.0 GMII TXD";
@@ -492,6 +509,9 @@ begin
   GMII_tx_er <= zynq_ultra_ps_e_GMII_ENET1_TX_ER;
   GMII_txd(7 downto 0) <= zynq_ultra_ps_e_GMII_ENET1_TXD(7 downto 0);
   LED_N_tri_o(2 downto 0) <= led_GPIO_TRI_O(2 downto 0);
+  MDIO_mdc <= zynq_ultra_ps_e_MDIO_ENET1_MDC;
+  MDIO_mdio_o <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_O;
+  MDIO_mdio_t <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_T;
   zynq_ultra_ps_e_GMII_ENET1_COL <= GMII_col;
   zynq_ultra_ps_e_GMII_ENET1_CRS <= GMII_crs;
   zynq_ultra_ps_e_GMII_ENET1_RXD(7 downto 0) <= GMII_rxd(7 downto 0);
@@ -499,6 +519,7 @@ begin
   zynq_ultra_ps_e_GMII_ENET1_RX_DV <= GMII_rx_dv;
   zynq_ultra_ps_e_GMII_ENET1_RX_ER <= GMII_rx_er;
   zynq_ultra_ps_e_GMII_ENET1_TX_CLK <= GMII_tx_clk;
+  zynq_ultra_ps_e_MDIO_ENET1_MDIO_I <= MDIO_mdio_i;
 axi_bram_ctrl_0: component design_1_axi_bram_ctrl_0_1
      port map (
       bram_addr_a(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(12 downto 0),
@@ -729,6 +750,10 @@ zynq_ultra_ps_e: component design_1_zynq_ultra_ps_e_1
       emio_enet1_gmii_tx_en => zynq_ultra_ps_e_GMII_ENET1_TX_EN,
       emio_enet1_gmii_tx_er => zynq_ultra_ps_e_GMII_ENET1_TX_ER,
       emio_enet1_gmii_txd(7 downto 0) => zynq_ultra_ps_e_GMII_ENET1_TXD(7 downto 0),
+      emio_enet1_mdio_i => zynq_ultra_ps_e_MDIO_ENET1_MDIO_I,
+      emio_enet1_mdio_mdc => zynq_ultra_ps_e_MDIO_ENET1_MDC,
+      emio_enet1_mdio_o => zynq_ultra_ps_e_MDIO_ENET1_MDIO_O,
+      emio_enet1_mdio_t => zynq_ultra_ps_e_MDIO_ENET1_MDIO_T,
       emio_enet1_speed_mode(2 downto 0) => zynq_ultra_ps_e_GMII_ENET1_SPEED_MODE(2 downto 0),
       emio_enet1_tsu_inc_ctrl(1 downto 0) => B"00",
       emio_enet1_tsu_timer_cmp_val => NLW_zynq_ultra_ps_e_emio_enet1_tsu_timer_cmp_val_UNCONNECTED,

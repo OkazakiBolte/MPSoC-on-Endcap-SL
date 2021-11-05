@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xAD83BB2DED1AD8BB",
+      "boundary_crc": "0x1B80601BCB1F5921",
       "device": "xczu5ev-sfvc784-2-i",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -26,6 +26,16 @@
       "GMII": {
         "mode": "Master",
         "vlnv": "xilinx.com:interface:gmii_rtl:1.0"
+      },
+      "MDIO": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:mdio_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
       }
     },
     "ports": {
@@ -1984,7 +1994,10 @@
             "value": "0"
           },
           "PSU__ENET1__GRP_MDIO__ENABLE": {
-            "value": "0"
+            "value": "1"
+          },
+          "PSU__ENET1__GRP_MDIO__IO": {
+            "value": "EMIO"
           },
           "PSU__ENET1__PERIPHERAL__ENABLE": {
             "value": "1"
@@ -3248,10 +3261,10 @@
       }
     },
     "interface_nets": {
-      "axi_bram_ctrl_0_BRAM_PORTA": {
+      "zynq_ultra_ps_e_GMII_ENET1": {
         "interface_ports": [
-          "blk_mem_gen_0/BRAM_PORTA",
-          "axi_bram_ctrl_0/BRAM_PORTA"
+          "GMII",
+          "zynq_ultra_ps_e/GMII_ENET1"
         ]
       },
       "axi_smc_M01_AXI": {
@@ -3278,16 +3291,22 @@
           "axi_bram_ctrl_0/BRAM_PORTB"
         ]
       },
+      "axi_bram_ctrl_0_BRAM_PORTA": {
+        "interface_ports": [
+          "blk_mem_gen_0/BRAM_PORTA",
+          "axi_bram_ctrl_0/BRAM_PORTA"
+        ]
+      },
       "zynq_ultra_ps_e_M_AXI_HPM0_LPD": {
         "interface_ports": [
           "zynq_ultra_ps_e/M_AXI_HPM0_LPD",
           "axi_smc/S00_AXI"
         ]
       },
-      "zynq_ultra_ps_e_GMII_ENET1": {
+      "zynq_ultra_ps_e_MDIO_ENET1": {
         "interface_ports": [
-          "GMII",
-          "zynq_ultra_ps_e/GMII_ENET1"
+          "MDIO",
+          "zynq_ultra_ps_e/MDIO_ENET1"
         ]
       }
     },
