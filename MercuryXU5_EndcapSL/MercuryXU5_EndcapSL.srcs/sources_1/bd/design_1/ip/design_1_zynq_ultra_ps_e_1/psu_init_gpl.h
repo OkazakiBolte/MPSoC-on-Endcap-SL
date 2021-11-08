@@ -903,6 +903,10 @@
 #define CRF_APB_VPLL_TO_LPD_CTRL_DIVISOR0_MASK                 0x00003F00U
 #undef CRL_APB_GEM0_REF_CTRL_OFFSET 
 #define CRL_APB_GEM0_REF_CTRL_OFFSET                                               0XFF5E0050
+#undef CRL_APB_GEM1_REF_CTRL_OFFSET 
+#define CRL_APB_GEM1_REF_CTRL_OFFSET                                               0XFF5E0054
+#undef IOU_SLCR_GEM_CLK_CTRL_OFFSET 
+#define IOU_SLCR_GEM_CLK_CTRL_OFFSET                                               0XFF180308
 #undef CRL_APB_GEM_TSU_REF_CTRL_OFFSET 
 #define CRL_APB_GEM_TSU_REF_CTRL_OFFSET                                            0XFF5E0100
 #undef CRL_APB_USB0_BUS_REF_CTRL_OFFSET 
@@ -939,6 +943,8 @@
 #define CRL_APB_ADMA_REF_CTRL_OFFSET                                               0XFF5E00B8
 #undef CRL_APB_PL0_REF_CTRL_OFFSET 
 #define CRL_APB_PL0_REF_CTRL_OFFSET                                                0XFF5E00C0
+#undef CRL_APB_PL1_REF_CTRL_OFFSET 
+#define CRL_APB_PL1_REF_CTRL_OFFSET                                                0XFF5E00C4
 #undef CRL_APB_AMS_REF_CTRL_OFFSET 
 #define CRL_APB_AMS_REF_CTRL_OFFSET                                                0XFF5E0108
 #undef CRL_APB_DLL_REF_CTRL_OFFSET 
@@ -1023,6 +1029,80 @@
 #define CRL_APB_GEM0_REF_CTRL_SRCSEL_DEFVAL                    0x00002500
 #define CRL_APB_GEM0_REF_CTRL_SRCSEL_SHIFT                     0
 #define CRL_APB_GEM0_REF_CTRL_SRCSEL_MASK                      0x00000007U
+
+/*
+* Clock active for the RX channel
+*/
+#undef CRL_APB_GEM1_REF_CTRL_RX_CLKACT_DEFVAL 
+#undef CRL_APB_GEM1_REF_CTRL_RX_CLKACT_SHIFT 
+#undef CRL_APB_GEM1_REF_CTRL_RX_CLKACT_MASK 
+#define CRL_APB_GEM1_REF_CTRL_RX_CLKACT_DEFVAL                 0x00002500
+#define CRL_APB_GEM1_REF_CTRL_RX_CLKACT_SHIFT                  26
+#define CRL_APB_GEM1_REF_CTRL_RX_CLKACT_MASK                   0x04000000U
+
+/*
+* Clock active signal. Switch to 0 to disable the clock
+*/
+#undef CRL_APB_GEM1_REF_CTRL_CLKACT_DEFVAL 
+#undef CRL_APB_GEM1_REF_CTRL_CLKACT_SHIFT 
+#undef CRL_APB_GEM1_REF_CTRL_CLKACT_MASK 
+#define CRL_APB_GEM1_REF_CTRL_CLKACT_DEFVAL                    0x00002500
+#define CRL_APB_GEM1_REF_CTRL_CLKACT_SHIFT                     25
+#define CRL_APB_GEM1_REF_CTRL_CLKACT_MASK                      0x02000000U
+
+/*
+* 6 bit divider
+*/
+#undef CRL_APB_GEM1_REF_CTRL_DIVISOR1_DEFVAL 
+#undef CRL_APB_GEM1_REF_CTRL_DIVISOR1_SHIFT 
+#undef CRL_APB_GEM1_REF_CTRL_DIVISOR1_MASK 
+#define CRL_APB_GEM1_REF_CTRL_DIVISOR1_DEFVAL                  0x00002500
+#define CRL_APB_GEM1_REF_CTRL_DIVISOR1_SHIFT                   16
+#define CRL_APB_GEM1_REF_CTRL_DIVISOR1_MASK                    0x003F0000U
+
+/*
+* 6 bit divider
+*/
+#undef CRL_APB_GEM1_REF_CTRL_DIVISOR0_DEFVAL 
+#undef CRL_APB_GEM1_REF_CTRL_DIVISOR0_SHIFT 
+#undef CRL_APB_GEM1_REF_CTRL_DIVISOR0_MASK 
+#define CRL_APB_GEM1_REF_CTRL_DIVISOR0_DEFVAL                  0x00002500
+#define CRL_APB_GEM1_REF_CTRL_DIVISOR0_SHIFT                   8
+#define CRL_APB_GEM1_REF_CTRL_DIVISOR0_MASK                    0x00003F00U
+
+/*
+* 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
+    * ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
+    *  usually an issue, but designers must be aware.)
+*/
+#undef CRL_APB_GEM1_REF_CTRL_SRCSEL_DEFVAL 
+#undef CRL_APB_GEM1_REF_CTRL_SRCSEL_SHIFT 
+#undef CRL_APB_GEM1_REF_CTRL_SRCSEL_MASK 
+#define CRL_APB_GEM1_REF_CTRL_SRCSEL_DEFVAL                    0x00002500
+#define CRL_APB_GEM1_REF_CTRL_SRCSEL_SHIFT                     0
+#define CRL_APB_GEM1_REF_CTRL_SRCSEL_MASK                      0x00000007U
+
+/*
+* PLL or PHY source selection for gem1_ref_clk generation 0: PLL Reference
+    *  clock 1: FMIO PLL clock or GTX Clock
+*/
+#undef IOU_SLCR_GEM_CLK_CTRL_GEM1_REF_SRC_SEL_DEFVAL 
+#undef IOU_SLCR_GEM_CLK_CTRL_GEM1_REF_SRC_SEL_SHIFT 
+#undef IOU_SLCR_GEM_CLK_CTRL_GEM1_REF_SRC_SEL_MASK 
+#define IOU_SLCR_GEM_CLK_CTRL_GEM1_REF_SRC_SEL_DEFVAL          0x00000000
+#define IOU_SLCR_GEM_CLK_CTRL_GEM1_REF_SRC_SEL_SHIFT           6
+#define IOU_SLCR_GEM_CLK_CTRL_GEM1_REF_SRC_SEL_MASK            0x00000040U
+
+/*
+* MIO or FMIO source selection for gem1_rx_clk generation 0: MIO clock 1:
+    * FMIO clock
+*/
+#undef IOU_SLCR_GEM_CLK_CTRL_GEM1_RX_SRC_SEL_DEFVAL 
+#undef IOU_SLCR_GEM_CLK_CTRL_GEM1_RX_SRC_SEL_SHIFT 
+#undef IOU_SLCR_GEM_CLK_CTRL_GEM1_RX_SRC_SEL_MASK 
+#define IOU_SLCR_GEM_CLK_CTRL_GEM1_RX_SRC_SEL_DEFVAL           0x00000000
+#define IOU_SLCR_GEM_CLK_CTRL_GEM1_RX_SRC_SEL_SHIFT            5
+#define IOU_SLCR_GEM_CLK_CTRL_GEM1_RX_SRC_SEL_MASK             0x00000020U
 
 /*
 * 6 bit divider
@@ -1691,6 +1771,48 @@
 #define CRL_APB_PL0_REF_CTRL_SRCSEL_DEFVAL                     0x00052000
 #define CRL_APB_PL0_REF_CTRL_SRCSEL_SHIFT                      0
 #define CRL_APB_PL0_REF_CTRL_SRCSEL_MASK                       0x00000007U
+
+/*
+* Clock active signal. Switch to 0 to disable the clock
+*/
+#undef CRL_APB_PL1_REF_CTRL_CLKACT_DEFVAL 
+#undef CRL_APB_PL1_REF_CTRL_CLKACT_SHIFT 
+#undef CRL_APB_PL1_REF_CTRL_CLKACT_MASK 
+#define CRL_APB_PL1_REF_CTRL_CLKACT_DEFVAL                     0x00052000
+#define CRL_APB_PL1_REF_CTRL_CLKACT_SHIFT                      24
+#define CRL_APB_PL1_REF_CTRL_CLKACT_MASK                       0x01000000U
+
+/*
+* 6 bit divider
+*/
+#undef CRL_APB_PL1_REF_CTRL_DIVISOR1_DEFVAL 
+#undef CRL_APB_PL1_REF_CTRL_DIVISOR1_SHIFT 
+#undef CRL_APB_PL1_REF_CTRL_DIVISOR1_MASK 
+#define CRL_APB_PL1_REF_CTRL_DIVISOR1_DEFVAL                   0x00052000
+#define CRL_APB_PL1_REF_CTRL_DIVISOR1_SHIFT                    16
+#define CRL_APB_PL1_REF_CTRL_DIVISOR1_MASK                     0x003F0000U
+
+/*
+* 6 bit divider
+*/
+#undef CRL_APB_PL1_REF_CTRL_DIVISOR0_DEFVAL 
+#undef CRL_APB_PL1_REF_CTRL_DIVISOR0_SHIFT 
+#undef CRL_APB_PL1_REF_CTRL_DIVISOR0_MASK 
+#define CRL_APB_PL1_REF_CTRL_DIVISOR0_DEFVAL                   0x00052000
+#define CRL_APB_PL1_REF_CTRL_DIVISOR0_SHIFT                    8
+#define CRL_APB_PL1_REF_CTRL_DIVISOR0_MASK                     0x00003F00U
+
+/*
+* 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
+    * ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
+    *  usually an issue, but designers must be aware.)
+*/
+#undef CRL_APB_PL1_REF_CTRL_SRCSEL_DEFVAL 
+#undef CRL_APB_PL1_REF_CTRL_SRCSEL_SHIFT 
+#undef CRL_APB_PL1_REF_CTRL_SRCSEL_MASK 
+#define CRL_APB_PL1_REF_CTRL_SRCSEL_DEFVAL                     0x00052000
+#define CRL_APB_PL1_REF_CTRL_SRCSEL_SHIFT                      0
+#define CRL_APB_PL1_REF_CTRL_SRCSEL_MASK                       0x00000007U
 
 /*
 * 6 bit divider
@@ -33254,6 +33376,16 @@
 #define CRL_APB_RST_LPD_IOU0_GEM0_RESET_MASK                   0x00000001U
 
 /*
+* GEM 1 reset
+*/
+#undef CRL_APB_RST_LPD_IOU0_GEM1_RESET_DEFVAL 
+#undef CRL_APB_RST_LPD_IOU0_GEM1_RESET_SHIFT 
+#undef CRL_APB_RST_LPD_IOU0_GEM1_RESET_MASK 
+#define CRL_APB_RST_LPD_IOU0_GEM1_RESET_DEFVAL                 0x0000000F
+#define CRL_APB_RST_LPD_IOU0_GEM1_RESET_SHIFT                  1
+#define CRL_APB_RST_LPD_IOU0_GEM1_RESET_MASK                   0x00000002U
+
+/*
 * Block level reset
 */
 #undef CRL_APB_RST_LPD_IOU2_QSPI_RESET_DEFVAL 
@@ -35261,6 +35393,8 @@
 #define CRL_APB_RST_LPD_TOP_OFFSET                                                 0XFF5E023C
 #undef CRL_APB_RST_LPD_IOU0_OFFSET 
 #define CRL_APB_RST_LPD_IOU0_OFFSET                                                0XFF5E0230
+#undef CRL_APB_RST_LPD_IOU0_OFFSET 
+#define CRL_APB_RST_LPD_IOU0_OFFSET                                                0XFF5E0230
 #undef USB3_0_XHCI_GUSB2PHYCFG_OFFSET 
 #define USB3_0_XHCI_GUSB2PHYCFG_OFFSET                                             0XFE20C200
 #undef USB3_0_XHCI_GFLADJ_OFFSET 
@@ -35391,6 +35525,16 @@
 #define CRL_APB_RST_LPD_IOU0_GEM0_RESET_DEFVAL                 0x0000000F
 #define CRL_APB_RST_LPD_IOU0_GEM0_RESET_SHIFT                  0
 #define CRL_APB_RST_LPD_IOU0_GEM0_RESET_MASK                   0x00000001U
+
+/*
+* GEM 1 reset
+*/
+#undef CRL_APB_RST_LPD_IOU0_GEM1_RESET_DEFVAL 
+#undef CRL_APB_RST_LPD_IOU0_GEM1_RESET_SHIFT 
+#undef CRL_APB_RST_LPD_IOU0_GEM1_RESET_MASK 
+#define CRL_APB_RST_LPD_IOU0_GEM1_RESET_DEFVAL                 0x0000000F
+#define CRL_APB_RST_LPD_IOU0_GEM1_RESET_SHIFT                  1
+#define CRL_APB_RST_LPD_IOU0_GEM1_RESET_MASK                   0x00000002U
 
 /*
 * USB 2.0 Turnaround Time (USBTrdTim) Sets the turnaround time in PHY cloc
@@ -35910,6 +36054,8 @@
 #define CRL_APB_RST_LPD_TOP_OFFSET                                                 0XFF5E023C
 #undef CRL_APB_RST_LPD_IOU0_OFFSET 
 #define CRL_APB_RST_LPD_IOU0_OFFSET                                                0XFF5E0230
+#undef CRL_APB_RST_LPD_IOU0_OFFSET 
+#define CRL_APB_RST_LPD_IOU0_OFFSET                                                0XFF5E0230
 
 /*
 * USB 0 reset for control registers
@@ -35980,6 +36126,16 @@
 #define CRL_APB_RST_LPD_IOU0_GEM0_RESET_DEFVAL                 0x0000000F
 #define CRL_APB_RST_LPD_IOU0_GEM0_RESET_SHIFT                  0
 #define CRL_APB_RST_LPD_IOU0_GEM0_RESET_MASK                   0x00000001U
+
+/*
+* GEM 1 reset
+*/
+#undef CRL_APB_RST_LPD_IOU0_GEM1_RESET_DEFVAL 
+#undef CRL_APB_RST_LPD_IOU0_GEM1_RESET_SHIFT 
+#undef CRL_APB_RST_LPD_IOU0_GEM1_RESET_MASK 
+#define CRL_APB_RST_LPD_IOU0_GEM1_RESET_DEFVAL                 0x0000000F
+#define CRL_APB_RST_LPD_IOU0_GEM1_RESET_SHIFT                  1
+#define CRL_APB_RST_LPD_IOU0_GEM1_RESET_MASK                   0x00000002U
 #undef PMU_GLOBAL_REQ_PWRUP_INT_EN_OFFSET 
 #define PMU_GLOBAL_REQ_PWRUP_INT_EN_OFFSET                                         0XFFD80118
 #undef PMU_GLOBAL_REQ_PWRUP_TRIG_OFFSET 

@@ -95,9 +95,29 @@ ENTITY design_1_zynq_ultra_ps_e_1 IS
     maxigp2_rready : OUT STD_LOGIC;
     maxigp2_awqos : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     maxigp2_arqos : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    emio_enet1_gmii_rx_clk : IN STD_LOGIC;
+    emio_enet1_speed_mode : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+    emio_enet1_gmii_crs : IN STD_LOGIC;
+    emio_enet1_gmii_col : IN STD_LOGIC;
+    emio_enet1_gmii_rxd : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    emio_enet1_gmii_rx_er : IN STD_LOGIC;
+    emio_enet1_gmii_rx_dv : IN STD_LOGIC;
+    emio_enet1_gmii_tx_clk : IN STD_LOGIC;
+    emio_enet1_gmii_txd : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    emio_enet1_gmii_tx_en : OUT STD_LOGIC;
+    emio_enet1_gmii_tx_er : OUT STD_LOGIC;
+    emio_enet1_mdio_mdc : OUT STD_LOGIC;
+    emio_enet1_mdio_i : IN STD_LOGIC;
+    emio_enet1_mdio_o : OUT STD_LOGIC;
+    emio_enet1_mdio_t : OUT STD_LOGIC;
+    emio_enet1_tsu_inc_ctrl : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+    emio_enet1_tsu_timer_cmp_val : OUT STD_LOGIC;
     emio_enet0_enet_tsu_timer_cnt : OUT STD_LOGIC_VECTOR(93 DOWNTO 0);
+    emio_enet1_ext_int_in : IN STD_LOGIC;
+    emio_enet1_dma_bus_width : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     pl_resetn0 : OUT STD_LOGIC;
-    pl_clk0 : OUT STD_LOGIC
+    pl_clk0 : OUT STD_LOGIC;
+    pl_clk1 : OUT STD_LOGIC
   );
 END design_1_zynq_ultra_ps_e_1;
 
@@ -1640,14 +1660,32 @@ ARCHITECTURE design_1_zynq_ultra_ps_e_1_arch OF design_1_zynq_ultra_ps_e_1 IS
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_zynq_ultra_ps_e_1_arch : ARCHITECTURE IS "design_1_zynq_ultra_ps_e_1,zynq_ultra_ps_e_v3_3_2_zynq_ultra_ps_e,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
   ATTRIBUTE CORE_GENERATION_INFO OF design_1_zynq_ultra_ps_e_1_arch: ARCHITECTURE IS "design_1_zynq_ultra_ps_e_1,zynq_ultra_ps_e_v3_3_2_zynq_ultra_ps_e,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=zynq_ultra_ps_e,x_ipVersion=3.3,x_ipCoreRevision=2,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_DP_USE_AUDIO=0,C_DP_USE_VIDEO=0,C_MAXIGP0_DATA_WIDTH=128,C_MAXIGP1_DATA_WIDTH=128,C_MAXIGP2_DATA_WIDTH=32,C_SAXIGP0_DATA_WIDTH=128,C_SAXIGP1_DATA_WIDTH=128,C_SAXIGP2_DATA_WIDTH=128,C_SAXIGP3_DATA_WIDTH=128,C_SAXIGP4_DATA_WIDTH=128,C_SAXIGP5_DATA_WIDTH=128,C_SAXIGP6_DA" & 
-"TA_WIDTH=128,C_USE_DIFF_RW_CLK_GP0=0,C_USE_DIFF_RW_CLK_GP1=0,C_USE_DIFF_RW_CLK_GP2=0,C_USE_DIFF_RW_CLK_GP3=0,C_USE_DIFF_RW_CLK_GP4=0,C_USE_DIFF_RW_CLK_GP5=0,C_USE_DIFF_RW_CLK_GP6=0,C_EN_FIFO_ENET0=0,C_EN_FIFO_ENET1=0,C_EN_FIFO_ENET2=0,C_EN_FIFO_ENET3=0,C_PL_CLK0_BUF=TRUE,C_PL_CLK1_BUF=FALSE,C_PL_CLK2_BUF=FALSE,C_PL_CLK3_BUF=FALSE,C_TRACE_PIPELINE_WIDTH=8,C_EN_EMIO_TRACE=0,C_TRACE_DATA_WIDTH=32,C_USE_DEBUG_TEST=0,C_SD0_INTERNAL_BUS_WIDTH=8,C_SD1_INTERNAL_BUS_WIDTH=4,C_NUM_F2P_0_INTR_INPUTS=1,C_NU" & 
-"M_F2P_1_INTR_INPUTS=1,C_EMIO_GPIO_WIDTH=1,C_NUM_FABRIC_RESETS=1}";
+"TA_WIDTH=128,C_USE_DIFF_RW_CLK_GP0=0,C_USE_DIFF_RW_CLK_GP1=0,C_USE_DIFF_RW_CLK_GP2=0,C_USE_DIFF_RW_CLK_GP3=0,C_USE_DIFF_RW_CLK_GP4=0,C_USE_DIFF_RW_CLK_GP5=0,C_USE_DIFF_RW_CLK_GP6=0,C_EN_FIFO_ENET0=0,C_EN_FIFO_ENET1=0,C_EN_FIFO_ENET2=0,C_EN_FIFO_ENET3=0,C_PL_CLK0_BUF=TRUE,C_PL_CLK1_BUF=TRUE,C_PL_CLK2_BUF=FALSE,C_PL_CLK3_BUF=FALSE,C_TRACE_PIPELINE_WIDTH=8,C_EN_EMIO_TRACE=0,C_TRACE_DATA_WIDTH=32,C_USE_DEBUG_TEST=0,C_SD0_INTERNAL_BUS_WIDTH=8,C_SD1_INTERNAL_BUS_WIDTH=4,C_NUM_F2P_0_INTR_INPUTS=1,C_NUM" & 
+"_F2P_1_INTR_INPUTS=1,C_EMIO_GPIO_WIDTH=1,C_NUM_FABRIC_RESETS=1}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER OF pl_clk1: SIGNAL IS "XIL_INTERFACENAME PL_CLK1, FREQ_HZ 49999500, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF pl_clk1: SIGNAL IS "xilinx.com:signal:clock:1.0 PL_CLK1 CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF pl_clk0: SIGNAL IS "XIL_INTERFACENAME PL_CLK0, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF pl_clk0: SIGNAL IS "xilinx.com:signal:clock:1.0 PL_CLK0 CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF pl_resetn0: SIGNAL IS "XIL_INTERFACENAME PL_RESETN0, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF pl_resetn0: SIGNAL IS "xilinx.com:signal:reset:1.0 PL_RESETN0 RST";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_mdio_t: SIGNAL IS "xilinx.com:interface:mdio:1.0 MDIO_ENET1 MDIO_T";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_mdio_o: SIGNAL IS "xilinx.com:interface:mdio:1.0 MDIO_ENET1 MDIO_O";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_mdio_i: SIGNAL IS "xilinx.com:interface:mdio:1.0 MDIO_ENET1 MDIO_I";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF emio_enet1_mdio_mdc: SIGNAL IS "XIL_INTERFACENAME MDIO_ENET1, CAN_DEBUG false";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_mdio_mdc: SIGNAL IS "xilinx.com:interface:mdio:1.0 MDIO_ENET1 MDC";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_tx_er: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 TX_ER";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_tx_en: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 TX_EN";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_txd: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 TXD";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_tx_clk: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 TX_CLK";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_rx_dv: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 RX_DV";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_rx_er: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 RX_ER";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_rxd: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 RXD";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_col: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 COL";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_crs: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 CRS";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_speed_mode: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 SPEED_MODE";
+  ATTRIBUTE X_INTERFACE_INFO OF emio_enet1_gmii_rx_clk: SIGNAL IS "xilinx.com:interface:gmii:1.0 GMII_ENET1 RX_CLK";
   ATTRIBUTE X_INTERFACE_INFO OF maxigp2_arqos: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_HPM0_LPD ARQOS";
   ATTRIBUTE X_INTERFACE_INFO OF maxigp2_awqos: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_HPM0_LPD AWQOS";
   ATTRIBUTE X_INTERFACE_INFO OF maxigp2_rready: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_HPM0_LPD RREADY";
@@ -1686,7 +1724,7 @@ ARCHITECTURE design_1_zynq_ultra_ps_e_1_arch OF design_1_zynq_ultra_ps_e_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF maxigp2_awsize: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_HPM0_LPD AWSIZE";
   ATTRIBUTE X_INTERFACE_INFO OF maxigp2_awlen: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_HPM0_LPD AWLEN";
   ATTRIBUTE X_INTERFACE_INFO OF maxigp2_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_HPM0_LPD AWADDR";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF maxigp2_awid: SIGNAL IS "XIL_INTERFACENAME M_AXI_HPM0_LPD, NUM_WRITE_OUTSTANDING 8, NUM_READ_OUTSTANDING 8, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 99999001, ID_WIDTH 16, ADDR_WIDTH 40, AWUSER_WIDTH 16, ARUSER_WIDTH 16, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 1, MAX_BURST_LENGTH 256, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk0, NUM_READ_THRE" & 
+  ATTRIBUTE X_INTERFACE_PARAMETER OF maxigp2_awid: SIGNAL IS "XIL_INTERFACENAME M_AXI_HPM0_LPD, NUM_WRITE_OUTSTANDING 8, NUM_READ_OUTSTANDING 8, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 99999001, ID_WIDTH 16, ADDR_WIDTH 39, AWUSER_WIDTH 16, ARUSER_WIDTH 16, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 1, MAX_BURST_LENGTH 256, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk0, NUM_READ_THRE" & 
 "ADS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF maxigp2_awid: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_HPM0_LPD AWID";
   ATTRIBUTE X_INTERFACE_PARAMETER OF maxihpm0_lpd_aclk: SIGNAL IS "XIL_INTERFACENAME M_AXI_HPM0_LPD_ACLK, ASSOCIATED_BUSIF M_AXI_HPM0_LPD, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk0, INSERT_VIP 0";
@@ -1718,7 +1756,7 @@ BEGIN
       C_EN_FIFO_ENET2 => "0",
       C_EN_FIFO_ENET3 => "0",
       C_PL_CLK0_BUF => "TRUE",
-      C_PL_CLK1_BUF => "FALSE",
+      C_PL_CLK1_BUF => "TRUE",
       C_PL_CLK2_BUF => "FALSE",
       C_PL_CLK3_BUF => "FALSE",
       C_TRACE_PIPELINE_WIDTH => 8,
@@ -2102,14 +2140,21 @@ BEGIN
       emio_enet0_gmii_rx_dv => '0',
       emio_enet0_gmii_tx_clk => '0',
       emio_enet0_mdio_i => '0',
-      emio_enet1_gmii_rx_clk => '0',
-      emio_enet1_gmii_crs => '0',
-      emio_enet1_gmii_col => '0',
-      emio_enet1_gmii_rxd => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 8)),
-      emio_enet1_gmii_rx_er => '0',
-      emio_enet1_gmii_rx_dv => '0',
-      emio_enet1_gmii_tx_clk => '0',
-      emio_enet1_mdio_i => '0',
+      emio_enet1_gmii_rx_clk => emio_enet1_gmii_rx_clk,
+      emio_enet1_speed_mode => emio_enet1_speed_mode,
+      emio_enet1_gmii_crs => emio_enet1_gmii_crs,
+      emio_enet1_gmii_col => emio_enet1_gmii_col,
+      emio_enet1_gmii_rxd => emio_enet1_gmii_rxd,
+      emio_enet1_gmii_rx_er => emio_enet1_gmii_rx_er,
+      emio_enet1_gmii_rx_dv => emio_enet1_gmii_rx_dv,
+      emio_enet1_gmii_tx_clk => emio_enet1_gmii_tx_clk,
+      emio_enet1_gmii_txd => emio_enet1_gmii_txd,
+      emio_enet1_gmii_tx_en => emio_enet1_gmii_tx_en,
+      emio_enet1_gmii_tx_er => emio_enet1_gmii_tx_er,
+      emio_enet1_mdio_mdc => emio_enet1_mdio_mdc,
+      emio_enet1_mdio_i => emio_enet1_mdio_i,
+      emio_enet1_mdio_o => emio_enet1_mdio_o,
+      emio_enet1_mdio_t => emio_enet1_mdio_t,
       emio_enet2_gmii_rx_clk => '0',
       emio_enet2_gmii_crs => '0',
       emio_enet2_gmii_col => '0',
@@ -2171,16 +2216,18 @@ BEGIN
       emio_enet3_dma_tx_status_tog => '0',
       emio_enet3_rx_w_overflow => '0',
       emio_enet0_tsu_inc_ctrl => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
-      emio_enet1_tsu_inc_ctrl => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
+      emio_enet1_tsu_inc_ctrl => emio_enet1_tsu_inc_ctrl,
+      emio_enet1_tsu_timer_cmp_val => emio_enet1_tsu_timer_cmp_val,
       emio_enet2_tsu_inc_ctrl => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       emio_enet3_tsu_inc_ctrl => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       fmio_gem_tsu_clk_from_pl => '0',
       emio_enet_tsu_clk => '0',
       emio_enet0_enet_tsu_timer_cnt => emio_enet0_enet_tsu_timer_cnt,
       emio_enet0_ext_int_in => '0',
-      emio_enet1_ext_int_in => '0',
+      emio_enet1_ext_int_in => emio_enet1_ext_int_in,
       emio_enet2_ext_int_in => '0',
       emio_enet3_ext_int_in => '0',
+      emio_enet1_dma_bus_width => emio_enet1_dma_bus_width,
       emio_gpio_i => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 1)),
       emio_i2c0_scl_i => '0',
       emio_i2c0_sda_i => '0',
@@ -2279,6 +2326,7 @@ BEGIN
       pmu_error_from_pl => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 4)),
       pl_acpinact => '0',
       pl_clk0 => pl_clk0,
+      pl_clk1 => pl_clk1,
       test_adc_clk => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 4)),
       test_adc_in => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
       test_adc2_in => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),

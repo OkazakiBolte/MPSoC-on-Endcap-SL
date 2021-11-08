@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1636006449">
-  <File Type="VDS-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="design_1_wrapper.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="design_1_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="design_1_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="design_1_wrapper.vds"/>
-  <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="design_1_wrapper_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1636374339">
+  <File Type="VDS-TIMINGSUMMARY" Name="MercuryXU5_EndcapSL_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="MercuryXU5_EndcapSL.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="MercuryXU5_EndcapSL_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="MercuryXU5_EndcapSL_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="MercuryXU5_EndcapSL_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="MercuryXU5_EndcapSL.vds"/>
+  <File Type="REPORTS-TCL" Name="MercuryXU5_EndcapSL_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="MercuryXU5_EndcapSL_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="MercuryXU5_EndcapSL.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Mercury_XU5_PE1_Reference_Design/reference_design/src/Enclustra_GMII2RGMII_ZU.edn"/>
+        <Attr Name="ImportTime" Val="1635753257"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -18,19 +26,17 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/MercuryXU5_EndcapSL.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn">
+    <File Path="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Mercury_XU5_PE1_Reference_Design/reference_design/src/Enclustra_GMII2RGMII_ZU.edn"/>
-        <Attr Name="ImportTime" Val="1635753257"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/bd/Mercury_XU5/Mercury_XU5.bd">
@@ -54,14 +60,13 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="design_1_wrapper"/>
+      <Option Name="TopModule" Val="MercuryXU5_EndcapSL"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl">
       <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../Mercury_XU5_PE1_Reference_Design/reference_design/src/Mercury_XU5_rgmii_loc.tcl"/>
         <Attr Name="ImportTime" Val="1635753257"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -101,6 +106,12 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
@@ -126,6 +137,7 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design" PreStepTclHook="$PSRCDIR/utils_1/imports/scripts/settings.tcl"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_blk_mem_gen_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps8_99M_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_1"/>

@@ -1,6 +1,6 @@
 PETALINUX_VER=2020.1
 VALIDATE_HW_CHKSUM=1
-HARDWARE_PATH=/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/design_1_wrapper.xsa
-HARDWARE_CHECKSUM=d597359964baef20be5c53ea4d10a534
+HARDWARE_PATH=/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.xsa
+HARDWARE_CHECKSUM=8d4fab3702e8739439da5c941fe888c8
 YOCTO_SDK=b034efc026f5f7d24a4732927cb62e43
 RFSCONFIG_CHKSUM=0d125657d59d562f26bc89653f7ccdf6

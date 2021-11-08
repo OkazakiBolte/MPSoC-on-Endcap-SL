@@ -120,9 +120,29 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<3> > emio_enet1_speed_mode;
+  sc_core::sc_in< bool > emio_enet1_gmii_crs;
+  sc_core::sc_in< bool > emio_enet1_gmii_col;
+  sc_core::sc_in< sc_dt::sc_bv<8> > emio_enet1_gmii_rxd;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_er;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_dv;
+  sc_core::sc_in< bool > emio_enet1_gmii_tx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<8> > emio_enet1_gmii_txd;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_en;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_er;
+  sc_core::sc_out< bool > emio_enet1_mdio_mdc;
+  sc_core::sc_in< bool > emio_enet1_mdio_i;
+  sc_core::sc_out< bool > emio_enet1_mdio_o;
+  sc_core::sc_out< bool > emio_enet1_mdio_t;
+  sc_core::sc_in< sc_dt::sc_bv<2> > emio_enet1_tsu_inc_ctrl;
+  sc_core::sc_out< bool > emio_enet1_tsu_timer_cmp_val;
   sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
+  sc_core::sc_in< bool > emio_enet1_ext_int_in;
+  sc_core::sc_out< sc_dt::sc_bv<2> > emio_enet1_dma_bus_width;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
+  sc_core::sc_out< bool > pl_clk1;
 
 protected:
 
@@ -189,9 +209,29 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<3> > emio_enet1_speed_mode;
+  sc_core::sc_in< bool > emio_enet1_gmii_crs;
+  sc_core::sc_in< bool > emio_enet1_gmii_col;
+  sc_core::sc_in< sc_dt::sc_bv<8> > emio_enet1_gmii_rxd;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_er;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_dv;
+  sc_core::sc_in< bool > emio_enet1_gmii_tx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<8> > emio_enet1_gmii_txd;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_en;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_er;
+  sc_core::sc_out< bool > emio_enet1_mdio_mdc;
+  sc_core::sc_in< bool > emio_enet1_mdio_i;
+  sc_core::sc_out< bool > emio_enet1_mdio_o;
+  sc_core::sc_out< bool > emio_enet1_mdio_t;
+  sc_core::sc_in< sc_dt::sc_bv<2> > emio_enet1_tsu_inc_ctrl;
+  sc_core::sc_out< bool > emio_enet1_tsu_timer_cmp_val;
   sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
+  sc_core::sc_in< bool > emio_enet1_ext_int_in;
+  sc_core::sc_out< sc_dt::sc_bv<2> > emio_enet1_dma_bus_width;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
+  sc_core::sc_out< bool > pl_clk1;
 
 protected:
 
@@ -258,9 +298,29 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<3> > emio_enet1_speed_mode;
+  sc_core::sc_in< bool > emio_enet1_gmii_crs;
+  sc_core::sc_in< bool > emio_enet1_gmii_col;
+  sc_core::sc_in< sc_dt::sc_bv<8> > emio_enet1_gmii_rxd;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_er;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_dv;
+  sc_core::sc_in< bool > emio_enet1_gmii_tx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<8> > emio_enet1_gmii_txd;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_en;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_er;
+  sc_core::sc_out< bool > emio_enet1_mdio_mdc;
+  sc_core::sc_in< bool > emio_enet1_mdio_i;
+  sc_core::sc_out< bool > emio_enet1_mdio_o;
+  sc_core::sc_out< bool > emio_enet1_mdio_t;
+  sc_core::sc_in< sc_dt::sc_bv<2> > emio_enet1_tsu_inc_ctrl;
+  sc_core::sc_out< bool > emio_enet1_tsu_timer_cmp_val;
   sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
+  sc_core::sc_in< bool > emio_enet1_ext_int_in;
+  sc_core::sc_out< sc_dt::sc_bv<2> > emio_enet1_dma_bus_width;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
+  sc_core::sc_out< bool > pl_clk1;
 
 protected:
 
@@ -329,9 +389,29 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<3> > emio_enet1_speed_mode;
+  sc_core::sc_in< bool > emio_enet1_gmii_crs;
+  sc_core::sc_in< bool > emio_enet1_gmii_col;
+  sc_core::sc_in< sc_dt::sc_bv<8> > emio_enet1_gmii_rxd;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_er;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_dv;
+  sc_core::sc_in< bool > emio_enet1_gmii_tx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<8> > emio_enet1_gmii_txd;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_en;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_er;
+  sc_core::sc_out< bool > emio_enet1_mdio_mdc;
+  sc_core::sc_in< bool > emio_enet1_mdio_i;
+  sc_core::sc_out< bool > emio_enet1_mdio_o;
+  sc_core::sc_out< bool > emio_enet1_mdio_t;
+  sc_core::sc_in< sc_dt::sc_bv<2> > emio_enet1_tsu_inc_ctrl;
+  sc_core::sc_out< bool > emio_enet1_tsu_timer_cmp_val;
   sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
+  sc_core::sc_in< bool > emio_enet1_ext_int_in;
+  sc_core::sc_out< sc_dt::sc_bv<2> > emio_enet1_dma_bus_width;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
+  sc_core::sc_out< bool > pl_clk1;
 
 protected:
 
@@ -406,9 +486,29 @@ public:
   sc_core::sc_out< bool > maxigp2_rready;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_awqos;
   sc_core::sc_out< sc_dt::sc_bv<4> > maxigp2_arqos;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<3> > emio_enet1_speed_mode;
+  sc_core::sc_in< bool > emio_enet1_gmii_crs;
+  sc_core::sc_in< bool > emio_enet1_gmii_col;
+  sc_core::sc_in< sc_dt::sc_bv<8> > emio_enet1_gmii_rxd;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_er;
+  sc_core::sc_in< bool > emio_enet1_gmii_rx_dv;
+  sc_core::sc_in< bool > emio_enet1_gmii_tx_clk;
+  sc_core::sc_out< sc_dt::sc_bv<8> > emio_enet1_gmii_txd;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_en;
+  sc_core::sc_out< bool > emio_enet1_gmii_tx_er;
+  sc_core::sc_out< bool > emio_enet1_mdio_mdc;
+  sc_core::sc_in< bool > emio_enet1_mdio_i;
+  sc_core::sc_out< bool > emio_enet1_mdio_o;
+  sc_core::sc_out< bool > emio_enet1_mdio_t;
+  sc_core::sc_in< sc_dt::sc_bv<2> > emio_enet1_tsu_inc_ctrl;
+  sc_core::sc_out< bool > emio_enet1_tsu_timer_cmp_val;
   sc_core::sc_out< sc_dt::sc_bv<94> > emio_enet0_enet_tsu_timer_cnt;
+  sc_core::sc_in< bool > emio_enet1_ext_int_in;
+  sc_core::sc_out< sc_dt::sc_bv<2> > emio_enet1_dma_bus_width;
   sc_core::sc_out< bool > pl_resetn0;
   sc_core::sc_out< bool > pl_clk0;
+  sc_core::sc_out< bool > pl_clk1;
 
 protected:
 

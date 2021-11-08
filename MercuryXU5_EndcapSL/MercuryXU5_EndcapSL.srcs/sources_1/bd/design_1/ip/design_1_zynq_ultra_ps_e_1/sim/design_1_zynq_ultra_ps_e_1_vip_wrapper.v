@@ -98,9 +98,29 @@ maxigp2_rvalid,
 maxigp2_rready, 
 maxigp2_awqos, 
 maxigp2_arqos, 
+emio_enet1_gmii_rx_clk, 
+emio_enet1_speed_mode, 
+emio_enet1_gmii_crs, 
+emio_enet1_gmii_col, 
+emio_enet1_gmii_rxd, 
+emio_enet1_gmii_rx_er, 
+emio_enet1_gmii_rx_dv, 
+emio_enet1_gmii_tx_clk, 
+emio_enet1_gmii_txd, 
+emio_enet1_gmii_tx_en, 
+emio_enet1_gmii_tx_er, 
+emio_enet1_mdio_mdc, 
+emio_enet1_mdio_i, 
+emio_enet1_mdio_o, 
+emio_enet1_mdio_t, 
+emio_enet1_tsu_inc_ctrl, 
+emio_enet1_tsu_timer_cmp_val, 
 emio_enet0_enet_tsu_timer_cnt, 
+emio_enet1_ext_int_in, 
+emio_enet1_dma_bus_width, 
 pl_resetn0, 
-pl_clk0 
+pl_clk0, 
+pl_clk1 
 );
 input maxihpm0_lpd_aclk;
 output [15 : 0] maxigp2_awid;
@@ -142,9 +162,29 @@ input maxigp2_rvalid;
 output maxigp2_rready;
 output [3 : 0] maxigp2_awqos;
 output [3 : 0] maxigp2_arqos;
+input emio_enet1_gmii_rx_clk;
+output [2 : 0] emio_enet1_speed_mode;
+input emio_enet1_gmii_crs;
+input emio_enet1_gmii_col;
+input [7 : 0] emio_enet1_gmii_rxd;
+input emio_enet1_gmii_rx_er;
+input emio_enet1_gmii_rx_dv;
+input emio_enet1_gmii_tx_clk;
+output [7 : 0] emio_enet1_gmii_txd;
+output emio_enet1_gmii_tx_en;
+output emio_enet1_gmii_tx_er;
+output emio_enet1_mdio_mdc;
+input emio_enet1_mdio_i;
+output emio_enet1_mdio_o;
+output emio_enet1_mdio_t;
+input [1 : 0] emio_enet1_tsu_inc_ctrl;
+output emio_enet1_tsu_timer_cmp_val;
 output [93 : 0] emio_enet0_enet_tsu_timer_cnt;
+input emio_enet1_ext_int_in;
+output [1 : 0] emio_enet1_dma_bus_width;
 output pl_resetn0;
 output pl_clk0;
+output pl_clk1;
 wire pl_clk_t[3:0] ;
 
 wire saxihpc0_fpd_rclk_temp;
@@ -165,7 +205,7 @@ wire saxi_lpd_wclk_temp;
 
 assign pl_clk0 = pl_clk_t[0] ;
 
- assign  pl_clk1 = 1'b0 ;
+ assign pl_clk1 = pl_clk_t[1] ;
 
  assign  pl_clk2 = 1'b0 ;
 

@@ -1,82 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1636006451">
+<GenRun Id="impl_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1636374339">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="RDI-RDI" Name="design_1_wrapper.vdi"/>
-  <File Type="BG-DRC" Name="design_1_wrapper.drc"/>
-  <File Type="BG-BGN" Name="design_1_wrapper.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="design_1_wrapper.sysdef"/>
+  <File Type="RDI-RDI" Name="MercuryXU5_EndcapSL.vdi"/>
+  <File Type="BG-DRC" Name="MercuryXU5_EndcapSL.drc"/>
+  <File Type="BG-BGN" Name="MercuryXU5_EndcapSL.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="MercuryXU5_EndcapSL.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="design_1_wrapper.ltx"/>
-  <File Type="RBD_FILE" Name="design_1_wrapper.rbd"/>
-  <File Type="NPI_FILE" Name="design_1_wrapper.npi"/>
-  <File Type="RNPI_FILE" Name="design_1_wrapper.rnpi"/>
-  <File Type="CFI_FILE" Name="design_1_wrapper.cfi"/>
-  <File Type="RCFI_FILE" Name="design_1_wrapper.rcfi"/>
-  <File Type="PDI-FILE" Name="design_1_wrapper.pdi"/>
-  <File Type="BITSTR-MMI" Name="design_1_wrapper.mmi"/>
-  <File Type="BITSTR-BMM" Name="design_1_wrapper_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="design_1_wrapper.nky"/>
-  <File Type="BITSTR-RBT" Name="design_1_wrapper.rbt"/>
-  <File Type="BITSTR-MSK" Name="design_1_wrapper.msk"/>
-  <File Type="BG-BIN" Name="design_1_wrapper.bin"/>
-  <File Type="BG-BIT" Name="design_1_wrapper.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="design_1_wrapper_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="design_1_wrapper_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="design_1_wrapper_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="design_1_wrapper_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="design_1_wrapper_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="design_1_wrapper_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="design_1_wrapper_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="design_1_wrapper_postroute_physopt.dcp"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="design_1_wrapper_bus_skew_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="design_1_wrapper_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW" Name="design_1_wrapper_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="design_1_wrapper_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="design_1_wrapper_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="design_1_wrapper_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="design_1_wrapper_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="design_1_wrapper_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="design_1_wrapper_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="design_1_wrapper_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="design_1_wrapper_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="design_1_wrapper_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="design_1_wrapper_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="design_1_wrapper_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="design_1_wrapper_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="design_1_wrapper_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="design_1_wrapper_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="design_1_wrapper_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="design_1_wrapper_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="design_1_wrapper_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="design_1_wrapper_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="design_1_wrapper_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="design_1_wrapper_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="design_1_wrapper_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="design_1_wrapper_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="design_1_wrapper_postplace_pwropt.dcp"/>
-  <File Type="PLACE-TIMING" Name="design_1_wrapper_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="design_1_wrapper_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="design_1_wrapper_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="design_1_wrapper_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="design_1_wrapper_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="design_1_wrapper_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="design_1_wrapper_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="design_1_wrapper_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="design_1_wrapper_placed.dcp"/>
-  <File Type="PWROPT-DRC" Name="design_1_wrapper_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="design_1_wrapper_pwropt.dcp"/>
-  <File Type="OPT-HWDEF" Name="design_1_wrapper.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="design_1_wrapper_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="design_1_wrapper_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="design_1_wrapper_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="design_1_wrapper_timing_summary_init.rpt"/>
-  <File Type="PWROPT-TIMING" Name="design_1_wrapper_timing_summary_pwropted.rpt"/>
-  <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
-  <File Type="OPT-TIMING" Name="design_1_wrapper_timing_summary_opted.rpt"/>
-  <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
+  <File Type="BITSTR-LTX" Name="MercuryXU5_EndcapSL.ltx"/>
+  <File Type="RBD_FILE" Name="MercuryXU5_EndcapSL.rbd"/>
+  <File Type="NPI_FILE" Name="MercuryXU5_EndcapSL.npi"/>
+  <File Type="RNPI_FILE" Name="MercuryXU5_EndcapSL.rnpi"/>
+  <File Type="CFI_FILE" Name="MercuryXU5_EndcapSL.cfi"/>
+  <File Type="RCFI_FILE" Name="MercuryXU5_EndcapSL.rcfi"/>
+  <File Type="PDI-FILE" Name="MercuryXU5_EndcapSL.pdi"/>
+  <File Type="BITSTR-MMI" Name="MercuryXU5_EndcapSL.mmi"/>
+  <File Type="BITSTR-BMM" Name="MercuryXU5_EndcapSL_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="MercuryXU5_EndcapSL.nky"/>
+  <File Type="BITSTR-RBT" Name="MercuryXU5_EndcapSL.rbt"/>
+  <File Type="BITSTR-MSK" Name="MercuryXU5_EndcapSL.msk"/>
+  <File Type="BG-BIN" Name="MercuryXU5_EndcapSL.bin"/>
+  <File Type="BG-BIT" Name="MercuryXU5_EndcapSL.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="MercuryXU5_EndcapSL_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="MercuryXU5_EndcapSL_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="MercuryXU5_EndcapSL_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="MercuryXU5_EndcapSL_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="MercuryXU5_EndcapSL_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="MercuryXU5_EndcapSL_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="MercuryXU5_EndcapSL_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="MercuryXU5_EndcapSL_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="MercuryXU5_EndcapSL_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="MercuryXU5_EndcapSL_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="MercuryXU5_EndcapSL_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="MercuryXU5_EndcapSL_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="MercuryXU5_EndcapSL_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="MercuryXU5_EndcapSL_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="MercuryXU5_EndcapSL_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="MercuryXU5_EndcapSL_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="MercuryXU5_EndcapSL_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="MercuryXU5_EndcapSL_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="MercuryXU5_EndcapSL_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="MercuryXU5_EndcapSL_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MercuryXU5_EndcapSL_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="MercuryXU5_EndcapSL_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="MercuryXU5_EndcapSL_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="MercuryXU5_EndcapSL_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="MercuryXU5_EndcapSL_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="MercuryXU5_EndcapSL_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="MercuryXU5_EndcapSL_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="MercuryXU5_EndcapSL_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="MercuryXU5_EndcapSL_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="MercuryXU5_EndcapSL_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="MercuryXU5_EndcapSL_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="MercuryXU5_EndcapSL_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="MercuryXU5_EndcapSL_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="MercuryXU5_EndcapSL_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="MercuryXU5_EndcapSL_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="MercuryXU5_EndcapSL_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="MercuryXU5_EndcapSL_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="MercuryXU5_EndcapSL_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="MercuryXU5_EndcapSL_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="MercuryXU5_EndcapSL_placed.dcp"/>
+  <File Type="PWROPT-DRC" Name="MercuryXU5_EndcapSL_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="MercuryXU5_EndcapSL_pwropt.dcp"/>
+  <File Type="OPT-HWDEF" Name="MercuryXU5_EndcapSL.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="MercuryXU5_EndcapSL_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="MercuryXU5_EndcapSL_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="MercuryXU5_EndcapSL_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_init.rpt"/>
+  <File Type="PWROPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_pwropted.rpt"/>
+  <File Type="REPORTS-TCL" Name="MercuryXU5_EndcapSL_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_opted.rpt"/>
+  <File Type="PA-TCL" Name="MercuryXU5_EndcapSL.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Mercury_XU5_PE1_Reference_Design/reference_design/src/Enclustra_GMII2RGMII_ZU.edn"/>
+        <Attr Name="ImportTime" Val="1635753257"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -84,19 +92,17 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/MercuryXU5_EndcapSL.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn">
+    <File Path="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../Mercury_XU5_PE1_Reference_Design/reference_design/src/Enclustra_GMII2RGMII_ZU.edn"/>
-        <Attr Name="ImportTime" Val="1635753257"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/bd/Mercury_XU5/Mercury_XU5.bd">
@@ -120,14 +126,13 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="design_1_wrapper"/>
+      <Option Name="TopModule" Val="MercuryXU5_EndcapSL"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl">
       <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../Mercury_XU5_PE1_Reference_Design/reference_design/src/Mercury_XU5_rgmii_loc.tcl"/>
         <Attr Name="ImportTime" Val="1635753257"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -167,6 +172,12 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
@@ -200,6 +211,7 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_blk_mem_gen_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps8_99M_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_1"/>

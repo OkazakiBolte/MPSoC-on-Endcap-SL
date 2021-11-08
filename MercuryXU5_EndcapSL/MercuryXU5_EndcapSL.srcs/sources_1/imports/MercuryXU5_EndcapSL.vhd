@@ -151,7 +151,7 @@ begin
             GMII_tx_er      => GMII_tx_er,
             GMII_txd        => GMII_txd,
             LED_N_tri_o     => LED_N_tri_o,
-            MDIO_mdc        => MDIO_mdc,
+            MDIO_mdc        => ETH1_MDC,
             MDIO_mdio_i     => MDIO_mdio_i,
             MDIO_mdio_o     => MDIO_mdio_o,
             MDIO_mdio_t     => MDIO_mdio_t

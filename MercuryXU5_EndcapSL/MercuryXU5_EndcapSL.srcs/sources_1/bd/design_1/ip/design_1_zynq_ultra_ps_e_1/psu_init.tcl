@@ -548,6 +548,41 @@ set psu_clock_init_data {
 		# This register controls this reference clock
 		#(OFFSET, MASK, VALUE)      (0XFF5E0050, 0x063F3F07U ,0x06010C00U)  */
     mask_write 0XFF5E0050 0x063F3F07 0x06010C00
+		# Register : GEM1_REF_CTRL @ 0XFF5E0054</p>
+
+		# Clock active for the RX channel
+		# PSU_CRL_APB_GEM1_REF_CTRL_RX_CLKACT                                             0x1
+
+		# Clock active signal. Switch to 0 to disable the clock
+		# PSU_CRL_APB_GEM1_REF_CTRL_CLKACT                                                0x1
+
+		# 6 bit divider
+		# PSU_CRL_APB_GEM1_REF_CTRL_DIVISOR1                                              0x1
+
+		# 6 bit divider
+		# PSU_CRL_APB_GEM1_REF_CTRL_DIVISOR0                                              0xc
+
+		# 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
+    # ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
+    #  usually an issue, but designers must be aware.)
+		# PSU_CRL_APB_GEM1_REF_CTRL_SRCSEL                                                0x0
+
+		# This register controls this reference clock
+		#(OFFSET, MASK, VALUE)      (0XFF5E0054, 0x063F3F07U ,0x06010C00U)  */
+    mask_write 0XFF5E0054 0x063F3F07 0x06010C00
+		# Register : GEM_CLK_CTRL @ 0XFF180308</p>
+
+		# PLL or PHY source selection for gem1_ref_clk generation 0: PLL Reference
+    #  clock 1: FMIO PLL clock or GTX Clock
+		# PSU_IOU_SLCR_GEM_CLK_CTRL_GEM1_REF_SRC_SEL                                      0x1
+
+		# MIO or FMIO source selection for gem1_rx_clk generation 0: MIO clock 1:
+    # FMIO clock
+		# PSU_IOU_SLCR_GEM_CLK_CTRL_GEM1_RX_SRC_SEL                                       0x1
+
+		# SoC Debug Clock Control
+		#(OFFSET, MASK, VALUE)      (0XFF180308, 0x00000060U ,0x00000060U)  */
+    mask_write 0XFF180308 0x00000060 0x00000060
 		# Register : GEM_TSU_REF_CTRL @ 0XFF5E0100</p>
 
 		# 6 bit divider
@@ -865,6 +900,25 @@ set psu_clock_init_data {
 		# This register controls this reference clock
 		#(OFFSET, MASK, VALUE)      (0XFF5E00C0, 0x013F3F07U ,0x01010A02U)  */
     mask_write 0XFF5E00C0 0x013F3F07 0x01010A02
+		# Register : PL1_REF_CTRL @ 0XFF5E00C4</p>
+
+		# Clock active signal. Switch to 0 to disable the clock
+		# PSU_CRL_APB_PL1_REF_CTRL_CLKACT                                                 0x1
+
+		# 6 bit divider
+		# PSU_CRL_APB_PL1_REF_CTRL_DIVISOR1                                               0x1
+
+		# 6 bit divider
+		# PSU_CRL_APB_PL1_REF_CTRL_DIVISOR0                                               0x14
+
+		# 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
+    # ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
+    #  usually an issue, but designers must be aware.)
+		# PSU_CRL_APB_PL1_REF_CTRL_SRCSEL                                                 0x2
+
+		# This register controls this reference clock
+		#(OFFSET, MASK, VALUE)      (0XFF5E00C4, 0x013F3F07U ,0x01011402U)  */
+    mask_write 0XFF5E00C4 0x013F3F07 0x01011402
 		# Register : AMS_REF_CTRL @ 0XFF5E0108</p>
 
 		# 6 bit divider
@@ -13909,9 +13963,12 @@ set psu_peripherals_init_data {
 		# GEM 0 reset
 		# PSU_CRL_APB_RST_LPD_IOU0_GEM0_RESET                                             0
 
+		# GEM 1 reset
+		# PSU_CRL_APB_RST_LPD_IOU0_GEM1_RESET                                             0
+
 		# Software controlled reset for the GEMs
-		#(OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000001U ,0x00000000U)  */
-    mask_write 0XFF5E0230 0x00000001 0x00000000
+		#(OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000003U ,0x00000000U)  */
+    mask_write 0XFF5E0230 0x00000003 0x00000000
 		# : QSPI
 		# Register : RST_LPD_IOU2 @ 0XFF5E0238</p>
 
@@ -15638,6 +15695,15 @@ set psu_resetout_init_data {
 		# Software controlled reset for the GEMs
 		#(OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000001U ,0x00000000U)  */
     mask_write 0XFF5E0230 0x00000001 0x00000000
+		# : PUTTING GEM0 IN RESET
+		# Register : RST_LPD_IOU0 @ 0XFF5E0230</p>
+
+		# GEM 1 reset
+		# PSU_CRL_APB_RST_LPD_IOU0_GEM1_RESET                                             0X0
+
+		# Software controlled reset for the GEMs
+		#(OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000002U ,0x00000000U)  */
+    mask_write 0XFF5E0230 0x00000002 0x00000000
 		# : USB0 GFLADJ
 		# Register : GUSB2PHYCFG @ 0XFE20C200</p>
 
@@ -16066,6 +16132,15 @@ set psu_resetin_init_data {
 		# Software controlled reset for the GEMs
 		#(OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000001U ,0x00000001U)  */
     mask_write 0XFF5E0230 0x00000001 0x00000001
+		# : PUTTING GEM0 IN RESET
+		# Register : RST_LPD_IOU0 @ 0XFF5E0230</p>
+
+		# GEM 1 reset
+		# PSU_CRL_APB_RST_LPD_IOU0_GEM1_RESET                                             0X1
+
+		# Software controlled reset for the GEMs
+		#(OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000002U ,0x00000002U)  */
+    mask_write 0XFF5E0230 0x00000002 0x00000002
 }
 
 set psu_ps_pl_isolation_removal_data {
