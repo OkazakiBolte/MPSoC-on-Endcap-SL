@@ -116,3 +116,4 @@ vivado*.log
 
 !*.xsa
 !*.edn
+!*.dtsi

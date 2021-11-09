@@ -203,6 +203,7 @@ set_property -dict [ list \
   CONFIG.CLKOUT2_JITTER {129.583} \
   CONFIG.CLKOUT2_PHASE_ERROR {150.623} \
   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {125.000} \
+  CONFIG.CLKOUT2_REQUESTED_PHASE {90} \
   CONFIG.CLKOUT2_USED {true} \
   CONFIG.CLKOUT3_JITTER {181.251} \
   CONFIG.CLKOUT3_PHASE_ERROR {150.623} \
@@ -217,6 +218,7 @@ set_property -dict [ list \
   CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
   CONFIG.MMCM_CLKOUT0_DIVIDE_F {10.0} \
   CONFIG.MMCM_CLKOUT1_DIVIDE {10} \
+  CONFIG.MMCM_CLKOUT1_PHASE {90} \
   CONFIG.MMCM_CLKOUT2_DIVIDE {50} \
   CONFIG.MMCM_CLKOUT3_DIVIDE {125} \
   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
@@ -228,18 +230,6 @@ set_property -dict [ list \
   CONFIG.RESET_TYPE {ACTIVE_LOW} \
   CONFIG.USE_LOCKED {true} \
 ] [get_bd_cells clk_wiz_0]
-
-if { $ETH_PHASE == "ETH_PHASE_76_5"} {
-  set_property -dict [ list \
-    CONFIG.MMCM_CLKOUT1_PHASE {76.500} \
-  ] [get_bd_cells clk_wiz_0]
-}
-
-if { $ETH_PHASE == "ETH_PHASE_90"} {
-  set_property -dict [ list \
-    CONFIG.MMCM_CLKOUT1_PHASE {90} \
-  ] [get_bd_cells clk_wiz_0]
-}
 
 create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 smartconnect_0
 set_property -dict [list CONFIG.NUM_SI	{1} CONFIG.NUM_MI {2} CONFIG.NUM_CLKS {1}] [get_bd_cells smartconnect_0]

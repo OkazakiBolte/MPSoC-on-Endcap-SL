@@ -294,7 +294,7 @@ architecture rtl of Mercury_XU5_PE1 is
   );
   end component IOBUF;
   
-  component Enclustra_GMII2RGMII_ZU is
+  component Mercury_XU5_GMII2RGMII is
   port (
     Clk125          : in  std_logic;
     Clk125_90       : in  std_logic;
@@ -325,7 +325,7 @@ architecture rtl of Mercury_XU5_PE1 is
     Speed100En      : out std_logic;
     Speed10En       : out std_logic
   );
-  end component Enclustra_GMII2RGMII_ZU;
+  end component Mercury_XU5_GMII2RGMII;
 
   ---------------------------------------------------------------------------------------------------
   -- signal declarations
@@ -425,7 +425,7 @@ begin
       T => MDIO_mdio_t
     );
   
-  i_gmii2rgmii : Enclustra_GMII2RGMII_ZU
+  i_gmii2rgmii : Mercury_XU5_GMII2RGMII
     port map (
       Clk125          => ETH_CLK125,
       Clk125_90       => ETH_CLK125_90,
