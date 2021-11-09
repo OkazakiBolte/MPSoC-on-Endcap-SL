@@ -1,6 +1,6 @@
 /include/ "system-conf.dtsi"
 / {
+    model = "Enclustra ME-XU5-5EV-2I-D12E SOM";
 };
-
-#include "zynqmp_enclustra_mercury_xu5.dtsi"
 #include "endcap_sl.dtsi"
+#include "zynqmp_enclustra_mercury_xu5.dtsi"

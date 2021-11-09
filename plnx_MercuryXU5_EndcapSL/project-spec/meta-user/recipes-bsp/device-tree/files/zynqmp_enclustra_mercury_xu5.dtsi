@@ -30,7 +30,7 @@
 		rxd0-skew-ps = <420>;
 		rxd1-skew-ps = <420>;
 		rxd2-skew-ps = <420>;
-		rxd3-skew-ps = <420>;		
+		rxd3-skew-ps = <420>;
 	};
 };
 
@@ -56,6 +56,6 @@
 		rxd0-skew-ps = <420>;
 		rxd1-skew-ps = <420>;
 		rxd2-skew-ps = <420>;
-		rxd3-skew-ps = <420>;		
+		rxd3-skew-ps = <420>;
 	};
 };
