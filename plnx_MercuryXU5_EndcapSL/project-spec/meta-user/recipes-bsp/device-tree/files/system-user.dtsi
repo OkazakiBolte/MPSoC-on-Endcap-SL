@@ -2,6 +2,5 @@
 / {
 };
 
-&sdhci1 {
-    disable-wp;
-};
+#include "zynqmp_enclustra_mercury_xu5.dtsi"
+#include "endcap_sl.dtsi"
