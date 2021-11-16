@@ -1,0 +1,8 @@
+/include/ "system-conf.dtsi"
+/ {
+};
+
+&sdhci1 {
+    disable-wp;
+};
+
