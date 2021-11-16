@@ -39,7 +39,7 @@
 	/delete-property/ local-mac-address;
 	phy-mode = "gmii-id";
 	phy-handle = <&phy1>;
-    	phy1: phy@3 {
+    phy1: phy@3 {
 		reg = <3>;
 
 		txc-skew-ps = <900>;

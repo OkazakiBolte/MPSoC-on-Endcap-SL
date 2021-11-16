@@ -30,7 +30,7 @@
 		rxd0-skew-ps = <420>;
 		rxd1-skew-ps = <420>;
 		rxd2-skew-ps = <420>;
-		rxd3-skew-ps = <420>;		
+		rxd3-skew-ps = <420>;
 	};
 };
 
@@ -39,7 +39,7 @@
 	/delete-property/ local-mac-address;
 	phy-mode = "gmii-id";
 	phy-handle = <&phy1>;
-    	phy1: phy@3 {
+    phy1: phy@3 {
 		reg = <3>;
 
 		txc-skew-ps = <900>;
@@ -56,6 +56,6 @@
 		rxd0-skew-ps = <420>;
 		rxd1-skew-ps = <420>;
 		rxd2-skew-ps = <420>;
-		rxd3-skew-ps = <420>;		
+		rxd3-skew-ps = <420>;
 	};
 };
