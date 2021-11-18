@@ -162,7 +162,7 @@ begin
             peripheral_reset => peripheral_reset
         );
 
-    SIRST <= not peripheral_reset(0);
+    SIRST <= '1'; -- not peripheral_reset(0);
 
     MDIO_mdio_iobuf: component IOBUF
         port map (
