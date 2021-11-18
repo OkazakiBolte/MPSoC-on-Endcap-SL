@@ -7,6 +7,10 @@ set_property BITSTREAM.CONFIG.OVERTEMPSHUTDOWN ENABLE [current_design];
 set_property BITSTREAM.CONFIG.UNUSEDPIN PULLNONE [current_design];
 # ----------------------------------------------------------------------------------
 
+# It's rediculous not to use A115 (I2C_INT#) for reset of Si5345,
+# but anyway I hope this works.
+set_property -dict {PACKAGE_PIN AF10  IOSTANDARD LVCMOS18  } [get_ports {SIRST}];
+
 # LED
 set_property -dict {PACKAGE_PIN H2    IOSTANDARD LVCMOS18  } [get_ports {LED_N_tri_o[0]}];
 set_property -dict {PACKAGE_PIN P9    IOSTANDARD LVCMOS18  } [get_ports {LED_N_tri_o[1]}];

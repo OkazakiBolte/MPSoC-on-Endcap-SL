@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Sun Nov  7 19:21:28 2021
+--Date        : Thu Nov 18 19:29:51 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -33,7 +33,8 @@ entity design_1 is
     MDIO_mdc : out STD_LOGIC;
     MDIO_mdio_i : in STD_LOGIC;
     MDIO_mdio_o : out STD_LOGIC;
-    MDIO_mdio_t : out STD_LOGIC
+    MDIO_mdio_t : out STD_LOGIC;
+    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute CORE_GENERATION_INFO : string;
   attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=6,da_bram_cntlr_cnt=4,synth_mode=OOC_per_IP}";
@@ -397,6 +398,7 @@ architecture STRUCTURE of design_1 is
   signal clk_wiz_0_locked : STD_LOGIC;
   signal led_GPIO_TRI_O : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal rst_ps8_99M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal rst_ps8_99M_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal zynq_ultra_ps_e_GMII_ENET1_COL : STD_LOGIC;
   signal zynq_ultra_ps_e_GMII_ENET1_CRS : STD_LOGIC;
   signal zynq_ultra_ps_e_GMII_ENET1_RXD : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -465,7 +467,6 @@ architecture STRUCTURE of design_1 is
   signal NLW_rst_ps8_99M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_ps8_99M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps8_99M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_rst_ps8_99M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_zynq_ultra_ps_e_emio_enet1_tsu_timer_cmp_val_UNCONNECTED : STD_LOGIC;
   signal NLW_zynq_ultra_ps_e_emio_enet0_enet_tsu_timer_cnt_UNCONNECTED : STD_LOGIC_VECTOR ( 93 downto 0 );
   signal NLW_zynq_ultra_ps_e_emio_enet1_dma_bus_width_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -498,6 +499,8 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of GMII_speed_mode : signal is "xilinx.com:interface:gmii:1.0 GMII SPEED_MODE";
   attribute X_INTERFACE_INFO of GMII_txd : signal is "xilinx.com:interface:gmii:1.0 GMII TXD";
   attribute X_INTERFACE_INFO of LED_N_tri_o : signal is "xilinx.com:interface:gpio:1.0 LED_N TRI_O";
+  attribute X_INTERFACE_INFO of peripheral_reset : signal is "xilinx.com:signal:reset:1.0 RST.PERIPHERAL_RESET RST";
+  attribute X_INTERFACE_PARAMETER of peripheral_reset : signal is "XIL_INTERFACENAME RST.PERIPHERAL_RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
 begin
   ETH_CLK10 <= clk_wiz_0_clk_out4;
   ETH_CLK125 <= clk_wiz_0_clk_out1;
@@ -512,6 +515,7 @@ begin
   MDIO_mdc <= zynq_ultra_ps_e_MDIO_ENET1_MDC;
   MDIO_mdio_o <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_O;
   MDIO_mdio_t <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_T;
+  peripheral_reset(0) <= rst_ps8_99M_peripheral_reset(0);
   zynq_ultra_ps_e_GMII_ENET1_COL <= GMII_col;
   zynq_ultra_ps_e_GMII_ENET1_CRS <= GMII_crs;
   zynq_ultra_ps_e_GMII_ENET1_RXD(7 downto 0) <= GMII_rxd(7 downto 0);
@@ -732,7 +736,7 @@ rst_ps8_99M: component design_1_rst_ps8_99M_1
       mb_debug_sys_rst => '0',
       mb_reset => NLW_rst_ps8_99M_mb_reset_UNCONNECTED,
       peripheral_aresetn(0) => rst_ps8_99M_peripheral_aresetn(0),
-      peripheral_reset(0) => NLW_rst_ps8_99M_peripheral_reset_UNCONNECTED(0),
+      peripheral_reset(0) => rst_ps8_99M_peripheral_reset(0),
       slowest_sync_clk => zynq_ultra_ps_e_pl_clk0
     );
 zynq_ultra_ps_e: component design_1_zynq_ultra_ps_e_1

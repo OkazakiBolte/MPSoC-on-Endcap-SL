@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x1B80601BCB1F5921",
+      "boundary_crc": "0xF1FBB48B081E454A",
       "device": "xczu5ev-sfvc784-2-i",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -154,6 +154,22 @@
           "POLARITY": {
             "value": "ACTIVE_LOW",
             "value_src": "default"
+          }
+        }
+      },
+      "peripheral_reset": {
+        "type": "rst",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH",
+            "value_src": "const_prop"
           }
         }
       }
@@ -3261,16 +3277,16 @@
       }
     },
     "interface_nets": {
+      "zynq_ultra_ps_e_MDIO_ENET1": {
+        "interface_ports": [
+          "MDIO",
+          "zynq_ultra_ps_e/MDIO_ENET1"
+        ]
+      },
       "zynq_ultra_ps_e_GMII_ENET1": {
         "interface_ports": [
           "GMII",
           "zynq_ultra_ps_e/GMII_ENET1"
-        ]
-      },
-      "axi_smc_M01_AXI": {
-        "interface_ports": [
-          "axi_smc/M01_AXI",
-          "led/S_AXI"
         ]
       },
       "axi_smc_M00_AXI": {
@@ -3285,10 +3301,10 @@
           "led/GPIO"
         ]
       },
-      "axi_bram_ctrl_0_BRAM_PORTB": {
+      "axi_smc_M01_AXI": {
         "interface_ports": [
-          "blk_mem_gen_0/BRAM_PORTB",
-          "axi_bram_ctrl_0/BRAM_PORTB"
+          "axi_smc/M01_AXI",
+          "led/S_AXI"
         ]
       },
       "axi_bram_ctrl_0_BRAM_PORTA": {
@@ -3303,10 +3319,10 @@
           "axi_smc/S00_AXI"
         ]
       },
-      "zynq_ultra_ps_e_MDIO_ENET1": {
+      "axi_bram_ctrl_0_BRAM_PORTB": {
         "interface_ports": [
-          "MDIO",
-          "zynq_ultra_ps_e/MDIO_ENET1"
+          "blk_mem_gen_0/BRAM_PORTB",
+          "axi_bram_ctrl_0/BRAM_PORTB"
         ]
       }
     },
@@ -3370,6 +3386,12 @@
         "ports": [
           "clk_wiz_0/locked",
           "ETH_resetn"
+        ]
+      },
+      "rst_ps8_99M_peripheral_reset": {
+        "ports": [
+          "rst_ps8_99M/peripheral_reset",
+          "peripheral_reset"
         ]
       }
     },

@@ -168,6 +168,7 @@ proc create_root_design { parentCell } {
   set ETH_CLK25 [ create_bd_port -dir O -type clk ETH_CLK25 ]
   set ETH_CLK125 [ create_bd_port -dir O -type clk ETH_CLK125 ]
   set ETH_resetn [ create_bd_port -dir O -type rst ETH_resetn ]
+  set peripheral_reset [ create_bd_port -dir O -from 0 -to 0 -type rst peripheral_reset ]
 
   # Create instance: axi_bram_ctrl_0, and set properties
   set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0 ]
@@ -1758,6 +1759,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net clk_wiz_0_clk_out4 [get_bd_ports ETH_CLK10] [get_bd_pins clk_wiz_0/clk_out4]
   connect_bd_net -net clk_wiz_0_locked [get_bd_ports ETH_resetn] [get_bd_pins clk_wiz_0/locked]
   connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins led/s_axi_aresetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn]
+  connect_bd_net -net rst_ps8_99M_peripheral_reset [get_bd_ports peripheral_reset] [get_bd_pins rst_ps8_99M/peripheral_reset]
   connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins led/s_axi_aclk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]
   connect_bd_net -net zynq_ultra_ps_e_pl_clk1 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins zynq_ultra_ps_e/pl_clk1]
   connect_bd_net -net zynq_ultra_ps_e_pl_resetn0 [get_bd_pins clk_wiz_0/resetn] [get_bd_pins rst_ps8_99M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e/pl_resetn0]

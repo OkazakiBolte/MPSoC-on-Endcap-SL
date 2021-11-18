@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Sun Nov  7 19:21:28 2021
+--Date        : Thu Nov 18 19:29:51 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -31,7 +31,8 @@ entity design_1_wrapper is
     GMII_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
     LED_N_tri_o : out STD_LOGIC_VECTOR ( 2 downto 0 );
     MDIO_mdc : out STD_LOGIC;
-    MDIO_mdio_io : inout STD_LOGIC
+    MDIO_mdio_io : inout STD_LOGIC;
+    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
 end design_1_wrapper;
 
@@ -58,7 +59,8 @@ architecture STRUCTURE of design_1_wrapper is
     MDIO_mdc : out STD_LOGIC;
     MDIO_mdio_i : in STD_LOGIC;
     MDIO_mdio_o : out STD_LOGIC;
-    MDIO_mdio_t : out STD_LOGIC
+    MDIO_mdio_t : out STD_LOGIC;
+    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1;
   component IOBUF is
@@ -102,6 +104,7 @@ design_1_i: component design_1
       MDIO_mdc => MDIO_mdc,
       MDIO_mdio_i => MDIO_mdio_i,
       MDIO_mdio_o => MDIO_mdio_o,
-      MDIO_mdio_t => MDIO_mdio_t
+      MDIO_mdio_t => MDIO_mdio_t,
+      peripheral_reset(0) => peripheral_reset(0)
     );
 end STRUCTURE;

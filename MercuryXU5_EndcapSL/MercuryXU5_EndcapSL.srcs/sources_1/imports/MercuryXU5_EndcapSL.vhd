@@ -22,6 +22,8 @@ use UNISIM.VCOMPONENTS.ALL;
 ---- Entity declaration ----
 entity MercuryXU5_EndcapSL is
     port (
+        -- RESETB for Si5345
+        SIRST         : out std_logic;
         -- 3-bit LED on the mezzanine
         LED_N_tri_o   : out STD_LOGIC_VECTOR ( 2 downto 0 );
         -- PL_Gigabit_Ethernet
@@ -43,27 +45,28 @@ architecture STRUCTURE of MercuryXU5_EndcapSL is
     ---- Component declarations ----
     component design_1 is
         port (
-            ETH_CLK125      : out STD_LOGIC;
-            ETH_CLK125_90   : out STD_LOGIC;
-            ETH_CLK25       : out STD_LOGIC;
-            ETH_CLK10       : out STD_LOGIC;
-            ETH_resetn      : out STD_LOGIC;
-            LED_N_tri_o     : out STD_LOGIC_VECTOR ( 2 downto 0 );
-            GMII_rx_clk     : in  STD_LOGIC;
-            GMII_speed_mode : out STD_LOGIC_VECTOR ( 2 downto 0 );
-            GMII_crs        : in  STD_LOGIC;
-            GMII_col        : in  STD_LOGIC;
-            GMII_rxd        : in  STD_LOGIC_VECTOR ( 7 downto 0 );
-            GMII_rx_er      : in  STD_LOGIC;
-            GMII_rx_dv      : in  STD_LOGIC;
-            GMII_tx_clk     : in  STD_LOGIC;
-            GMII_txd        : out STD_LOGIC_VECTOR ( 7 downto 0 );
-            GMII_tx_en      : out STD_LOGIC;
-            GMII_tx_er      : out STD_LOGIC;
-            MDIO_mdc        : out STD_LOGIC;
-            MDIO_mdio_i     : in  STD_LOGIC;
-            MDIO_mdio_o     : out STD_LOGIC;
-            MDIO_mdio_t     : out STD_LOGIC
+            ETH_CLK125       : out STD_LOGIC;
+            ETH_CLK125_90    : out STD_LOGIC;
+            ETH_CLK25        : out STD_LOGIC;
+            ETH_CLK10        : out STD_LOGIC;
+            ETH_resetn       : out STD_LOGIC;
+            LED_N_tri_o      : out STD_LOGIC_VECTOR ( 2 downto 0 );
+            GMII_rx_clk      : in  STD_LOGIC;
+            GMII_speed_mode  : out STD_LOGIC_VECTOR ( 2 downto 0 );
+            GMII_crs         : in  STD_LOGIC;
+            GMII_col         : in  STD_LOGIC;
+            GMII_rxd         : in  STD_LOGIC_VECTOR ( 7 downto 0 );
+            GMII_rx_er       : in  STD_LOGIC;
+            GMII_rx_dv       : in  STD_LOGIC;
+            GMII_tx_clk      : in  STD_LOGIC;
+            GMII_txd         : out STD_LOGIC_VECTOR ( 7 downto 0 );
+            GMII_tx_en       : out STD_LOGIC;
+            GMII_tx_er       : out STD_LOGIC;
+            MDIO_mdc         : out STD_LOGIC;
+            MDIO_mdio_i      : in  STD_LOGIC;
+            MDIO_mdio_o      : out STD_LOGIC;
+            MDIO_mdio_t      : out STD_LOGIC;
+            peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
         );
     end component design_1;
 
@@ -129,33 +132,37 @@ architecture STRUCTURE of MercuryXU5_EndcapSL is
     signal GMII_tx_en       : std_logic;
     signal GMII_tx_er       : std_logic;
     signal GMII_txd         : std_logic_vector(7 downto 0);
+    signal peripheral_reset : std_logic_vector(0 downto 0);
 
 begin
 
     design_1_i: component design_1
         port map (
-            ETH_CLK10       => ETH_CLK10,
-            ETH_CLK125      => ETH_CLK125,
-            ETH_CLK125_90   => ETH_CLK125_90,
-            ETH_CLK25       => ETH_CLK25,
-            ETH_resetn      => ETH_resetn,
-            GMII_col        => GMII_col,
-            GMII_crs        => GMII_crs,
-            GMII_rx_clk     => GMII_rx_clk,
-            GMII_rx_dv      => GMII_rx_dv,
-            GMII_rx_er      => GMII_rx_er,
-            GMII_rxd        => GMII_rxd,
-            GMII_speed_mode => GMII_speed_mode,
-            GMII_tx_clk     => GMII_tx_clk,
-            GMII_tx_en      => GMII_tx_en,
-            GMII_tx_er      => GMII_tx_er,
-            GMII_txd        => GMII_txd,
-            LED_N_tri_o     => LED_N_tri_o,
-            MDIO_mdc        => ETH1_MDC,
-            MDIO_mdio_i     => MDIO_mdio_i,
-            MDIO_mdio_o     => MDIO_mdio_o,
-            MDIO_mdio_t     => MDIO_mdio_t
+            ETH_CLK10        => ETH_CLK10,
+            ETH_CLK125       => ETH_CLK125,
+            ETH_CLK125_90    => ETH_CLK125_90,
+            ETH_CLK25        => ETH_CLK25,
+            ETH_resetn       => ETH_resetn,
+            GMII_col         => GMII_col,
+            GMII_crs         => GMII_crs,
+            GMII_rx_clk      => GMII_rx_clk,
+            GMII_rx_dv       => GMII_rx_dv,
+            GMII_rx_er       => GMII_rx_er,
+            GMII_rxd         => GMII_rxd,
+            GMII_speed_mode  => GMII_speed_mode,
+            GMII_tx_clk      => GMII_tx_clk,
+            GMII_tx_en       => GMII_tx_en,
+            GMII_tx_er       => GMII_tx_er,
+            GMII_txd         => GMII_txd,
+            LED_N_tri_o      => LED_N_tri_o,
+            MDIO_mdc         => ETH1_MDC,
+            MDIO_mdio_i      => MDIO_mdio_i,
+            MDIO_mdio_o      => MDIO_mdio_o,
+            MDIO_mdio_t      => MDIO_mdio_t,
+            peripheral_reset => peripheral_reset
         );
+
+    SIRST <= not peripheral_reset(0);
 
     MDIO_mdio_iobuf: component IOBUF
         port map (
