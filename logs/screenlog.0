@@ -1,0 +1,1409 @@
+NOTICE:  ATF running on XCZU5EV/silicon v4/RTL5.1 at 0xfffea000
+NOTICE:  BL31: v2.2(release):xilinx_rebase_v2.2_2020.1
+NOTICE:  BL31: Built : 14:03:18, Nov  9 2021
+
+
+U-Boot 2020.01 (Nov 16 2021 - 13:26:09 +0000)
+
+Model: Enclustra ME-XU5-5EV-2I-D12E SOM
+Board: Xilinx ZynqMP
+DRAM:  4 GiB
+usb dr_mode not found
+usb dr_mode not found
+PMUFW:	v1.1
+EL Level:	EL2
+Chip ID:	zu5ev
+NAND:  0 MiB
+MMC:   mmc@ff160000: 0, mmc@ff170000: 1
+In:    serial@ff000000
+Out:   serial@ff000000
+Err:   serial@ff000000
+Bootmode: SD_MODE1
+Reset reason:	EXTERNAL 
+Net:   
+ZYNQ GEM: ff0b0000, mdio bus ff0b0000, phyaddr 3, interface rgmii-id
+
+Warning: ethernet@ff0b0000 (eth0) using random MAC address - d6:78:8a:ac:75:ee
+eth0: ethernet@ff0b0000
+Hit any key to stop autoboot:  2  1  0 
+switch to partitions #0, OK
+mmc1 is current device
+Scanning mmc 1:1...
+Found U-Boot script /boot.scr
+2007 bytes read in 19 ms (102.5 KiB/s)
+## Executing script at 20000000
+8166276 bytes read in 613 ms (12.7 MiB/s)
+## Loading kernel from FIT Image at 10000000 ...
+   Using 'conf@system-top.dtb' configuration
+   Trying 'kernel@1' kernel subimage
+     Description:  Linux kernel
+     Type:         Kernel Image
+     Compression:  gzip compressed
+     Data Start:   0x100000e8
+     Data Size:    8123516 Bytes = 7.7 MiB
+     Architecture: AArch64
+     OS:           Linux
+     Load Address: 0x00080000
+     Entry Point:  0x00080000
+     Hash algo:    sha256
+     Hash value:   13178c06429006bfc92b4bc19ee82b846a8cd83ae3ae11892310b96ffc0c5c32
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 10000000 ...
+   Using 'conf@system-top.dtb' configuration
+   Trying 'fdt@system-top.dtb' fdt subimage
+     Description:  Flattened Device Tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x107bf674
+     Data Size:    40872 Bytes = 39.9 KiB
+     Architecture: AArch64
+     Hash algo:    sha256
+     Hash value:   9ef60466f6721891c67b1ba91c2e82cb30404fb3942970a2dd49a2df2d669b5f
+   Verifying Hash Integrity ... sha256+ OK
+   Booting using the fdt blob at 0x107bf674
+   Uncompressing Kernel Image
+   Loading Device Tree to 000000000fff3000, end 000000000fffffa7 ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+[    0.000000] Linux version 5.4.0-xilinx-v2020.1 (oe-user@oe-host) (gcc version 9.2.0 (GCC)) #1 SMP Mon Nov 8 12:43:45 UTC 2021
+[    0.000000] Machine model: Enclustra ME-XU5-5EV-2I-D12E SOM
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 256 MiB at 0x000000006fc00000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 22 pages/cpu s49944 r8192 d31976 u90112
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: ARM erratum 845719
+[    0.000000] Speculative Store Bypass Disable mitigation not required
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1031940
+[    0.000000] Kernel command line: console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk1p2 rootfstype=ext4 rw rootwait earlyprintk
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] software IO TLB: mapped [mem 0x6bc00000-0x6fc00000] (64MB)
+[    0.000000] Memory: 3767696K/4193280K available (11644K kernel code, 672K rwdata, 3624K rodata, 704K init, 323K bss, 163440K reserved, 262144K cma-reserved)
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GIC: Adjusting CPU interface base to 0x00000000f902f000
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] random: get_random_bytes called from start_kernel+0x2a8/0x42c with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 33.33MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x7b0074340, max_idle_ns: 440795202884 ns
+[    0.000003] sched_clock: 56 bits at 33MHz, resolution 30ns, wraps every 2199023255543ns
+[    0.000288] Console: colour dummy device 80x25
+[    0.000309] Calibrating delay loop (skipped), value calculated using timer frequency.. 66.66 BogoMIPS (lpj=133332)
+[    0.000316] pid_max: default: 32768 minimum: 301
+[    0.000448] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.000461] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.001332] ASID allocator initialised with 32768 entries
+[    0.001381] rcu: Hierarchical SRCU implementation.
+[    0.001560] EFI services will not be available.
+[    0.001674] smp: Bringing up secondary CPUs ...
+[    0.001974] Detected VIPT I-cache on CPU1
+[    0.002003] CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+[    0.002321] Detected VIPT I-cache on CPU2
+[    0.002338] CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+[    0.002634] Detected VIPT I-cache on CPU3
+[    0.002651] CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+[    0.002693] smp: Brought up 1 node, 4 CPUs
+[    0.002704] SMP: Total of 4 processors activated.
+[    0.002709] CPU features: detected: 32-bit EL0 Support
+[    0.002713] CPU features: detected: CRC32 instructions
+[    0.002742] CPU: All CPU(s) started at EL2
+[    0.002755] alternatives: patching kernel code
+[    0.003754] devtmpfs: initialized
+[    0.007761] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.007773] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.013283] xor: measuring software checksum speed
+[    0.052030]    8regs     :  2639.000 MB/sec
+[    0.092053]    32regs    :  3027.000 MB/sec
+[    0.132081]    arm64_neon:  2628.000 MB/sec
+[    0.132084] xor: using function: 32regs (3027.000 MB/sec)
+[    0.132094] pinctrl core: initialized pinctrl subsystem
+[    0.132663] NET: Registered protocol family 16
+[    0.133565] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.133588] audit: initializing netlink subsys (disabled)
+[    0.133707] audit: type=2000 audit(0.132:1): state=initialized audit_enabled=0 res=1
+[    0.134003] cpuidle: using governor menu
+[    0.134166] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.144672] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.144678] HugeTLB registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.144683] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.144687] HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
+[    1.110826] DRBG: Continuing without Jitter RNG
+[    1.184720] raid6: neonx8   gen()  1715 MB/s
+[    1.252742] raid6: neonx8   xor()  1624 MB/s
+[    1.320789] raid6: neonx4   gen()  1647 MB/s
+[    1.388819] raid6: neonx4   xor()  1577 MB/s
+[    1.456889] raid6: neonx2   gen()  1249 MB/s
+[    1.524908] raid6: neonx2   xor()  1304 MB/s
+[    1.592992] raid6: neonx1   gen()   810 MB/s
+[    1.660993] raid6: neonx1   xor()   979 MB/s
+[    1.729019] raid6: int64x8  gen()  1291 MB/s
+[    1.797058] raid6: int64x8  xor()   844 MB/s
+[    1.865118] raid6: int64x4  gen()  1085 MB/s
+[    1.933152] raid6: int64x4  xor()   815 MB/s
+[    2.001190] raid6: int64x2  gen()   752 MB/s
+[    2.069227] raid6: int64x2  xor()   657 MB/s
+[    2.137348] raid6: int64x1  gen()   499 MB/s
+[    2.205298] raid6: int64x1  xor()   500 MB/s
+[    2.205301] raid6: using algorithm neonx8 gen() 1715 MB/s
+[    2.205304] raid6: .... xor() 1624 MB/s, rmw enabled
+[    2.205307] raid6: using neon recovery algorithm
+[    2.205613] iommu: Default domain type: Translated 
+[    2.205806] SCSI subsystem initialized
+[    2.205934] usbcore: registered new interface driver usbfs
+[    2.205959] usbcore: registered new interface driver hub
+[    2.205982] usbcore: registered new device driver usb
+[    2.206026] mc: Linux media interface: v0.10
+[    2.206043] videodev: Linux video capture interface: v2.00
+[    2.206072] pps_core: LinuxPPS API ver. 1 registered
+[    2.206075] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    2.206084] PTP clock support registered
+[    2.206101] EDAC MC: Ver: 3.0.0
+[    2.206440] zynqmp-ipi-mbox mailbox@ff990400: Registered ZynqMP IPI mbox with TX/RX channels.
+[    2.206594] FPGA manager framework
+[    2.206710] Advanced Linux Sound Architecture Driver Initialized.
+[    2.206946] Bluetooth: Core ver 2.22
+[    2.206968] NET: Registered protocol family 31
+[    2.206971] Bluetooth: HCI device and connection manager initialized
+[    2.206978] Bluetooth: HCI socket layer initialized
+[    2.206983] Bluetooth: L2CAP socket layer initialized
+[    2.206994] Bluetooth: SCO socket layer initialized
+[    2.207313] clocksource: Switched to clocksource arch_sys_counter
+[    2.207398] VFS: Disk quotas dquot_6.6.0
+[    2.207438] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.211043] NET: Registered protocol family 2
+[    2.211381] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    2.211423] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    2.211607] TCP bind hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[    2.211957] TCP: Hash tables configured (established 32768 bind 32768)
+[    2.212020] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    2.212087] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    2.212232] NET: Registered protocol family 1
+[    2.212473] RPC: Registered named UNIX socket transport module.
+[    2.212477] RPC: Registered udp transport module.
+[    2.212480] RPC: Registered tcp transport module.
+[    2.212483] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.212718] PCI: CLS 0 bytes, default 64
+[    2.213130] hw perfevents: no interrupt-affinity property for /pmu, guessing.
+[    2.213266] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    2.213943] Initialise system trusted keyrings
+[    2.214019] workingset: timestamp_bits=46 max_order=20 bucket_order=0
+[    2.214705] NFS: Registering the id_resolver key type
+[    2.214715] Key type id_resolver registered
+[    2.214718] Key type id_legacy registered
+[    2.214726] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    2.214741] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    2.226598] NET: Registered protocol family 38
+[    2.226604] Key type asymmetric registered
+[    2.226609] Asymmetric key parser 'x509' registered
+[    2.226628] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 247)
+[    2.226633] io scheduler mq-deadline registered
+[    2.226637] io scheduler kyber registered
+[    2.249780] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    2.252561] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    2.256376] brd: module loaded
+[    2.260365] loop: module loaded
+[    2.260963] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    2.261932] libphy: Fixed MDIO Bus: probed
+[    2.262788] tun: Universal TUN/TAP device driver, 1.6
+[    2.262873] CAN device driver interface
+[    2.263586] usbcore: registered new interface driver asix
+[    2.263621] usbcore: registered new interface driver ax88179_178a
+[    2.263641] usbcore: registered new interface driver cdc_ether
+[    2.263661] usbcore: registered new interface driver net1080
+[    2.263680] usbcore: registered new interface driver cdc_subset
+[    2.263701] usbcore: registered new interface driver zaurus
+[    2.263729] usbcore: registered new interface driver cdc_ncm
+[    2.264385] usbcore: registered new interface driver uas
+[    2.264413] usbcore: registered new interface driver usb-storage
+[    2.264904] rtc_zynqmp ffa60000.rtc: registered as rtc0
+[    2.264944] i2c /dev entries driver
+[    2.266192] usbcore: registered new interface driver uvcvideo
+[    2.266195] USB Video Class driver (1.1.1)
+[    2.266489] Bluetooth: HCI UART driver ver 2.3
+[    2.266494] Bluetooth: HCI UART protocol H4 registered
+[    2.266498] Bluetooth: HCI UART protocol BCSP registered
+[    2.266514] Bluetooth: HCI UART protocol LL registered
+[    2.266517] Bluetooth: HCI UART protocol ATH3K registered
+[    2.266533] Bluetooth: HCI UART protocol Three-wire (H5) registered
+[    2.266564] Bluetooth: HCI UART protocol Intel registered
+[    2.266578] Bluetooth: HCI UART protocol QCA registered
+[    2.266604] usbcore: registered new interface driver bcm203x
+[    2.266627] usbcore: registered new interface driver bpa10x
+[    2.266648] usbcore: registered new interface driver bfusb
+[    2.266671] usbcore: registered new interface driver btusb
+[    2.266706] usbcore: registered new interface driver ath3k
+[    2.266850] EDAC MC0: 13 UE BankGroup Number 0 Block Number 0 on mc#0csrow#0channel#0 (csrow:0 channel:0 page:0x0 offset:0x0 grain:1)
+[    2.266929] EDAC MC0: Giving out device to module 1 controller synps_ddr_controller: DEV synps_edac (INTERRUPT)
+[    2.267065] EDAC DEVICE0: Giving out device to module zynqmp-ocm-edac controller zynqmp_ocm: DEV ff960000.memory-controller (INTERRUPT)
+[    2.267401] sdhci: Secure Digital Host Controller Interface driver
+[    2.267405] sdhci: Copyright(c) Pierre Ossman
+[    2.267408] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.267695] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.267736] zynqmp_firmware_probe Platform Management API v1.1
+[    2.267741] zynqmp_firmware_probe Trustzone version v1.0
+[    2.290303] alg: No test for xilinx-zynqmp-aes (zynqmp-aes)
+[    2.290450] zynqmp_aes zynqmp_aes: AES Successfully Registered
+[    2.290450] 
+[    2.290585] alg: No test for xilinx-keccak-384 (zynqmp-keccak-384)
+[    2.290809] alg: No test for xilinx-zynqmp-rsa (zynqmp-rsa)
+[    2.291034] usbcore: registered new interface driver usbhid
+[    2.291037] usbhid: USB HID core driver
+[    2.293127] fpga_manager fpga0: Xilinx ZynqMP FPGA Manager registered
+[    2.293389] usbcore: registered new interface driver snd-usb-audio
+[    2.294078] pktgen: Packet Generator for packet performance testing. Version: 2.75
+[    2.294567] Initializing XFRM netlink socket
+[    2.294648] NET: Registered protocol family 10
+[    2.295005] Segment Routing with IPv6
+[    2.295102] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    2.295419] NET: Registered protocol family 17
+[    2.295435] NET: Registered protocol family 15
+[    2.295453] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    2.295457] can: controller area network core (rev 20170425 abi 9)
+[    2.295481] NET: Registered protocol family 29
+[    2.295486] can: raw protocol (rev 20170425)
+[    2.295490] can: broadcast manager protocol (rev 20170425 t)
+[    2.295496] can: netlink gateway (rev 20190810) max_hops=1
+[    2.295554] Bluetooth: RFCOMM TTY layer initialized
+[    2.295561] Bluetooth: RFCOMM socket layer initialized
+[    2.295573] Bluetooth: RFCOMM ver 1.11
+[    2.295580] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    2.295584] Bluetooth: BNEP filters: protocol multicast
+[    2.295589] Bluetooth: BNEP socket layer initialized
+[    2.295593] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    2.295598] Bluetooth: HIDP socket layer initialized
+[    2.295700] 9pnet: Installing 9P2000 support
+[    2.295719] Key type dns_resolver registered
+[    2.295994] registered taskstats version 1
+[    2.295998] Loading compiled-in X.509 certificates
+[    2.296357] Btrfs loaded, crc32c=crc32c-generic
+[    2.304180] ff000000.serial: ttyPS0 at MMIO 0xff000000 (irq = 41, base_baud = 6249999) is a xuartps
+[    3.550170] printk: console [ttyPS0] enabled
+[    3.554739] of-fpga-region fpga-full: FPGA Region probed
+[    3.560566] GPIO IRQ not connected
+[    3.563962] XGpio: gpio@80010000: registered, base is 509
+[    3.569938] xilinx-zynqmp-dma fd500000.dma: ZynqMP DMA driver Probe success
+[    3.577027] xilinx-zynqmp-dma fd510000.dma: ZynqMP DMA driver Probe success
+[    3.584115] xilinx-zynqmp-dma fd520000.dma: ZynqMP DMA driver Probe success
+[    3.591199] xilinx-zynqmp-dma fd530000.dma: ZynqMP DMA driver Probe success
+[    3.598283] xilinx-zynqmp-dma fd540000.dma: ZynqMP DMA driver Probe success
+[    3.605369] xilinx-zynqmp-dma fd550000.dma: ZynqMP DMA driver Probe success
+[    3.612450] xilinx-zynqmp-dma fd560000.dma: ZynqMP DMA driver Probe success
+[    3.619542] xilinx-zynqmp-dma fd570000.dma: ZynqMP DMA driver Probe success
+[    3.626694] xilinx-zynqmp-dma ffa80000.dma: ZynqMP DMA driver Probe success
+[    3.633776] xilinx-zynqmp-dma ffa90000.dma: ZynqMP DMA driver Probe success
+[    3.640863] xilinx-zynqmp-dma ffaa0000.dma: ZynqMP DMA driver Probe success
+[    3.647952] xilinx-zynqmp-dma ffab0000.dma: ZynqMP DMA driver Probe success
+[    3.655032] xilinx-zynqmp-dma ffac0000.dma: ZynqMP DMA driver Probe success
+[    3.662119] xilinx-zynqmp-dma ffad0000.dma: ZynqMP DMA driver Probe success
+[    3.669207] xilinx-zynqmp-dma ffae0000.dma: ZynqMP DMA driver Probe success
+[    3.676296] xilinx-zynqmp-dma ffaf0000.dma: ZynqMP DMA driver Probe success
+[    3.683504] zynqmp-qspi ff0f0000.spi: rx bus width not found
+[    3.689158] zynqmp-qspi ff0f0000.spi: tx bus width not found
+[    3.694961] spi_master spi0: cannot find modalias for /amba/spi@ff0f0000/flash@0
+[    3.702353] spi_master spi0: Failed to create SPI device for /amba/spi@ff0f0000/flash@0
+[    3.710630] macb ff0b0000.ethernet: Not enabling partial store and forward
+[    3.717981] libphy: MACB_mii_bus: probed
+[    3.730435] zynqmp_pll_disable() clock disable failed for dpll_int, ret = -13
+[    3.792513] Micrel KSZ9031 Gigabit PHY ff0b0000.ethernet-ffffffff:03: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=ff0b0000.ethernet-ffffffff:03, irq=POLL)
+[    3.808337] macb ff0b0000.ethernet eth0: Cadence GEM rev 0x50070106 at 0xff0b0000 irq 29 (d6:78:8a:ac:75:ee)
+[    3.818420] macb ff0c0000.ethernet: Not enabling partial store and forward
+[    3.825309] macb ff0c0000.ethernet: invalid hw address, using random
+[    3.832040] libphy: MACB_mii_bus: probed
+[    3.836100] mdio_bus ff0c0000.ethernet-ffffffff: MDIO device at address 3 is missing.
+[    3.859958] xilinx-axipmon ffa00000.perf-monitor: Probed Xilinx APM
+[    3.866453] xilinx-axipmon fd0b0000.perf-monitor: Probed Xilinx APM
+[    3.872905] xilinx-axipmon fd490000.perf-monitor: Probed Xilinx APM
+[    3.879381] xilinx-axipmon ffa10000.perf-monitor: Probed Xilinx APM
+[    3.885854] dwc3-of-simple ff9d0000.usb0: dwc3_simple_set_phydata: Can't find usb3-phy
+[    3.894130] dwc3 fe200000.dwc3: Failed to get clk 'ref': -2
+[    3.900106] dwc3-of-simple ff9e0000.usb1: dwc3_simple_set_phydata: Can't find usb3-phy
+[    3.908318] dwc3 fe300000.dwc3: Failed to get clk 'ref': -2
+[    3.914910] i2c i2c-0: Added multiplexed i2c bus 1
+[    3.919241] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.919807] i2c i2c-0: Added multiplexed i2c bus 2
+[    3.925184] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    3.930058] i2c i2c-0: Added multiplexed i2c bus 3
+[    3.937694] xhci-hcd xhci-hcd.0.auto: hcc params 0x0238f625 hci version 0x100 quirks 0x0000000202010010
+[    3.942686] i2c i2c-0: Added multiplexed i2c bus 4
+[    3.951789] xhci-hcd xhci-hcd.0.auto: irq 46, io mem 0xfe300000
+[    3.956728] i2c i2c-0: Added multiplexed i2c bus 5
+[    3.962885] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.967374] i2c i2c-0: Added multiplexed i2c bus 6
+[    3.972807] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    3.977613] i2c i2c-0: Added multiplexed i2c bus 7
+[    3.985764] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.990645] i2c i2c-0: Added multiplexed i2c bus 8
+[    3.997747] usb usb1: Product: xHCI Host Controller
+[    3.997750] usb usb1: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.002535] pca954x 0-0070: registered 8 multiplexed busses for I2C switch pca9548
+[    4.007390] usb usb1: SerialNumber: xhci-hcd.0.auto
+[    4.021731] hub 1-0:1.0: USB hub found
+[    4.026442] cdns-i2c ff020000.i2c: 400 kHz mmio ff020000 irq 32
+[    4.030182] hub 1-0:1.0: 1 port detected
+[    4.036425] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 1333333 KHz
+[    4.040157] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    4.047382] cpu cpu0: dev_pm_opp_set_rate: failed to find current OPP for freq 1333333320 (-34)
+[    4.052854] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    4.061585] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 1199999 KHz
+[    4.069183] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0 SuperSpeed
+[    4.077707] cpu cpu0: dev_pm_opp_set_rate: failed to find current OPP for freq 1333333320 (-34)
+[    4.084257] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.101039] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.04
+[    4.109300] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.116511] usb usb2: Product: xHCI Host Controller
+[    4.121379] usb usb2: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.127984] usb usb2: SerialNumber: xhci-hcd.0.auto
+[    4.131814] mmc0: SDHCI controller on ff160000.mmc [ff160000.mmc] using ADMA 64-bit
+[    4.133091] hub 2-0:1.0: USB hub found
+[    4.144369] hub 2-0:1.0: 1 port detected
+[    4.148535] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+[    4.156280] xhci-hcd xhci-hcd.1.auto: hcc params 0x0238f625 hci version 0x100 quirks 0x0000000202010010
+[    4.165687] xhci-hcd xhci-hcd.1.auto: irq 43, io mem 0xfe200000
+[    4.170040] mmc1: SDHCI controller on ff170000.mmc [ff170000.mmc] using ADMA 64-bit
+[    4.171836] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    4.187506] rtc_zynqmp ffa60000.rtc: setting system clock to 1970-01-01T00:00:08 UTC (8)
+[    4.187510] of_cfs_init
+[    4.187535] of_cfs_init: OK
+[    4.195595] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.195598] usb usb3: Product: xHCI Host Controller
+[    4.198136] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    4.200811] usb usb3: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.227233] usb usb3: SerialNumber: xhci-hcd.1.auto
+[    4.232429] hub 3-0:1.0: USB hub found
+[    4.236295] hub 3-0:1.0: 1 port detected
+[    4.240431] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    4.245929] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 4
+[    4.253588] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0 SuperSpeed
+[    4.260292] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.268540] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.04
+[    4.276807] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.284018] usb usb4: Product: xHCI Host Controller
+[    4.288888] usb usb4: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.295493] usb usb4: SerialNumber: xhci-hcd.1.auto
+[    4.300637] hub 4-0:1.0: USB hub found
+[    4.304502] hub 4-0:1.0: 1 port detected
+[    4.324393] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    4.330922] clk: Not disabling unused clocks
+[    4.335191] ALSA device list:
+[    4.338145]   No soundcards found.
+[    4.341825] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    4.350437] cfg80211: failed to load regulatory.db
+[    4.355349] Waiting for root device /dev/mmcblk1p2...
+[    4.364951] mmc1: new high speed SDHC card at address 5048
+[    4.370778] mmcblk1: mmc1:5048 SD16G 14.4 GiB 
+[    4.376499]  mmcblk1: p1 p2
+[    4.407935] mmc0: new HS200 MMC card at address 0001
+[    4.413206] mmcblk0: mmc0:0001 W52516 14.3 GiB 
+[    4.417901] mmcblk0boot0: mmc0:0001 W52516 partition 1 4.00 MiB
+[    4.423974] mmcblk0boot1: mmc0:0001 W52516 partition 2 4.00 MiB
+[    4.429960] mmcblk0rpmb: mmc0:0001 W52516 partition 3 4.00 MiB, chardev (245:0)
+[    4.438072]  mmcblk0: p1
+[    4.541361] EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)
+[    4.549482] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[    4.564312] devtmpfs: mounted
+[    4.567433] Freeing unused kernel memory: 704K
+[    4.571901] Run /sbin/init as init process
+[    4.762095] random: fast init done
+[    5.043177] random: systemd: uninitialized urandom read (16 bytes read)
+[    5.059149] random: systemd: uninitialized urandom read (16 bytes read)
+[    5.084557] systemd[1]: systemd 219 running in system mode. (+PAM +AUDIT +SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 -SECCOMP +BLKID +ELFUTILS +KMOD +IDN)
+[    5.102859] systemd[1]: Detected architecture arm64.
+
+Welcome to [0;31mCentOS Linux 7 (AltArch)[0m!
+
+[    5.134659] systemd[1]: Set hostname to <sl-xu5-eth0-01>.
+[    5.159270] random: systemd: uninitialized urandom read (16 bytes read)
+[    5.730893] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[[32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
+[    5.755447] systemd[1]: Reached target Swap.
+[[32m  OK  [0m] Reached target Swap.
+[    5.771972] systemd[1]: Created slice Root Slice.
+[[32m  OK  [0m] Created slice Root Slice.
+[    5.787579] systemd[1]: Created slice System Slice.
+[[32m  OK  [0m] Created slice System Slice.
+[    5.803630] systemd[1]: Created slice system-selinux\x2dpolicy\x2dmigrate\x2dlocal\x2dchanges.slice.
+[[32m  OK  [0m] Created slice system-selinux\x2dpol...grate\x2dlocal\x2dchanges.slice.
+[    5.827622] systemd[1]: Created slice system-serial\x2dgetty.slice.
+[[32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
+[    5.844685] systemd[1]: Starting Collect Read-Ahead Data...
+         Starting Collect Read-Ahead Data...
+[    5.855712] systemd-readahead[158]: Failed to create fanotify object: Function not implemented
+[[32m  OK  [0m] Created slice system-getty.slice.
+[[32m  OK  [0m] Listening on Journal Socket.
+         Mounting Debug File System...
+         Mounting Huge Pages File System...
+         Mounting POSIX Message Queue File System...
+         Starting Journal Service...
+         Starting Read and set NIS domainname from /etc/sysconfig/network...
+[[32m  OK  [0m] Listening on Delayed Shutdown Socket.
+[[32m  OK  [0m] Listening on udev Control Socket.
+[[32m  OK  [0m] Listening on LVM2 metadata daemon socket.
+[[32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
+[[32m  OK  [0m] Created slice User and Session Slice.
+[[32m  OK  [0m] Reached target Slices.
+[[32m  OK  [0m] Listening on Device-mapper event daemon FIFOs.
+         Starting Monitoring of LVM2 mirrors... dmeventd or progress polling...
+[[32m  OK  [0m] Listening on LVM2 poll daemon socket.
+[[32m  OK  [0m] Listening on udev Kernel Socket.
+[[32m  OK  [0m] Mounted POSIX Message Queue File System.
+[[32m  OK  [0m] Mounted Huge Pages File System.
+[[32m  OK  [0m] Mounted Debug File System.
+[[32m  OK  [0m] Started Journal Service.
+[[1;31mFAILED[0m] Failed to start Collect Read-Ahead Data.
+See 'systemctl status systemd-readahead-collect.service' for details.
+[[32m  OK  [0m] Started Read and set NIS domainname from /etc/sysconfig/network.
+[[32m  OK  [0m] Started LVM2 metadata daemon.
+         Starting Setup Virtual Console...
+         Starting Create Static Device Nodes in /dev...
+         Starting Configure read-only root support...
+         Starting udev Coldplug all Devices...
+         Mounting Configuration File System...
+         Starting Apply Kernel Variables...
+         Starting Flush Journal to Persistent Storage...
+[[32m  OK  [0m] Mounted Configuration File System.
+[[32m  OK  [0m] Started Configure read-only root support.
+[[32m  OK  [0m] Started Apply Kernel Variables.
+[[32m  OK  [0m] Started Create Static Device Nodes in /dev.
+[[32m  OK  [0m] Started udev Coldplug all Devices.
+[    6.457905] systemd-journald[163]: Received request to flush runtime journal from PID 1
+         Starting udev Wait for Complete Device Initialization...
+         Starting udev Kernel Device Manager...
+         Starting Load/Save Random Seed...
+[[32m  OK  [0m] Started Flush Journal to Persistent Storage.
+[[32m  OK  [0m] Started Setup Virtual Console.
+[[32m  OK  [0m] Started Load/Save Random Seed.
+[[32m  OK  [0m] Started udev Kernel Device Manager.
+         Starting Show Plymouth Boot Screen...
+[[32m  OK  [0m] Started Show Plymouth Boot Screen.
+[[32m  OK  [0m] Started Forward Password Requests to Plymouth Directory Watch.
+[[32m  OK  [0m] Found device /dev/ttyPS0.
+%G[[32m  OK  [0m] Started udev Wait for Complete Device Initialization.
+         Starting Activation of DM RAID sets...
+[[32m  OK  [0m] Started Monitoring of LVM2 mirrors,...ng dmeventd or progress polling.
+[[32m  OK  [0m] Reached target Local File Systems (Pre).
+[[32m  OK  [0m] Started Activation of DM RAID sets.
+[[32m  OK  [0m] Reached target Local Encrypted Volumes.
+[[32m  OK  [0m] Reached target Local File Systems.
+         Starting Tell Plymouth To Write Out Runtime Data...
+         Starting Create Volatile Files and Directories...
+[[32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
+[[32m  OK  [0m] Started Create Volatile Files and Directories.
+         Starting Security Auditing Service...
+[[32m  OK  [0m] Started Security Auditing Service.
+         Starting Update UTMP about System Boot/Shutdown...
+[[32m  OK  [0m] Started Update UTMP about System Boot/Shutdown.
+[[32m  OK  [0m] Reached target System Initialization.
+[[32m  OK  [0m] Listening on PC/SC Smart Card Daemon Activation Socket.
+[[32m  OK  [0m] Listening on Open-iSCSI iscsid Socket.
+[[32m  OK  [0m] Started Daily Cleanup of Temporary Directories.
+[[32m  OK  [0m] Reached target Timers.
+[[32m  OK  [0m] Listening on D-Bus System Message Bus Socket.
+[[32m  OK  [0m] Started Flexible branding.
+[[32m  OK  [0m] Reached target Paths.
+[[32m  OK  [0m] Listening on Open-iSCSI iscsiuio Socket.
+[[32m  OK  [0m] Reached target Sockets.
+[[32m  OK  [0m] Reached target Basic System.
+[[32m  OK  [0m] Started D-Bus System Message Bus.
+[[32m  OK  [0m] Started irqbalance daemon.
+         Starting Login Service...
+         Starting Authorization Manager...
+         Starting Dump dmesg to /var/log/dmesg...
+         Starting NTP client/server...
+[[32m  OK  [0m] Started Login Service.
+[[32m  OK  [0m] Started Dump dmesg to /var/log/dmesg.
+[[32m  OK  [0m] Started NTP client/server.
+[[32m  OK  [0m] Started Authorization Manager.
+         Starting firewalld - dynamic firewall daemon...
+[[32m  OK  [0m] Started firewalld - dynamic firewall daemon.
+[[32m  OK  [0m] Reached target Network (Pre).
+         Starting Network Manager...
+[[32m  OK  [0m] Started Network Manager.
+         Starting Network Manager Wait Online...
+         Starting Hostname Service...
+[[32m  OK  [0m] Started Hostname Service.
+         Starting Network Manager Script Dispatcher Service...
+[[32m  OK  [0m] Started Network Manager Script Dispatcher Service.
+[   10.886118] pps pps0: new PPS source ptp0
+[   10.890177] macb ff0b0000.ethernet: gem-ptp-timer ptp clock registered.
+[   14.975956] macb ff0b0000.ethernet eth0: link up (1000/Full)
+[   14.981628] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   14.999190] macb ff0b0000.ethernet: gem-ptp-timer ptp clock unregistered.
+[   15.009183] macb ff0b0000.ethernet eth0: link up (1000/Full)
+[   15.015207] pps pps0: new PPS source ptp0
+[   15.019222] macb ff0b0000.ethernet: gem-ptp-timer ptp clock registered.
+[[32m  OK  [0m] Started Network Manager Wait Online.
+         Starting LSB: Bring up/down networking...
+[[1;31mFAILED[0m] Failed to start LSB: Bring up/down networking.
+See 'systemctl status network.service' for details.
+[[32m  OK  [0m] Reached target Network.
+         Starting Postfix Mail Transport Agent...
+[[32m  OK  [0m] Reached target Network is Online.
+         Starting Dynamic System Tuning Daemon...
+         Starting System Logging Service...
+         Starting OpenSSH server daemon...
+         Starting Logout off all iSCSI sessions on shutdown...
+[[32m  OK  [0m] Started Logout off all iSCSI sessions on shutdown.
+         Starting Availability of block devices...
+[[32m  OK  [0m] Reached target Remote File Systems (Pre).
+[[32m  OK  [0m] Reached target Remote File Systems.
+         Starting Crash recovery kernel arming...
+         Starting Permit User Sessions...
+[[32m  OK  [0m] Started Availability of block devices.
+[[32m  OK  [0m] Started Permit User Sessions.
+[[32m  OK  [0m] Started Command Scheduler.
+         Starting Wait for Plymouth Boot Screen to Quit...
+         Starting Terminate Plymouth Boot Screen...
+
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+sl-xu5-eth0-01 login: root
+Password: 
+Last login: Wed Nov 17 21:00:46 on ttyPS0
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m 
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m ls
+total 44K
+-rw-r--r-- 1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r-- 1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r-- 1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r-- 1 root root   18 Dec 29  2013 .bash_logout
+-rw------- 1 root root 1.9K Sep 13  2017 anaconda-ks.cfg
+-rw-r--r-- 1 root root  471 Nov 10 15:45 bashrc
+-rw-r--r-- 1 root root  647 Nov 10 16:41 .bashrc
+drwxr----- 3 root root 4.0K Nov 10 19:33 .pki/
+drwx------ 2 root root 4.0K Nov 10 19:48 .ssh/
+-rw------- 1 root root 2.9K Nov 17 21:01 .bash_history
+drwxr-xr-x 3 root root 4.0K Nov 17 22:11 apps/
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m cd apps/
+/root/apps
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m ls
+total 16K
+drwxr-xr-x 2 root root 4.0K Nov 17 22:11 si5345/
+-rw-r--r-- 1 root root 3.1K Nov 17 22:11 devmem.c
+-rw-r--r-- 1 root root  141 Nov 17 22:11 count-up-LEDs.sh
+-rw-r--r-- 1 root root 3.0K Nov 17 22:11 blink.c
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m nano si5345/Makefile 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1            File: si5345/Makefile                               [3;1H[m(B.phoney: all clean[2BFILE = si5345[2Ball: ${FILE}.c[1B	gcc -std=c99 -Wall -g -O0 ${FILE}.c -o ${FILE}[2Bclean:[1B	rm ${FILE}[12;9Hrm -rf ${FILE}.dSYM[22;32H[0;7m(B[ Read 10 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[20B[J[24;80H[24;1H
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m gcc -std=c99 -Wall -g -O0 devmem.c -O devmem
+gcc: error: devmem: No such file or directory
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m gcc -std=c99 -Wall -g -O0 devmem.c -O devmem[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23Pnano si5345/Makefile 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1            File: si5345/Makefile                               [3;1H[m(B.phoney: all clean[2BFILE = si5345[2Ball: ${FILE}.c[1B	gcc -std=c99 -Wall -g -O0 ${FILE}.c -o ${FILE}[2Bclean:[1B	rm ${FILE}[12;9Hrm -rf ${FILE}.dSYM[22;32H[0;7m(B[ Read 10 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[20B[J[24;80H[24;1H
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m nano si5345/Makefile gcc -std=c99 -Wall -g -O0 devmem.c -O devmem[C[C[1P devmemo devmem
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m gcc -std=c99 -Wall -g -O0 devmem.c -o devmem[C[C[C[C[C[C[C[C[C[C[C
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m ls
+total 44K
+drwxr-xr-x 2 root root 4.0K Nov 17 22:11 si5345/
+-rw-r--r-- 1 root root 3.1K Nov 17 22:11 devmem.c
+-rw-r--r-- 1 root root  141 Nov 17 22:11 count-up-LEDs.sh
+-rw-r--r-- 1 root root 3.0K Nov 17 22:11 blink.c
+-rwxr-xr-x 1 root root  77K Nov 17 22:14 devmem*
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m lsgcc -std=c99 -Wall -g -O0 devmem.c -o devmem[1P[1P[1P[1P[1P[1P[1@b[1@l[1@i[1@n[1@k[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[Kblink
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m ./[K[Kchmod +x count-up-LEDs.sh 
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m ./count-up-LEDs.sh 
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m ./blink -w -d 0
+./blink: invalid option -- 'd'
+Invalid option.
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m ./blink --help
+./blink: unrecognized option '--help'
+Invalid option.
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m ./blink --help[K[K[K[K[Kh
+./blink: invalid option -- 'h'
+Invalid option.
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m nano blink.c 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1               File: blink.c                                    [3;1H[m(B// Compile with "gcc -std=c99 -Wall -g -O0 blink.c -o blink"[2B#include <stdio.h>[1B#include <getopt.h>[1B#include <sys/types.h> // open() etc.[1B#include <sys/stat.h>  // open() etc.[1B#include <fcntl.h>     // open() etc.[1B#include <unistd.h>    // sysconf() etc.[1B#include <sys/mman.h>  // mmap() etc.[1B#include <stdlib.h>    // strtol() etc.[1B#include <stdbool.h>   // Bool type etc.[2B#define GPIO_PHYS_ADDR 0x80010000 // GPIO connected to 8 LEDs[2Bvoid help(){[18;5Hprintf("-r, --read\tread LED value\n");[19;5Hprintf("-w, --write\twrite LED value\n");[20;5Hprintf("-v, --value\tvalue to be displayed with 3-bit LED\n");[21;5Hprintf("\n");[22;32H[0;7m(B[ Read 103 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[4B[4B[4B[4A[4A[4A[19B[K[19A[4B[4B[4B[4B[3;22r[3;1H[10M[1;24r[12;5Hprintf("Example:\n");[13;5Hprintf("\tWrite value=0x7: sudo ./blink --value=0x7 --write\n");[14;5Hreturn;[1B}[2Bint main (int argc , char* argv[]){[18;23Hint   fd;[19;14Hunsigned int   page_size = sysconf( _SC_PAGESIZE );[20;14Hunsigned int   phys_addr, page_addr, page_offset;[21;9Hvolatile unsigned int * gpio_ptr;[8A[4B[4B[2;22r[2;1H[10M[1;24r[2;1H[K[13;5H// Open /dev/mem with read-write mode.[14;9Hfd = open( "/dev/mem", O_RDWR ); // File Descriptor. fd >= 0 if success$[15;9Hif( fd < 0 ) {[16;17Hprintf("Error opening /dev/mem\n" );[17;9Hexit(EXIT_FAILURE);[18;9H}[20;5H// Initialize gpio_ptr[21;9Hphys_addr   = GPIO_PHYS_ADDR;[6A[4B[2;22r[2;1H[10M[1;24r[12;9Hpage_addr   = ( phys_addr & ~ ( page_size - 1 ));[13;9Hpage_offset = phys_addr - page_addr;[14;9Hgpio_ptr    = mmap( NULL, page_size, PROT_READ|PROT_WRITE, MAP_SHARED, $[15;9Hif(gpio_ptr == MAP_FAILED) {[16;17Hprintf("Failed to map LED physical address\n" );[17;17Hclose( fd );[18;17Hreturn EXIT_FAILURE;[19;9H}[1Bgpio_ptr += page_offset;[7A[4B[4B[3;22r[3;1H[10M[1;24r[12;5H/* ---- option analysis ---- */[13;5Hstruct option longopts[] = {[14;9H{"read", no_argument, NULL, 'r'},[15;9H{"write", no_argument, NULL, 'w'},[16;9H{"value", required_argument, NULL, 'v'},[17;9H{0, 0, 0, 0} // indicates the termination of this array[18;5H};[1Bchar optstring[] = "rwv:";[20;5Hint opt;[21;5Hint longindex;[6A[4B[2;22r[2;1H[10M[1;24r[2;1H[K[13;5H/* ---- Get options ---- */[14;5Hbool is_read = false;[15;5Hbool is_write = false;[16;5Hunsigned int val = 0;[17;5Hwhile ([1B	(opt = getopt_long(argc, argv, optstring, longopts, &longindex)) != -1[19;5H){[1B	switch (opt){[21;13Hcase 'r':[8A[4B[4B[2;22r[2;1H[10M[1;24r[12;17His_read = true;[13;17Hbreak;[14;13Hcase 'w':[15;17His_write = true;[16;17Hbreak;[17;13Hcase 'v':[18;17Hval = (unsigned int)strtol(optarg, NULL, 0);[19;17Hif (val > 0b111){[20;21Hprintf("Value must be 3-bit number.\n");[21;21Hclose(fd);[6A[4B[3;22r[3;1H[10M[1;24r[12;21Hreturn 1;[13;17H}[1Bbreak;[15;13Hdefault:[16;17Hprintf("Invalid option.\n");[17;17Hclose(fd);[18;17Hreturn 1;[19;9H}[20;5H}[7A[4B[4B[16A[2;21r[2;1H[10L[1;24r[3;5H/* ---- Get options ---- */[4;5Hbool is_read = false;[5;5Hbool is_write = false;[6;5Hunsigned int val = 0;[7;5Hwhile ([1B	(opt = getopt_long(argc, argv, optstring, longopts, &longindex)) != -1[9;5H){[1B	switch (opt){[11;13Hcase 'r':[12;17His_read = true;[A[4A[4A[2;21r[2;1H[10L[1;24r[3;5Hstruct option longopts[] = {[4;9H{"read", no_argument, NULL, 'r'},[5;9H{"write", no_argument, NULL, 'w'},[6;9H{"value", required_argument, NULL, 'v'},[7;9H{0, 0, 0, 0} // indicates the termination of this array[8;5H};[1Bchar optstring[] = "rwv:";[10;5Hint opt;[11;5Hint longindex;[2A[4A[2;22r[2;1H[10L[1;24r[3;9Hpage_offset = phys_addr - page_addr;[4;9Hgpio_ptr    = mmap( NULL, page_size, PROT_READ|PROT_WRITE, MAP_SHARED, $[5;9Hif(gpio_ptr == MAP_FAILED) {[6;17Hprintf("Failed to map LED physical address\n" );[7;17Hclose( fd );[8;17Hreturn EXIT_FAILURE;[9;9H}[1Bgpio_ptr += page_offset;[12;5H/* ---- option analysis ---- */[A[4A[4A[2;21r[2;1H[10L[1;24r[3;5H// Open /dev/mem with read-write mode.[4;9Hfd = open( "/dev/mem", O_RDWR ); // File Descriptor. fd >= 0 if success$[5;9Hif( fd < 0 ) {[6;17Hprintf("Error opening /dev/mem\n" );[7;9Hexit(EXIT_FAILURE);[8;9H}[10;5H// Initialize gpio_ptr[11;9Hphys_addr   = GPIO_PHYS_ADDR;[12;9Hpage_addr   = ( phys_addr & ~ ( page_size - 1 ));[3A[4A[2;21r[2;1H[10L[1;24r[3;5Hprintf("\tWrite value=0x7: sudo ./blink --value=0x7 --write\n");[4;5Hreturn;[1B}[2Bint main (int argc , char* argv[]){[8;23Hint   fd;[9;14Hunsigned int   page_size = sysconf( _SC_PAGESIZE );[10;14Hunsigned int   phys_addr, page_addr, page_offset;[11;9Hvolatile unsigned int * gpio_ptr;[4A[  176.604928] random: crng init done
+[  176.608324] random: 7 urandom warning(s) missed due to ratelimiting
+[4A[4B[4B[4B[4B[2;22r[2;1H[10M[1;24r[12;9Hpage_addr   = ( phys_addr & ~ ( page_size - 1 ));[13;9Hpage_offset = phys_addr - page_addr;[14;9Hgpio_ptr    = mmap( NULL, page_size, PROT_READ|PROT_WRITE, MAP_SHARED, $[15;9Hif(gpio_ptr == MAP_FAILED) {[16;17Hprintf("Failed to map LED physical address\n" );[17;17Hclose( fd );[18;17Hreturn EXIT_FAILURE;[19;9H}[1Bgpio_ptr += page_offset;[7A[4B[4A[4A[4A[2;21r[2;1H[10L[1;24r[3;5Hprintf("\tWrite value=0x7: sudo ./blink --value=0x7 --write\n");[4;5Hreturn;[1B}[2Bint main (int argc , char* argv[]){[8;23Hint   fd;[9;14Hunsigned int   page_size = sysconf( _SC_PAGESIZE );[10;14Hunsigned int   phys_addr, page_addr, page_offset;[11;9Hvolatile unsigned int * gpio_ptr;[8A[2;22r[2;1H[10L[1;24r[3;1H#include <stdbool.h>   // Bool type etc.[2B#define GPIO_PHYS_ADDR 0x80010000 // GPIO connected to 8 LEDs[2Bvoid help(){[8;5Hprintf("-r, --read\tread LED value\n");[9;5Hprintf("-w, --write\twrite LED value\n");[10;5Hprintf("-v, --value\tvalue to be displayed with 3-bit LED\n");[11;5Hprintf("\n");[12;5Hprintf("Example:\n");[3A[14B[J[24;80H[24;1H
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m 
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m nano blink.c [3P./blink -h-helpw -d 0[1P 0v 0
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m cp /etc/nanorc ~/.config/nano/nanorc
+cp: cannot create regular file ‘/root/.config/nano/nanorc’: No such file or directory
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m mkdir -p .config/nano/nanorc[K[K[K[K[K[K[K
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m mkdir -p .config/nanocp /etc/nanorc ~/.config/nano/nanorc
+cp: cannot create regular file ‘/root/.config/nano/nanorc’: No such file or directory
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m ls
+total 76K
+drwxr-xr-x 2 root root 4.0K Nov 17 22:11 si5345/
+-rw-r--r-- 1 root root 3.1K Nov 17 22:11 devmem.c
+-rwxr-xr-x 1 root root  141 Nov 17 22:11 count-up-LEDs.sh*
+-rw-r--r-- 1 root root 3.0K Nov 17 22:11 blink.c
+-rwxr-xr-x 1 root root  77K Nov 17 22:14 devmem*
+-rwxr-xr-x 1 root root  77K Nov 17 22:14 blink*
+drwxr-xr-x 3 root root 4.0K Nov 17 22:17 .config/
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m rm -rf .fon[K[K[Kconfig/
+
+[0;33m(sl-xu5-eth0-01)[0m apps [0;33m#[0m cd ../
+/root
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m cd ../rm -rf .config/ls[Kcp /etc/nanorc ~/.config/nano/nanorc
+cp: cannot create regular file ‘/root/.config/nano/nanorc’: No such file or directory
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m cp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd ../[Krm -rf .config/ls[Kcp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pmkdir -p .config/nano
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m mkdir -p .config/nanocp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd ../[Kp /etc/nanorc ~/.config/nano/nanorc
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m nano /[K.conmf[K[Kfig/nano/nanorc 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1           File: .config/nano/nanorc                            [3;1H[m(B## This is a system-wide configuration file for the nano editor.[1B##[1B## Each user can save his own configuration to ~/.nanorc[1B##[1B## See the nanorc(5) man page for details.[2B## Sample initialization file for GNU nano.[1B##[1B## Please note that you must have configured nano with --enable-nanorc[1B## for this file to be read!  Also note that this file should not be in[1B## DOS or Mac format, and that characters specially interpreted by the[1B## shell should not be escaped here.[1B##[1B## To make sure a value is disabled, use "unset <option>".[1B##[1B## For the options that take parameters, the default value is given.[1B## Other options are unset by default.[1B##[1B## Quotes inside string parameters don't have to be escaped with[22;32H[0;7m(B[ Read 318 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[4B[4B[4B[4B[3;21r[3;1H[10M[1;24r[12;1H## backslashes.  The last double quote in the string will be treated as[1B## its end.  For example, for the "brackets" option, ""')>]}" will match[1B## ", ', ), >, ], and }.[2B## Use auto-indentation.[1B# set autoindent[2B## Backup files to filename~.[1B# set backup[7A[4B[5B[K[A[3;22r[3;1H[10M[1;24r[12;1H## The directory to put unique backup files in.[1B# set backupdir ""[2B## Do backwards searches by default.[1B# set backwards[2B## Use bold text instead of reverse video text.[1B# set boldtext[2B## The characters treated as closing brackets when justifying[2A[3;22r[3;1H[10M[1;24r[12;1H## paragraphs.  They cannot contain blank characters.  Only closing[1B## punctuation, optionally followed by closing brackets, can end[1B## sentences.[1B##[1B# set brackets ""')>]}"[2B## Do case sensitive searches by default.[1B# set casesensitive[2B## Constantly display the cursor position in the statusbar.  Note that[4A[3;22r[3;1H[10M[1;24r[12;1H## this overrides "quickblank".[1B# set const[2B## Use cut to end of line by default.[1B# set cut[2B## Set the line length for wrapping text and justifying paragraphs.[1B## If fill is 0 or less, the line length will be the screen width less[1B## this number.[1B##[6A[4B[3;22r[3;1H[10M[1;24r[12;1H# set fill -8[2B## Enable ~/.nano_history for saving and reading search/replace strings.[1B# set historylog[2B## The opening and closing brackets that can be found by bracket[1B## searches.  They cannot contain blank characters.  The former set must[1B## come before the latter set, and both must be in the same order.[1B##[1B# set matchbrackets "(<[{)>]}"[8A[4B[4B[2;22r[2;1H[10M[1;24r[2;1H[K[11B## Use the blank line below the titlebar as extra editing space.[1B# set morespace[2B## Enable mouse support, if available for your system.  When enabled,[1B## mouse clicks can be used to place the cursor, set the mark (with a[1B## double click), and execute shortcuts.  The mouse will work in the X[1B## Window System, and on the console when gpm is running.[1B##[1B# set mouse[6A[4B[2;22r[2;1H[10M[1;24r[13;1H## Allow multiple file buffers (inserting a file will put it into a[1B## separate buffer).  You must have configured with --enable-multibuffer[1B## for this to work.[1B##[1B# set multibuffer[2B## Don't convert files from DOS/Mac format.[1B# set noconvert[7A[8B[2;22r[2;1H[10M[1;24r[12;1H## Don't follow symlinks when writing files.[1B# set nofollow[2B## Don't display the helpful shortcut lists at the bottom of the screen.[1B# set nohelp[2B## Don't add newlines to the ends of files.[1B# set nonewlines[2B## Don't wrap text at all.[2A[3;22r[3;1H[10M[1;24r[12;1Hset nowrap[2B## Set operating directory.  nano will not read or write files outside[1B## this directory and its subdirectories.  Also, the current directory[1B## is changed to here, so any files are inserted from this dir.  A blank[1B## string means the operating directory feature is turned off.[1B##[1B# set operatingdir ""[2B## Preserve the XON and XOFF keys (^Q and ^S).[8A[4B[4B[3;22r[3;1H[10M[1;24r[12;1H# set preserve[2B## The characters treated as closing punctuation when justifying[1B## paragraphs.  They cannot contain blank characters.  Only closing[1B## punctuation, optionally followed by closing brackets, can end[1B## sentences.[1B##[1B# set punct "!.?"[2B## Do quick statusbar blanking.  Statusbar messages will disappear after[6A[4B[3;22r[3;1H[10M[1;24r[12;1H## 1 keystroke instead of 26.  Note that "const" overrides this.[1B##[1B# set quickblank[2B## The email-quote string, used to justify email-quoted paragraphs.[1B## This is an extended regular expression if your system supports them,[1B## otherwise a literal string.  Default:[1B# set quotestr "^([     ]*[#:>\|}])+"[1B## if you have extended regular expression support, otherwise:[1B# set quotestr "> "[4A[4B[2;22r[2;1H[10M[1;24r[2;1H[K[11B## Fix Backspace/Delete confusion problem.[1B# set rebinddelete[2B## Fix numeric keypad key confusion problem.[1B# set rebindkeypad[2B## Do extended regular expression searches by default.[1B# set regexp[5A[4B[2;22r[2;1H[10M[1;24r[12;1H## Make the Home key smarter.  When Home is pressed anywhere but at the[1B## very beginning of non-whitespace characters on a line, the cursor[1B## will jump to that beginning (either forwards or backwards).  If the[1B## cursor is already at that position, it will jump to the true[1B## beginning of the line.[1B# set smarthome[2B## Use smooth scrolling as the default.[1B# set smooth[7A[4B[4B[3;22r[3;1H[10M[1;24r[12;1H## Enable soft line wrapping (AKA full line display).[1B# set softwrap[2B## Use this spelling checker instead of the internal one.  This option[1B## does not properly have a default value.[1B##[1Bset speller "hunspell"[2B## Allow nano to be suspended.[1B# set suspend[6A[4B[2;22r[2;1H[10M[1;24r[2;1H[K[11B## Use this tab size instead of the default; it must be greater than 0.[1B# set tabsize 8[2B## Convert typed tabs to spaces.[1B# set tabstospaces[2B## Save automatically on exit, don't prompt.[1B# set tempfile[7A[4B[4B[2;22r[2;1H[10M[1;24r[12;1H## Enable the new (EXPERIMENTAL) generic undo code, not just for line[1B## cuts.[1B# set undo[2B## Disallow file modification.  Why would you want this in an rcfile? ;)[1B# set view[2B## The two single-column characters used to display the first characters[1B## of tabs and spaces.  187 in ISO 8859-1 (0000BB in Unicode) and 183 in[1B## ISO-8859-1 (0000B7 in Unicode) seem to be good values for these.[2A[3;22r[3;1H[10M[1;24r[12;1H# set whitespace "  "[2B## Detect word boundaries more accurately by treating punctuation[1B## characters as parts of words.[1B# set wordbounds[3B## Color setup[1B##[1B## Format:[4A[4B[3;22r[3;1H[10M[1;24r[12;1H##[1B## syntax "short description" ["filename regex" ...][1B##[1B## The "none" syntax is reserved; specifying it on the command line is[1B## the same as not having a syntax at all.  The "default" syntax is[1B## special: it takes no filename regexes, and applies to files that[1B## don't match any other syntax's filename regexes.[1B##[1B## color foreground,background "regex" ["regex"...][1B## or[6A[4B[3;22r[3;1H[10M[1;24r[12;1H## icolor foreground,background "regex" ["regex"...][1B##[1B## "color" will do case sensitive matches, while "icolor" will do case[1B## insensitive matches.[1B##[1B## Valid colors: white, black, red, blue, green, yellow, magenta, cyan.[1B## For foreground colors, you may use the prefix "bright" to get a[1B## stronger highlight.[1B##[1B## To use multi-line regexes, use the start="regex" end="regex"[8A[4B[3;4H[K[1BIf your system supports transparency, not specifying a background[5;4Hcolor will use a transparent color.  If you don't want this, be sure[6;5Ho set the background color to black or white.[K[7;4H[K[1BIf you wish, you may put your syntaxes in separate files.  You can[9;4Hmake use of such files (which can only include "syntax", "color", and[10;4H"icolor" commands) as follows:[K[11;4H  [1Bnclude "/path/to/syntax_file.nanorc"[K[14;4HUnless otherwise noted, the name of the syntax file (without the[K[15;4H".nanorc" extension) should be the same as the "short description"[16;4Hname inside that file.  These names are kept fairly short to make[17;4Hthem easier to remember and faster to type using nano's -Y option.[K[18;4H[K[1BAll regexes should be extended regular expressions.[1B[K[21;4HKey bindings[K[8A[4B[4B[3;22r[3;1H[10M[1;24r[12;1H## Please see nanorc(5) for more details on this[1B##[1B## Here are some samples to get you going[1B##[1B# bind M-W nowrap main[1B# bind M-A casesens search[1B# bind ^S research main[2B## Set this if your backspace key sends delete most of the time (2.1.3+)[1B# bind kdel backspace all[6A[4B[2;22r[2;1H[10M[1;24r[2;1H[K[12B## Nanorc files[1B# include "/usr/share/nano/nanorc.nanorc"[2B## C/C++[1B# include "/usr/share/nano/c.nanorc"[2B## Makefiles[1B# include "/usr/share/nano/makefile.nanorc"[2;22r[2;1H[10M[1;24r[13;1H## Cascading Style Sheets[1B# include "/usr/share/nano/css.nanorc"[2B## Debian files[1B# include "/usr/share/nano/debian.nanorc"[2B## Gentoo files[1B# include "/usr/share/nano/gentoo.nanorc"[A[2;22r[2;1H[10M[1;24r[12;1H## HTML[1B# include "/usr/share/nano/html.nanorc"[2B## PHP[1B# include "/usr/share/nano/php.nanorc"[2B## TCL[1B# include "/usr/share/nano/tcl.nanorc"[2B## TeX[8A[4B[4B[3;22r[3;1H[10M[1;24r[12;1H# include "/usr/share/nano/tex.nanorc"[2B## Quoted emails (under e.g. mutt)[1B# include "/usr/share/nano/mutt.nanorc"[2B## Patch files[1B# include "/usr/share/nano/patch.nanorc"[2B## Manpages[1B# include "/usr/share/nano/man.nanorc"[6A[4B[2;22r[2;1H[10M[1;24r[2;1H[K[11B## Groff[1B# include "/usr/share/nano/groff.nanorc"[2B## Perl[1B# include "/usr/share/nano/perl.nanorc"[2B## Python[1B# include "/usr/share/nano/python.nanorc"[7A[8B[2;22r[2;1H[10M[1;24r[12;1H## Ruby[1B# include "/usr/share/nano/ruby.nanorc"[2B## Java[1B# include "/usr/share/nano/java.nanorc"[2B## Fortran[1B# include "/usr/share/nano/fortran.nanorc"[2B## Objective-C[6A[4B[3;22r[3;1H[10M[1;24r[12;1H# include "/usr/share/nano/objc.nanorc"[2B## OCaml[1B# include "/usr/share/nano/ocaml.nanorc"[2B## AWK[1B# include "/usr/share/nano/awk.nanorc"[2B## Assembler[1B# include "/usr/share/nano/asm.nanorc"[8A[4B[4B[2;22r[2;1H[10M[1;24r[2;1H[K[11B## Bourne shell scripts[1B# include "/usr/share/nano/sh.nanorc"[2B## POV-Ray[1B# include "/usr/share/nano/pov.nanorc"[2B## XML-type files[1B# include "/usr/share/nano/xml.nanorc"[A[2B[2;22r[2;1H[10M[1;24r[1;71H[0;7m(BModified[11B[m(B[1Binclude	""/"u"s"r"/"s"h"a"r"e"/"n"a"n"o"/"*"."n"a"n"o"r"c"[9B[0;7m(BSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                    [23;1H Y[m(B Yes[K[1B[0;7m(B N[m(B No  [6C   [0;7m(B^C[m(B Cancel[K[22;62H[0;7m(BFile Name to Write: .config/nano/nanorc                     [1B^G[m(B Get Help[23;21H[0;7m(BM-D[m(B DOS Format	[0;7m(BM-A[m(B Append[23;61H[0;7m(BM-B[m(B Backup File[1B[0;7m(B^C[m(B Cancel	    [0;7m(BM-M[m(B Mac Format	[0;7m(BM-P[m(B Prepend[22;40H[1B[J[1;71H[0;7m(B        [22;30H[m(B[1K [0;7m(B[ Wrote 321 lines ][m(B[K[24;80H[24;1H
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m nano .config/nano/nanorc [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pmkdir -p .config/nanocp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pmkdir -p .config/nanocp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pnano .config/nano/nanorc [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kcd apps/si5345/
+/root/apps/si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls
+total 84K
+-rw-r--r-- 1 root root  12K Nov 17 22:11 Si5345-RevD-5345-Project.okazaki.slabtimeproj
+-rw-r--r-- 1 root root  49K Nov 17 22:11 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root 7.4K Nov 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rw-r--r-- 1 root root 6.8K Nov 17 22:11 si5345.c
+-rw-r--r-- 1 root root  138 Nov 17 22:11 Makefile
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make[K[K[K[Krm Si5345-RevD-5345-Project.okazaki.slabtimeproj 
+rm: remove regular file ‘Si5345-RevD-5345-Project.okazaki.slabtimeproj’? y
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls
+total 72K
+-rw-r--r-- 1 root root  49K Nov 17 22:11 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root 7.4K Nov 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rw-r--r-- 1 root root 6.8K Nov 17 22:11 si5345.c
+-rw-r--r-- 1 root root  138 Nov 17 22:11 Makefile
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K In function ‘[01m[Ki2c_read[m[K’:
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[Kinitialization from incompatible pointer type [enabled by default]
+         {slv_addr, 0, sizeof(addr), &addr},
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[K(near initialization for ‘[01m[Kmessages[0].buf[m[K’) [enabled by default]
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1              File: si5345.c                                    [3;1H[m(B#include <stdio.h>[3;28H// printf()[1B#include <stdlib.h>[4;28H// malloc()[1B#include <stdint.h>[5;28H// uint*_t[1B#include <sys/types.h>     // open()[1B#include <sys/stat.h>	   // open()[1B#include <fcntl.h>[8;28H// open()[1B#include <sys/ioctl.h>     // ioctl()[1B#include <errno.h>[10;28H// errno[1B#include <string.h>[11;28H// strerror()[1B#include <unistd.h>[12;28H// close()[1B#include <stdlib.h>[13;28H// strtol() etc.[1B#include <getopt.h>[14;28H// struct option[1B#include <linux/i2c.h>     // struct i2c_msg[1B#include <linux/i2c-dev.h> // struct i2c_rdwr_ioctl_data[1B#include "Si5345-RevD-5345.okazaki-Registers.h"[2Bstatic const char *dev_file = "/dev/i2c-4"; // Si5345 (U1) on Endcap SL, connec$[20;1Hstatic const uint8_t slv_addr = 0x68;[7C// Si5345 slave address[22;32H[0;7m(B[ Read 225 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;21r[2;1H[10M[1;24r[2;1H[K[11B// Just prints configuration list[1Bvoid show_register_list (){[15;5Hprintf("order\taddress\tvalue\n");[16;5Hfor (int i = 0; i < SI5345_REVD_REG_CONFIG_NUM_REGS; i++){[17;9Hprintf([18;13H"%03d,\t0x%03X,\t0x%02X\n",[19;13Hi,[1Bsi5345_revd_registers[i].address,[21;13Hsi5345_revd_registers[i].value[9A[1B[1B[1B[1B[1B[1B[4B[K[3A[1B[1B[2;22r[2;1H[10M[1;24r[12;9H);[13;5H}[1Breturn;[1B}[3B// Reads a value of one register.[1B// You can see the data using its pointer.[1B// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()$[21;1Hint8_t i2c_read([9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;22r[3;1H[10M[1;24r[12;5Huint16_t addr,   // address of a register in Si5345[13;5Huint8_t * pdata  // a pointer of a data from a register will be stored in[1B){[1B  int32_t fd = open(dev_file, O_RDWR);[16;5Hif (fd == -1){[17;9Hfprintf(stderr, "i2c_read: failed to open %s: %s\n", dev_file, strerror$[18;9Hreturn -1;[19;5H}[2B/* Make I2C-read messages */[9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;22r[3;1H[10M[1;24r[12;5Hstruct i2c_msg messages[] = {[13;9H{slv_addr, 0, sizeof(addr), &addr},[14;9H{slv_addr, I2C_M_RD, sizeof(*pdata), pdata}[15;9H// I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![16;5H};[1Bstruct i2c_rdwr_ioctl_data msgset = {[18;9Hmessages, // pointers to i2c_msg's[19;9H2[19;19H// Number of i2c_msg's[20;5H};[8A[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;5H    {slv_addr, 0, sizeof(addr), &addr},[K[4;8H[1K	{slv_addr, I2C_M_RD, sizeof(*pdata), pdata}[5;5H    // I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![6;5H};[K[1Bstruct i2c_rdwr_ioctl_data msgset = {[K[8;9Hmessages, // pointers to i2c_msg's[9;5H    2[9;19H// Number of i2c_msg's[10;5H};[1B[K[12;5H/* I2C-read operation */[K[13;5Hint ret = ioctl(fd, I2C_RDWR, &msgset); // Do combined read/write transacti$[14;5Hif (ret == -1){[K[15;9Hfprintf(stderr, "i2c-read operation failed: %s\n", strerror(errno));   [16;5H    close(fd);[17;5H    return -1;[K[18;5H}[K[1B[K[20;5Hclose(fd);[21;5Hreturn 0;[9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;22r[2;1H[10M[1;24r[2;1H[K[10B}[3Bint8_t read_si5345_registers(){[16;5Huint16_t addr;   // one of registers in si5345[17;5Huint8_t data = 0; // temporary variable[18;5Hint8_t result;    // i2c_read(addr, &data);[19;5Hint i = 0;[20;5Hwhile (i < SI5345_REVD_REG_CONFIG_NUM_REGS){[21;9Haddr = si5345_revd_registers[i].address;[9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;22r[2;1H[10M[1;24r[2;1H[K[12;9Hresult = i2c_read(addr, &data);[13;9Hif (result < 0){[14;13Hprintf("Error at register 0x%03X\n", addr);[15;13Hprintf("RESULT: I2C READ FAILED.\n");[16;13Hreturn -1;[17;9H}[1Bif (data != si5345_revd_registers[i].value){[19;13Hprintf([20;17H"Register 0x%3X: 0x%02X != 0x%02X\n",[21;17Haddr,[9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;22r[3;1H[10M[1;24r[12;17Hdata,[13;17Hsi5345_revd_registers[i].value[14;13H);[1B	}[1Belse{[1Bprintf("Register 0x%03X: 0x%02X\n", addr, data);[18;9H}[1Bi++;[20;5H}[1Bprintf("RESULT: I2C READ SUCCESSFULLY DONE.\n");[9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;22r[2;1H[10M[1;24r[2;1H[K[12;5Hreturn 0;[1B}[3B// Writes one datum into one register.[1B// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()$[18;1Hint8_t i2c_write([19;5Huint16_t addr, // indicates one of the registers in Si5345[20;5Huint8_t data   // a variable in which the datum to be sent to a register wi$[21;1H){[9A[1B[1B[1B[1B[1B[1B[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[3;9Hif (result < 0){[4;13Hprintf("Error at register 0x%03X\n", addr);[5;13Hprintf("RESULT: I2C READ FAILED.\n");[6;13Hreturn -1;[7;9H}[1Bif (data != si5345_revd_registers[i].value){[9;13Hprintf([10;17H"Register 0x%3X: 0x%02X != 0x%02X\n",[11;17Haddr,[12;17Hdata,[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[5;1Hint8_t read_si5345_registers(){[6;5Huint16_t addr;   // one of registers in si5345[7;5Huint8_t data = 0; // temporary variable[8;5Hint8_t result;    // i2c_read(addr, &data);[9;5Hint i = 0;[10;5Hwhile (i < SI5345_REVD_REG_CONFIG_NUM_REGS){[11;9Haddr = si5345_revd_registers[i].address;[12;9Hresult = i2c_read(addr, &data);[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[3;5Hint ret = ioctl(fd, I2C_RDWR, &msgset); // Do combined read/write transacti$[4;5Hif (ret == -1){[5;9Hfprintf(stderr, "i2c-read operation failed: %s\n", strerror(errno));[6;9Hclose(fd);[7;9Hreturn -1;[8;5H}[2Bclose(fd);[11;5Hreturn 0;[1B}[9AMain nano help text[K[1B[K[1B The nano editor is designed to emulate the functionality and ease-of-use of[1B the UW Pico text editor.  There are four main sections of the editor.  The top[1B line shows the program version, the current filename being edited, and whether[1B or not the file has been modified.  Next is the main editor window showing the[1B file being edited.  The status line is the third line from the bottom and[1B shows important messages.  The bottom two lines show the most commonly used[1B shortcuts in the editor.[1B[K[1B The notation for shortcuts is as follows: Control-key sequences are notated[1B with a caret (^) symbol and can be entered either by using the Control (Ctrl)[1B key or pressing the Escape (Esc) key twice.  Escape-key sequences are notated[1B with the Meta (M-) symbol and can be entered using either the Esc, Alt, or[1B Meta key depending on your keyboard setup.  Also, pressing Esc twice and then[1B typing a three-digit decimal number from 000 to 255 will enter the character[1B with the corresponding value.  The following keystrokes are available in the[1B main editor window.  Alternative keys are shown in parentheses:[1B[K[23;2H[0;7m(BY[m(B Prev Page        [0;7m(B^P[m(B Prev Line        [0;7m(B^X[m(B Exit[K[24;2H[0;7m(BV[m(B Next Page        [0;7m(B^N[m(B Next Lin	[K[3A[18A    int ret = ioctl(fd, I2C_RDWR, &msgset); // Do combined read/write transacti$[4;5Hif (ret == -1){[5;8H[1K	fprintf(stderr, "i2c-read operation failed: %s\n", strerror(errno));[6;8H[1K	close(fd);[K[7;8H[1K	return -1;[K[1B    }[K[1B[K[1B    close(fd);[K[1B    return 0;[K[1B}[1B[K[1B[K[1Bint8_t read_si5345_registers(){[K[1B    uint16_t addr;   // one of registers in si5345[K[1B    uint8_t data = 0; // temporary variable[K[1B    int8_t result;    // i2c_read(addr, &data);[K[1B    int i = 0;[K[1B    while (i < SI5345_REVD_REG_CONFIG_NUM_REGS){[K[21;9Haddr = si5345_revd_registers[i].address;[23;2H[0;7m(BG[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[24;2H[0;7m(BX[m(B Exit      [0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[12A[4B[4B[2;22r[2;1H[10M[1;24r[2;1H[K[12;9Hresult = i2c_read(addr, &data);[13;9Hif (result < 0){[14;13Hprintf("Error at register 0x%03X\n", addr);[15;13Hprintf("RESULT: I2C READ FAILED.\n");[16;13Hreturn -1;[17;9H}[1Bif (data != si5345_revd_registers[i].value){[19;13Hprintf([20;17H"Register 0x%3X: 0x%02X != 0x%02X\n",[21;17Haddr,[7A[4B[3;22r[3;1H[10M[1;24r[12;17Hdata,[13;17Hsi5345_revd_registers[i].value[14;13H);[1B	}[1Belse{[1Bprintf("Register 0x%03X: 0x%02X\n", addr, data);[18;9H}[1Bi++;[20;5H}[1Bprintf("RESULT: I2C READ SUCCESSFULLY DONE.\n");[9A[4B[4B[2;22r[2;1H[10M[1;24r[2;1H[K[12;5Hreturn 0;[1B}[3B// Writes one datum into one register.[1B// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()$[18;1Hint8_t i2c_write([19;5Huint16_t addr, // indicates one of the registers in Si5345[20;5Huint8_t data   // a variable in which the datum to be sent to a register wi$[21;1H){[7A[4B[3;21r[3;1H[10M[1;24r[10;21r[10;1H[6L[1;24r[10;5Huint8_t data   // a variable in which the datum to be sent to a register wi$[11;1H){[1B  int32_t fd = open(dev_file, O_RDWR);[13;5Hif (fd == -1){[14;9Hfprintf(stderr, "i2c_write: failed to open %s: %s\n", dev_file, strerro$[15;9Hreturn -1;[16;5H}[K[1B[K[18;5H/* Secure a buffer for I2C-write */[19;5Huint8_t *buf = (uint8_t *)malloc(sizeof(addr) + sizeof(data));[20;5Hif (buf == NULL){[21;9Hfprintf(stderr, "i2c_write: failed to memory allocate\n");[9A[4B[4B[3;22r[3;1H[10M[1;24r[12;9Hclose(fd);[13;9Hreturn -1;[14;5H}[1Bbuf[0] = addr;[16;5Hmemcpy(&buf[1], &data, sizeof(data));[18;5H/* Make I2C-write messages */[19;5Hstruct i2c_msg message = {slv_addr, 0, sizeof(buf), buf};[20;5Hstruct i2c_rdwr_ioctl_data msgset = {&message, 1};[6A[4A[4A[4B[4B[4B[11;22r[11;1H[5L[1;24r[3;5H    return -1;[4;5H}[K[1Bbuf[0] = addr[6;5Hmemcpy(&buf[1], &data, sizeof(data));[8;8HMake I2C-write messages[6P[9;5Hstruct i2c_msg message = {slv_addr, 0, sizeof(buf), buf};[K[10;5Hstruct i2c_rdwr_ioctl_data msgset = {&message, 1};[12;5H/* I2C-write operation */[13;5Hint ret = ioctl(fd, I2C_RDWR, &msgset);[14;5Hif (ret == -1){[15;9Hfprintf(stderr, "i2c-write operation failed: %s\n", strerror(errno));[16;10Hree(buf);[K[4B[K[21;5Hprintf("Register 0x%03X: 0x%02X written\n", buf[0], buf[1]);[9A[4B[4B[3;22r[3;1H[10M[1;24r[12;5Hfree(buf);[13;5Hclose(fd);[14;5Hreturn 0;[1B}[3Bint8_t write_values_into_si5345(){[19;5Huint16_t addr;[20;5Huint8_t  data;[21;5Hint ret;[7A[8B[0;7m(BSearch:                                                                         [23;15HY[m(B First Line[0;7m(B^T[m(B Go To Line[0;7m(B^W[m(B Beg of Par[0;7m(BM-J[m(B FullJstif[0;7m(BM-B[m(B Backwards[24;2H[0;7m(BC[m(B Cancel    [0;7m(B^V[m(B Last Line [0;7m(B^R[m(B Replace   [0;7m(B^O[m(B End of Par[0;7m(BM-C[m(B Case Sens[0;7m(BM-R[m(B Regexp [22;9H[0;7m(BEnter line number, column number:[23;14H[m(B             [0;7m(B^Y[m(B First Line             [0;7m(B^T[m(B Go To Text[K[24;14H             [0;7m(B^V[m(B Last Line[K[22;35H[0;7m(B5[m(B[0;7m(B1[m(B[5;10r[10;1HD[1;24r[3;1H){[K[4;6Hnt32_t fd = open(dev_file, O_RDWR);[5;5Hif (fd == -1){[6;9Hfprintf(stderr, "i2c_read: failed to open %s: %s\n", dev_file, strerror$[10;5H/* Make I2C-read messages */[11;5Hstruct i2c_msg messages[] = {[K[12;5H    {slv_addr, 0, sizeof(addr), &addr},[13;5H    {slv_addr, I2C_M_RD, sizeof(*pdata), pdata}[14;5H    // I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![1B    };[1Bstruct i2c_rdwr_ioctl_data msgset = {[17;9Hmessages, // pointers to i2c_msg's[18;8H[1K	2         // Number of i2c_msg's[19;5H};[K[1B[K[21;5H/* I2C-read operation */[1B[K[23;14H[0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[24;2H[0;7m(BX[m(B Exit      [0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[12A[11B[J[24;80H[24;1H
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K In function ‘[01m[Ki2c_read[m[K’:
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[Kinitialization from incompatible pointer type [enabled by default]
+         {slv_addr, 0, sizeof(addr), &addr},
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[K(near initialization for ‘[01m[Kmessages[0].buf[m[K’) [enabled by default]
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m makenano si5345.c 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1              File: si5345.c                                    [3;1H[m(B#include <stdio.h>[3;28H// printf()[1B#include <stdlib.h>[4;28H// malloc()[1B#include <stdint.h>[5;28H// uint*_t[1B#include <sys/types.h>     // open()[1B#include <sys/stat.h>	   // open()[1B#include <fcntl.h>[8;28H// open()[1B#include <sys/ioctl.h>     // ioctl()[1B#include <errno.h>[10;28H// errno[1B#include <string.h>[11;28H// strerror()[1B#include <unistd.h>[12;28H// close()[1B#include <stdlib.h>[13;28H// strtol() etc.[1B#include <getopt.h>[14;28H// struct option[1B#include <linux/i2c.h>     // struct i2c_msg[1B#include <linux/i2c-dev.h> // struct i2c_rdwr_ioctl_data[1B#include "Si5345-RevD-5345.okazaki-Registers.h"[2Bstatic const char *dev_file = "/dev/i2c-4"; // Si5345 (U1) on Endcap SL, connec$[20;1Hstatic const uint8_t slv_addr = 0x68;[7C// Si5345 slave address[22;32H[0;7m(B[ Read 225 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;21r[2;1H[10M[1;24r[2;1H[K[11B// Just prints configuration list[1Bvoid show_register_list (){[15;5Hprintf("order\taddress\tvalue\n");[16;5Hfor (int i = 0; i < SI5345_REVD_REG_CONFIG_NUM_REGS; i++){[17;9Hprintf([18;13H"%03d,\t0x%03X,\t0x%02X\n",[19;13Hi,[1Bsi5345_revd_registers[i].address,[21;13Hsi5345_revd_registers[i].value[9A[1B[1B[1B[1B[1B[1B[4B[K[3A[1B[1B[2;22r[2;1H[10M[1;24r[12;9H);[13;5H}[1Breturn;[1B}[3B// Reads a value of one register.[1B// You can see the data using its pointer.[1B// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()$[21;1Hint8_t i2c_read([9A[1B[A[A[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;22r[3;1H[10M[1;24r[12;5Huint16_t addr,   // address of a register in Si5345[13;5Huint8_t * pdata  // a pointer of a data from a register will be stored in[1B){[1B  int32_t fd = open(dev_file, O_RDWR);[16;5Hif (fd == -1){[17;9Hfprintf(stderr, "i2c_read: failed to open %s: %s\n", dev_file, strerror$[18;9Hreturn -1;[19;5H}[2B/* Make I2C-read messages */[9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;22r[3;1H[10M[1;24r[12;5Hstruct i2c_msg messages[] = {[13;9H{slv_addr, 0, sizeof(addr), &addr},[14;9H{slv_addr, I2C_M_RD, sizeof(*pdata), pdata}[15;9H// I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![16;5H};[1Bstruct i2c_rdwr_ioctl_data msgset = {[18;9Hmessages, // pointers to i2c_msg's[19;9H2[19;19H// Number of i2c_msg's[20;5H};[8A[1B[1B[A       	{slv_ad	r, 0[1;71H[0;7m(BModified[13;20H[m(B[1PI, sizeof(addr), &addr},[13;21H2, sizeof(addr), &addr},[13;22HC, sizeof(addr), &addr},[13;23H_, sizeof(addr), &addr},[13;24HM, sizeof(addr), &addr},[13;25H_, sizeof(addr), &addr},[13;26HR, sizeof(addr), &addr},[13;27HE, sizeof(addr), &addr},[13;28HC, sizeof(addr), &addr},[13;29HV, sizeof(addr), &addr},[13;30H_, sizeof(addr), &addr},[13;31HL, sizeof(addr), &addr},[13;32HE, sizeof(addr), &addr},[13;33HN, sizeof(addr), &addr},[13;34H[1B[1B[16;7H[17;34H[1B[1B[20;7H[1B[3;5H    {slv_addr, I2C_M_RECV_LEN, sizeof(addr), &addr},[K[4;8H[1K	{slv_addr, I2C_M_RD, sizeof(*pdata), pdata}[5;5H    // I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![6;5H};[K[1Bstruct i2c_rdwr_ioctl_data msgset = {[K[8;9Hmessages, // pointers to i2c_msg's[9;5H    2[9;19H// Number of i2c_msg's[10;5H};[1B[K[12;5H/* I2C-read operation */[K[13;5Hint ret = ioctl(fd, I2C_RDWR, &msgset); // Do combined read/write transacti$[14;5Hif (ret == -1){[K[15;9Hfprintf(stderr, "i2c-read operation failed: %s\n", strerror(errno));   [16;5H    close(fd);[17;5H    return -1;[K[18;5H}[K[1B[K[20;5Hclose(fd);[21;5Hreturn 0;[12;29H[1B	,[14;20H[15;34H[16;19H[1B[18;6H[1B[20;15H[1B[2;22r[2;1H[10M[1;24r[2;1H[K[10B}[3Bint8_t read_si5345_registers(){[16;5Huint16_t addr;   // one of registers in si5345[17;5Huint8_t data = 0; // temporary variable[18;5Hint8_t result;    // i2c_read(addr, &data);[19;5Hint i = 0;[20;5Hwhile (i < SI5345_REVD_REG_CONFIG_NUM_REGS){[21;9Haddr = si5345_revd_registers[i].address;[9A}[1B[9B[0;7m(BSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                    [23;1H Y[m(B Yes[K[1B[0;7m(B N[m(B No  [6C   [0;7m(B^C[m(B Cancel[K[22;62H[0;7m(BFile Name to Write: si5345.c                                [1B^G[m(B Get Help[23;21H[0;7m(BM-D[m(B DOS Format	[0;7m(BM-A[m(B Append[23;61H[0;7m(BM-B[m(B Backup File[1B[0;7m(B^C[m(B Cancel	    [0;7m(BM-M[m(B Mac Format	[0;7m(BM-P[m(B Prepend[22;29H[1B[J[1;71H[0;7m(B        [22;30H[m(B[1K [0;7m(B[ Wrote 225 lines ][m(B[K[24;80H[24;1H
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K In function ‘[01m[Ki2c_read[m[K’:
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[Kinitialization from incompatible pointer type [enabled by default]
+         {slv_addr, I2C_M_RECV_LEN, sizeof(addr), &addr},
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[K(near initialization for ‘[01m[Kmessages[0].buf[m[K’) [enabled by default]
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m makenano si5345.c 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1              File: si5345.c                                    [3;1H[m(B#include <stdio.h>[3;28H// printf()[1B#include <stdlib.h>[4;28H// malloc()[1B#include <stdint.h>[5;28H// uint*_t[1B#include <sys/types.h>     // open()[1B#include <sys/stat.h>	   // open()[1B#include <fcntl.h>[8;28H// open()[1B#include <sys/ioctl.h>     // ioctl()[1B#include <errno.h>[10;28H// errno[1B#include <string.h>[11;28H// strerror()[1B#include <unistd.h>[12;28H// close()[1B#include <stdlib.h>[13;28H// strtol() etc.[1B#include <getopt.h>[14;28H// struct option[1B#include <linux/i2c.h>     // struct i2c_msg[1B#include <linux/i2c-dev.h> // struct i2c_rdwr_ioctl_data[1B#include "Si5345-RevD-5345.okazaki-Registers.h"[2Bstatic const char *dev_file = "/dev/i2c-4"; // Si5345 (U1) on Endcap SL, connec$[20;1Hstatic const uint8_t slv_addr = 0x68;[7C// Si5345 slave address[22;32H[0;7m(B[ Read 225 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;21r[2;1H[10M[1;24r[2;1H[K[11B// Just prints configuration list[1Bvoid show_register_list (){[15;5Hprintf("order\taddress\tvalue\n");[16;5Hfor (int i = 0; i < SI5345_REVD_REG_CONFIG_NUM_REGS; i++){[17;9Hprintf([18;13H"%03d,\t0x%03X,\t0x%02X\n",[19;13Hi,[1Bsi5345_revd_registers[i].address,[21;13Hsi5345_revd_registers[i].value[9A[1B[1B[1B[1B[1B[1B[4B[K[3A[1B[1B[2;22r[2;1H[10M[1;24r[12;9H);[13;5H}[1Breturn;[1B}[3B// Reads a value of one register.[1B// You can see the data using its pointer.[1B// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()$[21;1Hint8_t i2c_read([9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;22r[3;1H[10M[1;24r[12;5Huint16_t addr,   // address of a register in Si5345[13;5Huint8_t * pdata  // a pointer of a data from a register will be stored in[1B){[1B  int32_t fd = open(dev_file, O_RDWR);[16;5Hif (fd == -1){[17;9Hfprintf(stderr, "i2c_read: failed to open %s: %s\n", dev_file, strerror$[18;9Hreturn -1;[19;5H}[2B/* Make I2C-read messages */[9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;22r[3;1H[10M[1;24r[12;5Hstruct i2c_msg messages[] = {[13;9H{slv_addr, I2C_M_RECV_LEN, sizeof(addr), &addr},[14;9H{slv_addr, I2C_M_RD, sizeof(*pdata), pdata}[15;9H// I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![16;5H};[1Bstruct i2c_rdwr_ioctl_data msgset = {[18;9Hmessages, // pointers to i2c_msg's[19;9H2[19;19H// Number of i2c_msg's[20;5H};[8A[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[3;5H}[1Breturn;[1B}[3B// Reads a value of one register.[1B// You can see the data using its pointer.[1B// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()$[11;1Hint8_t i2c_read([12;5Huint16_t addr,   // address of a register in Si5345[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[3;1H// Just prints configuration list[1Bvoid show_register_list (){[5;5Hprintf("order\taddress\tvalue\n");[6;5Hfor (int i = 0; i < SI5345_REVD_REG_CONFIG_NUM_REGS; i++){[7;9Hprintf([8;13H"%03d,\t0x%03X,\t0x%02X\n",[9;13Hi,[1Bsi5345_revd_registers[i].address,[11;13Hsi5345_revd_registers[i].value[12;9H);[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[3;1H#include <stdlib.h>[3;28H// strtol() etc.[1B#include <getopt.h>[4;28H// struct option[1B#include <linux/i2c.h>     // struct i2c_msg[1B#include <linux/i2c-dev.h> // struct i2c_rdwr_ioctl_data[1B#include "Si5345-RevD-5345.okazaki-Registers.h"[2Bstatic const char *dev_file = "/dev/i2c-4"; // Si5345 (U1) on Endcap SL, connec$[10;1Hstatic const uint8_t slv_addr = 0x68;[7C// Si5345 slave address[2B[A[A[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;22r[2;1H[10M[1;24r[12;9H);[13;5H}[1Breturn;[1B}[3B// Reads a value of one register.[1B// You can see the data using its pointer.[1B// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()$[21;1Hint8_t i2c_read([9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;22r[3;1H[10M[1;24r[12;5Huint16_t addr,   // address of a register in Si5345[13;5Huint8_t * pdata  // a pointer of a data from a register will be stored in[1B){[1B  int32_t fd = open(dev_file, O_RDWR);[16;5Hif (fd == -1){[17;9Hfprintf(stderr, "i2c_read: failed to open %s: %s\n", dev_file, strerror$[18;9Hreturn -1;[19;5H}[2B/* Make I2C-read messages */[9A[1B[1B[1B[1B[1B[1B[1B[1B[1B[3;22r[3;1H[10M[1;24r[12;5Hstruct i2c_msg messages[] = {[13;9H{slv_addr, I2C_M_RECV_LEN, sizeof(addr), &addr},[14;9H{slv_addr, I2C_M_RD, sizeof(*pdata), pdata}[15;9H// I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![16;5H};[1Bstruct i2c_rdwr_ioctl_data msgset = {[18;9Hmessages, // pointers to i2c_msg's[19;9H2[19;19H// Number of i2c_msg's[20;5H};[8A[1B[1B[1B[1B[A[A[A[12;34H[11B[J[24;80H[24;1H
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c make[Knano si5345.c make[Knano si5345.c make[K[2Plsrm Si5345-RevD-5345-Project.okazaki.slabtimeproj [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd apps/si5345/nano .config/nano/nanorc cp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pmkdir -p .config/nanocp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd ../[Krm -rf .config/ls[Kcp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pmkdir -p .config/nanocp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pmkdir -p .config/nanocp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krm -rf .config/[9Pcd ../p /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pmkdir -p .config/nanocp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pnano .config/nano/nanorc [10Pcd apps/si5345/ls[Krm Si5345-RevD-5345-Project.okazaki.slabtimeproj [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmakenano si5345.c make[Knano si5345.c make[Knano si5345.c [Knano si5345.c make[Knano si5345.c make[Knano si5345.c make[K[2Plsrm Si5345-RevD-5345-Project.okazaki.slabtimeproj [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd apps/si5345/nano .config/nano/nanorc cp /etc/nanorc ~/.config/nano/nanorc[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pnano .config/nano/nanorc [10Pcd apps/si5345/ls[Krm Si5345-RevD-5345-Project.okazaki.slabtimeproj [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmakenano si5345.c make[Knano si5345.c make[Knano si5345.c [Knano si5345.c make[Knano si5345.c make[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K In function ‘[01m[Ki2c_read[m[K’:
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[Kinitialization from incompatible pointer type [enabled by default]
+         {slv_addr, I2C_M_RECV_LEN, sizeof(addr), &addr},
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[K(near initialization for ‘[01m[Kmessages[0].buf[m[K’) [enabled by default]
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m makenano si5345.c make[Knano si5345.c [[32m  OK  [0m] Started Show Plymouth Reboot Screen.
+[[32m  OK  [0m] Stopped Dynamic System Tuning Daemon.
+[[32m  OK  [0m] Stopped Availability of block devices.
+         Stopping Logout off all iSCSI sessions on shutdown...
+[[32m  OK  [0m] Stopped Logout off all iSCSI sessions on shutdown.
+[[32m  OK  [0m] Stopped target Network.
+         Stopping Network Manager...
+[[32m  OK  [0m] Stopped Network Manager.
+[[32m  OK  [0m] Stopped target Network (Pre).
+         Stopping firewalld - dynamic firewall daemon...
+[[32m  OK  [0m] Stopped firewalld - dynamic firewall daemon.
+         Stopping Authorization Manager...
+         Stopping D-Bus System Message Bus...
+[[32m  OK  [0m] Stopped D-Bus System Message Bus.
+[[32m  OK  [0m] Stopped Authorization Manager.
+[[32m  OK  [0m] Stopped target Basic System.
+[[32m  OK  [0m] Stopped target Paths.
+[[32m  OK  [0m] Stopped Flexible branding.
+[[32m  OK  [0m] Stopped Forward Password Requests to Wall Directory Watch.
+[[32m  OK  [0m] Stopped Forward Password Requests to Plymouth Directory Watch.
+[[32m  OK  [0m] Stopped target Slices.
+[[32m  OK  [0m] Removed slice User and Session Slice.
+[[32m  OK  [0m] Stopped target Sockets.
+[[32m  OK  [0m] Closed Open-iSCSI iscsid Socket.
+[[32m  OK  [0m] Closed Open-iSCSI iscsiuio Socket.
+[[32m  OK  [0m] Closed PC/SC Smart Card Daemon Activation Socket.
+[[32m  OK  [0m] Closed D-Bus System Message Bus Socket.
+[[32m  OK  [0m] Stopped target System Initialization.
+[[32m  OK  [0m] Stopped target Local Encrypted Volumes.
+         Stopping Update UTMP about System Boot/Shutdown...
+[[32m  OK  [0m] Stopped Read and set NIS domainname from /etc/sysconfig/network.
+[[32m  OK  [0m] Stopped Apply Kernel Variables.
+[[32m  OK  [0m] Stopped Setup Virtual Console.
+         Stopping Load/Save Random Seed...
+[[32m  OK  [0m] Stopped Update UTMP about System Boot/Shutdown.
+[[32m  OK  [0m] Stopped Load/Save Random Seed.
+         Stopping Security Auditing Service...
+[ 1297.249341] audit: type=1305 audit(1637156091.427:157): op=set audit_pid=0 old=265 auid=4294967295 ses=4294967295 res=1
+[[32m  OK  [0m] Stopped Security Auditing Service.
+[ 1297.260271] audit: type=1131 audit(1637156091.435:158): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=auditd comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[[32m  OK  [0m] Stopped Create Volatile Files and Directories.[ 1297.283395] audit: type=1131 audit(1637156091.459:159): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-tmpfiles-setup comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+
+[[32m  OK  [0m] Stopped target Local File Systems.
+         Unmounting /run/user/0...[ 1297.310608] audit: type=1131 audit(1637156091.487:160): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=rhel-readonly comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+
+[[32m  OK  [0m] Stopped Configure read-only root support.
+[[32m  OK  [0m] Unmounted /run/user/0.
+[[32m  OK  [0m] Reache[ 1297.340776] audit: type=1131 audit(1637156091.515:161): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-tmpfiles-setup-dev comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+d target Unmount All Filesystems.
+[[32m  OK  [0m] Stopped target Local File Systems (Pre).
+         Stopping Monitoring of LVM2 mirrors... dmeventd or progress polling...
+[[32m  OK  [0m] Stopped Create Static Device Nodes in /dev.
+[[32m  OK  [0m] Stopped target Swap.
+[[32m  OK  [0m] Stopped Monitoring of LVM2 mirrors,...ng dmeven[ 1297.410270] audit: type=1131 audit(1637156091.587:162): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=lvm2-monitor comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+td or progress polling.
+         Stopping LVM2 metadata daemon...
+[[32m [ 1297.435633] audit: type=1131 audit(1637156091.611:163): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=lvm2-lvmetad comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+ OK  [0m] Stopped LVM2 metadata daemon.
+[[32m  OK  [0m] Reached target Shutdown.
+[ 1297.512918] printk: systemd-shutdow: 21 output lines suppressed due to ratelimiting
+[ 1297.530880] systemd-shutdown[1]: Syncing filesystems and block devices.
+[ 1297.643568] systemd-shutdown[1]: Sending SIGTERM to remaining processes...
+[ 1297.669988] systemd-journald[163]: Received SIGTERM from PID 1 (systemd-shutdow).
+[ 1297.686684] systemd-shutdown[1]: Sending SIGKILL to remaining processes...
+[ 1297.711372] systemd-shutdown[1]: Unmounting file systems.
+[ 1297.717600] systemd-shutdown[935]: Remounting '/' read-only in with options ''.
+[ 1298.352940] EXT4-fs (mmcblk1p2): re-mounted. Opts: 
+[ 1298.366986] systemd-shutdown[1]: All filesystems unmounted.
+[ 1298.372563] systemd-shutdown[1]: Deactivating swaps.
+[ 1298.377720] systemd-shutdown[1]: All swaps deactivated.
+[ 1298.382946] systemd-shutdown[1]: Detaching loop devices.
+[ 1298.393307] systemd-shutdown[1]: All loop devices detached.
+[ 1298.479067] reboot: Restarting system
+Xilinx Zynq MP First Stage Boot Loader 
+Release 2020.1   Nov  8 2021  -  12:45:36
+NOTICE:  ATF running on XCZU5EV/silicon v4/RTL5.1 at 0xfffea000
+NOTICE:  BL31: v2.2(release):xilinx_rebase_v2.2_2020.1
+NOTICE:  BL31: Built : 14:03:18, Nov  9 2021
+
+
+U-Boot 2020.01 (Nov 16 2021 - 13:26:09 +0000)
+
+Model: Enclustra ME-XU5-5EV-2I-D12E SOM
+Board: Xilinx ZynqMP
+DRAM:  4 GiB
+usb dr_mode not found
+usb dr_mode not found
+PMUFW:	v1.1
+EL Level:	EL2
+Chip ID:	zu5ev
+NAND:  0 MiB
+MMC:   mmc@ff160000: 0, mmc@ff170000: 1
+In:    serial@ff000000
+Out:   serial@ff000000
+Err:   serial@ff000000
+Bootmode: SD_MODE1
+Reset reason:	SOFT 
+Net:   
+ZYNQ GEM: ff0b0000, mdio bus ff0b0000, phyaddr 3, interface rgmii-id
+
+Warning: ethernet@ff0b0000 (eth0) using random MAC address - ce:42:b5:71:ec:0f
+eth0: ethernet@ff0b0000
+Hit any key to stop autoboot:  2  1  0 
+switch to partitions #0, OK
+mmc1 is current device
+Scanning mmc 1:1...
+Found U-Boot script /boot.scr
+2007 bytes read in 18 ms (108.4 KiB/s)
+## Executing script at 20000000
+8166276 bytes read in 609 ms (12.8 MiB/s)
+## Loading kernel from FIT Image at 10000000 ...
+   Using 'conf@system-top.dtb' configuration
+   Trying 'kernel@1' kernel subimage
+     Description:  Linux kernel
+     Type:         Kernel Image
+     Compression:  gzip compressed
+     Data Start:   0x100000e8
+     Data Size:    8123516 Bytes = 7.7 MiB
+     Architecture: AArch64
+     OS:           Linux
+     Load Address: 0x00080000
+     Entry Point:  0x00080000
+     Hash algo:    sha256
+     Hash value:   13178c06429006bfc92b4bc19ee82b846a8cd83ae3ae11892310b96ffc0c5c32
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 10000000 ...
+   Using 'conf@system-top.dtb' configuration
+   Trying 'fdt@system-top.dtb' fdt subimage
+     Description:  Flattened Device Tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x107bf674
+     Data Size:    40872 Bytes = 39.9 KiB
+     Architecture: AArch64
+     Hash algo:    sha256
+     Hash value:   9ef60466f6721891c67b1ba91c2e82cb30404fb3942970a2dd49a2df2d669b5f
+   Verifying Hash Integrity ... sha256+ OK
+   Booting using the fdt blob at 0x107bf674
+   Uncompressing Kernel Image
+   Loading Device Tree to 000000000fff3000, end 000000000fffffa7 ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+[    0.000000] Linux version 5.4.0-xilinx-v2020.1 (oe-user@oe-host) (gcc version 9.2.0 (GCC)) #1 SMP Mon Nov 8 12:43:45 UTC 2021
+[    0.000000] Machine model: Enclustra ME-XU5-5EV-2I-D12E SOM
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 256 MiB at 0x000000006fc00000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 22 pages/cpu s49944 r8192 d31976 u90112
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: ARM erratum 845719
+[    0.000000] Speculative Store Bypass Disable mitigation not required
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1031940
+[    0.000000] Kernel command line: console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk1p2 rootfstype=ext4 rw rootwait earlyprintk
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] software IO TLB: mapped [mem 0x6bc00000-0x6fc00000] (64MB)
+[    0.000000] Memory: 3767696K/4193280K available (11644K kernel code, 672K rwdata, 3624K rodata, 704K init, 323K bss, 163440K reserved, 262144K cma-reserved)
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GIC: Adjusting CPU interface base to 0x00000000f902f000
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] random: get_random_bytes called from start_kernel+0x2a8/0x42c with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 33.33MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x7b0074340, max_idle_ns: 440795202884 ns
+[    0.000003] sched_clock: 56 bits at 33MHz, resolution 30ns, wraps every 2199023255543ns
+[    0.000287] Console: colour dummy device 80x25
+[    0.000307] Calibrating delay loop (skipped), value calculated using timer frequency.. 66.66 BogoMIPS (lpj=133332)
+[    0.000314] pid_max: default: 32768 minimum: 301
+[    0.000447] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.000460] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.001330] ASID allocator initialised with 32768 entries
+[    0.001379] rcu: Hierarchical SRCU implementation.
+[    0.001558] EFI services will not be available.
+[    0.001675] smp: Bringing up secondary CPUs ...
+[    0.001975] Detected VIPT I-cache on CPU1
+[    0.002004] CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+[    0.002320] Detected VIPT I-cache on CPU2
+[    0.002338] CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+[    0.002633] Detected VIPT I-cache on CPU3
+[    0.002650] CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+[    0.002693] smp: Brought up 1 node, 4 CPUs
+[    0.002704] SMP: Total of 4 processors activated.
+[    0.002708] CPU features: detected: 32-bit EL0 Support
+[    0.002712] CPU features: detected: CRC32 instructions
+[    0.002742] CPU: All CPU(s) started at EL2
+[    0.002754] alternatives: patching kernel code
+[    0.003757] devtmpfs: initialized
+[    0.007776] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.007787] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.013282] xor: measuring software checksum speed
+[    0.052027]    8regs     :  2639.000 MB/sec
+[    0.092050]    32regs    :  3027.000 MB/sec
+[    0.132079]    arm64_neon:  2628.000 MB/sec
+[    0.132082] xor: using function: 32regs (3027.000 MB/sec)
+[    0.132093] pinctrl core: initialized pinctrl subsystem
+[    0.132664] NET: Registered protocol family 16
+[    0.133565] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.133587] audit: initializing netlink subsys (disabled)
+[    0.133710] audit: type=2000 audit(0.132:1): state=initialized audit_enabled=0 res=1
+[    0.134007] cpuidle: using governor menu
+[    0.134170] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.144689] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.144695] HugeTLB registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.144699] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.144704] HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
+[    1.110840] DRBG: Continuing without Jitter RNG
+[    1.184717] raid6: neonx8   gen()  1717 MB/s
+[    1.252743] raid6: neonx8   xor()  1624 MB/s
+[    1.320784] raid6: neonx4   gen()  1642 MB/s
+[    1.388825] raid6: neonx4   xor()  1577 MB/s
+[    1.456879] raid6: neonx2   gen()  1249 MB/s
+[    1.524912] raid6: neonx2   xor()  1303 MB/s
+[    1.592937] raid6: neonx1   gen()   809 MB/s
+[    1.660992] raid6: neonx1   xor()   978 MB/s
+[    1.729026] raid6: int64x8  gen()  1291 MB/s
+[    1.797063] raid6: int64x8  xor()   844 MB/s
+[    1.865116] raid6: int64x4  gen()  1085 MB/s
+[    1.933133] raid6: int64x4  xor()   814 MB/s
+[    2.001239] raid6: int64x2  gen()   753 MB/s
+[    2.069251] raid6: int64x2  xor()   657 MB/s
+[    2.137371] raid6: int64x1  gen()   499 MB/s
+[    2.205327] raid6: int64x1  xor()   500 MB/s
+[    2.205331] raid6: using algorithm neonx8 gen() 1717 MB/s
+[    2.205334] raid6: .... xor() 1624 MB/s, rmw enabled
+[    2.205337] raid6: using neon recovery algorithm
+[    2.205643] iommu: Default domain type: Translated 
+[    2.205836] SCSI subsystem initialized
+[    2.205964] usbcore: registered new interface driver usbfs
+[    2.205989] usbcore: registered new interface driver hub
+[    2.206012] usbcore: registered new device driver usb
+[    2.206057] mc: Linux media interface: v0.10
+[    2.206074] videodev: Linux video capture interface: v2.00
+[    2.206104] pps_core: LinuxPPS API ver. 1 registered
+[    2.206107] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    2.206116] PTP clock support registered
+[    2.206133] EDAC MC: Ver: 3.0.0
+[    2.206469] zynqmp-ipi-mbox mailbox@ff990400: Registered ZynqMP IPI mbox with TX/RX channels.
+[    2.206622] FPGA manager framework
+[    2.206739] Advanced Linux Sound Architecture Driver Initialized.
+[    2.206981] Bluetooth: Core ver 2.22
+[    2.207003] NET: Registered protocol family 31
+[    2.207006] Bluetooth: HCI device and connection manager initialized
+[    2.207013] Bluetooth: HCI socket layer initialized
+[    2.207019] Bluetooth: L2CAP socket layer initialized
+[    2.207029] Bluetooth: SCO socket layer initialized
+[    2.207351] clocksource: Switched to clocksource arch_sys_counter
+[    2.207438] VFS: Disk quotas dquot_6.6.0
+[    2.207477] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.211081] NET: Registered protocol family 2
+[    2.211425] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    2.211465] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    2.211649] TCP bind hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[    2.212000] TCP: Hash tables configured (established 32768 bind 32768)
+[    2.212061] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    2.212127] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    2.212272] NET: Registered protocol family 1
+[    2.212511] RPC: Registered named UNIX socket transport module.
+[    2.212515] RPC: Registered udp transport module.
+[    2.212518] RPC: Registered tcp transport module.
+[    2.212521] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.212756] PCI: CLS 0 bytes, default 64
+[    2.213166] hw perfevents: no interrupt-affinity property for /pmu, guessing.
+[    2.213302] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    2.213977] Initialise system trusted keyrings
+[    2.214055] workingset: timestamp_bits=46 max_order=20 bucket_order=0
+[    2.214741] NFS: Registering the id_resolver key type
+[    2.214753] Key type id_resolver registered
+[    2.214756] Key type id_legacy registered
+[    2.214765] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    2.214779] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    2.226924] NET: Registered protocol family 38
+[    2.226930] Key type asymmetric registered
+[    2.226934] Asymmetric key parser 'x509' registered
+[    2.226955] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 247)
+[    2.226960] io scheduler mq-deadline registered
+[    2.226964] io scheduler kyber registered
+[    2.250263] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    2.253045] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    2.256854] brd: module loaded
+[    2.260857] loop: module loaded
+[    2.261446] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    2.262408] libphy: Fixed MDIO Bus: probed
+[    2.263264] tun: Universal TUN/TAP device driver, 1.6
+[    2.263337] CAN device driver interface
+[    2.264049] usbcore: registered new interface driver asix
+[    2.264084] usbcore: registered new interface driver ax88179_178a
+[    2.264105] usbcore: registered new interface driver cdc_ether
+[    2.264125] usbcore: registered new interface driver net1080
+[    2.264144] usbcore: registered new interface driver cdc_subset
+[    2.264163] usbcore: registered new interface driver zaurus
+[    2.264191] usbcore: registered new interface driver cdc_ncm
+[    2.264847] usbcore: registered new interface driver uas
+[    2.264876] usbcore: registered new interface driver usb-storage
+[    2.265362] rtc_zynqmp ffa60000.rtc: registered as rtc0
+[    2.265402] i2c /dev entries driver
+[    2.266651] usbcore: registered new interface driver uvcvideo
+[    2.266654] USB Video Class driver (1.1.1)
+[    2.266948] Bluetooth: HCI UART driver ver 2.3
+[    2.266953] Bluetooth: HCI UART protocol H4 registered
+[    2.266957] Bluetooth: HCI UART protocol BCSP registered
+[    2.266974] Bluetooth: HCI UART protocol LL registered
+[    2.266978] Bluetooth: HCI UART protocol ATH3K registered
+[    2.266993] Bluetooth: HCI UART protocol Three-wire (H5) registered
+[    2.267024] Bluetooth: HCI UART protocol Intel registered
+[    2.267038] Bluetooth: HCI UART protocol QCA registered
+[    2.267062] usbcore: registered new interface driver bcm203x
+[    2.267085] usbcore: registered new interface driver bpa10x
+[    2.267109] usbcore: registered new interface driver bfusb
+[    2.267132] usbcore: registered new interface driver btusb
+[    2.267165] usbcore: registered new interface driver ath3k
+[    2.267309] EDAC MC0: 13 UE BankGroup Number 0 Block Number 0 on mc#0csrow#0channel#0 (csrow:0 channel:0 page:0x0 offset:0x0 grain:1)
+[    2.267409] EDAC MC0: Giving out device to module 1 controller synps_ddr_controller: DEV synps_edac (INTERRUPT)
+[    2.267546] EDAC DEVICE0: Giving out device to module zynqmp-ocm-edac controller zynqmp_ocm: DEV ff960000.memory-controller (INTERRUPT)
+[    2.267880] sdhci: Secure Digital Host Controller Interface driver
+[    2.267883] sdhci: Copyright(c) Pierre Ossman
+[    2.267886] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.268175] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.268216] zynqmp_firmware_probe Platform Management API v1.1
+[    2.268221] zynqmp_firmware_probe Trustzone version v1.0
+[    2.290833] alg: No test for xilinx-zynqmp-aes (zynqmp-aes)
+[    2.290984] zynqmp_aes zynqmp_aes: AES Successfully Registered
+[    2.290984] 
+[    2.291137] alg: No test for xilinx-keccak-384 (zynqmp-keccak-384)
+[    2.291361] alg: No test for xilinx-zynqmp-rsa (zynqmp-rsa)
+[    2.291578] usbcore: registered new interface driver usbhid
+[    2.291582] usbhid: USB HID core driver
+[    2.293658] fpga_manager fpga0: Xilinx ZynqMP FPGA Manager registered
+[    2.293915] usbcore: registered new interface driver snd-usb-audio
+[    2.294597] pktgen: Packet Generator for packet performance testing. Version: 2.75
+[    2.295083] Initializing XFRM netlink socket
+[    2.295164] NET: Registered protocol family 10
+[    2.295555] Segment Routing with IPv6
+[    2.295652] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    2.295950] NET: Registered protocol family 17
+[    2.295962] NET: Registered protocol family 15
+[    2.295980] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    2.295984] can: controller area network core (rev 20170425 abi 9)
+[    2.296008] NET: Registered protocol family 29
+[    2.296012] can: raw protocol (rev 20170425)
+[    2.296017] can: broadcast manager protocol (rev 20170425 t)
+[    2.296022] can: netlink gateway (rev 20190810) max_hops=1
+[    2.296087] Bluetooth: RFCOMM TTY layer initialized
+[    2.296094] Bluetooth: RFCOMM socket layer initialized
+[    2.296107] Bluetooth: RFCOMM ver 1.11
+[    2.296118] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    2.296121] Bluetooth: BNEP filters: protocol multicast
+[    2.296127] Bluetooth: BNEP socket layer initialized
+[    2.296130] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    2.296137] Bluetooth: HIDP socket layer initialized
+[    2.296240] 9pnet: Installing 9P2000 support
+[    2.296258] Key type dns_resolver registered
+[    2.296533] registered taskstats version 1
+[    2.296537] Loading compiled-in X.509 certificates
+[    2.296894] Btrfs loaded, crc32c=crc32c-generic
+[    2.304719] ff000000.serial: ttyPS0 at MMIO 0xff000000 (irq = 41, base_baud = 6249999) is a xuartps
+[    3.550657] printk: console [ttyPS0] enabled
+[    3.555289] of-fpga-region fpga-full: FPGA Region probed
+[    3.561094] GPIO IRQ not connected
+[    3.564494] XGpio: gpio@80010000: registered, base is 509
+[    3.570475] xilinx-zynqmp-dma fd500000.dma: ZynqMP DMA driver Probe success
+[    3.577559] xilinx-zynqmp-dma fd510000.dma: ZynqMP DMA driver Probe success
+[    3.584649] xilinx-zynqmp-dma fd520000.dma: ZynqMP DMA driver Probe success
+[    3.591729] xilinx-zynqmp-dma fd530000.dma: ZynqMP DMA driver Probe success
+[    3.598814] xilinx-zynqmp-dma fd540000.dma: ZynqMP DMA driver Probe success
+[    3.605898] xilinx-zynqmp-dma fd550000.dma: ZynqMP DMA driver Probe success
+[    3.612992] xilinx-zynqmp-dma fd560000.dma: ZynqMP DMA driver Probe success
+[    3.620081] xilinx-zynqmp-dma fd570000.dma: ZynqMP DMA driver Probe success
+[    3.627232] xilinx-zynqmp-dma ffa80000.dma: ZynqMP DMA driver Probe success
+[    3.634319] xilinx-zynqmp-dma ffa90000.dma: ZynqMP DMA driver Probe success
+[    3.641407] xilinx-zynqmp-dma ffaa0000.dma: ZynqMP DMA driver Probe success
+[    3.648491] xilinx-zynqmp-dma ffab0000.dma: ZynqMP DMA driver Probe success
+[    3.655573] xilinx-zynqmp-dma ffac0000.dma: ZynqMP DMA driver Probe success
+[    3.662657] xilinx-zynqmp-dma ffad0000.dma: ZynqMP DMA driver Probe success
+[    3.669741] xilinx-zynqmp-dma ffae0000.dma: ZynqMP DMA driver Probe success
+[    3.676825] xilinx-zynqmp-dma ffaf0000.dma: ZynqMP DMA driver Probe success
+[    3.684030] zynqmp-qspi ff0f0000.spi: rx bus width not found
+[    3.689687] zynqmp-qspi ff0f0000.spi: tx bus width not found
+[    3.695529] spi_master spi0: cannot find modalias for /amba/spi@ff0f0000/flash@0
+[    3.702917] spi_master spi0: Failed to create SPI device for /amba/spi@ff0f0000/flash@0
+[    3.711199] macb ff0b0000.ethernet: Not enabling partial store and forward
+[    3.718559] libphy: MACB_mii_bus: probed
+[    3.723883] zynqmp_pll_disable() clock disable failed for dpll_int, ret = -13
+[    3.792542] Micrel KSZ9031 Gigabit PHY ff0b0000.ethernet-ffffffff:03: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=ff0b0000.ethernet-ffffffff:03, irq=POLL)
+[    3.808361] macb ff0b0000.ethernet eth0: Cadence GEM rev 0x50070106 at 0xff0b0000 irq 29 (ce:42:b5:71:ec:0f)
+[    3.818439] macb ff0c0000.ethernet: Not enabling partial store and forward
+[    3.825328] macb ff0c0000.ethernet: invalid hw address, using random
+[    3.832058] libphy: MACB_mii_bus: probed
+[    3.836109] mdio_bus ff0c0000.ethernet-ffffffff: MDIO device at address 3 is missing.
+[    3.859994] xilinx-axipmon ffa00000.perf-monitor: Probed Xilinx APM
+[    3.866488] xilinx-axipmon fd0b0000.perf-monitor: Probed Xilinx APM
+[    3.872943] xilinx-axipmon fd490000.perf-monitor: Probed Xilinx APM
+[    3.879419] xilinx-axipmon ffa10000.perf-monitor: Probed Xilinx APM
+[    3.885896] dwc3-of-simple ff9d0000.usb0: dwc3_simple_set_phydata: Can't find usb3-phy
+[    3.894176] dwc3 fe200000.dwc3: Failed to get clk 'ref': -2
+[    3.900142] dwc3-of-simple ff9e0000.usb1: dwc3_simple_set_phydata: Can't find usb3-phy
+[    3.908358] dwc3 fe300000.dwc3: Failed to get clk 'ref': -2
+[    3.915028] i2c i2c-0: Added multiplexed i2c bus 1
+[    3.919288] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.919920] i2c i2c-0: Added multiplexed i2c bus 2
+[    3.925297] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    3.930172] i2c i2c-0: Added multiplexed i2c bus 3
+[    3.937806] xhci-hcd xhci-hcd.0.auto: hcc params 0x0238f625 hci version 0x100 quirks 0x0000000202010010
+[    3.942797] i2c i2c-0: Added multiplexed i2c bus 4
+[    3.951905] xhci-hcd xhci-hcd.0.auto: irq 46, io mem 0xfe300000
+[    3.956847] i2c i2c-0: Added multiplexed i2c bus 5
+[    3.962995] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.967468] i2c i2c-0: Added multiplexed i2c bus 6
+[    3.972928] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    3.977736] i2c i2c-0: Added multiplexed i2c bus 7
+[    3.985883] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.985887] usb usb1: Product: xHCI Host Controller
+[    3.990771] i2c i2c-0: Added multiplexed i2c bus 8
+[    3.997869] usb usb1: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    3.997872] usb usb1: SerialNumber: xhci-hcd.0.auto
+[    4.002745] pca954x 0-0070: registered 8 multiplexed busses for I2C switch pca9548
+[    4.019167] hub 1-0:1.0: USB hub found
+[    4.026565] cdns-i2c ff020000.i2c: 400 kHz mmio ff020000 irq 32
+[    4.030303] hub 1-0:1.0: 1 port detected
+[    4.036542] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 1333333 KHz
+[    4.040269] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    4.047498] cpu cpu0: dev_pm_opp_set_rate: failed to find current OPP for freq 1333333320 (-34)
+[    4.052969] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    4.061689] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 1199999 KHz
+[    4.069290] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0 SuperSpeed
+[    4.077803] cpu cpu0: dev_pm_opp_set_rate: failed to find current OPP for freq 1333333320 (-34)
+[    4.084343] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.101154] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.04
+[    4.109414] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.116625] usb usb2: Product: xHCI Host Controller
+[    4.121492] usb usb2: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.128098] usb usb2: SerialNumber: xhci-hcd.0.auto
+[    4.131885] mmc0: SDHCI controller on ff160000.mmc [ff160000.mmc] using ADMA 64-bit
+[    4.133208] hub 2-0:1.0: USB hub found
+[    4.144480] hub 2-0:1.0: 1 port detected
+[    4.148640] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+[    4.156388] xhci-hcd xhci-hcd.1.auto: hcc params 0x0238f625 hci version 0x100 quirks 0x0000000202010010
+[    4.165794] xhci-hcd xhci-hcd.1.auto: irq 43, io mem 0xfe200000
+[    4.170145] mmc1: SDHCI controller on ff170000.mmc [ff170000.mmc] using ADMA 64-bit
+[    4.171940] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    4.187611] rtc_zynqmp ffa60000.rtc: setting system clock to 2021-11-17T13:35:10 UTC (1637156110)
+[    4.187615] of_cfs_init
+[    4.187642] of_cfs_init: OK
+[    4.196481] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.196485] usb usb3: Product: xHCI Host Controller
+[    4.199025] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    4.201697] usb usb3: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.228110] usb usb3: SerialNumber: xhci-hcd.1.auto
+[    4.233316] hub 3-0:1.0: USB hub found
+[    4.237180] hub 3-0:1.0: 1 port detected
+[    4.241317] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    4.246816] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 4
+[    4.254476] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0 SuperSpeed
+[    4.261171] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    4.269420] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.04
+[    4.277683] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.284896] usb usb4: Product: xHCI Host Controller
+[    4.289764] usb usb4: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    4.296370] usb usb4: SerialNumber: xhci-hcd.1.auto
+[    4.301533] hub 4-0:1.0: USB hub found
+[    4.305393] hub 4-0:1.0: 1 port detected
+[    4.325357] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    4.331890] clk: Not disabling unused clocks
+[    4.336151] ALSA device list:
+[    4.339104]   No soundcards found.
+[    4.342813] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    4.342896] Waiting for root device /dev/mmcblk1p2...
+[    4.351423] cfg80211: failed to load regulatory.db
+[    4.371276] mmc1: new high speed SDHC card at address 5048
+[    4.377123] mmcblk1: mmc1:5048 SD16G 14.4 GiB 
+[    4.382839]  mmcblk1: p1 p2
+[    4.414232] mmc0: new HS200 MMC card at address 0001
+[    4.419517] mmcblk0: mmc0:0001 W52516 14.3 GiB 
+[    4.424212] mmcblk0boot0: mmc0:0001 W52516 partition 1 4.00 MiB
+[    4.430290] mmcblk0boot1: mmc0:0001 W52516 partition 2 4.00 MiB
+[    4.436273] mmcblk0rpmb: mmc0:0001 W52516 partition 3 4.00 MiB, chardev (245:0)
+[    4.444673]  mmcblk0: p1
+[    4.570135] EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)
+[    4.578253] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[    4.592702] devtmpfs: mounted
+[    4.595822] Freeing unused kernel memory: 704K
+[    4.600292] Run /sbin/init as init process
+[    4.798476] random: fast init done
+[    5.075318] random: systemd: uninitialized urandom read (16 bytes read)
+[    5.091283] random: systemd: uninitialized urandom read (16 bytes read)
+[    5.116328] systemd[1]: systemd 219 running in system mode. (+PAM +AUDIT +SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 -SECCOMP +BLKID +ELFUTILS +KMOD +IDN)
+[    5.134638] systemd[1]: Detected architecture arm64.
+
+Welcome to [0;31mCentOS Linux 7 (AltArch)[0m!
+
+[    5.166870] systemd[1]: Set hostname to <sl-xu5-eth0-01>.
+[    5.191698] random: systemd: uninitialized urandom read (16 bytes read)
+[    5.765323] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[[32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
+[    5.788054] systemd[1]: Created slice Root Slice.
+[[32m  OK  [0m] Created slice Root Slice.
+[    5.803473] systemd[1]: Listening on /dev/initctl Compatibility Named Pipe.
+[[32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
+[    5.827440] systemd[1]: Listening on Delayed Shutdown Socket.
+[[32m  OK  [0m] Listening on Delayed Shutdown Socket.
+[    5.843596] systemd[1]: Created slice User and Session Slice.
+[[32m  OK  [0m] Created slice User and Session Slice.
+[    5.859454] systemd[1]: Listening on LVM2 metadata daemon socket.
+[[32m  OK  [0m] Listening on LVM2 metadata daemon socket.
+[    5.875413] systemd[1]: Reached target Swap.
+[[32m  OK  [0m] Reached target Swap.
+[[32m  OK  [0m] Listening on udev Control Socket.
+[[32m  OK  [0m] Listening on udev Kernel Socket.
+[[32m  OK  [0m] Created slice System Slice.
+         Starting Collect Read-Ahead Data...
+[    5.939862] systemd-readahead[158]: Failed to create fanotify object: Function not implemented
+[[32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
+[[32m  OK  [0m] Created slice system-selinux\x2dpol...grate\x2dlocal\x2dchanges.slice.
+[[32m  OK  [0m] Created slice system-getty.slice.
+[[32m  OK  [0m] Listening on LVM2 poll daemon socket.
+[[32m  OK  [0m] Listening on Journal Socket.
+         Starting Read and set NIS domainname from /etc/sysconfig/network...
+         Starting Journal Service...
+         Mounting Debug File System...
+         Mounting POSIX Message Queue File System...
+         Mounting Huge Pages File System...
+[[32m  OK  [0m] Reached target Slices.
+[[32m  OK  [0m] Listening on Device-mapper event daemon FIFOs.
+         Starting Monitoring of LVM2 mirrors... dmeventd or progress polling...
+[[32m  OK  [0m] Mounted POSIX Message Queue File System.
+[[32m  OK  [0m] Mounted Huge Pages File System.
+[[32m  OK  [0m] Mounted Debug File System.
+[[1;31mFAILED[0m] Failed to start Collect Read-Ahead Data.
+See 'systemctl status systemd-readahead-collect.service' for details.
+[[32m  OK  [0m] Started Read and set NIS domainname from /etc/sysconfig/network.
+[[32m  OK  [0m] Started Journal Service.
+         Starting Apply Kernel Variables...
+         Mounting Configuration File System...
+         Starting Flush Journal to Persistent Storage...
+         Starting Configure read-only root support...
+         Starting udev Coldplug all Devices...
+         Starting Create Static Device Nodes in /dev...
+         Starting Setup Virtual Console...
+[[32m  OK  [0m] Mounted Configuration File System.
+[[32m  OK  [0m] Started Apply Kernel Variables.
+[[32m  OK  [0m] Started LVM2 metadata daemon.
+[[32m  OK  [0m] Started Configure read-only root support.
+[    6.448656] systemd-journald[161]: Received request to flush runtime journal from PID 1
+         Starting Load/Save Random Seed...
+[[32m  OK  [0m] Started Flush Journal to Persistent Storage.
+[[32m  OK  [0m] Started udev Coldplug all Devices.
+[[32m  OK  [0m] Started Create Static Device Nodes in /dev.
+[[32m  OK  [0m] Started Load/Save Random Seed.
+         Starting udev Kernel Device Manager...
+         Starting udev Wait for Complete Device Initialization...
+[[32m  OK  [0m] Started Setup Virtual Console.
+[[32m  OK  [0m] Started udev Kernel Device Manager.
+         Starting Show Plymouth Boot Screen...
+[[32m  OK  [0m] Found device /dev/ttyPS0.
+[[32m  OK  [0m] Started Show Plymouth Boot Screen.
+[[32m  OK  [0m] Started Forward Password Requests to Plymouth Directory Watch.
+%G[[32m  OK  [0m] Started udev Wait for Complete Device Initialization.
+         Starting Activation of DM RAID sets...
+[[32m  OK  [0m] Started Monitoring of LVM2 mirrors,...ng dmeventd or progress polling.
+[[32m  OK  [0m] Reached target Local File Systems (Pre).
+[[32m  OK  [0m] Started Activation of DM RAID sets.
+[[32m  OK  [0m] Reached target Local Encrypted Volumes.
+[[32m  OK  [0m] Reached target Local File Systems.
+         Starting Tell Plymouth To Write Out Runtime Data...
+         Starting Create Volatile Files and Directories...
+[[32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
+[[32m  OK  [0m] Started Create Volatile Files and Directories.
+         Starting Security Auditing Service...
+[[32m  OK  [0m] Started Security Auditing Service.
+         Starting Update UTMP about System Boot/Shutdown...
+[[32m  OK  [0m] Started Update UTMP about System Boot/Shutdown.
+[[32m  OK  [0m] Reached target System Initialization.
+[[32m  OK  [0m] Listening on D-Bus System Message Bus Socket.
+[[32m  OK  [0m] Listening on PC/SC Smart Card Daemon Activation Socket.
+[[32m  OK  [0m] Listening on Open-iSCSI iscsid Socket.
+[[32m  OK  [0m] Listening on Open-iSCSI iscsiuio Socket.
+[[32m  OK  [0m] Reached target Sockets.
+[[32m  OK  [0m] Started Daily Cleanup of Temporary Directories.
+[[32m  OK  [0m] Reached target Timers.
+[[32m  OK  [0m] Started Flexible branding.
+[[32m  OK  [0m] Reached target Paths.
+[[32m  OK  [0m] Reached target Basic System.
+[[32m  OK  [0m] Started irqbalance daemon.
+         Starting Authorization Manager...
+[[32m  OK  [0m] Started D-Bus System Message Bus.
+         Starting Login Service...
+         Starting NTP client/server...
+         Starting Dump dmesg to /var/log/dmesg...
+[[32m  OK  [0m] Started Login Service.
+[[32m  OK  [0m] Started Dump dmesg to /var/log/dmesg.
+[[32m  OK  [0m] Started Authorization Manager.
+         Starting firewalld - dynamic firewall daemon...
+[[32m  OK  [0m] Started NTP client/server.
+[[32m  OK  [0m] Started firewalld - dynamic firewall daemon.
+[[32m  OK  [0m] Reached target Network (Pre).
+         Starting Network Manager...
+[[32m  OK  [0m] Started Network Manager.
+         Starting Network Manager Wait Online...
+         Starting Hostname Service...
+[[32m  OK  [0m] Started Hostname Service.
+         Starting Network Manager Script Dispatcher Service...
+[[32m  OK  [0m] Started Network Manager Script Dispatcher Service.
+[   10.873913] pps pps0: new PPS source ptp0
+[   10.877973] macb ff0b0000.ethernet: gem-ptp-timer ptp clock registered.
+[   14.975967] macb ff0b0000.ethernet eth0: link up (1000/Full)
+[   14.981641] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   14.999620] macb ff0b0000.ethernet: gem-ptp-timer ptp clock unregistered.
+[   15.009646] macb ff0b0000.ethernet eth0: link up (1000/Full)
+[   15.012594] pps pps0: new PPS source ptp0
+[   15.019315] macb ff0b0000.ethernet: gem-ptp-timer ptp clock registered.
+[[32m  OK  [0m] Started Network Manager Wait Online.
+         Starting LSB: Bring up/down networking...
+[[1;31mFAILED[0m] Failed to start LSB: Bring up/down networking.
+See 'systemctl status network.service' for details.
+[[32m  OK  [0m] Reached target Network.
+         Starting OpenSSH server daemon...
+         Starting Logout off all iSCSI sessions on shutdown...
+[[32m  OK  [0m] Reached target Network is Online.
+         Starting System Logging Service...
+         Starting Postfix Mail Transport Agent...
+         Starting Dynamic System Tuning Daemon...
+[[32m  OK  [0m] Started Logout off all iSCSI sessions on shutdown.
+         Starting Availability of block devices...
+[[32m  OK  [0m] Reached target Remote File Systems (Pre).
+[[32m  OK  [0m] Reached target Remote File Systems.
+         Starting Crash recovery kernel arming...
+         Starting Permit User Sessions...
+[[32m  OK  [0m] Started Availability of block devices.
+[[32m  OK  [0m] Started Permit User Sessions.
+         Starting Wait for Plymouth Boot Screen to Quit...
+         Starting Terminate Plymouth Boot Screen...
+[[32m  OK  [0m] Started Command Scheduler.
+
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+sl-xu5-eth0-01 login: [  191.204045] random: crng init done
+[  191.207441] random: 7 urandom warning(s) missed due to ratelimiting
+
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+sl-xu5-eth0-01 login: 
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+sl-xu5-eth0-01 login: root
+Password: 
+Last login: Wed Nov 17 22:35:31 from atlas-muon-r01.kek.jp
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m cd apps/si5345/
+/root/apps/si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K In function ‘[01m[Ki2c_read[m[K’:
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[Kinitialization from incompatible pointer type [enabled by default]
+         {slv_addr, I2C_M_RECV_LEN, sizeof(addr), &addr},
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:51:9:[m[K [01;35m[Kwarning: [m[K(near initialization for ‘[01m[Kmessages[0].buf[m[K’) [enabled by default]
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m 

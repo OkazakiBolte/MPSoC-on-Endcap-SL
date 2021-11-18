@@ -1,0 +1,112 @@
+スクリプトは 2021年11月18日 14時49分16秒
+ に開始しました[?1034h[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m 
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m cd apps/i[Ksi5345/
+/root/apps/si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls
+合計 76K
+-rw-r--r-- 1 root root  49K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root 7.4K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rw-r--r-- 1 root root  138 11月 17 22:11 Makefile
+-rw-r--r-- 1 root root 9.4K 11月 18 14:47 si5345.c
+-rwxr-xr-x 1 root root    0 11月 18 14:47 si5345*
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read-all
+This process takes time. ETA: 17
+Do you want to procees? You can't stop it by ctrl+c.
+[y/n]
+t y
+DO NOT STOP THIS PROCESS BY CTRL+C!
+(000/525) Register 0xB24: 0x00 != 0xC0
+(001/525) Register 0xB25: 0x00
+(002/525) Register 0x540: 0x00 != 0x01
+(003/525) Register 0x006: 0x07 != 0x00
+(004/525) Register 0x007: 0x04 != 0x00
+(005/525) Register 0x008: 0x00
+(006/525) Register 0x00B: 0xC9 != 0x68
+(007/525) Register 0x016: 0xDC != 0x02
+(008/525) Register 0x017: 0xFF != 0xDC
+(009/525) Register 0x018: 0xDD != 0xD5
+DO NOT STOP THIS PROCESS BY CTRL+C!
+(010/525) Register 0x019: 0xDF != 0xDD
+(011/525) Register 0x01A: 0xF6 != 0xDF
+i2c-read operation failed: No such device or address
+Error at register 0x02B
+RESULT: I2C READ FAILED.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make./si5345 --read-all
+This process takes time. ETA: 17 min.
+Do you want to procees? You can't stop it by ctrl+c.
+[y/n]
+y
+DO NOT STOP THIS PROCESS BY CTRL+C!
+(000/525) Register 0xB24: 0x0B != 0xC0
+(001/525) Register 0xB25: 0x00
+(002/525) Register 0x540: 0x00 != 0x01
+(003/525) Register 0x006: 0x00
+(004/525) Register 0x007: 0x00
+(005/525) Register 0x008: 0x00
+(006/525) Register 0x00B: 0xC9 != 0x68
+(007/525) Register 0x016: 0x00 != 0x02
+(008/525) Register 0x017: 0x00 != 0xDC
+(009/525) Register 0x018: 0x00 != 0xD5
+DO NOT STOP THIS PROCESS BY CTRL+C!
+(010/525) Register 0x019: 0x00 != 0xDD
+(011/525) Register 0x01A: 0xF6 != 0xDF
+(012/525) Register 0x02B: 0x00 != 0x02
+(013/525) Register 0x02C: 0x00 != 0x0A
+(014/525) Register 0x02D: 0x00 != 0x44
+(015/525) Register 0x02E: 0x00
+(016/525) Register 0x02F: 0x00
+(017/525) Register 0x030: 0x00 != 0x44
+(018/525) Register 0x031: 0x00
+(019/525) Register 0x032: 0x00
+DO NOT STOP THIS PROCESS BY CTRL+C!
+(020/525) Register 0x033: 0x00
+(021/525) Register 0x034: 0x00 != 0x44
+(022/525) Register 0x035: 0x00
+(023/525) Register 0x036: 0x00
+(024/525) Register 0x037: 0x00
+(025/525) Register 0x038: 0x00 != 0x44
+(026/525) Register 0x039: 0x00
+(027/525) Register 0x03A: 0x00
+(028/525) Register 0x03B: 0x00
+(029/525) Register 0x03C: 0x00 != 0x44
+DO NOT STOP THIS PROCESS BY CTRL+C!
+(030/525) Register 0x03D: 0x00
+(031/525) Register 0x03F: 0x05 != 0x22
+(032/525) Register 0x040: 0x00 != 0x04
+(033/525) Register 0x041: 0x00
+(034/525) Register 0x042: 0x00 != 0x0C
+(035/525) Register 0x043: 0x00
+(036/525) Register 0x044: 0x0C
+(037/525) Register 0x045: 0x00 != 0x0C
+(038/525) Register 0x046: 0x00
+(039/525) Register 0x047: 0x00 != 0x32
+DO NOT STOP THIS PROCESS BY CTRL+C!
+(040/525) Register 0x048: 0x00
+(041/525) Register 0x049: 0x00
+(042/525) Register 0x04A: 0x00
+(043/525) Register 0x04B: 0x00 != 0x32
+(044/525) Register 0x04C: 0x00
+(045/525) Register 0x04D: 0x00
+(046/525) Register 0x04E: 0x00 != 0x50
+(047/525) Register 0x04F: 0x0F != 0x00
+(048/525) Register 0x050: 0x00 != 0x07
+(049/525) Register 0x051: 0x00
+DO NOT STOP THIS PROCESS BY CTRL+C!
+(050/525) Register 0x052: 0x00 != 0x03
+(051/525) Register 0x053: 0x00
+(052/525) Register 0x054: 0x00
+(053/525) Register 0x055: 0x00
+(054/525) Register 0x056: 0x00 != 0x03
+(055/525) Register 0x057: 0x00
+(056/525) Register 0x058: 0x00
+(057/525) Register 0x059: 0x00 != 0x04

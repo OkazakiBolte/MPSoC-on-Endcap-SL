@@ -1,0 +1,118 @@
+スクリプトは 2021年11月18日 18時44分50秒
+ に開始しました[?1034h[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m 
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m cd apps/si5345/
+/root/apps/si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls
+合計 128K
+-rw-r--r-- 1 root root 7.4K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rwxr-xr-x 1 root root  71K 11月 18 17:32 test*
+-rw-r--r-- 1 root root  11K 11月 18 18:42 si5345.c
+-rw-r--r-- 1 root root  127 11月 18 18:42 test.c
+-rw-r--r-- 1 root root  51K 11月 18 18:42 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root  268 11月 18 18:42 Makefile
+-rwxr-xr-x 1 root root  76K 11月 18 18:42 si5345*
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m lscd apps/si5345/script ~/logs/2021-11-18-16-24.log[2Plogs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kscript logs/2021-11-18-16-24.log~/logs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pcd apps/si5345/ls[K[Klscd apps/si5345/script ~/logs/2021-11-18-16-24.log[2Plogs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Ki2cdump -y 4 0x68[2Pcd apps/si5345/[9Preboot./si5345 --read --address=0x0b24540[2P6540b25540[2P6540b24[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Creboot[Kcd apps/si5345/i2cdump -y 4 0x68ls[Kscript logs/2021-11-18-16-24.log~/logs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pcd apps/si5345/ls[K[Kmake si5345
+gcc -std=c99 -D _BSD_SOURCE -Wall -g -O0 si5345.c -o si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./make si5345ls[Kcd apps/si5345/script ~/logs/2021-11-18-16-24.log[2Plogs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Ki2cdump -y 4 0x68[2Pcd apps/si5345/i2cdump -y 4 0x68
+No size specified (using byte-data access)
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 04 00 00 68 c9 00 0f ff    ?.ES?????..h?.?.
+10: 00 df ff 2f ff 03 02 dc ff dd df f6 00 00 00 00    .?./.???.???....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 7a 31 dd 08 00 00 00    .......?.z1??...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 22 20 00 00 00 0f 00    ......??." ...?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68[6Pmake si5345ls[Kcd apps/si5345/script ~/logs/2021-11-18-16-24.log[2Plogs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Ki2cdump -y 4 0x68[2Pcd apps/si5345/i2cdump -y 4 0x68ls[Ki2cdump -y 4 0x68[2Pcd apps/si5345/[9Preboot./si5345 --read --address=0x0b24540[2P6540b254[12Pwrite-allread --address=0x0018[12Pwrite-all
+This process takes time (ETA: 0.09 min).
+You can't stop it by ctrl-c, because it may break your system.
+Do you want to proceed? [y/n]
+y
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(000/525) Register 0x0B24: 0xC0 written
+(001/525) Register 0x0B25: 0x00 written
+(002/525) Register 0x0540: 0x01 written
+(003/525) Register 0x0006: 0x00 written
+(004/525) Register 0x0007: 0x00 written
+(005/525) Register 0x0008: 0x00 written
+(006/525) Register 0x000B: 0x68 written
+(007/525) Register 0x0016: 0x02 written
+(008/525) Register 0x0017: 0xDC written
+(009/525) Register 0x0018: 0xD5 written
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(010/525) Register 0x0019: 0xDD written
+(011/525) Register 0x001A: 0xDF written
+(012/525) Register 0x002B: 0x02 written
+i2c-write operation failed: No such device or address
+(013/525) Failed to write 0x0A at reg address 0x002C.
+Couldn't write data 0x0A at reg address 0x002C.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --write-all[3Pi2cdump -y 4 0x68
+No size specified (using byte-data access)
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 00 00 00 00 00 68 c9 50 0f ff    ?.ES??.....h?P?.
+10: 00 df ff 2f ff 01 00 00 00 00 df 00 00 00 00 00    .?./.?....?.....
+20: 00 0f 00 0b 0b 00 00 00 00 00 00 00 00 00 00 00    .?.??...........
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05    ...............?
+40: 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 9f 11 2c 24 00 00 00    .......?.??,$...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0f df ff 2f 20 00 00 00 0f 00    ......??./ ...?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m [K[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m [K[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls /dev/sd[K[Kmmcblk
+mmcblk0       mmcblk0boot1  mmcblk0rpmb   mmcblk1p1     
+mmcblk0boot0  mmcblk0p1     mmcblk1       mmcblk1p2     
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls /dev/mmcblk[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd 
+/root
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m ls
+合計 56K
+-rw-r--r-- 1 root root  129 12月 29  2013 .tcshrc
+-rw-r--r-- 1 root root  100 12月 29  2013 .cshrc
+-rw-r--r-- 1 root root  176 12月 29  2013 .bash_profile
+-rw-r--r-- 1 root root   18 12月 29  2013 .bash_logout
+-rw------- 1 root root 1.9K  9月 13  2017 anaconda-ks.cfg
+-rw-r--r-- 1 root root  471 11月 10 15:45 bashrc
+-rw-r--r-- 1 root root  647 11月 10 16:41 .bashrc
+drwxr----- 3 root root 4.0K 11月 10 19:33 .pki/
+drwx------ 2 root root 4.0K 11月 10 19:48 .ssh/
+drwxr-xr-x 3 root root 4.0K 11月 17 22:18 apps/
+-rw-r--r-- 1 root root 1.2K 11月 17 22:42 .nanorc
+-rw------- 1 root root 7.9K 11月 18 18:43 .bash_history
+drwxr-xr-x 2 root root 4.0K 11月 18 18:44 logs/
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m mkdir tmp
+
+[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m ls
+合計 60K
+-rw-r--r-- 1 root root  129 12月 29  2013 .tcshrc
+-rw-r--r-- 1 root root  100 12月 29  2013 .cshrc
+-

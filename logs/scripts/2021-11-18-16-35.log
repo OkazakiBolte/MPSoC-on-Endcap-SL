@@ -1,0 +1,586 @@
+スクリプトは 2021年11月18日 16時35分37秒
+ に開始しました[?1034h[0;33m(sl-xu5-eth0-01)[0m ~ [0;33m#[0m cd apps/si5345/
+/root/apps/si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls
+合計 104K
+-rw-r--r-- 1 root root  49K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root 7.4K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rw-r--r-- 1 root root  138 11月 17 22:11 Makefile
+-rwxr-xr-x 1 root root  75K 11月 18 16:25 si5345*
+-rw-r--r-- 1 root root 9.4K 11月 18 16:35 si5345.c
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make[2Plscd apps/si5345/script ~/logs/2021-11-18-16-24.log[2Plogs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Ki2cdump -y 4 0x68[2Pcd apps/si5345/i2cdump -y 4 0x68
+No size specified (using byte-data access)
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 00 00 00 00 00 68 c9 50 0f ff    ?.ES??.....h?P?.
+10: 00 df ff 2f ff 01 00 00 00 00 df 00 00 00 00 00    .?./.?....?.....
+20: 00 0f 00 0b 0b 00 00 00 00 00 00 00 00 00 00 00    .?.??...........
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05    ...............?
+40: 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 a5 24 b4 31 00 00 00    .......?.?$?1...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0f df ff 2f 20 00 00 00 0f 00    ......??./ ...?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68make[K[2Plscd apps/si5345/script ~/logs/2021-11-18-16-24.log[2Plogs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Ki2cdump -y 4 0x68[2Pcd apps/si5345/[9Prebootcd apps/si5345/i2cdump -y 4 0x68ls[Kscript logs/2021-11-18-16-24.log~/logs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pcd apps/si5345/ls[Kmakei2cdump -y 4 0x68[Ki2cdump -y 4 0x68make[K[2Plscd apps/si5345/script ~/logs/2021-11-18-16-24.log[2Plogs/2021-11-18-16-24.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Ki2cdump -y 4 0x68[2Pcd apps/si5345/[9Preboot./si5345 --read --address=0x0b24540b24
+reg_addr = 0x0B24,	value = 0x0B
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --write-all
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(000/525) Register 0x0B24: 0xC0 written
+(001/525) Register 0x0B25: 0x00 written
+(002/525) Register 0x0540: 0x01 written
+(003/525) Register 0x0006: 0x00 written
+(004/525) Register 0x0007: 0x00 written
+(005/525) Register 0x0008: 0x00 written
+(006/525) Register 0x000B: 0x68 written
+(007/525) Register 0x0016: 0x02 written
+(008/525) Register 0x0017: 0xDC written
+(009/525) Register 0x0018: 0xD5 written
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(010/525) Register 0x0019: 0xDD written
+(011/525) Register 0x001A: 0xDF written
+(012/525) Register 0x002B: 0x02 written
+i2c-write operation failed: No such device or address
+(013/525) Error at register 0x002C
+RESULT: I2C WRITE FAILED.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --write-all
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(000/525) Register 0x0B24: 0xC0 written
+(001/525) Register 0x0B25: 0x00 written
+(002/525) Register 0x0540: 0x01 written
+(003/525) Register 0x0006: 0x00 written
+(004/525) Register 0x0007: 0x00 written
+(005/525) Register 0x0008: 0x00 written
+(006/525) Register 0x000B: 0x68 written
+(007/525) Register 0x0016: 0x02 written
+(008/525) Register 0x0017: 0xDC written
+(009/525) Register 0x0018: 0xD5 written
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(010/525) Register 0x0019: 0xDD written
+(011/525) Register 0x001A: 0xDF written
+(012/525) Register 0x002B: 0x02 written
+i2c-write operation failed: No such device or address
+(013/525) Error at register 0x002C
+RESULT: I2C WRITE FAILED.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --write-allread --address=0x0b24
+reg_addr = 0x0B24,	value = 0x0B
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x0b24[K5
+reg_addr = 0x0B25,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x0b25[K[K[K540
+reg_addr = 0x0540,	value = 0x01
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x0540b254[12Pwrite-all
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(000/525) Register 0x0B24: 0xC0 written
+(001/525) Register 0x0B25: 0x00 written
+(002/525) Register 0x0540: 0x01 written
+(003/525) Register 0x0006: 0x00 written
+(004/525) Register 0x0007: 0x00 written
+(005/525) Register 0x0008: 0x00 written
+(006/525) Register 0x000B: 0x68 written
+(007/525) Register 0x0016: 0x02 written
+(008/525) Register 0x0017: 0xDC written
+(009/525) Register 0x0018: 0xD5 written
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(010/525) Register 0x0019: 0xDD written
+(011/525) Register 0x001A: 0xDF written
+(012/525) Register 0x002B: 0x02 written
+i2c-write operation failed: No such device or address
+(013/525) Error at register 0x002C
+RESULT: I2C WRITE FAILED.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --write-allread --address=0x0540b254
+reg_addr = 0x0B24,	value = 0x0B
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x0b24[12Pwrite-allread --address=0x0540b25
+reg_addr = 0x0B25,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x0b254[12Pwrite-allread --address=0x0540
+reg_addr = 0x0540,	value = 0x01
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x0540b254[12Pwrite-allread --address=0x0540[12Pwrite-all
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(000/525) Register 0x0B24: 0xC0 written
+(001/525) Register 0x0B25: 0x00 written
+(002/525) Register 0x0540: 0x01 written
+(003/525) Register 0x0006: 0x00 written
+(004/525) Register 0x0007: 0x00 written
+(005/525) Register 0x0008: 0x00 written
+(006/525) Register 0x000B: 0x68 written
+(007/525) Register 0x0016: 0x02 written
+(008/525) Register 0x0017: 0xDC written
+(009/525) Register 0x0018: 0xD5 written
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(010/525) Register 0x0019: 0xDD written
+(011/525) Register 0x001A: 0xDF written
+(012/525) Register 0x002B: 0x02 written
+i2c-write operation failed: No such device or address
+(013/525) Error at register 0x002C
+RESULT: I2C WRITE FAILED.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls /sys/ti[K[K
+block/      class/      devices/    fs/         kernel/     power/      
+bus/        dev/        firmware/   hypervisor/ module/     
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls /sys/[K[K[K[Kin[K[K[K[K[K[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls
+合計 104K
+-rw-r--r-- 1 root root  49K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root 7.4K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rw-r--r-- 1 root root  138 11月 17 22:11 Makefile
+-rwxr-xr-x 1 root root  75K 11月 18 16:35 si5345*
+-rw-r--r-- 1 root root 9.6K 11月 18 16:41 si5345.c
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:189:12:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\357[m[K’ があります
+     struct timespec req = {0， 300 * MILLI_SEC};
+[01;32m[K            ^[m[K
+[01m[Ksi5345.c:189:12:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\274[m[K’ があります
+[01m[Ksi5345.c:189:12:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\214[m[K’ があります
+[01m[Ksi5345.c:189:33:[m[K [01;31m[Kエラー: [m[Kexpected ‘[01m[K}[m[K’ before numeric constant
+     struct timespec req = {0， 300 * MILLI_SEC};
+[01;32m[K                                 ^[m[K
+[01m[Ksi5345.c:202:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             if (nanosleep(&req， NULL) == -1) { perror(''); }
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:202:13:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\357[m[K’ があります
+[01m[Ksi5345.c:202:13:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\274[m[K’ があります
+[01m[Ksi5345.c:202:13:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\214[m[K’ があります
+In file included from [01m[K/usr/include/unistd.h:226:0[m[K,
+                 from [01m[Ksi5345.c:15[m[K:
+[01m[Ksi5345.c:202:35:[m[K [01;31m[Kエラー: [m[Kcalled object ‘[01m[Kreq[m[K’ is not a function or function pointer
+             if (nanosleep(&req， NULL) == -1) { perror(''); }
+[01;32m[K                                   ^[m[K
+[01m[Ksi5345.c:189:21:[m[K [01;36m[K備考: [m[Kここで宣言されています
+     struct timespec req = {0， 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:202:57:[m[K [01;31m[Kエラー: [m[K空の文字定数
+             if (nanosleep(&req， NULL) == -1) { perror(''); }
+[01;32m[K                                                         ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kcnt[m[K’ です [-Wunused-variable]
+     int             cnt;
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make[2Plsmake
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:189:12:[m[K [01;31m[Kエラー: [m[K変数 ‘[01m[Kreq[m[K’ には初期化子がありますが不完全型です
+     struct timespec req = {0， 300 * MILLI_SEC};
+[01;32m[K            ^[m[K
+[01m[Ksi5345.c:189:12:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\357[m[K’ があります
+[01m[Ksi5345.c:189:12:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\274[m[K’ があります
+[01m[Ksi5345.c:189:12:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\214[m[K’ があります
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:189:33:[m[K [01;31m[Kエラー: [m[Kexpected ‘[01m[K}[m[K’ before numeric constant
+     struct timespec req = {0， 300 * MILLI_SEC};
+[01;32m[K                                 ^[m[K
+[01m[Ksi5345.c:189:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kreq[m[K’ の記憶域サイズが不明です
+     struct timespec req = {0， 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:202:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             if (nanosleep(&req， NULL) == -1) { perror(''); }
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:202:13:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\357[m[K’ があります
+[01m[Ksi5345.c:202:13:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\274[m[K’ があります
+[01m[Ksi5345.c:202:13:[m[K [01;31m[Kエラー: [m[Kプログラム内に逸脱した ‘[01m[K\214[m[K’ があります
+[01m[Ksi5345.c:202:57:[m[K [01;31m[Kエラー: [m[K空の文字定数
+             if (nanosleep(&req， NULL) == -1) { perror(''); }
+[01;32m[K                                                         ^[m[K
+[01m[Ksi5345.c:189:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kreq[m[K’ です [-Wunused-variable]
+     struct timespec req = {0， 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kcnt[m[K’ です [-Wunused-variable]
+     int             cnt;
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:189:12:[m[K [01;31m[Kエラー: [m[K変数 ‘[01m[Kreq[m[K’ には初期化子がありますが不完全型です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K            ^[m[K
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:189:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kreq[m[K’ の記憶域サイズが不明です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:202:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             if (nanosleep(&req, NULL) == -1) { perror(''); }
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:202:55:[m[K [01;31m[Kエラー: [m[K空の文字定数
+             if (nanosleep(&req, NULL) == -1) { perror(''); }
+[01;32m[K                                                       ^[m[K
+[01m[Ksi5345.c:189:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kreq[m[K’ です [-Wunused-variable]
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kcnt[m[K’ です [-Wunused-variable]
+     int             cnt;
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:189:12:[m[K [01;31m[Kエラー: [m[K変数 ‘[01m[Kreq[m[K’ には初期化子がありますが不完全型です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K            ^[m[K
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:189:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:189:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kreq[m[K’ の記憶域サイズが不明です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:202:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             if (nanosleep(&req, NULL) == -1) { perror(''); }
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:202:55:[m[K [01;31m[Kエラー: [m[K空の文字定数
+             if (nanosleep(&req, NULL) == -1) { perror(''); }
+[01;32m[K                                                       ^[m[K
+[01m[Ksi5345.c:189:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kreq[m[K’ です [-Wunused-variable]
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kcnt[m[K’ です [-Wunused-variable]
+     int             cnt;
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls /usr/include/ti
+tic.h   time.h  
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls /usr/include/ti
+tic.h   time.h  
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls /usr/include/ti
+tic.h   time.h  
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls /usr/include/time.h 
+Makefile                                si5345
+Si5345-RevD-5345.okazaki-Registers.csv  si5345.c
+Si5345-RevD-5345.okazaki-Registers.h    
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls /usr/include/time.h [C[C[1P[1P[1@n[1@a[1@n[1@o
+[?1049h[1;42r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1              File: /usr/include/time.h                                  [3;1H(B[0;1m[34m/* Copyright (C) 1991-2012 Free Software Foundation, Inc.[4d   This file is part of the GNU C Library.[6d   The GNU C Library is free software; you can redistribute it and/or[7d   modify it under the terms of the GNU Lesser General Public[8d   License as published by the Free Software Foundation; either[9d   version 2.1 of the License, or (at your option) any later version.[11d   The GNU C Library is distributed in the hope that it will be useful,[12d   but WITHOUT ANY WARRANTY; without even the implied warranty of[13d   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU[14d   Lesser General Public License for more details.[16d   You should have received a copy of the GNU Lesser General Public[17d   License along with the GNU C Library; if not, see[18d   <http://www.gnu.org/licenses/>.  */[20d/*[21d *      ISO C99 Standard: 7.23 Date and time    <time.h>[22d */[24d[36m#ifndef[39m(B[m (B[0;1m[31m_TIME_H[26d[36m#if[39m(B[m (! defined __need_time_t && !defined __need_clock_t && \[27;6H! defined __need_timespec)[28d(B[0;1m[36m# define[39m(B[m (B[0;1m[31m_TIME_H[28;25H[39m(B[m1[29d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<features.h>[31d[31m__BEGIN_DECLS[33d[36m#endif[35d#ifdef[39m(B[m  (B[0;1m[31m_TIME_H[36d[34m/* Get size_t and NULL from <stddef.h>.  */[37d[36m# define[39m(B[m __need_size_t[38d(B[0;1m[36m# define[39m(B[m __need_NULL[39d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<stddef.h>[40;36H[39m(B[0;7m[ Read 434 lines ][41d^G(B[m Get Help   (B[0;7m^O(B[m WriteOut   (B[0;7m^R(B[m Read File  (B[0;7m^Y(B[m Prev Page  (B[0;7m^K(B[m Cut Text   (B[0;7m^C(B[m Cur Pos[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^J(B[m Justify    (B[0;7m^W(B[m Where Is   (B[0;7m^V(B[m Next Page  (B[0;7m^U(B[m UnCut Text (B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[17d[19d[22d[27d[40d[K[A7[2;40r8[40d[19S[1;42r[2;1H[K[22d(B[0;1m[34m/* This defines CLOCKS_PER_SEC, which is the number of processor clock[23d   ticks per second.  */[24d[36m# include[39m(B[m (B[0;1m[33m<bits/time.h>[26d[34m/* This is the obsolete POSIX.1-1988 name for the same constant.  */[27d[36m# if[39m(B[m !defined (B[0;1m[31m__STRICT_ANSI__[39m(B[m && !defined (B[0;1m[31m__USE_XOPEN2K[28d[36m#  ifndef[39m(B[m (B[0;1m[31mCLK_TCK[29d[36m#   define[39m(B[m (B[0;1m[31mCLK_TCK	CLOCKS_PER_SEC[30d[36m#  endif[31d# endif[33d#endif[39m(B[m (B[0;1m[34m/* <time.h> included.  */[35d[36m#if[39m(B[m !defined __clock_t_defined && (defined (B[0;1m[31m_TIME_H[39m(B[m || defined __need_clock_t)[36d(B[0;1m[36m# define[39m(B[m __clock_t_defined	1[38d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[26d[39m(B[m[32d[3d(B[0;1m[34m/* This defines CLOCKS_PER_SEC, which is the number of processor clock[4d   ticks per second.  */[5;2H[36m include[39m(B[m (B[0;1m[33m<bits/time.h>[7d[34m/* This is the obsolete POSIX.1-1988 name for the same constant.  */[8d[36m# if[39m(B[m !defined (B[0;1m[31m__STRICT_ANSI__[39m(B[m && !defined (B[0;1m[31m__USE_XOPEN2K[9;3H[36m ifndef[39m(B[m (B[0;1m[31mCLK_TCK[39m(B[m[K[10;3H(B[0;1m[36m  define[39m(B[m (B[0;1m[31mCLK_TCK[39m(B[m      (B[0;1m[31mCLOCKS_PER_SEC[11d[36m#  endif[12d# endif[39m(B[m[K[14d(B[0;1m[34m/* <time.h> included.  */[16;4H[39m(B[m !defined __clock_t_defined && (defined (B[0;1m[31m_TIME_H[39m(B[m || defined __need_clock_t)[17d(B[0;1m[36m# define[39m(B[m __clock_t_defined      1[K[18d[K[19;3H(B[0;1m[36minclude[39m(B[m (B[0;1m[33m<bits/types.h>[20d[39m(B[m[K[21d(B[0;1m[31m__BEGIN_NAMESPACE_STD[22;4H[34mReturned by `clock'.  */[39m(B[m[K[23d[32mtypedef[39m(B[m __clock_t clock_t;[24d(B[0;1m[31m__END_NAMESPACE_STD[39m(B[m[K[25d(B[0;1m[36m#if[39m(B[m defined (B[0;1m[31m__USE_XOPEN[39m(B[m || defined (B[0;1m[31m__USE_POSIX[39m(B[m || defined (B[0;1m[31m__USE_MISC[26d__USING_NAMESPACE_STD[39m(B[m(clock_t)[K[27;2H(B[0;1m[36mendif[39m(B[m[K[28d[K[29;2H(B[0;1m[36mendif[39m(B[m (B[0;1m[34m/* clock_t not defined and <time.h> or need clock_t.  */[30;2H[36mundef[39m(B[m  __need_clock_t[31d[K[32d(B[0;1m[36m#if[39m(B[m !defined __time_t_defined && (defined (B[0;1m[31m_TIME_H[39m(B[m || defined __need_time_t)[33;2H(B[0;1m[36m define[39m(B[m __time_t_defined       1[35;2H(B[0;1m[36m include[39m(B[m (B[0;1m[33m<bits/types.h>[39m(B[m[K[36d[K[37d(B[0;1m[31m__BEGIN_NAMESPACE_STD[38d[34m/* Returned by `time'.  */[39d(B[0m[32mtypedef[39m(B[m __time_t time_t;[23d[33d[38d[3;40r[40;1H[19S[1;42r[21;1H(B[0;1m[31m__END_NAMESPACE_STD[22d[36m#if[39m(B[m defined (B[0;1m[31m__USE_POSIX[39m(B[m || defined (B[0;1m[31m__USE_MISC[39m(B[m || defined (B[0;1m[31m__USE_SVID[23d__USING_NAMESPACE_STD[39m(B[m(time_t)[24d(B[0;1m[36m#endif[26d#endif[39m(B[m (B[0;1m[34m/* time_t not defined and <time.h> or need time_t.  */[27d[36m#undef[39m(B[m  __need_time_t[29d(B[0;1m[36m#if[39m(B[m !defined __clockid_t_defined && \[30;4H((defined (B[0;1m[31m_TIME_H[39m(B[m && defined (B[0;1m[31m__USE_POSIX199309[39m(B[m) || defined __need_clockid_t)[31d(B[0;1m[36m# define[39m(B[m __clockid_t_defined    1[33d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[35d[34m/* Clock ID used in clock and timer functions.  */[36d(B[0m[32mtypedef[39m(B[m __clockid_t clockid_t;[38d(B[0;1m[36m#endif[39m(B[m (B[0;1m[34m/* clockid_t not defined and <time.h> or need clockid_t.  */[39d[36m#undef[39m(B[m  __clockid_time_t[23d[27d[35d[38d[2;40r[40;1H[19S[1;42r[2;1H[K[22d(B[0;1m[36m#if[39m(B[m !defined __timer_t_defined && \[23;5H((defined (B[0;1m[31m_TIME_H[39m(B[m && defined (B[0;1m[31m__USE_POSIX199309[39m(B[m) || defined __need_timer_t)[24d(B[0;1m[36m# define[39m(B[m __timer_t_defined	1[26d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[28d[34m/* Timer ID returned by `timer_create'.  */[29d(B[0m[32mtypedef[39m(B[m __timer_t timer_t;[31d(B[0;1m[36m#endif[39m(B[m (B[0;1m[34m/* timer_t not defined and <time.h> or need timer_t.  */[32d[36m#undef[39m(B[m  __need_timer_t[35d(B[0;1m[36m#if[39m(B[m (!defined __timespec_defined[35;73H\[36;6H&& ((defined (B[0;1m[31m_TIME_H[36;73H[39m(B[m\[37;11H&& (defined (B[0;1m[31m__USE_POSIX199309[39m(B[m || defined (B[0;1m[31m__USE_MISC[37;73H[39m(B[m\[38;15H|| defined (B[0;1m[31m__USE_ISOC11[39m(B[m))[38;73H\[39;10H|| defined __need_timespec))[25d[30d[32d[36d[38d[39d7[2;40r8[40d[19S[1;42r[21;1H(B[0;1m[36m# define[39m(B[m __timespec_defined     1[23d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[23;33H[34m/* This defines __time_t for us.  */[25d/* POSIX.1b structure for a time value.  This is like a `struct timeval' but[26d   has nanoseconds instead of microseconds.  */[27d(B[0m[32mstruct[39m(B[m timespec[28;3H{[29d __time_t tv_sec;[29;33H(B[0;1m[34m/* Seconds.  */[30;5H[39m(B[m__syscall_slong_t tv_nsec;  (B[0;1m[34m/* Nanoseconds.  */[31;3H[39m(B[m};[33d(B[0;1m[36m#endif[39m(B[m (B[0;1m[34m/* timespec not defined and <time.h> or need timespec.  */[34d[36m#undef[39m(B[m  __need_timespec[37d(B[0;1m[36m#ifdef[39m(B[m  (B[0;1m[31m_TIME_H[38d__BEGIN_NAMESPACE_STD[39d[34m/* Used by other time functions.  */[22d[39m(B[m[24d[25d[26d[27d[28d[30d[31d[32d[33d[34d[35d[36d[37d[32d[17d[2;39r[2;1H[19T[1;42r[3;1H(B[0;1m[36m#if[39m(B[m defined (B[0;1m[31m__USE_POSIX[39m(B[m || defined (B[0;1m[31m__USE_MISC[39m(B[m || defined (B[0;1m[31m__USE_SVID[4d__USING_NAMESPACE_STD[39m(B[m(time_t)[5d(B[0;1m[36m#endif[7d#endif[39m(B[m (B[0;1m[34m/* time_t not defined and <time.h> or need time_t.  */[8d[36m#undef[39m(B[m  __need_time_t[10d(B[0;1m[36m#if[39m(B[m !defined __clockid_t_defined && \[11;4H((defined (B[0;1m[31m_TIME_H[39m(B[m && defined (B[0;1m[31m__USE_POSIX199309[39m(B[m) || defined __need_clockid_t)[12d(B[0;1m[36m# define[39m(B[m __clockid_t_defined    1[14d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[16d[34m/* Clock ID used in clock and timer functions.  */[17d(B[0m[32mtypedef[39m(B[m __clockid_t clockid_t;[19d(B[0;1m[36m#endif[39m(B[m (B[0;1m[34m/* clockid_t not defined and <time.h> or need clockid_t.  */[20d[36m#undef[39m(B[m  __clockid_time_t[18d[2;40r[2;1H[19T[1;42r[3;1H(B[0;1m[34m/* Returned by `clock'.  */[4d(B[0m[32mtypedef[39m(B[m __clock_t clock_t;[5d(B[0;1m[31m__END_NAMESPACE_STD[6d[36m#if[39m(B[m defined (B[0;1m[31m__USE_XOPEN[39m(B[m || defined (B[0;1m[31m__USE_POSIX[39m(B[m || defined (B[0;1m[31m__USE_MISC[7d__USING_NAMESPACE_STD[39m(B[m(clock_t)[8d(B[0;1m[36m#endif[10d#endif[39m(B[m (B[0;1m[34m/* clock_t not defined and <time.h> or need clock_t.  */[11d[36m#undef[39m(B[m  __need_clock_t[13d(B[0;1m[36m#if[39m(B[m !defined __time_t_defined && (defined (B[0;1m[31m_TIME_H[39m(B[m || defined __need_time_t)[14d(B[0;1m[36m# define[39m(B[m __time_t_defined	1[16d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[18d[31m__BEGIN_NAMESPACE_STD[19d[34m/* Returned by `time'.  */[20d(B[0m[32mtypedef[39m(B[m __time_t time_t;[21d(B[0;1m[31m__END_NAMESPACE_STD[18d[39m(B[m[2;39r[2;1H[19T[1;42r[3;1H(B[0;1m[34m/* This defines CLOCKS_PER_SEC, which is the number of processor clock[4d   ticks per second.  */[5d[36m# include[39m(B[m (B[0;1m[33m<bits/time.h>[7d[34m/* This is the obsolete POSIX.1-1988 name for the same constant.  */[8d[36m# if[39m(B[m !defined (B[0;1m[31m__STRICT_ANSI__[39m(B[m && !defined (B[0;1m[31m__USE_XOPEN2K[9d[36m#  ifndef[39m(B[m (B[0;1m[31mCLK_TCK[10d[36m#   define[39m(B[m (B[0;1m[31mCLK_TCK	CLOCKS_PER_SEC[11d[36m#  endif[12d# endif[14d#endif[39m(B[m (B[0;1m[34m/* <time.h> included.  */[16d[36m#if[39m(B[m !defined __clock_t_defined && (defined (B[0;1m[31m_TIME_H[39m(B[m || defined __need_clock_t)[17d(B[0;1m[36m# define[39m(B[m __clock_t_defined	1[19d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[21d[31m__BEGIN_NAMESPACE_STD[A[39m(B[m[4d[2;40r[2;1H[19T[1;42r[3;1H(B[0;1m[34m */[5d[36m#ifndef[39m(B[m (B[0;1m[31m_TIME_H[7d[36m#if[39m(B[m (! defined __need_time_t && !defined __need_clock_t && \[8;6H! defined __need_timespec)[9d(B[0;1m[36m# define[39m(B[m (B[0;1m[31m_TIME_H[9;25H[39m(B[m1[10d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<features.h>[12d[31m__BEGIN_DECLS[14d[36m#endif[16d#ifdef[39m(B[m  (B[0;1m[31m_TIME_H[17d[34m/* Get size_t and NULL from <stddef.h>.  */[18d[36m# define[39m(B[m __need_size_t[19d(B[0;1m[36m# define[39m(B[m __need_NULL[20d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<stddef.h>[40d[39m(B[m[K[8d[2;40r[2;1H[19T[1;42r[3;1H(B[0;1m[34m/* Copyright (C) 1991-2012 Free Software Foundation, Inc.[4d   This file is part of the GNU C Library.[6d   The GNU C Library is free software; you can redistribute it and/or[7d   modify it under the terms of the GNU Lesser General Public[8d   License as published by the Free Software Foundation; either[9d   version 2.1 of the License, or (at your option) any later version.[11d   The GNU C Library is distributed in the hope that it will be useful,[12d   but WITHOUT ANY WARRANTY; without even the implied warranty of[13d   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU[14d   Lesser General Public License for more details.[16d   You should have received a copy of the GNU Lesser General Public[17d   License along with the GNU C Library; if not, see[18d   <http://www.gnu.org/licenses/>.  */[20d/*[21d *      ISO C99 Standard: 7.23 Date and time    <time.h>[14d[39m(B[m[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[20d[22d[24d[27d[29d[32d[35d[37d[2;40r[40;1H[19S[1;42r[2;1H[K[22d(B[0;1m[34m/* This defines CLOCKS_PER_SEC, which is the number of processor clock[23d   ticks per second.  */[24d[36m# include[39m(B[m (B[0;1m[33m<bits/time.h>[26d[34m/* This is the obsolete POSIX.1-1988 name for the same constant.  */[27d[36m# if[39m(B[m !defined (B[0;1m[31m__STRICT_ANSI__[39m(B[m && !defined (B[0;1m[31m__USE_XOPEN2K[28d[36m#  ifndef[39m(B[m (B[0;1m[31mCLK_TCK[29d[36m#   define[39m(B[m (B[0;1m[31mCLK_TCK	CLOCKS_PER_SEC[30d[36m#  endif[31d# endif[33d#endif[39m(B[m (B[0;1m[34m/* <time.h> included.  */[35d[36m#if[39m(B[m !defined __clock_t_defined && (defined (B[0;1m[31m_TIME_H[39m(B[m || defined __need_clock_t)[36d(B[0;1m[36m# define[39m(B[m __clock_t_defined	1[38d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[21d[39m(B[m[24d[26d[28d[30d[32d[34d[36d[37d[38d[3d(B[0;1m[34m/* This defines CLOCKS_PER_SEC, which is the number of processor clock[4d   ticks per second.  */[5;2H[36m include[39m(B[m (B[0;1m[33m<bits/time.h>[7d[34m/* This is the obsolete POSIX.1-1988 name for the same constant.  */[8d[36m# if[39m(B[m !defined (B[0;1m[31m__STRICT_ANSI__[39m(B[m && !defined (B[0;1m[31m__USE_XOPEN2K[9;3H[36m ifndef[39m(B[m (B[0;1m[31mCLK_TCK[39m(B[m[K[10;3H(B[0;1m[36m  define[39m(B[m (B[0;1m[31mCLK_TCK[39m(B[m      (B[0;1m[31mCLOCKS_PER_SEC[11d[36m#  endif[12d# endif[39m(B[m[K[14d(B[0;1m[34m/* <time.h> included.  */[16;4H[39m(B[m !defined __clock_t_defined && (defined (B[0;1m[31m_TIME_H[39m(B[m || defined __need_clock_t)[17d(B[0;1m[36m# define[39m(B[m __clock_t_defined      1[K[18d[K[19;3H(B[0;1m[36minclude[39m(B[m (B[0;1m[33m<bits/types.h>[20d[39m(B[m[K[21d(B[0;1m[31m__BEGIN_NAMESPACE_STD[22;4H[34mReturned by `clock'.  */[39m(B[m[K[23d[32mtypedef[39m(B[m __clock_t clock_t;[24d(B[0;1m[31m__END_NAMESPACE_STD[39m(B[m[K[25d(B[0;1m[36m#if[39m(B[m defined (B[0;1m[31m__USE_XOPEN[39m(B[m || defined (B[0;1m[31m__USE_POSIX[39m(B[m || defined (B[0;1m[31m__USE_MISC[26d__USING_NAMESPACE_STD[39m(B[m(clock_t)[K[27;2H(B[0;1m[36mendif[39m(B[m[K[28d[K[29;2H(B[0;1m[36mendif[39m(B[m (B[0;1m[34m/* clock_t not defined and <time.h> or need clock_t.  */[30;2H[36mundef[39m(B[m  __need_clock_t[31d[K[32d(B[0;1m[36m#if[39m(B[m !defined __time_t_defined && (defined (B[0;1m[31m_TIME_H[39m(B[m || defined __need_time_t)[33;2H(B[0;1m[36m define[39m(B[m __time_t_defined       1[35;2H(B[0;1m[36m include[39m(B[m (B[0;1m[33m<bits/types.h>[39m(B[m[K[36d[K[37d(B[0;1m[31m__BEGIN_NAMESPACE_STD[38d[34m/* Returned by `time'.  */[39d(B[0m[32mtypedef[39m(B[m __time_t time_t;[21d[22d[23d[24d[25d[26d[27d[28d[29d[30d[31d[32d[33d[34d[35d[37d[3;40r[40;1H[19S[1;42r[21;1H(B[0;1m[31m__END_NAMESPACE_STD[22d[36m#if[39m(B[m defined (B[0;1m[31m__USE_POSIX[39m(B[m || defined (B[0;1m[31m__USE_MISC[39m(B[m || defined (B[0;1m[31m__USE_SVID[23d__USING_NAMESPACE_STD[39m(B[m(time_t)[24d(B[0;1m[36m#endif[26d#endif[39m(B[m (B[0;1m[34m/* time_t not defined and <time.h> or need time_t.  */[27d[36m#undef[39m(B[m  __need_time_t[29d(B[0;1m[36m#if[39m(B[m !defined __clockid_t_defined && \[30;4H((defined (B[0;1m[31m_TIME_H[39m(B[m && defined (B[0;1m[31m__USE_POSIX199309[39m(B[m) || defined __need_clockid_t)[31d(B[0;1m[36m# define[39m(B[m __clockid_t_defined    1[33d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[35d[34m/* Clock ID used in clock and timer functions.  */[36d(B[0m[32mtypedef[39m(B[m __clockid_t clockid_t;[38d(B[0;1m[36m#endif[39m(B[m (B[0;1m[34m/* clockid_t not defined and <time.h> or need clockid_t.  */[39d[36m#undef[39m(B[m  __clockid_time_t[21d[23d[25d[28d[32d[37d[2;40r[40;1H[19S[1;42r[2;1H[K[22d(B[0;1m[36m#if[39m(B[m !defined __timer_t_defined && \[23;5H((defined (B[0;1m[31m_TIME_H[39m(B[m && defined (B[0;1m[31m__USE_POSIX199309[39m(B[m) || defined __need_timer_t)[24d(B[0;1m[36m# define[39m(B[m __timer_t_defined	1[26d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[28d[34m/* Timer ID returned by `timer_create'.  */[29d(B[0m[32mtypedef[39m(B[m __timer_t timer_t;[31d(B[0;1m[36m#endif[39m(B[m (B[0;1m[34m/* timer_t not defined and <time.h> or need timer_t.  */[32d[36m#undef[39m(B[m  __need_timer_t[35d(B[0;1m[36m#if[39m(B[m (!defined __timespec_defined[35;73H\[36;6H&& ((defined (B[0;1m[31m_TIME_H[36;73H[39m(B[m\[37;11H&& (defined (B[0;1m[31m__USE_POSIX199309[39m(B[m || defined (B[0;1m[31m__USE_MISC[37;73H[39m(B[m\[38;15H|| defined (B[0;1m[31m__USE_ISOC11[39m(B[m))[38;73H\[39;10H|| defined __need_timespec))[22d[31d[35d[2;40r[40;1H[19S[1;42r[21;1H(B[0;1m[36m# define[39m(B[m __timespec_defined     1[23d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<bits/types.h>[23;33H[34m/* This defines __time_t for us.  */[25d/* POSIX.1b structure for a time value.  This is like a `struct timeval' but[26d   has nanoseconds instead of microseconds.  */[27d(B[0m[32mstruct[39m(B[m timespec[28;3H{[29d __time_t tv_sec;[29;33H(B[0;1m[34m/* Seconds.  */[30;5H[39m(B[m__syscall_slong_t tv_nsec;  (B[0;1m[34m/* Nanoseconds.  */[31;3H[39m(B[m};[33d(B[0;1m[36m#endif[39m(B[m (B[0;1m[34m/* timespec not defined and <time.h> or need timespec.  */[34d[36m#undef[39m(B[m  __need_timespec[37d(B[0;1m[36m#ifdef[39m(B[m  (B[0;1m[31m_TIME_H[38d__BEGIN_NAMESPACE_STD[39d[34m/* Used by other time functions.  */[24d[39m(B[m[31d[38d[3;40r[40;1H[19S[1;42r[21;1H[32mstruct[39m(B[m tm[22d{[23d [32mint[39m(B[m tm_sec;[23;33H(B[0;1m[34m/* Seconds.     [0-60] (1 leap second) */[24;3H(B[0m[32mint[39m(B[m tm_min;[24;33H(B[0;1m[34m/* Minutes.     [0-59] */[25;3H(B[0m[32mint[39m(B[m tm_hour;[25;33H(B[0;1m[34m/* Hours.       [0-23] */[26;3H(B[0m[32mint[39m(B[m tm_mday;[26;33H(B[0;1m[34m/* Day.         [1-31] */[27;3H(B[0m[32mint[39m(B[m tm_mon;[27;33H(B[0;1m[34m/* Month.       [0-11] */[28;3H(B[0m[32mint[39m(B[m tm_year;[28;33H(B[0;1m[34m/* Year - 1900.  */[29;3H(B[0m[32mint[39m(B[m tm_wday;[29;33H(B[0;1m[34m/* Day of week. [0-6] */[30;3H(B[0m[32mint[39m(B[m tm_yday;[30;33H(B[0;1m[34m/* Days in year.[0-365] */[31;3H(B[0m[32mint[39m(B[m tm_isdst;[31;33H(B[0;1m[34m/* DST.         [-1/0/1]*/[33d[36m# ifdef[39m(B[m (B[0;1m[31m__USE_BSD[34;3H(B[0m[32mlong[39m(B[m [32mint[39m(B[m tm_gmtoff;[34;33H(B[0;1m[34m/* Seconds east of UTC.  */[35;3H(B[0m[32mconst[39m(B[m [32mchar[39m(B[m *tm_zone;[35;33H(B[0;1m[34m/* Timezone abbreviation.  */[36d[36m# else[37;3H(B[0m[32mlong[39m(B[m [32mint[39m(B[m __tm_gmtoff;[37;33H(B[0;1m[34m/* Seconds east of UTC.  */[38;3H(B[0m[32mconst[39m(B[m [32mchar[39m(B[m *__tm_zone;[38;33H(B[0;1m[34m/* Timezone abbreviation.  */[39d[36m# endif[21d[39m(B[m[26d[28d[30d[32d[34d[35d[37d[38d[39d7[3;40r8[40d[19S[1;42r[21;1H};[22d(B[0;1m[31m__END_NAMESPACE_STD[23d[36m#if[39m(B[m defined (B[0;1m[31m__USE_XOPEN[39m(B[m || defined (B[0;1m[31m__USE_POSIX[39m(B[m || defined (B[0;1m[31m__USE_MISC[24d__USING_NAMESPACE_STD[39m(B[m(tm)[25d(B[0;1m[36m#endif[28d# ifdef[39m(B[m (B[0;1m[31m__USE_POSIX199309[29d[34m/* POSIX.1b structure for timer start values and intervals.  */[30d(B[0m[32mstruct[39m(B[m itimerspec[31;3H{[32d [32mstruct[39m(B[m timespec it_interval;[33;5H[32mstruct[39m(B[m timespec it_value;[34;3H};[36d(B[0;1m[34m/* We can use a simple forward declaration.  */[37d(B[0m[32mstruct[39m(B[m sigevent;[39d(B[0;1m[36m# endif[39m(B[m (B[0;1m[34m/* POSIX.1b */[21d[39m(B[m[23d[24d[25d[26d[27d[28d[29d[30d[31d[32d[33d[34d[36d[38d[2;40r[40;1H[19S[1;42r[2;1H[K[22d(B[0;1m[36m# ifdef[39m(B[m (B[0;1m[31m__USE_XOPEN2K[23d[36m#  ifndef[39m(B[m __pid_t_defined[24d[32mtypedef[39m(B[m __pid_t pid_t;[25d(B[0;1m[36m#   define[39m(B[m __pid_t_defined[26d(B[0;1m[36m#  endif[27d# endif[30d# ifdef[39m(B[m (B[0;1m[31m__USE_ISOC11[31d[34m/* Time base values for timespec_get.  */[32d[36m# define[39m(B[m (B[0;1m[31mTIME_UTC[39m(B[m 1[33d(B[0;1m[36m# endif[36d[31m__BEGIN_NAMESPACE_STD[37d[34m/* Time used by the program so far (user time + system time).[38d   The result / CLOCKS_PER_SECOND is program time in seconds.  */[39d(B[0m[32mextern[39m(B[m clock_t clock ([32mvoid[39m(B[m) (B[0;1m[31m__THROW[39m(B[m;[22d[25d[26d[29d[30d[31d[32d[33d[34d[35d[36d[37d[38d[39d7[2;40r8[40d[19S[1;42r[22;1H(B[0;1m[34m/* Return the current time and put it in *TIMER if TIMER is not NULL.  */[23d(B[0m[32mextern[39m(B[m time_t time (time_t *__timer) (B[0;1m[31m__THROW[39m(B[m;[25d(B[0;1m[34m/* Return the difference between TIME1 and TIME0.  */[26d(B[0m[32mextern[39m(B[m [32mdouble[39m(B[m difftime (time_t __time1, time_t __time0)[27;6H(B[0;1m[31m__THROW[39m(B[m [36m__attribute__ ((__const__))[39m(B[m;[29d(B[0;1m[34m/* Return the `time_t' representation of TP and normalize TP.  */[30d(B[0m[32mextern[39m(B[m time_t mktime ([32mstruct[39m(B[m tm *__tp) (B[0;1m[31m__THROW[39m(B[m;[33d(B[0;1m[34m/* Format TP into S according to FORMAT.[34d   Write no more than MAXSIZE characters and return the number[35d   of characters written, or 0 if it would exceed MAXSIZE.  */[36d(B[0m[32mextern[39m(B[m [32msize_t[39m(B[m strftime ([32mchar[39m(B[m *__restrict __s, [32msize_t[39m(B[m __maxsize,[37;25H[32mconst[39m(B[m [32mchar[39m(B[m *__restrict __format,[38;25H[32mconst[39m(B[m [32mstruct[39m(B[m tm *__restrict __tp) (B[0;1m[31m__THROW[39m(B[m;[39d(B[0;1m[31m__END_NAMESPACE_STD[21d[39m(B[m[22d[24d[25d[26d[27d[28d[29d[40d(B[0;7mSearch:                                                                                  [41;16HY(B[m First Line (B[0;7m^T(B[m Go To Line (B[0;7m^W(B[m Beg of Par (B[0;7mM-J(B[m FullJstify(B[0;7mM-B(B[m Backwards[42;2H(B[0;7mC(B[m Cancel[16G(B[0;7mV(B[m Last Line  (B[0;7m^R(B[m Replace    (B[0;7m^O(B[m End of Par (B[0;7mM-C(B[m Case Sens (B[0;7mM-R(B[m Regexp[K[40;9H(B[0;7mt(B[m(B[0;7mi(B[m(B[0;7mm(B[m(B[0;7me(B[m(B[0;7ms(B[m(B[0;7mp(B[m(B[0;7me(B[m(B[0;7mc(B[m[3d(B[0;1m[34m   localtime package.  These are included only for compatibility.  */[4d[39m(B[m[K[5d(B[0;1m[34m/* Like `mktime', but for TP represents Universal Time, not local time.  */[6d(B[0m[32mextern[39m(B[m time_t timegm ([32mstruct[39m(B[m tm *__tp) (B[0;1m[31m__THROW[39m(B[m;[7d[K[8d(B[0;1m[34m/* Another name for `mktime'.  */[9d(B[0m[32mextern[39m(B[m time_t timelocal ([32mstruct[39m(B[m tm *__tp) (B[0;1m[31m__THROW[39m(B[m;[11d(B[0;1m[34m/* Return the number of days in YEAR.  */[12d(B[0m[32mextern[39m(B[m [32mint[39m(B[m dysize ([32mint[39m(B[m __year) (B[0;1m[31m__THROW[39m(B[m  [36m__attribute__ ((__const__))[39m(B[m;[13;3H(B[0;1m[36mendif[39m(B[m[K[14d[K[16d(B[0;1m[36m# ifdef[39m(B[m (B[0;1m[31m__USE_POSIX199309[17d[34m/* Pause execution for a number of nanoseconds.[18d[39m(B[m[K[19;6H(B[0;1m[34mis function is a cancellation point and therefore not marked with[20d   __THROW.  */[39m(B[m[K[21d[32mextern[39m(B[m [32mint[39m(B[m nanosleep ([32mconst[39m(B[m [32mstruct[39m(B[m timespec *__requested_time,[22;22H[1K [32mstruct[39m(B[m timespec *__remaining);[K[23d[K[25;4H(B[0;1m[34mGet resolution of clock CLOCK_ID.  */[39m(B[m[K[26;8H[32mint[39m(B[m clock_getres (clockid_t __clock_id, [32mstruct[39m(B[m timespec *__res) (B[0;1m[31m__THROW[39m(B[m;[27d[K[28d(B[0;1m[34m/* Get current value of clock CLOCK_ID and store it in TP.  */[29d(B[0m[32mextern[39m(B[m [32mint[39m(B[m clock_gettime (clockid_t __clock_id, [32mstruct[39m(B[m timespec *__tp) (B[0;1m[31m__THROW[39m(B[m;[30d[K[31d(B[0;1m[34m/* Set clock CLOCK_ID to value TP.  */[32d(B[0m[32mextern[39m(B[m [32mint[39m(B[m clock_settime (clockid_t __clock_id, [32mconst[39m(B[m [32mstruct[39m(B[m timespec *__tp)[33;5H[1K (B[0;1m[31m__THROW[39m(B[m;[K[34d[K[35d(B[0;1m[36m#  ifdef[39m(B[m (B[0;1m[31m__USE_XOPEN2K[39m(B[m[K[36d(B[0;1m[34m/* High-resolution sleep with the specified clock.[39m(B[m[K[37d[K[38d(B[0;1m[34m   This function is a cancellation point and therefore not marked with[39d   __THROW.  */[39m(B[m[K[40d[K[41;16H(B[0;7mO(B[m WriteOut   (B[0;7m^R(B[m Read File  (B[0;7m^Y(B[m Prev Page  (B[0;7m^K(B[m Cut Text   (B[0;7m^C(B[m Cur Pos[K[42;2H(B[0;7mX(B[m Exit  [16G(B[0;7mJ(B[m Justify    (B[0;7m^W(B[m Where Is   (B[0;7m^V(B[m Next Page  (B[0;7m^U(B[m UnCut Text (B[0;7m^T(B[m To Spell[21;36H[41d[J[42;89H[42;1H[?1049l[?1l>
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:188:12:[m[K [01;31m[Kエラー: [m[K変数 ‘[01m[Kreq[m[K’ には初期化子がありますが不完全型です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K            ^[m[K
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:188:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kreq[m[K’ の記憶域サイズが不明です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:201:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             if (nanosleep(&req, NULL) == -1) { perror(''); }
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:201:55:[m[K [01;31m[Kエラー: [m[K空の文字定数
+             if (nanosleep(&req, NULL) == -1) { perror(''); }
+[01;32m[K                                                       ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kreq[m[K’ です [-Wunused-variable]
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:188:12:[m[K [01;31m[Kエラー: [m[K変数 ‘[01m[Kreq[m[K’ には初期化子がありますが不完全型です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K            ^[m[K
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:188:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kreq[m[K’ の記憶域サイズが不明です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:201:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             if (nanosleep(&req, NULL) == -1) { perror(''); }
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:201:55:[m[K [01;31m[Kエラー: [m[K空の文字定数
+             if (nanosleep(&req, NULL) == -1) { perror(''); }
+[01;32m[K                                                       ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kreq[m[K’ です [-Wunused-variable]
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:188:12:[m[K [01;31m[Kエラー: [m[K変数 ‘[01m[Kreq[m[K’ には初期化子がありますが不完全型です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K            ^[m[K
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ksi5345.c:188:12:[m[K [01;35m[K警告: [m[K(‘[01m[Kreq[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:188:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kreq[m[K’ の記憶域サイズが不明です
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:201:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             nanosleep(&req, NULL);
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kreq[m[K’ です [-Wunused-variable]
+     struct timespec req = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m makenano /usr/include/time.h make[K[2Plsmakenano /usr/include/time.h 
+[?1049h[1;42r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1              File: /usr/include/time.h                                  [3;1H(B[0;1m[34m/* Copyright (C) 1991-2012 Free Software Foundation, Inc.[4d   This file is part of the GNU C Library.[6d   The GNU C Library is free software; you can redistribute it and/or[7d   modify it under the terms of the GNU Lesser General Public[8d   License as published by the Free Software Foundation; either[9d   version 2.1 of the License, or (at your option) any later version.[11d   The GNU C Library is distributed in the hope that it will be useful,[12d   but WITHOUT ANY WARRANTY; without even the implied warranty of[13d   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU[14d   Lesser General Public License for more details.[16d   You should have received a copy of the GNU Lesser General Public[17d   License along with the GNU C Library; if not, see[18d   <http://www.gnu.org/licenses/>.  */[20d/*[21d *      ISO C99 Standard: 7.23 Date and time    <time.h>[22d */[24d[36m#ifndef[39m(B[m (B[0;1m[31m_TIME_H[26d[36m#if[39m(B[m (! defined __need_time_t && !defined __need_clock_t && \[27;6H! defined __need_timespec)[28d(B[0;1m[36m# define[39m(B[m (B[0;1m[31m_TIME_H[28;25H[39m(B[m1[29d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<features.h>[31d[31m__BEGIN_DECLS[33d[36m#endif[35d#ifdef[39m(B[m  (B[0;1m[31m_TIME_H[36d[34m/* Get size_t and NULL from <stddef.h>.  */[37d[36m# define[39m(B[m __need_size_t[38d(B[0;1m[36m# define[39m(B[m __need_NULL[39d(B[0;1m[36m# include[39m(B[m (B[0;1m[33m<stddef.h>[40;36H[39m(B[0;7m[ Read 434 lines ][41d^G(B[m Get Help   (B[0;7m^O(B[m WriteOut   (B[0;7m^R(B[m Read File  (B[0;7m^Y(B[m Prev Page  (B[0;7m^K(B[m Cut Text   (B[0;7m^C(B[m Cur Pos[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^J(B[m Justify    (B[0;7m^W(B[m Where Is   (B[0;7m^V(B[m Next Page  (B[0;7m^U(B[m UnCut Text (B[0;7m^T(B[m To Spell[3d[40d(B[0;7mSearch:                                                                                  [41;16HY(B[m First Line (B[0;7m^T(B[m Go To Line (B[0;7m^W(B[m Beg of Par (B[0;7mM-J(B[m FullJstify(B[0;7mM-B(B[m Backwards[42;2H(B[0;7mC(B[m Cancel[16G(B[0;7mV(B[m Last Line  (B[0;7m^R(B[m Replace    (B[0;7m^O(B[m End of Par (B[0;7mM-C(B[m Case Sens (B[0;7mM-R(B[m Regexp[K[40;9H(B[0;7mn(B[m(B[0;7ma(B[m(B[0;7mn(B[m(B[0;7mo(B[m(B[0;7ms(B[m(B[0;7ml(B[m(B[0;7me(B[m(B[0;7me(B[m(B[0;7mp(B[m[3d(B[0;1m[34m   localtime package.  These are included only for compatibility.  */[4d[39m(B[m[K[5d(B[0;1m[34m/* Like `mktime', but for TP represents Universal Time, not local time.  */[6d(B[0m[32mextern[39m(B[m time_t timegm ([32mstruct[39m(B[m tm *__tp) (B[0;1m[31m__THROW[39m(B[m;[K[7d[K[8d(B[0;1m[34m/* Another name for `mktime'.  */[39m(B[m[K[9d[32mextern[39m(B[m time_t timelocal ([32mstruct[39m(B[m tm *__tp) (B[0;1m[31m__THROW[39m(B[m;[K[11d(B[0;1m[34m/* Return the number of days in YEAR.  */[39m(B[m[K[12d[32mextern[39m(B[m [32mint[39m(B[m dysize ([32mint[39m(B[m __year) (B[0;1m[31m__THROW[39m(B[m  [36m__attribute__ ((__const__))[39m(B[m;[13d(B[0;1m[36m# endif[39m(B[m[K[14d[K[16d(B[0;1m[36m# ifdef[39m(B[m (B[0;1m[31m__USE_POSIX199309[39m(B[m[K[17d(B[0;1m[34m/* Pause execution for a number of nanoseconds.[39m(B[m[K[18d[K[19d(B[0;1m[34m   This function is a cancellation point and therefore not marked with[20d   __THROW.  */[21d(B[0m[32mextern[39m(B[m [32mint[39m(B[m nanosleep ([32mconst[39m(B[m [32mstruct[39m(B[m timespec *__requested_time,[22;22H[1K [32mstruct[39m(B[m timespec *__remaining);[24d[K[25d(B[0;1m[34m/* Get resolution of clock CLOCK_ID.  */[26d(B[0m[32mextern[39m(B[m [32mint[39m(B[m clock_getres (clockid_t __clock_id, [32mstruct[39m(B[m timespec *__res) (B[0;1m[31m__THROW[39m(B[m;[27d[K[28d(B[0;1m[34m/* Get current value of clock CLOCK_ID and store it in TP.  */[29d(B[0m[32mextern[39m(B[m [32mint[39m(B[m clock_gettime (clockid_t __clock_id, [32mstruct[39m(B[m timespec *__tp) (B[0;1m[31m__THROW[39m(B[m;[31d(B[0;1m[34m/* Set clock CLOCK_ID to value TP.  */[32d(B[0m[32mextern[39m(B[m [32mint[39m(B[m clock_settime (clockid_t __clock_id, [32mconst[39m(B[m [32mstruct[39m(B[m timespec *__tp)[33;5H[1K (B[0;1m[31m__THROW[39m(B[m;[35;2H(B[0;1m[36m  ifdef[39m(B[m (B[0;1m[31m__USE_XOPEN2K[36;4H[34mHigh-resolution sleep with the specified clock.[37d[39m(B[m[K[38d(B[0;1m[34m   This function is a cancellation point and therefore not marked with[39d   __THROW.  */[39m(B[m[K[40d[K[41;16H(B[0;7mO(B[m WriteOut   (B[0;7m^R(B[m Read File  (B[0;7m^Y(B[m Prev Page  (B[0;7m^K(B[m Cut Text   (B[0;7m^C(B[m Cur Pos[K[42;2H(B[0;7mX(B[m Exit  [16G(B[0;7mJ(B[m Justify    (B[0;7m^W(B[m Where Is   (B[0;7m^V(B[m Next Page  (B[0;7m^U(B[m UnCut Text (B[0;7m^T(B[m To Spell[21;12H[41d[J[42;89H[42;1H[?1049l[?1l>
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano /usr/include/time.h make[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:188:21:[m[K [01;31m[Kエラー: [m[K配列の型が不完全要素型を持っています
+     struct timespec req[] = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:201:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             nanosleep(&req, NULL);
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kreq[m[K’ です [-Wunused-variable]
+     struct timespec req[] = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make clean
+rm si5345
+rm -rf si5345.dSYM
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:188:21:[m[K [01;31m[Kエラー: [m[K配列の型が不完全要素型を持っています
+     struct timespec req[] = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:201:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             nanosleep(&req, NULL);
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kreq[m[K’ です [-Wunused-variable]
+     struct timespec req[] = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make clean[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:188:21:[m[K [01;31m[Kエラー: [m[K配列の型が不完全要素型を持っています
+     struct timespec req[2] = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:201:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             nanosleep(&req, NULL);
+[01;32m[K             ^[m[K
+[01m[Ksi5345.c:188:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kreq[m[K’ です [-Wunused-variable]
+     struct timespec req[2] = {0, 300 * MILLI_SEC};
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls
+合計 80K
+-rw-r--r-- 1 root root  49K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root 7.4K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rw-r--r-- 1 root root 9.5K 11月 18 16:52 si5345.c
+-rw-r--r-- 1 root root  468 11月 18 17:22 test.c
+-rw-r--r-- 1 root root  236 11月 18 17:22 Makefile
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make test.c [K[K[K
+gcc -std=c99 -Wall -g -O0 test.c -o test
+[01m[Ktest.c:[m[K 関数 ‘[01m[Kmain[m[K’ 内:
+[01m[Ktest.c:9:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kremaining[m[K’ の記憶域サイズが不明です
+     struct timespec remaining, request = {SECS_TO_SLEEP, NSEC_TO_SLEEP};
+[01;32m[K                     ^[m[K
+[01m[Ktest.c:9:12:[m[K [01;31m[Kエラー: [m[K変数 ‘[01m[Krequest[m[K’ には初期化子がありますが不完全型です
+     struct timespec remaining, request = {SECS_TO_SLEEP, NSEC_TO_SLEEP};
+[01;32m[K            ^[m[K
+[01m[Ktest.c:9:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ktest.c:9:12:[m[K [01;35m[K警告: [m[K(‘[01m[Krequest[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ktest.c:9:12:[m[K [01;35m[K警告: [m[K構造体初期化子内の要素が多すぎます [デフォルトで有効]
+[01m[Ktest.c:9:12:[m[K [01;35m[K警告: [m[K(‘[01m[Krequest[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ktest.c:9:32:[m[K [01;31m[Kエラー: [m[K‘[01m[Krequest[m[K’ の記憶域サイズが不明です
+     struct timespec remaining, request = {SECS_TO_SLEEP, NSEC_TO_SLEEP};
+[01;32m[K                                ^[m[K
+[01m[Ktest.c:16:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+             nanosleep(&request, &remaining);
+[01;32m[K             ^[m[K
+[01m[Ktest.c:9:32:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Krequest[m[K’ です [-Wunused-variable]
+     struct timespec remaining, request = {SECS_TO_SLEEP, NSEC_TO_SLEEP};
+[01;32m[K                                ^[m[K
+[01m[Ktest.c:9:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kremaining[m[K’ です [-Wunused-variable]
+     struct timespec remaining, request = {SECS_TO_SLEEP, NSEC_TO_SLEEP};
+[01;32m[K                     ^[m[K
+make: *** [test] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make test
+gcc -std=c99 -Wall -g -O0 test.c -o test
+[01m[Ktest.c:[m[K 関数 ‘[01m[Kmain[m[K’ 内:
+[01m[Ktest.c:17:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Ktz[m[K’ の記憶域サイズが不明です
+     struct timezone tz;
+[01;32m[K                     ^[m[K
+[01m[Ktest.c:24:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&treq, &trem);
+[01;32m[K         ^[m[K
+[01m[Ktest.c:17:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Ktz[m[K’ です [-Wunused-variable]
+     struct timezone tz;
+[01;32m[K                     ^[m[K
+make: *** [test] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make test
+gcc -std=c99 -Wall -g -O0 test.c -o test
+[01m[Ktest.c:[m[K 関数 ‘[01m[Kmain[m[K’ 内:
+[01m[Ktest.c:15:21:[m[K [01;31m[Kエラー: [m[K配列の型が不完全要素型を持っています
+     struct timeval  tv[LOOP];
+[01;32m[K                     ^[m[K
+[01m[Ktest.c:16:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Ktz[m[K’ の記憶域サイズが不明です
+     struct timezone tz;
+[01;32m[K                     ^[m[K
+[01m[Ktest.c:17:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Ktreq[m[K’ の記憶域サイズが不明です
+     struct timespec treq, trem;
+[01;32m[K                     ^[m[K
+[01m[Ktest.c:17:27:[m[K [01;31m[Kエラー: [m[K‘[01m[Ktrem[m[K’ の記憶域サイズが不明です
+     struct timespec treq, trem;
+[01;32m[K                           ^[m[K
+[01m[Ktest.c:23:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&treq, &trem);
+[01;32m[K         ^[m[K
+[01m[Ktest.c:24:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Kgettimeofday[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         gettimeofday(tv + i, &tz);
+[01;32m[K         ^[m[K
+[01m[Ktest.c:17:27:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Ktrem[m[K’ です [-Wunused-variable]
+     struct timespec treq, trem;
+[01;32m[K                           ^[m[K
+[01m[Ktest.c:17:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Ktreq[m[K’ です [-Wunused-variable]
+     struct timespec treq, trem;
+[01;32m[K                     ^[m[K
+[01m[Ktest.c:16:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Ktz[m[K’ です [-Wunused-variable]
+     struct timezone tz;
+[01;32m[K                     ^[m[K
+[01m[Ktest.c:15:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Ktv[m[K’ です [-Wunused-variable]
+     struct timeval  tv[LOOP];
+[01;32m[K                     ^[m[K
+make: *** [test] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make test.c s[K[K[K[K 
+gcc -std=c99 -Wall -g -O0 test.c -o test
+[01m[Ktest.c:[m[K 関数 ‘[01m[Kmain[m[K’ 内:
+[01m[Ktest.c:17:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Ktz[m[K’ の記憶域サイズが不明です
+     struct timezone tz;
+[01;32m[K                     ^[m[K
+[01m[Ktest.c:24:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&treq, &trem);
+[01;32m[K         ^[m[K
+[01m[Ktest.c:17:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Ktz[m[K’ です [-Wunused-variable]
+     struct timezone tz;
+[01;32m[K                     ^[m[K
+make: *** [test] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make time
+make: *** ターゲット `time' を make するルールがありません.  中止.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make test
+gcc -std=c99 -Wall -g -O0 test.c -o test
+[01m[Ktest.c:[m[K 関数 ‘[01m[Kmain[m[K’ 内:
+[01m[Ktest.c:24:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&treq, &trem);
+[01;32m[K         ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./test 
+  0 : 0:545460846593
+  1 : 548487299432:549292915920
+  2 : 548487153720:548487241728
+  3 : 0:549292915712
+  4 : 548485733248:548487157960
+  5 : 0:549292915696
+  6 : 4196204:549292915760
+  7 : 548485637832:000000
+  8 : 0:549292915760
+  9 : 548485637860:000000
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make test
+gcc -std=c99 -Wall -g -O0 test.c -o test
+[01m[Ktest.c:[m[K 関数 ‘[01m[Kmain[m[K’ 内:
+[01m[Ktest.c:12:5:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Kusleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+     usleep(1 * 1000 * 1000);
+[01;32m[K     ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m /.[K./te[K[K[K[K[K./test 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make et[K[K[2@./test[Cmake test
+gcc -std=c99 -Wall -g -O0 test.c -o test
+[01m[Ktest.c:[m[K 関数 ‘[01m[Kmain[m[K’ 内:
+[01m[Ktest.c:13:5:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Kusleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+     usleep(1 * MICROSECONDS_PER_SECOND);
+[01;32m[K     ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make test[2P./test 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./test 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make test
+gcc -std=c99 -Wall -g -O0 test.c -o test
+[01m[Ktest.c:[m[K 関数 ‘[01m[Kmain[m[K’ 内:
+[01m[Ktest.c:6:5:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Kusleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+     usleep(0.1 * MILLISECONDS);
+[01;32m[K     ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./test 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./test make test
+gcc -std=c99 -Wall -g -O0 test.c -o test
+[01m[Ktest.c:[m[K 関数 ‘[01m[Kmain[m[K’ 内:
+[01m[Ktest.c:6:5:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Kusleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+     usleep(300 * MILLISECONDS);
+[01;32m[K     ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make test[2P./test 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./test make test
+gcc -std=c99 -D _BSD_SOURCE -Wall -g -O0 test.c -o test
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./test 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make si5345.c [K[K[K
+cc     si5345.c   -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kshow_register_list[m[K’ 内:
+[01m[Ksi5345.c:27:5:[m[K [01;31m[Kエラー: [m[K‘[01m[Kfor[m[K’ ループ初期化宣言は C99 モード内でのみ許可されています
+     for (int i = 0; i < SI5345_REVD_REG_CONFIG_NUM_REGS; i++) {
+[01;32m[K     ^[m[K
+[01m[Ksi5345.c:27:5:[m[K [01;36m[K備考: [m[Kオプション -std=c99 または -std=gnu99 をコードコンパイル時に使用してください
+make: *** [si5345] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make si5345
+cc     si5345.c   -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kshow_register_list[m[K’ 内:
+[01m[Ksi5345.c:27:5:[m[K [01;31m[Kエラー: [m[K‘[01m[Kfor[m[K’ ループ初期化宣言は C99 モード内でのみ許可されています
+     for (int i = 0; i < SI5345_REVD_REG_CONFIG_NUM_REGS; i++) {
+[01;32m[K     ^[m[K
+[01m[Ksi5345.c:27:5:[m[K [01;36m[K備考: [m[Kオプション -std=c99 または -std=gnu99 をコードコンパイル時に使用してください
+make: *** [si5345] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make si5345[C[1P5345[1P5345
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kwrite_values_into_si5345[m[K’ 内:
+[01m[Ksi5345.c:199:13:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Kusleep[m[K’ の暗黙的な宣言です

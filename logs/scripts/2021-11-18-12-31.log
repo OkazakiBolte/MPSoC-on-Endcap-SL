@@ -1,0 +1,784 @@
+スクリプトは 2021年11月18日 12時31分40秒
+ に開始しました[?1034h[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls
+合計 104K
+-rw-r--r-- 1 root root  49K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root 7.4K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rw-r--r-- 1 root root  138 11月 17 22:11 Makefile
+-rw-r--r-- 1 root root 8.1K 11月 18 12:28 si5345.c
+-rwxr-xr-x 1 root root  75K 11月 18 12:28 si5345*
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump 4 0x68
+No size specified (using byte-data access)
+WARNING! This program can confuse your I2C bus, cause data loss and worse!
+I will probe file /dev/i2c-4, address 0x68, mode byte
+Continue? [Y/n] y
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 04 00 00 68 c9 00 0f ff    ?.ES?????..h?.?.
+10: 00 df ff 2f ff 03 02 dc ff dd df f6 00 00 00 00    .?./.???.???....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 13 05 02 19 00 00 00    .......?.????...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 22 20 00 00 00 0f 00    ......??." ...?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0x000 --read
+reg_addr = 0x000,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0x000 --read[1P --readf --read
+reg_addr = 0x00F,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0x00f --read[1P --read[1P --read[1P --readf --read0 --read0 --read
+reg_addr = 0xF00,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0xf00 --read[1P --read[1P --read[1P --read1 --read0 --reada --read
+reg_addr = 0x10A,	value = 0x68
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0x10a --read[1P
+reg_addr = 0x01A,	value = 0xF6
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0x1a --read[1P --read9 --read
+reg_addr = 0x019,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdetect -[K-l
+i2c-3	i2c       	i2c-0-mux (chan_id 2)           	I2C adapter
+i2c-1	i2c       	i2c-0-mux (chan_id 0)           	I2C adapter
+i2c-8	i2c       	i2c-0-mux (chan_id 7)           	I2C adapter
+i2c-6	i2c       	i2c-0-mux (chan_id 5)           	I2C adapter
+i2c-4	i2c       	i2c-0-mux (chan_id 3)           	I2C adapter
+i2c-2	i2c       	i2c-0-mux (chan_id 1)           	I2C adapter
+i2c-0	i2c       	Cadence I2C at ff020000         	I2C adapter
+i2c-7	i2c       	i2c-0-mux (chan_id 6)           	I2C adapter
+i2c-5	i2c       	i2c-0-mux (chan_id 4)           	I2C adapter
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdetect -y -r 8
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- -- 
+70: UU -- -- -- -- -- -- --                         
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdetect -y -r 8l[K./si5345 --address=0x19 --reada[C[C[C[C[C[C[C[1@0[C[C[C[C[C[C[C[Cf00[C[C[C[C[C[C[C00f[C[C[C[C[C[C[C0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pi2cdump 4 0x68make[Ki2cdump 4 0x68
+No size specified (using byte-data access)
+WARNING! This program can confuse your I2C bus, cause data loss and worse!
+I will probe file /dev/i2c-4, address 0x68, mode byte
+Continue? [Y/n] y
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 04 00 00 68 c9 00 0f ff    ?.ES?????..h?.?.
+10: 00 df ff 2f ff 03 02 dc ff 00 00 f6 00 00 00 00    .?./.???...?....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 9a 22 9f 32 00 00 00    .......?.?"?2...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 2f ff 00 00 00 0f 00    ......??./....?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump 4 0x68etect -y -r 8l[K./si5345 --address=0x19 --read[1P --read[1P --read0 --read0 --read
+reg_addr = 0x000,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0x00 --read[C[1P --read1 --read
+reg_addr = 0x001,	value = 0x45
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0x01 --read[1P --read2 --read
+reg_addr = 0x002,	value = 0x53
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0x02 --read[1P --readf --read
+reg_addr = 0x00F,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --address=0x0f --read[1P --reade --read
+reg_addr = 0x00E,	value = 0xFF
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c 
+[?1049h[1;35r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                         File: si5345.c                                                         [3;1H(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[3;29H[34m// errno[4d[36m#include[39m(B[m (B[0;1m[33m<fcntl.h>[4;29H[34m// open()[5d[36m#include[39m(B[m (B[0;1m[33m<getopt.h>[5;29H[34m// struct option[6d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c-dev.h>[39m(B[m  (B[0;1m[34m// struct i2c_rdwr_ioctl_data[7d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c.h>[29G[34m// struct i2c_msg[8d[36m#include[39m(B[m (B[0;1m[33m<stdint.h>[8;29H[34m// uint*_t[9d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[9;29H[34m// printf()[10d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[10;29H[34m// malloc()[11d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[11;29H[34m// strtol() etc.[12d[36m#include[39m(B[m (B[0;1m[33m<string.h>[12;29H[34m// strerror()[13d[36m#include[39m(B[m (B[0;1m[33m<sys/ioctl.h>[29G[34m// ioctl()[14d[36m#include[39m(B[m (B[0;1m[33m<sys/stat.h>[29G[34m// open()[15d[36m#include[39m(B[m (B[0;1m[33m<sys/types.h>[29G[34m// open()[16d[36m#include[39m(B[m (B[0;1m[33m<unistd.h>[16;29H[34m// close()[18d[36m#include[39m(B[m (B[0;1m[33m"Si5345-RevD-5345.okazaki-Registers.h"[20d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32mchar[39m(B[m *dev_file =[21;5H(B[0;1m[33m"/dev/i2c-4"[39m(B[m;  (B[0;1m[34m// Si5345 (U1) on Endcap SL, connected from the port 3 on[22;20H// pca9548 (U23)[23d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32muint8_t[39m(B[m dev_addr = 0x68;  (B[0;1m[34m// Si5345 slave address[25d// Just prints configuration list[26d(B[0m[32mvoid[39m(B[m show_register_list() {[27;5Hprintf((B[0;1m[33m"order\taddress\tvalue\n"[39m(B[m);[28;5H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < (B[0;1m[31mSI5345_REVD_REG_CONFIG_NUM_REGS[39m(B[m; i++) {[29;9Hprintf((B[0;1m[33m"%03d,\t0x%03X,\t0x%02X\n"[39m(B[m, i, si5345_revd_registers[i].address,[30;16Hsi5345_revd_registers[i].value);[31;5H}[32d[35mreturn[39m(B[m;[33;48H(B[0;7m[ Read 239 lines ][34d^G(B[m Get Help	  (B[0;7m^O(B[m WriteOut[37G(B[0;7m^R(B[m Read File[55G(B[0;7m^Y(B[m Prev Page	(B[0;7m^K(B[m Cut Text	  (B[0;7m^C(B[m Cur Pos[35d(B[0;7m^X(B[m Exit[35;19H(B[0;7m^J(B[m Justify[35;37H(B[0;7m^W(B[m Where Is[55G(B[0;7m^V(B[m Next Page	(B[0;7m^U(B[m UnCut Text     (B[0;7m^T(B[m To Spell[3d[4d[5d[7d[11d[12d[16d[17d[19d[21d[22d[23d[24d[25d[26d[27d[28d[33d[K[29d[31d[32d7[2;33r8[33d[16S[1;35r[2;1H[K[17d}[19d(B[0;1m[34m// Reads a value of one register.[20d// You can see the data using its pointer.[21d// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()[22d// doesn't.[23d(B[0m[32mint8_t[39m(B[m i2c_read([24;5H[32muint16_t[39m(B[m reg_addr,  (B[0;1m[34m// address of a register in Si5345[25;5H(B[0m[32muint8_t[39m(B[m *pdata	(B[0;1m[34m// a pointer of a data from a register will be stored in[26d[39m(B[m) {[27d [32mint32_t[39m(B[m fd = open(dev_file, (B[0;1m[31mO_RDWR[39m(B[m);[28;5H(B[0;1m[33mif[39m(B[m (fd == -1) {[29;9Hfprintf(stderr, (B[0;1m[33m"i2c_read: failed to open %s: %s\n"[39m(B[m, dev_file,[30;17Hstrerror(errno));[31;9H[35mreturn[39m(B[m -1;[32;5H}[17d[20d[22d[26d[28d[29d[30d[31d[32d7[2;33r8[33d[16S[1;35r[18;5H(B[0;1m[34m// Since Si5345 has 16-bit addressing and massages.buf is defined as __u8,[19;5H// we need to split reg_addr into 1 Byte pieces.[20;5H(B[0m[32muint8_t[39m(B[m addr_per_1Byte[] = {([32muint8_t[39m(B[m)(reg_addr >> 0 & 0xFF),[21;33H([32muint8_t[39m(B[m)(reg_addr >> 8 & 0xFF)};[23;5H(B[0;1m[34m/* ---- Make I2C-read messages ---- */[24;5H(B[0m[32mstruct[39m(B[m i2c_msg messages[] = {[25;9H{dev_addr,[25;27H0, [32msizeof[39m(B[m(addr_per_1Byte), addr_per_1Byte},[26;9H{dev_addr, (B[0;1m[31mI2C_M_RD[39m(B[m,[26;38H[32msizeof[39m(B[m(*pdata),[26;63Hpdata}[27;3H(B[0;1m[34m// I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![28;5H[39m(B[m};[29d[32mstruct[39m(B[m i2c_rdwr_ioctl_data msgset = {[30;9Hmessages,  (B[0;1m[34m// pointers to i2c_msg's[31;9H[39m(B[m2[31;20H(B[0;1m[34m// Number of i2c_msg's[32;5H[39m(B[m};[17d[18d[19d[20d[21d[A[34d[J[35;112H[35;1H[?1049l[?1l>
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c ./si5345 --address=0x0e --readf[C[C[C[C[C[C[C2[C[C[C[C[C[C[C1[C[C[C[C[C[C[C0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16Pi2cdump 4 0x68 w
+WARNING! This program can confuse your I2C bus, cause data loss and worse!
+I will probe file /dev/i2c-4, address 0x68, mode word
+Continue? [Y/n] y
+     0,8  1,9  2,a  3,b  4,c  5,d  6,e  7,f
+00: 0005 4500 5345 0153 0301 1003 0710 0407 
+08: 0004 0000 6800 c968 00c9 0f00 ff0f 00ff 
+10: df00 ffdf 2fff ff2f 03ff 0203 dc02 ffdc 
+18: 00ff 0000 f600 00f6 0000 0000 0000 0000 
+20: 0f00 000f fe00 0bfe 000b 0000 0000 0000 
+28: 0000 0000 0200 0002 0000 0000 0000 0000 
+30: 0000 0000 0000 0000 0000 0000 0000 0000 
+38: 0000 0000 0000 0000 0000 0000 0000 0400 
+40: 0004 0000 0000 0000 0c00 000c 0000 0000 
+48: 0000 0000 0000 0000 0000 0000 0000 0f00 
+50: 000f 0000 0000 0000 0000 0000 0000 0000 
+58: 0000 0000 0000 0000 0000 0000 0000 0000 
+60: 0000 0000 0000 0000 0000 0000 0000 0000 
+68: 0000 0000 0000 0000 0000 0000 0000 0000 
+70: 0000 0000 0000 0000 0000 0000 0000 0000 
+78: 0000 0000 0000 0000 0000 0000 0000 0000 
+80: 0000 0000 0000 0000 0000 0000 0000 0000 
+88: 0000 0000 0000 0000 0000 0000 0000 0000 
+90: 0000 0000 0000 0000 0000 0000 0000 0000 
+98: 0000 0000 0000 0000 0000 0000 0000 0000 
+a0: 0000 0000 0000 0000 0000 0000 0000 0000 
+a8: 0000 0000 0000 0000 0000 0000 0000 0000 
+b0: 0000 0000 0000 0000 0000 0000 0100 0001 
+b8: 7400 03fa e92d 1e83 000b 0000 0000 0000 
+c0: 0000 0000 0000 0000 0000 0000 0000 0000 
+c8: 0000 0000 0000 0000 0000 0000 0000 0000 
+d0: 0000 0000 0000 0000 0000 0000 0000 0000 
+d8: 0000 0000 0000 0000 0000 0000 0000 0000 
+e0: 0000 0300 0003 0000 0100 0001 0000 0000 
+e8: 0000 0000 0000 0000 0000 0000 0000 0000 
+f0: 0000 0000 0000 0000 0000 0d00 030d 0003 
+f8: 2f00 ff2f 00ff 0000 0000 0f00 000f 0500 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump 4 0x68 w[K-y W
+Error: Invalid mode!
+Usage: i2cdump [-f] [-y] [-r first-last] I2CBUS ADDRESS [MODE [BANK [BANKREG]]]
+  I2CBUS is an integer or an I2C bus name
+  ADDRESS is an integer (0x03 - 0x77)
+  MODE is one of:
+    b (byte, default)
+    w (word)
+    W (word on even register addresses)
+    s (SMBus block)
+    i (I2C block)
+    c (consecutive byte)
+    Append p for SMBus PEC
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump 4 0x68 -y W[K[K[K[K[K w[C[K[1@-[1@y[1@ [C[C[C[C[C[C[CW
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 04 00 00 68 d9 00 0f ff    ?.ES?????..h?.?.
+10: 00 df ff 2f ff 03 02 dc ff 00 00 f6 00 00 00 00    .?./.???...?....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 48 13 95 04 00 00 00    .......?.H???...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 2f ff 00 00 00 0f 00    ......??./....?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68 W[Kb
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 04 00 00 68 c9 00 0f ff    ?.ES?????..h?.?.
+10: 00 df ff 2f ff 03 02 dc ff 00 00 f6 00 00 00 00    .?./.???...?....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 21 30 15 04 00 00 00    .......?.!0??...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 2f ff 00 00 00 0f 00    ......??./....?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68 b[Ki
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 04 00 00 68 d9 00 0f ff    ?.ES?????..h?.?.
+10: 00 df ff 2f ff 03 02 dc ff 00 00 f6 00 00 00 00    .?./.???...?....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 92 06 45 0e 00 00 00    .......?.??E?...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 2f ff 00 00 00 0f 00    ......??./....?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68 i[Kw
+     0,8  1,9  2,a  3,b  4,c  5,d  6,e  7,f
+00: 0005 4500 5345 0153 0301 1003 0710 0407 
+08: 0004 0000 6800 c968 00c9 0f00 ff0f 00ff 
+10: df00 ffdf 2fff ff2f 03ff 0203 dc02 ffdc 
+18: 00ff 0000 f600 00f6 0000 0000 0000 0000 
+20: 0f00 000f fe00 0bfe 000b 0000 0000 0000 
+28: 0000 0000 0200 0002 0000 0000 0000 0000 
+30: 0000 0000 0000 0000 0000 0000 0000 0000 
+38: 0000 0000 0000 0000 0000 0000 0000 0400 
+40: 0004 0000 0000 0000 0c00 000c 0000 0000 
+48: 0000 0000 0000 0000 0000 0000 0000 0f00 
+50: 000f 0000 0000 0000 0000 0000 0000 0000 
+58: 0000 0000 0000 0000 0000 0000 0000 0000 
+60: 0000 0000 0000 0000 0000 0000 0000 0000 
+68: 0000 0000 0000 0000 0000 0000 0000 0000 
+70: 0000 0000 0000 0000 0000 0000 0000 0000 
+78: 0000 0000 0000 0000 0000 0000 0000 0000 
+80: 0000 0000 0000 0000 0000 0000 0000 0000 
+88: 0000 0000 0000 0000 0000 0000 0000 0000 
+90: 0000 0000 0000 0000 0000 0000 0000 0000 
+98: 0000 0000 0000 0000 0000 0000 0000 0000 
+a0: 0000 0000 0000 0000 0000 0000 0000 0000 
+a8: 0000 0000 0000 0000 0000 0000 0000 0000 
+b0: 0000 0000 0000 0000 0000 0000 0100 0001 
+b8: 3e00 25b9 5410 0423 0028 0000 0000 0000 
+c0: 0000 0000 0000 0000 0000 0000 0000 0000 
+c8: 0000 0000 0000 0000 0000 0000 0000 0000 
+d0: 0000 0000 0000 0000 0000 0000 0000 0000 
+d8: 0000 0000 0000 0000 0000 0000 0000 0000 
+e0: 0000 0300 0003 0000 0100 0001 0000 0000 
+e8: 0000 0000 0000 0000 0000 0000 0000 0000 
+f0: 0000 0000 0000 0000 0000 0d00 030d 0003 
+f8: 2f00 ff2f 00ff 0000 0000 0f00 000f 0500 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68 w[KW
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 04 00 00 68 d9 00 0f ff    ?.ES?????..h?.?.
+10: 00 df ff 2f ff 03 02 dc ff 00 00 f6 00 00 00 00    .?./.???...?....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 2f 2b 83 18 00 00 00    .......?./+??...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 2f ff 00 00 00 0f 00    ......??./....?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68 W[Kc
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 04 00 00 68 c9 00 0f ff    ?.ES?????..h?.?.
+10: 00 df ff 2f ff 03 02 dc ff 00 00 f6 00 00 00 00    .?./.???...?....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 77 12 30 0c 00 00 00    .......?.w?0?...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 2f ff 00 00 00 0f 00    ......??./....?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68 c[K./si5345 --read --address=0x000
+reg_addr = 0x000,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x000[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pi2cdump -y 4 0x68 cWw
+     0,8  1,9  2,a  3,b  4,c  5,d  6,e  7,f
+00: 0005 4500 5345 0153 0301 1003 0710 0407 
+08: 0004 0000 6800 c968 00c9 0f00 ff0f 00ff 
+10: df00 ffdf 2fff ff2f 03ff 0203 dc02 ffdc 
+18: 00ff 0000 f600 00f6 0000 0000 0000 0000 
+20: 0f00 000f fe00 0bfe 000b 0000 0000 0000 
+28: 0000 0000 0200 0002 0000 0000 0000 0000 
+30: 0000 0000 0000 0000 0000 0000 0000 0000 
+38: 0000 0000 0000 0000 0000 0000 0000 0400 
+40: 0004 0000 0000 0000 0c00 000c 0000 0000 
+48: 0000 0000 0000 0000 0000 0000 0000 0f00 
+50: 000f 0000 0000 0000 0000 0000 0000 0000 
+58: 0000 0000 0000 0000 0000 0000 0000 0000 
+60: 0000 0000 0000 0000 0000 0000 0000 0000 
+68: 0000 0000 0000 0000 0000 0000 0000 0000 
+70: 0000 0000 0000 0000 0000 0000 0000 0000 
+78: 0000 0000 0000 0000 0000 0000 0000 0000 
+80: 0000 0000 0000 0000 0000 0000 0000 0000 
+88: 0000 0000 0000 0000 0000 0000 0000 0000 
+90: 0000 0000 0000 0000 0000 0000 0000 0000 
+98: 0000 0000 0000 0000 0000 0000 0000 0000 
+a0: 0000 0000 0000 0000 0000 0000 0000 0000 
+a8: 0000 0000 0000 0000 0000 0000 0000 0000 
+b0: 0000 0000 0000 0000 0000 0000 0100 0001 
+b8: 8200 09f0 cf33 22e2 000f 0000 0000 0000 
+c0: 0000 0000 0000 0000 0000 0000 0000 0000 
+c8: 0000 0000 0000 0000 0000 0000 0000 0000 
+d0: 0000 0000 0000 0000 0000 0000 0000 0000 
+d8: 0000 0000 0000 0000 0000 0000 0000 0000 
+e0: 0000 0300 0003 0000 0100 0001 0000 0000 
+e8: 0000 0000 0000 0000 0000 0000 0000 0000 
+f0: 0000 0000 0000 0000 0000 0d00 030d 0003 
+f8: 2f00 ff2f 00ff 0000 0000 0f00 000f 0500 
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68 w./si5345 --read --address=0x000[K8
+reg_addr = 0x008,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x008[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pi2cdump -y 4 0x68 w[K
+No size specified (using byte-data access)
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 00 00 00 68 d9 00 0f ff    ?.ES????...h?.?.
+10: 00 df ff 2f ff 03 02 dc ff 00 00 f6 00 00 00 00    .?./.???...?....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 c3 31 7b 07 00 00 00    .......?.?1{?...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 2f ff 00 00 00 0f 00    ......??./....?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68 ./si5345 --read --address=0x008
+reg_addr = 0x008,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x008[Kb
+reg_addr = 0x00B,	value = 0xD9
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x00b[K[K[Kfff
+reg_addr = 0xFFF,	value = 0x05
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0xfff[Ke
+reg_addr = 0xFFE,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0xffe[Kd
+reg_addr = 0xFFD,	value = 0x0F
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0xffd[K[K[K053a
+reg_addr = 0x53A,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x053a[C[K[K[K[K0102
+reg_addr = 0x102,	value = 0x53
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c 
+[?1049h[1;35r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                         File: si5345.c                                                         [3;1H(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[3;29H[34m// errno[4d[36m#include[39m(B[m (B[0;1m[33m<fcntl.h>[4;29H[34m// open()[5d[36m#include[39m(B[m (B[0;1m[33m<getopt.h>[5;29H[34m// struct option[6d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c-dev.h>[39m(B[m  (B[0;1m[34m// struct i2c_rdwr_ioctl_data[7d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c.h>[29G[34m// struct i2c_msg[8d[36m#include[39m(B[m (B[0;1m[33m<stdint.h>[8;29H[34m// uint*_t[9d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[9;29H[34m// printf()[10d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[10;29H[34m// malloc()[11d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[11;29H[34m// strtol() etc.[12d[36m#include[39m(B[m (B[0;1m[33m<string.h>[12;29H[34m// strerror()[13d[36m#include[39m(B[m (B[0;1m[33m<sys/ioctl.h>[29G[34m// ioctl()[14d[36m#include[39m(B[m (B[0;1m[33m<sys/stat.h>[29G[34m// open()[15d[36m#include[39m(B[m (B[0;1m[33m<sys/types.h>[29G[34m// open()[16d[36m#include[39m(B[m (B[0;1m[33m<unistd.h>[16;29H[34m// close()[18d[36m#include[39m(B[m (B[0;1m[33m"Si5345-RevD-5345.okazaki-Registers.h"[20d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32mchar[39m(B[m *dev_file =[21;5H(B[0;1m[33m"/dev/i2c-4"[39m(B[m;  (B[0;1m[34m// Si5345 (U1) on Endcap SL, connected from the port 3 on[22;20H// pca9548 (U23)[23d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32muint8_t[39m(B[m dev_addr = 0x68;  (B[0;1m[34m// Si5345 slave address[25d// Just prints configuration list[26d(B[0m[32mvoid[39m(B[m show_register_list() {[27;5Hprintf((B[0;1m[33m"order\taddress\tvalue\n"[39m(B[m);[28;5H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < (B[0;1m[31mSI5345_REVD_REG_CONFIG_NUM_REGS[39m(B[m; i++) {[29;9Hprintf((B[0;1m[33m"%03d,\t0x%03X,\t0x%02X\n"[39m(B[m, i, si5345_revd_registers[i].address,[30;16Hsi5345_revd_registers[i].value);[31;5H}[32d[35mreturn[39m(B[m;[33;48H(B[0;7m[ Read 239 lines ][34d^G(B[m Get Help	  (B[0;7m^O(B[m WriteOut[37G(B[0;7m^R(B[m Read File[55G(B[0;7m^Y(B[m Prev Page	(B[0;7m^K(B[m Cut Text	  (B[0;7m^C(B[m Cur Pos[35d(B[0;7m^X(B[m Exit[35;19H(B[0;7m^J(B[m Justify[35;37H(B[0;7m^W(B[m Where Is[55G(B[0;7m^V(B[m Next Page	(B[0;7m^U(B[m UnCut Text     (B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[11d[12d[14d[16d[18d[20d[23d[26d[27d[28d[33d[K[29d[30d[31d[32d7[2;33r8[33d[16S[1;35r[2;1H[K[17d}[19d(B[0;1m[34m// Reads a value of one register.[20d// You can see the data using its pointer.[21d// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()[22d// doesn't.[23d(B[0m[32mint8_t[39m(B[m i2c_read([24;5H[32muint16_t[39m(B[m reg_addr,  (B[0;1m[34m// address of a register in Si5345[25;5H(B[0m[32muint8_t[39m(B[m *pdata	(B[0;1m[34m// a pointer of a data from a register will be stored in[26d[39m(B[m) {[27d [32mint32_t[39m(B[m fd = open(dev_file, (B[0;1m[31mO_RDWR[39m(B[m);[28;5H(B[0;1m[33mif[39m(B[m (fd == -1) {[29;9Hfprintf(stderr, (B[0;1m[33m"i2c_read: failed to open %s: %s\n"[39m(B[m, dev_file,[30;17Hstrerror(errno));[31;9H[35mreturn[39m(B[m -1;[32;5H}[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[27d[28d[29d[30d[31d[32d7[2;33r8[33d[16S[1;35r[18;5H(B[0;1m[34m// Since Si5345 has 16-bit addressing and massages.buf is defined as __u8,[19;5H// we need to split reg_addr into 1 Byte pieces.[20;5H(B[0m[32muint8_t[39m(B[m addr_per_1Byte[] = {([32muint8_t[39m(B[m)(reg_addr >> 0 & 0xFF),[21;33H([32muint8_t[39m(B[m)(reg_addr >> 8 & 0xFF)};[23;5H(B[0;1m[34m/* ---- Make I2C-read messages ---- */[24;5H(B[0m[32mstruct[39m(B[m i2c_msg messages[] = {[25;9H{dev_addr,[25;27H0, [32msizeof[39m(B[m(addr_per_1Byte), addr_per_1Byte},[26;9H{dev_addr, (B[0;1m[31mI2C_M_RD[39m(B[m,[26;38H[32msizeof[39m(B[m(*pdata),[26;63Hpdata}[27;3H(B[0;1m[34m// I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![28;5H[39m(B[m};[29d[32mstruct[39m(B[m i2c_rdwr_ioctl_data msgset = {[30;9Hmessages,  (B[0;1m[34m// pointers to i2c_msg's[31;9H[39m(B[m2[31;20H(B[0;1m[34m// Number of i2c_msg's[32;5H[39m(B[m};[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[27d[28d[29d[30d[34d[J[35;112H[35;1H[?1049l[?1l>
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c 
+[?1049h[1;35r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                         File: si5345.c                                                         [3;1H(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[3;29H[34m// errno[4d[36m#include[39m(B[m (B[0;1m[33m<fcntl.h>[4;29H[34m// open()[5d[36m#include[39m(B[m (B[0;1m[33m<getopt.h>[5;29H[34m// struct option[6d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c-dev.h>[39m(B[m  (B[0;1m[34m// struct i2c_rdwr_ioctl_data[7d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c.h>[29G[34m// struct i2c_msg[8d[36m#include[39m(B[m (B[0;1m[33m<stdint.h>[8;29H[34m// uint*_t[9d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[9;29H[34m// printf()[10d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[10;29H[34m// malloc()[11d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[11;29H[34m// strtol() etc.[12d[36m#include[39m(B[m (B[0;1m[33m<string.h>[12;29H[34m// strerror()[13d[36m#include[39m(B[m (B[0;1m[33m<sys/ioctl.h>[29G[34m// ioctl()[14d[36m#include[39m(B[m (B[0;1m[33m<sys/stat.h>[29G[34m// open()[15d[36m#include[39m(B[m (B[0;1m[33m<sys/types.h>[29G[34m// open()[16d[36m#include[39m(B[m (B[0;1m[33m<unistd.h>[16;29H[34m// close()[18d[36m#include[39m(B[m (B[0;1m[33m"Si5345-RevD-5345.okazaki-Registers.h"[20d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32mchar[39m(B[m *dev_file =[21;5H(B[0;1m[33m"/dev/i2c-4"[39m(B[m;  (B[0;1m[34m// Si5345 (U1) on Endcap SL, connected from the port 3 on[22;20H// pca9548 (U23)[23d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32muint8_t[39m(B[m dev_addr = 0x68;  (B[0;1m[34m// Si5345 slave address[25d// Just prints configuration list[26d(B[0m[32mvoid[39m(B[m show_register_list() {[27;5Hprintf((B[0;1m[33m"order\taddress\tvalue\n"[39m(B[m);[28;5H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < (B[0;1m[31mSI5345_REVD_REG_CONFIG_NUM_REGS[39m(B[m; i++) {[29;9Hprintf((B[0;1m[33m"%03d,\t0x%03X,\t0x%02X\n"[39m(B[m, i, si5345_revd_registers[i].address,[30;16Hsi5345_revd_registers[i].value);[31;5H}[32d[35mreturn[39m(B[m;[33;48H(B[0;7m[ Read 239 lines ][34d^G(B[m Get Help	  (B[0;7m^O(B[m WriteOut[37G(B[0;7m^R(B[m Read File[55G(B[0;7m^Y(B[m Prev Page	(B[0;7m^K(B[m Cut Text	  (B[0;7m^C(B[m Cur Pos[35d(B[0;7m^X(B[m Exit[35;19H(B[0;7m^J(B[m Justify[35;37H(B[0;7m^W(B[m Where Is[55G(B[0;7m^V(B[m Next Page	(B[0;7m^U(B[m UnCut Text     (B[0;7m^T(B[m To Spell[3d[4d[6d[7d[10d[11d[13d[14d[15d[16d[17d[18d[19d[20d[22d[23d[24d[25d[26d[27d[28d[33d[K[29d[30d[31d[32d7[2;33r8[33d[16S[1;35r[2;1H[K[17d}[19d(B[0;1m[34m// Reads a value of one register.[20d// You can see the data using its pointer.[21d// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()[22d// doesn't.[23d(B[0m[32mint8_t[39m(B[m i2c_read([24;5H[32muint16_t[39m(B[m reg_addr,  (B[0;1m[34m// address of a register in Si5345[25;5H(B[0m[32muint8_t[39m(B[m *pdata	(B[0;1m[34m// a pointer of a data from a register will be stored in[26d[39m(B[m) {[27d [32mint32_t[39m(B[m fd = open(dev_file, (B[0;1m[31mO_RDWR[39m(B[m);[28;5H(B[0;1m[33mif[39m(B[m (fd == -1) {[29;9Hfprintf(stderr, (B[0;1m[33m"i2c_read: failed to open %s: %s\n"[39m(B[m, dev_file,[30;17Hstrerror(errno));[31;9H[35mreturn[39m(B[m -1;[32;5H}[18d[20d[22d[23d[24d[25d[26d[27d[28d[29d[30d[31d[32d7[2;33r8[33d[16S[1;35r[18;5H(B[0;1m[34m// Since Si5345 has 16-bit addressing and massages.buf is defined as __u8,[19;5H// we need to split reg_addr into 1 Byte pieces.[20;5H(B[0m[32muint8_t[39m(B[m addr_per_1Byte[] = {([32muint8_t[39m(B[m)(reg_addr >> 0 & 0xFF),[21;33H([32muint8_t[39m(B[m)(reg_addr >> 8 & 0xFF)};[23;5H(B[0;1m[34m/* ---- Make I2C-read messages ---- */[24;5H(B[0m[32mstruct[39m(B[m i2c_msg messages[] = {[25;9H{dev_addr,[25;27H0, [32msizeof[39m(B[m(addr_per_1Byte), addr_per_1Byte},[26;9H{dev_addr, (B[0;1m[31mI2C_M_RD[39m(B[m,[26;38H[32msizeof[39m(B[m(*pdata),[26;63Hpdata}[27;3H(B[0;1m[34m// I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![28;5H[39m(B[m};[29d[32mstruct[39m(B[m i2c_rdwr_ioctl_data msgset = {[30;9Hmessages,  (B[0;1m[34m// pointers to i2c_msg's[31;9H[39m(B[m2[31;20H(B[0;1m[34m// Number of i2c_msg's[32;5H[39m(B[m};[18d[22d[24d[28d[30d[3d    (B[0;1m[34m// we need to split reg_add	 into 1 Byte pieces.[4d[39m(B[m    [32muint8_t[39m(B[m addr_per_1Byte[] = {([32muint8_t[39m(B[m)(reg_addr >> 0 & 0xFF),[5;32H[1K	([32muint8_t[39m(B[m)(reg_addr >> 8 & 0xFF)};[K[6d[K[7d    (B[0;1m[34m/* ---- Make I2C-read messages ---- */[8;5H(B[0m[32mstruct[39m(B[m i2c_msg messages[] = {[K[9;5H    {dev_addr,	  0, [32msizeof[39m(B[m(addr_per_1Byte), addr_per_1Byte},[K[10;8H[1K	{dev_addr, (B[0;1m[31mI2C_M_RD[39m(B[m,[10;38H[32msizeof[39m(B[m(*pdata),[10;63Hpdata}[11;3H(B[0;1m[34m// I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001![12;5H[39m(B[m};[K[13d[32mstruct[39m(B[m i2c_rdwr_ioctl_data msgset = {[K[14;9Hmessages,  (B[0;1m[34m// pointers to i2c_msg's[15;9H[39m(B[m2          (B[0;1m[34m// Number of i2c_msg's[16;6H[39m(B[m;[18d(B[0;1m[34m* ---- I2C-read operation ---- */[39m(B[m[K[19;5H[32mint[39m(B[m ret =[K[20;5H    ioctl(fd, (B[0;1m[31mI2C_RDWR[39m(B[m, &msgset);  (B[0;1m[34m// Do combined read/write transaction[21;39H[39m(B[m[1K (B[0;1m[34m// without stop in between.[22;5H[33mif[39m(B[m (ret == -1) {[23;5H    fprintf(stderr, (B[0;1m[33m"i2c-read operation failed: %s\n"[39m(B[m, strerror(errno));[24;5H    close(fd);[K[25;9H[35mreturn[39m(B[m -1;[K[26;5H}[K[27d[K[28;5Hclose(fd);[29;5H[35mreturn[39m(B[m 0;[K[30d}[K[31d[K[32d[32mint8_t[39m(B[m read_si5345_registers() {[18d[23d[24d[25d[27d[28d[31d[32d7[3;33r8[33d[16S[1;35r[17;5H[32muint16_t[39m(B[m reg_addr;  (B[0;1m[34m// one of registers in si5345[18;5H(B[0m[32muint8_t[39m(B[m  data = 0;  (B[0;1m[34m// temporary variable[19;5H(B[0m[32mint8_t[39m(B[m   result;    (B[0;1m[34m// i2c_read(reg_addr, &data);[20;5H(B[0m[32mint[14G[39m(B[mi = 0;[21;5H(B[0;1m[33mwhile[39m(B[m (i < (B[0;1m[31mSI5345_REVD_REG_CONFIG_NUM_REGS[39m(B[m) {[22;9Hreg_addr = si5345_revd_registers[i].address;[23;9Hresult   = i2c_read(reg_addr, &data);[24;9H(B[0;1m[33mif[39m(B[m (result < 0) {[25;13Hprintf((B[0;1m[33m"Error at register 0x%03X\n"[39m(B[m, reg_addr);[26;13Hprintf((B[0;1m[33m"RESULT: I2C READ FAILED.\n"[39m(B[m);[27;13H[35mreturn[39m(B[m -1;[28;9H}[29d	printf((B[0;1m[33m"Register 0x%03X: 0x%02X"[39m(B[m, reg_addr, data);[30;9H(B[0;1m[33mif[39m(B[m (data != si5345_revd_registers[i].value) {[31;13Hprintf((B[0;1m[33m" != 0x%02X"[39m(B[m, si5345_revd_registers[i].value);[32;9H}[17d[23d[31d[3;8H[32m8_t[39m(B[m   result;    (B[0;1m[34m// i2c_read(reg_addr, &data);[4;5H(B[0m[32mint[39m(B[m      i = 0;[K[5;5H(B[0;1m[33mwhile[39m(B[m (i < (B[0;1m[31mSI5345_REVD_REG_CONFIG_NUM_REGS[39m(B[m) {[K[6;5H    reg_addr = si5345_revd_registers[i].address;[7;9Hresult   = i2c_read(reg_addr, &data);[K[8;9H(B[0;1m[33mif[39m(B[m (result < 0) {[9;9H    printf((B[0;1m[33m"Error at register 0x%03X\n"[39m(B[m, reg_addr);[10;12H[1K printf((B[0;1m[33m"RESULT: I2C READ FAILED.\n"[39m(B[m);[11;13H[35mreturn[39m(B[m -1;[12;5H    }[K[13;5H    printf((B[0;1m[33m"Register 0x%03X: 0x%02X"[39m(B[m, reg_addr, data);[14;8H[1K	(B[0;1m[33mif[39m(B[m (data != si5345_revd_registers[i].value) {[15;13Hprintf((B[0;1m[33m" != 0x%02X"[39m(B[m, si5345_revd_registers[i].value);[16;8H[1K	}[K[17;5H    printf((B[0;1m[33m"\n"[39m(B[m);[K[18;5H    i++;[K[19;5H}[K[20dprintf((B[0;1m[33m"RESULT: I2C READ SUCCESSFULLY DONE.\n"[39m(B[m);[21;5H[35mreturn[39m(B[m 0;[K[22d}[K[23d[K[24d(B[0;1m[34m// Writes one datum into one register.[25d// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()[26d// doesn't.[39m(B[m[K[27d[32mint8_t[39m(B[m i2c_write([32muint16_t[39m(B[m reg_addr,  (B[0;1m[34m// indicates one of the registers in Si5345[28;17H[39m(B[m[1K [32muint8_t[39m(B[m  data  (B[0;1m[34m// a variable in which the datum to be sent to a[29;32H[39m(B[m[1K	(B[0;1m[34m// register will be stored[30d[39m(B[m) {[K[31d [32mint32_t[39m(B[m fd = open(dev_file, (B[0;1m[31mO_RDWR[39m(B[m);[K[32;5H(B[0;1m[33mif[39m(B[m (fd == -1) {[17d[23d[27d[2;33r[33;1H[16S[1;35r[2;1H[K[17;9Hfprintf(stderr, (B[0;1m[33m"i2c_write: failed to open %s: %s\n"[39m(B[m, dev_file,[18;17Hstrerror(errno));[19;9H[35mreturn[39m(B[m -1;[20;5H}[22d(B[0;1m[34m/* ---- Secure a buffer for I2C-write ---- */[23;5H(B[0m[32muint8_t[39m(B[m *buf = ([32muint8_t[39m(B[m *)malloc([32msizeof[39m(B[m(reg_addr) + [32msizeof[39m(B[m(data));[24;5H(B[0;1m[33mif[39m(B[m (buf == (B[0;1m[31mNULL[39m(B[m) {[25;9Hfprintf(stderr, (B[0;1m[33m"i2c_write: failed to memory allocate\n"[39m(B[m);[26;9Hclose(fd);[27;9H[35mreturn[39m(B[m -1;[28;5H}[30d(B[0;1m[34m// Since Si5345 has 16-bit addressing and massages.buf is defined as __u8,[31;5H// we need to split reg_addr into 1 Byte pieces.[32;5H(B[0m[32muint8_t[39m(B[m addr_per_1Byte[] = {([32muint8_t[39m(B[m)(reg_addr >> 0 & 0xFF),[22d[27d[2;33r[33;1H[16S[1;35r[2;1H[K[17;33H([32muint8_t[39m(B[m)(reg_addr >> 8 & 0xFF)};[19;5Hbuf[0] = addr_per_1Byte[0];[20;5Hbuf[1] = addr_per_1Byte[1];[21;5Hmemcpy(&buf[1], &data, [32msizeof[39m(B[m(data));[23;5H(B[0;1m[34m/* ---- Make I2C-write messages ---- */[24;5H(B[0m[32mstruct[39m(B[m i2c_msg[24;32Hmessage = {dev_addr, 0, [32msizeof[39m(B[m(buf), buf};[25;5H[32mstruct[39m(B[m i2c_rdwr_ioctl_data msgset  = {&message, 1};[27;5H(B[0;1m[34m/* ---- I2C-write operation ---- */[28;5H(B[0m[32mint[39m(B[m ret = ioctl(fd, (B[0;1m[31mI2C_RDWR[39m(B[m, &msgset);[29;5H(B[0;1m[33mif[39m(B[m (ret == -1) {[30;9Hfprintf(stderr, (B[0;1m[33m"i2c-write operation failed: %s\n"[39m(B[m, strerror(errno));[31;9Hfree(buf);[32;9Hclose(fd);[20d[25d[2;33r[33;1H[16S[1;35r[17;9H[35mreturn[39m(B[m -1;[18;5H}[20dprintf((B[0;1m[33m"Register 0x%03X: 0x%02X written\n"[39m(B[m, buf[0], buf[1]);[21;5Hfree(buf);[22;5Hclose(fd);[23;5H[35mreturn[39m(B[m 0;[24d}[26d[32mint8_t[39m(B[m write_values_into_si5345() {[27;5H[32muint16_t[39m(B[m reg_addr;[28;5H[32muint8_t[39m(B[m  data;[29;5H[32mint[14G[39m(B[mret;[30;5H[32mint[14G[39m(B[mi = 0;[31;5H(B[0;1m[33mwhile[39m(B[m (i < (B[0;1m[31mSI5345_REVD_REG_CONFIG_NUM_REGS[39m(B[m) {[32;9Hreg_addr = si5345_revd_registers[i].address;[17d[22d[28d[32d7[2;33r8[33d[16S[1;35r[2;1H[K[17;9Hdata     = si5345_revd_registers[i].value;[18;9Hret	 = i2c_write(reg_addr, data);[19;9H(B[0;1m[33mif[39m(B[m (ret < 0) {[20;13Hprintf((B[0;1m[33m"Error at register 0x%03X\n"[39m(B[m, reg_addr);[21;13Hprintf((B[0;1m[33m"RESULT: I2C WRITE FAILED.\n"[39m(B[m);[22;13H[35mreturn[39m(B[m -1;[23;9H}[24d	i++;[25;5H}[26d[35mreturn[39m(B[m 0;[27d}[29d[32mvoid[39m(B[m help() {[30;5Hprintf((B[0;1m[33m"-a, --address\tset register address to read\n"[39m(B[m);[31;5Hprintf((B[0;1m[33m"-r, --read\tread register value at a given address by --address\n"[39m(B[m);[32;5Hprintf((B[0;1m[33m"-R, --read-all\tread all values in configurable registers\n"[39m(B[m);[17d[22d[25d[26d[29d[30d[3;33r[33;1H[16S[1;35r[17;5Hprintf((B[0;1m[33m"-W, --write-all\twrite all values into configurable registers\n"[39m(B[m);[18;5Hprintf((B[0;1m[33m"-s, --show-config\tshow configuration\n"[39m(B[m);[19;5Hprintf((B[0;1m[33m"-h, --help\tprint this help\n"[39m(B[m);[20;5Hprintf((B[0;1m[33m"\n"[39m(B[m);[21;5H[35mreturn[39m(B[m;[22d}[24d[32mint[39m(B[m main([32mint[39m(B[m argc, [32mchar[39m(B[m *argv[]) {[25;5H(B[0;1m[34m/* ---- option analysis ---- */[26;5H(B[0m[32mstruct[39m(B[m option longopts[] = {[27;9H{    (B[0;1m[33m"address"[39m(B[m, required_argument, (B[0;1m[31mNULL[39m(B[m, (B[0;1m[35m'a'[39m(B[m},[28;9H{	(B[0;1m[33m"read"[39m(B[m,[31Gno_argument, (B[0;1m[31mNULL[39m(B[m, (B[0;1m[35m'r'[39m(B[m},[29;9H{   (B[0;1m[33m"read-all"[39m(B[m,[31Gno_argument, (B[0;1m[31mNULL[39m(B[m, (B[0;1m[35m'R'[39m(B[m},[30;9H{  (B[0;1m[33m"write-all"[39m(B[m,[31Gno_argument, (B[0;1m[31mNULL[39m(B[m, (B[0;1m[35m'W'[39m(B[m},[31;9H{(B[0;1m[33m"show-config"[39m(B[m,[31Gno_argument, (B[0;1m[31mNULL[39m(B[m, (B[0;1m[35m's'[39m(B[m},[32;9H{	(B[0;1m[33m"help"[39m(B[m,[31Gno_argument, (B[0;1m[31mNULL[39m(B[m, (B[0;1m[35m'h'[39m(B[m},[18d[22d[24d[25d[27d[28d[32d7[3;33r8[33d[16S[1;35r[17;9H{[17;22H0,[17;41H0,    0,   0}  (B[0;1m[34m// indicates the termination of this array[18;5H[39m(B[m};[19d[32mchar[39m(B[m optstring[] = (B[0;1m[33m"a:rRWsh"[39m(B[m;[20;5H[32mint[39m(B[m  opt;[21;5H[32mint[39m(B[m  longindex;[23;5H(B[0;1m[34m/* ---- Switch process according to the given option ---- */[24;5H(B[0m[32muint16_t[39m(B[m reg_addr;[25;5H[32muint8_t[39m(B[m  data;[26;5H[32mint[14G[39m(B[mis_read = 0;[27;5H(B[0;1m[33mwhile[39m(B[m ((opt = getopt_long(argc, argv, optstring, longopts, &longindex)) !=[28;12H-1) {[29;9H(B[0;1m[33mswitch[39m(B[m (opt) {[30;13H(B[0;1m[33mcase[39m(B[m (B[0;1m[35m'a'[39m(B[m: reg_addr = ([32muint16_t[39m(B[m)strtol(optarg, (B[0;1m[31mNULL[39m(B[m, 0); [35mbreak[39m(B[m;[31;13H(B[0;1m[33mcase[39m(B[m (B[0;1m[35m'r'[39m(B[m: is_read = 1; [35mbreak[39m(B[m;[32;13H(B[0;1m[33mcase[39m(B[m (B[0;1m[35m'R'[39m(B[m:[17d[19d[21d[25d[28d[30d[31d[32d7[2;33r8[33d[16S[1;35r[2;1H[K[17;17H(B[0;1m[33mif[39m(B[m (read_si5345_registers() < 0) {[18;21H[35mreturn[39m(B[m -1;[19;17H} (B[0;1m[33melse[39m(B[m {[20;21H[35mreturn[39m(B[m 0;[21;17H}[22;13H(B[0;1m[33mcase[39m(B[m (B[0;1m[35m'W'[39m(B[m:[23;17H(B[0;1m[33mif[39m(B[m (write_values_into_si5345() < 0) {[24;21H[35mreturn[39m(B[m -1;[25;17H} (B[0;1m[33melse[39m(B[m {[26;21H[35mreturn[39m(B[m 0;[27;17H}[28;13H(B[0;1m[33mcase[39m(B[m (B[0;1m[35m's'[39m(B[m: show_register_list(); [35mreturn[39m(B[m 0;[29;13H(B[0;1m[33mcase[39m(B[m (B[0;1m[35m'h'[39m(B[m: help(); [35mreturn[39m(B[m 0;[30;13H(B[0;1m[33mdefault[39m(B[m:[31;17Hprintf((B[0;1m[33m"Invalid option.\n\n"[39m(B[m);[32;17Hhelp();[17d[18d[19d[20d[21d[22d[23d[24d[25d[27d[28d[A[25d[A[A[A[A[A[A[20d[21d[22d[23d[A[A[A[A[A[A[A[A[A[15d[14;75H[Z[34d[J[35;112H[35;1H[?1049l[?1l>
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ls
+合計 100K
+-rw-r--r-- 1 root root  49K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root 7.4K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rw-r--r-- 1 root root  138 11月 17 22:11 Makefile
+-rwxr-xr-x 1 root root  75K 11月 18 12:31 si5345*
+-rw-r--r-- 1 root root 7.7K 11月 18 13:17 si5345.c
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Ki2c_read[m[K’ 内:
+[01m[Ksi5345.c:50:67:[m[K [01;31m[Kエラー: [m[Kexpected expression before ‘[01m[K)[m[K’ token
+     uint8_t addr_per_1Byte[] = {(uint8_t)(reg_addr >> 0 & 0xFF), ()};
+[01;32m[K                                                                   ^[m[K
+[01m[Ksi5345.c:54:9:[m[K [01;35m[K警告: [m[K互換性のないポインタ型からの初期化です [デフォルトで有効]
+         {dev_addr,        0, sizeof(reg_addr), &reg_addr},
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:54:9:[m[K [01;35m[K警告: [m[K(‘[01m[Kmessages[0].buf[m[K’ 用の初期化付近) [デフォルトで有効]
+[01m[Ksi5345.c:50:13:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kaddr_per_1Byte[m[K’ です [-Wunused-variable]
+     uint8_t addr_per_1Byte[] = {(uint8_t)(reg_addr >> 0 & 0xFF), ()};
+[01;32m[K             ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./make[2Plsnano si5345.c ./si5345 --read --address=0x010253a[1Pffdef00b8[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pi2cdump -y 4 0x68 ./si5345 --read --address=0x008[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pi2cdump -y 4 0x68 w./si5345 --read --address=0x000[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pi2cdump -y 4 0x68 cWwibW[5P4 0x68 w[2Pnano si5345.c i2cdump 4 0x68 w[K[C[1@ [1@-[1@y
+No size specified (using byte-data access)
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 10 07 00 00 00 00 d9 00 0f ff    ?.ES????....?.?.
+10: 00 df ff 2f ff 03 02 dc ff 00 00 f6 00 00 00 00    .?./.???...?....
+20: 00 0f 00 fe 0b 00 00 00 00 00 00 02 00 00 00 00    .?.??......?....
+30: 00 00 00 00 00 00 00 00 00 00 05 00 00 00 00 00    ..........?.....
+40: 04 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 00    ?....?..........
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 77 2a 42 01 00 00 00    .......?.w*B?...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0d 03 00 2f ff 00 00 00 0f 00    ......??./....?.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m i2cdump -y 4 0x68 make[Ki2cdump -y 4 0x68 [K./si5345 --ad[K[Kread --address=-[K0x0000
+reg_addr = 0x001,	value = 0x45
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x0000[K1
+reg_addr = 0x002,	value = 0x53
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x0001[K2
+reg_addr = 0x003,	value = 0x01
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make./si5345 --read --address=0x000210
+reg_addr = 0x001,	value = 0x45
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x0000[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K./si5345 --read --address=0x00021
+reg_addr = 0x002,	value = 0x53
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make./si5345 --read --address=0x00010[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K./si5345 --read --address=0x00001[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K[K./si5345 --help
+-a, --address	set register address to read
+-r, --read	read register value at a given address by --address
+-R, --read-all	read all values in configurable registers
+-W, --write-all	write all values into configurable registers
+-s, --show-config	show configuration
+-h, --help	print this help
+
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --help[K[K[K[Kreas[Kd-all
+Register 0xB24: 0x00 != 0xC0
+Register 0xB25: 0x00
+Register 0x540: 0x00 != 0x01
+Register 0x006: 0x07 != 0x00
+Register 0x007: 0x00
+Register 0x008: 0x00
+Register 0x00B: 0xD9 != 0x68
+Register 0x016: 0xDC != 0x02
+Register 0x017: 0xFF != 0xDC
+Register 0x018: 0x00 != 0xD5
+Register 0x019: 0x00 != 0xDD
+Register 0x01A: 0xF6 != 0xDF
+i2c-read operation failed: No such device or address
+Error at register 0x02B
+RESULT: I2C READ FAILED.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read-all[4Phelpmake[K./si5345 --helpread-all[K./si5345 --read --address=0x2b
+reg_addr = 0x02B,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x2b[Kc
+reg_addr = 0x02C,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x2c[Ka
+reg_addr = 0x02A,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x2a[K[K01a
+reg_addr = 0x01A,	value = 0xF6
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x01a[K9
+reg_addr = 0x019,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read --address=0x019[Kb
+reg_addr = 0x01B,	value = 0x00
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:97:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Kusleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         usleep(0.01 /* second */ * 1000000);
+[01;32m[K         ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make./si5345 --read --address=0x01b[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make./si5345 --read --address=0x01b[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:97:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Kusleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         usleep(1000 /* = 0.01 s */);
+[01;32m[K         ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:15:39:[m[K [01;31m[K致命的エラー: [m[Kwindows.h: そのようなファイルやディレクトリはありません
+ #include <windows.h>        // Sleep()
+[01;32m[K                                       ^[m[K
+コンパイルを停止しました。
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make./si5345 --read --address=0x01b[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:84:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kts[m[K’ の記憶域サイズが不明です
+     struct timespec ts;
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:101:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&ts, NULL);
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:84:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kts[m[K’ です [-Wunused-variable]
+     struct timespec ts;
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:84:21:[m[K [01;31m[Kエラー: [m[K配列の型が不完全要素型を持っています
+     struct timespec ts[];
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:101:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&ts, NULL);
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:84:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kts[m[K’ です [-Wunused-variable]
+     struct timespec ts[];
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:84:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kts[m[K’ の記憶域サイズが不明です
+     struct timespec ts;
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:101:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&ts, NULL);
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:84:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kts[m[K’ です [-Wunused-variable]
+     struct timespec ts;
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m env
+env       envsubst  
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m env | grep LANG
+[01;31m[KLANG[m[K=ja_JP.UTF-8
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano /etc/sysconfig/i18n
+[?1049h[1;35r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                     File: /etc/sysconfig/i18n                                                  [33;51H[ New File ][34d^G(B[m Get Help	  (B[0;7m^O(B[m WriteOut[37G(B[0;7m^R(B[m Read File[55G(B[0;7m^Y(B[m Prev Page	(B[0;7m^K(B[m Cut Text	  (B[0;7m^C(B[m Cur Pos[35d(B[0;7m^X(B[m Exit[35;19H(B[0;7m^J(B[m Justify[35;37H(B[0;7m^W(B[m Where Is[55G(B[0;7m^V(B[m Next Page	(B[0;7m^U(B[m UnCut Text     (B[0;7m^T(B[m To Spell[3d[34d[J[35;112H[35;1H[?1049l[?1l>
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano /etc/sysconfig/i18n[9Penv | grep LANGmake[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:84:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Kts[m[K’ の記憶域サイズが不明です
+     struct timespec ts;
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:101:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&ts, NULL);
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:84:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kts[m[K’ です [-Wunused-variable]
+     struct timespec ts;
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:84:21:[m[K [01;31m[Kエラー: [m[K配列の型が不完全要素型を持っています
+     struct timespec ts[] = {1, 0};
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:99:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&ts, NULL);
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:84:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Kts[m[K’ です [-Wunused-variable]
+     struct timespec ts[] = {1, 0};
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m make
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:84:21:[m[K [01;31m[Kエラー: [m[K‘[01m[Ktime[m[K’ の記憶域サイズが不明です
+     struct timespec time;
+[01;32m[K                     ^[m[K
+[01m[Ksi5345.c:101:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&time, NULL);
+[01;32m[K         ^[m[K
+[01m[Ksi5345.c:84:21:[m[K [01;35m[K警告: [m[K使用されない変数 ‘[01m[Ktime[m[K’ です [-Wunused-variable]
+     struct timespec time;
+[01;32m[K                     ^[m[K
+make: *** [all] エラー 1
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c 
+[?1049h[1;35r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                         File: si5345.c                                                         [3;1H(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[3;29H[34m// errno[4d[36m#include[39m(B[m (B[0;1m[33m<fcntl.h>[4;29H[34m// open()[5d[36m#include[39m(B[m (B[0;1m[33m<getopt.h>[5;29H[34m// struct option[6d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c-dev.h>[39m(B[m  (B[0;1m[34m// struct i2c_rdwr_ioctl_data[7d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c.h>[29G[34m// struct i2c_msg[8d[36m#include[39m(B[m (B[0;1m[33m<stdint.h>[8;29H[34m// uint*_t[9d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[9;29H[34m// printf()[10d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[10;29H[34m// malloc()[11d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[11;29H[34m// strtol() etc.[12d[36m#include[39m(B[m (B[0;1m[33m<string.h>[12;29H[34m// strerror()[13d[36m#include[39m(B[m (B[0;1m[33m<sys/ioctl.h>[29G[34m// ioctl()[14d[36m#include[39m(B[m (B[0;1m[33m<sys/stat.h>[29G[34m// open()[15d[36m#include[39m(B[m (B[0;1m[33m<sys/types.h>[29G[34m// open()[16d[36m#include[39m(B[m (B[0;1m[33m<time.h>[16;29H[34m// nanosleep() etc.[17d[36m#include[39m(B[m (B[0;1m[33m<unistd.h>[17;29H[34m// close()[19d[36m#include[39m(B[m (B[0;1m[33m"Si5345-RevD-5345.okazaki-Registers.h"[21d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32mchar[39m(B[m *dev_file =[22;5H(B[0;1m[33m"/dev/i2c-4"[39m(B[m;  (B[0;1m[34m// Si5345 (U1) on Endcap SL, connected from the port 3 on[23;20H// pca9548 (U23)[24d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32muint8_t[39m(B[m dev_addr = 0x68;  (B[0;1m[34m// Si5345 slave address[26d// Just prints configuration list[27d(B[0m[32mvoid[39m(B[m show_register_list() {[28;5Hprintf((B[0;1m[33m"order\taddress\tvalue\n"[39m(B[m);[29;5H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < (B[0;1m[31mSI5345_REVD_REG_CONFIG_NUM_REGS[39m(B[m; i++) {[30;9Hprintf((B[0;1m[33m"%03d,\t0x%03X,\t0x%02X\n"[39m(B[m, i, si5345_revd_registers[i].address,[31;16Hsi5345_revd_registers[i].value);[32;5H}[33;48H(B[0;7m[ Read 244 lines ][34d^G(B[m Get Help	  (B[0;7m^O(B[m WriteOut[37G(B[0;7m^R(B[m Read File[55G(B[0;7m^Y(B[m Prev Page	(B[0;7m^K(B[m Cut Text	  (B[0;7m^C(B[m Cur Pos[35d(B[0;7m^X(B[m Exit[35;19H(B[0;7m^J(B[m Justify[35;37H(B[0;7m^W(B[m Where Is[55G(B[0;7m^V(B[m Next Page	(B[0;7m^U(B[m UnCut Text     (B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[C[C[C[C[C[C[C	 [C[1;103H(B[0;7mModified[16;11H(B[0;1m[33mstime.h>[16;29H[39m(B[m (B[0;1m[34m// nanosleep() etc.[16;12H[39m(B[m(B[0;1m[33mytime.h>[16;30H[39m(B[m (B[0;1m[34m// nanosleep() etc.[16;13H[39m(B[m(B[0;1m[33mstime.h>[16;31H[39m(B[m (B[0;1m[34m// nanosleep() etc.[33d[39m(B[m[K[16;14H(B[0;1m[33m.time.h>[16;32H[39m(B[m (B[0;1m[34m// nanosleep() etc.[16;15H[39m(B[m[1P(B[0;1m[33m/time.h>[16;32H[39m(B[m (B[0;1m[34m// nanosleep() etc.[16;15H[39m(B[m[33d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                    [34;1H Y(B[m Yes[K[35d(B[0;7m N(B[m No  [35;17H(B[0;7m^C(B[m Cancel[K[33;62H(B[0;7mFile Name to Write: si5345.c                                [34d^G(B[m Get Help[34;29H(B[0;7mM-D(B[m DOS Format[34;57H(B[0;7mM-A(B[m Append[34;85H(B[0;7mM-B(B[m Backup File[35d(B[0;7m^C(B[m Cancel	            (B[0;7mM-M(B[m Mac Format[35;57H(B[0;7mM-P(B[m Prepend[33;29H[34d[39;49m(B[m[J[1;103H(B[0;7m        [33;46H(B[m[1K (B[0;7m[ Wrote 244 lines ](B[m[K[35;112H[35;1H[?1049l[?1l>
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c make[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:101:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&time, NULL);
+[01;32m[K         ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m makenano si5345.c 
+[?1049h[1;35r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                         File: si5345.c                                                         [3;1H(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[3;29H[34m// errno[4d[36m#include[39m(B[m (B[0;1m[33m<fcntl.h>[4;29H[34m// open()[5d[36m#include[39m(B[m (B[0;1m[33m<getopt.h>[5;29H[34m// struct option[6d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c-dev.h>[39m(B[m  (B[0;1m[34m// struct i2c_rdwr_ioctl_data[7d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c.h>[29G[34m// struct i2c_msg[8d[36m#include[39m(B[m (B[0;1m[33m<stdint.h>[8;29H[34m// uint*_t[9d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[9;29H[34m// printf()[10d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[10;29H[34m// malloc()[11d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[11;29H[34m// strtol() etc.[12d[36m#include[39m(B[m (B[0;1m[33m<string.h>[12;29H[34m// strerror()[13d[36m#include[39m(B[m (B[0;1m[33m<sys/ioctl.h>[29G[34m// ioctl()[14d[36m#include[39m(B[m (B[0;1m[33m<sys/stat.h>[29G[34m// open()[15d[36m#include[39m(B[m (B[0;1m[33m<sys/types.h>[29G[34m// open()[16d[36m#include[39m(B[m (B[0;1m[33m<sys/time.h>[16;33H[34m// nanosleep() etc.[17d[36m#include[39m(B[m (B[0;1m[33m<unistd.h>[17;29H[34m// close()[19d[36m#include[39m(B[m (B[0;1m[33m"Si5345-RevD-5345.okazaki-Registers.h"[21d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32mchar[39m(B[m *dev_file =[22;5H(B[0;1m[33m"/dev/i2c-4"[39m(B[m;  (B[0;1m[34m// Si5345 (U1) on Endcap SL, connected from the port 3 on[23;20H// pca9548 (U23)[24d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32muint8_t[39m(B[m dev_addr = 0x68;  (B[0;1m[34m// Si5345 slave address[26d// Just prints configuration list[27d(B[0m[32mvoid[39m(B[m show_register_list() {[28;5Hprintf((B[0;1m[33m"order\taddress\tvalue\n"[39m(B[m);[29;5H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < (B[0;1m[31mSI5345_REVD_REG_CONFIG_NUM_REGS[39m(B[m; i++) {[30;9Hprintf((B[0;1m[33m"%03d,\t0x%03X,\t0x%02X\n"[39m(B[m, i, si5345_revd_registers[i].address,[31;16Hsi5345_revd_registers[i].value);[32;5H}[33;48H(B[0;7m[ Read 244 lines ][34d^G(B[m Get Help	  (B[0;7m^O(B[m WriteOut[37G(B[0;7m^R(B[m Read File[55G(B[0;7m^Y(B[m Prev Page	(B[0;7m^K(B[m Cut Text	  (B[0;7m^C(B[m Cur Pos[35d(B[0;7m^X(B[m Exit[35;19H(B[0;7m^J(B[m Justify[35;37H(B[0;7m^W(B[m Where Is[55G(B[0;7m^V(B[m Next Page	(B[0;7m^U(B[m UnCut Text     (B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d7[17;32r8M[1;35r[1;103H(B[0;7mModified[18d(B[m[A#includ(B[0;1m[36m#include[39m(B[m[42m [49m(B[m	 <[33d[K[17;11H(B[0;1m[33m<>[39m(B[m(B[0;1m[33mt>[39m(B[m(B[0;1m[33mi>[39m(B[m(B[0;1m[33mm>[39m(B[m(B[0;1m[33me>[39m(B[m(B[0;1m[33m.>[39m(B[m(B[0;1m[33mh>[Z[39m(B[m[33d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                    [34;1H Y(B[m Yes[K[35d(B[0;7m N(B[m No  [35;17H(B[0;7m^C(B[m Cancel[K[33;62H(B[0;7mFile Name to Write: si5345.c                                [34d^G(B[m Get Help[34;29H(B[0;7mM-D(B[m DOS Format[34;57H(B[0;7mM-A(B[m Append[34;85H(B[0;7mM-B(B[m Backup File[35d(B[0;7m^C(B[m Cancel	            (B[0;7mM-M(B[m Mac Format[35;57H(B[0;7mM-P(B[m Prepend[33;29H[34d[39;49m(B[m[J[1;103H(B[0;7m        [33;46H(B[m[1K (B[0;7m[ Wrote 245 lines ](B[m[K[35;112H[35;1H[?1049l[?1l>
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c make[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:102:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&time, NULL);
+[01;32m[K         ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read-all
+Register 0xB24: 0x0B != 0xC0
+Register 0xB25: 0x00
+Register 0x540: 0x00 != 0x01
+Register 0x006: 0x00
+Register 0x007: 0x00
+Register 0x008: 0x00
+Register 0x00B: 0xC9 != 0x68
+Register 0x016: 0x00 != 0x02
+Register 0x017: 0x00 != 0xDC
+Register 0x018: 0x00 != 0xD5
+Register 0x019: 0x00 != 0xDD
+Register 0x01A: 0x00 != 0xDF
+Register 0x02B: 0x00 != 0x02
+Register 0x02C: 0x00 != 0x0A
+Register 0x02D: 0x00 != 0x44
+Register 0x02E: 0x00
+Register 0x02F: 0x00
+Register 0x030: 0x00 != 0x44
+Register 0x031: 0x00
+Register 0x032: 0x00
+Register 0x033: 0x00
+Register 0x034: 0x00 != 0x44
+Register 0x035: 0x00
+Register 0x036: 0x00
+Register 0x037: 0x00
+Register 0x038: 0x00 != 0x44
+Register 0x039: 0x05 != 0x00
+Register 0x03A: 0x00
+Register 0x03B: 0x00
+Register 0x03C: 0x00 != 0x44
+Register 0x03D: 0x00
+Register 0x03F: 0x05 != 0x22
+Register 0x040: 0x00 != 0x04
+Register 0x041: 0x00
+^C
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read-allmake[Knano si5345.c make[Knano si5345.c make[Knano /etc/sysconfig/i18n[9Penv | grep LANGnano /etc/sysconfig/i18nmake[Knano si5345.c 
+[?1049h[1;35r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                         File: si5345.c                                                         [3;1H(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[3;29H[34m// errno[4d[36m#include[39m(B[m (B[0;1m[33m<fcntl.h>[4;29H[34m// open()[5d[36m#include[39m(B[m (B[0;1m[33m<getopt.h>[5;29H[34m// struct option[6d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c-dev.h>[39m(B[m  (B[0;1m[34m// struct i2c_rdwr_ioctl_data[7d[36m#include[39m(B[m (B[0;1m[33m<linux/i2c.h>[29G[34m// struct i2c_msg[8d[36m#include[39m(B[m (B[0;1m[33m<stdint.h>[8;29H[34m// uint*_t[9d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[9;29H[34m// printf()[10d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[10;29H[34m// malloc()[11d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[11;29H[34m// strtol() etc.[12d[36m#include[39m(B[m (B[0;1m[33m<string.h>[12;29H[34m// strerror()[13d[36m#include[39m(B[m (B[0;1m[33m<sys/ioctl.h>[29G[34m// ioctl()[14d[36m#include[39m(B[m (B[0;1m[33m<sys/stat.h>[29G[34m// open()[15d[36m#include[39m(B[m (B[0;1m[33m<sys/types.h>[29G[34m// open()[16d[36m#include[39m(B[m (B[0;1m[33m<sys/time.h>[16;33H[34m// nanosleep() etc.[17d[36m#include[39m(B[m (B[0;1m[33m<time.h>[18d[36m#include[39m(B[m (B[0;1m[33m<unistd.h>[18;29H[34m// close()[20d[36m#include[39m(B[m (B[0;1m[33m"Si5345-RevD-5345.okazaki-Registers.h"[22d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32mchar[39m(B[m *dev_file =[23;5H(B[0;1m[33m"/dev/i2c-4"[39m(B[m;  (B[0;1m[34m// Si5345 (U1) on Endcap SL, connected from the port 3 on[24;20H// pca9548 (U23)[25d(B[0m[32mstatic[39m(B[m [32mconst[39m(B[m [32muint8_t[39m(B[m dev_addr = 0x68;  (B[0;1m[34m// Si5345 slave address[27d// Just prints configuration list[28d(B[0m[32mvoid[39m(B[m show_register_list() {[29;5Hprintf((B[0;1m[33m"order\taddress\tvalue\n"[39m(B[m);[30;5H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < (B[0;1m[31mSI5345_REVD_REG_CONFIG_NUM_REGS[39m(B[m; i++) {[31;9Hprintf((B[0;1m[33m"%03d,\t0x%03X,\t0x%02X\n"[39m(B[m, i, si5345_revd_registers[i].address,[32;16Hsi5345_revd_registers[i].value);[33d(B[0;7m[ Read 245 lines ][34d^G(B[m Get Help	  (B[0;7m^O(B[m WriteOut[37G(B[0;7m^R(B[m Read File[55G(B[0;7m^Y(B[m Prev Page	(B[0;7m^K(B[m Cut Text	  (B[0;7m^C(B[m Cur Pos[35d(B[0;7m^X(B[m Exit[35;19H(B[0;7m^J(B[m Justify[35;37H(B[0;7m^W(B[m Where Is[55G(B[0;7m^V(B[m Next Page	(B[0;7m^U(B[m UnCut Text     (B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[34d[J[35;112H[35;1H[?1049l[?1l>
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m nano si5345.c ./si5345 --read-allmake[K
+gcc -std=c99 -Wall -g -O0 si5345.c -o si5345
+[01m[Ksi5345.c:[m[K 関数 ‘[01m[Kread_si5345_registers[m[K’ 内:
+[01m[Ksi5345.c:101:9:[m[K [01;35m[K警告: [m[K関数 ‘[01m[Knanosleep[m[K’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+         nanosleep(&time, NULL);
+[01;32m[K         ^[m[K
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m makenano si5345.c ./si5345 --read-all
+Register 0xB24: 0x0B != 0xC0
+Register 0xB25: 0x00
+Register 0x540: 0x00 != 0x01
+Register 0x006: 0x00
+Register 0x007: 0x00
+Register 0x008: 0x00
+Register 0x00B: 0xC9 != 0x68
+Register 0x016: 0x00 != 0x02
+Register 0x017: 0x00 != 0xDC
+Register 0x018: 0x00 != 0xD5
+Register 0x019: 0x00 != 0xDD
+Register 0x01A: 0x00 != 0xDF
+Register 0x02B: 0x00 != 0x02
+Register 0x02C: 0x00 != 0x0A
+Register 0x02D: 0x00 != 0x44
+Register 0x02E: 0x00
+Register 0x02F: 0x00
+Register 0x030: 0x00 != 0x44
+Register 0x031: 0x00
+Register 0x032: 0x00
+Register 0x033: 0x00
+Register 0x034: 0x00 != 0x44
+Register 0x035: 0x00
+Register 0x036: 0x00
+Register 0x037: 0x00
+Register 0x038: 0x00 != 0x44
+Register 0x039: 0x00
+Register 0x03A: 0x00
+Register 0x03B: 0x00
+Register 0x03C: 0x00 != 0x44
+Register 0x03D: 0x00
+Register 0x03F: 0x05 != 0x22
+Register 0x040: 0x00 != 0x04
+Register 0x041: 0x00
+Register 0x042: 0x00 != 0x0C
+Register 0x043: 0x00
+Register 0x044: 0x0C
+Register 0x045: 0x00 != 0x0C
+Register 0x046: 0x00
+Register 0x047: 0x00 != 0x32
+Register 0x048: 0x00
+Register 0x049: 0x00
+Register 0x04A: 0x00
+Register 0x04B: 0x00 != 0x32
+Register 0x04C: 0x00
+Register 0x04D: 0x00
+Register 0x04E: 0x00 != 0x50
+Register 0x04F: 0x0F != 0x00
+Register 0x050: 0x00 != 0x07
+Register 0x051: 0x00
+Register 0x052: 0x00 != 0x03
+Register 0x053: 0x00
+Register 0x054: 0x00
+Register 0x055: 0x00
+Register 0x056: 0x00 != 0x03
+Register 0x057: 0x00
+Register 0x058: 0x00
+Register 0x059: 0x00 != 0x04
+Register 0x05A: 0x00
+Register 0x05B: 0x00
+Register 0x05C: 0x00
+Register 0x05D: 0x00
+Register 0x05E: 0x00 != 0x31
+Register 0x05F: 0x00 != 0xC1
+Register 0x060: 0x00 != 0xD5
+Register 0x061: 0x00
+Register 0x062: 0x00
+Register 0x063: 0x00
+Register 0x064: 0x00
+Register 0x065: 0x00
+Register 0x066: 0x00
+Register 0x067: 0x00
+Register 0x068: 0x00
+Register 0x069: 0x00
+Register 0x092: 0x00 != 0x02
+Register 0x093: 0x00 != 0xA0
+Register 0x095: 0x00
+Register 0x096: 0x00 != 0x80
+Register 0x098: 0x00 != 0x60
+Register 0x09A: 0x00 != 0x02
+Register 0x09B: 0x00 != 0x60
+Register 0x09D: 0x00
+Register 0x09E: 0x00 != 0x40
+Register 0x0A0: 0x00 != 0x20
+Register 0x0A2: 0x00
+Register 0x0A9: 0x00 != 0x08
+Register 0x0AA: 0x00 != 0x0C
+Register 0x0AB: 0x00
+Register 0x0AC: 0x00
+Register 0x0E5: 0x00
+Register 0x0EA: 0x00 != 0x01
+Register 0x0EB: 0x00 != 0x0C
+Register 0x0EC: 0x00
+Register 0x0ED: 0x00
+Register 0x102: 0x53 != 0x01
+Register 0x108: 0x00 != 0x01
+Register 0x109: 0x00 != 0x09
+Register 0x10A: 0x00 != 0x3B
+i2c-read operation failed: No such device or address
+Error at register 0x10B
+RESULT: I2C READ FAILED.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read-all
+i2c-read operation failed: No such device or address
+Error at register 0xB24
+RESULT: I2C READ FAILED.
+
+[0;33m(sl-xu5-eth0-01)[0m si5345 [0;33m#[0m ./si5345 --read-all
+i2c-read operation failed: No such device or 
