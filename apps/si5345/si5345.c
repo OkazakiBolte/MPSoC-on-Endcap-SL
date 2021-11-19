@@ -14,7 +14,7 @@
 #include <unistd.h>         // close()
 #define MILLISECONDS 1000
 
-#include "Si5345-RevD-5345.okazaki-Registers.h"
+#include "Si5345-RevD-5345.okazaki-Registers_2.h"
 
 static const char *dev_file =
     "/dev/i2c-4";  // Si5345 (U1) on Endcap SL, connected from the port 3 on
@@ -31,31 +31,38 @@ void show_register_list() {
     return;
 }
 
-int confirm_to_start(float t) {
-    char input;
-    while (1) {
-        printf("This process takes time (ETA: %.02f min).\n",
-               (float)(t * SI5345_REVD_REG_CONFIG_NUM_REGS) / 60);
-        printf(
-            "You can't stop it by ctrl-c, because it may break your system.\n");
-        printf("Do you want to proceed? [y/n]\n");
-        input = getchar();
-        if (input == 'y') {
-            return 0;
-        } else if (input == 'n') {
-            return -1;
-        }
+int write_byte(uint8_t reg_addr,  // indicates one of the registers in Si5345
+               uint8_t data  // a variable in which the data to be sent to a
+                             // register will be stored
+) {
+    /* ---- Secure a buffer for I2C-write ---- */
+    uint8_t *buf = (uint8_t *)malloc(sizeof(reg_addr) + sizeof(data));
+    if (buf == NULL) {
+        fprintf(stderr, "write_byte: failed to memory allocate\n");
+        return -1;
     }
+    buf[0] = reg_addr;
+    memcpy(&buf[1], &data, sizeof(data));
+
+    /* ---- Make I2C-write messages ---- */
+    struct i2c_msg             message = {dev_addr, 0, sizeof(buf), buf};
+    struct i2c_rdwr_ioctl_data msgset  = {&message, 1};
+
+    /* ---- I2C-write operation ---- */
+    int32_t fd = open(dev_file, O_RDWR);
+    if (fd == -1) {
+        fprintf(stderr, "write_byte: failed to open %s: %s\n", dev_file,
+                strerror(errno));
+        return -1;
+    }
+    int ret = ioctl(fd, I2C_RDWR, &msgset);
+
+    free(buf);
+    close(fd);
+    return ret;
 }
 
-// Reads a value of one register.
-// You can see the data using its pointer.
-// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()
-// doesn't.
-int8_t i2c_read(
-    uint16_t reg_addr,  // address of a register in Si5345
-    uint8_t *pdata      // a pointer of a data from a register will be stored in
-) {
+int read_byte(uint8_t reg_addr, uint8_t *pdata) {
     int32_t fd = open(dev_file, O_RDWR);
     if (fd == -1) {
         fprintf(stderr, "i2c_read: failed to open %s: %s\n", dev_file,
@@ -63,17 +70,10 @@ int8_t i2c_read(
         return -1;
     }
 
-    // I don't know why, but it seems to access N+1 when I set reg_addres as N.
-    reg_addr = (uint16_t)(reg_addr - 1);
-    // Since Si5345 has 16-bit addressing and massages.buf is defined as __u8,
-    // we need to split reg_addr into 1 Byte pieces.
-    uint8_t addr_per_1Byte[] = {(uint8_t)(reg_addr >> 0 & 0xFF),
-                                (uint8_t)(reg_addr >> 8 & 0xFF)};
-
     /* ---- Make I2C-read messages ---- */
     struct i2c_msg messages[] = {
-        {dev_addr,        0, sizeof(addr_per_1Byte), addr_per_1Byte},
-        {dev_addr, I2C_M_RD,         sizeof(*pdata),          pdata}
+        {dev_addr,        0, sizeof(reg_addr), &reg_addr},
+        {dev_addr, I2C_M_RD,   sizeof(*pdata),     pdata}
   // I2C_M_RD: read data (from slave to master). Guaranteed to be 0x0001!
     };
     struct i2c_rdwr_ioctl_data msgset = {
@@ -81,7 +81,7 @@ int8_t i2c_read(
         2          // Number of i2c_msg's
     };
 
-    /* ---- I2C-read operation ---- */
+    /* I2C-read operation */
     int ret =
         ioctl(fd, I2C_RDWR, &msgset);  // Do combined read/write transaction
                                        // without stop in between.
@@ -95,140 +95,137 @@ int8_t i2c_read(
     return 0;
 }
 
-int8_t read_si5345_registers() {
-    if (confirm_to_start(0.01) < 0) return 0;
-    /* ---- Process starts ---- */
-    uint16_t reg_addr;  // one of registers in si5345
-    uint8_t  data = 0;  // temporary variable
-    int8_t   result;    // i2c_read(reg_addr, &data);
-    int      i = 0;
-    while (i < SI5345_REVD_REG_CONFIG_NUM_REGS) {
-        if (i % 10 == 0) printf("DO NOT STOP THIS PROCESS BY CTRL-C!\n");
-        reg_addr = si5345_revd_registers[i].address;
-        result   = i2c_read(reg_addr, &data);
-        if (result < 0) {
-            printf("Error at register 0x%04X\n", reg_addr);
-            printf("RESULT: I2C READ FAILED.\n");
-            return -1;
-        }
-        printf("(%03d/%d)  Register 0x%04X: 0x%02X", i,
-               SI5345_REVD_REG_CONFIG_NUM_REGS - 1, reg_addr, data);
-        if (data != si5345_revd_registers[i].value) {
-            printf(" != 0x%02X", si5345_revd_registers[i].value);
-        }
-        printf("\n");
-        i++;
-        usleep(10 * MILLISECONDS);
+int set_page(uint8_t page) {
+    return write_byte(0x01, page);
+}
+
+// Reads a value of one register.
+int i2c_read(uint16_t reg_addr, uint8_t *pdata) {
+    uint8_t addr = (uint8_t)(reg_addr >> 0) & 0xFF;
+    uint8_t page = (uint8_t)(reg_addr >> 8) & 0xFF;
+    if (set_page(page) < 0) {
+        printf("Couldn't set page.\n");
+        return -1;
+    };
+    uint8_t data = 0;
+    if (read_byte(addr, &data) < 0) {
+        printf("ERROR in i2c_read(). Register 0x%04X.\n", reg_addr);
+        return -1;
     }
-    printf("RESULT: I2C READ SUCCESSFULLY DONE.\n");
+    *pdata = data;
+    printf("Register 0x%04X: 0x%02X", reg_addr, data);
     return 0;
 }
 
-// Writes one datum into one register.
-// NOTE: i2c_read() requires a pointer to data as an argument while i2c_write()
-// doesn't.
-int8_t i2c_write(uint16_t reg_addr,  // indicates one of the registers in Si5345
-                 uint8_t  data  // a variable in which the datum to be sent to a
-                                // register will be stored
-) {
-    int32_t fd = open(dev_file, O_RDWR);
-    if (fd == -1) {
-        fprintf(stderr, "i2c_write: failed to open %s: %s\n", dev_file,
-                strerror(errno));
+int i2c_write(uint16_t reg_addr, uint8_t data) {
+    uint8_t addr = (uint8_t)(reg_addr >> 0) & 0xFF;
+    uint8_t page = (uint8_t)(reg_addr >> 8) & 0xFF;
+    if (set_page(page) < 0) {
+        printf("Couldn't set page.\n");
+        return -1;
+    };
+    if (write_byte(addr, data) < 0) {
+        printf("ERROR in i2c_write(). Register 0x%04X.\n", reg_addr);
         return -1;
     }
-
-    /* ---- Secure a buffer for I2C-write ---- */
-    uint8_t *buf = (uint8_t *)malloc(sizeof(reg_addr) + sizeof(data));
-    if (buf == NULL) {
-        fprintf(stderr, "i2c_write: failed to memory allocate\n");
-        close(fd);
-        return -1;
-    }
-
-    // I don't know why, but it seems to access N+1 when I set reg_addres as N.
-    reg_addr = (uint16_t)(reg_addr - 1);
-    // Since Si5345 has 16-bit addressing and massages.buf is defined as __u8,
-    // we need to split reg_addr into 1 Byte pieces.
-    uint8_t addr_per_1Byte[] = {(uint8_t)(reg_addr >> 0 & 0xFF),
-                                (uint8_t)(reg_addr >> 8 & 0xFF)};
-
-    buf[0] = addr_per_1Byte[0];
-    buf[1] = addr_per_1Byte[1];
-    memcpy(&buf[2], &data, sizeof(data));
-
-    /* ---- Make I2C-write messages ---- */
-    struct i2c_msg             message = {dev_addr, 0, sizeof(buf), buf};
-    struct i2c_rdwr_ioctl_data msgset  = {&message, 1};
-
-    /* ---- I2C-write operation ---- */
-    int ret  = ioctl(fd, I2C_RDWR, &msgset);
-    reg_addr = (uint16_t)((buf[1] << 8) + buf[0] + 1);  // reconstruct with buf
-    if (ret == -1) {
-        fprintf(stderr, "i2c-write operation failed: %s\n", strerror(errno));
-        printf("Failed to write 0x%02X at reg address 0x%04X.\n", buf[2],
-               reg_addr);
-        free(buf);
-        close(fd);
-        return -1;
-    }
-
-    printf("Register 0x%04X: 0x%02X written\n", reg_addr, buf[2]);
-    free(buf);
-    close(fd);
+    printf("Successfully wrote 0x%02X at 0x%04X.\n", reg_addr, data);
     return 0;
 }
 
-int8_t preamble() {
-    uint16_t reg_addr[3] = {0xb24, 0x0b25, 0x0540};
-    uint8_t  data[3]     = {0xc0, 0x00, 0x01};
-    for (int i = 0; i < 3; i++) {
-        if (i2c_write(reg_addr[i], data[i]) < 0) { return -1; }
-    }
-    return 0;
-}
-
-int8_t write_values_into_si5345() {
-    if (confirm_to_start(0.01) < 0) return 0;
-    /* ---- Process starts ---- */
+int preamble() {
     uint16_t reg_addr;
     uint8_t  data;
-    int      i = 0;
-    int      ret;
-    while (i < SI5345_REVD_REG_CONFIG_NUM_REGS) {
-        if (i % 10 == 0) printf("DO NOT STOP THIS PROCESS BY CTRL-C!\n");
-        printf("(%03d/%d) ", i, SI5345_REVD_REG_CONFIG_NUM_REGS - 1);
+    for (int i = 0; i < 3; i++) {
         reg_addr = si5345_revd_registers[i].address;
         data     = si5345_revd_registers[i].value;
-        ret      = i2c_write(reg_addr, data);
+        if (i2c_write(reg_addr, data) < 0) { return -1; }
+    }
+    usleep(300 * MILLISECONDS);
+    printf("Preamble successful.\n");
+    return 0;
+}
+
+int postamble() {
+    uint16_t reg_addr;
+    uint8_t  data;
+    for (int i = SI5345_REVD_REG_CONFIG_NUM_REGS - 5;
+         i < SI5345_REVD_REG_CONFIG_NUM_REGS; i++) {
+        reg_addr = si5345_revd_registers[i].address;
+        data     = si5345_revd_registers[i].value;
+        if (i2c_write(reg_addr, data) < 0) { return -1; }
+    }
+    printf("Postamble successful.\n");
+    return 0;
+}
+
+int write_all() {
+    int ret;
+    ret = preamble();
+    if (ret < 0) {
+        printf("write_all(): Error in preamble.\n");
+        return ret;
+    }
+    uint16_t reg_addr;
+    uint8_t  data;
+    for (int i = 3; i < SI5345_REVD_REG_CONFIG_NUM_REGS - 5; i++) {
+        reg_addr = si5345_revd_registers[i].address;
+        data     = si5345_revd_registers[i].value;
+        printf("(%03d/%03d) ", i - 3, SI5345_REVD_REG_CONFIG_NUM_REGS - 8);
+        ret = i2c_write(reg_addr, data);
         if (ret < 0) {
-            printf("Couldn't write data 0x%02X at reg address 0x%04X.\n", data,
+            printf("write_all(): Failed to write 0x%02X at 0x%04X.\n", data,
                    reg_addr);
+            return ret;
+        }
+    }
+    ret = postamble();
+    if (ret < 0) {
+        printf("write_all(): Error in preamble.\n");
+        return ret;
+    }
+    return ret;
+}
+
+int read_all() {
+    uint16_t reg_addr;
+    uint8_t  read_data = 0;
+    uint8_t  data;
+    for (int i = 0; i < SI5345_REVD_REG_CONFIG_NUM_REGS; i++) {
+        reg_addr = si5345_revd_registers[i].address;
+        data     = si5345_revd_registers[i].value;
+        printf("(%03d/%03d) ", i, SI5345_REVD_REG_CONFIG_NUM_REGS - 1);
+        if (i2c_read(reg_addr, &read_data) < 0) {
+            printf("read_all(): Failed to read at 0x%04X.\n", reg_addr);
             return -1;
         }
-        if (i == 2) usleep(300 * MILLISECONDS);
-        usleep(10 * MILLISECONDS);
-        i++;
+        if (read_data != data) { printf(" != 0x%02X", data); }
+        printf("\n");
     }
     return 0;
 }
 
 void help() {
-    printf("-a, --address\t\tset register address to read\n");
-    printf(
-        "-r, --read\t\tread register value at a given address by --address\n");
-    printf("-R, --read-all\t\tread all values in configurable registers\n");
-    printf("-W, --write-all\t\twrite all values into configurable registers\n");
-    printf("-s, --show-config\tshow configuration\n");
-    printf("-h, --help\t\tprint this help\n");
-    printf("\n");
+    // printf("-a, --address\t\tset register address to read\n");
+    // printf("-r, --read\t\tread register value at a given address by "
+    //        "--address\n");
+    // printf("-R, --read-all\t\tread all values in configurable registers\n");
+    // printf("-W, --write-all\t\twrite all values into configurable "
+    //        "registers\n");
+    // printf("-s, --show-config\tshow configuration\n");
+    // printf("-h, --help\t\tprint this help\n");
+    // printf("\n");
+    printf("address      , required_argument, a,\n");
+    printf("data         , required_argument, d,\n");
+    printf("read         , no_argument      , r,\n");
+    printf("read-all     , no_argument      , R,\n");
+    printf("write        , no_argument      , w,\n");
+    printf("write-all    , no_argument      , W,\n");
+    printf("show-config  , no_argument      , s,\n");
+    printf("help         , no_argument      , h\n");
     return;
 }
 
 int main(int argc, char *argv[]) {
-    // preamble();
-    // usleep(300 * MILLISECONDS);
-    // i2c_write(0x002c, 0x0a);
     /* ---- option analysis ---- */
     struct option longopts[] = {
         {    "address", required_argument, NULL, 'a'},
@@ -238,11 +235,10 @@ int main(int argc, char *argv[]) {
         {      "write",       no_argument, NULL, 'w'},
         {  "write-all",       no_argument, NULL, 'W'},
         {"show-config",       no_argument, NULL, 's'},
-        {   "preamble",       no_argument, NULL, 'p'},
         {       "help",       no_argument, NULL, 'h'},
         {            0,                 0,    0,   0}  // indicates the termination of this array
     };
-    char optstring[] = "a:d:rRwWsph";
+    char optstring[] = "a:d:rRwWsh";
     int  opt;
     int  longindex;
 
@@ -259,45 +255,54 @@ int main(int argc, char *argv[]) {
             case 'r': is_read = 1; break;
             case 'w': is_write = 1; break;
             case 'R':
-                if (read_si5345_registers() < 0) {
+                if (read_all() < 0) {
+                    printf("Summary: Failed to run read_all().\n");
                     return -1;
                 } else {
+                    printf("Summary: Successful to run read_all().\n");
                     return 0;
                 }
             case 'W':
-                if (write_values_into_si5345() < 0) {
+                if (write_all() < 0) {
+                    printf("Summary: Failed to run write_all().\n");
                     return -1;
                 } else {
+                    printf("Summary: Successful to run write_all().\n");
                     return 0;
                 }
             case 's': show_register_list(); return 0;
-            case 'p': preamble(); return 0;
             case 'h': help(); return 0;
             default:
-                printf("Invalid option.\n\n");
+                printf("Invalid option!\n\n");
                 help();
                 return -1;
         }
     }
 
-    if (!is_read && is_write) {
-        if (i2c_write(reg_addr, data) < 0) {
-            return -1;
-        } else {
-            printf("Wrote reg_addr = 0x%04X,\tvalue = 0x%02X\n", reg_addr,
-                   data);
-            return 0;
+    int ret;
+    if (!is_read && is_write) {  // if write
+        ret = preamble();
+        if (ret < 0) {
+            printf("Error in preamble.\n");
+            return ret;
         }
+        ret = i2c_write(reg_addr, data);
+        if (ret < 0) {
+            printf("Failed to write 0x%02X at 0x%04X.\n", data, reg_addr);
+            return ret;
+        }
+        ret = postamble();
+        if (ret < 0) {
+            printf("Error in preamble.\n");
+            return ret;
+        }
+        return ret;
     } else if (is_read && !is_write) {
-        if (i2c_read(reg_addr, &data) < 0) {
-            return -1;
-        } else {
-            printf("reg_addr = 0x%04X,\tvalue = 0x%02X\n", reg_addr, data);
-            return 0;
-        }
+        ret = i2c_read(reg_addr, &data);
+        printf("\n");
+        return ret;
     } else {
         help();
         return -1;
     }
-    return 0;
 }
