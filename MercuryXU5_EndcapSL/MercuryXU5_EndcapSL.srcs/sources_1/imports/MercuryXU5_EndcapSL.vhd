@@ -14,198 +14,200 @@
 -- https://github.com/enclustra/Mercury_XU5_PE1_Reference_Design.git
 
 ---- Libraries ----
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+LIBRARY UNISIM;
+USE UNISIM.VCOMPONENTS.ALL;
 
 ---- Entity declaration ----
-entity MercuryXU5_EndcapSL is
-    port (
+ENTITY MercuryXU5_EndcapSL IS
+    PORT (
         -- RESETB for Si5345
-        SIRST         : out std_logic;
+        SIRST : OUT STD_LOGIC;
         -- 3-bit LED on the mezzanine
-        LED_N_tri_o   : out STD_LOGIC_VECTOR ( 2 downto 0 );
+        LED_N_tri_o : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
         -- PL_Gigabit_Ethernet
-        ETH1_MDC      : out   std_logic;
-        ETH1_RXCLK    : in    std_logic;
-        ETH1_TXCLK    : out   std_logic;
-        ETH1_MDIO     : inout std_logic;
-        ETH1_INT_N    : in    std_logic;
-        ETH1_RESET_N  : out   std_logic;
-        ETH1_RXCTL    : in    std_logic;
-        ETH1_TXCTL    : out   std_logic;
-        ETH1_RXD      : in    std_logic_vector(3 downto 0);
-        ETH1_TXD      : out   std_logic_vector(3 downto 0)
+        ETH1_MDC : OUT STD_LOGIC;
+        ETH1_RXCLK : IN STD_LOGIC;
+        ETH1_TXCLK : OUT STD_LOGIC;
+        ETH1_MDIO : INOUT STD_LOGIC;
+        ETH1_INT_N : IN STD_LOGIC;
+        ETH1_RESET_N : OUT STD_LOGIC;
+        ETH1_RXCTL : IN STD_LOGIC;
+        ETH1_TXCTL : OUT STD_LOGIC;
+        ETH1_RXD : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        ETH1_TXD : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
-end MercuryXU5_EndcapSL;
+END MercuryXU5_EndcapSL;
 
-architecture STRUCTURE of MercuryXU5_EndcapSL is
+ARCHITECTURE STRUCTURE OF MercuryXU5_EndcapSL IS
 
     ---- Component declarations ----
-    component design_1 is
-        port (
-            ETH_CLK125       : out STD_LOGIC;
-            ETH_CLK125_90    : out STD_LOGIC;
-            ETH_CLK25        : out STD_LOGIC;
-            ETH_CLK10        : out STD_LOGIC;
-            ETH_resetn       : out STD_LOGIC;
-            LED_N_tri_o      : out STD_LOGIC_VECTOR ( 2 downto 0 );
-            GMII_rx_clk      : in  STD_LOGIC;
-            GMII_speed_mode  : out STD_LOGIC_VECTOR ( 2 downto 0 );
-            GMII_crs         : in  STD_LOGIC;
-            GMII_col         : in  STD_LOGIC;
-            GMII_rxd         : in  STD_LOGIC_VECTOR ( 7 downto 0 );
-            GMII_rx_er       : in  STD_LOGIC;
-            GMII_rx_dv       : in  STD_LOGIC;
-            GMII_tx_clk      : in  STD_LOGIC;
-            GMII_txd         : out STD_LOGIC_VECTOR ( 7 downto 0 );
-            GMII_tx_en       : out STD_LOGIC;
-            GMII_tx_er       : out STD_LOGIC;
-            MDIO_mdc         : out STD_LOGIC;
-            MDIO_mdio_i      : in  STD_LOGIC;
-            MDIO_mdio_o      : out STD_LOGIC;
-            MDIO_mdio_t      : out STD_LOGIC;
-            peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
+    COMPONENT design_1 IS
+        PORT (
+            ETH_CLK125 : OUT STD_LOGIC;
+            ETH_CLK125_90 : OUT STD_LOGIC;
+            ETH_CLK25 : OUT STD_LOGIC;
+            ETH_CLK10 : OUT STD_LOGIC;
+            ETH_resetn : OUT STD_LOGIC;
+            LED_N_tri_o : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
+            GMII_rx_clk : IN STD_LOGIC;
+            GMII_speed_mode : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
+            GMII_crs : IN STD_LOGIC;
+            GMII_col : IN STD_LOGIC;
+            GMII_rxd : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            GMII_rx_er : IN STD_LOGIC;
+            GMII_rx_dv : IN STD_LOGIC;
+            GMII_tx_clk : IN STD_LOGIC;
+            GMII_txd : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+            GMII_tx_en : OUT STD_LOGIC;
+            GMII_tx_er : OUT STD_LOGIC;
+            MDIO_mdc : OUT STD_LOGIC;
+            MDIO_mdio_i : IN STD_LOGIC;
+            MDIO_mdio_o : OUT STD_LOGIC;
+            MDIO_mdio_t : OUT STD_LOGIC;
+            peripheral_reset : OUT STD_LOGIC_VECTOR (0 TO 0)
         );
-    end component design_1;
+    END COMPONENT design_1;
 
-    component IOBUF is
-        port (
-            I  : in    STD_LOGIC;
-            O  : out   STD_LOGIC;
-            T  : in    STD_LOGIC;
-            IO : inout STD_LOGIC
+    COMPONENT IOBUF IS
+        PORT (
+            I : IN STD_LOGIC;
+            O : OUT STD_LOGIC;
+            T : IN STD_LOGIC;
+            IO : INOUT STD_LOGIC
         );
-    end component IOBUF;
+    END COMPONENT IOBUF;
 
-    component Enclustra_GMII2RGMII_ZU is
-        port (
-            Clk125          : in  std_logic;
-            Clk125_90       : in  std_logic;
-            Clk25           : in  std_logic;
-            Clk10           : in  std_logic;
-            Resetn          : in  std_logic;
+    COMPONENT Enclustra_GMII2RGMII_ZU IS
+        PORT (
+            Clk125 : IN STD_LOGIC;
+            Clk125_90 : IN STD_LOGIC;
+            Clk25 : IN STD_LOGIC;
+            Clk10 : IN STD_LOGIC;
+            Resetn : IN STD_LOGIC;
 
-            GMII_col        : out std_logic;
-            GMII_crs        : out std_logic;
-            GMII_rx_clk     : out std_logic;
-            GMII_rx_dv      : out std_logic;
-            GMII_rx_er      : out std_logic;
-            GMII_rxd        : out std_logic_vector(7 downto 0);
-            GMII_speed_mode : in  std_logic_vector(2 downto 0);
-            GMII_tx_clk     : out std_logic;
-            GMII_tx_en      : in  std_logic;
-            GMII_tx_er      : in  std_logic;
-            GMII_txd        : in  std_logic_vector(7 downto 0);
+            GMII_col : OUT STD_LOGIC;
+            GMII_crs : OUT STD_LOGIC;
+            GMII_rx_clk : OUT STD_LOGIC;
+            GMII_rx_dv : OUT STD_LOGIC;
+            GMII_rx_er : OUT STD_LOGIC;
+            GMII_rxd : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            GMII_speed_mode : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+            GMII_tx_clk : OUT STD_LOGIC;
+            GMII_tx_en : IN STD_LOGIC;
+            GMII_tx_er : IN STD_LOGIC;
+            GMII_txd : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 
-            RGMII_rxd       : in  std_logic_vector(3 downto 0);
-            RGMII_rxclk     : in  std_logic;
-            RGMII_rxctl     : in  std_logic;
-            RGMII_txd       : out std_logic_vector(3 downto 0);
-            RGMII_txclk     : out std_logic;
-            RGMII_txctl     : out std_logic;
+            RGMII_rxd : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+            RGMII_rxclk : IN STD_LOGIC;
+            RGMII_rxctl : IN STD_LOGIC;
+            RGMII_txd : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+            RGMII_txclk : OUT STD_LOGIC;
+            RGMII_txctl : OUT STD_LOGIC;
 
-            Speed1000En     : out std_logic;
-            Speed100En      : out std_logic;
-            Speed10En       : out std_logic
+            Speed1000En : OUT STD_LOGIC;
+            Speed100En : OUT STD_LOGIC;
+            Speed10En : OUT STD_LOGIC
         );
-    end component Enclustra_GMII2RGMII_ZU;
+    END COMPONENT Enclustra_GMII2RGMII_ZU;
 
     ---- Signal declarations ----
-    signal MDIO_mdio_i      : std_logic;
-    signal MDIO_mdio_o      : std_logic;
-    signal MDIO_mdio_t      : std_logic;
-    signal ETH_CLK125       : std_logic;
-    signal ETH_CLK125_90    : std_logic;
-    signal ETH_CLK25        : std_logic;
-    signal ETH_CLK10        : std_logic;
-    signal ETH_resetn       : std_logic;
-    signal GMII_col         : std_logic;
-    signal GMII_crs         : std_logic;
-    signal GMII_rx_clk      : std_logic;
-    signal GMII_rx_dv       : std_logic;
-    signal GMII_rx_er       : std_logic;
-    signal GMII_rxd         : std_logic_vector(7 downto 0);
-    signal GMII_speed_mode  : std_logic_vector(2 downto 0);
-    signal GMII_tx_clk      : std_logic;
-    signal GMII_tx_en       : std_logic;
-    signal GMII_tx_er       : std_logic;
-    signal GMII_txd         : std_logic_vector(7 downto 0);
-    signal peripheral_reset : std_logic_vector(0 downto 0);
+    SIGNAL MDIO_mdio_i : STD_LOGIC;
+    SIGNAL MDIO_mdio_o : STD_LOGIC;
+    SIGNAL MDIO_mdio_t : STD_LOGIC;
+    SIGNAL ETH_CLK125 : STD_LOGIC;
+    SIGNAL ETH_CLK125_90 : STD_LOGIC;
+    SIGNAL ETH_CLK25 : STD_LOGIC;
+    SIGNAL ETH_CLK10 : STD_LOGIC;
+    SIGNAL ETH_resetn : STD_LOGIC;
+    SIGNAL GMII_col : STD_LOGIC;
+    SIGNAL GMII_crs : STD_LOGIC;
+    SIGNAL GMII_rx_clk : STD_LOGIC;
+    SIGNAL GMII_rx_dv : STD_LOGIC;
+    SIGNAL GMII_rx_er : STD_LOGIC;
+    SIGNAL GMII_rxd : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL GMII_speed_mode : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL GMII_tx_clk : STD_LOGIC;
+    SIGNAL GMII_tx_en : STD_LOGIC;
+    SIGNAL GMII_tx_er : STD_LOGIC;
+    SIGNAL GMII_txd : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL peripheral_reset : STD_LOGIC_VECTOR(0 DOWNTO 0);
 
-begin
+BEGIN
 
-    design_1_i: component design_1
-        port map (
-            ETH_CLK10        => ETH_CLK10,
-            ETH_CLK125       => ETH_CLK125,
-            ETH_CLK125_90    => ETH_CLK125_90,
-            ETH_CLK25        => ETH_CLK25,
-            ETH_resetn       => ETH_resetn,
-            GMII_col         => GMII_col,
-            GMII_crs         => GMII_crs,
-            GMII_rx_clk      => GMII_rx_clk,
-            GMII_rx_dv       => GMII_rx_dv,
-            GMII_rx_er       => GMII_rx_er,
-            GMII_rxd         => GMII_rxd,
-            GMII_speed_mode  => GMII_speed_mode,
-            GMII_tx_clk      => GMII_tx_clk,
-            GMII_tx_en       => GMII_tx_en,
-            GMII_tx_er       => GMII_tx_er,
-            GMII_txd         => GMII_txd,
-            LED_N_tri_o      => LED_N_tri_o,
-            MDIO_mdc         => ETH1_MDC,
-            MDIO_mdio_i      => MDIO_mdio_i,
-            MDIO_mdio_o      => MDIO_mdio_o,
-            MDIO_mdio_t      => MDIO_mdio_t,
+    design_1_i : COMPONENT design_1
+        PORT MAP(
+            ETH_CLK10 => ETH_CLK10,
+            ETH_CLK125 => ETH_CLK125,
+            ETH_CLK125_90 => ETH_CLK125_90,
+            ETH_CLK25 => ETH_CLK25,
+            ETH_resetn => ETH_resetn,
+            GMII_col => GMII_col,
+            GMII_crs => GMII_crs,
+            GMII_rx_clk => GMII_rx_clk,
+            GMII_rx_dv => GMII_rx_dv,
+            GMII_rx_er => GMII_rx_er,
+            GMII_rxd => GMII_rxd,
+            GMII_speed_mode => GMII_speed_mode,
+            GMII_tx_clk => GMII_tx_clk,
+            GMII_tx_en => GMII_tx_en,
+            GMII_tx_er => GMII_tx_er,
+            GMII_txd => GMII_txd,
+            LED_N_tri_o => LED_N_tri_o,
+            MDIO_mdc => ETH1_MDC,
+            MDIO_mdio_i => MDIO_mdio_i,
+            MDIO_mdio_o => MDIO_mdio_o,
+            MDIO_mdio_t => MDIO_mdio_t,
             peripheral_reset => peripheral_reset
         );
 
-    SIRST <= '1'; -- not peripheral_reset(0);
+        SIRST <= NOT peripheral_reset(0);
 
-    MDIO_mdio_iobuf: component IOBUF
-        port map (
-            I  => MDIO_mdio_o,
-            IO => ETH1_MDIO,
-            O  => MDIO_mdio_i,
-            T  => MDIO_mdio_t
-        );
+        MDIO_mdio_iobuf : COMPONENT IOBUF
+            PORT MAP(
+                I => MDIO_mdio_o,
+                IO => ETH1_MDIO,
+                O => MDIO_mdio_i,
+                T => MDIO_mdio_t
+            );
 
-    -- We cannot use Xilinx's GMII2RGMII IP core for Mercury XU5 mezzanine.
-    -- Instead, Enclustra provides Enclustra_GMII2RGMII_ZU.edn.
-    -- Please see Mercury XU5 PE1 reference design.
-    -- https://github.com/enclustra/Mercury_XU5_PE1_Reference_Design.git
-    i_gmii2rgmii : Enclustra_GMII2RGMII_ZU
-        port map (
-            Clk125          => ETH_CLK125,
-            Clk125_90       => ETH_CLK125_90,
-            Clk25           => ETH_Clk25,
-            Clk10           => ETH_Clk10,
-            Resetn          => ETH_resetn,
+            -- We cannot use Xilinx's GMII2RGMII IP core for Mercury XU5 mezzanine.
+            -- Instead, Enclustra provides Enclustra_GMII2RGMII_ZU.edn.
+            -- Please see Mercury XU5 PE1 reference design.
+            -- https://github.com/enclustra/Mercury_XU5_PE1_Reference_Design.git
+            i_gmii2rgmii : Enclustra_GMII2RGMII_ZU
+            PORT MAP(
+                Clk125 => ETH_CLK125,
+                Clk125_90 => ETH_CLK125_90,
+                Clk25 => ETH_Clk25,
+                Clk10 => ETH_Clk10,
+                Resetn => ETH_resetn,
 
-            GMII_col        => GMII_col,
-            GMII_crs        => GMII_crs,
-            GMII_rx_clk     => GMII_rx_clk,
-            GMII_rx_dv      => GMII_rx_dv,
-            GMII_rx_er      => GMII_rx_er,
-            GMII_rxd        => GMII_rxd,
-            GMII_speed_mode => GMII_speed_mode,
-            GMII_tx_clk     => GMII_tx_clk,
-            GMII_tx_en      => GMII_tx_en,
-            GMII_tx_er      => GMII_tx_er,
-            GMII_txd        => GMII_txd,
+                GMII_col => GMII_col,
+                GMII_crs => GMII_crs,
+                GMII_rx_clk => GMII_rx_clk,
+                GMII_rx_dv => GMII_rx_dv,
+                GMII_rx_er => GMII_rx_er,
+                GMII_rxd => GMII_rxd,
+                GMII_speed_mode => GMII_speed_mode,
+                GMII_tx_clk => GMII_tx_clk,
+                GMII_tx_en => GMII_tx_en,
+                GMII_tx_er => GMII_tx_er,
+                GMII_txd => GMII_txd,
 
-            RGMII_rxd       => ETH1_RXD,
-            RGMII_rxclk     => ETH1_RXCLK,
-            RGMII_rxctl     => ETH1_RXCTL,
-            RGMII_txd       => ETH1_TXD,
-            RGMII_txclk     => ETH1_TXCLK,
-            RGMII_txctl     => ETH1_TXCTL,
+                RGMII_rxd => ETH1_RXD,
+                RGMII_rxclk => ETH1_RXCLK,
+                RGMII_rxctl => ETH1_RXCTL,
+                RGMII_txd => ETH1_TXD,
+                RGMII_txclk => ETH1_TXCLK,
+                RGMII_txctl => ETH1_TXCTL,
 
-            Speed1000En     => open,
-            Speed100En      => open,
-            Speed10En       => open
-        );
+                Speed1000En => OPEN,
+                Speed100En => OPEN,
+                Speed10En => OPEN
+            );
 
-end STRUCTURE;
+            ETH1_RESET_N <= ETH_resetn;
+
+        END STRUCTURE;
