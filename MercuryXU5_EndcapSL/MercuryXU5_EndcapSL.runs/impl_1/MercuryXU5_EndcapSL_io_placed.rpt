@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date                      : Thu Nov 18 20:17:24 2021
+| Date                      : Tue Nov 23 18:38:53 2021
 | Host                      : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command                   : report_io -file MercuryXU5_EndcapSL_io_placed.rpt
 | Design                    : MercuryXU5_EndcapSL
@@ -296,7 +296,7 @@ Table of Contents
 | B7         |                       | High Performance | VCCO_66                            | VCCO          |             |      66 |            |                         |      |                   |                      | 0.00-1.80 |            |           |          |      |                  |              |                   |              |
 | B8         |                       | High Performance | IO_L22N_T3U_N7_DBC_AD0N_66         | User IO       |             |      66 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | B9         |                       | High Performance | IO_L24N_T3U_N11_66                 | User IO       |             |      66 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
-| B10        | ETH1_RESET_N          | High Density     | IO_L9N_AD11N_45                    | TRISTATE      | LVCMOS18    |      45 |         12 |                         | SLOW |                   |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| B10        | ETH1_RESET_N          | High Density     | IO_L9N_AD11N_45                    | OUTPUT        | LVCMOS18    |      45 |         12 |                         | SLOW |                   |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | B11        | ETH1_MDIO             | High Density     | IO_L10P_AD10P_45                   | BIDIR         | LVCMOS18    |      45 |         12 |                         | SLOW |                   |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | B12        |                       | High Density     | VCCO_45                            | VCCO          |             |      45 |            |                         |      |                   |                      |      1.80 |            |           |          |      |                  |              |                   |              |
 | B13        |                       | High Density     | IO_L3P_AD9P_46                     | User IO       |             |      46 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |

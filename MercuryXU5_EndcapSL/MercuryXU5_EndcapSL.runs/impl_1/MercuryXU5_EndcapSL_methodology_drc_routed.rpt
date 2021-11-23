@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Thu Nov 18 20:18:22 2021
+| Date         : Tue Nov 23 18:39:51 2021
 | Host         : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command      : report_methodology -file MercuryXU5_EndcapSL_methodology_drc_routed.rpt -pb MercuryXU5_EndcapSL_methodology_drc_routed.pb -rpx MercuryXU5_EndcapSL_methodology_drc_routed.rpx
 | Design       : MercuryXU5_EndcapSL
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 139
+             Violations found: 140
 +-----------+----------+-------------------------------------------------------------------+------------+
 | Rule      | Severity | Description                                                       | Violations |
 +-----------+----------+-------------------------------------------------------------------+------------+
 | LUTAR-1   | Warning  | LUT drives async reset alert                                      | 2          |
 | TIMING-10 | Warning  | Missing property on synchronizer                                  | 1          |
-| TIMING-18 | Warning  | Missing input or output delay                                     | 4          |
+| TIMING-18 | Warning  | Missing input or output delay                                     | 5          |
 | TIMING-28 | Warning  | Auto-derived clock referenced by a timing constraint              | 82         |
 | TIMING-47 | Warning  | False path or asynchronous clock group between synchronous clocks | 44         |
 | XDCH-1    | Warning  | Hold option missing in multicycle path constraint                 | 2          |
@@ -83,6 +83,11 @@ Related violations: <none>
 TIMING-18#4 Warning
 Missing input or output delay  
 An output delay is missing on LED_N_tri_o[2] relative to clock(s) clk_pl_0
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on SIRST relative to clock(s) clk_pl_0
 Related violations: <none>
 
 TIMING-28#1 Warning
