@@ -10,3 +10,8 @@
 ++ if {![info exists module_name]} {set module_name ME-XU5-5EV-2I-D12E}
 if {![info exists baseboard]}   {set baseboard PE1}
 ```
+
+- (007/525) Register 0x0016: 0x02 written
+- (008/525) Register 0x0017: 0xDC written
+- (009/525) Register 0x0018: 0xD5 written
+- (010/525) Register 0x0019: 0xDD written

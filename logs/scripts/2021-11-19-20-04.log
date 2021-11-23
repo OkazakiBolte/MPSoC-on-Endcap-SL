@@ -1,0 +1,957 @@
+~ $ my_project
+/Users/okazaki/Desktop/my_palace/daigakuin/laboratory/my_project
+
+my_project $ ls
+total 226960
+-rwxr-xr-x@  1 okazaki  staff   455K  8  3  2020 研究報告カンペ.pages*
+-rw-r--r--@  1 okazaki  staff    53K  8 31  2020 installing_ubuntu_in_zc706.txt
+-rw-r--r--@  1 okazaki  staff   2.2K  9  8  2020 ME-XU5.xdc
+drwxr-xr-x@  7 okazaki  staff   224B 11 12  2020 Ubuntu_on_ZC706/
+-rw-r--r--   1 okazaki  staff   522B 12  8  2020 blink.v
+drwxr-xr-x@  6 okazaki  staff   192B  2 13  2021 PetaLinux/
+drwxr-xr-x@  5 okazaki  staff   160B  5 14  2021 vivado-tutorial/
+-rw-r--r--@  1 okazaki  staff   274B  6 22 22:23 sd.csv
+drwxr-xr-x@ 47 okazaki  staff   1.5K  6 23 13:48 xu5/
+drwxr-xr-x@ 20 okazaki  staff   640B  7  5 17:40 Ultra96-V2/
+drwxr-xr-x@ 18 okazaki  staff   576B  7 13 20:18 i2c/
+drwxr-xr-x@ 13 okazaki  staff   416B  8  6 20:55 ppcc-ss-2021/
+-rw-r--r--   1 okazaki  staff   547B  8  7 16:36 show-diff.sh
+-rw-r--r--   1 okazaki  staff   2.3K  8 12 10:57 fileEditList.md
+drwxr-xr-x@ 26 okazaki  staff   832B  8 30 13:02 2021_summer/
+-rw-r--r--@  1 okazaki  staff   3.5M  9  1 16:04 JPS2021_Autumn_abe_v4.pdf
+-rw-r--r--@  1 okazaki  staff    29M 10  3 22:20 m2020_tanaka.pdf
+-rw-r--r--@  1 okazaki  staff    47M 10  3 22:27 最終版20210129.pdf
+-rw-r--r--@  1 okazaki  staff    31M 10  4 01:08 kobayashi_mt.pdf
+drwxr-xr-x@ 16 okazaki  staff   512B 10 27 17:19 Mercury/
+-rw-r--r--   1 okazaki  staff     0B 11  5 14:50 remove.sh.save
+-rw-r--r--@  1 okazaki  staff   161K 11  7 18:13 vpn-applicationform.pdf
+drwxr-xr-x@ 16 okazaki  staff   512B 11 10 16:25 axi_chip2chip/
+-rw-r--r--   1 okazaki  staff   4.2K 11 16 11:16 remove.sh
+drwxr-xr-x@ 37 okazaki  staff   1.2K 11 16 13:57 m2021_okazaki/
+drwxr-xr-x@ 10 okazaki  staff   320B 11 16 20:23 zcu102/
+drwxr-xr-x@ 11 okazaki  staff   352B 11 17 16:56 progress/
+drwxr-xr-x@ 23 okazaki  staff   736B 11 18 20:35 endcapSL/
+-rw-r--r--@  1 okazaki  staff    32K 11 19 11:04 .DS_Store
+drwxr-xr-x@ 13 okazaki  staff   416B 11 19 11:07 mpsoc-on-endcap-sl/
+
+my_project $ cd mpsoc-on-endcap-sl/
+/Users/okazaki/Desktop/my_palace/daigakuin/laboratory/my_project/mpsoc-on-endcap-sl
+
+mpsoc-on-endcap-sl $ sl
+
+mpsoc-on-endcap-sl $ ls
+total 56
+drwxr-xr-x@  4 okazaki  staff   128B 11  5 14:54 figures/
+-rw-r--r--   1 okazaki  staff   8.0K 11 16 11:15 pbcopy
+-rw-r--r--@  1 okazaki  staff    10K 11 16 13:11 .DS_Store
+-rw-r--r--   1 okazaki  staff   2.0K 11 17 20:54 .gitignore
+drwxr-xr-x@  7 okazaki  staff   224B 11 18 19:59 Mercury_XU5_PE1_Reference_Design/
+drwxr-xr-x@  7 okazaki  staff   224B 11 18 20:39 plnx_MercuryXU5_EndcapSL/
+drwxr-xr-x@ 10 okazaki  staff   320B 11 18 20:39 MercuryXU5_EndcapSL/
+drwxr-xr-x@ 24 okazaki  staff   768B 11 18 23:05 logs/
+drwxr-xr-x@ 15 okazaki  staff   480B 11 18 23:10 .git/
+drwxr-xr-x@  6 okazaki  staff   192B 11 19 11:07 apps/
+-rw-r--r--   1 okazaki  staff   641B 11 19 11:07 README.md
+
+mpsoc-on-endcap-sl $ cd si
+bash: cd: si: No such file or directory
+
+mpsoc-on-endcap-sl $ cd apps/si5345/
+/Users/okazaki/Desktop/my_palace/daigakuin/laboratory/my_project/mpsoc-on-endcap-sl/apps/si5345
+
+si5345 $ ks
+bash: ks: command not found
+
+si5345 $ ls
+total 432
+-rw-r--r--  1 okazaki  staff    11K 11 17 20:54 Si5345-RevD-5345-Project.okazaki.slabtimeproj
+-rw-r--r--  1 okazaki  staff   7.4K 11 17 20:54 Si5345-RevD-5345.okazaki-Registers.csv
+drwxr-xr-x@ 3 okazaki  staff    96B 11 18 13:03 test.dSYM/
+-rwxr-xr-x  1 okazaki  staff    49K 11 18 16:12 test*
+-rw-r--r--  1 okazaki  staff   268B 11 18 18:55 Makefile
+-rw-r--r--  1 okazaki  staff   127B 11 18 18:55 test.c
+-rw-r--r--  1 okazaki  staff    51K 11 18 20:39 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r--  1 okazaki  staff    30B 11 18 22:26 i2cdump.sh
+-rwxr-xr-x  1 okazaki  staff    11K 11 19 11:05 Si5345-RevD-5345-Project.okazaki_2.slabtimeproj*
+-rwxr-xr-x  1 okazaki  staff    51K 11 19 11:06 Si5345-RevD-5345.okazaki-Registers_2.h*
+-rw-r--r--  1 okazaki  staff    13K 11 19 11:07 si5345.c
+
+si5345 $ scp si5345.c Si5345-RevD-5345.okazaki-Registers_2.h root@sl-xu5-eth0-01.kek.jp:~/apps/si5345/.
+root@sl-xu5-eth0-01.kek.jp's password:
+si5345.c                             100%   13KB   2.9MB/s   00:00
+Si5345-RevD-5345.okazaki-Registers_2 100%   51KB   6.1MB/s   00:00
+
+si5345 $ ssh root@sl-xu5-eth0-01.kek.jp
+root@sl-xu5-eth0-01.kek.jp's password:
+Last login: Thu Nov 18 22:32:47 2021 from atlas-muon-r01.kek.jp
+(sl-xu5-eth0-01) ~ #
+
+(sl-xu5-eth0-01) ~ #
+
+(sl-xu5-eth0-01) ~ # script ~/logs/2021-11-19-11-11.log
+スクリプトを開始しました、ファイルは /root/logs/2021-11-19-11-11.log です
+(sl-xu5-eth0-01) ~ # cd apps/si5345/
+/root/apps/si5345
+
+(sl-xu5-eth0-01) si5345 # ls
+合計 172K
+-rw-r--r-- 1 root root 7.4K 11月 17 22:11 Si5345-RevD-5345.okazaki-Registers.csv
+-rw-r--r-- 1 root root   30 11月 18 22:35 i2cdump.sh
+-rw-r--r-- 1 root root  127 11月 18 22:35 test.c
+-rw-r--r-- 1 root root  51K 11月 18 22:35 Si5345-RevD-5345.okazaki-Registers.h
+-rw-r--r-- 1 root root  268 11月 18 22:35 Makefile
+-rwxr-xr-x 1 root root  76K 11月 18 22:35 si5345*
+-rw-r--r-- 1 root root  13K 11月 19 11:10 si5345.c
+-rwxr-xr-x 1 root root  51K 11月 19 11:10 Si5345-RevD-5345.okazaki-Registers_2.h*
+
+(sl-xu5-eth0-01) si5345 # make si5345
+gcc -std=c99 -D _BSD_SOURCE -Wall -g -O0 si5345.c -o si5345
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --write-all
+DO NOT STOP THIS PROCESS BY CTRL-C!
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(000/525) Register 0x0B24: 0xC0 written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(001/525) Register 0x0B25: 0x00 written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(002/525) Register 0x0540: 0x01 written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(003/525) Register 0x0006: 0x00 written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(004/525) Register 0x0007: 0x00 written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(005/525) Register 0x0008: 0x00 written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(006/525) Register 0x000B: 0x68 written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(007/525) Register 0x0016: 0x02 written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(008/525) Register 0x0017: 0xDC written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(009/525) Register 0x0018: 0xD5 written
+DO NOT STOP THIS PROCESS BY CTRL-C!
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(010/525) Register 0x0019: 0xDD written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(011/525) Register 0x001A: 0xDF written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+(012/525) Register 0x002B: 0x02 written
+sh: 0 行: source: i2cdump.sh: ファイルが見つかりません
+i2c-write operation failed: No such device or address
+(013/525) Failed to write 0x0A at reg address 0x002C.
+Couldn't write data 0x0A at reg address 0x002C.
+
+(sl-xu5-eth0-01) si5345 # make si5345
+gcc -std=c99 -D _BSD_SOURCE -Wall -g -O0 si5345.c -o si5345
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --write-all
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(000/525) Register 0x0B24: 0xC0 written
+(001/525) Register 0x0B25: 0x00 written
+(002/525) Register 0x0540: 0x01 written
+(003/525) Register 0x0006: 0x00 written
+(004/525) Register 0x0007: 0x00 written
+(005/525) Register 0x0008: 0x00 written
+(006/525) Register 0x000B: 0x68 written
+(007/525) Register 0x0016: 0x02 written
+(008/525) Register 0x0017: 0xDC written
+(009/525) Register 0x0018: 0xD5 written
+DO NOT STOP THIS PROCESS BY CTRL-C!
+(010/525) Register 0x0019: 0xDD written
+(011/525) Register 0x001A: 0xDF written
+(012/525) Register 0x002B: 0x02 written
+i2c-write operation failed: No such device or address
+(013/525) Failed to write 0x0A at reg address 0x002C.
+Couldn't write data 0x0A at reg address 0x002C.
+
+(sl-xu5-eth0-01) si5345 # i2cdump -y 4 0x68
+No size specified (using byte-data access)
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 00 00 00 00 00 68 c9 50 0f ff    ?.ES??.....h?P?.
+10: 00 df ff 2f ff 01 00 00 00 00 df 00 00 00 00 00    .?./.?....?.....
+20: 00 0f 00 0b 0b 00 00 00 00 00 00 00 00 00 00 00    .?.??...........
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05    ...............?
+40: 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 b0 25 69 34 00 00 00    .......?.?%i4...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0f df ff 2f 20 00 00 00 0f 00    ......??./ ...?.
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+i2c-read operation failed: Connection timed out
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xD9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xD9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # i2cdump -y 4 0x68
+No size specified (using byte-data access)
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef
+00: 05 00 45 53 01 03 00 00 00 00 00 00 c9 50 0f ff    ?.ES??......?P?.
+10: 00 ff ff 2f ff 01 00 00 00 00 df 00 00 00 00 00    .../.?....?.....
+20: 00 0f 00 0b 0b 00 00 00 00 00 00 00 00 00 00 00    .?.??...........
+30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05    ...............?
+40: 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+50: 0f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ?...............
+60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+b0: 00 00 00 00 00 00 00 01 00 46 11 1e 21 00 00 00    .......?.F??!...
+c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
+e0: 00 00 03 00 00 01 00 00 00 00 00 00 00 00 00 00    ..?..?..........
+f0: 00 00 00 00 00 00 0f ff ff 2f 20 00 00 00 0f 00    ......?../ ...?.
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xD9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xD9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000c
+reg_addr = 0x000C,      value = 0xC9
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000f
+reg_addr = 0x000F,      value = 0xFF
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x000f
+reg_addr = 0x000F,      value = 0xFF
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x0004
+i2c-read operation failed: Connection timed out
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x0004
+reg_addr = 0x0004,      value = 0x01
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x0004
+reg_addr = 0x0004,      value = 0x01
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -l
+i2c-3   i2c             i2c-0-mux (chan_id 2)                   I2C adapter
+i2c-1   i2c             i2c-0-mux (chan_id 0)                   I2C adapter
+i2c-8   i2c             i2c-0-mux (chan_id 7)                   I2C adapter
+i2c-6   i2c             i2c-0-mux (chan_id 5)                   I2C adapter
+i2c-4   i2c             i2c-0-mux (chan_id 3)                   I2C adapter
+i2c-2   i2c             i2c-0-mux (chan_id 1)                   I2C adapter
+i2c-0   i2c             Cadence I2C at ff020000                 I2C adapter
+i2c-7   i2c             i2c-0-mux (chan_id 6)                   I2C adapter
+i2c-5   i2c             i2c-0-mux (chan_id 4)                   I2C adapter
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x0004
+reg_addr = 0x0004,      value = 0x01
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x0004
+reg_addr = 0x0004,      value = 0x01
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read --address=0x0004
+reg_addr = 0x0004,      value = 0x01
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --write --address=0x2c --data=0xa
+Register 0x002C: 0x0A written
+Wrote reg_addr = 0x002C,        value = 0x0A
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y 0
+Error: Can't use SMBus Quick Write command on this bus
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y -r  0
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- --
+70: UU -- -- -- -- -- -- --
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y -r 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- --
+70: UU -- -- -- -- -- -- --
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y -r 2
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: UU -- -- -- -- -- -- --
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y -r 3
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- 48 -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- --
+70: UU -- -- -- -- -- -- --
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y -r 4
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- --
+70: UU -- -- -- -- -- -- --
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y -r 5
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- --
+70: UU -- -- -- -- -- -- --
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y -r 6
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- 4c -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- --
+70: UU -- -- -- -- -- -- --
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y -r 7
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- 4c -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: UU -- -- -- -- -- -- --
+
+(sl-xu5-eth0-01) si5345 # i2cdetect -y -r 8
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- --
+70: UU -- -- -- -- -- -- --
+
+(sl-xu5-eth0-01) si5345 # client_loop: send disconnect: Broken pipe
+
+si5345 $ ssh root@sl-xu5-eth0-01.kek.jp
+root@sl-xu5-eth0-01.kek.jp's password:
+Last login: Fri Nov 19 13:52:09 2021 from atlas-muon-r01.kek.jp
+(sl-xu5-eth0-01) ~ #
+
+(sl-xu5-eth0-01) ~ #
+
+(sl-xu5-eth0-01) ~ # cd apps/si5345/
+/root/apps/si5345
+
+(sl-xu5-eth0-01) si5345 # ./si5345 --read-all
+(000/525) Register 0x0B24: 0xC3 != 0xC0
+(001/525) Register 0x0B25: 0x02 != 0x00
+(002/525) Register 0x0540: 0x00 != 0x01
+(003/525) Register 0x0006: 0x00
+(004/525) Register 0x0007: 0x00
+(005/525) Register 0x0008: 0x00
+(006/525) Register 0x000B: 0x68
+(007/525) Register 0x0016: 0x02
+(008/525) Register 0x0017: 0xDC
+(009/525) Register 0x0018: 0xD5
+(010/525) Register 0x0019: 0xDD
+(011/525) Register 0x001A: 0xDF
+(012/525) Register 0x002B: 0x02
+(013/525) Register 0x002C: 0x0A
+(014/525) Register 0x002D: 0x44
+(015/525) Register 0x002E: 0x00
+(016/525) Register 0x002F: 0x00
+(017/525) Register 0x0030: 0x44
+(018/525) Register 0x0031: 0x00
+(019/525) Register 0x0032: 0x00
+(020/525) Register 0x0033: 0x00
+(021/525) Register 0x0034: 0x44
+(022/525) Register 0x0035: 0x00
+(023/525) Register 0x0036: 0x00
+(024/525) Register 0x0037: 0x00
+(025/525) Register 0x0038: 0x44
+(026/525) Register 0x0039: 0x00
+(027/525) Register 0x003A: 0x00
+(028/525) Register 0x003B: 0x00
+(029/525) Register 0x003C: 0x44
+(030/525) Register 0x003D: 0x00
+(031/525) Register 0x003F: 0x22
+(032/525) Register 0x0040: 0x04
+(033/525) Register 0x0041: 0x00
+(034/525) Register 0x0042: 0x0C
+(035/525) Register 0x0043: 0x00
+(036/525) Register 0x0044: 0x0C
+(037/525) Register 0x0045: 0x0C
+(038/525) Register 0x0046: 0x00
+(039/525) Register 0x0047: 0x32
+(040/525) Register 0x0048: 0x00
+(041/525) Register 0x0049: 0x00
+(042/525) Register 0x004A: 0x00
+(043/525) Register 0x004B: 0x32
+(044/525) Register 0x004C: 0x00
+(045/525) Register 0x004D: 0x00
+(046/525) Register 0x004E: 0x50
+(047/525) Register 0x004F: 0x00
+(048/525) Register 0x0050: 0x07
+(049/525) Register 0x0051: 0x00
+(050/525) Register 0x0052: 0x03
+(051/525) Register 0x0053: 0x00
+(052/525) Register 0x0054: 0x00
+(053/525) Register 0x0055: 0x00
+(054/525) Register 0x0056: 0x03
+(055/525) Register 0x0057: 0x00
+(056/525) Register 0x0058: 0x00
+(057/525) Register 0x0059: 0x04
+(058/525) Register 0x005A: 0x00
+(059/525) Register 0x005B: 0x00
+(060/525) Register 0x005C: 0x00
+(061/525) Register 0x005D: 0x00
+(062/525) Register 0x005E: 0x31
+(063/525) Register 0x005F: 0xC1
+(064/525) Register 0x0060: 0xD5
+(065/525) Register 0x0061: 0x00
+(066/525) Register 0x0062: 0x00
+(067/525) Register 0x0063: 0x00
+(068/525) Register 0x0064: 0x00
+(069/525) Register 0x0065: 0x00
+(070/525) Register 0x0066: 0x00
+(071/525) Register 0x0067: 0x00
+(072/525) Register 0x0068: 0x00
+(073/525) Register 0x0069: 0x00
+(074/525) Register 0x0092: 0x02
+(075/525) Register 0x0093: 0xA0
+(076/525) Register 0x0095: 0x00
+(077/525) Register 0x0096: 0x80
+(078/525) Register 0x0098: 0x60
+(079/525) Register 0x009A: 0x02
+(080/525) Register 0x009B: 0x60
+(081/525) Register 0x009D: 0x00
+(082/525) Register 0x009E: 0x40
+(083/525) Register 0x00A0: 0x20
+(084/525) Register 0x00A2: 0x00
+(085/525) Register 0x00A9: 0x08
+(086/525) Register 0x00AA: 0x0C
+(087/525) Register 0x00AB: 0x00
+(088/525) Register 0x00AC: 0x00
+(089/525) Register 0x00E5: 0x00
+(090/525) Register 0x00EA: 0x01
+(091/525) Register 0x00EB: 0x0C
+(092/525) Register 0x00EC: 0x00
+(093/525) Register 0x00ED: 0x00
+(094/525) Register 0x0102: 0x00 != 0x01
+(095/525) Register 0x0108: 0x01
+(096/525) Register 0x0109: 0x09
+(097/525) Register 0x010A: 0x3B
+(098/525) Register 0x010B: 0x28
+(099/525) Register 0x010D: 0x06
+(100/525) Register 0x010E: 0x09
+(101/525) Register 0x010F: 0x3E
+(102/525) Register 0x0110: 0x18
+(103/525) Register 0x0112: 0x01
+(104/525) Register 0x0113: 0x09
+(105/525) Register 0x0114: 0x3B
+(106/525) Register 0x0115: 0x28
+(107/525) Register 0x0117: 0x06
+(108/525) Register 0x0118: 0x09
+(109/525) Register 0x0119: 0x3E
+(110/525) Register 0x011A: 0x18
+(111/525) Register 0x011C: 0x01
+(112/525) Register 0x011D: 0x09
+(113/525) Register 0x011E: 0x3B
+(114/525) Register 0x011F: 0x28
+(115/525) Register 0x0121: 0x01
+(116/525) Register 0x0122: 0x09
+(117/525) Register 0x0123: 0x3B
+(118/525) Register 0x0124: 0x28
+(119/525) Register 0x0126: 0x01
+(120/525) Register 0x0127: 0x09
+(121/525) Register 0x0128: 0x3B
+(122/525) Register 0x0129: 0x28
+(123/525) Register 0x012B: 0x01
+(124/525) Register 0x012C: 0x09
+(125/525) Register 0x012D: 0x3B
+(126/525) Register 0x012E: 0x28
+(127/525) Register 0x0130: 0x01
+(128/525) Register 0x0131: 0x09
+(129/525) Register 0x0132: 0x3B
+(130/525) Register 0x0133: 0x28
+(131/525) Register 0x013A: 0x02
+(132/525) Register 0x013B: 0x09
+(133/525) Register 0x013C: 0x3B
+(134/525) Register 0x013D: 0x28
+(135/525) Register 0x013F: 0x00
+(136/525) Register 0x0140: 0x08
+(137/525) Register 0x0141: 0x40
+(138/525) Register 0x0142: 0xFF
+(139/525) Register 0x0206: 0x00
+(140/525) Register 0x0208: 0x00
+(141/525) Register 0x0209: 0x00
+(142/525) Register 0x020A: 0x00
+(143/525) Register 0x020B: 0x00
+(144/525) Register 0x020C: 0x00
+(145/525) Register 0x020D: 0x00
+(146/525) Register 0x020E: 0x00
+(147/525) Register 0x020F: 0x00
+(148/525) Register 0x0210: 0x00
+(149/525) Register 0x0211: 0x00
+(150/525) Register 0x0212: 0x19
+(151/525) Register 0x0213: 0x00
+(152/525) Register 0x0214: 0x00
+(153/525) Register 0x0215: 0x00
+(154/525) Register 0x0216: 0x00
+(155/525) Register 0x0217: 0x00
+(156/525) Register 0x0218: 0x01
+(157/525) Register 0x0219: 0x00
+(158/525) Register 0x021A: 0x00
+(159/525) Register 0x021B: 0x00
+(160/525) Register 0x021C: 0x00
+(161/525) Register 0x021D: 0x00
+(162/525) Register 0x021E: 0x00
+(163/525) Register 0x021F: 0x00
+(164/525) Register 0x0220: 0x00
+(165/525) Register 0x0221: 0x00
+(166/525) Register 0x0222: 0x00
+(167/525) Register 0x0223: 0x00
+(168/525) Register 0x0224: 0x00
+(169/525) Register 0x0225: 0x00
+(170/525) Register 0x0226: 0x19
+(171/525) Register 0x0227: 0x00
+(172/525) Register 0x0228: 0x00
+(173/525) Register 0x0229: 0x00
+(174/525) Register 0x022A: 0x00
+(175/525) Register 0x022B: 0x00
+(176/525) Register 0x022C: 0x01
+(177/525) Register 0x022D: 0x00
+(178/525) Register 0x022E: 0x00
+(179/525) Register 0x022F: 0x00
+(180/525) Register 0x0231: 0x0B
+(181/525) Register 0x0232: 0x0B
+(182/525) Register 0x0233: 0x0B
+(183/525) Register 0x0234: 0x0B
+(184/525) Register 0x0235: 0x00
+(185/525) Register 0x0236: 0x00
+(186/525) Register 0x0237: 0x40
+(187/525) Register 0x0238: 0xFA
+(188/525) Register 0x0239: 0x11
+(189/525) Register 0x023A: 0x01
+(190/525) Register 0x023B: 0x00
+(191/525) Register 0x023C: 0x00
+(192/525) Register 0x023D: 0x00
+(193/525) Register 0x023E: 0xFA
+(194/525) Register 0x024A: 0x00
+(195/525) Register 0x024B: 0x00
+(196/525) Register 0x024C: 0x00
+(197/525) Register 0x024D: 0x00
+(198/525) Register 0x024E: 0x00
+(199/525) Register 0x024F: 0x00
+(200/525) Register 0x0250: 0x00
+(201/525) Register 0x0251: 0x00
+(202/525) Register 0x0252: 0x00
+(203/525) Register 0x0253: 0x00
+(204/525) Register 0x0254: 0x00
+(205/525) Register 0x0255: 0x00
+(206/525) Register 0x0256: 0x00
+(207/525) Register 0x0257: 0x00
+(208/525) Register 0x0258: 0x00
+(209/525) Register 0x0259: 0x00
+(210/525) Register 0x025A: 0x00
+(211/525) Register 0x025B: 0x00
+(212/525) Register 0x025C: 0x00
+(213/525) Register 0x025D: 0x00
+(214/525) Register 0x025E: 0x00
+(215/525) Register 0x025F: 0x00
+(216/525) Register 0x0260: 0x00
+(217/525) Register 0x0261: 0x00
+(218/525) Register 0x0262: 0x00
+(219/525) Register 0x0263: 0x00
+(220/525) Register 0x0264: 0x00
+(221/525) Register 0x0268: 0x05
+(222/525) Register 0x0269: 0x00
+(223/525) Register 0x026A: 0x00
+(224/525) Register 0x026B: 0x35
+(225/525) Register 0x026C: 0x33
+(226/525) Register 0x026D: 0x34
+(227/525) Register 0x026E: 0x35
+(228/525) Register 0x026F: 0x00
+(229/525) Register 0x0270: 0x00
+(230/525) Register 0x0271: 0x00
+(231/525) Register 0x0272: 0x00
+(232/525) Register 0x028A: 0x00
+(233/525) Register 0x028B: 0x00
+(234/525) Register 0x028C: 0x00
+(235/525) Register 0x028D: 0x00
+(236/525) Register 0x028E: 0x00
+(237/525) Register 0x028F: 0x00
+(238/525) Register 0x0290: 0x00
+(239/525) Register 0x0291: 0x00
+(240/525) Register 0x0294: 0x80
+(241/525) Register 0x0296: 0x00
+(242/525) Register 0x0297: 0x02
+(243/525) Register 0x0299: 0x02
+(244/525) Register 0x029D: 0x70
+(245/525) Register 0x029E: 0x00
+(246/525) Register 0x029F: 0x00
+(247/525) Register 0x02A9: 0x99
+(248/525) Register 0x02AA: 0x00
+(249/525) Register 0x02AB: 0x00
+(250/525) Register 0x02B7: 0xFF
+(251/525) Register 0x0302: 0x00
+(252/525) Register 0x0303: 0x00
+(253/525) Register 0x0304: 0x00
+(254/525) Register 0x0305: 0x00
+(255/525) Register 0x0306: 0x00 != 0x0E
+(256/525) Register 0x0307: 0x00
+(257/525) Register 0x0308: 0x00
+(258/525) Register 0x0309: 0x00
+(259/525) Register 0x030A: 0x00
+(260/525) Register 0x030B: 0x80
+(261/525) Register 0x030C: 0x00
+(262/525) Register 0x030D: 0x00
+(263/525) Register 0x030E: 0x00
+(264/525) Register 0x030F: 0x00
+(265/525) Register 0x0310: 0x00
+(266/525) Register 0x0311: 0x00
+(267/525) Register 0x0312: 0x00
+(268/525) Register 0x0313: 0x00
+(269/525) Register 0x0314: 0x00
+(270/525) Register 0x0315: 0x00
+(271/525) Register 0x0316: 0x00
+(272/525) Register 0x0317: 0x00
+(273/525) Register 0x0318: 0x00
+(274/525) Register 0x0319: 0x00
+(275/525) Register 0x031A: 0x00
+(276/525) Register 0x031B: 0x00
+(277/525) Register 0x031C: 0x00
+(278/525) Register 0x031D: 0x00
+(279/525) Register 0x031E: 0x00
+(280/525) Register 0x031F: 0x00
+(281/525) Register 0x0320: 0x00
+(282/525) Register 0x0321: 0x00
+(283/525) Register 0x0322: 0x00
+(284/525) Register 0x0323: 0x00
+(285/525) Register 0x0324: 0x00
+(286/525) Register 0x0325: 0x00
+(287/525) Register 0x0326: 0x00
+(288/525) Register 0x0327: 0x00
+(289/525) Register 0x0328: 0x00
+(290/525) Register 0x0329: 0x00
+(291/525) Register 0x032A: 0x00
+(292/525) Register 0x032B: 0x00
+(293/525) Register 0x032C: 0x00
+(294/525) Register 0x032D: 0x00
+(295/525) Register 0x032E: 0x00
+(296/525) Register 0x032F: 0x00
+(297/525) Register 0x0330: 0x00
+(298/525) Register 0x0331: 0x00
+(299/525) Register 0x0332: 0x00
+(300/525) Register 0x0333: 0x00
+(301/525) Register 0x0334: 0x00
+(302/525) Register 0x0335: 0x00
+(303/525) Register 0x0336: 0x00
+(304/525) Register 0x0337: 0x00
+(305/525) Register 0x0338: 0x00
+(306/525) Register 0x0339: 0x1F
+(307/525) Register 0x033B: 0x00
+(308/525) Register 0x033C: 0x00
+(309/525) Register 0x033D: 0x00
+(310/525) Register 0x033E: 0x00
+(311/525) Register 0x033F: 0x00
+(312/525) Register 0x0340: 0x00
+(313/525) Register 0x0341: 0x00
+(314/525) Register 0x0342: 0x00
+(315/525) Register 0x0343: 0x00
+(316/525) Register 0x0344: 0x00
+(317/525) Register 0x0345: 0x00
+(318/525) Register 0x0346: 0x00
+(319/525) Register 0x0347: 0x00
+(320/525) Register 0x0348: 0x00
+(321/525) Register 0x0349: 0x00
+(322/525) Register 0x034A: 0x00
+(323/525) Register 0x034B: 0x00
+(324/525) Register 0x034C: 0x00
+(325/525) Register 0x034D: 0x00
+(326/525) Register 0x034E: 0x00
+(327/525) Register 0x034F: 0x00
+(328/525) Register 0x0350: 0x00
+(329/525) Register 0x0351: 0x00
+(330/525) Register 0x0352: 0x00
+(331/525) Register 0x0353: 0x00
+(332/525) Register 0x0354: 0x00
+(333/525) Register 0x0355: 0x00
+(334/525) Register 0x0356: 0x00
+(335/525) Register 0x0357: 0x00
+(336/525) Register 0x0358: 0x00
+(337/525) Register 0x0359: 0x00
+(338/525) Register 0x035A: 0x00
+(339/525) Register 0x035B: 0x00
+(340/525) Register 0x035C: 0x00
+(341/525) Register 0x035D: 0x00
+(342/525) Register 0x035E: 0x00
+(343/525) Register 0x035F: 0x00
+(344/525) Register 0x0360: 0x00
+(345/525) Register 0x0361: 0x00
+(346/525) Register 0x0362: 0x00
+(347/525) Register 0x0487: 0x03
+(348/525) Register 0x0508: 0x14
+(349/525) Register 0x0509: 0x29
+(350/525) Register 0x050A: 0x06
+(351/525) Register 0x050B: 0x05
+(352/525) Register 0x050C: 0x3F
+(353/525) Register 0x050D: 0x0F
+(354/525) Register 0x050E: 0x14
+(355/525) Register 0x050F: 0x2B
+(356/525) Register 0x0510: 0x06
+(357/525) Register 0x0511: 0x05
+(358/525) Register 0x0512: 0x3F
+(359/525) Register 0x0513: 0x0F
+(360/525) Register 0x0515: 0x00
+(361/525) Register 0x0516: 0x00
+(362/525) Register 0x0517: 0x00
+(363/525) Register 0x0518: 0x00
+(364/525) Register 0x0519: 0x00 != 0x48
+(365/525) Register 0x051A: 0x00 != 0x03
+(366/525) Register 0x051B: 0x00
+(367/525) Register 0x051C: 0x00
+(368/525) Register 0x051D: 0x00
+(369/525) Register 0x051E: 0x00
+(370/525) Register 0x051F: 0x80
+(371/525) Register 0x0521: 0x2B
+(372/525) Register 0x052A: 0x03
+(373/525) Register 0x052B: 0x01
+(374/525) Register 0x052C: 0x87
+(375/525) Register 0x052D: 0x03
+(376/525) Register 0x052E: 0x19
+(377/525) Register 0x052F: 0x19
+(378/525) Register 0x0531: 0x00
+(379/525) Register 0x0532: 0x10
+(380/525) Register 0x0533: 0x04
+(381/525) Register 0x0534: 0x00
+(382/525) Register 0x0535: 0x00
+(383/525) Register 0x0536: 0x00
+(384/525) Register 0x0537: 0x00
+(385/525) Register 0x0538: 0x00
+(386/525) Register 0x0539: 0x00
+(387/525) Register 0x053A: 0x02
+(388/525) Register 0x053B: 0x03
+(389/525) Register 0x053C: 0x00
+(390/525) Register 0x053D: 0x0B
+(391/525) Register 0x053E: 0x06
+(392/525) Register 0x0589: 0x0E
+(393/525) Register 0x058A: 0x00
+(394/525) Register 0x059B: 0xF8
+(395/525) Register 0x059D: 0x14
+(396/525) Register 0x059E: 0x2B
+(397/525) Register 0x059F: 0x06
+(398/525) Register 0x05A0: 0x05
+(399/525) Register 0x05A1: 0x3F
+(400/525) Register 0x05A2: 0x0F
+(401/525) Register 0x05A6: 0x03
+(402/525) Register 0x0802: 0x00 != 0x35
+(403/525) Register 0x0803: 0x00 != 0x05
+(404/525) Register 0x0804: 0x00
+(405/525) Register 0x0805: 0x00
+(406/525) Register 0x0806: 0x00
+(407/525) Register 0x0807: 0x00
+(408/525) Register 0x0808: 0x00
+(409/525) Register 0x0809: 0x00
+(410/525) Register 0x080A: 0x00
+(411/525) Register 0x080B: 0x00
+(412/525) Register 0x080C: 0x00
+(413/525) Register 0x080D: 0x00
+(414/525) Register 0x080E: 0x00
+(415/525) Register 0x080F: 0x00
+(416/525) Register 0x0810: 0x00
+(417/525) Register 0x0811: 0x00
+(418/525) Register 0x0812: 0x00
+(419/525) Register 0x0813: 0x00
+(420/525) Register 0x0814: 0x00
+(421/525) Register 0x0815: 0x00
+(422/525) Register 0x0816: 0x00
+(423/525) Register 0x0817: 0x00
+(424/525) Register 0x0818: 0x00
+(425/525) Register 0x0819: 0x00
+(426/525) Register 0x081A: 0x00
+(427/525) Register 0x081B: 0x00
+(428/525) Register 0x081C: 0x00
+(429/525) Register 0x081D: 0x00
+(430/525) Register 0x081E: 0x00
+(431/525) Register 0x081F: 0x00
+(432/525) Register 0x0820: 0x00
+(433/525) Register 0x0821: 0x00
+(434/525) Register 0x0822: 0x00
+(435/525) Register 0x0823: 0x00
+(436/525) Register 0x0824: 0x00
+(437/525) Register 0x0825: 0x00
+(438/525) Register 0x0826: 0x00
+(439/525) Register 0x0827: 0x00
+(440/525) Register 0x0828: 0x00
+(441/525) Register 0x0829: 0x00
+(442/525) Register 0x082A: 0x00
+(443/525) Register 0x082B: 0x00
+(444/525) Register 0x082C: 0x00
+(445/525) Register 0x082D: 0x00
+(446/525) Register 0x082E: 0x00
+(447/525) Register 0x082F: 0x00
+(448/525) Register 0x0830: 0x00
+(449/525) Register 0x0831: 0x00
+(450/525) Register 0x0832: 0x00
+(451/525) Register 0x0833: 0x00
+(452/525) Register 0x0834: 0x00
+(453/525) Register 0x0835: 0x00
+(454/525) Register 0x0836: 0x00
+(455/525) Register 0x0837: 0x00
+(456/525) Register 0x0838: 0x00
+(457/525) Register 0x0839: 0x00
+(458/525) Register 0x083A: 0x00
+(459/525) Register 0x083B: 0x00
+(460/525) Register 0x083C: 0x00
+(461/525) Register 0x083D: 0x00
+(462/525) Register 0x083E: 0x00
+(463/525) Register 0x083F: 0x00
+(464/525) Register 0x0840: 0x00
+(465/525) Register 0x0841: 0x00
+(466/525) Register 0x0842: 0x00
+(467/525) Register 0x0843: 0x00
+(468/525) Register 0x0844: 0x00
+(469/525) Register 0x0845: 0x00
+(470/525) Register 0x0846: 0x00
+(471/525) Register 0x0847: 0x00
+(472/525) Register 0x0848: 0x00
+(473/525) Register 0x0849: 0x00
+(474/525) Register 0x084A: 0x00
+(475/525) Register 0x084B: 0x00
+(476/525) Register 0x084C: 0x00
+(477/525) Register 0x084D: 0x00
+(478/525) Register 0x084E: 0x00
+(479/525) Register 0x084F: 0x00
+(480/525) Register 0x0850: 0x00
+(481/525) Register 0x0851: 0x00
+(482/525) Register 0x0852: 0x00
+(483/525) Register 0x0853: 0x00
+(484/525) Register 0x0854: 0x00
+(485/525) Register 0x0855: 0x00
+(486/525) Register 0x0856: 0x00
+(487/525) Register 0x0857: 0x00
+(488/525) Register 0x0858: 0x00
+(489/525) Register 0x0859: 0x00
+(490/525) Register 0x085A: 0x00
+(491/525) Register 0x085B: 0x00
+(492/525) Register 0x085C: 0x00
+(493/525) Register 0x085D: 0x00
+(494/525) Register 0x085E: 0x00
+(495/525) Register 0x085F: 0x00
+(496/525) Register 0x0860: 0x00
+(497/525) Register 0x0861: 0x00
+(498/525) Register 0x090E: 0x02
+(499/525) Register 0x0943: 0x01
+(500/525) Register 0x0949: 0x0A
+(501/525) Register 0x094A: 0x0A
+(502/525) Register 0x094E: 0x49
+(503/525) Register 0x094F: 0x02
+(504/525) Register 0x095E: 0x00
+(505/525) Register 0x0A02: 0x00
+(506/525) Register 0x0A03: 0x00 != 0x01
+(507/525) Register 0x0A04: 0x00 != 0x01
+(508/525) Register 0x0A05: 0x00 != 0x01
+(509/525) Register 0x0A14: 0x00
+(510/525) Register 0x0A1A: 0x00
+(511/525) Register 0x0A20: 0x00
+(512/525) Register 0x0A26: 0x00
+(513/525) Register 0x0A2C: 0x00
+(514/525) Register 0x0B44: 0x2F
+(515/525) Register 0x0B46: 0x00
+(516/525) Register 0x0B47: 0x05
+(517/525) Register 0x0B48: 0x05
+(518/525) Register 0x0B4A: 0x1E
+(519/525) Register 0x0B57: 0x0E
+(520/525) Register 0x0B58: 0x01
+(521/525) Register 0x0514: 0x00 != 0x01
+(522/525) Register 0x001C: 0x00 != 0x01
+(523/525) Register 0x0540: 0x00
+(524/525) Register 0x0B24: 0xC3
+(525/525) Register 0x0B25: 0x02
+Summary: Successful to run read_all().
+
+(sl-xu5-eth0-01) si5345 # client_loop: send disconnect: Broken pipe
+
+si5345 $
