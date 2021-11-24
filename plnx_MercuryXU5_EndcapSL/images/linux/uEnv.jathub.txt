@@ -1,0 +1,23 @@
+# JATHub uEnv.txt example
+
+bootargs=console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio
+
+hostname=jat18func53
+
+macaddr_eth0=00:0A:35:00:96:53
+ipaddr_eth0=130.87.243.146
+netmask_eth0=255.255.252.0
+
+#macaddr_eth1=00:0A:35:00:26:13
+#ipaddr_eth1=130.87.242.119
+#netmask_eth1=255.255.252.0
+
+gatewayip=130.87.240.1
+
+Ethernet_setting_eth0=setenv ethaddr $macaddr_eth0 && setenv bootargs ${bootargs} ip=${ipaddr_eth0}:${serverip}:${gatewayip}:${netmask_eth0}:${hostname}:eth0:off
+
+#Ethernet_setting_eth1=setenv eth1addr $macaddr_eth1 && setenv bootargs ${bootargs} ip=${ipaddr_eth1}:${serverip}:${gatewayip}:${netmask_eth1}:${hostname}:eth1:off
+
+uenvcmd=run Ethernet_setting_eth0
+#uenvcmd=run Ethernet_setting_eth1
+

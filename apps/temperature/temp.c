@@ -16,11 +16,17 @@
 
 static const uint8_t dev_addr = 0x4C;  // TMP431A slave address
 
+int set_pointer_register(char *dev_file, uint8_t reg_addr) {
+    return i2c_write(dev_file, 0x00, reg_addr);
+}
+
 int temp(char *dev_file, int time) {
     printf("Do not stop by CTRL-C!\n");
     uint8_t reg_addr;
     uint8_t data;
-    for (int i = 0; i < time; i++) { sleep(1); }
+    for (int i = 0; i < time; i++) {
+        if (i2c_read(dev_file, 0x)) sleep(1);
+    }
 }
 
 int main(int argc, char *argv[]) {
