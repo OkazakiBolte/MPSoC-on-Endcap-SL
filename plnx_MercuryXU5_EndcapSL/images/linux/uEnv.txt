@@ -28,6 +28,6 @@ eth1_autoconf=off
 
 # -------- #
 
-ethernet_setting=setenv ethaddr ${eth0_macaddr} && setenv bootargs ${bootargs} ip=${eth0_ipaddr}:${eth0_gatewayip}:${eth0_netmask}:${eth0_hostname}:${eth0_interface}:${eth0_autoconf} ${eth1_ipaddr}::${eth1_netmask}:${eth1_hostname}:${eth1_interface}:${eth1_autoconf} nameserver=${eth0_nameserver1} nameserver=${eth0_nameserver2}
+ethernet_setting=setenv ethaddr ${eth0_macaddr} && setenv eth1addr ${eth1_macaddr}  && setenv bootargs ${bootargs} ip=${eth0_ipaddr}:${eth0_gatewayip}:${eth0_netmask}:${eth0_hostname}:${eth0_interface}:${eth0_autoconf} ${eth1_ipaddr}::${eth1_netmask}:${eth1_hostname}:${eth1_interface}:${eth1_autoconf} nameserver=${eth0_nameserver1} nameserver=${eth0_nameserver2}
 
-uenvcmd=run ${ethernet_setting}
+uenvcmd=run ethernet_setting

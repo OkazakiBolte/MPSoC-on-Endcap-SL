@@ -8,36 +8,36 @@
 for boot_target in ${boot_targets};
 do
     if test "${boot_target}" = "jtag" ; then
-        echo "[Mercury XU5] JTAG scanning now... \n";
+        echo "[L0MuESL] JTAG scanning now...";
         @@KERNEL_BOOTCMD@@ @@KERNEL_LOAD_ADDRESS@@ @@RAMDISK_IMAGE_ADDRESS@@ @@DEVICETREE_ADDRESS@@
         exit;
     fi
-    echo "[Mercury XU5] Before SD card scanning... ";
+    echo "[L0MuESL] Before SD card scanning... ";
     if test "${boot_target}" = "mmc0" || test "${boot_target}" = "mmc1" ; then
-        echo "[Mercury XU5] SD card scanning now... \n"
+        echo "[L0MuESL] SD card scanning now..."
         if test -e mmc ${devnum}:${distro_bootpart} /uEnv.txt; then
-            echo "[Mercury XU5] Loading uEnv.txt in SD${devnum}... ";
+            echo "[L0MuESL] Loading uEnv.txt in SD${devnum}... ";
             load mmc ${devnum}:${distro_bootpart} 0x100000 uEnv.txt;
             env import -t 0x100000 $filesize;
             if test -n $uenvcmd; then
-                echo "[Mercury XU5] Loading u-boot environment by uenvcmd... ";
+                echo "[L0MuESL] Loading u-boot environment by uenvcmd... ";
                 run uenvcmd;
             else
-                echo "[Mercury XU5] Failed to load u-boot environment from uEnv.txt";
+                echo "[L0MuESL] Failed to load u-boot environment from uEnv.txt";
                 exit;
             fi
         else
-            echo "[Mercury XU5] Failed to find uEnv.txt in SD${devnum}";
+            echo "[L0MuESL] Failed to find uEnv.txt in SD${devnum}";
             exit;
         fi
         if test -e ${devtype} ${devnum}:${distro_bootpart} /@@FIT_IMAGE@@; then
-            echo "[Mercury XU5] SD card fatload now ... \n";
+            echo "[L0MuESL] SD card fatload now ...";
             fatload ${devtype} ${devnum}:${distro_bootpart} @@FIT_IMAGE_LOAD_ADDRESS@@ @@FIT_IMAGE@@;
-            echo "[Mercury XU5] SD card bootm command now... \n";
+            echo "[L0MuESL] SD card bootm command now...";
             bootm @@FIT_IMAGE_LOAD_ADDRESS@@;
-            echo "[Mercury XU5] Failed to load image.ub in SD card! XP";
+            echo "[L0MuESL] Failed to load image.ub in SD card! XP";
             exit;
-            echo "[Mercury XU5] Exit for loop... "
+            echo "[L0MuESL] Exit for loop... "
         fi
         if test -e ${devtype} ${devnum}:${distro_bootpart} /@@KERNEL_IMAGE@@; then
             fatload ${devtype} ${devnum}:${distro_bootpart} @@KERNEL_LOAD_ADDRESS@@ @@KERNEL_IMAGE@@;;
@@ -53,18 +53,18 @@ do
         @@KERNEL_BOOTCMD@@ @@KERNEL_LOAD_ADDRESS@@ - @@DEVICETREE_ADDRESS@@
         exit;
     fi
-    echo "[Mercury XU5] Before QSPI scanning... ";
+    echo "[L0MuESL] Before QSPI scanning... ";
     if test "${boot_target}" = "xspi0" || test "${boot_target}" = "qspi" || test "${boot_target}" = "qspi0"; then
-        echo "[Mercury XU5] QSPI flash scanning now... \n";
+        echo "[L0MuESL] QSPI flash scanning now...";
         sf probe 0 0 0;
         if test "@@QSPI_KERNEL_IMAGE@@" = "@@FIT_IMAGE@@"; then
-            echo "[Mercury XU5] QSPI sf read now... \n";
+            echo "[L0MuESL] QSPI sf read now...";
             sf read @@QSPI_FIT_IMAGE_LOAD_ADDRESS@@ @@QSPI_KERNEL_OFFSET@@ @@QSPI_FIT_IMAGE_SIZE@@;
-            echo "[Mercury XU5] QSPI bootm command now... \n";
+            echo "[L0MuESL] QSPI bootm command now...";
             bootm @@QSPI_FIT_IMAGE_LOAD_ADDRESS@@;
-            echo "[Mercury XU5] Failed to load image.ub in QSPI flash! XP\n";
+            echo "[L0MuESL] Failed to load image.ub in QSPI flash! XP\n";
             exit;
-            echo "[Mercury XU5] Exit for loop... ";
+            echo "[L0MuESL] Exit for loop... ";
         fi
         if test "@@QSPI_KERNEL_IMAGE@@" = "@@KERNEL_IMAGE@@"; then
             sf read @@KERNEL_LOAD_ADDRESS@@ @@QSPI_KERNEL_OFFSET@@ @@QSPI_KERNEL_SIZE@@;
