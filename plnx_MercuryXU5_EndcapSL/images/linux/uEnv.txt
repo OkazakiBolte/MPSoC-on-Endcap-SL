@@ -1,4 +1,4 @@
-bootargs=console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk0p2 rootfstype=ext4 rw rootwait earlyprintk
+bootargs=console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk1p2 rootfstype=ext4 rw rootwait earlyprintk
 
 # ---- ETH0 ---- #
 eth0_macaddr=ca:9f:1e:3a:b6:24
