@@ -12,7 +12,7 @@
 };
 
 &gem0 {
-	local-mac-address = [ca 9f 1e 3a b6 24];
+	local-mac-address = [];
 };
 
 &qspi {
