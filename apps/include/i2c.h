@@ -1,4 +1,5 @@
-int i2c_write(char *dev_file, uint8_t reg_addr, uint8_t data) {
+int i2c_write(const char* dev_file, const uint8_t dev_addr, uint8_t reg_addr,
+              uint8_t data) {
     /* ---- Open device file /dev/i2c-N ---- */
     int fd = open(dev_file, O_RDWR);
     if (fd == -1) {
@@ -37,7 +38,8 @@ int i2c_write(char *dev_file, uint8_t reg_addr, uint8_t data) {
     return 0;
 }
 
-int i2c_read(char *dev_file, uint8_t reg_addr, uint8_t *pdata) {
+int i2c_read(const char* dev_file, const uint8_t dev_addr, uint8_t reg_addr,
+             uint8_t* pdata) {
     /* ---- Open device file /dev/i2c-N ---- */
     int fd = open(dev_file, O_RDWR);
     if (fd == -1) {

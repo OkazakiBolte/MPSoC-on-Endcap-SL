@@ -35,4 +35,4 @@ eth0_setting=setenv ethaddr ${eth0_macaddr} && setenv bootargs ${bootargs} ip=${
 
 eth1_setting=setenv eth1addr ${eth1_macaddr} # && setenv bootargs ${bootargs} ip=${eth1_ipaddr}::${eth1_netmask}:${eth1_hostname}:${eth1_interface}:${eth1_autoconf} # Can
 
-uenvcmd=run eth0_setting ; run eth1_setting
+uenvcmd=run eth0_setting && run eth1_setting

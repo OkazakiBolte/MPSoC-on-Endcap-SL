@@ -99,6 +99,17 @@ set_property -dict {PACKAGE_PIN K5    IOSTANDARD LVCMOS18  } [get_ports {LED_N_t
 
 ## ✅ PS Ethernet (ETH0)
 ## ✅ **I<sup>2</sup>CでSi5345をコンフィグレーション**
+
+
+```bash
+petalinux-config -c u-boot
+```
+
+```
+Device Drivers ---> I2C Support --->
+
+```
+
 ## ⬜️ I<sup>2</sup>Cで温度センサを見る
 ## ✅ **PL Ethernet (ETH1)**
 ## ⬜️ Card Detectionの確認
