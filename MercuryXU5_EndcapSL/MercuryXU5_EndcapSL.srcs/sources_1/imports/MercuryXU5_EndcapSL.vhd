@@ -172,7 +172,7 @@ BEGIN
         FIRRST <= '1';
 
         -- FirFly module select (active-low)
-        FIRSEL <= (OTHERS => '0');
+        FIRSEL <= (OTHERS => '1');
 
         MDIO_mdio_iobuf : COMPONENT IOBUF
             PORT MAP(
