@@ -26,7 +26,7 @@ ENTITY MercuryXU5_EndcapSL IS
         -- RESETB for Si5345
         SIRST : OUT STD_LOGIC;
         -- RESETB for FIrFly modules
-        FIRRSR : OUT STD_LOGIC;
+        FIRRST : OUT STD_LOGIC;
         -- FirFly module select (active-low)
         FIRSEL : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
         -- 3-bit LED on the mezzanine
