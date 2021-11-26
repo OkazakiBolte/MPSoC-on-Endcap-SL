@@ -12,6 +12,7 @@
 -- And I add Enclustra_GMII2RGMII_ZU here as the reference design
 -- Mercury_XU5_PE1.vhd from Enclustra, for ETH1.
 -- https://github.com/enclustra/Mercury_XU5_PE1_Reference_Design.git
+-- K. Okazaki, ICEPP, University of Tokyo
 
 ---- Libraries ----
 LIBRARY IEEE;
@@ -24,6 +25,10 @@ ENTITY MercuryXU5_EndcapSL IS
     PORT (
         -- RESETB for Si5345
         SIRST : OUT STD_LOGIC;
+        -- RESETB for FIrFly modules
+        FIRRSR : OUT STD_LOGIC;
+        -- FirFly module select (active-low)
+        FIRSEL : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
         -- 3-bit LED on the mezzanine
         LED_N_tri_o : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
         -- PL_Gigabit_Ethernet
@@ -40,7 +45,7 @@ ENTITY MercuryXU5_EndcapSL IS
     );
 END MercuryXU5_EndcapSL;
 
-ARCHITECTURE STRUCTURE OF MercuryXU5_EndcapSL IS
+ARCHITECTURE RTL OF MercuryXU5_EndcapSL IS
 
     ---- Component declarations ----
     COMPONENT design_1 IS
@@ -162,7 +167,12 @@ BEGIN
             peripheral_reset => peripheral_reset
         );
 
-        SIRST <= NOT peripheral_reset(0);
+        -- resetb lines for peripherals on Endcap Sector Logic
+        SIRST <= '1';
+        FIRRST <= '1';
+
+        -- FirFly module select (active-low)
+        FIRSEL <= (OTHERS => '0');
 
         MDIO_mdio_iobuf : COMPONENT IOBUF
             PORT MAP(
@@ -210,4 +220,4 @@ BEGIN
 
             ETH1_RESET_N <= ETH_resetn;
 
-        END STRUCTURE;
+        END RTL;
