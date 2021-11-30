@@ -204,10 +204,14 @@ int main(int argc, char **argv) {
             case '?': fprintf(stderr, "usage: %s [-v]\n", *argv); return 1;
         }
 
-    // The original code for Zynq-7000 devices uses uio0, but for MPSoC devices,
-    // uio1 must be used.
     // https://support.xilinx.com/s/article/974879?language=en_US
-    fd_uio = open("/dev/uio1", O_RDWR);
+    // The tutorial above says: "The original code for Zynq-7000 devices uses
+    // uio0, but for MPSoC devices, uio1 must be used." But debug_bridge is
+    // actually allocated as uio0 in CentOS 7 at Mercury XU5 on Endcap SL V1.
+    // And xvcServer.c in the git repo
+    // https://github.com/Xilinx/XilinxVirtualCable
+    // also uses uio0. (K. Okazaki)
+    fd_uio = open("/dev/uio0", O_RDWR);
     if (fd_uio < 1) {
         fprintf(stderr, "Failed to Open UIO Device\n");
         return -1;
