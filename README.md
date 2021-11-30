@@ -14,8 +14,9 @@ Endcap Sector Logic v1
   - [✅ I<sup>2</sup>CでSi5345をコンフィグレーション](#-isup2supcでsi5345をコンフィグレーション)
   - [✅ I<sup>2</sup>Cで温度センサを見る](#-isup2supcで温度センサを見る)
   - [✅ PL Ethernet (ETH1)](#-pl-ethernet-eth1)
+    - [`uEnv.txt`の内容とETH0/1のMAC addr, IP addrの調査](#uenvtxtの内容とeth01のmac-addr-ip-addrの調査)
   - [⬜️ Card Detectionの確認](#️-card-detectionの確認)
-  - [⬜️ JTAG boot](#️-jtag-boot)
+  - [⬜️ JTAGからのMPSoC PLのプログラム](#️-jtagからのmpsoc-plのプログラム)
   - [⬜️ Xilinx Virtual Cable](#️-xilinx-virtual-cable)
   - [How to set MAC address for PetaLinux OS](#how-to-set-mac-address-for-petalinux-os)
 
@@ -235,14 +236,36 @@ Mercury XU5 PE1 reference designのblock diagram
 ## ✅ I<sup>2</sup>Cで温度センサを見る
 ## ✅ PL Ethernet (ETH1)
 
-Hiarachy
+ヒエラルキー
 
 - `./MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/MercuryXU5_EndcapSL.vhd`
   - `./MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/design_1.bd`
   - `./MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn`
 
+### `uEnv.txt`の内容とETH0/1のMAC addr, IP addrの調査
+
+| `petalinux-config` | `uEnv.txt` | eth0 MAC | eth1 MAC | eth0 IP | eth1 IP | without SD |
+| :----------------: | :--------: | :------: | :------: | ------- | ------- | ---------- |
+|                    |            |          |          |         |         |            |
+|                    |            |          |          |         |         |            |
+|                    |            |          |          |         |         |            |
+|                    |            |          |          |         |         |            |
+|                    |            |          |          |         |         |            |
+|                    |            |          |          |         |         |            |
+
 ## ⬜️ Card Detectionの確認
-## ⬜️ JTAG boot
+
+## ⬜️ JTAGからのMPSoC PLのプログラム
+
+- SW6の5-8をONにして、Xilinx Platform USB Cable IIをCN55に接続、USBをVivadoがインストールされたPCに接続
+- VivadoでGenerate Bitstream --> Export Hardware --> Fixed --> Include Bitstream --> Finish
+- Open Hardware Manager
+- SLの電源を入れた
+- `xczu5`を検出。Program Device成功
+- ETH1のLEDが光るようになった
+
+![  width:600px   drop-shadow:0,5px,10px,rgba(0,0,0,.4)](./figures/Screenshot_from_2021-11-29_20-27-30.png)
+
 ## ⬜️ Xilinx Virtual Cable
 
 
