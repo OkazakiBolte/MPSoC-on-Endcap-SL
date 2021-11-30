@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Fri Nov 26 13:10:58 2021
---Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
+--Date        : Mon Nov 29 19:23:28 2021
+--Host        : okazaki-CFSV8-2L running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
 --Purpose     : IP block netlist

@@ -3277,10 +3277,22 @@
       }
     },
     "interface_nets": {
+      "zynq_ultra_ps_e_GMII_ENET1": {
+        "interface_ports": [
+          "GMII",
+          "zynq_ultra_ps_e/GMII_ENET1"
+        ]
+      },
       "axi_smc_M00_AXI": {
         "interface_ports": [
           "axi_smc/M00_AXI",
           "axi_bram_ctrl_0/S_AXI"
+        ]
+      },
+      "zynq_ultra_ps_e_MDIO_ENET1": {
+        "interface_ports": [
+          "MDIO",
+          "zynq_ultra_ps_e/MDIO_ENET1"
         ]
       },
       "led_GPIO": {
@@ -3289,10 +3301,16 @@
           "led/GPIO"
         ]
       },
-      "zynq_ultra_ps_e_MDIO_ENET1": {
+      "axi_bram_ctrl_0_BRAM_PORTB": {
         "interface_ports": [
-          "MDIO",
-          "zynq_ultra_ps_e/MDIO_ENET1"
+          "blk_mem_gen_0/BRAM_PORTB",
+          "axi_bram_ctrl_0/BRAM_PORTB"
+        ]
+      },
+      "axi_smc_M01_AXI": {
+        "interface_ports": [
+          "axi_smc/M01_AXI",
+          "led/S_AXI"
         ]
       },
       "axi_bram_ctrl_0_BRAM_PORTA": {
@@ -3305,24 +3323,6 @@
         "interface_ports": [
           "zynq_ultra_ps_e/M_AXI_HPM0_LPD",
           "axi_smc/S00_AXI"
-        ]
-      },
-      "zynq_ultra_ps_e_GMII_ENET1": {
-        "interface_ports": [
-          "GMII",
-          "zynq_ultra_ps_e/GMII_ENET1"
-        ]
-      },
-      "axi_smc_M01_AXI": {
-        "interface_ports": [
-          "axi_smc/M01_AXI",
-          "led/S_AXI"
-        ]
-      },
-      "axi_bram_ctrl_0_BRAM_PORTB": {
-        "interface_ports": [
-          "blk_mem_gen_0/BRAM_PORTB",
-          "axi_bram_ctrl_0/BRAM_PORTB"
         ]
       }
     },

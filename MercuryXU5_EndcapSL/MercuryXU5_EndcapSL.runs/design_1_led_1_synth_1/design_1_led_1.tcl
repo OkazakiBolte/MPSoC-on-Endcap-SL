@@ -70,11 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "design_1_led_1_synth_1" START { ROLLUP_AUTO }
-set_param power.enableLutRouteBelPower 1
-set_param power.enableCarry8RouteBelPower 1
-set_param power.enableUnconnectedCarry8PinPower 1
-set_param chipscope.maxJobs 12
-set_param power.BramSDPPropagationFix 1
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 set_param project.vivado.isBlockSynthRun true
