@@ -134,7 +134,7 @@ OPTRACE "Design Initialization: pre hook" START { }
     return -code error
   }
 OPTRACE "Design Initialization: pre hook" END { }
-  set_param chipscope.maxJobs 2
+  set_param chipscope.maxJobs 12
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xczu5ev-sfvc784-2-i
   set_property design_mode GateLvl [current_fileset]

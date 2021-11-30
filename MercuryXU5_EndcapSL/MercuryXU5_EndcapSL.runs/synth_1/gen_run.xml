@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1638181900">
+<GenRun Id="synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1638238469">
+  <File Type="VDS-TIMINGSUMMARY" Name="MercuryXU5_EndcapSL_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="MercuryXU5_EndcapSL.dcp"/>
   <File Type="RDS-UTIL-PB" Name="MercuryXU5_EndcapSL_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="MercuryXU5_EndcapSL.tcl"/>
   <File Type="RDS-UTIL" Name="MercuryXU5_EndcapSL_utilization_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="MercuryXU5_EndcapSL_reports.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="MercuryXU5_EndcapSL_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="MercuryXU5_EndcapSL.vds"/>
+  <File Type="REPORTS-TCL" Name="MercuryXU5_EndcapSL_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="MercuryXU5_EndcapSL_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="MercuryXU5_EndcapSL.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn">
@@ -134,11 +137,11 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design" PreStepTclHook="$PSRCDIR/utils_1/imports/scripts/settings.tcl"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_led_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_smc_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_blk_mem_gen_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps8_99M_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_led_1"/>
 </GenRun>
