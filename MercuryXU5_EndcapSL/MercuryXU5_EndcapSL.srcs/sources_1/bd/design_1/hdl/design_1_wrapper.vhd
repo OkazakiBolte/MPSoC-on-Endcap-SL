@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Mon Nov 29 19:23:28 2021
---Host        : okazaki-CFSV8-2L running 64-bit Ubuntu 18.04.6 LTS
+--Date        : Tue Nov 30 20:51:00 2021
+--Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -45,11 +45,6 @@ architecture STRUCTURE of design_1_wrapper is
     ETH_CLK10 : out STD_LOGIC;
     ETH_resetn : out STD_LOGIC;
     peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
-    LED_N_tri_o : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    MDIO_mdc : out STD_LOGIC;
-    MDIO_mdio_i : in STD_LOGIC;
-    MDIO_mdio_o : out STD_LOGIC;
-    MDIO_mdio_t : out STD_LOGIC;
     GMII_rx_clk : in STD_LOGIC;
     GMII_speed_mode : out STD_LOGIC_VECTOR ( 2 downto 0 );
     GMII_crs : in STD_LOGIC;
@@ -60,7 +55,12 @@ architecture STRUCTURE of design_1_wrapper is
     GMII_tx_clk : in STD_LOGIC;
     GMII_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
     GMII_tx_en : out STD_LOGIC;
-    GMII_tx_er : out STD_LOGIC
+    GMII_tx_er : out STD_LOGIC;
+    MDIO_mdc : out STD_LOGIC;
+    MDIO_mdio_i : in STD_LOGIC;
+    MDIO_mdio_o : out STD_LOGIC;
+    MDIO_mdio_t : out STD_LOGIC;
+    LED_N_tri_o : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   end component design_1;
   component IOBUF is

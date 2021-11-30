@@ -19,12 +19,12 @@ eth1_macaddr=ca:9f:1e:3a:b6:25
 # How can I set eth1 IP address as well with uEnv.txt?
 # I was able to set it with 'nmtui' command in CentOS 7 anyway...
 
-eth1_ipaddr=192.168.10.5
-# eth1_gatewayip=
-eth1_netmask=255.255.255.0
-eth1_hostname=sl-xu5-eth1-01
-eth1_interface=eth1
-eth1_autoconf=off
+# eth1_ipaddr=192.168.10.5
+# # eth1_gatewayip=
+# eth1_netmask=255.255.255.0
+# eth1_hostname=sl-xu5-eth1-01
+# eth1_interface=eth1
+# eth1_autoconf=off
 
 # eth1_nameserver_1=
 # eth1_nameserver_2=
@@ -33,6 +33,6 @@ eth1_autoconf=off
 
 eth0_setting=setenv ethaddr ${eth0_macaddr} && setenv bootargs ${bootargs} ip=${eth0_ipaddr}:${eth0_gatewayip}:${eth0_netmask}:${eth0_hostname}:${eth0_interface}:${eth0_autoconf} nameserver=${eth0_nameserver_1} nameserver=${eth0_nameserver_2}
 
-eth1_setting=setenv eth1addr ${eth1_macaddr} && setenv bootargs ${bootargs} ip=${eth1_ipaddr}::${eth1_netmask}:${eth1_hostname}:${eth1_interface}:${eth1_autoconf}
+eth1_setting=setenv eth1addr ${eth1_macaddr} # && setenv bootargs ${bootargs} ip=${eth1_ipaddr}::${eth1_netmask}:${eth1_hostname}:${eth1_interface}:${eth1_autoconf} # Can
 
 uenvcmd=run eth0_setting && run eth1_setting

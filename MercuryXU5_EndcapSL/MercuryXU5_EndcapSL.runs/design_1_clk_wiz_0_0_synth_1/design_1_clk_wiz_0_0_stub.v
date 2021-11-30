@@ -1,8 +1,8 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Mon Nov 29 19:28:22 2021
-// Host        : okazaki-CFSV8-2L running 64-bit Ubuntu 18.04.6 LTS
+// Date        : Tue Nov 30 20:53:31 2021
+// Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_clk_wiz_0_0_stub.v
 // Design      : design_1_clk_wiz_0_0

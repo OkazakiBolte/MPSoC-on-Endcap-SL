@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Nov 30 11:16:56 2021
-# Process ID: 15383
+# Start of session at: Tue Nov 30 20:58:09 2021
+# Process ID: 28523
 # Current directory: /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/impl_1
 # Command line: vivado -log MercuryXU5_EndcapSL.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MercuryXU5_EndcapSL.tcl -notrace
 # Log file: /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/impl_1/MercuryXU5_EndcapSL.vdi
@@ -16,7 +16,7 @@ INFO: settings.tcl file loaded.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.1/data/ip'.
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2158.543 ; gain = 0.000 ; free physical = 3071 ; free virtual = 30416
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2159.105 ; gain = 0.000 ; free physical = 25787 ; free virtual = 30720
 Command: link_design -top MercuryXU5_EndcapSL -part xczu5ev-sfvc784-2-i
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
@@ -25,11 +25,20 @@ INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on
 INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/design_1_axi_smc_1.dcp' for cell 'design_1_i/axi_smc'
 INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_1/design_1_blk_mem_gen_0_1.dcp' for cell 'design_1_i/blk_mem_gen_0'
 INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.dcp' for cell 'design_1_i/clk_wiz_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/design_1_debug_bridge_0_0.dcp' for cell 'design_1_i/debug_bridge_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_1_0/design_1_debug_bridge_1_0.dcp' for cell 'design_1_i/debug_bridge_1'
 INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_led_1/design_1_led_1.dcp' for cell 'design_1_i/led'
 INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_rst_ps8_99M_1/design_1_rst_ps8_99M_1.dcp' for cell 'design_1_i/rst_ps8_99M'
 INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_1/design_1_zynq_ultra_ps_e_1.dcp' for cell 'design_1_i/zynq_ultra_ps_e'
-Netlist sorting complete. Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.26 . Memory (MB): peak = 2609.035 ; gain = 0.000 ; free physical = 2354 ; free virtual = 29692
-INFO: [Netlist 29-17] Analyzing 153 Unisim elements for replacement
+INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_0/bd_c443_axi_jtag_0.dcp' for cell 'design_1_i/debug_bridge_0/U0/axi_jtag'
+INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_4/bd_c443_bs_mux_0.dcp' for cell 'design_1_i/debug_bridge_0/U0/bs_mux'
+INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_3/bd_c443_bs_switch_2.dcp' for cell 'design_1_i/debug_bridge_0/U0/bs_switch'
+INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_2/bd_c443_bs_switch_1_0.dcp' for cell 'design_1_i/debug_bridge_0/U0/bs_switch_1'
+INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_1/bd_c443_bsip_0.dcp' for cell 'design_1_i/debug_bridge_0/U0/bsip'
+INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_1_0/bd_0/ip/ip_1/bd_0412_lut_buffer_0.dcp' for cell 'design_1_i/debug_bridge_1/U0/lut_buffer'
+INFO: [Project 1-454] Reading design checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_1_0/bd_0/ip/ip_0/bd_0412_xsdbm_0.dcp' for cell 'design_1_i/debug_bridge_1/U0/xsdbm'
+Netlist sorting complete. Time (s): cpu = 00:00:00.32 ; elapsed = 00:00:00.32 . Memory (MB): peak = 2613.598 ; gain = 0.000 ; free physical = 25020 ; free virtual = 29955
+INFO: [Netlist 29-17] Analyzing 205 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2020.1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -51,6 +60,12 @@ Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc] for cell 'design_1_i/clk_wiz_0/inst'
 Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_2/constraints/bs_switch.xdc] for cell 'design_1_i/debug_bridge_0/U0/bs_switch_1/inst'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_2/constraints/bs_switch.xdc] for cell 'design_1_i/debug_bridge_0/U0/bs_switch_1/inst'
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_3/constraints/bs_switch.xdc] for cell 'design_1_i/debug_bridge_0/U0/bs_switch/inst'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_3/constraints/bs_switch.xdc] for cell 'design_1_i/debug_bridge_0/U0/bs_switch/inst'
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_1_0/bd_0/ip/ip_0/constraints/xsdbm_cc_early.xdc] for cell 'design_1_i/debug_bridge_1/U0/xsdbm/inst'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_1_0/bd_0/ip/ip_0/constraints/xsdbm_cc_early.xdc] for cell 'design_1_i/debug_bridge_1/U0/xsdbm/inst'
 Sourcing Tcl File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl]
 WARNING: [Constraints 18-4434] Global Clock Buffer 'i_gmii2rgmii/i_rgmii_rxclk_buf' is LOCed to site 'BUFGCE_HDIO_X0Y3'. Using a LOC constraint to assign the placement of a Global Clock Buffer can result in sub-optimal placement results. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl:31]
 Resolution: Remove the LOC constraint and use the CLOCK_REGION constraint to assign a Global Clock Buffer to a CLOCK_REGION.
@@ -67,10 +82,30 @@ Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'RGMII_RX_CLK_VIRT' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc:10]
 INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc:18]
 INFO: [Timing 38-2] Deriving generated clocks [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc:18]
-get_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2988.047 ; gain = 323.078 ; free physical = 2128 ; free virtual = 29465
+get_clocks: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3019.547 ; gain = 340.109 ; free physical = 24672 ; free virtual = 29607
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc]
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_0/constraints/axi_jtag.xdc] for cell 'design_1_i/debug_bridge_0/U0/axi_jtag/inst'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_0/constraints/axi_jtag.xdc] for cell 'design_1_i/debug_bridge_0/U0/axi_jtag/inst'
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_1/constraints/bsip.xdc] for cell 'design_1_i/debug_bridge_0/U0/bsip/U0'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_1/constraints/bsip.xdc] for cell 'design_1_i/debug_bridge_0/U0/bsip/U0'
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_4/constraints/bs_mux.xdc] for cell 'design_1_i/debug_bridge_0/U0/bs_mux/inst'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_4/constraints/bs_mux.xdc] for cell 'design_1_i/debug_bridge_0/U0/bs_mux/inst'
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_1_0/bd_0/ip/ip_0/constraints/xsdbm_cc_late.xdc] for cell 'design_1_i/debug_bridge_1/U0/xsdbm/inst'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_1_0/bd_0/ip/ip_0/constraints/xsdbm_cc_late.xdc] for cell 'design_1_i/debug_bridge_1/U0/xsdbm/inst'
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_1_0/bd_0/ip/ip_0/constraints/xsdbm_gc_late.xdc] for cell 'design_1_i/debug_bridge_1/U0/xsdbm/inst'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_1_0/bd_0/ip/ip_0/constraints/xsdbm_gc_late.xdc] for cell 'design_1_i/debug_bridge_1/U0/xsdbm/inst'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_w_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_w_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_aw_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_aw_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_ar_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_ar_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_w_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_w_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_aw_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
@@ -81,40 +116,48 @@ Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_me
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
-Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m02_nodes/m02_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/m01_nodes/m01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
@@ -129,21 +172,23 @@ Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_me
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
+Finished Sourcing Tcl File [/tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl] for cell 'design_1_i/axi_smc/inst/s00_nodes/s00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory'
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.SERIES8_TDP_SP36_NO_ECC_ATTR.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
 INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.SERIES8_TDP_SP36_NO_ECC_ATTR.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3116.109 ; gain = 0.000 ; free physical = 2139 ; free virtual = 29476
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3163.617 ; gain = 0.000 ; free physical = 24663 ; free virtual = 29621
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 145 instances were transformed.
+  A total of 191 instances were transformed.
   IBUF => IBUF (IBUFCTRL, INBUF): 6 instances
   IOBUF => IOBUF (IBUFCTRL, INBUF, OBUFT): 1 instance 
-  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 128 instances
-  RAM32X1D => RAM32X1D (RAMD32(x2)): 8 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 171 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 11 instances
   RAM64M8 => RAM64M8 (RAMD64E(x8)): 2 instances
 
-22 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+31 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 3116.109 ; gain = 957.566 ; free physical = 2139 ; free virtual = 29476
+link_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:41 . Memory (MB): peak = 3163.617 ; gain = 1004.512 ; free physical = 24663 ; free virtual = 29621
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xczu5ev'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu5ev'
@@ -154,62 +199,62 @@ INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3116.109 ; gain = 0.000 ; free physical = 2158 ; free virtual = 29496
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3163.617 ; gain = 0.000 ; free physical = 24882 ; free virtual = 29849
 
 Starting Cache Timing Information Task
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'RGMII_RX_CLK_VIRT' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc:10]
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 17401005f
+Ending Cache Timing Information Task | Checksum: 11e6f7608
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.61 . Memory (MB): peak = 3116.109 ; gain = 0.000 ; free physical = 2150 ; free virtual = 29488
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.79 . Memory (MB): peak = 3163.617 ; gain = 0.000 ; free physical = 24983 ; free virtual = 29953
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
-INFO: [Opt 31-138] Pushed 27 inverter(s) to 303 load pin(s).
+INFO: [Opt 31-138] Pushed 36 inverter(s) to 586 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 1b3fd1f86
+Phase 1 Retarget | Checksum: fcdf959c
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.84 . Memory (MB): peak = 3201.875 ; gain = 0.000 ; free physical = 2059 ; free virtual = 29397
-INFO: [Opt 31-389] Phase Retarget created 25 cells and removed 348 cells
-INFO: [Opt 31-1021] In phase Retarget, 46 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3186.562 ; gain = 0.000 ; free physical = 24844 ; free virtual = 29815
+INFO: [Opt 31-389] Phase Retarget created 41 cells and removed 397 cells
+INFO: [Opt 31-1021] In phase Retarget, 134 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 13 load pin(s).
-Phase 2 Constant propagation | Checksum: 1bc5233ed
+Phase 2 Constant propagation | Checksum: 16b4cc5b7
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.97 . Memory (MB): peak = 3201.875 ; gain = 0.000 ; free physical = 2059 ; free virtual = 29397
-INFO: [Opt 31-389] Phase Constant propagation created 38 cells and removed 84 cells
-INFO: [Opt 31-1021] In phase Constant propagation, 60 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3186.562 ; gain = 0.000 ; free physical = 24844 ; free virtual = 29815
+INFO: [Opt 31-389] Phase Constant propagation created 39 cells and removed 102 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 153 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 1c64e3251
+Phase 3 Sweep | Checksum: ee3d8fb2
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 3201.875 ; gain = 0.000 ; free physical = 2062 ; free virtual = 29400
-INFO: [Opt 31-389] Phase Sweep created 3 cells and removed 3046 cells
-INFO: [Opt 31-1021] In phase Sweep, 76 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 3186.562 ; gain = 0.000 ; free physical = 24847 ; free virtual = 29818
+INFO: [Opt 31-389] Phase Sweep created 3 cells and removed 4145 cells
+INFO: [Opt 31-1021] In phase Sweep, 675 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 BUFG optimization
 INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
 INFO: [Opt 31-274] Optimized connectivity to 3 cascaded buffer cells
-Phase 4 BUFG optimization | Checksum: 20401d24e
+Phase 4 BUFG optimization | Checksum: 19159edb1
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3201.875 ; gain = 0.000 ; free physical = 2065 ; free virtual = 29403
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 3186.562 ; gain = 0.000 ; free physical = 24848 ; free virtual = 29819
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 1 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 20401d24e
+Phase 5 Shift Register Optimization | Checksum: 19159edb1
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3201.875 ; gain = 0.000 ; free physical = 2071 ; free virtual = 29409
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 3186.562 ; gain = 0.000 ; free physical = 24847 ; free virtual = 29818
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 235334788
+Phase 6 Post Processing Netlist | Checksum: 106035871
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3201.875 ; gain = 0.000 ; free physical = 2074 ; free virtual = 29412
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 3186.562 ; gain = 0.000 ; free physical = 24847 ; free virtual = 29818
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 1 cells
-INFO: [Opt 31-1021] In phase Post Processing Netlist, 45 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 147 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 Opt_design Change Summary
 =========================
 
@@ -217,22 +262,22 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |              25  |             348  |                                             46  |
-|  Constant propagation         |              38  |              84  |                                             60  |
-|  Sweep                        |               3  |            3046  |                                             76  |
+|  Retarget                     |              41  |             397  |                                            134  |
+|  Constant propagation         |              39  |             102  |                                            153  |
+|  Sweep                        |               3  |            4145  |                                            675  |
 |  BUFG optimization            |               0  |               1  |                                              0  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
-|  Post Processing Netlist      |               0  |               1  |                                             45  |
+|  Post Processing Netlist      |               0  |               1  |                                            147  |
 -------------------------------------------------------------------------------------------------------------------------
 
 
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3201.875 ; gain = 0.000 ; free physical = 2075 ; free virtual = 29413
-Ending Logic Optimization Task | Checksum: 131307fd2
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3186.562 ; gain = 0.000 ; free physical = 24847 ; free virtual = 29818
+Ending Logic Optimization Task | Checksum: 135ab5563
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3201.875 ; gain = 0.000 ; free physical = 2075 ; free virtual = 29413
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 3186.562 ; gain = 0.000 ; free physical = 24847 ; free virtual = 29818
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -249,40 +294,42 @@ Starting PowerOpt Patch Enables Task
 INFO: [Pwropt 34-162] WRITE_MODE attribute of 2 BRAM(s) out of a total of 2 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
 Number of BRAM Ports augmented: 2 newly gated: 0 Total Ports: 4
-Ending PowerOpt Patch Enables Task | Checksum: 197e6b461
+Ending PowerOpt Patch Enables Task | Checksum: 15464f64b
 
-Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3829.883 ; gain = 0.000 ; free physical = 1698 ; free virtual = 29037
-Ending Power Optimization Task | Checksum: 197e6b461
+Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3866.664 ; gain = 0.000 ; free physical = 24456 ; free virtual = 29432
+Ending Power Optimization Task | Checksum: 15464f64b
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 3829.883 ; gain = 628.008 ; free physical = 1719 ; free virtual = 29057
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:40 . Memory (MB): peak = 3866.664 ; gain = 680.102 ; free physical = 24476 ; free virtual = 29452
 
 Starting Final Cleanup Task
 
 Starting Logic Optimization Task
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'RGMII_RX_CLK_VIRT' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc:10]
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Logic Optimization Task | Checksum: 223c80195
+Ending Logic Optimization Task | Checksum: 1f1adbca9
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3829.883 ; gain = 0.000 ; free physical = 1725 ; free virtual = 29063
-Ending Final Cleanup Task | Checksum: 223c80195
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3866.664 ; gain = 0.000 ; free physical = 24484 ; free virtual = 29460
+Ending Final Cleanup Task | Checksum: 1f1adbca9
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 3829.883 ; gain = 0.000 ; free physical = 1725 ; free virtual = 29063
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3866.664 ; gain = 0.000 ; free physical = 24483 ; free virtual = 29460
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3829.883 ; gain = 0.000 ; free physical = 1725 ; free virtual = 29063
-Ending Netlist Obfuscation Task | Checksum: 223c80195
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3866.664 ; gain = 0.000 ; free physical = 24483 ; free virtual = 29460
+Ending Netlist Obfuscation Task | Checksum: 1f1adbca9
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3829.883 ; gain = 0.000 ; free physical = 1725 ; free virtual = 29063
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3866.664 ; gain = 0.000 ; free physical = 24483 ; free virtual = 29460
 INFO: [Common 17-83] Releasing license: Implementation
-54 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+63 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:57 . Memory (MB): peak = 3829.883 ; gain = 713.773 ; free physical = 1725 ; free virtual = 29063
+opt_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:58 . Memory (MB): peak = 3866.664 ; gain = 703.047 ; free physical = 24483 ; free virtual = 29460
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'RGMII_RX_CLK_VIRT' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc:10]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3829.883 ; gain = 0.000 ; free physical = 1725 ; free virtual = 29067
+Write XDEF Complete: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3866.664 ; gain = 0.000 ; free physical = 24461 ; free virtual = 29442
 INFO: [Common 17-1381] The checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/impl_1/MercuryXU5_EndcapSL_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file MercuryXU5_EndcapSL_drc_opted.rpt -pb MercuryXU5_EndcapSL_drc_opted.pb -rpx MercuryXU5_EndcapSL_drc_opted.rpx
 Command: report_drc -file MercuryXU5_EndcapSL_drc_opted.rpt -pb MercuryXU5_EndcapSL_drc_opted.pb -rpx MercuryXU5_EndcapSL_drc_opted.rpx
@@ -290,7 +337,8 @@ INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Coretcl 2-168] The results of DRC are in file /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/impl_1/MercuryXU5_EndcapSL_drc_opted.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 3861.898 ; gain = 32.016 ; free physical = 1676 ; free virtual = 29021
+report_drc: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 3898.680 ; gain = 32.016 ; free physical = 24445 ; free virtual = 29429
+INFO: [Chipscope 16-240] Debug cores have already been implemented
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xczu5ev'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu5ev'
@@ -308,31 +356,29 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3861.898 ; gain = 0.000 ; free physical = 1683 ; free virtual = 29027
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 16c468db2
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3898.680 ; gain = 0.000 ; free physical = 24441 ; free virtual = 29424
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 13765a9dd
 
-Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3861.898 ; gain = 0.000 ; free physical = 1683 ; free virtual = 29026
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3861.898 ; gain = 0.000 ; free physical = 1683 ; free virtual = 29026
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3898.680 ; gain = 0.000 ; free physical = 24441 ; free virtual = 29424
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3898.680 ; gain = 0.000 ; free physical = 24441 ; free virtual = 29424
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'RGMII_RX_CLK_VIRT' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc:10]
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 3d4ce64c
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 19a31e224
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 4379.277 ; gain = 517.379 ; free physical = 1208 ; free virtual = 28550
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 4424.277 ; gain = 525.598 ; free physical = 23850 ; free virtual = 28967
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 6768f7e8
+Phase 1.3 Build Placer Netlist Model | Checksum: 20aa0874a
 
-Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1148 ; free virtual = 28491
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:22 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23812 ; free virtual = 28930
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 6768f7e8
+Phase 1.4 Constrain Clocks/Macros | Checksum: 20aa0874a
 
-Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1148 ; free virtual = 28491
-Phase 1 Placer Initialization | Checksum: 6768f7e8
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:22 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23812 ; free virtual = 28930
+Phase 1 Placer Initialization | Checksum: 20aa0874a
 
-Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1148 ; free virtual = 28490
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:22 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23811 ; free virtual = 28928
 
 Phase 2 Global Placement
 
@@ -341,42 +387,42 @@ Phase 2.1 Floorplanning
 Phase 2.1.1 Partition Driven Placement
 
 Phase 2.1.1.1 PBP: Partition Driven Placement
-Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 1003b8892
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 25ed8a053
 
-Time (s): cpu = 00:00:33 ; elapsed = 00:00:26 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1127 ; free virtual = 28470
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:26 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23791 ; free virtual = 28909
 
 Phase 2.1.1.2 PBP: Clock Region Placement
-Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 1324742d0
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 170cc6fb9
 
-Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1127 ; free virtual = 28469
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:26 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23790 ; free virtual = 28908
 
 Phase 2.1.1.3 PBP: Compute Congestion
-Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 1324742d0
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 170cc6fb9
 
-Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1118 ; free virtual = 28460
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23784 ; free virtual = 28903
 
 Phase 2.1.1.4 PBP: UpdateTiming
-Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 7eb1318d
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 1b0ff9c64
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:27 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1120 ; free virtual = 28462
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:27 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23784 ; free virtual = 28903
 
 Phase 2.1.1.5 PBP: Add part constraints
-Phase 2.1.1.5 PBP: Add part constraints | Checksum: 7eb1318d
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: 1b0ff9c64
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:27 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1119 ; free virtual = 28462
-Phase 2.1.1 Partition Driven Placement | Checksum: 7eb1318d
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:27 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23784 ; free virtual = 28903
+Phase 2.1.1 Partition Driven Placement | Checksum: 1b0ff9c64
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:27 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1120 ; free virtual = 28462
-Phase 2.1 Floorplanning | Checksum: 7055be50
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:27 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23786 ; free virtual = 28904
+Phase 2.1 Floorplanning | Checksum: 1a29a0fa7
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:27 . Memory (MB): peak = 4411.293 ; gain = 549.395 ; free physical = 1120 ; free virtual = 28462
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:27 . Memory (MB): peak = 4456.293 ; gain = 557.613 ; free physical = 23786 ; free virtual = 28904
 
 Phase 2.2 Global Placement Core
 
 Phase 2.2.1 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 422 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 641 LUT instances to create LUTNM shape
 INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-775] End 1 Pass. Optimized 177 nets or cells. Created 0 new cell, deleted 177 existing cells and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 279 nets or cells. Created 0 new cell, deleted 279 existing cells and moved 0 existing cell
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -392,7 +438,7 @@ INFO: [Physopt 32-846] No candidate cells for URAM register optimization found i
 INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-949] No candidate nets found for HD net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4419.297 ; gain = 0.000 ; free physical = 1103 ; free virtual = 28446
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23749 ; free virtual = 28872
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -401,7 +447,7 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |            177  |                   177  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |            0  |            279  |                   279  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
@@ -409,84 +455,84 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            0  |            177  |                   177  |           0  |           8  |  00:00:00  |
+|  Total                                            |            0  |            279  |                   279  |           0  |           8  |  00:00:01  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.2.1 Physical Synthesis In Placer | Checksum: 1c587d8b6
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 18e5eec2f
 
-Time (s): cpu = 00:01:13 ; elapsed = 00:00:39 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1100 ; free virtual = 28443
-Phase 2.2 Global Placement Core | Checksum: 1b2b632b2
+Time (s): cpu = 00:01:24 ; elapsed = 00:00:42 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23749 ; free virtual = 28871
+Phase 2.2 Global Placement Core | Checksum: c95a3a1b
 
-Time (s): cpu = 00:01:15 ; elapsed = 00:00:39 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1098 ; free virtual = 28440
-Phase 2 Global Placement | Checksum: 1b2b632b2
+Time (s): cpu = 00:01:26 ; elapsed = 00:00:43 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23747 ; free virtual = 28870
+Phase 2 Global Placement | Checksum: c95a3a1b
 
-Time (s): cpu = 00:01:15 ; elapsed = 00:00:39 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1101 ; free virtual = 28444
+Time (s): cpu = 00:01:26 ; elapsed = 00:00:43 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23752 ; free virtual = 28875
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1ed094fb2
+Phase 3.1 Commit Multi Column Macros | Checksum: efee620f
 
-Time (s): cpu = 00:01:16 ; elapsed = 00:00:40 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1104 ; free virtual = 28446
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:43 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23755 ; free virtual = 28878
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1a37f9f92
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 12b330904
 
-Time (s): cpu = 00:01:18 ; elapsed = 00:00:41 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1103 ; free virtual = 28446
+Time (s): cpu = 00:01:29 ; elapsed = 00:00:45 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23754 ; free virtual = 28877
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: fddd1a63
+Phase 3.3 Area Swap Optimization | Checksum: 12a5c7ca2
 
-Time (s): cpu = 00:01:19 ; elapsed = 00:00:41 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1105 ; free virtual = 28447
+Time (s): cpu = 00:01:30 ; elapsed = 00:00:45 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23755 ; free virtual = 28877
 
 Phase 3.4 IO Cut Optimizer
-Phase 3.4 IO Cut Optimizer | Checksum: fddd1a63
+Phase 3.4 IO Cut Optimizer | Checksum: 12a5c7ca2
 
-Time (s): cpu = 00:01:19 ; elapsed = 00:00:41 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1104 ; free virtual = 28446
+Time (s): cpu = 00:01:30 ; elapsed = 00:00:45 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23754 ; free virtual = 28876
 
 Phase 3.5 Fast Optimization
-Phase 3.5 Fast Optimization | Checksum: 1d8deda18
+Phase 3.5 Fast Optimization | Checksum: 181ce52fa
 
-Time (s): cpu = 00:01:20 ; elapsed = 00:00:41 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1104 ; free virtual = 28447
+Time (s): cpu = 00:01:31 ; elapsed = 00:00:45 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23752 ; free virtual = 28875
 
 Phase 3.6 Small Shape DP
 
 Phase 3.6.1 Small Shape Clustering
-Phase 3.6.1 Small Shape Clustering | Checksum: 1262474a4
+Phase 3.6.1 Small Shape Clustering | Checksum: 1c13b1de6
 
-Time (s): cpu = 00:01:22 ; elapsed = 00:00:43 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1103 ; free virtual = 28445
+Time (s): cpu = 00:01:33 ; elapsed = 00:00:47 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23747 ; free virtual = 28870
 
 Phase 3.6.2 Flow Legalize Slice Clusters
-Phase 3.6.2 Flow Legalize Slice Clusters | Checksum: 100df6da6
+Phase 3.6.2 Flow Legalize Slice Clusters | Checksum: f5c25971
 
-Time (s): cpu = 00:01:22 ; elapsed = 00:00:43 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1101 ; free virtual = 28444
+Time (s): cpu = 00:01:34 ; elapsed = 00:00:47 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23747 ; free virtual = 28870
 
 Phase 3.6.3 Slice Area Swap
-Phase 3.6.3 Slice Area Swap | Checksum: 1ae8a3b12
+Phase 3.6.3 Slice Area Swap | Checksum: 197e96618
 
-Time (s): cpu = 00:01:23 ; elapsed = 00:00:44 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1091 ; free virtual = 28433
-Phase 3.6 Small Shape DP | Checksum: 1856b1289
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:48 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23735 ; free virtual = 28859
+Phase 3.6 Small Shape DP | Checksum: 18702dac2
 
-Time (s): cpu = 00:01:26 ; elapsed = 00:00:45 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1099 ; free virtual = 28441
+Time (s): cpu = 00:01:39 ; elapsed = 00:00:49 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23748 ; free virtual = 28868
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 18f72cc4a
+Phase 3.7 Re-assign LUT pins | Checksum: f5806d59
 
-Time (s): cpu = 00:01:27 ; elapsed = 00:00:46 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1099 ; free virtual = 28441
+Time (s): cpu = 00:01:39 ; elapsed = 00:00:50 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23749 ; free virtual = 28869
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 1725abd2d
+Phase 3.8 Pipeline Register Optimization | Checksum: 1136fd0b8
 
-Time (s): cpu = 00:01:27 ; elapsed = 00:00:46 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1099 ; free virtual = 28441
+Time (s): cpu = 00:01:39 ; elapsed = 00:00:50 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23749 ; free virtual = 28869
 
 Phase 3.9 Fast Optimization
-Phase 3.9 Fast Optimization | Checksum: 14c7f60b8
+Phase 3.9 Fast Optimization | Checksum: 1e78eb945
 
-Time (s): cpu = 00:01:32 ; elapsed = 00:00:47 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1101 ; free virtual = 28443
-Phase 3 Detail Placement | Checksum: 14c7f60b8
+Time (s): cpu = 00:01:44 ; elapsed = 00:00:51 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23746 ; free virtual = 28866
+Phase 3 Detail Placement | Checksum: 1e78eb945
 
-Time (s): cpu = 00:01:32 ; elapsed = 00:00:47 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1101 ; free virtual = 28443
+Time (s): cpu = 00:01:44 ; elapsed = 00:00:51 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23748 ; free virtual = 28868
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -495,7 +541,7 @@ INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as o
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: d3ff1633
+Post Placement Optimization Initialization | Checksum: bcc0c2f2
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -503,77 +549,77 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.160 | TNS=0.000 |
-Phase 1 Physical Synthesis Initialization | Checksum: 11955104a
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.161 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: edf9a422
 
-Time (s): cpu = 00:00:00.77 ; elapsed = 00:00:00.35 . Memory (MB): peak = 4419.297 ; gain = 0.000 ; free physical = 1102 ; free virtual = 28445
+Time (s): cpu = 00:00:00.92 ; elapsed = 00:00:00.41 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23747 ; free virtual = 28868
 INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
-Ending Physical Synthesis Task | Checksum: 185c26145
+Ending Physical Synthesis Task | Checksum: 14ce5681c
 
-Time (s): cpu = 00:00:00.80 ; elapsed = 00:00:00.38 . Memory (MB): peak = 4419.297 ; gain = 0.000 ; free physical = 1102 ; free virtual = 28444
-Phase 4.1.1.1 BUFG Insertion | Checksum: d3ff1633
+Time (s): cpu = 00:00:00.96 ; elapsed = 00:00:00.45 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23747 ; free virtual = 28867
+Phase 4.1.1.1 BUFG Insertion | Checksum: bcc0c2f2
 
-Time (s): cpu = 00:01:38 ; elapsed = 00:00:49 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1102 ; free virtual = 28444
-INFO: [Place 30-746] Post Placement Timing Summary WNS=0.160. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 12300ff94
+Time (s): cpu = 00:01:51 ; elapsed = 00:00:54 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23747 ; free virtual = 28867
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.161. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: ae6d2f63
 
-Time (s): cpu = 00:01:38 ; elapsed = 00:00:49 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1102 ; free virtual = 28444
-Phase 4.1 Post Commit Optimization | Checksum: 12300ff94
+Time (s): cpu = 00:01:52 ; elapsed = 00:00:54 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23747 ; free virtual = 28867
+Phase 4.1 Post Commit Optimization | Checksum: ae6d2f63
 
-Time (s): cpu = 00:01:38 ; elapsed = 00:00:49 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1102 ; free virtual = 28444
+Time (s): cpu = 00:01:52 ; elapsed = 00:00:54 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23748 ; free virtual = 28868
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 12300ff94
+Phase 4.2 Post Placement Cleanup | Checksum: ae6d2f63
 
-Time (s): cpu = 00:01:39 ; elapsed = 00:00:50 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1102 ; free virtual = 28445
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4419.297 ; gain = 0.000 ; free physical = 1092 ; free virtual = 28434
+Time (s): cpu = 00:01:52 ; elapsed = 00:00:54 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23751 ; free virtual = 28871
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23741 ; free virtual = 28862
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 1a7c34025
+Phase 4.3 Placer Reporting | Checksum: affe1333
 
-Time (s): cpu = 00:01:42 ; elapsed = 00:00:53 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1091 ; free virtual = 28434
+Time (s): cpu = 00:01:56 ; elapsed = 00:00:58 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23741 ; free virtual = 28861
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4419.297 ; gain = 0.000 ; free physical = 1091 ; free virtual = 28434
-Phase 4.4 Final Placement Cleanup | Checksum: 222617940
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23741 ; free virtual = 28861
+Phase 4.4 Final Placement Cleanup | Checksum: c0313f1f
 
-Time (s): cpu = 00:01:42 ; elapsed = 00:00:53 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1091 ; free virtual = 28434
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 222617940
+Time (s): cpu = 00:01:56 ; elapsed = 00:00:58 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23741 ; free virtual = 28861
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: c0313f1f
 
-Time (s): cpu = 00:01:42 ; elapsed = 00:00:53 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1091 ; free virtual = 28434
-Ending Placer Task | Checksum: 1cda1670e
+Time (s): cpu = 00:01:56 ; elapsed = 00:00:58 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23741 ; free virtual = 28861
+Ending Placer Task | Checksum: a461650c
 
-Time (s): cpu = 00:01:42 ; elapsed = 00:00:53 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1091 ; free virtual = 28434
+Time (s): cpu = 00:01:56 ; elapsed = 00:00:58 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23741 ; free virtual = 28861
 INFO: [Common 17-83] Releasing license: Implementation
-95 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+105 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:01:49 ; elapsed = 00:01:01 . Memory (MB): peak = 4419.297 ; gain = 557.398 ; free physical = 1129 ; free virtual = 28471
+place_design: Time (s): cpu = 00:02:03 ; elapsed = 00:01:05 . Memory (MB): peak = 4472.301 ; gain = 573.621 ; free physical = 23783 ; free virtual = 28904
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.51 . Memory (MB): peak = 4419.297 ; gain = 0.000 ; free physical = 1098 ; free virtual = 28458
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.57 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23752 ; free virtual = 28892
 INFO: [Common 17-1381] The checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/impl_1/MercuryXU5_EndcapSL_placed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_io -file MercuryXU5_EndcapSL_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.35 . Memory (MB): peak = 4419.297 ; gain = 0.000 ; free physical = 1097 ; free virtual = 28445
+report_io: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.34 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23759 ; free virtual = 28887
 INFO: [runtcl-4] Executing : report_utilization -file MercuryXU5_EndcapSL_utilization_placed.rpt -pb MercuryXU5_EndcapSL_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file MercuryXU5_EndcapSL_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.27 . Memory (MB): peak = 4419.297 ; gain = 0.000 ; free physical = 1117 ; free virtual = 28466
+report_control_sets: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.30 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23776 ; free virtual = 28903
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xczu5ev'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu5ev'
 INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
 INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
 INFO: [Common 17-83] Releasing license: Implementation
-104 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+114 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.49 . Memory (MB): peak = 4419.297 ; gain = 0.000 ; free physical = 1056 ; free virtual = 28423
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.60 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23705 ; free virtual = 28854
 INFO: [Common 17-1381] The checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/impl_1/MercuryXU5_EndcapSL_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xczu5ev'
@@ -592,134 +638,135 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
-Checksum: PlaceDB: 722b79cc ConstDB: 0 ShapeSum: d6b3acb1 RouteDB: 84c24091
+Checksum: PlaceDB: 890f319c ConstDB: 0 ShapeSum: 19c14fa0 RouteDB: 190e3d0
 
 Phase 1 Build RT Design
-Nodegraph reading from file.  Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.76 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 937 ; free virtual = 28292
-Phase 1 Build RT Design | Checksum: 12a72706b
+Nodegraph reading from file.  Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.77 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23594 ; free virtual = 28731
+Phase 1 Build RT Design | Checksum: 5639a47b
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 934 ; free virtual = 28290
-Post Restoration Checksum: NetGraph: 4cf9e287 NumContArr: b65bc894 Constraints: b5d0ebaf Timing: 0
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23594 ; free virtual = 28731
+Post Restoration Checksum: NetGraph: b6613aa0 NumContArr: b4e40e90 Constraints: 538bf6ed Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 1b92696ca
+Phase 2.1 Create Timer | Checksum: 1bed1401d
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 939 ; free virtual = 28294
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23596 ; free virtual = 28734
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 1b92696ca
+Phase 2.2 Fix Topology Constraints | Checksum: 1bed1401d
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 889 ; free virtual = 28244
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23545 ; free virtual = 28683
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 1b92696ca
+Phase 2.3 Pre Route Cleanup | Checksum: 1bed1401d
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 888 ; free virtual = 28244
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23545 ; free virtual = 28683
 
 Phase 2.4 Global Clock Net Routing
  Number of Nodes with overlaps = 0
-Phase 2.4 Global Clock Net Routing | Checksum: 1dff11856
+Phase 2.4 Global Clock Net Routing | Checksum: 59667279
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 878 ; free virtual = 28234
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23535 ; free virtual = 28673
 
 Phase 2.5 Update Timing
-Phase 2.5 Update Timing | Checksum: 20b28f318
+Phase 2.5 Update Timing | Checksum: 14fe51898
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 874 ; free virtual = 28229
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.013  | TNS=0.000  | WHS=-2.245 | THS=-31.125|
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23533 ; free virtual = 28672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.064  | TNS=0.000  | WHS=-2.152 | THS=-92.869|
 
-Phase 2 Router Initialization | Checksum: 26ec27855
+Phase 2 Router Initialization | Checksum: ff69a263
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 872 ; free virtual = 28227
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:10 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23535 ; free virtual = 28674
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.00123472 %
-  Global Horizontal Routing Utilization  = 0 %
+  Global Vertical Routing Utilization    = 0.00493887 %
+  Global Horizontal Routing Utilization  = 0.000896768 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 8335
+  Number of Failed Nets               = 10034
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 6713
-  Number of Partially Routed Nets     = 1622
+  Number of Unrouted Nets             = 8123
+  Number of Partially Routed Nets     = 1911
   Number of Node Overlaps             = 0
 
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 2a0e51c0c
+Phase 3 Initial Routing | Checksum: 21a767f40
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:00:11 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 865 ; free virtual = 28220
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:13 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23522 ; free virtual = 28661
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 1770
- Number of Nodes with overlaps = 149
+ Number of Nodes with overlaps = 2216
+ Number of Nodes with overlaps = 173
  Number of Nodes with overlaps = 2
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.014  | TNS=0.000  | WHS=-0.015 | THS=-0.221 |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.065  | TNS=0.000  | WHS=-0.026 | THS=-0.605 |
 
-Phase 4.1 Global Iteration 0 | Checksum: 26af086dd
+Phase 4.1 Global Iteration 0 | Checksum: 23d95f5b9
 
-Time (s): cpu = 00:00:59 ; elapsed = 00:00:22 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 865 ; free virtual = 28220
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:25 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23522 ; free virtual = 28661
 
 Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 6
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.014  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.065  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 243b8dd44
+Phase 4.2 Global Iteration 1 | Checksum: 2a8353c69
 
-Time (s): cpu = 00:01:01 ; elapsed = 00:00:23 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 868 ; free virtual = 28224
-Phase 4 Rip-up And Reroute | Checksum: 243b8dd44
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:26 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23524 ; free virtual = 28663
+Phase 4 Rip-up And Reroute | Checksum: 2a8353c69
 
-Time (s): cpu = 00:01:01 ; elapsed = 00:00:23 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 868 ; free virtual = 28224
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:26 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23524 ; free virtual = 28663
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: 1cc4e0683
+Phase 5.1.1 Update Timing | Checksum: 1866bb290
 
-Time (s): cpu = 00:01:05 ; elapsed = 00:00:24 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 873 ; free virtual = 28229
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.014  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:27 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23527 ; free virtual = 28666
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.065  | TNS=0.000  | WHS=0.010  | THS=0.000  |
 
-Phase 5.1 Delay CleanUp | Checksum: 1cc4e0683
+Phase 5.1 Delay CleanUp | Checksum: 1866bb290
 
-Time (s): cpu = 00:01:05 ; elapsed = 00:00:25 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 873 ; free virtual = 28229
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:27 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23527 ; free virtual = 28666
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 1cc4e0683
+Phase 5.2 Clock Skew Optimization | Checksum: 1866bb290
 
-Time (s): cpu = 00:01:05 ; elapsed = 00:00:25 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 873 ; free virtual = 28229
-Phase 5 Delay and Skew Optimization | Checksum: 1cc4e0683
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:27 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23527 ; free virtual = 28666
+Phase 5 Delay and Skew Optimization | Checksum: 1866bb290
 
-Time (s): cpu = 00:01:05 ; elapsed = 00:00:25 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 873 ; free virtual = 28229
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:27 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23527 ; free virtual = 28666
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 17bc368f7
+Phase 6.1.1 Update Timing | Checksum: 1307185bd
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:26 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 873 ; free virtual = 28228
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.014  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:28 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23528 ; free virtual = 28667
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.065  | TNS=0.000  | WHS=0.010  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 15cb02fd9
+Phase 6.1 Hold Fix Iter | Checksum: 22b01a1b4
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:26 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 873 ; free virtual = 28228
-Phase 6 Post Hold Fix | Checksum: 15cb02fd9
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:28 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23528 ; free virtual = 28667
+Phase 6 Post Hold Fix | Checksum: 22b01a1b4
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:26 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 873 ; free virtual = 28228
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:28 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23528 ; free virtual = 28667
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.685337 %
-  Global Horizontal Routing Utilization  = 0.878172 %
+  Global Vertical Routing Utilization    = 0.778124 %
+  Global Horizontal Routing Utilization  = 1.03081 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -729,44 +776,44 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 183028adb
+Phase 7 Route finalize | Checksum: 1c4e0de2d
 
-Time (s): cpu = 00:01:08 ; elapsed = 00:00:26 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 871 ; free virtual = 28226
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:29 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23525 ; free virtual = 28664
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 183028adb
+Phase 8 Verifying routed nets | Checksum: 1c4e0de2d
 
-Time (s): cpu = 00:01:08 ; elapsed = 00:00:26 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 870 ; free virtual = 28225
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:29 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23524 ; free virtual = 28663
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 183028adb
+Phase 9 Depositing Routes | Checksum: 1c4e0de2d
 
-Time (s): cpu = 00:01:08 ; elapsed = 00:00:27 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 872 ; free virtual = 28227
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:29 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23524 ; free virtual = 28663
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=0.014  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.065  | TNS=0.000  | WHS=0.010  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 183028adb
+Phase 10 Post Router Timing | Checksum: 1c4e0de2d
 
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:27 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 874 ; free virtual = 28230
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:29 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23527 ; free virtual = 28666
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:27 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 935 ; free virtual = 28290
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:30 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23592 ; free virtual = 28730
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-120 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+130 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:01:16 ; elapsed = 00:00:34 . Memory (MB): peak = 4427.301 ; gain = 8.004 ; free physical = 935 ; free virtual = 28290
+route_design: Time (s): cpu = 00:01:23 ; elapsed = 00:00:36 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23592 ; free virtual = 28730
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.54 . Memory (MB): peak = 4427.301 ; gain = 0.000 ; free physical = 904 ; free virtual = 28280
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.66 . Memory (MB): peak = 4472.301 ; gain = 0.000 ; free physical = 23551 ; free virtual = 28715
 INFO: [Common 17-1381] The checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/impl_1/MercuryXU5_EndcapSL_routed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file MercuryXU5_EndcapSL_drc_routed.rpt -pb MercuryXU5_EndcapSL_drc_routed.pb -rpx MercuryXU5_EndcapSL_drc_routed.rpx
 Command: report_drc -file MercuryXU5_EndcapSL_drc_routed.rpt -pb MercuryXU5_EndcapSL_drc_routed.pb -rpx MercuryXU5_EndcapSL_drc_routed.rpx
@@ -774,7 +821,7 @@ INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Coretcl 2-168] The results of DRC are in file /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/impl_1/MercuryXU5_EndcapSL_drc_routed.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 4501.133 ; gain = 73.832 ; free physical = 909 ; free virtual = 28271
+report_drc: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 4530.258 ; gain = 57.957 ; free physical = 23572 ; free virtual = 28719
 INFO: [runtcl-4] Executing : report_methodology -file MercuryXU5_EndcapSL_methodology_drc_routed.rpt -pb MercuryXU5_EndcapSL_methodology_drc_routed.pb -rpx MercuryXU5_EndcapSL_methodology_drc_routed.rpx
 Command: report_methodology -file MercuryXU5_EndcapSL_methodology_drc_routed.rpt -pb MercuryXU5_EndcapSL_methodology_drc_routed.pb -rpx MercuryXU5_EndcapSL_methodology_drc_routed.rpx
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'RGMII_RX_CLK_VIRT' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc:10]
@@ -782,7 +829,7 @@ INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 8 threads
 INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/impl_1/MercuryXU5_EndcapSL_methodology_drc_routed.rpt.
 report_methodology completed successfully
-report_methodology: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 4501.133 ; gain = 0.000 ; free physical = 900 ; free virtual = 28263
+report_methodology: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 4530.258 ; gain = 0.000 ; free physical = 23556 ; free virtual = 28703
 INFO: [runtcl-4] Executing : report_power -file MercuryXU5_EndcapSL_power_routed.rpt -pb MercuryXU5_EndcapSL_power_summary_routed.pb -rpx MercuryXU5_EndcapSL_power_routed.rpx
 Command: report_power -file MercuryXU5_EndcapSL_power_routed.rpt -pb MercuryXU5_EndcapSL_power_summary_routed.pb -rpx MercuryXU5_EndcapSL_power_routed.rpx
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'RGMII_RX_CLK_VIRT' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL_rgmii_timing.xdc:10]
@@ -790,9 +837,9 @@ INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
-134 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+144 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
-report_power: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 4501.133 ; gain = 0.000 ; free physical = 854 ; free virtual = 28223
+report_power: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 4542.867 ; gain = 12.609 ; free physical = 23498 ; free virtual = 28653
 INFO: [runtcl-4] Executing : report_route_status -file MercuryXU5_EndcapSL_route_status.rpt -pb MercuryXU5_EndcapSL_route_status.pb
 INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file MercuryXU5_EndcapSL_timing_summary_routed.rpt -pb MercuryXU5_EndcapSL_timing_summary_routed.pb -rpx MercuryXU5_EndcapSL_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: I, Delay Type: min_max.
@@ -811,6 +858,11 @@ INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/s00_nodes/
 INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/s00_nodes/s00_aw_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
 INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
 INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/m02_nodes/m02_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/m02_nodes/m02_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/m02_nodes/m02_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/m02_nodes/m02_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/m02_nodes/m02_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/m02_nodes/m02_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/m02_nodes/m02_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/m02_nodes/m02_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/m02_nodes/m02_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/m02_nodes/m02_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
 INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/m01_nodes/m01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/m01_nodes/m01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
 INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/m01_nodes/m01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/m01_nodes/m01_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
 INFO: [Memdata 28-167] Found XPM memory block design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
@@ -829,7 +881,8 @@ INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 8 threads
 WARNING: [DRC REQP-1774] RAMB36E2_WRITE_WIDTH_A_18_doesnt_use_WEA32: The RAMB36E2 cell design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.SERIES8_TDP_SP36_NO_ECC_ATTR.ram has WRITE_WIDTH_A set to 18. The WEA[3:2] pins should not be connected to active signal.
 WARNING: [DRC REQP-1774] RAMB36E2_WRITE_WIDTH_A_18_doesnt_use_WEA32: The RAMB36E2 cell design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.SERIES8_TDP_SP36_NO_ECC_ATTR.ram has WRITE_WIDTH_A set to 18. The WEA[3:2] pins should not be connected to active signal.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 2 Warnings
+WARNING: [DRC RTSTAT-10] No routable loads: 48 net(s) have no routable loads. The problem bus(es) and/or net(s) are design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.bscanid_en_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.capture_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.drck_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.reset_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.runtest_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.sel_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.shift_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.tdi_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.tms_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/ZERO_SLAVES.update_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/bscanid[31:0], design_1_i/debug_bridge_0/U0/bs_mux/inst/capture_i, design_1_i/debug_bridge_0/U0/bs_mux/inst/drck_i, design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/id_state[1:0], design_1_i/debug_bridge_0/U0/bs_mux/inst/runtest_i... and (the first 15 of 16 listed).
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 3 Warnings
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
 Loading data files...
@@ -841,7 +894,7 @@ Creating bitstream...
 Writing bitstream ./MercuryXU5_EndcapSL.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Common 17-83] Releasing license: Implementation
-170 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+185 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:22 ; elapsed = 00:00:31 . Memory (MB): peak = 4585.934 ; gain = 84.801 ; free physical = 756 ; free virtual = 28137
-INFO: [Common 17-206] Exiting Vivado at Tue Nov 30 11:21:44 2021...
+write_bitstream: Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 4641.871 ; gain = 99.004 ; free physical = 23448 ; free virtual = 28627
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 30 21:03:09 2021...

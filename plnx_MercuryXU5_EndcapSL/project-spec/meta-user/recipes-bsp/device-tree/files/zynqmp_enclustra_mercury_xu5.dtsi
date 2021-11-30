@@ -59,3 +59,8 @@
 		rxd3-skew-ps = <420>;
 	};
 };
+
+// Allow the Debug Bridge to communicate in the Linux uio space.
+&debug_bridge_0 {
+    compatible = "generic-uio";
+};

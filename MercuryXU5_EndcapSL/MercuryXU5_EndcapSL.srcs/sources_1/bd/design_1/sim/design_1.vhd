@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Mon Nov 29 19:23:28 2021
---Host        : okazaki-CFSV8-2L running 64-bit Ubuntu 18.04.6 LTS
+--Date        : Tue Nov 30 20:50:59 2021
+--Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
 --Purpose     : IP block netlist
@@ -37,7 +37,7 @@ entity design_1 is
     peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=6,da_bram_cntlr_cnt=4,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=9,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=6,da_bram_cntlr_cnt=4,da_clkrst_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -301,7 +301,26 @@ architecture STRUCTURE of design_1 is
     M01_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     M01_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M01_AXI_rvalid : in STD_LOGIC;
-    M01_AXI_rready : out STD_LOGIC
+    M01_AXI_rready : out STD_LOGIC;
+    M02_AXI_awaddr : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    M02_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M02_AXI_awvalid : out STD_LOGIC;
+    M02_AXI_awready : in STD_LOGIC;
+    M02_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M02_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M02_AXI_wvalid : out STD_LOGIC;
+    M02_AXI_wready : in STD_LOGIC;
+    M02_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M02_AXI_bvalid : in STD_LOGIC;
+    M02_AXI_bready : out STD_LOGIC;
+    M02_AXI_araddr : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    M02_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M02_AXI_arvalid : out STD_LOGIC;
+    M02_AXI_arready : in STD_LOGIC;
+    M02_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M02_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M02_AXI_rvalid : in STD_LOGIC;
+    M02_AXI_rready : out STD_LOGIC
   );
   end component design_1_axi_smc_1;
   component design_1_rst_ps8_99M_1 is
@@ -329,6 +348,60 @@ architecture STRUCTURE of design_1 is
     locked : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
+  component design_1_debug_bridge_0_0 is
+  port (
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    S_AXI_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    S_AXI_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    S_AXI_arready : out STD_LOGIC;
+    S_AXI_arvalid : in STD_LOGIC;
+    S_AXI_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    S_AXI_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    S_AXI_awready : out STD_LOGIC;
+    S_AXI_awvalid : in STD_LOGIC;
+    S_AXI_bready : in STD_LOGIC;
+    S_AXI_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    S_AXI_bvalid : out STD_LOGIC;
+    S_AXI_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    S_AXI_rready : in STD_LOGIC;
+    S_AXI_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    S_AXI_rvalid : out STD_LOGIC;
+    S_AXI_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S_AXI_wready : out STD_LOGIC;
+    S_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S_AXI_wvalid : in STD_LOGIC;
+    m0_bscan_bscanid_en : out STD_LOGIC;
+    m0_bscan_capture : out STD_LOGIC;
+    m0_bscan_drck : out STD_LOGIC;
+    m0_bscan_reset : out STD_LOGIC;
+    m0_bscan_runtest : out STD_LOGIC;
+    m0_bscan_sel : out STD_LOGIC;
+    m0_bscan_shift : out STD_LOGIC;
+    m0_bscan_tck : out STD_LOGIC;
+    m0_bscan_tdi : out STD_LOGIC;
+    m0_bscan_tdo : in STD_LOGIC;
+    m0_bscan_tms : out STD_LOGIC;
+    m0_bscan_update : out STD_LOGIC
+  );
+  end component design_1_debug_bridge_0_0;
+  component design_1_debug_bridge_1_0 is
+  port (
+    clk : in STD_LOGIC;
+    S_BSCAN_bscanid_en : in STD_LOGIC;
+    S_BSCAN_capture : in STD_LOGIC;
+    S_BSCAN_drck : in STD_LOGIC;
+    S_BSCAN_reset : in STD_LOGIC;
+    S_BSCAN_runtest : in STD_LOGIC;
+    S_BSCAN_sel : in STD_LOGIC;
+    S_BSCAN_shift : in STD_LOGIC;
+    S_BSCAN_tck : in STD_LOGIC;
+    S_BSCAN_tdi : in STD_LOGIC;
+    S_BSCAN_tdo : out STD_LOGIC;
+    S_BSCAN_tms : in STD_LOGIC;
+    S_BSCAN_update : in STD_LOGIC
+  );
+  end component design_1_debug_bridge_1_0;
   signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -391,11 +464,42 @@ architecture STRUCTURE of design_1 is
   signal axi_smc_M01_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M01_AXI_WVALID : STD_LOGIC;
+  signal axi_smc_M02_AXI_ARADDR : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal axi_smc_M02_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M02_AXI_ARREADY : STD_LOGIC;
+  signal axi_smc_M02_AXI_ARVALID : STD_LOGIC;
+  signal axi_smc_M02_AXI_AWADDR : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal axi_smc_M02_AXI_AWPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M02_AXI_AWREADY : STD_LOGIC;
+  signal axi_smc_M02_AXI_AWVALID : STD_LOGIC;
+  signal axi_smc_M02_AXI_BREADY : STD_LOGIC;
+  signal axi_smc_M02_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M02_AXI_BVALID : STD_LOGIC;
+  signal axi_smc_M02_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M02_AXI_RREADY : STD_LOGIC;
+  signal axi_smc_M02_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M02_AXI_RVALID : STD_LOGIC;
+  signal axi_smc_M02_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M02_AXI_WREADY : STD_LOGIC;
+  signal axi_smc_M02_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M02_AXI_WVALID : STD_LOGIC;
   signal clk_wiz_0_clk_out1 : STD_LOGIC;
   signal clk_wiz_0_clk_out2 : STD_LOGIC;
   signal clk_wiz_0_clk_out3 : STD_LOGIC;
   signal clk_wiz_0_clk_out4 : STD_LOGIC;
   signal clk_wiz_0_locked : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_BSCANID_EN : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_CAPTURE : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_DRCK : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_RESET : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_RUNTEST : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_SEL : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_SHIFT : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_TCK : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_TDI : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_TDO : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_TMS : STD_LOGIC;
+  signal debug_bridge_0_m0_bscan_UPDATE : STD_LOGIC;
   signal led_GPIO_TRI_O : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal rst_ps8_99M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps8_99M_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -630,6 +734,25 @@ axi_smc: component design_1_axi_smc_1
       M01_AXI_wready => axi_smc_M01_AXI_WREADY,
       M01_AXI_wstrb(3 downto 0) => axi_smc_M01_AXI_WSTRB(3 downto 0),
       M01_AXI_wvalid => axi_smc_M01_AXI_WVALID,
+      M02_AXI_araddr(15 downto 0) => axi_smc_M02_AXI_ARADDR(15 downto 0),
+      M02_AXI_arprot(2 downto 0) => axi_smc_M02_AXI_ARPROT(2 downto 0),
+      M02_AXI_arready => axi_smc_M02_AXI_ARREADY,
+      M02_AXI_arvalid => axi_smc_M02_AXI_ARVALID,
+      M02_AXI_awaddr(15 downto 0) => axi_smc_M02_AXI_AWADDR(15 downto 0),
+      M02_AXI_awprot(2 downto 0) => axi_smc_M02_AXI_AWPROT(2 downto 0),
+      M02_AXI_awready => axi_smc_M02_AXI_AWREADY,
+      M02_AXI_awvalid => axi_smc_M02_AXI_AWVALID,
+      M02_AXI_bready => axi_smc_M02_AXI_BREADY,
+      M02_AXI_bresp(1 downto 0) => axi_smc_M02_AXI_BRESP(1 downto 0),
+      M02_AXI_bvalid => axi_smc_M02_AXI_BVALID,
+      M02_AXI_rdata(31 downto 0) => axi_smc_M02_AXI_RDATA(31 downto 0),
+      M02_AXI_rready => axi_smc_M02_AXI_RREADY,
+      M02_AXI_rresp(1 downto 0) => axi_smc_M02_AXI_RRESP(1 downto 0),
+      M02_AXI_rvalid => axi_smc_M02_AXI_RVALID,
+      M02_AXI_wdata(31 downto 0) => axi_smc_M02_AXI_WDATA(31 downto 0),
+      M02_AXI_wready => axi_smc_M02_AXI_WREADY,
+      M02_AXI_wstrb(3 downto 0) => axi_smc_M02_AXI_WSTRB(3 downto 0),
+      M02_AXI_wvalid => axi_smc_M02_AXI_WVALID,
       S00_AXI_araddr(39 downto 0) => zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARADDR(39 downto 0),
       S00_AXI_arburst(1 downto 0) => zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARBURST(1 downto 0),
       S00_AXI_arcache(3 downto 0) => zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARCACHE(3 downto 0),
@@ -702,6 +825,58 @@ clk_wiz_0: component design_1_clk_wiz_0_0
       clk_out4 => clk_wiz_0_clk_out4,
       locked => clk_wiz_0_locked,
       resetn => zynq_ultra_ps_e_pl_resetn0
+    );
+debug_bridge_0: component design_1_debug_bridge_0_0
+     port map (
+      S_AXI_araddr(4 downto 0) => axi_smc_M02_AXI_ARADDR(4 downto 0),
+      S_AXI_arprot(2 downto 0) => axi_smc_M02_AXI_ARPROT(2 downto 0),
+      S_AXI_arready => axi_smc_M02_AXI_ARREADY,
+      S_AXI_arvalid => axi_smc_M02_AXI_ARVALID,
+      S_AXI_awaddr(4 downto 0) => axi_smc_M02_AXI_AWADDR(4 downto 0),
+      S_AXI_awprot(2 downto 0) => axi_smc_M02_AXI_AWPROT(2 downto 0),
+      S_AXI_awready => axi_smc_M02_AXI_AWREADY,
+      S_AXI_awvalid => axi_smc_M02_AXI_AWVALID,
+      S_AXI_bready => axi_smc_M02_AXI_BREADY,
+      S_AXI_bresp(1 downto 0) => axi_smc_M02_AXI_BRESP(1 downto 0),
+      S_AXI_bvalid => axi_smc_M02_AXI_BVALID,
+      S_AXI_rdata(31 downto 0) => axi_smc_M02_AXI_RDATA(31 downto 0),
+      S_AXI_rready => axi_smc_M02_AXI_RREADY,
+      S_AXI_rresp(1 downto 0) => axi_smc_M02_AXI_RRESP(1 downto 0),
+      S_AXI_rvalid => axi_smc_M02_AXI_RVALID,
+      S_AXI_wdata(31 downto 0) => axi_smc_M02_AXI_WDATA(31 downto 0),
+      S_AXI_wready => axi_smc_M02_AXI_WREADY,
+      S_AXI_wstrb(3 downto 0) => axi_smc_M02_AXI_WSTRB(3 downto 0),
+      S_AXI_wvalid => axi_smc_M02_AXI_WVALID,
+      m0_bscan_bscanid_en => debug_bridge_0_m0_bscan_BSCANID_EN,
+      m0_bscan_capture => debug_bridge_0_m0_bscan_CAPTURE,
+      m0_bscan_drck => debug_bridge_0_m0_bscan_DRCK,
+      m0_bscan_reset => debug_bridge_0_m0_bscan_RESET,
+      m0_bscan_runtest => debug_bridge_0_m0_bscan_RUNTEST,
+      m0_bscan_sel => debug_bridge_0_m0_bscan_SEL,
+      m0_bscan_shift => debug_bridge_0_m0_bscan_SHIFT,
+      m0_bscan_tck => debug_bridge_0_m0_bscan_TCK,
+      m0_bscan_tdi => debug_bridge_0_m0_bscan_TDI,
+      m0_bscan_tdo => debug_bridge_0_m0_bscan_TDO,
+      m0_bscan_tms => debug_bridge_0_m0_bscan_TMS,
+      m0_bscan_update => debug_bridge_0_m0_bscan_UPDATE,
+      s_axi_aclk => zynq_ultra_ps_e_pl_clk0,
+      s_axi_aresetn => rst_ps8_99M_peripheral_aresetn(0)
+    );
+debug_bridge_1: component design_1_debug_bridge_1_0
+     port map (
+      S_BSCAN_bscanid_en => debug_bridge_0_m0_bscan_BSCANID_EN,
+      S_BSCAN_capture => debug_bridge_0_m0_bscan_CAPTURE,
+      S_BSCAN_drck => debug_bridge_0_m0_bscan_DRCK,
+      S_BSCAN_reset => debug_bridge_0_m0_bscan_RESET,
+      S_BSCAN_runtest => debug_bridge_0_m0_bscan_RUNTEST,
+      S_BSCAN_sel => debug_bridge_0_m0_bscan_SEL,
+      S_BSCAN_shift => debug_bridge_0_m0_bscan_SHIFT,
+      S_BSCAN_tck => debug_bridge_0_m0_bscan_TCK,
+      S_BSCAN_tdi => debug_bridge_0_m0_bscan_TDI,
+      S_BSCAN_tdo => debug_bridge_0_m0_bscan_TDO,
+      S_BSCAN_tms => debug_bridge_0_m0_bscan_TMS,
+      S_BSCAN_update => debug_bridge_0_m0_bscan_UPDATE,
+      clk => zynq_ultra_ps_e_pl_clk0
     );
 led: component design_1_led_1
      port map (
