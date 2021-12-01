@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date                      : Tue Nov 30 21:01:24 2021
+| Date                      : Wed Dec  1 15:29:03 2021
 | Host                      : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command                   : report_io -file MercuryXU5_EndcapSL_io_placed.rpt
 | Design                    : MercuryXU5_EndcapSL
@@ -530,7 +530,7 @@ Table of Contents
 | K17        | GEM0_RGMII_RXD[3]     |                  | PS_MIO36_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
 | K18        | GPIO1_GPIO1[40]       |                  | PS_MIO40_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
 | K19        | GPIO1_GPIO1[43]       |                  | PS_MIO43_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
-| K20        | GPIO1_GPIO1[45]       |                  | PS_MIO45_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
+| K20        | SD1_SDIO1_CD_N        |                  | PS_MIO45_501                       | PSS IO        | LVCMOS18    |         |         12 |                         | FAST |               Ohm |                      |           |            | PULLUP    |          |      |                  |              |                   |              |
 | K21        |                       |                  | GND                                | GND           |             |         |            |                         |      |                   |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | K22        | DDR4_DQ46             |                  | PS_DDR_DQ46_504                    | PSS IO        | DDR4        |         |            |                      34 |      |            40 Ohm |                      |           |            |           |          |      |                  |              |                   |              |
 | K23        | DDR4_DQS_N5           |                  | PS_DDR_DQS_N5_504                  | PSS IO        | DDR4        |         |            |                      34 |      |            40 Ohm |                      |           |            |           |          |      |                  |              |                   |              |

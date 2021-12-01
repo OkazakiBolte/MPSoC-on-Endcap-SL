@@ -117,6 +117,12 @@ set_property used_in_implementation false [get_files -all /home/okazaki/projects
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_26/bd_6f02_m01awn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_27/bd_6f02_m01wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_28/bd_6f02_m01bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_30/bd_6f02_m02s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_31/bd_6f02_m02arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_32/bd_6f02_m02rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_33/bd_6f02_m02awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_34/bd_6f02_m02wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_35/bd_6f02_m02bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/ooc.xdc]
 
 OPTRACE "Adding files" END { }

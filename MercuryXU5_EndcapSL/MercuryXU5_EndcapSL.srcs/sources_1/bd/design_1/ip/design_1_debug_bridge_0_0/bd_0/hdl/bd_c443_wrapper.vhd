@@ -51,6 +51,18 @@ architecture STRUCTURE of bd_c443_wrapper is
   port (
     s_axi_aclk : in STD_LOGIC;
     s_axi_aresetn : in STD_LOGIC;
+    m0_bscan_bscanid_en : out STD_LOGIC;
+    m0_bscan_capture : out STD_LOGIC;
+    m0_bscan_drck : out STD_LOGIC;
+    m0_bscan_reset : out STD_LOGIC;
+    m0_bscan_runtest : out STD_LOGIC;
+    m0_bscan_sel : out STD_LOGIC;
+    m0_bscan_shift : out STD_LOGIC;
+    m0_bscan_tck : out STD_LOGIC;
+    m0_bscan_tdi : out STD_LOGIC;
+    m0_bscan_tdo : in STD_LOGIC;
+    m0_bscan_tms : out STD_LOGIC;
+    m0_bscan_update : out STD_LOGIC;
     S_AXI_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     S_AXI_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     S_AXI_arready : out STD_LOGIC;
@@ -69,19 +81,7 @@ architecture STRUCTURE of bd_c443_wrapper is
     S_AXI_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     S_AXI_wready : out STD_LOGIC;
     S_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_wvalid : in STD_LOGIC;
-    m0_bscan_bscanid_en : out STD_LOGIC;
-    m0_bscan_capture : out STD_LOGIC;
-    m0_bscan_drck : out STD_LOGIC;
-    m0_bscan_reset : out STD_LOGIC;
-    m0_bscan_runtest : out STD_LOGIC;
-    m0_bscan_sel : out STD_LOGIC;
-    m0_bscan_shift : out STD_LOGIC;
-    m0_bscan_tck : out STD_LOGIC;
-    m0_bscan_tdi : out STD_LOGIC;
-    m0_bscan_tdo : in STD_LOGIC;
-    m0_bscan_tms : out STD_LOGIC;
-    m0_bscan_update : out STD_LOGIC
+    S_AXI_wvalid : in STD_LOGIC
   );
   end component bd_c443;
 begin
