@@ -31,8 +31,10 @@ eth1_macaddr=ca:9f:1e:3a:b6:25
 
 # -------- #
 
-eth0_setting=setenv ethaddr ${eth0_macaddr} && setenv bootargs ${bootargs} ip=${eth0_ipaddr}:${eth0_gatewayip}:${eth0_netmask}:${eth0_hostname}:${eth0_interface}:${eth0_autoconf} nameserver=${eth0_nameserver_1} nameserver=${eth0_nameserver_2}
+# eth0_setting=setenv ethaddr ${eth0_macaddr} && setenv bootargs ${bootargs} ip=${eth0_ipaddr}:${eth0_gatewayip}:${eth0_netmask}:${eth0_hostname}:${eth0_interface}:${eth0_autoconf} nameserver=${eth0_nameserver_1} nameserver=${eth0_nameserver_2}
 
-eth1_setting=setenv eth1addr ${eth1_macaddr} # && setenv bootargs ${bootargs} ip=${eth1_ipaddr}::${eth1_netmask}:${eth1_hostname}:${eth1_interface}:${eth1_autoconf} # Can
+# eth1_setting=setenv eth1addr ${eth1_macaddr} # && setenv bootargs ${bootargs} ip=${eth1_ipaddr}::${eth1_netmask}:${eth1_hostname}:${eth1_interface}:${eth1_autoconf} # Can
 
-uenvcmd=run eth0_setting && run eth1_setting
+eth_setting=setenv ethaddr ${eth0_macaddr} && setenv eth1addr ${eth1_macaddr} && setenv bootargs ${bootargs} ip=${eth0_ipaddr}:${eth0_gatewayip}:${eth0_netmask}:${eth0_hostname}:${eth0_interface}:${eth0_autoconf} nameserver=${eth0_nameserver_1} nameserver=${eth0_nameserver_2}
+
+uenvcmd=run eth_setting
