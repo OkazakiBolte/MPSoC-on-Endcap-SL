@@ -1,6 +1,9 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI += "file://system-user.dtsi"
+SRC_URI += " file://zynqmp_enclustra_mercury_xu5.dtsi"
+SRC_URI += " file://endcap_sl.dtsi"
+
 
 python () {
     if d.getVar("CONFIG_DISABLE"):
