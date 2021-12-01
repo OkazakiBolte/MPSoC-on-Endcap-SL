@@ -1,0 +1,61 @@
+
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+sl-xu5-01 login: 
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+sl-xu5-01 login: okazaki
+Password: 
+Last login: Wed Dec  1 00:18:16 on ttyPS0
+[0;33m(sl-xu5-01)[0m ~ [0;33m$[0m 
+
+[0;33m(sl-xu5-01)[0m ~ [0;33m$[0m ls bootfiles/
+total 17M
+-rw-r--r-- 1 okazaki okazaki 8.7M Dec  1 00:49 BOOT.BIN
+-rw-r--r-- 1 okazaki okazaki 7.8M Dec  1 00:49 image.ub
+-rw-r--r-- 1 okazaki okazaki 3.7K Dec  1 00:49 boot.scr
+-rw-r--r-- 1 okazaki okazaki 1.2K Dec  1 00:49 uEnv.txt
+
+[0;33m(sl-xu5-01)[0m ~ [0;33m$[0m suo[Kdo mount /dev/mmcblk1p1 /mnt/
+[sudo] password for okazaki: 
+
+[0;33m(sl-xu5-01)[0m ~ [0;33m$[0m ls /mnt/
+total 17M
+-rwxr-xr-x 1 root root 3.7K Nov 30 23:03 boot.scr*
+-rwxr-xr-x 1 root root 8.7M Nov 30 23:03 BOOT.BIN*
+-rwxr-xr-x 1 root root 7.8M Nov 30 23:04 image.ub*
+-rwxr-xr-x 1 root root 1.3K Dec  1 00:16 uEnv.txt*
+
+[0;33m(sl-xu5-01)[0m ~ [0;33m$[0m sudo cp bootfiles/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kdiff bootfiles/image.ub /mnt/image.ub 
+
+[0;33m(sl-xu5-01)[0m ~ [0;33m$[0m diff bootfiles/BOOT.BIN /mnt/b[KBOOT.BIN 
+
+[0;33m(sl-xu5-01)[0m ~ [0;33m$[0m sud[K[K[Kcd bootfiles/
+/home/okazaki/bootfiles
+
+[0;33m(sl-xu5-01)[0m bootfiles [0;33m$[0m diff uEnv.txt /mntu[K/uEnv.txt 
+1c1
+< bootargs=console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk1p2 rootfstype=ext4 rw rootwait earlyprintk
+---
+> bootargs=earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk1p2 rootfstype=ext4 rw rootwait earlyprintk uio_pdrv_genirq.of_id=generic-uio cpuidle.off=1
+
+[0;33m(sl-xu5-01)[0m bootfiles [0;33m$[0m diff boot.scr /mnt/boot.scr 
+
+[0;33m(sl-xu5-01)[0m bootfiles [0;33m$[0m sudo umount /dev/mmcblk1p1 
+
+[0;33m(sl-xu5-01)[0m bootfiles [0;33m$[0m svcserver
+-bash: svcserver: command not found
+
+[0;33m(sl-xu5-01)[0m bootfiles [0;33m$[0m xvcserver
+-bash: xvcserver: command not found
+
+[0;33m(sl-xu5-01)[0m bootfiles [0;33m$[0m exit
+logout
+
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+sl-xu5-01 login: y
+Password: 
