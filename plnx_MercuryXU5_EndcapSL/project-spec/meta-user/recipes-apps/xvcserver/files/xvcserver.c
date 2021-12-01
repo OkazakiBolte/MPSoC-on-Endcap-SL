@@ -234,7 +234,7 @@ int main(int argc, char **argv) {
     setsockopt(s, SOL_SOCKET, SO_REUSEADDR, &i, sizeof i);
 
     address.sin_addr.s_addr = INADDR_ANY;
-    address.sin_port        = htons(2542);
+    address.sin_port        = htons(3121);
     address.sin_family      = AF_INET;
 
     if (bind(s, (struct sockaddr *)&address, sizeof(address)) < 0) {

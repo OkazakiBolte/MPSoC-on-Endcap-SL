@@ -1,0 +1,652 @@
+[    1.990425] raid6: int64x8  xor()   844 MB/s
+[    2.058509] raid6: int64x4  gen()  1085 MB/s
+[    2.126532] raid6: int64x4  xor()   815 MB/s
+[    2.194579] raid6: int64x2  gen()   753 MB/s
+[    2.262627] raid6: int64x2  xor()   657 MB/s
+[    2.330636] raid6: int64x1  gen()   499 MB/s
+[    2.398708] raid6: int64x1  xor()   500 MB/s
+[    2.398745] raid6: using algorithm neonx8 gen() 1715 MB/s
+[    2.402703] raid6: .... xor() 1624 MB/s, rmw enabled
+[    2.407633] raid6: using neon recovery algorithm
+[    2.412521] iommu: Default domain type: Translated 
+[    2.417248] SCSI subsystem initialized
+[    2.420904] usbcore: registered new interface driver usbfs
+[    2.426257] usbcore: registered new interface driver hub
+[    2.431529] usbcore: registered new device driver usb
+[    2.436564] mc: Linux media interface: v0.10
+[    2.440778] videodev: Linux video capture interface: v2.00
+[    2.446227] pps_core: LinuxPPS API ver. 1 registered
+[    2.451144] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    2.460236] PTP clock support registered
+[    2.464128] EDAC MC: Ver: 3.0.0
+[    2.467574] zynqmp-ipi-mbox mailbox@ff990400: Registered ZynqMP IPI mbox with TX/RX channels.
+[    2.475876] FPGA manager framework
+[    2.479190] Advanced Linux Sound Architecture Driver Initialized.
+[    2.485377] Bluetooth: Core ver 2.22
+[    2.488699] NET: Registered protocol family 31
+[    2.493098] Bluetooth: HCI device and connection manager initialized
+[    2.499414] Bluetooth: HCI socket layer initialized
+[    2.504257] Bluetooth: L2CAP socket layer initialized
+[    2.509278] Bluetooth: SCO socket layer initialized
+[    2.514517] clocksource: Switched to clocksource arch_sys_counter
+[    2.520265] VFS: Disk quotas dquot_6.6.0
+[    2.524109] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.534603] NET: Registered protocol family 2
+[    2.535523] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    2.543742] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    2.551754] TCP bind hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[    2.559185] TCP: Hash tables configured (established 32768 bind 32768)
+[    2.565386] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    2.572051] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    2.579220] NET: Registered protocol family 1
+[    2.583645] RPC: Registered named UNIX socket transport module.
+[    2.589292] RPC: Registered udp transport module.
+[    2.593959] RPC: Registered tcp transport module.
+[    2.598631] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    2.605258] PCI: CLS 0 bytes, default 64
+[    2.609438] hw perfevents: no interrupt-affinity property for /pmu, guessing.
+[    2.616159] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    2.624401] Initialise system trusted keyrings
+[    2.628195] workingset: timestamp_bits=46 max_order=20 bucket_order=0
+[    2.635209] NFS: Registering the id_resolver key type
+[    2.639555] Key type id_resolver registered
+[    2.643695] Key type id_legacy registered
+[    2.647680] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    2.654349] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    2.671899] NET: Registered protocol family 38
+[    2.671939] Key type asymmetric registered
+[    2.674770] Asymmetric key parser 'x509' registered
+[    2.679629] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 247)
+[    2.686965] io scheduler mq-deadline registered
+[    2.691461] io scheduler kyber registered
+[    2.719925] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    2.723460] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    2.730474] brd: module loaded
+[    2.734538] loop: module loaded
+[    2.735146] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    2.740202] libphy: Fixed MDIO Bus: probed
+[    2.744139] tun: Universal TUN/TAP device driver, 1.6
+[    2.748392] CAN device driver interface
+[    2.752830] usbcore: registered new interface driver asix
+[    2.757528] usbcore: registered new interface driver ax88179_178a
+[    2.763561] usbcore: registered new interface driver cdc_ether
+[    2.769354] usbcore: registered new interface driver net1080
+[    2.774979] usbcore: registered new interface driver cdc_subset
+[    2.780860] usbcore: registered new interface driver zaurus
+[    2.786404] usbcore: registered new interface driver cdc_ncm
+[    2.792092] uio_pdrv_genirq 80020000.debug_bridge: IRQ index 0 not found
+[    2.799456] usbcore: registered new interface driver uas
+[    2.803970] usbcore: registered new interface driver usb-storage
+[    2.810384] rtc_zynqmp ffa60000.rtc: registered as rtc0
+[    2.815136] i2c /dev entries driver
+[    2.819819] usbcore: registered new interface driver uvcvideo
+[    2.824270] USB Video Class driver (1.1.1)
+[    2.828636] Bluetooth: HCI UART driver ver 2.3
+[    2.832747] Bluetooth: HCI UART protocol H4 registered
+[    2.837848] Bluetooth: HCI UART protocol BCSP registered
+[    2.843137] Bluetooth: HCI UART protocol LL registered
+[    2.848228] Bluetooth: HCI UART protocol ATH3K registered
+[    2.853601] Bluetooth: HCI UART protocol Three-wire (H5) registered
+[    2.859847] Bluetooth: HCI UART protocol Intel registered
+[    2.865195] Bluetooth: HCI UART protocol QCA registered
+[    2.870392] usbcore: registered new interface driver bcm203x
+[    2.876014] usbcore: registered new interface driver bpa10x
+[    2.881551] usbcore: registered new interface driver bfusb
+[    2.887004] usbcore: registered new interface driver btusb
+[    2.892463] usbcore: registered new interface driver ath3k
+[    2.898019] EDAC MC0: 13 UE BankGroup Number 0 Block Number 0 on mc#0csrow#0channel#0 (csrow:0 channel:0 page:0x0 offset:0x0 grain:1)
+[    2.909905] EDAC MC0: Giving out device to module 1 controller synps_ddr_controller: DEV synps_edac (INTERRUPT)
+[    2.919971] EDAC DEVICE0: Giving out device to module edac controller cache_err: DEV edac (POLLED)
+[    2.928905] EDAC DEVICE1: Giving out device to module zynqmp-ocm-edac controller zynqmp_ocm: DEV ff960000.memory-controller (INTERRUPT)
+[    2.941187] sdhci: Secure Digital Host Controller Interface driver
+[    2.947013] sdhci: Copyright(c) Pierre Ossman
+[    2.951336] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.957271] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.962967] zynqmp_firmware_probe Platform Management API v1.1
+[    2.968726] zynqmp_firmware_probe Trustzone version v1.0
+[    2.996632] alg: No test for xilinx-zynqmp-aes (zynqmp-aes)
+[    2.996796] zynqmp_aes zynqmp_aes: AES Successfully Registered
+[    2.996796] 
+[    3.004056] alg: No test for xilinx-keccak-384 (zynqmp-keccak-384)
+[    3.010252] alg: No test for xilinx-zynqmp-rsa (zynqmp-rsa)
+[    3.015818] usbcore: registered new interface driver usbhid
+[    3.021128] usbhid: USB HID core driver
+[    3.027048] fpga_manager fpga0: Xilinx ZynqMP FPGA Manager registered
+[    3.031596] usbcore: registered new interface driver snd-usb-audio
+[    3.038157] pktgen: Packet Generator for packet performance testing. Version: 2.75
+[    3.045496] Initializing XFRM netlink socket
+[    3.049313] NET: Registered protocol family 10
+[    3.054011] Segment Routing with IPv6
+[    3.057386] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    3.063464] NET: Registered protocol family 17
+[    3.067590] NET: Registered protocol family 15
+[    3.072001] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    3.084881] can: controller area network core (rev 20170425 abi 9)
+[    3.091041] NET: Registered protocol family 29
+[    3.095431] can: raw protocol (rev 20170425)
+[    3.099669] can: broadcast manager protocol (rev 20170425 t)
+[    3.105292] can: netlink gateway (rev 20190810) max_hops=1
+[    3.110810] Bluetooth: RFCOMM TTY layer initialized
+[    3.115590] Bluetooth: RFCOMM socket layer initialized
+[    3.120698] Bluetooth: RFCOMM ver 1.11
+[    3.124411] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    3.129684] Bluetooth: BNEP filters: protocol multicast
+[    3.134876] Bluetooth: BNEP socket layer initialized
+[    3.139803] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    3.145690] Bluetooth: HIDP socket layer initialized
+[    3.150718] 9pnet: Installing 9P2000 support
+[    3.154872] Key type dns_resolver registered
+[    3.159445] registered taskstats version 1
+[    3.163163] Loading compiled-in X.509 certificates
+[    3.168288] Btrfs loaded, crc32c=crc32c-generic
+[    3.180214] ff000000.serial: ttyPS0 at MMIO 0xff000000 (irq = 41, base_baud = 6249999) is a xuartps
+[    3.189233] printk: console [ttyPS0] enabled
+[    3.189233] printk: console [ttyPS0] enabled
+[    3.193527] printk: bootconsole [cdns0] disabled
+[    3.193527] printk: bootconsole [cdns0] disabled
+[    3.202694] of-fpga-region fpga-full: FPGA Region probed
+[    3.212737] GPIO IRQ not connected
+[    3.216135] XGpio: gpio@80010000: registered, base is 509
+[    3.222106] xilinx-zynqmp-dma fd500000.dma: ZynqMP DMA driver Probe success
+[    3.229193] xilinx-zynqmp-dma fd510000.dma: ZynqMP DMA driver Probe success
+[    3.236285] xilinx-zynqmp-dma fd520000.dma: ZynqMP DMA driver Probe success
+[    3.243373] xilinx-zynqmp-dma fd530000.dma: ZynqMP DMA driver Probe success
+[    3.250461] xilinx-zynqmp-dma fd540000.dma: ZynqMP DMA driver Probe success
+[    3.257549] xilinx-zynqmp-dma fd550000.dma: ZynqMP DMA driver Probe success
+[    3.264636] xilinx-zynqmp-dma fd560000.dma: ZynqMP DMA driver Probe success
+[    3.271730] xilinx-zynqmp-dma fd570000.dma: ZynqMP DMA driver Probe success
+[    3.278889] xilinx-zynqmp-dma ffa80000.dma: ZynqMP DMA driver Probe success
+[    3.285979] xilinx-zynqmp-dma ffa90000.dma: ZynqMP DMA driver Probe success
+[    3.293067] xilinx-zynqmp-dma ffaa0000.dma: ZynqMP DMA driver Probe success
+[    3.300153] xilinx-zynqmp-dma ffab0000.dma: ZynqMP DMA driver Probe success
+[    3.307242] xilinx-zynqmp-dma ffac0000.dma: ZynqMP DMA driver Probe success
+[    3.314328] xilinx-zynqmp-dma ffad0000.dma: ZynqMP DMA driver Probe success
+[    3.321414] xilinx-zynqmp-dma ffae0000.dma: ZynqMP DMA driver Probe success
+[    3.328502] xilinx-zynqmp-dma ffaf0000.dma: ZynqMP DMA driver Probe success
+[    3.335704] zynqmp-qspi ff0f0000.spi: rx bus width not found
+[    3.341359] zynqmp-qspi ff0f0000.spi: tx bus width not found
+[    3.347168] spi_master spi0: cannot find modalias for /amba/spi@ff0f0000/flash@0
+[    3.354558] spi_master spi0: Failed to create SPI device for /amba/spi@ff0f0000/flash@0
+[    3.362843] macb ff0b0000.ethernet: Not enabling partial store and forward
+[    3.370191] libphy: MACB_mii_bus: probed
+[    3.382614] zynqmp_pll_disable() clock disable failed for dpll_int, ret = -13
+[    3.447697] Micrel KSZ9031 Gigabit PHY ff0b0000.ethernet-ffffffff:03: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=ff0b0000.ethernet-ffffffff:03, irq=POLL)
+[    3.463517] macb ff0b0000.ethernet eth0: Cadence GEM rev 0x50070106 at 0xff0b0000 irq 29 (ca:9f:1e:3a:b6:24)
+[    3.473594] macb ff0c0000.ethernet: Not enabling partial store and forward
+[    3.480857] libphy: MACB_mii_bus: probed
+[    3.555690] Micrel KSZ9031 Gigabit PHY ff0c0000.ethernet-ffffffff:03: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=ff0c0000.ethernet-ffffffff:03, irq=POLL)
+[    3.571503] macb ff0c0000.ethernet eth1: Cadence GEM rev 0x50070106 at 0xff0c0000 irq 30 (ca:9f:1e:3a:b6:25)
+[    3.581576] xilinx-axipmon ffa00000.perf-monitor: Probed Xilinx APM
+[    3.588072] xilinx-axipmon fd0b0000.perf-monitor: Probed Xilinx APM
+[    3.594633] xilinx-axipmon fd490000.perf-monitor: Probed Xilinx APM
+[    3.601105] xilinx-axipmon ffa10000.perf-monitor: Probed Xilinx APM
+[    3.607579] dwc3-of-simple ff9d0000.usb0: dwc3_simple_set_phydata: Can't find usb3-phy
+[    3.615863] dwc3 fe200000.dwc3: Failed to get clk 'ref': -2
+[    3.621830] dwc3-of-simple ff9e0000.usb1: dwc3_simple_set_phydata: Can't find usb3-phy
+[    3.630059] dwc3 fe300000.dwc3: Failed to get clk 'ref': -2
+[    3.636670] i2c i2c-0: Added multiplexed i2c bus 1
+[    3.641775] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.647271] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    3.655012] xhci-hcd xhci-hcd.0.auto: hcc params 0x0238f625 hci version 0x100 quirks 0x0000000202010010
+[    3.664419] xhci-hcd xhci-hcd.0.auto: irq 43, io mem 0xfe200000
+[    3.670491] i2c i2c-0: Added multiplexed i2c bus 2
+[    3.675576] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.681109] i2c i2c-0: Added multiplexed i2c bus 3
+[    3.686088] i2c i2c-0: Added multiplexed i2c bus 4
+[    3.691064] i2c i2c-0: Added multiplexed i2c bus 5
+[    3.695951] i2c i2c-0: Added multiplexed i2c bus 6
+[    3.700848] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    3.709108] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.716325] usb usb1: Product: xHCI Host Controller
+[    3.721193] usb usb1: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    3.727798] usb usb1: SerialNumber: xhci-hcd.0.auto
+[    3.732893] i2c i2c-0: Added multiplexed i2c bus 7
+[    3.737828] i2c i2c-0: Added multiplexed i2c bus 8
+[    3.742616] pca954x 0-0070: registered 8 multiplexed busses for I2C switch pca9548
+[    3.750199] cdns-i2c ff020000.i2c: 400 kHz mmio ff020000 irq 32
+[    3.756475] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 1333333 KHz
+[    3.763876] cpu cpu0: dev_pm_opp_set_rate: failed to find current OPP for freq 1333333320 (-34)
+[    3.772607] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 1199999 KHz
+[    3.781135] cpu cpu0: dev_pm_opp_set_rate: failed to find current OPP for freq 1333333320 (-34)
+[    3.790860] hub 1-0:1.0: USB hub found
+[    3.794630] hub 1-0:1.0: 1 port detected
+[    3.798711] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    3.804202] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    3.811857] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0 SuperSpeed
+[    3.818427] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    3.826580] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.04
+[    3.834835] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.842046] usb usb2: Product: xHCI Host Controller
+[    3.846915] usb usb2: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    3.853524] usb usb2: SerialNumber: xhci-hcd.0.auto
+[    3.858759] hub 2-0:1.0: USB hub found
+[    3.862524] hub 2-0:1.0: 1 port detected
+[    3.866623] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 3
+[    3.874355] xhci-hcd xhci-hcd.1.auto: hcc params 0x0238f625 hci version 0x100 quirks 0x0000000202010010
+[    3.883757] xhci-hcd xhci-hcd.1.auto: irq 46, io mem 0xfe300000
+[    3.889887] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    3.898150] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.905379] usb usb3: Product: xHCI Host Controller
+[    3.910248] usb usb3: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    3.916851] usb usb3: SerialNumber: xhci-hcd.1.auto
+[    3.921808] mmc0: SDHCI controller on ff160000.mmc [ff160000.mmc] using ADMA 64-bit
+[    3.930752] hub 3-0:1.0: USB hub found
+[    3.934571] hub 3-0:1.0: 1 port detected
+[    3.938740] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    3.944229] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 4
+[    3.951883] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0 SuperSpeed
+[    3.958494] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    3.966652] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.04
+[    3.974909] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.982125] usb usb4: Product: xHCI Host Controller
+[    3.986995] usb usb4: Manufacturer: Linux 5.4.0-xilinx-v2020.1 xhci-hcd
+[    3.993600] usb usb4: SerialNumber: xhci-hcd.1.auto
+[    3.998594] mmc1: SDHCI controller on ff170000.mmc [ff170000.mmc] using ADMA 64-bit
+[    4.008542] rtc_zynqmp ffa60000.rtc: setting system clock to 1970-01-01T00:00:09 UTC (9)
+[    4.016624] of_cfs_init
+[    4.019074] of_cfs_init: OK
+[    4.022312] hub 4-0:1.0: USB hub found
+[    4.026189] hub 4-0:1.0: 1 port detected
+[    4.063870] mmc1: new high speed SDHC card at address 5048
+[    4.069750] mmcblk1: mmc1:5048 SD16G 14.4 GiB 
+[    4.075545]  mmcblk1: p1 p2
+[    4.107290] mmc0: new HS200 MMC card at address 0001
+[    4.112559] mmcblk0: mmc0:0001 W52516 14.3 GiB 
+[    4.117257] mmcblk0boot0: mmc0:0001 W52516 partition 1 4.00 MiB
+[    4.123336] mmcblk0boot1: mmc0:0001 W52516 partition 2 4.00 MiB
+[    4.129308] mmcblk0rpmb: mmc0:0001 W52516 partition 3 4.00 MiB, chardev (245:0)
+[    4.138542]  mmcblk0: p1
+[   16.318533] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[   16.442209] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[   16.448733] clk: Not disabling unused clocks
+[   16.452997] ALSA device list:
+[   16.455955]   No soundcards found.
+[   16.459621] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[   16.468226] cfg80211: failed to load regulatory.db
+[   16.712780] EXT4-fs (mmcblk1p2): recovery complete
+[   16.720675] random: fast init done
+[   16.724081] EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)
+[   16.732205] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[   16.746464] devtmpfs: mounted
+[   16.749579] Freeing unused kernel memory: 704K
+[   16.754050] Run /sbin/init as init process
+[   17.225415] random: systemd: uninitialized urandom read (16 bytes read)
+[   17.241389] random: systemd: uninitialized urandom read (16 bytes read)
+[   17.267130] systemd[1]: systemd 219 running in system mode. (+PAM +AUDIT +SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 -SECCOMP +BLKID +ELFUTILS +KMOD +IDN)
+[   17.285432] systemd[1]: Detected architecture arm64.
+
+Welcome to [0;31mCentOS Linux 7 (AltArch)[0m!
+
+[   17.307534] systemd[1]: Set hostname to <sl-xu5-01>.
+[   17.338007] random: systemd: uninitialized urandom read (16 bytes read)
+[   17.902979] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[[32m  OK  [0m] Started Forward Password Requests to Wall Directory Watch.
+[   17.927224] systemd[1]: Created slice Root Slice.
+[[32m  OK  [0m] Created slice Root Slice.
+[   17.942632] systemd[1]: Listening on LVM2 metadata daemon socket.
+[[32m  OK  [0m] Listening on LVM2 metadata daemon socket.
+[   17.958611] systemd[1]: Listening on udev Kernel Socket.
+[[32m  OK  [0m] Listening on udev Kernel Socket.
+[   17.974778] systemd[1]: Created slice System Slice.
+[[32m  OK  [0m] Created slice System Slice.
+[   17.990826] systemd[1]: Created slice system-selinux\x2dpolicy\x2dmigrate\x2dlocal\x2dchanges.slice.
+[[32m  OK  [0m] Created slice system-selinux\x2dpol...grate\x2dlocal\x2dchanges.slice.
+[   18.014827] systemd[1]: Created slice system-serial\x2dgetty.slice.
+[[32m  OK  [0m] Created slice system-serial\x2dgetty.slice.
+[[32m  OK  [0m] Listening on Delayed Shutdown Socket.
+[[32m  OK  [0m] Listening on Device-mapper event daemon FIFOs.
+[[32m  OK  [0m] Created slice User and Session Slice.
+[[32m  OK  [0m] Created slice system-getty.slice.
+[[32m  OK  [0m] Listening on /dev/initctl Compatibility Named Pipe.
+[[32m  OK  [0m] Reached target Swap.
+[[32m  OK  [0m] Reached target Slices.
+[[32m  OK  [0m] Listening on LVM2 poll daemon socket.
+[[32m  OK  [0m] Listening on Journal Socket.
+         Starting Monitoring of LVM2 mirrors... dmeventd or progress polling...
+         Mounting POSIX Message Queue File System...
+         Starting Read and set NIS domainname from /etc/sysconfig/network...
+         Starting Journal Service...
+[[32m  OK  [0m] Listening on udev Control Socket.
+         Mounting Huge Pages File System...
+         Starting Collect Read-Ahead Data...
+         Mounting Debug File System...
+[[32m  OK  [0m] Mounted POSIX Message Queue File System.
+[[32m  OK  [0m] Mounted Huge Pages File System.
+[   18.322996] systemd-readahead[164]: Failed to create fanotify object: Function not implemented
+[[32m  OK  [0m] Mounted Debug File System.
+[[1;31mFAILED[0m] Failed to start Collect Read-Ahead Data.
+See 'systemctl status systemd-readahead-collect.service' for details.
+         Starting Apply Kernel Variables...
+         Mounting Configuration File System...
+         Starting Configure read-only root support...
+         Starting udev Coldplug all Devices...
+         Starting Setup Virtual Console...
+         Starting Create Static Device Nodes in /dev...
+[[32m  OK  [0m] Mounted Configuration File System.
+[[32m  OK  [0m] Started Journal Service.
+[[32m  OK  [0m] Started Read and set NIS domainname from /etc/sysconfig/network.
+[[32m  OK  [0m] Started Apply Kernel Variables.
+[[32m  OK  [0m] Started Configure read-only root support.
+[[32m  OK  [0m] Started LVM2 metadata daemon.
+         Starting Load/Save Random Seed...
+         Starting Flush Journal to Persistent Storage...
+[[32m  OK  [0m] Started Create Static Device Nodes in /dev.
+         Starting udev Kernel Device Manager...
+[[32m  OK  [0m] Started udev Coldplug all Devices.
+[[32m  OK  [0m] Started Load/Save Random Seed.
+         Starting udev Wait for Complete Device Initialization...
+[   18.707929] systemd-journald[162]: Received request to flush runtime journal from PID 1
+[[32m  OK  [0m] Started Flush Journal to Persistent Storage.
+[[32m  OK  [0m] Started udev Kernel Device Manager.
+[[32m  OK  [0m] Started Setup Virtual Console.
+         Starting Show Plymouth Boot Screen...
+[[32m  OK  [0m] Found device /dev/ttyPS0.
+[[32m  OK  [0m] Started Show Plymouth Boot Screen.
+[[32m  OK  [0m] Started Forward Password Requests to Plymouth Directory Watch.
+%G[[32m  OK  [0m] Started udev Wait for Complete Device Initialization.
+         Starting Activation of DM RAID sets...
+[[32m  OK  [0m] Started Activation of DM RAID sets.
+[[32m  OK  [0m] Reached target Local Encrypted Volumes.
+[[32m  OK  [0m] Started Monitoring of LVM2 mirrors,...ng dmeventd or progress polling.
+[[32m  OK  [0m] Reached target Local File Systems (Pre).
+[[32m  OK  [0m] Reached target Local File Systems.
+         Starting Create Volatile Files and Directories...
+         Starting Tell Plymouth To Write Out Runtime Data...
+[[32m  OK  [0m] Started Tell Plymouth To Write Out Runtime Data.
+[[32m  OK  [0m] Started Create Volatile Files and Directories.
+         Starting Security Auditing Service...
+[[32m  OK  [0m] Started Security Auditing Service.
+         Starting Update UTMP about System Boot/Shutdown...
+[[32m  OK  [0m] Started Update UTMP about System Boot/Shutdown.
+[[32m  OK  [0m] Reached target System Initialization.
+[[32m  OK  [0m] Listening on Open-iSCSI iscsiuio Socket.
+[[32m  OK  [0m] Listening on PC/SC Smart Card Daemon Activation Socket.
+[[32m  OK  [0m] Listening on Open-iSCSI iscsid Socket.
+[[32m  OK  [0m] Started Flexible branding.
+[[32m  OK  [0m] Reached target Paths.
+[[32m  OK  [0m] Listening on D-Bus System Message Bus Socket.
+[[32m  OK  [0m] Reached target Sockets.
+[[32m  OK  [0m] Started Daily Cleanup of Temporary Directories.
+[[32m  OK  [0m] Reached target Timers.
+[[32m  OK  [0m] Reached target Basic System.
+         Starting Dump dmesg to /var/log/dmesg...
+[[32m  OK  [0m] Started irqbalance daemon.
+         Starting Login Service...
+         Starting Authorization Manager...
+         Starting NTP client/server...
+[[32m  OK  [0m] Started D-Bus System Message Bus.
+[[32m  OK  [0m] Started Dump dmesg to /var/log/dmesg.
+[[32m  OK  [0m] Started Login Service.
+[[32m  OK  [0m] Started NTP client/server.
+[[32m  OK  [0m] Started Authorization Manager.
+         Starting firewalld - dynamic firewall daemon...
+[[32m  OK  [0m] Started firewalld - dynamic firewall daemon.
+[[32m  OK  [0m] Reached target Network (Pre).
+         Starting Network Manager...
+[[32m  OK  [0m] Started Network Manager.
+         Starting Network Manager Wait Online...
+         Starting Hostname Service...
+[[32m  OK  [0m] Started Hostname Service.
+         Starting Network Manager Script Dispatcher Service...
+[[32m  OK  [0m] Started Network Manager Script Dispatcher Service.
+[   23.236012] pps pps0: new PPS source ptp0
+[   23.240069] macb ff0b0000.ethernet: gem-ptp-timer ptp clock registered.
+[   23.279233] pps pps1: new PPS source ptp1
+[   23.283258] macb ff0c0000.ethernet: gem-ptp-timer ptp clock registered.
+[   27.327164] macb ff0b0000.ethernet eth0: link up (1000/Full)
+[   27.332838] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   27.358824] macb ff0c0000.ethernet eth1: unable to generate target frequency: 125000000 Hz
+[   27.367102] macb ff0c0000.ethernet eth1: link up (1000/Full)
+[   27.373232] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+[[0m[31m*     [0m] A start job is running for Network ...ger Wait Online (10s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (10s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (11s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (11s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (12s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (12s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (13s / no limit)[K[     [31m*[0m] A start job is running for Network ...ger Wait Online (13s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (14s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (14s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (15s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (15s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (16s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (16s / no limit)[K[[0m[31m*     [0m] A start job is running for Network ...ger Wait Online (17s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (17s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (18s / no limit)[K         Starting Network Manager Script Dispatcher Service...
+[[32m  OK  [0m] Started Network Manager Script Dispatcher Service.
+[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (23s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (23s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (24s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (24s / no limit)[K[     [31m*[0m] A start job is running for Network ...ger Wait Online (25s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (25s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (26s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (26s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (27s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (27s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (28s / no limit)[K[[0m[31m*     [0m] A start job is running for Network ...ger Wait Online (28s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (29s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (29s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (30s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (30s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (31s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (31s / no limit)[K[     [31m*[0m] A start job is running for Network ...ger Wait Online (32s / no limit)[K[    [31m*[1;31m*[0m] A start job is running for Network ...ger Wait Online (32s / no limit)[K[   [31m*[1;31m*[0m[31m*[0m] A start job is running for Network ...ger Wait Online (33s / no limit)[K[  [31m*[1;31m*[0m[31m* [0m] A start job is running for Network ...ger Wait Online (33s / no limit)[K[ [31m*[1;31m*[0m[31m*  [0m] A start job is running for Network ...ger Wait Online (34s / no limit)[K[[31m*[1;31m*[0m[31m*   [0m] A start job is running for Network ...ger Wait Online (34s / no limit)[K[[1;31m*[0m[31m*    [0m] A start job is running for Network ...ger Wait Online (35s / no limit)[K[[1;31mFAILED[0m] Failed to start Network Manager Wait Online.
+See 'systemctl status NetworkManager-wait-online.service' for details.
+         Starting LSB: Bring up/down networking...
+[[1;31mFAILED[0m] Failed to start LSB: Bring up/down networking.
+See 'systemctl status network.service' for details.
+[[32m  OK  [0m] Reached target Network.
+         Starting Dynamic System Tuning Daemon...
+         Starting Postfix Mail Transport Agent...
+         Starting OpenSSH server daemon...
+         Starting Logout off all iSCSI sessions on shutdown...
+[[32m  OK  [0m] Reached target Network is Online.
+         Starting System Logging Service...
+[[32m  OK  [0m] Started Logout off all iSCSI sessions on shutdown.
+[[32m  OK  [0m] Reached target Remote File Systems (Pre).
+[[32m  OK  [0m] Reached target Remote File Systems.
+         Starting Permit User Sessions...
+         Starting Crash recovery kernel arming...
+         Starting Availability of block devices...
+[[32m  OK  [0m] Started Availability of block devices.
+[[32m  OK  [0m] Started Permit User Sessions.
+         Starting Terminate Plymouth Boot Screen...
+[[32m  OK  [0m] Started Command Scheduler.
+         Starting Wait for Plymouth Boot Screen to Quit...
+
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+sl-xu5-01 login: okazaki
+Password: 
+Last login: Wed Dec  1 00:49:41 on ttyPS0
+[0;33m(sl-xu5-01)[0m ~ [0;33m$[0m cd apps/
+/home/okazaki/apps
+
+[0;33m(sl-xu5-01)[0m apps [0;33m$[0m ls
+total 8.0K
+drwxr-xr-x 2 okazaki okazaki 4.0K Nov 25 17:57 include/
+drwxr-xr-x 2 okazaki okazaki 4.0K Nov 25 21:37 temperature/
+
+[0;33m(sl-xu5-01)[0m apps [0;33m$[0m mkdir xvcserver
+
+[0;33m(sl-xu5-01)[0m apps [0;33m$[0m ls [K[K[Kcd xq
+-bash: cd: xq: No such file or directory
+
+[0;33m(sl-xu5-01)[0m apps [0;33m$[0m cd xvcserver/
+/home/okazaki/apps/xvcserver
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m ls
+total 16K
+-rw-rw-r-- 1 okazaki okazaki  208 Dec  1 13:38 Makefile
+-rw-rw-r-- 1 okazaki okazaki 8.9K Dec  1 13:38 xvcserver.c
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m make
+cc    -c -o xvcserver.o xvcserver.c
+cc -o xvcserver xvcserver.o  
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m ls
+total 52K
+-rw-rw-r-- 1 okazaki okazaki  208 Dec  1 13:38 Makefile
+-rw-rw-r-- 1 okazaki okazaki 8.9K Dec  1 13:38 xvcserver.c
+-rw-rw-r-- 1 okazaki okazaki  12K Dec  1 13:39 xvcserver.o
+-rwxrwxr-x 1 okazaki okazaki  71K Dec  1 13:39 xvcserver*
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m ./s[Kxvcserver -v &
+[1] 808
+
+Failed to Open UIO Device
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m ./xvcserver -v &[1@s[1@u[1@d[1@o[1@ 
+[2] 843
+
+[1]   Exit 255                ./xvcserver -v
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m [  180.173758] random: crng init done
+[  180.177151] random: 7 urandom warning(s) missed due to ratelimiting
+
+
+
+[2]+  Stopped                 sudo ./xvcserver -v
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m 
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m 
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m 
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m 
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m sudo ./xvcserver -v &
+[3] 844
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m 
+
+
+[3]+  Stopped                 sudo ./xvcserver -v
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m sudo ./xvcserver -v &
+[4] 846
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m git clone https://github.com/Xilinx/XilinxVirtualCable.g it
+Cloning into 'XilinxVirtualCable'...
+remote: Enumerating objects: 113, done.[K
+remote: Counting objects:  14% (1/7)[Kremote: Counting objects:  28% (2/7)[Kremote: Counting objects:  42% (3/7)[Kremote: Counting objects:  57% (4/7)[Kremote: Counting objects:  71% (5/7)[Kremote: Counting objects:  85% (6/7)[Kremote: Counting objects: 100% (7/7)[Kremote: Counting objects: 100% (7/7), done.[K
+remote: Compressing objects:  16% (1/6)[Kremote: Compressing objects:  33% (2/6)[Kremote: Compressing objects:  50% (3/6)[Kremote: Compressing objects:  66% (4/6)[Kremote: Compressing objects:  83% (5/6)[Kremote: Compressing objects: 100% (6/6)[Kremote: Compressing objects: 100% (6/6), done.[K
+Receiving objects:   0% (1/113)   Receiving objects:   1% (2/113)   Receiving objects:   2% (3/113)   Receiving objects:   3% (4/113)   Receiving objects:   4% (5/113)   Receiving objects:   5% (6/113)   Receiving objects:   6% (7/113)   Receiving objects:   7% (8/113)   Receiving objects:   8% (10/113)   Receiving objects:   9% (11/113)   Receiving objects:  10% (12/113)   Receiving objects:  11% (13/113)   Receiving objects:  12% (14/113)   Receiving objects:  13% (15/113)   Receiving objects:  14% (16/113)   Receiving objects:  15% (17/113)   Receiving objects:  16% (19/113)   Receiving objects:  17% (20/113)   Receiving objects:  18% (21/113)   Receiving objects:  19% (22/113)   Receiving objects:  20% (23/113)   Receiving objects:  21% (24/113)   Receiving objects:  22% (25/113)   Receiving objects:  23% (26/113)   Receiving objects:  24% (28/113)   Receiving objects:  25% (29/113)   Receiving objects:  26% (30/113)   Receiving objects:  27% (31/113)   Receiving objects:  28% (32/113)   Receiving objects:  29% (33/113)   Receiving objects:  30% (34/113)   Receiving objects:  31% (36/113)   Receiving objects:  32% (37/113)   Receiving objects:  33% (38/113)   Receiving objects:  34% (39/113)   Receiving objects:  35% (40/113)   Receiving objects:  36% (41/113)   Receiving objects:  37% (42/113)   Receiving objects:  38% (43/113)   Receiving objects:  39% (45/113)   Receiving objects:  40% (46/113)   Receiving objects:  41% (47/113)   Receiving objects:  42% (48/113)   Receiving objects:  43% (49/113)   Receiving objects:  44% (50/113)   Receiving objects:  45% (51/113)   Receiving objects:  46% (52/113)   Receiving objects:  47% (54/113)   Receiving objects:  48% (55/113)   Receiving objects:  49% (56/113)   Receiving objects:  50% (57/113)   Receiving objects:  51% (58/113)   Receiving objects:  52% (59/113)   Receiving objects:  53% (60/113)   Receiving objects:  54% (62/113)   Receiving objects:  55% (63/113)   Receiving objects:  56% (64/113)   Receiving objects:  57% (65/113)   Receiving objects:  58% (66/113)   Receiving objects:  59% (67/113)   Receiving objects:  60% (68/113)   Receiving objects:  61% (69/113)   Receiving objects:  62% (71/113)   Receiving objects:  63% (72/113)   remote: Total 113 (delta 1), reused 1 (delta 1), pack-reused 106[K
+Receiving objects:  64% (73/113)   Receiving objects:  65% (74/113)   Receiving objects:  66% (75/113)   Receiving objects:  67% (76/113)   Receiving objects:  68% (77/113)   Receiving objects:  69% (78/113)   Receiving objects:  70% (80/113)   Receiving objects:  71% (81/113)   Receiving objects:  72% (82/113)   Receiving objects:  73% (83/113)   Receiving objects:  74% (84/113)   Receiving objects:  75% (85/113)   Receiving objects:  76% (86/113)   Receiving objects:  77% (88/113)   Receiving objects:  78% (89/113)   Receiving objects:  79% (90/113)   Receiving objects:  80% (91/113)   Receiving objects:  81% (92/113)   Receiving objects:  82% (93/113)   Receiving objects:  83% (94/113)   Receiving objects:  84% (95/113)   Receiving objects:  85% (97/113)   Receiving objects:  86% (98/113)   Receiving objects:  87% (99/113)   Receiving objects:  88% (100/113)   Receiving objects:  89% (101/113)   Receiving objects:  90% (102/113)   Receiving objects:  91% (103/113)   Receiving objects:  92% (104/113)   Receiving objects:  93% (106/113)   Receiving objects:  94% (107/113)   Receiving objects:  95% (108/113)   Receiving objects:  96% (109/113)   Receiving objects:  97% (110/113)   Receiving objects:  98% (111/113)   Receiving objects:  99% (112/113)   Receiving objects: 100% (113/113)   Receiving objects: 100% (113/113), 56.82 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/34)   Resolving deltas:   5% (2/34)   Resolving deltas:   8% (3/34)   Resolving deltas:  14% (5/34)   Resolving deltas:  23% (8/34)   Resolving deltas:  26% (9/34)   Resolving deltas:  29% (10/34)   Resolving deltas:  32% (11/34)   Resolving deltas:  38% (13/34)   Resolving deltas:  50% (17/34)   Resolving deltas:  58% (20/34)   Resolving deltas:  64% (22/34)   Resolving deltas:  73% (25/34)   Resolving deltas:  76% (26/34)   Resolving deltas:  85% (29/34)   Resolving deltas:  88% (30/34)   Resolving deltas:  94% (32/34)   Resolving deltas: 100% (34/34)   Resolving deltas: 100% (34/34), done.
+
+[4]+  Stopped                 sudo ./xvcserver -v
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m ls
+total 56K
+-rw-rw-r-- 1 okazaki okazaki  208 Dec  1 13:38 Makefile
+-rw-rw-r-- 1 okazaki okazaki 8.9K Dec  1 13:38 xvcserver.c
+-rw-rw-r-- 1 okazaki okazaki  12K Dec  1 13:39 xvcserver.o
+-rwxrwxr-x 1 okazaki okazaki  71K Dec  1 13:39 xvcserver*
+drwxrwxr-x 6 okazaki okazaki 4.0K Dec  1 13:45 XilinxVirtualCable/
+
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m cdXi[K[K XilinxVirtualCable/
+.git/     versal/   zynq7000/ zynqMP/   
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m cd XilinxVirtualCable/zynqMP/src/
+driver/ user/   
+[0;33m(sl-xu5-01)[0m xvcserver [0;33m$[0m cd XilinxVirtualCable/zynqMP/src/user/
+/home/okazaki/apps/xvcserver/XilinxVirtualCable/zynqMP/src/user
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m ls
+total 28K
+-rw-rw-r-- 1 okazaki okazaki 5.6K Dec  1 13:45 verify_xilinx_xvc_driver.c
+-rw-rw-r-- 1 okazaki okazaki 1.8K Dec  1 13:45 README.md
+-rw-rw-r-- 1 okazaki okazaki  632 Dec  1 13:45 Makefile
+-rw-rw-r-- 1 okazaki okazaki  11K Dec  1 13:45 xvcServer.c
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m make
+aarch64-linux-gnu-gcc -Wall -I../driver -DUSE_IOCTL -o xvcServer_ioctl xvcServer.c
+make: aarch64-linux-gnu-gcc: Command not found
+make: *** [xvcServer_ioctl] Error 127
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m sudo ap@[Kt install -y aarch64-linux-gnu-gcc
+[sudo] password for okazaki: 
+sudo: apt: command not found
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m sudo apt install -y aarch64-linux-gnu-gcc[C[C[1P[1P[1P[1@y[1@u[1@m
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+epel/aarch64/metalink                                    | 8.8 kB     00:00     
+ * base: ftp.yz.yamagata-u.ac.jp
+ * epel: ftp.riken.jp
+ * extras: ftp.yz.yamagata-u.ac.jp
+ * updates: ftp.yz.yamagata-u.ac.jp
+base                                                     | 3.6 kB     00:00     
+https://download.copr.fedorainfracloud.org/results/konimex/neofetch/epel-7-aarch64/repodata/repomd.xml: [Errno 14] HTTPS Error 404 - Not Found
+Trying other mirror.
+To address this issue please refer to the below wiki article 
+
+https://wiki.centos.org/yum-errors
+
+If above article doesn't help to resolve this issue please use https://bugs.centos.org/.
+
+extras                                                   | 2.9 kB     00:00     
+updates                                                  | 2.9 kB     00:00     
+No package [1maarch64-linux-gnu-gcc[m(B available.
+Error: Nothing to do
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m nano Makefile 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1              File: Makefile                                    [3;1H[m(Bexport CROSS_COMPILE := aarch64-linux-gnu-[1Bexport ARCH := arm64[1BMYCC := $(CROSS_COMPILE)gcc[2BDRIVER := xilinx_xvc_driver[1BXVCSERVER := xvcServer[1BTEST := verify_$(DRIVER)[1BIOCTL_HDR_DIR := ../driver[2B.PHONY: ioctl[1Bioctl: $(XVCSERVER)_ioctl[2B.PHONY: mmap[1Bmmap: $(XVCSERVER)_mmap[2B.PHONY: test[1Btest: $(TEST)[2B.PHONY: all[22;32H[0;7m(B[ Read 35 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[A[A[A[A[A[A[A[A[A[12B[K[13A[A[A[A[A[A[A[1B[A[1;71H[0;7m(BModified[2B[m(B#export CROSS_COMPILE := aarch64-linux-gnu-# export CROSS_COMPILE := aarch64-linux-gnu-# [1B7[4;21r8M[1;24r[5;1H[Aexport CROSS_COMPILE :=	gcc[18B[0;7m(BSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                    [23;1H Y[m(B Yes[K[1B[0;7m(B N[m(B No  [6C   [0;7m(B^C[m(B Cancel[K[22;62H[0;7m(BFile Name to Write: Makefile                                [1B^G[m(B Get Help[23;21H[0;7m(BM-D[m(B DOS Format	[0;7m(BM-A[m(B Append[23;61H[0;7m(BM-B[m(B Backup File[1B[0;7m(B^C[m(B Cancel	    [0;7m(BM-M[m(B Mac Format	[0;7m(BM-P[m(B Prepend[22;29H[1B[J[1;71H[0;7m(B        [22;31H[m(B[1K [0;7m(B[ Wrote 36 lines ][m(B[K[24;80H[24;1H
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m make
+gccgcc -Wall -I../driver -DUSE_IOCTL -o xvcServer_ioctl xvcServer.c
+make: gccgcc: Command not found
+make: *** [xvcServer_ioctl] Error 127
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m makenano Makefile 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1              File: Makefile                                    [3;1H[m(B# export CROSS_COMPILE := aarch64-linux-gnu-[1Bexport CROSS_COMPILE := gcc[1Bexport ARCH := arm64[1BMYCC := $(CROSS_COMPILE)gcc[2BDRIVER := xilinx_xvc_driver[1BXVCSERVER := xvcServer[1BTEST := verify_$(DRIVER)[1BIOCTL_HDR_DIR := ../driver[2B.PHONY: ioctl[1Bioctl: $(XVCSERVER)_ioctl[2B.PHONY: mmap[1Bmmap: $(XVCSERVER)_mmap[2B.PHONY: test[1Btest: $(TEST)[22;32H[0;7m(B[ Read 36 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[1B[1B[1B[A[A[A# [1;71H[0;7m(BModified[3;2H[m(B[1P[1P#export CROSS_COMPILE := aarch64-linux-gnu-# export CROSS_COMPILE := aarch64-linux-gnu-# [19B[0;7m(BSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                    [23;1H Y[m(B Yes[K[1B[0;7m(B N[m(B No  [6C   [0;7m(B^C[m(B Cancel[K[22;62H[0;7m(BFile Name to Write: Makefile                                [1B^G[m(B Get Help[23;21H[0;7m(BM-D[m(B DOS Format	[0;7m(BM-A[m(B Append[23;61H[0;7m(BM-B[m(B Backup File[1B[0;7m(B^C[m(B Cancel	    [0;7m(BM-M[m(B Mac Format	[0;7m(BM-P[m(B Prepend[22;29H[1B[J[1;71H[0;7m(B        [22;31H[m(B[1K [0;7m(B[ Wrote 36 lines ][m(B[K[24;80H[24;1H
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m nano Makefile make[K
+gccgcc -Wall -I../driver -DUSE_IOCTL -o xvcServer_ioctl xvcServer.c
+make: gccgcc: Command not found
+make: *** [xvcServer_ioctl] Error 127
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m makenano Makefile 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1              File: Makefile                                    [3;1H[m(B# export CROSS_COMPILE := aarch64-linux-gnu-[1Bexport CROSS_COMPILE := gcc[1Bexport ARCH := arm64[1BMYCC := $(CROSS_COMPILE)gcc[2BDRIVER := xilinx_xvc_driver[1BXVCSERVER := xvcServer[1BTEST := verify_$(DRIVER)[1BIOCTL_HDR_DIR := ../driver[2B.PHONY: ioctl[1Bioctl: $(XVCSERVER)_ioctl[2B.PHONY: mmap[1Bmmap: $(XVCSERVER)_mmap[2B.PHONY: test[1Btest: $(TEST)[22;32H[0;7m(B[ Read 36 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;21r[2;1H[10M[1;24r[12;1H.PHONY: all[1Ball: ioctl mmap test[2B$(XVCSERVER)_ioctl: $(XVCSERVER).c[16;9H$(MYCC) -Wall -I$(IOCTL_HDR_DIR) -DUSE_IOCTL -o $@ $^[2B$(XVCSERVER)_mmap: $(XVCSERVER).c[19;9H$(MYCC) -Wall -o $@ $^[2B$(TEST): $(TEST).c[9A[1B[1B[1B[1B[1B[1B[4B[K[3A[1B[1B[3;22r[3;1H[10M[1;24r[12;9H$(MYCC) -I$(IOCTL_HDR_DIR) -o $@ $^[2B.PHONY: clean[1Bclean:[1B	rm -f $(XVCSERVER)_mmap[17;9Hrm -f $(XVCSERVER)_ioctl[18;9Hrm -f $(TEST)[6A[1B[1B[1B[1B[1B[1B[1B[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[3;1H.PHONY: ioctl[1Bioctl: $(XVCSERVER)_ioctl[2B.PHONY: mmap[1Bmmap: $(XVCSERVER)_mmap[2B.PHONY: test[1Btest: $(TEST)[2B.PHONY: all[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[3;1H# export CROSS_COMPILE := aarch64-linux-gnu-[1Bexport CROSS_COMPILE := gcc[1Bexport ARCH := arm64[1BMYCC := $(CROSS_COMPILE)gcc[2BDRIVER := xilinx_xvc_driver[1BXVCSERVER := xvcServer[1BTEST := verify_$(DRIVER)[1BIOCTL_HDR_DIR := ../driver[1B[A[A[A[A[A[A[A[A[A[1B[1B[1B[A[4;28H[1;71H[0;7m(BModified[4;27H[m(B   [18B[0;7m(BSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                    [23;1H Y[m(B Yes[K[1B[0;7m(B N[m(B No  [6C   [0;7m(B^C[m(B Cancel[K[22;62H[0;7m(BFile Name to Write: Makefile                                [1B^G[m(B Get Help[23;21H[0;7m(BM-D[m(B DOS Format	[0;7m(BM-A[m(B Append[23;61H[0;7m(BM-B[m(B Backup File[1B[0;7m(B^C[m(B Cancel	    [0;7m(BM-M[m(B Mac Format	[0;7m(BM-P[m(B Prepend[22;29H[1B[J[1;71H[0;7m(B        [22;31H[m(B[1K [0;7m(B[ Wrote 36 lines ][m(B[K[24;80H[24;1H
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m nano Makefile make[K
+gcc -Wall -I../driver -DUSE_IOCTL -o xvcServer_ioctl xvcServer.c
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m ls
+total 52K
+-rw-rw-r-- 1 okazaki okazaki 5.6K Dec  1 13:45 verify_xilinx_xvc_driver.c
+-rw-rw-r-- 1 okazaki okazaki 1.8K Dec  1 13:45 README.md
+-rw-rw-r-- 1 okazaki okazaki  11K Dec  1 13:45 xvcServer.c
+-rw-rw-r-- 1 okazaki okazaki  659 Dec  1 13:49 Makefile
+-rwxrwxr-x 1 okazaki okazaki  71K Dec  1 13:49 xvcServer_ioctl*
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m ./xvcServer_ioctl 
+Failed to open xvc ioctl device driver: /dev/xilinx_xvc_driver
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m ./xvcServer_ioctl [1@s[1@u[1@d[1@o[1@ 
+Failed to open xvc ioctl device driver: /dev/xilinx_xvc_driver
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m ls
+total 52K
+-rw-rw-r-- 1 okazaki okazaki 5.6K Dec  1 13:45 verify_xilinx_xvc_driver.c
+-rw-rw-r-- 1 okazaki okazaki 1.8K Dec  1 13:45 README.md
+-rw-rw-r-- 1 okazaki okazaki  11K Dec  1 13:45 xvcServer.c
+-rw-rw-r-- 1 okazaki okazaki  659 Dec  1 13:49 Makefile
+-rwxrwxr-x 1 okazaki okazaki  71K Dec  1 13:49 xvcServer_ioctl*
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m make clean
+rm -f xvcServer_mmap
+rm -f xvcServer_ioctl
+rm -f verify_xilinx_xvc_driver
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m ls
+total 28K
+-rw-rw-r-- 1 okazaki okazaki 5.6K Dec  1 13:45 verify_xilinx_xvc_driver.c
+-rw-rw-r-- 1 okazaki okazaki 1.8K Dec  1 13:45 README.md
+-rw-rw-r-- 1 okazaki okazaki  11K Dec  1 13:45 xvcServer.c
+-rw-rw-r-- 1 okazaki okazaki  659 Dec  1 13:49 Makefile
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m nano Makefile 
+)0[1;24r[m(B[4l[?7h[H[J[0;7m(B  GNU nano 2.3.1              File: Makefile                                    [3;1H[m(B# export CROSS_COMPILE := aarch64-linux-gnu-[1Bexport CROSS_COMPILE :=[1Bexport ARCH := arm64[1BMYCC := $(CROSS_COMPILE)gcc[2BDRIVER := xilinx_xvc_driver[1BXVCSERVER := xvcServer[1BTEST := verify_$(DRIVER)[1BIOCTL_HDR_DIR := ../driver[2B.PHONY: ioctl[1Bioctl: $(XVCSERVER)_ioctl[2B.PHONY: mmap[1Bmmap: $(XVCSERVER)_mmap[2B.PHONY: test[1Btest: $(TEST)[22;32H[0;7m(B[ Read 36 lines ][1B^G[m(B Get Help  [0;7m(B^O[m(B WriteOut  [0;7m(B^R[m(B Read File [0;7m(B^Y[m(B Prev Page [0;7m(B^K[m(B Cut Text  [0;7m(B^C[m(B Cur Pos[1B[0;7m(B^X[m(B Exit[6C[0;7m(B^J[m(B Justify   [0;7m(B^W[m(B Where Is  [0;7m(B^V[m(B Next Page [0;7m(B^U[m(B UnCut Text[0;7m(B^T[m(B To Spell[21A[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;21r[2;1H[10M[1;24r[12;1H.PHONY: all[1Ball: ioctl mmap test[2B$(XVCSERVER)_ioctl: $(XVCSERVER).c[16;9H$(MYCC) -Wall -I$(IOCTL_HDR_DIR) -DUSE_IOCTL -o $@ $^[2B$(XVCSERVER)_mmap: $(XVCSERVER).c[19;9H$(MYCC) -Wall -o $@ $^[2B$(TEST): $(TEST).c[9A[1B[1B[1B[1B[1B[1B[4B[K[3A[1B[1B[3;22r[3;1H[10M[1;24r[12;9H$(MYCC) -I$(IOCTL_HDR_DIR) -o $@ $^[2B.PHONY: clean[1Bclean:[1B	rm -f $(XVCSERVER)_mmap[17;9Hrm -f $(XVCSERVER)_ioctl[18;9Hrm -f $(TEST)[6A[1B[1B[A[A[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[3;1H.PHONY: ioctl[1Bioctl: $(XVCSERVER)_ioctl[2B.PHONY: mmap[1Bmmap: $(XVCSERVER)_mmap[2B.PHONY: test[1Btest: $(TEST)[2B.PHONY: all[A[A[A[A[A[A[A[A[1B[1B[1B[1B[1B[1B[1B[1B[1B[A[A[A[A[A[A[A[A[A[A[2;21r[2;1H[10L[1;24r[3;1H# export CROSS_COMPILE := aarch64-linux-gnu-[1Bexport CROSS_COMPILE :=[1Bexport ARCH := arm64[1BMYCC := $(CROSS_COMPILE)gcc[2BDRIVER := xilinx_xvc_driver[1BXVCSERVER := xvcServer[1BTEST := verify_$(DRIVER)[1BIOCTL_HDR_DIR := ../driver[1B[A[A[A[A[A[A[A[A[A[1B[1B[1B[1B[1B[1B[1B[1B[A[A[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[1B[2;22r[2;1H[10M[1;24r[12;1H.PHONY: all[1Ball: ioctl mmap test[2B$(XVCSERVER)_ioctl: $(XVCSERVER).c[16;9H$(MYCC) -Wall -I$(IOCTL_HDR_DIR) -DUSE_IOCTL -o $@ $^[2B$(XVCSERVER)_mmap: $(XVCSERVER).c[19;9H$(MYCC) -Wall -o $@ $^[2B$(TEST): $(TEST).c[9A[1B[1B[1B[1B[22;13H[0;7m(B[ line 24/37 (64%), col 1/62 (1%), char 400/659 (60%) ][6A[m(B[1;71H[0;7m(BModified[15B[m(Bn[6C[1K[6B[0;7m(BSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                    [23;1H Y[m(B Yes[K[1B[0;7m(B N[m(B No  [6C   [0;7m(B^C[m(B Cancel[K[22;62H[1B[J[24;80H[24;1H
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m 
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m gcc xvcServer.c -o xvcServer.c [K[K[K
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m ls
+total 52K
+-rw-rw-r-- 1 okazaki okazaki 5.6K Dec  1 13:45 verify_xilinx_xvc_driver.c
+-rw-rw-r-- 1 okazaki okazaki 1.8K Dec  1 13:45 README.md
+-rw-rw-r-- 1 okazaki okazaki  11K Dec  1 13:45 xvcServer.c
+-rw-rw-r-- 1 okazaki okazaki  659 Dec  1 13:49 Makefile
+-rwxrwxr-x 1 okazaki okazaki  71K Dec  1 13:51 xvcServer*
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m sudo ./xvcServer -v &
+[5] 1071
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m INFO: To connect to this xvcServer instance, use url: TCP:sl-xu5-01:2542
+
+EXIT
+-bash: EXIT: command not found
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m 
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m 
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m 
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m exit
+logout
+There are stopped jobs.
+
+[0;33m(sl-xu5-01)[0m user [0;33m$[0m exit
+logout
+
+CentOS Linux 7 (AltArch)
+Kernel 5.4.0-xilinx-v2020.1 on an aarch64
+
+sl-xu5-01 login: 
