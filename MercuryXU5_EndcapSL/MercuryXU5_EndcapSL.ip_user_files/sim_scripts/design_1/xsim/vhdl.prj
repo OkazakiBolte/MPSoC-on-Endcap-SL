@@ -4,5 +4,10 @@ vhdl xil_defaultlib  \
 "../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_1/sim/bd_6f02_psr_aclk_0.vhd" \
 "../../../bd/design_1/ip/design_1_rst_ps8_99M_1/sim/design_1_rst_ps8_99M_1.vhd" \
 "../../../bd/design_1/sim/design_1.vhd" \
+"../../../bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_1/sim/bd_c443_bsip_0.vhd" \
+"../../../bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/sim/bd_c443.vhd" \
+"../../../bd/design_1/ip/design_1_debug_bridge_0_0/sim/design_1_debug_bridge_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_debug_bridge_1_0/bd_0/sim/bd_0412.vhd" \
+"../../../bd/design_1/ip/design_1_debug_bridge_1_0/sim/design_1_debug_bridge_1_0.vhd" \
 
 nosort

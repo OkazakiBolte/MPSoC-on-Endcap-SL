@@ -3398,12 +3398,6 @@
       }
     },
     "interface_nets": {
-      "zynq_ultra_ps_e_GMII_ENET1": {
-        "interface_ports": [
-          "GMII",
-          "zynq_ultra_ps_e/GMII_ENET1"
-        ]
-      },
       "axi_smc_M02_AXI": {
         "interface_ports": [
           "axi_smc/M02_AXI",
@@ -3456,6 +3450,12 @@
         "interface_ports": [
           "debug_bridge_1/S_BSCAN",
           "debug_bridge_0/m0_bscan"
+        ]
+      },
+      "zynq_ultra_ps_e_GMII_ENET1": {
+        "interface_ports": [
+          "GMII",
+          "zynq_ultra_ps_e/GMII_ENET1"
         ]
       }
     },
@@ -3545,12 +3545,12 @@
               },
               "SEG_debug_bridge_0_Reg0": {
                 "address_block": "/debug_bridge_0/S_AXI/Reg0",
-                "offset": "0x0080020000",
+                "offset": "0x0080010000",
                 "range": "64K"
               },
               "SEG_led_Reg": {
                 "address_block": "/led/S_AXI/Reg",
-                "offset": "0x0080010000",
+                "offset": "0x0080020000",
                 "range": "64K"
               }
             }

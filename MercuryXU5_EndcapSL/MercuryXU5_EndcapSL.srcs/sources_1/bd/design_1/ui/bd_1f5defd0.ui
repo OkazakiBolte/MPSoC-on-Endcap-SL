@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.55",
-   "Default View_TopLeft":"4,-151",
+   "Default View_TopLeft":"427,0",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
@@ -33,8 +33,8 @@ preplace netloc clk_wiz_0_clk_out3 1 4 1 NJ 590
 preplace netloc clk_wiz_0_clk_out4 1 4 1 NJ 610
 preplace netloc clk_wiz_0_locked 1 4 1 NJ 630
 preplace netloc rst_ps8_99M_peripheral_reset 1 3 2 NJ 690 NJ
-preplace netloc axi_smc_M02_AXI 1 2 1 1120 200n
 preplace netloc zynq_ultra_ps_e_GMII_ENET1 1 1 4 NJ 470 NJ 470 NJ 470 NJ
+preplace netloc axi_smc_M02_AXI 1 2 1 1120 200n
 preplace netloc axi_smc_M00_AXI 1 2 1 1110 60n
 preplace netloc zynq_ultra_ps_e_MDIO_ENET1 1 1 4 NJ 490 NJ 490 NJ 490 NJ
 preplace netloc led_GPIO 1 3 2 NJ 380 NJ

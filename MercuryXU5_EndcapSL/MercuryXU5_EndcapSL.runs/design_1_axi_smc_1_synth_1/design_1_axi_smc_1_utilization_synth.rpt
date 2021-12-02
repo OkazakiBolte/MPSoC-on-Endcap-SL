@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Wed Dec  1 15:23:37 2021
+| Date         : Thu Dec  2 13:38:56 2021
 | Host         : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command      : report_utilization -file design_1_axi_smc_1_utilization_synth.rpt -pb design_1_axi_smc_1_utilization_synth.pb
 | Design       : design_1_axi_smc_1
@@ -159,9 +159,9 @@ Table of Contents
 +----------+------+---------------------+
 | FDRE     | 8188 |            Register |
 | RAMD32   | 2416 |                 CLB |
-| LUT6     | 1739 |                 CLB |
+| LUT6     | 1740 |                 CLB |
 | LUT3     | 1736 |                 CLB |
-| LUT5     |  990 |                 CLB |
+| LUT5     |  989 |                 CLB |
 | LUT4     |  985 |                 CLB |
 | LUT2     |  498 |                 CLB |
 | RAMS32   |  342 |                 CLB |
