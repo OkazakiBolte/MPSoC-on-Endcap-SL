@@ -70,3 +70,9 @@ set_property -dict {PACKAGE_PIN C11   IOSTANDARD LVCMOS18  } [get_ports {ETH1_IN
 set_property -dict {PACKAGE_PIN B10   IOSTANDARD LVCMOS18  } [get_ports {ETH1_RESET_N}]
 set_property -dict {PACKAGE_PIN F10   IOSTANDARD LVCMOS18  } [get_ports {ETH1_RXCTL}]
 set_property -dict {PACKAGE_PIN F11   IOSTANDARD LVCMOS18  } [get_ports {ETH1_TXCTL}]
+
+# JTAG 4 lines for debug XCVU13P
+set_property -dict {PACKAGE_PIN C1    IOSTANDARD LVCMOS18  } [get_ports {ZYNQTMS}]
+set_property -dict {PACKAGE_PIN B1    IOSTANDARD LVCMOS18  } [get_ports {ZYNQTCK}]
+set_property -dict {PACKAGE_PIN G5    IOSTANDARD LVCMOS18  } [get_ports {ZYNQTDI}]
+set_property -dict {PACKAGE_PIN F5    IOSTANDARD LVCMOS18  } [get_ports {ZYNQTDO}]

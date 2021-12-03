@@ -41,7 +41,12 @@ ENTITY MercuryXU5_EndcapSL IS
         ETH1_RXCTL   : IN STD_LOGIC;
         ETH1_TXCTL   : OUT STD_LOGIC;
         ETH1_RXD     : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-        ETH1_TXD     : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+        ETH1_TXD     : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+        ---- JTAG lines for debugging XCVU13P
+        ZYNQTCK : OUT STD_LOGIC;
+        ZYNQTDI : OUT STD_LOGIC;
+        ZYNQTDO : IN STD_LOGIC;
+        ZYNQTMS : OUT STD_LOGIC
     );
 END MercuryXU5_EndcapSL;
 
@@ -56,6 +61,10 @@ ARCHITECTURE RTL OF MercuryXU5_EndcapSL IS
             ETH_CLK10        : OUT STD_LOGIC;
             ETH_resetn       : OUT STD_LOGIC;
             LED_N_tri_o      : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
+            ZYNQTDI          : OUT STD_LOGIC;
+            ZYNQTDO          : IN STD_LOGIC;
+            ZYNQTCK          : OUT STD_LOGIC;
+            ZYNQTMS          : OUT STD_LOGIC;
             GMII_rx_clk      : IN STD_LOGIC;
             GMII_speed_mode  : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
             GMII_crs         : IN STD_LOGIC;
@@ -141,47 +150,49 @@ ARCHITECTURE RTL OF MercuryXU5_EndcapSL IS
 
 BEGIN
 
-    design_1_i : COMPONENT design_1
+    MDIO_mdio_iobuf : COMPONENT IOBUF
         PORT MAP(
-            ETH_CLK10        => ETH_CLK10,
-            ETH_CLK125       => ETH_CLK125,
-            ETH_CLK125_90    => ETH_CLK125_90,
-            ETH_CLK25        => ETH_CLK25,
-            ETH_resetn       => ETH_resetn,
-            GMII_col         => GMII_col,
-            GMII_crs         => GMII_crs,
-            GMII_rx_clk      => GMII_rx_clk,
-            GMII_rx_dv       => GMII_rx_dv,
-            GMII_rx_er       => GMII_rx_er,
-            GMII_rxd         => GMII_rxd,
-            GMII_speed_mode  => GMII_speed_mode,
-            GMII_tx_clk      => GMII_tx_clk,
-            GMII_tx_en       => GMII_tx_en,
-            GMII_tx_er       => GMII_tx_er,
-            GMII_txd         => GMII_txd,
-            LED_N_tri_o      => LED_N_tri_o,
-            MDIO_mdc         => ETH1_MDC,
-            MDIO_mdio_i      => MDIO_mdio_i,
-            MDIO_mdio_o      => MDIO_mdio_o,
-            MDIO_mdio_t      => MDIO_mdio_t,
-            peripheral_reset => peripheral_reset
+            I  => MDIO_mdio_o,
+            IO => ETH1_MDIO,
+            O  => MDIO_mdio_i,
+            T  => MDIO_mdio_t
         );
-
-        -- resetb lines for peripherals on Endcap Sector Logic
-        SIRST  <= '1';
-        FIRRST <= '1';
-
-        -- FirFly module select (active-low)
-        FIRSEL <= (OTHERS => '1');
-
-        MDIO_mdio_iobuf : COMPONENT IOBUF
+        design_1_i : COMPONENT design_1
             PORT MAP(
-                I  => MDIO_mdio_o,
-                IO => ETH1_MDIO,
-                O  => MDIO_mdio_i,
-                T  => MDIO_mdio_t
+                ETH_CLK10        => ETH_CLK10,
+                ETH_CLK125       => ETH_CLK125,
+                ETH_CLK125_90    => ETH_CLK125_90,
+                ETH_CLK25        => ETH_CLK25,
+                ETH_resetn       => ETH_resetn,
+                GMII_col         => GMII_col,
+                GMII_crs         => GMII_crs,
+                GMII_rx_clk      => GMII_rx_clk,
+                GMII_rx_dv       => GMII_rx_dv,
+                GMII_rx_er       => GMII_rx_er,
+                GMII_rxd         => GMII_rxd,
+                GMII_speed_mode  => GMII_speed_mode,
+                GMII_tx_clk      => GMII_tx_clk,
+                GMII_tx_en       => GMII_tx_en,
+                GMII_tx_er       => GMII_tx_er,
+                GMII_txd         => GMII_txd,
+                LED_N_tri_o      => LED_N_tri_o,
+                MDIO_mdc         => ETH1_MDC,
+                MDIO_mdio_i      => MDIO_mdio_i,
+                MDIO_mdio_o      => MDIO_mdio_o,
+                MDIO_mdio_t      => MDIO_mdio_t,
+                ZYNQTCK          => ZYNQTCK,
+                ZYNQTDI          => ZYNQTDI,
+                ZYNQTDO          => ZYNQTDO,
+                ZYNQTMS          => ZYNQTMS,
+                peripheral_reset => peripheral_reset
             );
 
+            -- resetb lines for peripherals on Endcap Sector Logic
+            SIRST  <= '1';
+            FIRRST <= '1';
+
+            -- FirFly module select (active-low)
+            FIRSEL <= (OTHERS => '1');
             -- We cannot use Xilinx's GMII2RGMII IP core for Mercury XU5 mezzanine.
             -- Instead, Enclustra provides Enclustra_GMII2RGMII_ZU.edn.
             -- Please see Mercury XU5 PE1 reference design.
