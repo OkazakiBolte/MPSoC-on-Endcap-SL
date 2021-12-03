@@ -97,6 +97,7 @@
 *\ 2.*
 *\ 3.*
 *\ 4.*
+rm.sh
 
 ## include
 !figures/*

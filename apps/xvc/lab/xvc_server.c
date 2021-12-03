@@ -165,11 +165,10 @@ int handle_data(int fd, volatile jtag_t *ptr) {
 
 int main(int argc, char **argv) {
     printf("start xvc\n");
-    int i;
-    int s;
-    int c;
-    int fd_uio;
-
+    int                i;
+    int                s;
+    int                c;
+    int                fd_uio;
     struct sockaddr_in address;
 
     opterr = 0;
@@ -183,7 +182,6 @@ int main(int argc, char **argv) {
         return -1;
     }
     s = socket(AF_INET, SOCK_STREAM, 0);
-
     if (s < 0) {
         perror("socket");
         return 1;
