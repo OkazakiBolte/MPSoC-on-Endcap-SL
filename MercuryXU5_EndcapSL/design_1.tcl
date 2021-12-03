@@ -197,8 +197,6 @@ proc create_root_design { parentCell } {
   # Create interface ports
   set GMII [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gmii_rtl:1.0 GMII ]
 
-  set LED_N [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 LED_N ]
-
   set MDIO [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:mdio_rtl:1.0 MDIO ]
 
 
@@ -208,6 +206,7 @@ proc create_root_design { parentCell } {
   set ETH_CLK25 [ create_bd_port -dir O -type clk ETH_CLK25 ]
   set ETH_CLK125 [ create_bd_port -dir O -type clk ETH_CLK125 ]
   set ETH_resetn [ create_bd_port -dir O -type rst ETH_resetn ]
+  set LED_N_tri_o [ create_bd_port -dir O -from 2 -to 0 LED_N_tri_o ]
   set ZYNQTCK [ create_bd_port -dir O -type clk ZYNQTCK ]
   set ZYNQTDI [ create_bd_port -dir O -type data ZYNQTDI ]
   set ZYNQTDO [ create_bd_port -dir I -type data ZYNQTDO ]
@@ -1821,7 +1820,6 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_smc_M02_AXI [get_bd_intf_pins axi_smc/M02_AXI] [get_bd_intf_pins debug_bridge_0/S_AXI]
   connect_bd_intf_net -intf_net axi_smc_M03_AXI [get_bd_intf_pins axi_smc/M03_AXI] [get_bd_intf_pins debug_bridge_2/S_AXI]
   connect_bd_intf_net -intf_net debug_bridge_0_m0_bscan [get_bd_intf_pins debug_bridge_0/m0_bscan] [get_bd_intf_pins debug_bridge_1/S_BSCAN]
-  connect_bd_intf_net -intf_net led_GPIO [get_bd_intf_ports LED_N] [get_bd_intf_pins led/GPIO]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_GMII_ENET1 [get_bd_intf_ports GMII] [get_bd_intf_pins zynq_ultra_ps_e/GMII_ENET1]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_MDIO_ENET1 [get_bd_intf_ports MDIO] [get_bd_intf_pins zynq_ultra_ps_e/MDIO_ENET1]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_M_AXI_HPM0_LPD [get_bd_intf_pins axi_smc/S00_AXI] [get_bd_intf_pins zynq_ultra_ps_e/M_AXI_HPM0_LPD]
@@ -1836,7 +1834,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net debug_bridge_2_tap_tck [get_bd_ports ZYNQTCK] [get_bd_pins debug_bridge_2/tap_tck]
   connect_bd_net -net debug_bridge_2_tap_tdi [get_bd_ports ZYNQTDI] [get_bd_pins debug_bridge_2/tap_tdi]
   connect_bd_net -net debug_bridge_2_tap_tms [get_bd_ports ZYNQTMS] [get_bd_pins debug_bridge_2/tap_tms]
-  connect_bd_net -net led_gpio_io_o [get_bd_pins ila_0/probe0] [get_bd_pins led/gpio_io_o]
+  connect_bd_net -net led_gpio_io_o [get_bd_ports LED_N_tri_o] [get_bd_pins ila_0/probe0] [get_bd_pins led/gpio_io_o]
   connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins debug_bridge_0/s_axi_aresetn] [get_bd_pins debug_bridge_2/s_axi_aresetn] [get_bd_pins led/s_axi_aresetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn]
   connect_bd_net -net rst_ps8_99M_peripheral_reset [get_bd_ports peripheral_reset] [get_bd_pins rst_ps8_99M/peripheral_reset]
   connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins debug_bridge_0/s_axi_aclk] [get_bd_pins debug_bridge_1/clk] [get_bd_pins debug_bridge_2/s_axi_aclk] [get_bd_pins ila_0/clk] [get_bd_pins led/s_axi_aclk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]

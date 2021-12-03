@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1638419695">
+<GenRun Id="impl_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1638509919">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="RDI-RDI" Name="MercuryXU5_EndcapSL.vdi"/>
   <File Type="BG-DRC" Name="MercuryXU5_EndcapSL.drc"/>
@@ -211,15 +211,17 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_debug_bridge_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_0412_xsdbm_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_0412_lut_buffer_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_c443_bsip_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_04e2_axi_jtag_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_c443_bs_switch_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_debug_bridge_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_debug_bridge_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_c443_bs_mux_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_c443_axi_jtag_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_smc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_c443_bs_switch_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_blk_mem_gen_0_1"/>

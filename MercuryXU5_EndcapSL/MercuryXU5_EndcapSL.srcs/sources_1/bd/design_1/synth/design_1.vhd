@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Fri Dec  3 13:46:15 2021
+--Date        : Fri Dec  3 14:38:28 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -29,6 +29,7 @@ entity design_1 is
     GMII_tx_en : out STD_LOGIC;
     GMII_tx_er : out STD_LOGIC;
     GMII_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    LED_N_tri_o : out STD_LOGIC_VECTOR ( 2 downto 0 );
     MDIO_mdc : out STD_LOGIC;
     MDIO_mdio_i : in STD_LOGIC;
     MDIO_mdio_o : out STD_LOGIC;
@@ -700,6 +701,7 @@ begin
   GMII_tx_en <= zynq_ultra_ps_e_GMII_ENET1_TX_EN;
   GMII_tx_er <= zynq_ultra_ps_e_GMII_ENET1_TX_ER;
   GMII_txd(7 downto 0) <= zynq_ultra_ps_e_GMII_ENET1_TXD(7 downto 0);
+  LED_N_tri_o(2 downto 0) <= led_gpio_io_o(2 downto 0);
   MDIO_mdc <= zynq_ultra_ps_e_MDIO_ENET1_MDC;
   MDIO_mdio_o <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_O;
   MDIO_mdio_t <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_T;

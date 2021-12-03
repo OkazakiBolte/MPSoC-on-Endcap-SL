@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x2FB62EB19C4121F",
+      "boundary_crc": "0x5614EF3B07E7A01F",
       "device": "xczu5ev-sfvc784-2-i",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -23,10 +23,6 @@
       "debug_bridge_2": ""
     },
     "interface_ports": {
-      "LED_N": {
-        "mode": "Master",
-        "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
-      },
       "GMII": {
         "mode": "Master",
         "vlnv": "xilinx.com:interface:gmii_rtl:1.0"
@@ -225,6 +221,11 @@
       },
       "ZYNQTMS": {
         "direction": "O"
+      },
+      "LED_N_tri_o": {
+        "direction": "O",
+        "left": "2",
+        "right": "0"
       }
     },
     "components": {
@@ -3555,24 +3556,6 @@
       }
     },
     "interface_nets": {
-      "axi_smc_M03_AXI": {
-        "interface_ports": [
-          "axi_smc/M03_AXI",
-          "debug_bridge_2/S_AXI"
-        ]
-      },
-      "zynq_ultra_ps_e_GMII_ENET1": {
-        "interface_ports": [
-          "GMII",
-          "zynq_ultra_ps_e/GMII_ENET1"
-        ]
-      },
-      "zynq_ultra_ps_e_MDIO_ENET1": {
-        "interface_ports": [
-          "MDIO",
-          "zynq_ultra_ps_e/MDIO_ENET1"
-        ]
-      },
       "axi_smc_M00_AXI": {
         "interface_ports": [
           "axi_smc/M00_AXI",
@@ -3585,10 +3568,10 @@
           "debug_bridge_0/S_AXI"
         ]
       },
-      "led_GPIO": {
+      "axi_smc_M01_AXI": {
         "interface_ports": [
-          "LED_N",
-          "led/GPIO"
+          "axi_smc/M01_AXI",
+          "led/S_AXI"
         ]
       },
       "axi_bram_ctrl_0_BRAM_PORTB": {
@@ -3597,10 +3580,10 @@
           "axi_bram_ctrl_0/BRAM_PORTB"
         ]
       },
-      "axi_smc_M01_AXI": {
+      "zynq_ultra_ps_e_MDIO_ENET1": {
         "interface_ports": [
-          "axi_smc/M01_AXI",
-          "led/S_AXI"
+          "MDIO",
+          "zynq_ultra_ps_e/MDIO_ENET1"
         ]
       },
       "axi_bram_ctrl_0_BRAM_PORTA": {
@@ -3609,16 +3592,28 @@
           "axi_bram_ctrl_0/BRAM_PORTA"
         ]
       },
+      "debug_bridge_0_m0_bscan": {
+        "interface_ports": [
+          "debug_bridge_1/S_BSCAN",
+          "debug_bridge_0/m0_bscan"
+        ]
+      },
       "zynq_ultra_ps_e_M_AXI_HPM0_LPD": {
         "interface_ports": [
           "zynq_ultra_ps_e/M_AXI_HPM0_LPD",
           "axi_smc/S00_AXI"
         ]
       },
-      "debug_bridge_0_m0_bscan": {
+      "zynq_ultra_ps_e_GMII_ENET1": {
         "interface_ports": [
-          "debug_bridge_1/S_BSCAN",
-          "debug_bridge_0/m0_bscan"
+          "GMII",
+          "zynq_ultra_ps_e/GMII_ENET1"
+        ]
+      },
+      "axi_smc_M03_AXI": {
+        "interface_ports": [
+          "axi_smc/M03_AXI",
+          "debug_bridge_2/S_AXI"
         ]
       }
     },
@@ -3699,7 +3694,8 @@
       "led_gpio_io_o": {
         "ports": [
           "led/gpio_io_o",
-          "ila_0/probe0"
+          "ila_0/probe0",
+          "LED_N_tri_o"
         ]
       },
       "ZYNQTDO_1": {
