@@ -3485,6 +3485,9 @@
           "C_ADV_TRIGGER": {
             "value": "true"
           },
+          "C_DATA_DEPTH": {
+            "value": "131072"
+          },
           "C_ENABLE_ILA_AXI_MON": {
             "value": "false"
           },
@@ -3620,34 +3623,10 @@
       }
     },
     "interface_nets": {
-      "axi_smc_M02_AXI": {
-        "interface_ports": [
-          "axi_smc/M02_AXI",
-          "debug_bridge_0/S_AXI"
-        ]
-      },
       "axi_smc_M00_AXI": {
         "interface_ports": [
           "axi_smc/M00_AXI",
           "axi_bram_ctrl_0/S_AXI"
-        ]
-      },
-      "axi_smc_M01_AXI": {
-        "interface_ports": [
-          "axi_smc/M01_AXI",
-          "led/S_AXI"
-        ]
-      },
-      "axi_bram_ctrl_0_BRAM_PORTB": {
-        "interface_ports": [
-          "blk_mem_gen_0/BRAM_PORTB",
-          "axi_bram_ctrl_0/BRAM_PORTB"
-        ]
-      },
-      "zynq_ultra_ps_e_MDIO_ENET1": {
-        "interface_ports": [
-          "MDIO",
-          "zynq_ultra_ps_e/MDIO_ENET1"
         ]
       },
       "axi_bram_ctrl_0_BRAM_PORTA": {
@@ -3678,6 +3657,30 @@
         "interface_ports": [
           "axi_smc/M03_AXI",
           "debug_bridge_2/S_AXI"
+        ]
+      },
+      "zynq_ultra_ps_e_MDIO_ENET1": {
+        "interface_ports": [
+          "MDIO",
+          "zynq_ultra_ps_e/MDIO_ENET1"
+        ]
+      },
+      "axi_smc_M01_AXI": {
+        "interface_ports": [
+          "axi_smc/M01_AXI",
+          "led/S_AXI"
+        ]
+      },
+      "axi_bram_ctrl_0_BRAM_PORTB": {
+        "interface_ports": [
+          "blk_mem_gen_0/BRAM_PORTB",
+          "axi_bram_ctrl_0/BRAM_PORTB"
+        ]
+      },
+      "axi_smc_M02_AXI": {
+        "interface_ports": [
+          "axi_smc/M02_AXI",
+          "debug_bridge_0/S_AXI"
         ]
       }
     },

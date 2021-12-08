@@ -1,8 +1,8 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Wed Dec  8 14:25:26 2021
-// Host        : lhcelec01 running 64-bit unknown
+// Date        : Wed Dec  8 15:47:53 2021
+// Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_heartbeat_0_0_sim_netlist.v
 // Design      : design_1_heartbeat_0_0
@@ -58,6 +58,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
   wire \FSM_sequential_phase[1]_i_7_n_0 ;
   wire \FSM_sequential_phase[1]_i_8_n_0 ;
   wire \FSM_sequential_phase[1]_i_9_n_0 ;
+  wire \FSM_sequential_phase_reg_n_0_[0] ;
   wire clk100;
   wire [31:0]counter;
   wire counter0_carry__0_n_0;
@@ -95,14 +96,19 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
   wire [31:1]data0;
   wire [0:0]dout;
   wire heartbeat_i_1_n_0;
-  wire heartbeat_i_2_n_0;
   wire [31:0]p_0_out;
-  wire [1:1]p_0_out_0;
-  wire [1:0]phase__0;
+  wire [1:0]p_0_out_0;
+  wire [1:1]phase__0;
   wire resetn;
   wire [7:6]NLW_counter0_carry__2_CO_UNCONNECTED;
   wire [7:7]NLW_counter0_carry__2_O_UNCONNECTED;
 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT1 #(
+    .INIT(2'h1)) 
+    \FSM_sequential_phase[0]_i_1 
+       (.I0(\FSM_sequential_phase_reg_n_0_[0] ),
+        .O(p_0_out_0[0]));
   LUT4 #(
     .INIT(16'h0302)) 
     \FSM_sequential_phase[1]_i_1 
@@ -149,15 +155,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
   LUT2 #(
     .INIT(4'h6)) 
     \FSM_sequential_phase[1]_i_2 
-       (.I0(phase__0[0]),
-        .I1(phase__0[1]),
-        .O(p_0_out_0));
+       (.I0(\FSM_sequential_phase_reg_n_0_[0] ),
+        .I1(phase__0),
+        .O(p_0_out_0[1]));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h00800000)) 
     \FSM_sequential_phase[1]_i_3 
-       (.I0(phase__0[0]),
-        .I1(phase__0[1]),
+       (.I0(\FSM_sequential_phase_reg_n_0_[0] ),
+        .I1(phase__0),
         .I2(counter[9]),
         .I3(counter[11]),
         .I4(\FSM_sequential_phase[1]_i_6_n_0 ),
@@ -176,8 +182,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
   LUT5 #(
     .INIT(32'h00700000)) 
     \FSM_sequential_phase[1]_i_5 
-       (.I0(phase__0[0]),
-        .I1(phase__0[1]),
+       (.I0(\FSM_sequential_phase_reg_n_0_[0] ),
+        .I1(phase__0),
         .I2(counter[11]),
         .I3(counter[9]),
         .I4(\FSM_sequential_phase[1]_i_13_n_0 ),
@@ -219,16 +225,16 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
   FDCE \FSM_sequential_phase_reg[0] 
        (.C(clk100),
         .CE(\FSM_sequential_phase[1]_i_1_n_0 ),
-        .CLR(heartbeat_i_2_n_0),
-        .D(heartbeat_i_1_n_0),
-        .Q(phase__0[0]));
+        .CLR(heartbeat_i_1_n_0),
+        .D(p_0_out_0[0]),
+        .Q(\FSM_sequential_phase_reg_n_0_[0] ));
   (* FSM_ENCODED_STATES = "iSTATE:11,iSTATE0:00,iSTATE1:01,iSTATE2:10," *) 
   FDCE \FSM_sequential_phase_reg[1] 
        (.C(clk100),
         .CE(\FSM_sequential_phase[1]_i_1_n_0 ),
-        .CLR(heartbeat_i_2_n_0),
-        .D(p_0_out_0),
-        .Q(phase__0[1]));
+        .CLR(heartbeat_i_1_n_0),
+        .D(p_0_out_0[1]),
+        .Q(phase__0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY8 counter0_carry
        (.CI(counter[0]),
@@ -486,22 +492,22 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
         .I3(data0[31]),
         .O(p_0_out[31]));
   LUT6 #(
-    .INIT(64'hFFFFFFFEBFFFFFFF)) 
+    .INIT(64'hFFFFFEFFFFBFFFFF)) 
     \counter[31]_i_2 
        (.I0(\counter[31]_i_3_n_0 ),
         .I1(counter[23]),
         .I2(counter[25]),
-        .I3(counter[9]),
+        .I3(counter[11]),
         .I4(counter[17]),
         .I5(counter[21]),
         .O(\counter[31]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFD5BFFFFFFF)) 
+    .INIT(64'hFFFFEAFFFF7FFFFF)) 
     \counter[31]_i_3 
-       (.I0(counter[11]),
-        .I1(phase__0[1]),
-        .I2(phase__0[0]),
-        .I3(counter[9]),
+       (.I0(counter[9]),
+        .I1(phase__0),
+        .I2(\FSM_sequential_phase_reg_n_0_[0] ),
+        .I3(counter[11]),
         .I4(counter[15]),
         .I5(counter[13]),
         .O(\counter[31]_i_3_n_0 ));
@@ -571,211 +577,205 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
   FDCE \counter_reg[0] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[0]),
         .Q(counter[0]));
   FDCE \counter_reg[10] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[10]),
         .Q(counter[10]));
   FDCE \counter_reg[11] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[11]),
         .Q(counter[11]));
   FDCE \counter_reg[12] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[12]),
         .Q(counter[12]));
   FDCE \counter_reg[13] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[13]),
         .Q(counter[13]));
   FDCE \counter_reg[14] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[14]),
         .Q(counter[14]));
   FDCE \counter_reg[15] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[15]),
         .Q(counter[15]));
   FDCE \counter_reg[16] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[16]),
         .Q(counter[16]));
   FDCE \counter_reg[17] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[17]),
         .Q(counter[17]));
   FDCE \counter_reg[18] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[18]),
         .Q(counter[18]));
   FDCE \counter_reg[19] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[19]),
         .Q(counter[19]));
   FDCE \counter_reg[1] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[1]),
         .Q(counter[1]));
   FDCE \counter_reg[20] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[20]),
         .Q(counter[20]));
   FDCE \counter_reg[21] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[21]),
         .Q(counter[21]));
   FDCE \counter_reg[22] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[22]),
         .Q(counter[22]));
   FDCE \counter_reg[23] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[23]),
         .Q(counter[23]));
   FDCE \counter_reg[24] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[24]),
         .Q(counter[24]));
   FDCE \counter_reg[25] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[25]),
         .Q(counter[25]));
   FDCE \counter_reg[26] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[26]),
         .Q(counter[26]));
   FDCE \counter_reg[27] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[27]),
         .Q(counter[27]));
   FDCE \counter_reg[28] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[28]),
         .Q(counter[28]));
   FDCE \counter_reg[29] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[29]),
         .Q(counter[29]));
   FDCE \counter_reg[2] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[2]),
         .Q(counter[2]));
   FDCE \counter_reg[30] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[30]),
         .Q(counter[30]));
   FDCE \counter_reg[31] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[31]),
         .Q(counter[31]));
   FDCE \counter_reg[3] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[3]),
         .Q(counter[3]));
   FDCE \counter_reg[4] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[4]),
         .Q(counter[4]));
   FDCE \counter_reg[5] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[5]),
         .Q(counter[5]));
   FDCE \counter_reg[6] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[6]),
         .Q(counter[6]));
   FDCE \counter_reg[7] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[7]),
         .Q(counter[7]));
   FDCE \counter_reg[8] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[8]),
         .Q(counter[8]));
   FDCE \counter_reg[9] 
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
+        .CLR(heartbeat_i_1_n_0),
         .D(p_0_out[9]),
         .Q(counter[9]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT1 #(
     .INIT(2'h1)) 
     heartbeat_i_1
-       (.I0(phase__0[0]),
-        .O(heartbeat_i_1_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    heartbeat_i_2
        (.I0(resetn),
-        .O(heartbeat_i_2_n_0));
-  FDCE heartbeat_reg
+        .O(heartbeat_i_1_n_0));
+  FDPE heartbeat_reg
        (.C(clk100),
         .CE(1'b1),
-        .CLR(heartbeat_i_2_n_0),
-        .D(heartbeat_i_1_n_0),
+        .D(\FSM_sequential_phase_reg_n_0_[0] ),
+        .PRE(heartbeat_i_1_n_0),
         .Q(dout));
 endmodule
 `ifndef GLBL

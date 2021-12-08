@@ -1,8 +1,8 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Wed Dec  8 14:25:25 2021
-// Host        : lhcelec01 running 64-bit unknown
+// Date        : Wed Dec  8 15:47:53 2021
+// Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_2/bd_c443_bs_switch_1_0_sim_netlist.v
 // Design      : bd_c443_bs_switch_1_0

@@ -42,32 +42,32 @@ module heartbeat(
     always @(posedge clk100 or negedge resetn) begin
         if (!resetn) begin
             counter <= {32 {1'b 0}};
-            heartbeat <= 1'b 0;
+            heartbeat <= 1'b 1; // OFF
             phase <= {4'b 0};
         end else begin
             if (phase == 2'b 00) begin
-                heartbeat <= 1'b 1;
+                heartbeat <= 1'b 0; // ON
                 counter <= counter + 1;
                 if (counter == 2 * DECI_SECOND) begin
                     phase <= 2'b 01;
                     counter <= {32 {1'b 0}};
                 end
             end else if (phase == 2'b 01) begin
-                heartbeat <= 1'b 0;
+                heartbeat <= 1'b 1; // OFF
                 counter <= counter + 1;
                 if (counter == 2 * DECI_SECOND) begin
                     phase <= 2'b 10;
                     counter <= {32 {1'b 0}};
                 end
             end else if (phase == 2'b 10) begin
-                heartbeat <= 1'b 1;
+                heartbeat <= 1'b 0; // ON
                 counter <= counter + 1;
                 if (counter == 2 * DECI_SECOND) begin
                     phase <= 2'b 11;
                     counter <= {32 {1'b 0}};
                 end
             end else if (phase == 2'b 11) begin
-                heartbeat <= 1'b 0;
+                heartbeat <= 1'b 1; // OFF
                 counter <= counter + 1;
                 if (counter == 6 * DECI_SECOND) begin
                     phase <= 2'b 00;

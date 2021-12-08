@@ -267,6 +267,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.ALL_PROBE_SAME_MU_CNT {2} \
    CONFIG.C_ADV_TRIGGER {true} \
+   CONFIG.C_DATA_DEPTH {131072} \
    CONFIG.C_ENABLE_ILA_AXI_MON {false} \
    CONFIG.C_EN_STRG_QUAL {1} \
    CONFIG.C_MONITOR_TYPE {Native} \
