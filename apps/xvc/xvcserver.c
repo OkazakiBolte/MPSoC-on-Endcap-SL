@@ -10,6 +10,7 @@
 
 #include <errno.h>
 #include <fcntl.h>
+#include <getopt.h>  // struct option
 #include <netinet/in.h>
 #include <netinet/tcp.h>
 #include <pthread.h>
@@ -25,6 +26,10 @@
 
 #define MAP_SIZE 0x10000
 #define UIO_PATH "/dev/uio0"
+#define XVC_PORT 2542
+
+static int verbose = 0;
+static int debug   = 0;
 
 typedef struct {
     uint32_t length_offset;
@@ -34,29 +39,25 @@ typedef struct {
     uint32_t ctrl_offset;
 } jtag_t;
 
-static int verbose = 0;
-
-#define XVC_PORT 2542
-
 static int sread(int fd, void *target, int len) {
     unsigned char *t = target;
-    printf("sread() begins!\n");
+    if (debug) printf("- Starting %s\n", __func__);
     while (len) {
         int r = read(fd, t, len);
         if (r <= 0) {
-            fprintf(stderr, "sread(): failed to read fd = %d: %s\n", fd,
-                    strerror(errno));
+            fprintf(stderr, "In function %s: failed to read fd = %d: %s\n",
+                    __func__, fd, strerror(errno));
             return r;
         }
         t += r;
         len -= r;
     }
-    printf("End of sread()\n");
+    if (debug) printf("- Exiting %s\n", __func__);
     return 1;
 }
 
 int handle_data(int fd, volatile jtag_t *ptr) {
-    printf("handle_data() begins!\n");
+    if (debug) printf("- Starting %s\n", __func__);
     char         xvcInfo[32];
     unsigned int bufferSize = 2048;
     sprintf(xvcInfo, "xvcServer_v1.0:%u\n", bufferSize);
@@ -66,42 +67,41 @@ int handle_data(int fd, volatile jtag_t *ptr) {
         memset(cmd, 0, 16);
         int           sread_Byte;
         unsigned char buffer[bufferSize], result[bufferSize / 2];
-        printf("cmd (initial) = %s\n", cmd);
         sread_Byte = 2;
         if (sread(fd, cmd, sread_Byte) != 1) {
             fprintf(
                 stderr,
-                "handle_data(): Expected to sread %d Bytes, but couldn't with "
+                "In function %s: Expected to sread %d Bytes, but couldn't with "
                 "cmd = %s, aborted.\n",
-                sread_Byte, cmd);
-            fprintf(stderr, "Exit handle_data().\n");
+                __func__, sread_Byte, cmd);
+            fprintf(stderr, "Exit function %s.\n", __func__);
         }
 
         if (memcmp(cmd, "ge", 2) == 0) {  // MESSAGE: "getinfo:"
             // The primary use of "getinfo:" message is to get the XVC server
             // version. The server version provides a client a way of
             // determining the protocol capabilites of the server.
-            printf("cmd = %s\n", cmd);
             sread_Byte = 6;
             if (sread(fd, cmd, sread_Byte) != 1) {
                 fprintf(stderr,
-                        "handle_data(): Expected to sread %d Bytes, but "
+                        "In function %s: Expected to sread %d Bytes, but "
                         "couldn't with cmd = %s, aborted.\n",
-                        sread_Byte, cmd);
-                fprintf(stderr, "Exit handle_data().\n");
+                        __func__, sread_Byte, cmd);
+                fprintf(stderr, "Exit function %s.\n", __func__);
                 return 1;
             }
             memcpy(result, xvcInfo, strlen(xvcInfo));
             if (write(fd, result, strlen(xvcInfo)) != strlen(xvcInfo)) {
-                fprintf(stderr,
-                        "handle_data(): failed to write 'result' into fd = %d: "
-                        "%s\n",
-                        fd, strerror(errno));
-                fprintf(stderr, "Exit handle_data().\n");
+                fprintf(
+                    stderr,
+                    "In function %s: failed to write 'result' into fd = %d: "
+                    "%s\n",
+                    __func__, fd, strerror(errno));
+                fprintf(stderr, "Exit function %s.\n", __func__);
                 return 1;
             }
             if (verbose) {
-                printf("%u : Received command: 'getinfo'\n", (int)time(NULL));
+                printf("%u: Received command: 'getinfo'\n", (int)time(NULL));
                 printf("\t Replied with %s\n", xvcInfo);
             }
             break;
@@ -111,27 +111,27 @@ int handle_data(int fd, volatile jtag_t *ptr) {
             // accomodate cable and board signal integrity conditions. This
             // command is used by clients to adjust the TCK rate in order to
             // slow down or speed up the shifting of JTAG vectors.
-            printf("cmd = %s\n", cmd);
             sread_Byte = 9;
             if (sread(fd, cmd, sread_Byte) != 1) {
                 fprintf(stderr,
-                        "handle_data(): Expected to sread %d Bytes, but "
+                        "In function %s: Expected to sread %d Bytes, but "
                         "couldn't with cmd = %s, aborted.\n",
-                        sread_Byte, cmd);
-                fprintf(stderr, "Exit handle_data().\n");
+                        __func__, sread_Byte, cmd);
+                fprintf(stderr, "Exit function %s.\n", __func__);
                 return 1;
             }
             memcpy(result, cmd + 5, 4);
             if (write(fd, result, 4) != 4) {
-                fprintf(stderr,
-                        "handle_data(): failed to write 'result' into fd = %d: "
-                        "%s\n",
-                        fd, strerror(errno));
-                fprintf(stderr, "Exit handle_data().\n");
+                fprintf(
+                    stderr,
+                    "In function %s: failed to write 'result' into fd = %d: "
+                    "%s\n",
+                    __func__, fd, strerror(errno));
+                fprintf(stderr, "Exit function %s.\n", __func__);
                 return 1;
             }
             if (verbose) {
-                printf("%u : Received command: 'settck'\n", (int)time(NULL));
+                printf("%u: Received command: 'settck'\n", (int)time(NULL));
                 printf("\t Replied with '%.*s'\n\n", 4, cmd + 5);
             }
             break;
@@ -145,40 +145,41 @@ int handle_data(int fd, volatile jtag_t *ptr) {
             // completion of the JTAG shift operation the server will return a
             // byte sized vector containing the sampled target TDO value for
             // each shifted TCK clock.
-            printf("cmd = %s\n", cmd);
             sread_Byte = 4;
             if (sread(fd, cmd, sread_Byte) != 1) {
                 fprintf(stderr,
-                        "handle_data(): Expected to sread %d Bytes, but "
+                        "In function %s: Expected to sread %d Bytes, but "
                         "couldn't with cmd = %s, aborted.\n",
-                        sread_Byte, cmd);
-                fprintf(stderr, "Exit handle_data().\n");
+                        __func__, sread_Byte, cmd);
+                fprintf(stderr, "Exit function %s.\n", __func__);
                 return 1;
             }
             if (verbose) {
-                printf("%u : Received command: 'shift'\n", (int)time(NULL));
+                printf("%u: Received command: 'shift'\n", (int)time(NULL));
             }
         } else {
-            fprintf(stderr, "handle_data(): invalid cmd: '%s'\n", cmd);
-            fprintf(stderr, "Exit handle_data().\n");
+            fprintf(stderr, "In function %s: invalid cmd: '%s'\n", __func__,
+                    cmd);
+            fprintf(stderr, "Exit function %s.\n", __func__);
             return 1;
         }
 
         int len;
         sread_Byte = 4;
         if (sread(fd, &len, 4) != 1) {
-            fprintf(stderr, "handle_data(): reading length failed.\n");
+            fprintf(stderr, "In function %s: reading length failed.\n",
+                    __func__);
             return 1;
         }
 
         int nr_bytes = (len + 7) / 8;
         if (nr_bytes * 2 > sizeof(buffer)) {
-            fprintf(stderr, "handle_data(): buffer size exceeded\n");
+            fprintf(stderr, "In function %s: buffer size exceeded\n", __func__);
             return 1;
         }
 
         if (sread(fd, buffer, nr_bytes * 2) != 1) {
-            fprintf(stderr, "handle_data(): reading data failed\n");
+            fprintf(stderr, "In function %s: reading data failed\n", __func__);
             return 1;
         }
         memset(result, 0, nr_bytes);
@@ -193,7 +194,7 @@ int handle_data(int fd, volatile jtag_t *ptr) {
         int byteIndex = 0;
         int tdi, tms, tdo;
         while (bytesLeft > 0) {
-            printf("Communication begins!\n");
+            if (debug) printf("New communication begins!\n");
             tms = 0;
             tdi = 0;
             tdo = 0;
@@ -232,32 +233,69 @@ int handle_data(int fd, volatile jtag_t *ptr) {
         if (write(fd, result, nr_bytes) != nr_bytes) {
             fprintf(
                 stderr,
-                "handle_data(): failed to write 'result' into fd = %d: %s\n",
-                fd, strerror(errno));
-            fprintf(stderr, "Exit handle_data().\n");
+                "In function %s: failed to write 'result' into fd = %d: %s\n",
+                __func__, fd, strerror(errno));
+            fprintf(stderr, "Exit function %s.\n", __func__);
             return 1;
         }
     } while (1);
 
     /* Note: Need to fix JTAG state updates, until then no exit is allowed */
-    printf("End of handle_data().\n");
+    if (debug) printf("- Exiting %s\n", __func__);
     return 0;
 }
 
-int main(int argc, char **argv) {
-    printf("Start XVC.\n");
-    int                i;
-    int                s;
-    int                c;
-    int                fd_uio;
-    struct sockaddr_in address;
+void help() {
+    printf("-v, --verbose\tShow infomation of JTAG connection status\n");
+    printf("-d, --debug\tDebug mode\n");
+    printf("-h, --help\tShow this help\n");
+    return;
+}
 
-    while ((c = getopt(argc, argv, "v")) != -1) {
-        switch (c) {
+void instruction() {
+    printf("\n---- Instruction ----\n");
+    printf("0. Make sure you're going to open /dev/uio0. If needed, change the "
+           "variable UIO_PATH in the source code.\n");
+    printf("1. Check my IP address first.\n");
+    printf("2. Open Hardware Manager in Vivado in your computer.\n");
+    printf("3. \"Open Target\" > \"Open New Target\" > \"Local server\" > "
+           "\"Add Xilinx Virtual "
+           "Cable\".\n");
+    printf("4. Enter hostname: <my IP address>, port: %u.\n", XVC_PORT);
+    printf("5. Enjoy!\n");
+    printf("---------------------\n\n");
+    return;
+}
+
+int main(int argc, char *argv[]) {
+    printf("\nXilinx Virtual Cable server starting.\n");
+    instruction();
+
+    /* ---- option analysis ---- */
+    struct option longopts[] = {
+        {"verbose", no_argument, NULL, 'v'},
+        {  "debug", no_argument, NULL, 'd'},
+        {   "help", no_argument, NULL, 'h'},
+        {        0,           0,    0,   0}  // indicates the termination of this array
+    };
+    char optstring[] = "vdh";
+    int  opt;
+    int  longindex;
+
+    while ((opt = getopt_long(argc, argv, optstring, longopts, &longindex)) !=
+           -1) {
+        switch (opt) {
             case 'v': verbose = 1; break;
-            case '?': fprintf(stderr, "usage: %s [-v]\n", *argv); return 1;
+            case 'd': debug = 1; break;
+            case 'h': help(); return 0;
+            default: help(); return -1;
         }
     }
+
+    int                i;
+    int                s;
+    int                fd_uio;
+    struct sockaddr_in address;
 
     fd_uio = open(UIO_PATH, O_RDWR);
     if (fd_uio < 1) {
@@ -267,7 +305,7 @@ int main(int argc, char **argv) {
     }
 
     s = socket(AF_INET, SOCK_STREAM, 0);
-    printf("s = %d.\n", s);
+    if (debug && verbose) printf("s = %d.\n", s);
     if (s < 0) {
         fprintf(stderr, "Couldn't create a new socket: %s\n", strerror(errno));
         return 1;
@@ -297,17 +335,6 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    char hostname[256];
-    if (gethostname(hostname, sizeof(hostname)) != 0) {
-        fprintf(stderr, "Couldn't get the hostname: %s\n", strerror(errno));
-        close(s);
-        return 1;
-    }
-
-    printf(
-        "INFO: To connect to this xvcServer instance, use url: TCP:%s:%u\n\n",
-        hostname, XVC_PORT);
-
     fd_set conn;
     int    maxfd = 0;
     FD_ZERO(&conn);
@@ -317,28 +344,29 @@ int main(int argc, char **argv) {
         fd_set read = conn, except = conn;
         int    fd;
         int    sel;
-        printf("Debug message: 1\n");
+        if (debug) printf("Debug message: 1\n");
         if ((sel = select(maxfd + 1, &read, 0, &except, 0)) < 0) {
-            printf("Debug message: 1-1\n");
+            if (debug) printf("Debug message: 1-1\n");
             fprintf(stderr, "The select() function returned error: %s\n",
                     strerror(errno));
             fprintf(stderr, "select = '%d'\n", sel);
             break;
         }
-        printf("Debug message: 2\n");
+        if (debug) printf("Debug message: 2\n");
         for (fd = 0; fd <= maxfd; ++fd) {
-            printf("Debug message: 3\n");
+            if (debug) printf("Debug message: 3\n");
             if (FD_ISSET(fd, &read)) {
-                printf("Debug message: 4\n");
+                if (debug) printf("Debug message: 4\n");
                 if (fd == s) {
-                    printf("Debug message: 5\n");
+                    if (debug) printf("Debug message: 5\n");
                     int       newfd;
                     socklen_t nsize = sizeof(address);
                     newfd = accept(s, (struct sockaddr *)&address, &nsize);
                     printf("connection accepted - fd %d\n", newfd);
                     if (newfd < 0) {
                         fprintf(stderr,
-                                "The accept() function returned error: %s\n",
+                                "The accept() function returned error: "
+                                "%s\n",
                                 strerror(errno));
                     } else {
                         printf("setting TCP_NODELAY to 1\n");
@@ -356,17 +384,17 @@ int main(int argc, char **argv) {
                         FD_SET(newfd, &conn);
                     }
                 } else if (handle_data(fd, ptr)) {
-                    printf("Debug message: 6\n");
+                    if (debug) printf("Debug message: 6\n");
                     printf("connection closed - fd %d\n", fd);
                     close(fd);
                     FD_CLR(fd, &conn);
                 }
             } else if (FD_ISSET(fd, &except)) {
-                printf("Debug message: 7\n");
+                if (debug) printf("Debug message: 7\n");
                 printf("connection aborted - fd %d\n", fd);
                 close(fd);
                 FD_CLR(fd, &conn);
-                printf("Debug message: 8\n");
+                if (debug) printf("Debug message: 8\n");
                 if (fd == s) break;
             }
         }
