@@ -286,6 +286,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_PROBE0_MU_CNT {2} \
    CONFIG.C_PROBE0_TYPE {1} \
    CONFIG.C_PROBE0_WIDTH {6} \
+   CONFIG.C_PROBE1_MU_CNT {2} \
  ] $ila_0
 
   # Create instance: led, and set properties

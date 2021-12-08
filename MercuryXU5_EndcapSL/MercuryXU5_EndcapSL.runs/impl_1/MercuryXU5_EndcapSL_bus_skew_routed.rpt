@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date              : Wed Dec  8 17:44:30 2021
+| Date              : Wed Dec  8 18:28:08 2021
 | Host              : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command           : report_bus_skew -warn_on_violation -file MercuryXU5_EndcapSL_bus_skew_routed.rpt -pb MercuryXU5_EndcapSL_bus_skew_routed.pb -rpx MercuryXU5_EndcapSL_bus_skew_routed.rpx
 | Design            : MercuryXU5_EndcapSL
@@ -24,16 +24,16 @@ Id  Position  From                            To                              Co
 --  --------  ------------------------------  ------------------------------  ------  ---------------  ----------  ---------
 1   182       [get_cells [list {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[0]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]}]]
                                               [get_cells [list {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]}]]
-                                                                              Slow             10.000       0.494      9.506
+                                                                              Slow             10.000       0.585      9.415
 2   184       [get_cells [list {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]}]]
                                               [get_cells [list {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]}]]
-                                                                              Slow             10.000       0.567      9.433
+                                                                              Slow             10.000       0.633      9.367
 3   187       [get_cells [list {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[0]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]}]]
                                               [get_cells [list {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]}]]
-                                                                              Slow             10.000       0.646      9.354
+                                                                              Slow             10.000       0.626      9.374
 4   189       [get_cells [list {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]}]]
                                               [get_cells [list {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]} {design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]}]]
-                                                                              Slow             10.000       0.653      9.347
+                                                                              Slow             10.000       0.723      9.277
 
 
 2. Bus Skew Report Per Constraint
@@ -49,10 +49,10 @@ From Clock            To Clock              Endpoint Pin                    Refe
 design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
                       clk_pl_0              design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]/D
                                                                             design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/D
-                                                                                                            Slow         0.494      9.506
+                                                                                                            Slow         0.585      9.415
 
 
-Slack (MET) :             9.506ns  (requirement - actual skew)
+Slack (MET) :             9.415ns  (requirement - actual skew)
   Endpoint Source:        design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q)
   Endpoint Destination:   design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]/D
@@ -63,11 +63,11 @@ Slack (MET) :             9.506ns  (requirement - actual skew)
                             (rising edge-triggered cell FDCE clocked by clk_pl_0)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            10.000ns
-  Endpoint Relative Delay:    4.667ns
-  Reference Relative Delay:   3.350ns
-  Relative CRPR:              0.983ns
+  Endpoint Relative Delay:    4.520ns
+  Reference Relative Delay:   3.450ns
+  Relative CRPR:              0.645ns
   Uncertainty:                0.160ns
-  Actual Bus Skew:            0.494ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+  Actual Bus Skew:            0.585ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -78,22 +78,22 @@ Endpoint path:
                          net (fo=1, routed)           0.171     0.171    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.028     0.199 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-                         net (fo=12135, routed)       2.528     2.727    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
-    SLICE_X22Y176        FDRE (Prop_HFF_SLICEL_C_Q)
-                                                      0.079     2.806 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
-                         net (fo=2, routed)           1.372     4.178    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
+                         net (fo=12135, routed)       2.259     2.458    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
+    SLICE_X20Y135        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.079     2.537 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
+                         net (fo=2, routed)           1.067     3.604    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
     BUFGCE_X0Y24         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.028     4.206 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
-                         net (fo=60, routed)          0.937     5.143    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
+                                                      0.028     3.632 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
+                         net (fo=60, routed)          0.937     4.569    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
     BUFGCTRL_X0Y6        BUFGCTRL (Prop_BUFGCTRL_I0_O)
-                                                      0.092     5.235 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
-    X1Y1 (CLOCK_ROOT)    net (fo=492, routed)         1.535     6.770    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
-    SLICE_X45Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[0]/C
+                                                      0.092     4.661 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
+    X1Y2 (CLOCK_ROOT)    net (fo=492, routed)         1.798     6.459    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
+    SLICE_X53Y139        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X45Y94         FDCE (Prop_EFF_SLICEM_C_Q)
-                                                      0.076     6.846 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[0]/Q
-                         net (fo=1, routed)           0.275     7.121    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[0]
-    SLICE_X45Y91         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]/D
+    SLICE_X53Y139        FDCE (Prop_AFF_SLICEM_C_Q)
+                                                      0.077     6.536 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[0]/Q
+                         net (fo=1, routed)           0.342     6.878    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[0]
+    SLICE_X53Y139        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_pl_0 rise edge)
@@ -102,16 +102,16 @@ Endpoint path:
                          net (fo=1, routed)           0.135     0.135    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.025     0.160 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=12135, routed)       2.108     2.268    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
-    SLICE_X45Y91         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]/C
-                         clock pessimism              0.161     2.429    
-    SLICE_X45Y91         FDCE (Setup_BFF2_SLICEM_C_D)
-                                                      0.025     2.454    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]
+    X1Y2 (CLOCK_ROOT)    net (fo=12135, routed)       1.978     2.138    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
+    SLICE_X53Y139        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]/C
+                         clock pessimism              0.195     2.333    
+    SLICE_X53Y139        FDCE (Setup_HFF2_SLICEM_C_D)
+                                                      0.025     2.358    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]
   -------------------------------------------------------------------
-                         data arrival                           7.121    
-                         clock arrival                          2.454    
+                         data arrival                           6.878    
+                         clock arrival                          2.358    
   -------------------------------------------------------------------
-                         relative delay                         4.667    
+                         relative delay                         4.520    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -122,22 +122,22 @@ Reference path:
                          net (fo=1, routed)           0.135     0.135    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.025     0.160 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-                         net (fo=12135, routed)       2.244     2.404    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
-    SLICE_X22Y176        FDRE (Prop_HFF_SLICEL_C_Q)
-                                                      0.058     2.462 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
-                         net (fo=2, routed)           0.939     3.401    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
+                         net (fo=12135, routed)       2.010     2.170    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
+    SLICE_X20Y135        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.058     2.228 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
+                         net (fo=2, routed)           0.758     2.986    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
     BUFGCE_X0Y24         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.024     3.425 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
-                         net (fo=60, routed)          0.852     4.277    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
+                                                      0.024     3.010 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
+                         net (fo=60, routed)          0.852     3.862    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
     BUFGCTRL_X0Y6        BUFGCTRL (Prop_BUFGCTRL_I0_O)
-                                                      0.079     4.356 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
-    X1Y1 (CLOCK_ROOT)    net (fo=492, routed)         1.333     5.689    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
-    SLICE_X45Y93         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]/C
+                                                      0.079     3.941 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
+    X1Y2 (CLOCK_ROOT)    net (fo=492, routed)         1.594     5.535    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
+    SLICE_X52Y137        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X45Y93         FDCE (Prop_EFF_SLICEM_C_Q)
-                                                      0.058     5.747 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]/Q
-                         net (fo=1, routed)           0.083     5.830    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[3]
-    SLICE_X45Y91         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/D
+    SLICE_X52Y137        FDCE (Prop_EFF_SLICEL_C_Q)
+                                                      0.059     5.594 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]/Q
+                         net (fo=1, routed)           0.131     5.725    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[3]
+    SLICE_X52Y137        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_pl_0 rise edge)
@@ -146,16 +146,16 @@ Reference path:
                          net (fo=1, routed)           0.171     0.171    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.028     0.199 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=12135, routed)       2.380     2.579    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
-    SLICE_X45Y91         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/C
-                         clock pessimism             -0.161     2.418    
-    SLICE_X45Y91         FDCE (Hold_GFF2_SLICEM_C_D)
-                                                      0.062     2.480    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]
+    X1Y2 (CLOCK_ROOT)    net (fo=12135, routed)       2.209     2.408    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
+    SLICE_X52Y137        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/C
+                         clock pessimism             -0.195     2.213    
+    SLICE_X52Y137        FDCE (Hold_DFF2_SLICEL_C_D)
+                                                      0.062     2.275    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]
   -------------------------------------------------------------------
-                         data arrival                           5.830    
-                         clock arrival                          2.480    
+                         data arrival                           5.725    
+                         clock arrival                          2.275    
   -------------------------------------------------------------------
-                         relative delay                         3.350    
+                         relative delay                         3.450    
 
 
 
@@ -168,26 +168,26 @@ From Clock            To Clock              Endpoint Pin                    Refe
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
 clk_pl_0              design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
                                             design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
-                                                                            design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
-                                                                                                            Slow         0.567      9.433
+                                                                            design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
+                                                                                                            Slow         0.633      9.367
 
 
-Slack (MET) :             9.433ns  (requirement - actual skew)
+Slack (MET) :             9.367ns  (requirement - actual skew)
   Endpoint Source:        design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
                             (rising edge-triggered cell FDCE clocked by clk_pl_0)
   Endpoint Destination:   design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
                             (rising edge-triggered cell FDCE clocked by design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q)
-  Reference Source:       design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/C
+  Reference Source:       design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by clk_pl_0)
-  Reference Destination:  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
+  Reference Destination:  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
                             (rising edge-triggered cell FDCE clocked by design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            10.000ns
-  Endpoint Relative Delay:   -2.856ns
-  Reference Relative Delay:  -4.286ns
-  Relative CRPR:              1.023ns
+  Endpoint Relative Delay:   -2.843ns
+  Reference Relative Delay:  -3.961ns
+  Relative CRPR:              0.645ns
   Uncertainty:                0.160ns
-  Actual Bus Skew:            0.567ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+  Actual Bus Skew:            0.633ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -198,13 +198,13 @@ Endpoint path:
                          net (fo=1, routed)           0.171     0.171    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.028     0.199 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=12135, routed)       2.351     2.550    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
-    SLICE_X46Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
+    X1Y2 (CLOCK_ROOT)    net (fo=12135, routed)       2.209     2.408    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
+    SLICE_X52Y137        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X46Y94         FDCE (Prop_EFF_SLICEL_C_Q)
-                                                      0.079     2.629 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/Q
-                         net (fo=1, routed)           0.398     3.027    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[3]
-    SLICE_X46Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
+    SLICE_X52Y137        FDCE (Prop_AFF_SLICEL_C_Q)
+                                                      0.079     2.487 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/Q
+                         net (fo=1, routed)           0.425     2.912    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[3]
+    SLICE_X52Y137        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q rise edge)
@@ -213,25 +213,25 @@ Endpoint path:
                          net (fo=1, routed)           0.135     0.135    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.025     0.160 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-                         net (fo=12135, routed)       2.244     2.404    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
-    SLICE_X22Y176        FDRE (Prop_HFF_SLICEL_C_Q)
-                                                      0.058     2.462 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
-                         net (fo=2, routed)           0.939     3.401    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
+                         net (fo=12135, routed)       2.010     2.170    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
+    SLICE_X20Y135        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.058     2.228 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
+                         net (fo=2, routed)           0.758     2.986    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
     BUFGCE_X0Y24         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.024     3.425 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
-                         net (fo=60, routed)          0.852     4.277    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
+                                                      0.024     3.010 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
+                         net (fo=60, routed)          0.852     3.862    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
     BUFGCTRL_X0Y6        BUFGCTRL (Prop_BUFGCTRL_I0_O)
-                                                      0.079     4.356 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
-    X1Y1 (CLOCK_ROOT)    net (fo=492, routed)         1.341     5.697    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
-    SLICE_X46Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/C
-                         clock pessimism              0.161     5.858    
-    SLICE_X46Y94         FDCE (Setup_CFF2_SLICEL_C_D)
-                                                      0.025     5.883    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]
+                                                      0.079     3.941 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
+    X1Y2 (CLOCK_ROOT)    net (fo=492, routed)         1.594     5.535    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
+    SLICE_X52Y137        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/C
+                         clock pessimism              0.195     5.730    
+    SLICE_X52Y137        FDCE (Setup_GFF2_SLICEL_C_D)
+                                                      0.025     5.755    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]
   -------------------------------------------------------------------
-                         data arrival                           3.027    
-                         clock arrival                          5.883    
+                         data arrival                           2.912    
+                         clock arrival                          5.755    
   -------------------------------------------------------------------
-                         relative delay                        -2.856    
+                         relative delay                        -2.843    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -242,13 +242,13 @@ Reference path:
                          net (fo=1, routed)           0.135     0.135    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.025     0.160 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=12135, routed)       2.096     2.256    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
-    SLICE_X46Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/C
+    X1Y2 (CLOCK_ROOT)    net (fo=12135, routed)       1.980     2.140    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
+    SLICE_X53Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X46Y94         FDCE (Prop_HFF_SLICEL_C_Q)
-                                                      0.058     2.314 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/Q
-                         net (fo=1, routed)           0.066     2.380    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[2]
-    SLICE_X46Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
+    SLICE_X53Y138        FDCE (Prop_DFF_SLICEM_C_Q)
+                                                      0.058     2.198 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/Q
+                         net (fo=1, routed)           0.166     2.364    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[0]
+    SLICE_X53Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q rise edge)
@@ -257,25 +257,25 @@ Reference path:
                          net (fo=1, routed)           0.171     0.171    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.028     0.199 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-                         net (fo=12135, routed)       2.528     2.727    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
-    SLICE_X22Y176        FDRE (Prop_HFF_SLICEL_C_Q)
-                                                      0.079     2.806 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
-                         net (fo=2, routed)           1.372     4.178    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
+                         net (fo=12135, routed)       2.259     2.458    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
+    SLICE_X20Y135        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.079     2.537 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
+                         net (fo=2, routed)           1.067     3.604    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
     BUFGCE_X0Y24         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.028     4.206 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
-                         net (fo=60, routed)          0.937     5.143    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
+                                                      0.028     3.632 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
+                         net (fo=60, routed)          0.937     4.569    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
     BUFGCTRL_X0Y6        BUFGCTRL (Prop_BUFGCTRL_I0_O)
-                                                      0.092     5.235 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
-    X1Y1 (CLOCK_ROOT)    net (fo=492, routed)         1.530     6.765    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
-    SLICE_X46Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/C
-                         clock pessimism             -0.161     6.604    
-    SLICE_X46Y94         FDCE (Hold_DFF2_SLICEL_C_D)
-                                                      0.062     6.666    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]
+                                                      0.092     4.661 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
+    X1Y2 (CLOCK_ROOT)    net (fo=492, routed)         1.797     6.458    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
+    SLICE_X53Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/C
+                         clock pessimism             -0.195     6.263    
+    SLICE_X53Y138        FDCE (Hold_HFF2_SLICEM_C_D)
+                                                      0.062     6.325    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]
   -------------------------------------------------------------------
-                         data arrival                           2.380    
-                         clock arrival                          6.666    
+                         data arrival                           2.364    
+                         clock arrival                          6.325    
   -------------------------------------------------------------------
-                         relative delay                        -4.286    
+                         relative delay                        -3.961    
 
 
 
@@ -289,10 +289,10 @@ From Clock            To Clock              Endpoint Pin                    Refe
 clk_pl_0              design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
                                             design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
                                                                             design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
-                                                                                                            Slow         0.646      9.354
+                                                                                                            Slow         0.626      9.374
 
 
-Slack (MET) :             9.354ns  (requirement - actual skew)
+Slack (MET) :             9.374ns  (requirement - actual skew)
   Endpoint Source:        design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by clk_pl_0)
   Endpoint Destination:   design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
@@ -303,11 +303,11 @@ Slack (MET) :             9.354ns  (requirement - actual skew)
                             (rising edge-triggered cell FDCE clocked by design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            10.000ns
-  Endpoint Relative Delay:   -2.896ns
-  Reference Relative Delay:  -4.248ns
-  Relative CRPR:              0.866ns
+  Endpoint Relative Delay:   -2.902ns
+  Reference Relative Delay:  -4.014ns
+  Relative CRPR:              0.646ns
   Uncertainty:                0.160ns
-  Actual Bus Skew:            0.646ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+  Actual Bus Skew:            0.626ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -318,13 +318,13 @@ Endpoint path:
                          net (fo=1, routed)           0.171     0.171    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.028     0.199 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=12135, routed)       2.341     2.540    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
-    SLICE_X42Y95         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/C
+    X1Y2 (CLOCK_ROOT)    net (fo=12135, routed)       2.180     2.379    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
+    SLICE_X45Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y95         FDCE (Prop_DFF2_SLICEL_C_Q)
-                                                      0.081     2.621 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/Q
-                         net (fo=1, routed)           0.282     2.903    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[1]
-    SLICE_X39Y95         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
+    SLICE_X45Y138        FDCE (Prop_DFF2_SLICEM_C_Q)
+                                                      0.080     2.459 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/Q
+                         net (fo=1, routed)           0.335     2.794    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[1]
+    SLICE_X46Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q rise edge)
@@ -333,25 +333,25 @@ Endpoint path:
                          net (fo=1, routed)           0.135     0.135    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.025     0.160 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-                         net (fo=12135, routed)       2.244     2.404    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
-    SLICE_X22Y176        FDRE (Prop_HFF_SLICEL_C_Q)
-                                                      0.058     2.462 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
-                         net (fo=2, routed)           0.939     3.401    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
+                         net (fo=12135, routed)       2.010     2.170    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
+    SLICE_X20Y135        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.058     2.228 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
+                         net (fo=2, routed)           0.758     2.986    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
     BUFGCE_X0Y24         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.024     3.425 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
-                         net (fo=60, routed)          0.852     4.277    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
+                                                      0.024     3.010 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
+                         net (fo=60, routed)          0.852     3.862    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
     BUFGCTRL_X0Y6        BUFGCTRL (Prop_BUFGCTRL_I0_O)
-                                                      0.079     4.356 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
-    X1Y1 (CLOCK_ROOT)    net (fo=492, routed)         1.257     5.613    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
-    SLICE_X39Y95         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/C
-                         clock pessimism              0.161     5.774    
-    SLICE_X39Y95         FDCE (Setup_CFF2_SLICEL_C_D)
-                                                      0.025     5.799    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]
+                                                      0.079     3.941 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
+    X1Y2 (CLOCK_ROOT)    net (fo=492, routed)         1.535     5.476    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
+    SLICE_X46Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/C
+                         clock pessimism              0.195     5.671    
+    SLICE_X46Y138        FDCE (Setup_CFF2_SLICEL_C_D)
+                                                      0.025     5.696    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]
   -------------------------------------------------------------------
-                         data arrival                           2.903    
-                         clock arrival                          5.799    
+                         data arrival                           2.794    
+                         clock arrival                          5.696    
   -------------------------------------------------------------------
-                         relative delay                        -2.896    
+                         relative delay                        -2.902    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -362,13 +362,13 @@ Reference path:
                          net (fo=1, routed)           0.135     0.135    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.025     0.160 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=12135, routed)       2.006     2.166    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
-    SLICE_X40Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/C
+    X1Y2 (CLOCK_ROOT)    net (fo=12135, routed)       1.897     2.057    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
+    SLICE_X43Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y94         FDCE (Prop_AFF_SLICEM_C_Q)
-                                                      0.058     2.224 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/Q
-                         net (fo=1, routed)           0.079     2.303    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[2]
-    SLICE_X40Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
+    SLICE_X43Y138        FDCE (Prop_EFF_SLICEM_C_Q)
+                                                      0.058     2.115 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/Q
+                         net (fo=1, routed)           0.114     2.229    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[2]
+    SLICE_X43Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q rise edge)
@@ -377,25 +377,25 @@ Reference path:
                          net (fo=1, routed)           0.171     0.171    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.028     0.199 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-                         net (fo=12135, routed)       2.528     2.727    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
-    SLICE_X22Y176        FDRE (Prop_HFF_SLICEL_C_Q)
-                                                      0.079     2.806 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
-                         net (fo=2, routed)           1.372     4.178    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
+                         net (fo=12135, routed)       2.259     2.458    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
+    SLICE_X20Y135        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.079     2.537 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
+                         net (fo=2, routed)           1.067     3.604    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
     BUFGCE_X0Y24         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.028     4.206 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
-                         net (fo=60, routed)          0.937     5.143    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
+                                                      0.028     3.632 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
+                         net (fo=60, routed)          0.937     4.569    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
     BUFGCTRL_X0Y6        BUFGCTRL (Prop_BUFGCTRL_I0_O)
-                                                      0.092     5.235 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
-    X1Y1 (CLOCK_ROOT)    net (fo=492, routed)         1.415     6.650    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
-    SLICE_X40Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/C
-                         clock pessimism             -0.161     6.489    
-    SLICE_X40Y94         FDCE (Hold_HFF2_SLICEM_C_D)
-                                                      0.062     6.551    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]
+                                                      0.092     4.661 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
+    X1Y2 (CLOCK_ROOT)    net (fo=492, routed)         1.716     6.377    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
+    SLICE_X43Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/C
+                         clock pessimism             -0.195     6.182    
+    SLICE_X43Y138        FDCE (Hold_DFF2_SLICEM_C_D)
+                                                      0.061     6.243    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]
   -------------------------------------------------------------------
-                         data arrival                           2.303    
-                         clock arrival                          6.551    
+                         data arrival                           2.229    
+                         clock arrival                          6.243    
   -------------------------------------------------------------------
-                         relative delay                        -4.248    
+                         relative delay                        -4.014    
 
 
 
@@ -407,27 +407,27 @@ Endpoints: 4
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
 design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
-                      clk_pl_0              design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
-                                                                            design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
-                                                                                                            Slow         0.653      9.347
+                      clk_pl_0              design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
+                                                                            design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
+                                                                                                            Slow         0.723      9.277
 
 
-Slack (MET) :             9.347ns  (requirement - actual skew)
-  Endpoint Source:        design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/C
+Slack (MET) :             9.277ns  (requirement - actual skew)
+  Endpoint Source:        design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q)
-  Endpoint Destination:   design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
+  Endpoint Destination:   design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
                             (rising edge-triggered cell FDCE clocked by clk_pl_0)
-  Reference Source:       design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
+  Reference Source:       design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
                             (rising edge-triggered cell FDCE clocked by design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q)
-  Reference Destination:  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
+  Reference Destination:  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
                             (rising edge-triggered cell FDCE clocked by clk_pl_0)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            10.000ns
-  Endpoint Relative Delay:    4.748ns
-  Reference Relative Delay:   3.391ns
-  Relative CRPR:              0.864ns
+  Endpoint Relative Delay:    4.629ns
+  Reference Relative Delay:   3.368ns
+  Relative CRPR:              0.698ns
   Uncertainty:                0.160ns
-  Actual Bus Skew:            0.653ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
+  Actual Bus Skew:            0.723ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR + Uncertainty)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -438,22 +438,22 @@ Endpoint path:
                          net (fo=1, routed)           0.171     0.171    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.028     0.199 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-                         net (fo=12135, routed)       2.528     2.727    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
-    SLICE_X22Y176        FDRE (Prop_HFF_SLICEL_C_Q)
-                                                      0.079     2.806 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
-                         net (fo=2, routed)           1.372     4.178    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
+                         net (fo=12135, routed)       2.259     2.458    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
+    SLICE_X20Y135        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.079     2.537 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
+                         net (fo=2, routed)           1.067     3.604    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
     BUFGCE_X0Y24         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.028     4.206 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
-                         net (fo=60, routed)          0.937     5.143    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
+                                                      0.028     3.632 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
+                         net (fo=60, routed)          0.937     4.569    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
     BUFGCTRL_X0Y6        BUFGCTRL (Prop_BUFGCTRL_I0_O)
-                                                      0.092     5.235 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
-    X1Y1 (CLOCK_ROOT)    net (fo=492, routed)         1.414     6.649    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
-    SLICE_X39Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/C
+                                                      0.092     4.661 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
+    X1Y2 (CLOCK_ROOT)    net (fo=492, routed)         1.762     6.423    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
+    SLICE_X45Y137        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y94         FDCE (Prop_HFF_SLICEL_C_Q)
-                                                      0.079     6.728 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/Q
-                         net (fo=1, routed)           0.369     7.097    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[2]
-    SLICE_X39Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
+    SLICE_X45Y137        FDCE (Prop_DFF_SLICEM_C_Q)
+                                                      0.078     6.501 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/Q
+                         net (fo=1, routed)           0.407     6.908    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[0]
+    SLICE_X43Y137        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_pl_0 rise edge)
@@ -462,16 +462,16 @@ Endpoint path:
                          net (fo=1, routed)           0.135     0.135    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.025     0.160 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=12135, routed)       2.003     2.163    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
-    SLICE_X39Y94         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/C
-                         clock pessimism              0.161     2.324    
-    SLICE_X39Y94         FDCE (Setup_DFF2_SLICEL_C_D)
-                                                      0.025     2.349    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]
+    X1Y2 (CLOCK_ROOT)    net (fo=12135, routed)       1.899     2.059    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
+    SLICE_X43Y137        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/C
+                         clock pessimism              0.195     2.254    
+    SLICE_X43Y137        FDCE (Setup_DFF2_SLICEM_C_D)
+                                                      0.025     2.279    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]
   -------------------------------------------------------------------
-                         data arrival                           7.097    
-                         clock arrival                          2.349    
+                         data arrival                           6.908    
+                         clock arrival                          2.279    
   -------------------------------------------------------------------
-                         relative delay                         4.748    
+                         relative delay                         4.629    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -482,22 +482,22 @@ Reference path:
                          net (fo=1, routed)           0.135     0.135    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.025     0.160 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-                         net (fo=12135, routed)       2.244     2.404    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
-    SLICE_X22Y176        FDRE (Prop_HFF_SLICEL_C_Q)
-                                                      0.058     2.462 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
-                         net (fo=2, routed)           0.939     3.401    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
+                         net (fo=12135, routed)       2.010     2.170    design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/s_axi_aclk
+    SLICE_X20Y135        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.058     2.228 r  design_1_i/debug_bridge_0/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q
+                         net (fo=2, routed)           0.758     2.986    design_1_i/debug_bridge_0/U0/bsip/U0/tap_tck
     BUFGCE_X0Y24         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.024     3.425 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
-                         net (fo=60, routed)          0.852     4.277    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
+                                                      0.024     3.010 r  design_1_i/debug_bridge_0/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O
+                         net (fo=60, routed)          0.852     3.862    design_1_i/debug_bridge_0/U0/bs_mux/inst/soft_tck
     BUFGCTRL_X0Y6        BUFGCTRL (Prop_BUFGCTRL_I0_O)
-                                                      0.079     4.356 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
-    X1Y1 (CLOCK_ROOT)    net (fo=492, routed)         1.248     5.604    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
-    SLICE_X40Y95         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
+                                                      0.079     3.941 r  design_1_i/debug_bridge_0/U0/bs_mux/inst/u_bufg_mux/O
+    X1Y2 (CLOCK_ROOT)    net (fo=492, routed)         1.535     5.476    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
+    SLICE_X46Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y95         FDCE (Prop_CFF_SLICEM_C_Q)
-                                                      0.058     5.662 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/Q
-                         net (fo=1, routed)           0.079     5.741    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[0]
-    SLICE_X40Y95         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
+    SLICE_X46Y138        FDCE (Prop_AFF_SLICEL_C_Q)
+                                                      0.058     5.534 r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/Q
+                         net (fo=1, routed)           0.074     5.608    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[3]
+    SLICE_X46Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_pl_0 rise edge)
@@ -506,16 +506,16 @@ Reference path:
                          net (fo=1, routed)           0.171     0.171    design_1_i/zynq_ultra_ps_e/U0/pl_clk_unbuffered[0]
     BUFG_PS_X0Y95        BUFG_PS (Prop_BUFG_PS_I_O)
                                                       0.028     0.199 r  design_1_i/zynq_ultra_ps_e/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=12135, routed)       2.250     2.449    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
-    SLICE_X40Y95         FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/C
-                         clock pessimism             -0.161     2.288    
-    SLICE_X40Y95         FDCE (Hold_HFF2_SLICEM_C_D)
-                                                      0.062     2.350    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]
+    X1Y2 (CLOCK_ROOT)    net (fo=12135, routed)       2.174     2.373    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
+    SLICE_X46Y138        FDCE                                         r  design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/C
+                         clock pessimism             -0.195     2.178    
+    SLICE_X46Y138        FDCE (Hold_HFF2_SLICEL_C_D)
+                                                      0.062     2.240    design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]
   -------------------------------------------------------------------
-                         data arrival                           5.741    
-                         clock arrival                          2.350    
+                         data arrival                           5.608    
+                         clock arrival                          2.240    
   -------------------------------------------------------------------
-                         relative delay                         3.391    
+                         relative delay                         3.368    
 
 
 

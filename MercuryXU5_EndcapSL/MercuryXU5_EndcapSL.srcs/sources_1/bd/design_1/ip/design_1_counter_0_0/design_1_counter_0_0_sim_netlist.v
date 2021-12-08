@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Wed Dec  8 17:31:01 2021
+// Date        : Wed Dec  8 18:14:13 2021
 // Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_counter_0_0/design_1_counter_0_0_sim_netlist.v
@@ -49,29 +49,25 @@ module design_1_counter_0_0_counter
   wire clk;
   wire resetn;
 
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \c[0]_i_1 
        (.I0(Q[0]),
         .O(\c[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h00FF00FEFF00FF00)) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
     \c[1]_i_1 
-       (.I0(Q[2]),
-        .I1(Q[3]),
-        .I2(Q[5]),
-        .I3(Q[1]),
-        .I4(Q[4]),
-        .I5(Q[0]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
         .O(c[1]));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \c[2]_i_1 
        (.I0(Q[2]),
-        .I1(Q[1]),
-        .I2(Q[0]),
+        .I1(Q[0]),
+        .I2(Q[1]),
         .O(c[2]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
@@ -79,28 +75,28 @@ module design_1_counter_0_0_counter
     \c[3]_i_1 
        (.I0(Q[2]),
         .I1(Q[3]),
-        .I2(Q[1]),
-        .I3(Q[0]),
+        .I2(Q[0]),
+        .I3(Q[1]),
         .O(c[3]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'h7F80FF00)) 
+    .INIT(32'h7FFF8000)) 
     \c[4]_i_1 
        (.I0(Q[2]),
         .I1(Q[3]),
-        .I2(Q[1]),
-        .I3(Q[4]),
-        .I4(Q[0]),
+        .I2(Q[0]),
+        .I3(Q[1]),
+        .I4(Q[4]),
         .O(c[4]));
   LUT6 #(
-    .INIT(64'h78F0F0F0F0F0F0F0)) 
+    .INIT(64'h7FFFFFFF80000000)) 
     \c[5]_i_1 
        (.I0(Q[2]),
         .I1(Q[3]),
-        .I2(Q[5]),
+        .I2(Q[0]),
         .I3(Q[1]),
         .I4(Q[4]),
-        .I5(Q[0]),
+        .I5(Q[5]),
         .O(c[5]));
   LUT1 #(
     .INIT(2'h1)) 

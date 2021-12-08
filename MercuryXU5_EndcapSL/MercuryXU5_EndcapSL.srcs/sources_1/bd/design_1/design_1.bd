@@ -3509,6 +3509,9 @@
           },
           "C_PROBE0_WIDTH": {
             "value": "6"
+          },
+          "C_PROBE1_MU_CNT": {
+            "value": "2"
           }
         }
       },

@@ -34,7 +34,7 @@ module counter(
             c <= {6 {1'b 0}};
         end else begin
             c <= c + 1;
-            if (c == {6'b 1}) begin
+            if (c == {6 {1'b 1}}) begin
                 c <= {6 {1'b 0}};
             end
         end
