@@ -254,8 +254,9 @@ void help() {
 
 void instruction() {
     printf("\n---- Instruction ----\n");
-    printf("0. Make sure you're going to open /dev/uio0. If needed, change the "
-           "variable UIO_PATH in the source code.\n");
+    printf("0. Make sure you're going to open %s. If needed, change the "
+           "variable UIO_PATH in the source code.\n",
+           UIO_PATH);
     printf("1. Check my IP address first.\n");
     printf("2. Open Hardware Manager in Vivado in your computer.\n");
     printf("3. \"Open Target\" > \"Open New Target\" > \"Local server\" > "
