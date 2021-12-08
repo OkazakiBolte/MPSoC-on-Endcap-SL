@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date             : Wed Dec  8 17:44:25 2021
+| Date             : Wed Dec  8 18:28:03 2021
 | Host             : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command          : report_power -file MercuryXU5_EndcapSL_power_routed.rpt -pb MercuryXU5_EndcapSL_power_summary_routed.pb -rpx MercuryXU5_EndcapSL_power_routed.rpx
 | Design           : MercuryXU5_EndcapSL
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.560        |
+| Total On-Chip Power (W)  | 3.559        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 3.101        |
+| Dynamic (W)              | 3.100        |
 | Device Static (W)        | 0.459        |
 | Effective TJA (C/W)      | 2.3          |
 | Max Ambient (C)          | 91.7         |
@@ -52,16 +52,16 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.041 |       17 |       --- |             --- |
+| Clocks                   |     0.040 |       17 |       --- |             --- |
 | CLB Logic                |     0.043 |    24330 |       --- |             --- |
-|   LUT as Logic           |     0.019 |     8098 |    117120 |            6.91 |
 |   LUT as Distributed RAM |     0.019 |      688 |     57600 |            1.19 |
+|   LUT as Logic           |     0.019 |     8101 |    117120 |            6.92 |
 |   LUT as Shift Register  |     0.003 |      483 |     57600 |            0.84 |
 |   Register               |     0.002 |    11232 |    234240 |            4.80 |
 |   CARRY8                 |    <0.001 |       75 |     14640 |            0.51 |
 |   Others                 |     0.000 |      962 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |       80 |    117120 |            0.07 |
-| Signals                  |     0.025 |    17020 |       --- |             --- |
+| Signals                  |     0.025 |    17025 |       --- |             --- |
 | Block RAM                |     0.014 |       30 |       144 |           20.83 |
 | MMCM                     |     0.101 |        0 |       --- |             --- |
 | I/O                      |     0.007 |       44 |       252 |           17.46 |
@@ -69,7 +69,7 @@ Table of Contents
 | Static Power             |     0.459 |          |           |                 |
 |   PS Static              |     0.103 |          |           |                 |
 |   PL Static              |     0.356 |          |           |                 |
-| Total                    |     3.560 |          |           |                 |
+| Total                    |     3.559 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,7 +79,7 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint          |       0.850 |     0.248 |       0.142 |      0.106 |       NA    | Unspecified | NA         |
+| Vccint          |       0.850 |     0.247 |       0.141 |      0.106 |       NA    | Unspecified | NA         |
 | Vccint_io       |       0.850 |     0.038 |       0.002 |      0.037 |       NA    | Unspecified | NA         |
 | Vccbram         |       0.850 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vccaux          |       1.800 |     0.131 |       0.056 |      0.075 |       NA    | Unspecified | NA         |
@@ -179,8 +179,8 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| MercuryXU5_EndcapSL     |     3.101 |
-|   design_1_i            |     3.086 |
+| MercuryXU5_EndcapSL     |     3.100 |
+|   design_1_i            |     3.085 |
 |     JTAG_bridge_XCVU13P |     0.002 |
 |       U0                |     0.002 |
 |     axi_bram_ctrl_0     |     0.003 |
@@ -200,7 +200,7 @@ Table of Contents
 |     zynq_ultra_ps_e     |     2.871 |
 |       U0                |     2.871 |
 |   i_gmii2rgmii          |     0.009 |
-|     i_rgmii_gmii        |     0.006 |
+|     i_rgmii_gmii        |     0.005 |
 |       i_fifo            |     0.003 |
 +-------------------------+-----------+
 
