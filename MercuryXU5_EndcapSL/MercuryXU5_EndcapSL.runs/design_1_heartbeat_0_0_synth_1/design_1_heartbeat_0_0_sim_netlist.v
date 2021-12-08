@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Wed Dec  8 15:47:53 2021
+// Date        : Wed Dec  8 17:22:21 2021
 // Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_heartbeat_0_0_sim_netlist.v
@@ -50,6 +50,12 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
   wire \FSM_sequential_phase[1]_i_11_n_0 ;
   wire \FSM_sequential_phase[1]_i_12_n_0 ;
   wire \FSM_sequential_phase[1]_i_13_n_0 ;
+  wire \FSM_sequential_phase[1]_i_14_n_0 ;
+  wire \FSM_sequential_phase[1]_i_15_n_0 ;
+  wire \FSM_sequential_phase[1]_i_16_n_0 ;
+  wire \FSM_sequential_phase[1]_i_17_n_0 ;
+  wire \FSM_sequential_phase[1]_i_18_n_0 ;
+  wire \FSM_sequential_phase[1]_i_19_n_0 ;
   wire \FSM_sequential_phase[1]_i_1_n_0 ;
   wire \FSM_sequential_phase[1]_i_3_n_0 ;
   wire \FSM_sequential_phase[1]_i_4_n_0 ;
@@ -91,8 +97,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
   wire counter0_carry_n_5;
   wire counter0_carry_n_6;
   wire counter0_carry_n_7;
+  wire \counter[0]_i_2_n_0 ;
   wire \counter[31]_i_2_n_0 ;
   wire \counter[31]_i_3_n_0 ;
+  wire \counter[31]_i_4_n_0 ;
+  wire \counter[31]_i_5_n_0 ;
+  wire \counter[31]_i_6_n_0 ;
+  wire \counter[31]_i_7_n_0 ;
   wire [31:1]data0;
   wire [0:0]dout;
   wire heartbeat_i_1_n_0;
@@ -103,123 +114,181 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
   wire [7:6]NLW_counter0_carry__2_CO_UNCONNECTED;
   wire [7:7]NLW_counter0_carry__2_O_UNCONNECTED;
 
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \FSM_sequential_phase[0]_i_1 
        (.I0(\FSM_sequential_phase_reg_n_0_[0] ),
         .O(p_0_out_0[0]));
-  LUT4 #(
-    .INIT(16'h0302)) 
+  LUT6 #(
+    .INIT(64'h00000000FFEAEAEA)) 
     \FSM_sequential_phase[1]_i_1 
        (.I0(\FSM_sequential_phase[1]_i_3_n_0 ),
         .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(\FSM_sequential_phase[1]_i_5_n_0 ),
+        .I2(\FSM_sequential_phase[1]_i_5_n_0 ),
+        .I3(\FSM_sequential_phase[1]_i_6_n_0 ),
+        .I4(\FSM_sequential_phase[1]_i_7_n_0 ),
+        .I5(\FSM_sequential_phase[1]_i_8_n_0 ),
         .O(\FSM_sequential_phase[1]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFDF)) 
-    \FSM_sequential_phase[1]_i_10 
-       (.I0(counter[20]),
-        .I1(counter[19]),
-        .I2(counter[24]),
-        .I3(counter[22]),
-        .O(\FSM_sequential_phase[1]_i_10_n_0 ));
-  LUT4 #(
-    .INIT(16'hEFFF)) 
-    \FSM_sequential_phase[1]_i_11 
-       (.I0(counter[7]),
-        .I1(counter[6]),
-        .I2(counter[10]),
-        .I3(counter[8]),
-        .O(\FSM_sequential_phase[1]_i_11_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \FSM_sequential_phase[1]_i_12 
-       (.I0(counter[3]),
-        .I1(counter[2]),
-        .I2(counter[5]),
-        .I3(counter[4]),
-        .O(\FSM_sequential_phase[1]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000020)) 
+    \FSM_sequential_phase[1]_i_10 
+       (.I0(counter[13]),
+        .I1(counter[12]),
+        .I2(counter[10]),
+        .I3(counter[9]),
+        .I4(counter[15]),
+        .I5(counter[14]),
+        .O(\FSM_sequential_phase[1]_i_10_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000002000000000)) 
+    \FSM_sequential_phase[1]_i_11 
+       (.I0(counter[20]),
+        .I1(counter[19]),
+        .I2(counter[16]),
+        .I3(counter[18]),
+        .I4(counter[22]),
+        .I5(counter[21]),
+        .O(\FSM_sequential_phase[1]_i_11_n_0 ));
+  LUT4 #(
+    .INIT(16'h0004)) 
+    \FSM_sequential_phase[1]_i_12 
+       (.I0(counter[31]),
+        .I1(counter[26]),
+        .I2(counter[11]),
+        .I3(counter[7]),
+        .O(\FSM_sequential_phase[1]_i_12_n_0 ));
+  LUT2 #(
+    .INIT(4'h2)) 
     \FSM_sequential_phase[1]_i_13 
-       (.I0(counter[21]),
-        .I1(counter[17]),
-        .I2(counter[13]),
-        .I3(counter[15]),
-        .I4(counter[25]),
-        .I5(counter[23]),
+       (.I0(counter[10]),
+        .I1(counter[9]),
         .O(\FSM_sequential_phase[1]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT6 #(
+    .INIT(64'h0000001000000000)) 
+    \FSM_sequential_phase[1]_i_14 
+       (.I0(counter[19]),
+        .I1(counter[20]),
+        .I2(counter[18]),
+        .I3(counter[16]),
+        .I4(counter[21]),
+        .I5(counter[22]),
+        .O(\FSM_sequential_phase[1]_i_14_n_0 ));
+  LUT6 #(
+    .INIT(64'h0002000000000000)) 
+    \FSM_sequential_phase[1]_i_15 
+       (.I0(counter[14]),
+        .I1(counter[13]),
+        .I2(counter[10]),
+        .I3(counter[12]),
+        .I4(counter[16]),
+        .I5(counter[15]),
+        .O(\FSM_sequential_phase[1]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'h0010000000000000)) 
+    \FSM_sequential_phase[1]_i_16 
+       (.I0(counter[20]),
+        .I1(counter[21]),
+        .I2(counter[19]),
+        .I3(counter[18]),
+        .I4(counter[23]),
+        .I5(counter[22]),
+        .O(\FSM_sequential_phase[1]_i_16_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \FSM_sequential_phase[1]_i_17 
+       (.I0(counter[2]),
+        .I1(counter[1]),
+        .I2(counter[4]),
+        .I3(counter[3]),
+        .O(\FSM_sequential_phase[1]_i_17_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \FSM_sequential_phase[1]_i_18 
+       (.I0(counter[6]),
+        .I1(counter[5]),
+        .I2(counter[25]),
+        .I3(counter[17]),
+        .O(\FSM_sequential_phase[1]_i_18_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \FSM_sequential_phase[1]_i_19 
+       (.I0(counter[28]),
+        .I1(counter[27]),
+        .I2(counter[30]),
+        .I3(counter[29]),
+        .O(\FSM_sequential_phase[1]_i_19_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \FSM_sequential_phase[1]_i_2 
        (.I0(\FSM_sequential_phase_reg_n_0_[0] ),
         .I1(phase__0),
         .O(p_0_out_0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
-    .INIT(32'h00800000)) 
+    .INIT(32'h00008000)) 
     \FSM_sequential_phase[1]_i_3 
-       (.I0(\FSM_sequential_phase_reg_n_0_[0] ),
-        .I1(phase__0),
-        .I2(counter[9]),
-        .I3(counter[11]),
-        .I4(\FSM_sequential_phase[1]_i_6_n_0 ),
+       (.I0(\FSM_sequential_phase[1]_i_9_n_0 ),
+        .I1(\FSM_sequential_phase[1]_i_10_n_0 ),
+        .I2(\FSM_sequential_phase[1]_i_11_n_0 ),
+        .I3(counter[8]),
+        .I4(phase__0),
         .O(\FSM_sequential_phase[1]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    .INIT(64'h0400000000000000)) 
     \FSM_sequential_phase[1]_i_4 
-       (.I0(\FSM_sequential_phase[1]_i_7_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_8_n_0 ),
-        .I2(\FSM_sequential_phase[1]_i_9_n_0 ),
-        .I3(\FSM_sequential_phase[1]_i_10_n_0 ),
-        .I4(\FSM_sequential_phase[1]_i_11_n_0 ),
+       (.I0(counter[8]),
+        .I1(phase__0),
+        .I2(counter[24]),
+        .I3(counter[23]),
+        .I4(\FSM_sequential_phase_reg_n_0_[0] ),
         .I5(\FSM_sequential_phase[1]_i_12_n_0 ),
         .O(\FSM_sequential_phase[1]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h00700000)) 
+  LUT6 #(
+    .INIT(64'h2000000000000000)) 
     \FSM_sequential_phase[1]_i_5 
-       (.I0(\FSM_sequential_phase_reg_n_0_[0] ),
-        .I1(phase__0),
-        .I2(counter[11]),
-        .I3(counter[9]),
-        .I4(\FSM_sequential_phase[1]_i_13_n_0 ),
+       (.I0(counter[15]),
+        .I1(counter[14]),
+        .I2(\FSM_sequential_phase[1]_i_13_n_0 ),
+        .I3(counter[13]),
+        .I4(counter[12]),
+        .I5(\FSM_sequential_phase[1]_i_14_n_0 ),
         .O(\FSM_sequential_phase[1]_i_5_n_0 ));
   LUT6 #(
-    .INIT(64'h0020000000000000)) 
+    .INIT(64'h0000000000000020)) 
     \FSM_sequential_phase[1]_i_6 
-       (.I0(counter[17]),
-        .I1(counter[21]),
-        .I2(counter[15]),
-        .I3(counter[13]),
-        .I4(counter[25]),
-        .I5(counter[23]),
+       (.I0(counter[24]),
+        .I1(counter[11]),
+        .I2(counter[7]),
+        .I3(\FSM_sequential_phase_reg_n_0_[0] ),
+        .I4(counter[31]),
+        .I5(counter[26]),
         .O(\FSM_sequential_phase[1]_i_6_n_0 ));
+  LUT5 #(
+    .INIT(32'h80000000)) 
+    \FSM_sequential_phase[1]_i_7 
+       (.I0(\FSM_sequential_phase[1]_i_15_n_0 ),
+        .I1(counter[9]),
+        .I2(counter[8]),
+        .I3(phase__0),
+        .I4(\FSM_sequential_phase[1]_i_16_n_0 ),
+        .O(\FSM_sequential_phase[1]_i_7_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \FSM_sequential_phase[1]_i_7 
-       (.I0(counter[27]),
-        .I1(counter[26]),
-        .I2(counter[29]),
-        .I3(counter[28]),
-        .O(\FSM_sequential_phase[1]_i_7_n_0 ));
-  LUT3 #(
-    .INIT(8'hFE)) 
     \FSM_sequential_phase[1]_i_8 
-       (.I0(counter[31]),
-        .I1(counter[30]),
-        .I2(counter[1]),
+       (.I0(\FSM_sequential_phase[1]_i_17_n_0 ),
+        .I1(\FSM_sequential_phase[1]_i_18_n_0 ),
+        .I2(\FSM_sequential_phase[1]_i_19_n_0 ),
+        .I3(counter[0]),
         .O(\FSM_sequential_phase[1]_i_8_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFEF)) 
+  LUT6 #(
+    .INIT(64'h0000000000000020)) 
     \FSM_sequential_phase[1]_i_9 
-       (.I0(counter[14]),
-        .I1(counter[12]),
-        .I2(counter[16]),
-        .I3(counter[18]),
+       (.I0(counter[24]),
+        .I1(counter[23]),
+        .I2(counter[11]),
+        .I3(counter[7]),
+        .I4(counter[31]),
+        .I5(counter[26]),
         .O(\FSM_sequential_phase[1]_i_9_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:11,iSTATE0:00,iSTATE1:01,iSTATE2:10," *) 
   FDCE \FSM_sequential_phase_reg[0] 
@@ -267,312 +336,330 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_heartbeat
         .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .O({NLW_counter0_carry__2_O_UNCONNECTED[7],data0[31:25]}),
         .S({1'b0,counter[31:25]}));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'h32)) 
     \counter[0]_i_1 
-       (.I0(\FSM_sequential_phase[1]_i_4_n_0 ),
+       (.I0(\counter[0]_i_2_n_0 ),
         .I1(counter[0]),
         .I2(\counter[31]_i_2_n_0 ),
         .O(p_0_out[0]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[10]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[10]),
-        .O(p_0_out[10]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[11]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[11]),
-        .O(p_0_out[11]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[12]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[12]),
-        .O(p_0_out[12]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[13]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[13]),
-        .O(p_0_out[13]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[14]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[14]),
-        .O(p_0_out[14]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[15]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[15]),
-        .O(p_0_out[15]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[16]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[16]),
-        .O(p_0_out[16]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[17]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[17]),
-        .O(p_0_out[17]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[18]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[18]),
-        .O(p_0_out[18]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[19]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[19]),
-        .O(p_0_out[19]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[1]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[1]),
-        .O(p_0_out[1]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[20]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[20]),
-        .O(p_0_out[20]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[21]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[21]),
-        .O(p_0_out[21]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[22]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[22]),
-        .O(p_0_out[22]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[23]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[23]),
-        .O(p_0_out[23]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[24]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[24]),
-        .O(p_0_out[24]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[25]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[25]),
-        .O(p_0_out[25]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[26]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[26]),
-        .O(p_0_out[26]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[27]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[27]),
-        .O(p_0_out[27]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[28]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[28]),
-        .O(p_0_out[28]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[29]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[29]),
-        .O(p_0_out[29]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[2]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[2]),
-        .O(p_0_out[2]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[30]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[30]),
-        .O(p_0_out[30]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
-    \counter[31]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[31]),
-        .O(p_0_out[31]));
   LUT6 #(
-    .INIT(64'hFFFFFEFFFFBFFFFF)) 
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    \counter[0]_i_2 
+       (.I0(\FSM_sequential_phase[1]_i_19_n_0 ),
+        .I1(counter[6]),
+        .I2(counter[5]),
+        .I3(counter[25]),
+        .I4(counter[17]),
+        .I5(\FSM_sequential_phase[1]_i_17_n_0 ),
+        .O(\counter[0]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[10]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[10]),
+        .O(p_0_out[10]));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[11]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[11]),
+        .O(p_0_out[11]));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[12]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[12]),
+        .O(p_0_out[12]));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[13]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[13]),
+        .O(p_0_out[13]));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[14]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[14]),
+        .O(p_0_out[14]));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[15]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[15]),
+        .O(p_0_out[15]));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[16]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[16]),
+        .O(p_0_out[16]));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[17]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[17]),
+        .O(p_0_out[17]));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[18]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[18]),
+        .O(p_0_out[18]));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[19]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[19]),
+        .O(p_0_out[19]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[1]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[1]),
+        .O(p_0_out[1]));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[20]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[20]),
+        .O(p_0_out[20]));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[21]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[21]),
+        .O(p_0_out[21]));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[22]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[22]),
+        .O(p_0_out[22]));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[23]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[23]),
+        .O(p_0_out[23]));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[24]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[24]),
+        .O(p_0_out[24]));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[25]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[25]),
+        .O(p_0_out[25]));
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[26]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[26]),
+        .O(p_0_out[26]));
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[27]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[27]),
+        .O(p_0_out[27]));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[28]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[28]),
+        .O(p_0_out[28]));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[29]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[29]),
+        .O(p_0_out[29]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[2]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[2]),
+        .O(p_0_out[2]));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[30]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[30]),
+        .O(p_0_out[30]));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \counter[31]_i_1 
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[31]),
+        .O(p_0_out[31]));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
     \counter[31]_i_2 
        (.I0(\counter[31]_i_3_n_0 ),
-        .I1(counter[23]),
-        .I2(counter[25]),
-        .I3(counter[11]),
-        .I4(counter[17]),
-        .I5(counter[21]),
+        .I1(\counter[31]_i_4_n_0 ),
+        .I2(\counter[31]_i_5_n_0 ),
+        .I3(\counter[31]_i_6_n_0 ),
+        .I4(\counter[31]_i_7_n_0 ),
         .O(\counter[31]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFEAFFFF7FFFFF)) 
+    .INIT(64'hFFFFBBBFFFFDFFFF)) 
     \counter[31]_i_3 
-       (.I0(counter[9]),
-        .I1(phase__0),
-        .I2(\FSM_sequential_phase_reg_n_0_[0] ),
-        .I3(counter[11]),
-        .I4(counter[15]),
-        .I5(counter[13]),
+       (.I0(counter[12]),
+        .I1(counter[8]),
+        .I2(counter[11]),
+        .I3(counter[7]),
+        .I4(counter[18]),
+        .I5(counter[16]),
         .O(\counter[31]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
+  LUT6 #(
+    .INIT(64'hF6FFFFFFFFFFFF6F)) 
+    \counter[31]_i_4 
+       (.I0(counter[7]),
+        .I1(counter[19]),
+        .I2(counter[15]),
+        .I3(counter[11]),
+        .I4(counter[21]),
+        .I5(counter[20]),
+        .O(\counter[31]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'hFEF7EE7F)) 
+    \counter[31]_i_5 
+       (.I0(counter[23]),
+        .I1(counter[22]),
+        .I2(counter[7]),
+        .I3(counter[11]),
+        .I4(\FSM_sequential_phase_reg_n_0_[0] ),
+        .O(\counter[31]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFF9FF9FFFFFF)) 
+    \counter[31]_i_6 
+       (.I0(phase__0),
+        .I1(counter[11]),
+        .I2(counter[10]),
+        .I3(counter[7]),
+        .I4(counter[14]),
+        .I5(counter[13]),
+        .O(\counter[31]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFBBFFD)) 
+    \counter[31]_i_7 
+       (.I0(counter[26]),
+        .I1(counter[24]),
+        .I2(counter[7]),
+        .I3(counter[9]),
+        .I4(counter[11]),
+        .I5(counter[31]),
+        .O(\counter[31]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
     \counter[3]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[3]),
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[3]),
         .O(p_0_out[3]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
     \counter[4]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[4]),
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[4]),
         .O(p_0_out[4]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
     \counter[5]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[5]),
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[5]),
         .O(p_0_out[5]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
     \counter[6]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[6]),
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[6]),
         .O(p_0_out[6]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
     \counter[7]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[7]),
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[7]),
         .O(p_0_out[7]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
     \counter[8]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[8]),
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[8]),
         .O(p_0_out[8]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
     \counter[9]_i_1 
-       (.I0(\counter[31]_i_2_n_0 ),
-        .I1(\FSM_sequential_phase[1]_i_4_n_0 ),
-        .I2(counter[0]),
-        .I3(data0[9]),
+       (.I0(\FSM_sequential_phase[1]_i_8_n_0 ),
+        .I1(\counter[31]_i_2_n_0 ),
+        .I2(data0[9]),
         .O(p_0_out[9]));
   FDCE \counter_reg[0] 
        (.C(clk100),

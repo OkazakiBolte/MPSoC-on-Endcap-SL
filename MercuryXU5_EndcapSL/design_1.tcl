@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# heartbeat
+# counter, heartbeat
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -130,11 +130,11 @@ set bCheckIPsPassed 1
 set bCheckIPs 1
 if { $bCheckIPs == 1 } {
    set list_check_ips "\ 
+xilinx.com:ip:debug_bridge:3.0\
 xilinx.com:ip:axi_bram_ctrl:4.1\
 xilinx.com:ip:smartconnect:1.0\
 xilinx.com:ip:blk_mem_gen:8.4\
 xilinx.com:ip:clk_wiz:6.0\
-xilinx.com:ip:debug_bridge:3.0\
 xilinx.com:ip:ila:6.2\
 xilinx.com:ip:axi_gpio:2.0\
 xilinx.com:ip:proc_sys_reset:5.0\
@@ -164,6 +164,7 @@ xilinx.com:ip:zynq_ultra_ps_e:3.3\
 set bCheckModules 1
 if { $bCheckModules == 1 } {
    set list_check_mods "\ 
+counter\
 heartbeat\
 "
 
@@ -245,6 +246,12 @@ proc create_root_design { parentCell } {
   set ZYNQTMS [ create_bd_port -dir O ZYNQTMS ]
   set peripheral_reset [ create_bd_port -dir O -from 0 -to 0 -type rst peripheral_reset ]
 
+  # Create instance: JTAG_bridge_XCVU13P, and set properties
+  set JTAG_bridge_XCVU13P [ create_bd_cell -type ip -vlnv xilinx.com:ip:debug_bridge:3.0 JTAG_bridge_XCVU13P ]
+  set_property -dict [ list \
+   CONFIG.C_DEBUG_MODE {3} \
+ ] $JTAG_bridge_XCVU13P
+
   # Create instance: axi_bram_ctrl_0, and set properties
   set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0 ]
 
@@ -298,6 +305,17 @@ proc create_root_design { parentCell } {
    CONFIG.USE_LOCKED {true} \
  ] $clk_wiz_0
 
+  # Create instance: counter_0, and set properties
+  set block_name counter
+  set block_cell_name counter_0
+  if { [catch {set counter_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $counter_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: debug_bridge_0, and set properties
   set debug_bridge_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:debug_bridge:3.0 debug_bridge_0 ]
   set_property -dict [ list \
@@ -309,12 +327,6 @@ proc create_root_design { parentCell } {
 
   # Create instance: debug_bridge_1, and set properties
   set debug_bridge_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:debug_bridge:3.0 debug_bridge_1 ]
-
-  # Create instance: debug_bridge_2, and set properties
-  set debug_bridge_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:debug_bridge:3.0 debug_bridge_2 ]
-  set_property -dict [ list \
-   CONFIG.C_DEBUG_MODE {3} \
- ] $debug_bridge_2
 
   # Create instance: heartbeat_0, and set properties
   set block_name heartbeat
@@ -339,7 +351,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_NUM_OF_PROBES {1} \
    CONFIG.C_PROBE0_MU_CNT {2} \
    CONFIG.C_PROBE0_TYPE {1} \
-   CONFIG.C_PROBE0_WIDTH {3} \
+   CONFIG.C_PROBE0_WIDTH {6} \
  ] $ila_0
 
   # Create instance: led, and set properties
@@ -1867,40 +1879,42 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins axi_smc/M00_AXI]
   connect_bd_intf_net -intf_net axi_smc_M01_AXI [get_bd_intf_pins axi_smc/M01_AXI] [get_bd_intf_pins led/S_AXI]
   connect_bd_intf_net -intf_net axi_smc_M02_AXI [get_bd_intf_pins axi_smc/M02_AXI] [get_bd_intf_pins debug_bridge_0/S_AXI]
-  connect_bd_intf_net -intf_net axi_smc_M03_AXI [get_bd_intf_pins axi_smc/M03_AXI] [get_bd_intf_pins debug_bridge_2/S_AXI]
+  connect_bd_intf_net -intf_net axi_smc_M03_AXI [get_bd_intf_pins JTAG_bridge_XCVU13P/S_AXI] [get_bd_intf_pins axi_smc/M03_AXI]
   connect_bd_intf_net -intf_net debug_bridge_0_m0_bscan [get_bd_intf_pins debug_bridge_0/m0_bscan] [get_bd_intf_pins debug_bridge_1/S_BSCAN]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_GMII_ENET1 [get_bd_intf_ports GMII] [get_bd_intf_pins zynq_ultra_ps_e/GMII_ENET1]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_MDIO_ENET1 [get_bd_intf_ports MDIO] [get_bd_intf_pins zynq_ultra_ps_e/MDIO_ENET1]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_M_AXI_HPM0_LPD [get_bd_intf_pins axi_smc/S00_AXI] [get_bd_intf_pins zynq_ultra_ps_e/M_AXI_HPM0_LPD]
 
   # Create port connections
-  connect_bd_net -net ZYNQTDO_1 [get_bd_ports ZYNQTDO] [get_bd_pins debug_bridge_2/tap_tdo]
+  connect_bd_net -net Net [get_bd_pins counter_0/dout] [get_bd_pins ila_0/probe0]
+  connect_bd_net -net ZYNQTDO_1 [get_bd_ports ZYNQTDO] [get_bd_pins JTAG_bridge_XCVU13P/tap_tdo]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports ETH_CLK125] [get_bd_pins clk_wiz_0/clk_out1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_ports ETH_CLK125_90] [get_bd_pins clk_wiz_0/clk_out2]
   connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_ports ETH_CLK25] [get_bd_pins clk_wiz_0/clk_out3]
   connect_bd_net -net clk_wiz_0_clk_out4 [get_bd_ports ETH_CLK10] [get_bd_pins clk_wiz_0/clk_out4]
   connect_bd_net -net clk_wiz_0_locked [get_bd_ports ETH_resetn] [get_bd_pins clk_wiz_0/locked]
-  connect_bd_net -net debug_bridge_2_tap_tck [get_bd_ports ZYNQTCK] [get_bd_pins debug_bridge_2/tap_tck]
-  connect_bd_net -net debug_bridge_2_tap_tdi [get_bd_ports ZYNQTDI] [get_bd_pins debug_bridge_2/tap_tdi]
-  connect_bd_net -net debug_bridge_2_tap_tms [get_bd_ports ZYNQTMS] [get_bd_pins debug_bridge_2/tap_tms]
-  connect_bd_net -net heartbeat_0_dout [get_bd_ports LED_N_tri_o] [get_bd_pins heartbeat_0/dout] [get_bd_pins ila_0/probe0]
+  connect_bd_net -net debug_bridge_2_tap_tck [get_bd_ports ZYNQTCK] [get_bd_pins JTAG_bridge_XCVU13P/tap_tck]
+  connect_bd_net -net debug_bridge_2_tap_tdi [get_bd_ports ZYNQTDI] [get_bd_pins JTAG_bridge_XCVU13P/tap_tdi]
+  connect_bd_net -net debug_bridge_2_tap_tms [get_bd_ports ZYNQTMS] [get_bd_pins JTAG_bridge_XCVU13P/tap_tms]
+  connect_bd_net -net heartbeat_0_dout [get_bd_ports LED_N_tri_o] [get_bd_pins heartbeat_0/dout]
   connect_bd_net -net led_gpio_io_o [get_bd_pins heartbeat_0/din] [get_bd_pins led/gpio_io_o]
-  connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins debug_bridge_0/s_axi_aresetn] [get_bd_pins debug_bridge_2/s_axi_aresetn] [get_bd_pins heartbeat_0/resetn] [get_bd_pins led/s_axi_aresetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn]
+  connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins counter_0/resetn] [get_bd_pins debug_bridge_0/s_axi_aresetn] [get_bd_pins heartbeat_0/resetn] [get_bd_pins led/s_axi_aresetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn]
   connect_bd_net -net rst_ps8_99M_peripheral_reset [get_bd_ports peripheral_reset] [get_bd_pins rst_ps8_99M/peripheral_reset]
-  connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins debug_bridge_0/s_axi_aclk] [get_bd_pins debug_bridge_1/clk] [get_bd_pins debug_bridge_2/s_axi_aclk] [get_bd_pins heartbeat_0/clk100] [get_bd_pins ila_0/clk] [get_bd_pins led/s_axi_aclk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]
+  connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins counter_0/clk] [get_bd_pins debug_bridge_0/s_axi_aclk] [get_bd_pins debug_bridge_1/clk] [get_bd_pins heartbeat_0/clk100] [get_bd_pins ila_0/clk] [get_bd_pins led/s_axi_aclk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]
   connect_bd_net -net zynq_ultra_ps_e_pl_clk1 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins zynq_ultra_ps_e/pl_clk1]
   connect_bd_net -net zynq_ultra_ps_e_pl_resetn0 [get_bd_pins clk_wiz_0/resetn] [get_bd_pins rst_ps8_99M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e/pl_resetn0]
 
   # Create address segments
   assign_bd_address -offset 0x80000000 -range 0x00002000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
   assign_bd_address -offset 0x80010000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs debug_bridge_0/S_AXI/Reg0] -force
-  assign_bd_address -offset 0x80030000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs debug_bridge_2/S_AXI/Reg0] -force
+  assign_bd_address -offset 0x80030000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs JTAG_bridge_XCVU13P/S_AXI/Reg0] -force
   assign_bd_address -offset 0x80020000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs led/S_AXI/Reg] -force
 
 
   # Restore current instance
   current_bd_instance $oldCurInst
 
+  validate_bd_design
   save_bd_design
 }
 # End of create_root_design()
@@ -1912,6 +1926,4 @@ proc create_root_design { parentCell } {
 
 create_root_design ""
 
-
-common::send_gid_msg -ssname BD::TCL -id 2053 -severity "WARNING" "This Tcl script was generated from a block design that has not been validated. It is possible that design <$design_name> may result in errors during validation."
 

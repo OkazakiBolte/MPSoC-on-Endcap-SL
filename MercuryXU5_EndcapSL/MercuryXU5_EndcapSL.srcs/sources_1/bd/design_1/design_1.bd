@@ -20,8 +20,9 @@
       "debug_bridge_0": "",
       "debug_bridge_1": "",
       "ila_0": "",
-      "debug_bridge_2": "",
-      "heartbeat_0": ""
+      "JTAG_bridge_XCVU13P": "",
+      "heartbeat_0": "",
+      "counter_0": ""
     },
     "interface_ports": {
       "GMII": {
@@ -3507,11 +3508,11 @@
             "value": "1"
           },
           "C_PROBE0_WIDTH": {
-            "value": "3"
+            "value": "6"
           }
         }
       },
-      "debug_bridge_2": {
+      "JTAG_bridge_XCVU13P": {
         "vlnv": "xilinx.com:ip:debug_bridge:3.0",
         "xci_name": "design_1_debug_bridge_2_0",
         "parameters": {
@@ -3620,6 +3621,50 @@
             "right": "0"
           }
         }
+      },
+      "counter_0": {
+        "vlnv": "xilinx.com:module_ref:counter:1.0",
+        "xci_name": "design_1_counter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "counter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "resetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_1_pl_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "99999001",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "dout": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -3656,7 +3701,7 @@
       "axi_smc_M03_AXI": {
         "interface_ports": [
           "axi_smc/M03_AXI",
-          "debug_bridge_2/S_AXI"
+          "JTAG_bridge_XCVU13P/S_AXI"
         ]
       },
       "zynq_ultra_ps_e_MDIO_ENET1": {
@@ -3696,8 +3741,9 @@
           "debug_bridge_0/s_axi_aclk",
           "debug_bridge_1/clk",
           "ila_0/clk",
-          "debug_bridge_2/s_axi_aclk",
-          "heartbeat_0/clk100"
+          "JTAG_bridge_XCVU13P/s_axi_aclk",
+          "heartbeat_0/clk100",
+          "counter_0/clk"
         ]
       },
       "zynq_ultra_ps_e_pl_resetn0": {
@@ -3714,8 +3760,9 @@
           "axi_smc/aresetn",
           "led/s_axi_aresetn",
           "debug_bridge_0/s_axi_aresetn",
-          "debug_bridge_2/s_axi_aresetn",
-          "heartbeat_0/resetn"
+          "JTAG_bridge_XCVU13P/s_axi_aresetn",
+          "heartbeat_0/resetn",
+          "counter_0/resetn"
         ]
       },
       "zynq_ultra_ps_e_pl_clk1": {
@@ -3763,38 +3810,43 @@
       "ZYNQTDO_1": {
         "ports": [
           "ZYNQTDO",
-          "debug_bridge_2/tap_tdo"
+          "JTAG_bridge_XCVU13P/tap_tdo"
         ]
       },
       "debug_bridge_2_tap_tdi": {
         "ports": [
-          "debug_bridge_2/tap_tdi",
+          "JTAG_bridge_XCVU13P/tap_tdi",
           "ZYNQTDI"
         ]
       },
       "debug_bridge_2_tap_tck": {
         "ports": [
-          "debug_bridge_2/tap_tck",
+          "JTAG_bridge_XCVU13P/tap_tck",
           "ZYNQTCK"
         ]
       },
       "debug_bridge_2_tap_tms": {
         "ports": [
-          "debug_bridge_2/tap_tms",
+          "JTAG_bridge_XCVU13P/tap_tms",
           "ZYNQTMS"
-        ]
-      },
-      "heartbeat_0_dout": {
-        "ports": [
-          "heartbeat_0/dout",
-          "LED_N_tri_o",
-          "ila_0/probe0"
         ]
       },
       "led_gpio_io_o": {
         "ports": [
           "led/gpio_io_o",
           "heartbeat_0/din"
+        ]
+      },
+      "heartbeat_0_dout": {
+        "ports": [
+          "heartbeat_0/dout",
+          "LED_N_tri_o"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "counter_0/dout",
+          "ila_0/probe0"
         ]
       }
     },
@@ -3816,7 +3868,7 @@
                 "range": "64K"
               },
               "SEG_debug_bridge_2_Reg0": {
-                "address_block": "/debug_bridge_2/S_AXI/Reg0",
+                "address_block": "/JTAG_bridge_XCVU13P/S_AXI/Reg0",
                 "offset": "0x0080030000",
                 "range": "64K"
               },

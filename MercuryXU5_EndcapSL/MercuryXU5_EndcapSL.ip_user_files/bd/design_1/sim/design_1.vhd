@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Thu Dec  2 13:31:01 2021
+--Date        : Wed Dec  8 17:20:28 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -34,10 +34,14 @@ entity design_1 is
     MDIO_mdio_i : in STD_LOGIC;
     MDIO_mdio_o : out STD_LOGIC;
     MDIO_mdio_t : out STD_LOGIC;
+    ZYNQTCK : out STD_LOGIC;
+    ZYNQTDI : out STD_LOGIC;
+    ZYNQTDO : in STD_LOGIC;
+    ZYNQTMS : out STD_LOGIC;
     peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=9,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=6,da_bram_cntlr_cnt=4,da_clkrst_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=13,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=7,da_board_cnt=6,da_bram_cntlr_cnt=4,da_clkrst_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -320,7 +324,26 @@ architecture STRUCTURE of design_1 is
     M02_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     M02_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M02_AXI_rvalid : in STD_LOGIC;
-    M02_AXI_rready : out STD_LOGIC
+    M02_AXI_rready : out STD_LOGIC;
+    M03_AXI_awaddr : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    M03_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_awvalid : out STD_LOGIC;
+    M03_AXI_awready : in STD_LOGIC;
+    M03_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M03_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M03_AXI_wvalid : out STD_LOGIC;
+    M03_AXI_wready : in STD_LOGIC;
+    M03_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_bvalid : in STD_LOGIC;
+    M03_AXI_bready : out STD_LOGIC;
+    M03_AXI_araddr : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    M03_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M03_AXI_arvalid : out STD_LOGIC;
+    M03_AXI_arready : in STD_LOGIC;
+    M03_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M03_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M03_AXI_rvalid : in STD_LOGIC;
+    M03_AXI_rready : out STD_LOGIC
   );
   end component design_1_axi_smc_1;
   component design_1_rst_ps8_99M_1 is
@@ -402,6 +425,57 @@ architecture STRUCTURE of design_1 is
     S_BSCAN_update : in STD_LOGIC
   );
   end component design_1_debug_bridge_1_0;
+  component design_1_ila_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 5 downto 0 )
+  );
+  end component design_1_ila_0_0;
+  component design_1_debug_bridge_2_0 is
+  port (
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    tap_tdi : out STD_LOGIC;
+    tap_tdo : in STD_LOGIC;
+    tap_tms : out STD_LOGIC;
+    tap_tck : out STD_LOGIC;
+    S_AXI_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    S_AXI_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    S_AXI_arready : out STD_LOGIC;
+    S_AXI_arvalid : in STD_LOGIC;
+    S_AXI_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    S_AXI_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    S_AXI_awready : out STD_LOGIC;
+    S_AXI_awvalid : in STD_LOGIC;
+    S_AXI_bready : in STD_LOGIC;
+    S_AXI_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    S_AXI_bvalid : out STD_LOGIC;
+    S_AXI_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    S_AXI_rready : in STD_LOGIC;
+    S_AXI_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    S_AXI_rvalid : out STD_LOGIC;
+    S_AXI_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S_AXI_wready : out STD_LOGIC;
+    S_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S_AXI_wvalid : in STD_LOGIC
+  );
+  end component design_1_debug_bridge_2_0;
+  component design_1_heartbeat_0_0 is
+  port (
+    clk100 : in STD_LOGIC;
+    resetn : in STD_LOGIC;
+    din : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 2 downto 0 )
+  );
+  end component design_1_heartbeat_0_0;
+  component design_1_counter_0_0 is
+  port (
+    clk100 : in STD_LOGIC;
+    resetn : in STD_LOGIC;
+    dout : in STD_LOGIC_VECTOR ( 5 downto 0 )
+  );
+  end component design_1_counter_0_0;
+  signal ZYNQTDO_1 : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -483,6 +557,25 @@ architecture STRUCTURE of design_1 is
   signal axi_smc_M02_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M02_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M02_AXI_WVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_ARADDR : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal axi_smc_M03_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_ARREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_ARVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_AWADDR : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal axi_smc_M03_AXI_AWPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal axi_smc_M03_AXI_AWREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_AWVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_BREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_BVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M03_AXI_RREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M03_AXI_RVALID : STD_LOGIC;
+  signal axi_smc_M03_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M03_AXI_WREADY : STD_LOGIC;
+  signal axi_smc_M03_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M03_AXI_WVALID : STD_LOGIC;
   signal clk_wiz_0_clk_out1 : STD_LOGIC;
   signal clk_wiz_0_clk_out2 : STD_LOGIC;
   signal clk_wiz_0_clk_out3 : STD_LOGIC;
@@ -500,7 +593,11 @@ architecture STRUCTURE of design_1 is
   signal debug_bridge_0_m0_bscan_TDO : STD_LOGIC;
   signal debug_bridge_0_m0_bscan_TMS : STD_LOGIC;
   signal debug_bridge_0_m0_bscan_UPDATE : STD_LOGIC;
-  signal led_GPIO_TRI_O : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal debug_bridge_2_tap_tck : STD_LOGIC;
+  signal debug_bridge_2_tap_tdi : STD_LOGIC;
+  signal debug_bridge_2_tap_tms : STD_LOGIC;
+  signal heartbeat_0_dout : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal led_gpio_io_o : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal rst_ps8_99M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps8_99M_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal zynq_ultra_ps_e_GMII_ENET1_COL : STD_LOGIC;
@@ -568,6 +665,8 @@ architecture STRUCTURE of design_1 is
   signal NLW_axi_smc_M01_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_blk_mem_gen_0_rsta_busy_UNCONNECTED : STD_LOGIC;
   signal NLW_blk_mem_gen_0_rstb_busy_UNCONNECTED : STD_LOGIC;
+  signal NLW_counter_0_dout_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal NLW_ila_0_probe0_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal NLW_rst_ps8_99M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_ps8_99M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps8_99M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -599,10 +698,15 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of MDIO_mdio_i : signal is "xilinx.com:interface:mdio:1.0 MDIO MDIO_I";
   attribute X_INTERFACE_INFO of MDIO_mdio_o : signal is "xilinx.com:interface:mdio:1.0 MDIO MDIO_O";
   attribute X_INTERFACE_INFO of MDIO_mdio_t : signal is "xilinx.com:interface:mdio:1.0 MDIO MDIO_T";
+  attribute X_INTERFACE_INFO of ZYNQTCK : signal is "xilinx.com:signal:clock:1.0 CLK.ZYNQTCK CLK";
+  attribute X_INTERFACE_PARAMETER of ZYNQTCK : signal is "XIL_INTERFACENAME CLK.ZYNQTCK, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_INFO of ZYNQTDI : signal is "xilinx.com:signal:data:1.0 DATA.ZYNQTDI DATA";
+  attribute X_INTERFACE_PARAMETER of ZYNQTDI : signal is "XIL_INTERFACENAME DATA.ZYNQTDI, LAYERED_METADATA undef";
+  attribute X_INTERFACE_INFO of ZYNQTDO : signal is "xilinx.com:signal:data:1.0 DATA.ZYNQTDO DATA";
+  attribute X_INTERFACE_PARAMETER of ZYNQTDO : signal is "XIL_INTERFACENAME DATA.ZYNQTDO, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of GMII_rxd : signal is "xilinx.com:interface:gmii:1.0 GMII RXD";
   attribute X_INTERFACE_INFO of GMII_speed_mode : signal is "xilinx.com:interface:gmii:1.0 GMII SPEED_MODE";
   attribute X_INTERFACE_INFO of GMII_txd : signal is "xilinx.com:interface:gmii:1.0 GMII TXD";
-  attribute X_INTERFACE_INFO of LED_N_tri_o : signal is "xilinx.com:interface:gpio:1.0 LED_N TRI_O";
   attribute X_INTERFACE_INFO of peripheral_reset : signal is "xilinx.com:signal:reset:1.0 RST.PERIPHERAL_RESET RST";
   attribute X_INTERFACE_PARAMETER of peripheral_reset : signal is "XIL_INTERFACENAME RST.PERIPHERAL_RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
 begin
@@ -615,10 +719,14 @@ begin
   GMII_tx_en <= zynq_ultra_ps_e_GMII_ENET1_TX_EN;
   GMII_tx_er <= zynq_ultra_ps_e_GMII_ENET1_TX_ER;
   GMII_txd(7 downto 0) <= zynq_ultra_ps_e_GMII_ENET1_TXD(7 downto 0);
-  LED_N_tri_o(2 downto 0) <= led_GPIO_TRI_O(2 downto 0);
+  LED_N_tri_o(2 downto 0) <= heartbeat_0_dout(2 downto 0);
   MDIO_mdc <= zynq_ultra_ps_e_MDIO_ENET1_MDC;
   MDIO_mdio_o <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_O;
   MDIO_mdio_t <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_T;
+  ZYNQTCK <= debug_bridge_2_tap_tck;
+  ZYNQTDI <= debug_bridge_2_tap_tdi;
+  ZYNQTDO_1 <= ZYNQTDO;
+  ZYNQTMS <= debug_bridge_2_tap_tms;
   peripheral_reset(0) <= rst_ps8_99M_peripheral_reset(0);
   zynq_ultra_ps_e_GMII_ENET1_COL <= GMII_col;
   zynq_ultra_ps_e_GMII_ENET1_CRS <= GMII_crs;
@@ -628,6 +736,34 @@ begin
   zynq_ultra_ps_e_GMII_ENET1_RX_ER <= GMII_rx_er;
   zynq_ultra_ps_e_GMII_ENET1_TX_CLK <= GMII_tx_clk;
   zynq_ultra_ps_e_MDIO_ENET1_MDIO_I <= MDIO_mdio_i;
+JTAG_bridge_XCVU13P: component design_1_debug_bridge_2_0
+     port map (
+      S_AXI_araddr(4 downto 0) => axi_smc_M03_AXI_ARADDR(4 downto 0),
+      S_AXI_arprot(2 downto 0) => axi_smc_M03_AXI_ARPROT(2 downto 0),
+      S_AXI_arready => axi_smc_M03_AXI_ARREADY,
+      S_AXI_arvalid => axi_smc_M03_AXI_ARVALID,
+      S_AXI_awaddr(4 downto 0) => axi_smc_M03_AXI_AWADDR(4 downto 0),
+      S_AXI_awprot(2 downto 0) => axi_smc_M03_AXI_AWPROT(2 downto 0),
+      S_AXI_awready => axi_smc_M03_AXI_AWREADY,
+      S_AXI_awvalid => axi_smc_M03_AXI_AWVALID,
+      S_AXI_bready => axi_smc_M03_AXI_BREADY,
+      S_AXI_bresp(1 downto 0) => axi_smc_M03_AXI_BRESP(1 downto 0),
+      S_AXI_bvalid => axi_smc_M03_AXI_BVALID,
+      S_AXI_rdata(31 downto 0) => axi_smc_M03_AXI_RDATA(31 downto 0),
+      S_AXI_rready => axi_smc_M03_AXI_RREADY,
+      S_AXI_rresp(1 downto 0) => axi_smc_M03_AXI_RRESP(1 downto 0),
+      S_AXI_rvalid => axi_smc_M03_AXI_RVALID,
+      S_AXI_wdata(31 downto 0) => axi_smc_M03_AXI_WDATA(31 downto 0),
+      S_AXI_wready => axi_smc_M03_AXI_WREADY,
+      S_AXI_wstrb(3 downto 0) => axi_smc_M03_AXI_WSTRB(3 downto 0),
+      S_AXI_wvalid => axi_smc_M03_AXI_WVALID,
+      s_axi_aclk => zynq_ultra_ps_e_pl_clk0,
+      s_axi_aresetn => rst_ps8_99M_peripheral_aresetn(0),
+      tap_tck => debug_bridge_2_tap_tck,
+      tap_tdi => debug_bridge_2_tap_tdi,
+      tap_tdo => ZYNQTDO_1,
+      tap_tms => debug_bridge_2_tap_tms
+    );
 axi_bram_ctrl_0: component design_1_axi_bram_ctrl_0_1
      port map (
       bram_addr_a(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(12 downto 0),
@@ -753,6 +889,25 @@ axi_smc: component design_1_axi_smc_1
       M02_AXI_wready => axi_smc_M02_AXI_WREADY,
       M02_AXI_wstrb(3 downto 0) => axi_smc_M02_AXI_WSTRB(3 downto 0),
       M02_AXI_wvalid => axi_smc_M02_AXI_WVALID,
+      M03_AXI_araddr(15 downto 0) => axi_smc_M03_AXI_ARADDR(15 downto 0),
+      M03_AXI_arprot(2 downto 0) => axi_smc_M03_AXI_ARPROT(2 downto 0),
+      M03_AXI_arready => axi_smc_M03_AXI_ARREADY,
+      M03_AXI_arvalid => axi_smc_M03_AXI_ARVALID,
+      M03_AXI_awaddr(15 downto 0) => axi_smc_M03_AXI_AWADDR(15 downto 0),
+      M03_AXI_awprot(2 downto 0) => axi_smc_M03_AXI_AWPROT(2 downto 0),
+      M03_AXI_awready => axi_smc_M03_AXI_AWREADY,
+      M03_AXI_awvalid => axi_smc_M03_AXI_AWVALID,
+      M03_AXI_bready => axi_smc_M03_AXI_BREADY,
+      M03_AXI_bresp(1 downto 0) => axi_smc_M03_AXI_BRESP(1 downto 0),
+      M03_AXI_bvalid => axi_smc_M03_AXI_BVALID,
+      M03_AXI_rdata(31 downto 0) => axi_smc_M03_AXI_RDATA(31 downto 0),
+      M03_AXI_rready => axi_smc_M03_AXI_RREADY,
+      M03_AXI_rresp(1 downto 0) => axi_smc_M03_AXI_RRESP(1 downto 0),
+      M03_AXI_rvalid => axi_smc_M03_AXI_RVALID,
+      M03_AXI_wdata(31 downto 0) => axi_smc_M03_AXI_WDATA(31 downto 0),
+      M03_AXI_wready => axi_smc_M03_AXI_WREADY,
+      M03_AXI_wstrb(3 downto 0) => axi_smc_M03_AXI_WSTRB(3 downto 0),
+      M03_AXI_wvalid => axi_smc_M03_AXI_WVALID,
       S00_AXI_araddr(39 downto 0) => zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARADDR(39 downto 0),
       S00_AXI_arburst(1 downto 0) => zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARBURST(1 downto 0),
       S00_AXI_arcache(3 downto 0) => zynq_ultra_ps_e_M_AXI_HPM0_LPD_ARCACHE(3 downto 0),
@@ -826,6 +981,12 @@ clk_wiz_0: component design_1_clk_wiz_0_0
       locked => clk_wiz_0_locked,
       resetn => zynq_ultra_ps_e_pl_resetn0
     );
+counter_0: component design_1_counter_0_0
+     port map (
+      clk100 => zynq_ultra_ps_e_pl_clk0,
+      dout(5 downto 0) => NLW_counter_0_dout_UNCONNECTED(5 downto 0),
+      resetn => rst_ps8_99M_peripheral_aresetn(0)
+    );
 debug_bridge_0: component design_1_debug_bridge_0_0
      port map (
       S_AXI_araddr(4 downto 0) => axi_smc_M02_AXI_ARADDR(4 downto 0),
@@ -878,9 +1039,21 @@ debug_bridge_1: component design_1_debug_bridge_1_0
       S_BSCAN_update => debug_bridge_0_m0_bscan_UPDATE,
       clk => zynq_ultra_ps_e_pl_clk0
     );
+heartbeat_0: component design_1_heartbeat_0_0
+     port map (
+      clk100 => zynq_ultra_ps_e_pl_clk0,
+      din(2 downto 0) => led_gpio_io_o(2 downto 0),
+      dout(2 downto 0) => heartbeat_0_dout(2 downto 0),
+      resetn => rst_ps8_99M_peripheral_aresetn(0)
+    );
+ila_0: component design_1_ila_0_0
+     port map (
+      clk => zynq_ultra_ps_e_pl_clk0,
+      probe0(5 downto 0) => NLW_ila_0_probe0_UNCONNECTED(5 downto 0)
+    );
 led: component design_1_led_1
      port map (
-      gpio_io_o(2 downto 0) => led_GPIO_TRI_O(2 downto 0),
+      gpio_io_o(2 downto 0) => led_gpio_io_o(2 downto 0),
       s_axi_aclk => zynq_ultra_ps_e_pl_clk0,
       s_axi_araddr(8 downto 0) => axi_smc_M01_AXI_ARADDR(8 downto 0),
       s_axi_aresetn => rst_ps8_99M_peripheral_aresetn(0),
