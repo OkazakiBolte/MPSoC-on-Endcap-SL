@@ -20,7 +20,8 @@
       "debug_bridge_0": "",
       "debug_bridge_1": "",
       "ila_0": "",
-      "debug_bridge_2": ""
+      "debug_bridge_2": "",
+      "heartbeat_0": ""
     },
     "interface_ports": {
       "GMII": {
@@ -3478,13 +3479,28 @@
         "vlnv": "xilinx.com:ip:ila:6.2",
         "xci_name": "design_1_ila_0_0",
         "parameters": {
+          "ALL_PROBE_SAME_MU_CNT": {
+            "value": "2"
+          },
+          "C_ADV_TRIGGER": {
+            "value": "true"
+          },
           "C_ENABLE_ILA_AXI_MON": {
             "value": "false"
+          },
+          "C_EN_STRG_QUAL": {
+            "value": "1"
           },
           "C_MONITOR_TYPE": {
             "value": "Native"
           },
           "C_NUM_OF_PROBES": {
+            "value": "1"
+          },
+          "C_PROBE0_MU_CNT": {
+            "value": "2"
+          },
+          "C_PROBE0_TYPE": {
             "value": "1"
           },
           "C_PROBE0_WIDTH": {
@@ -3553,19 +3569,67 @@
             }
           }
         }
+      },
+      "heartbeat_0": {
+        "vlnv": "xilinx.com:module_ref:heartbeat:1.0",
+        "xci_name": "design_1_heartbeat_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "heartbeat",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk100": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_1_pl_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "99999001",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "din": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "dout": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          }
+        }
       }
     },
     "interface_nets": {
-      "axi_smc_M00_AXI": {
-        "interface_ports": [
-          "axi_smc/M00_AXI",
-          "axi_bram_ctrl_0/S_AXI"
-        ]
-      },
       "axi_smc_M02_AXI": {
         "interface_ports": [
           "axi_smc/M02_AXI",
           "debug_bridge_0/S_AXI"
+        ]
+      },
+      "axi_smc_M00_AXI": {
+        "interface_ports": [
+          "axi_smc/M00_AXI",
+          "axi_bram_ctrl_0/S_AXI"
         ]
       },
       "axi_smc_M01_AXI": {
@@ -3629,7 +3693,8 @@
           "debug_bridge_0/s_axi_aclk",
           "debug_bridge_1/clk",
           "ila_0/clk",
-          "debug_bridge_2/s_axi_aclk"
+          "debug_bridge_2/s_axi_aclk",
+          "heartbeat_0/clk100"
         ]
       },
       "zynq_ultra_ps_e_pl_resetn0": {
@@ -3646,7 +3711,8 @@
           "axi_smc/aresetn",
           "led/s_axi_aresetn",
           "debug_bridge_0/s_axi_aresetn",
-          "debug_bridge_2/s_axi_aresetn"
+          "debug_bridge_2/s_axi_aresetn",
+          "heartbeat_0/resetn"
         ]
       },
       "zynq_ultra_ps_e_pl_clk1": {
@@ -3691,13 +3757,6 @@
           "peripheral_reset"
         ]
       },
-      "led_gpio_io_o": {
-        "ports": [
-          "led/gpio_io_o",
-          "ila_0/probe0",
-          "LED_N_tri_o"
-        ]
-      },
       "ZYNQTDO_1": {
         "ports": [
           "ZYNQTDO",
@@ -3720,6 +3779,19 @@
         "ports": [
           "debug_bridge_2/tap_tms",
           "ZYNQTMS"
+        ]
+      },
+      "heartbeat_0_dout": {
+        "ports": [
+          "heartbeat_0/dout",
+          "LED_N_tri_o",
+          "ila_0/probe0"
+        ]
+      },
+      "led_gpio_io_o": {
+        "ports": [
+          "led/gpio_io_o",
+          "heartbeat_0/din"
         ]
       }
     },

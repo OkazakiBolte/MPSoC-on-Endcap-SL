@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Fri Dec  3 14:15:16 2021
-| Host         : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
+| Date         : Wed Dec  8 14:25:32 2021
+| Host         : lhcelec01 running 64-bit unknown
 | Command      : report_utilization -file bd_04e2_axi_jtag_0_utilization_synth.rpt -pb bd_04e2_axi_jtag_0_utilization_synth.pb
 | Design       : bd_04e2_axi_jtag_0
 | Device       : xczu5evsfvc784-2

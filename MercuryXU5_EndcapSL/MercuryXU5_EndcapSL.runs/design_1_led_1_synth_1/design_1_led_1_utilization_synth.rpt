@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Tue Nov 30 20:53:34 2021
-| Host         : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
+| Date         : Wed Dec  8 14:25:28 2021
+| Host         : lhcelec01 running 64-bit unknown
 | Command      : report_utilization -file design_1_led_1_utilization_synth.rpt -pb design_1_led_1_utilization_synth.pb
 | Design       : design_1_led_1
 | Device       : xczu5evsfvc784-2

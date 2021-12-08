@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source design_1_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# heartbeat
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -244,12 +251,28 @@ proc create_root_design { parentCell } {
    CONFIG.C_DEBUG_MODE {3} \
  ] $debug_bridge_2
 
+  # Create instance: heartbeat_0, and set properties
+  set block_name heartbeat
+  set block_cell_name heartbeat_0
+  if { [catch {set heartbeat_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $heartbeat_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: ila_0, and set properties
   set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
   set_property -dict [ list \
+   CONFIG.ALL_PROBE_SAME_MU_CNT {2} \
+   CONFIG.C_ADV_TRIGGER {true} \
    CONFIG.C_ENABLE_ILA_AXI_MON {false} \
+   CONFIG.C_EN_STRG_QUAL {1} \
    CONFIG.C_MONITOR_TYPE {Native} \
    CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_MU_CNT {2} \
+   CONFIG.C_PROBE0_TYPE {1} \
    CONFIG.C_PROBE0_WIDTH {3} \
  ] $ila_0
 
@@ -1794,10 +1817,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net debug_bridge_2_tap_tck [get_bd_ports ZYNQTCK] [get_bd_pins debug_bridge_2/tap_tck]
   connect_bd_net -net debug_bridge_2_tap_tdi [get_bd_ports ZYNQTDI] [get_bd_pins debug_bridge_2/tap_tdi]
   connect_bd_net -net debug_bridge_2_tap_tms [get_bd_ports ZYNQTMS] [get_bd_pins debug_bridge_2/tap_tms]
-  connect_bd_net -net led_gpio_io_o [get_bd_ports LED_N_tri_o] [get_bd_pins ila_0/probe0] [get_bd_pins led/gpio_io_o]
-  connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins debug_bridge_0/s_axi_aresetn] [get_bd_pins debug_bridge_2/s_axi_aresetn] [get_bd_pins led/s_axi_aresetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn]
+  connect_bd_net -net heartbeat_0_dout [get_bd_ports LED_N_tri_o] [get_bd_pins heartbeat_0/dout] [get_bd_pins ila_0/probe0]
+  connect_bd_net -net led_gpio_io_o [get_bd_pins heartbeat_0/din] [get_bd_pins led/gpio_io_o]
+  connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins debug_bridge_0/s_axi_aresetn] [get_bd_pins debug_bridge_2/s_axi_aresetn] [get_bd_pins heartbeat_0/resetn] [get_bd_pins led/s_axi_aresetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn]
   connect_bd_net -net rst_ps8_99M_peripheral_reset [get_bd_ports peripheral_reset] [get_bd_pins rst_ps8_99M/peripheral_reset]
-  connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins debug_bridge_0/s_axi_aclk] [get_bd_pins debug_bridge_1/clk] [get_bd_pins debug_bridge_2/s_axi_aclk] [get_bd_pins ila_0/clk] [get_bd_pins led/s_axi_aclk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]
+  connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins debug_bridge_0/s_axi_aclk] [get_bd_pins debug_bridge_1/clk] [get_bd_pins debug_bridge_2/s_axi_aclk] [get_bd_pins heartbeat_0/clk100] [get_bd_pins ila_0/clk] [get_bd_pins led/s_axi_aclk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]
   connect_bd_net -net zynq_ultra_ps_e_pl_clk1 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins zynq_ultra_ps_e/pl_clk1]
   connect_bd_net -net zynq_ultra_ps_e_pl_resetn0 [get_bd_pins clk_wiz_0/resetn] [get_bd_pins rst_ps8_99M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e/pl_resetn0]
 

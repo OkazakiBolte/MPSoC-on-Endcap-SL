@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Fri Dec  3 14:38:28 2021
+--Date        : Wed Dec  8 14:22:55 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -41,7 +41,7 @@ entity design_1 is
     peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=11,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=7,da_board_cnt=6,da_bram_cntlr_cnt=4,da_clkrst_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=12,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=7,da_board_cnt=6,da_bram_cntlr_cnt=4,da_clkrst_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -460,6 +460,14 @@ architecture STRUCTURE of design_1 is
     S_AXI_wvalid : in STD_LOGIC
   );
   end component design_1_debug_bridge_2_0;
+  component design_1_heartbeat_0_0 is
+  port (
+    clk100 : in STD_LOGIC;
+    resetn : in STD_LOGIC;
+    din : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 2 downto 0 )
+  );
+  end component design_1_heartbeat_0_0;
   signal ZYNQTDO_1 : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
@@ -581,6 +589,7 @@ architecture STRUCTURE of design_1 is
   signal debug_bridge_2_tap_tck : STD_LOGIC;
   signal debug_bridge_2_tap_tdi : STD_LOGIC;
   signal debug_bridge_2_tap_tms : STD_LOGIC;
+  signal heartbeat_0_dout : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal led_gpio_io_o : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal rst_ps8_99M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps8_99M_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -701,7 +710,7 @@ begin
   GMII_tx_en <= zynq_ultra_ps_e_GMII_ENET1_TX_EN;
   GMII_tx_er <= zynq_ultra_ps_e_GMII_ENET1_TX_ER;
   GMII_txd(7 downto 0) <= zynq_ultra_ps_e_GMII_ENET1_TXD(7 downto 0);
-  LED_N_tri_o(2 downto 0) <= led_gpio_io_o(2 downto 0);
+  LED_N_tri_o(2 downto 0) <= heartbeat_0_dout(2 downto 0);
   MDIO_mdc <= zynq_ultra_ps_e_MDIO_ENET1_MDC;
   MDIO_mdio_o <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_O;
   MDIO_mdio_t <= zynq_ultra_ps_e_MDIO_ENET1_MDIO_T;
@@ -1015,10 +1024,17 @@ debug_bridge_2: component design_1_debug_bridge_2_0
       tap_tdo => ZYNQTDO_1,
       tap_tms => debug_bridge_2_tap_tms
     );
+heartbeat_0: component design_1_heartbeat_0_0
+     port map (
+      clk100 => zynq_ultra_ps_e_pl_clk0,
+      din(2 downto 0) => led_gpio_io_o(2 downto 0),
+      dout(2 downto 0) => heartbeat_0_dout(2 downto 0),
+      resetn => rst_ps8_99M_peripheral_aresetn(0)
+    );
 ila_0: component design_1_ila_0_0
      port map (
       clk => zynq_ultra_ps_e_pl_clk0,
-      probe0(2 downto 0) => led_gpio_io_o(2 downto 0)
+      probe0(2 downto 0) => heartbeat_0_dout(2 downto 0)
     );
 led: component design_1_led_1
      port map (

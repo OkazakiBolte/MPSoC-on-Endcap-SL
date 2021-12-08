@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1638509919">
+<GenRun Id="impl_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1638941010">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="RDI-RDI" Name="MercuryXU5_EndcapSL.vdi"/>
   <File Type="BG-DRC" Name="MercuryXU5_EndcapSL.drc"/>
@@ -77,6 +77,13 @@
   <File Type="PA-TCL" Name="MercuryXU5_EndcapSL.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/heartbeat.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../Mercury_XU5_PE1_Reference_Design/reference_design/src/Enclustra_GMII2RGMII_ZU.edn"/>
@@ -211,7 +218,9 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_smc_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_debug_bridge_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_heartbeat_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_0412_xsdbm_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_0412_lut_buffer_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_c443_bsip_0"/>

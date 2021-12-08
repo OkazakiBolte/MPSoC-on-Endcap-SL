@@ -119,6 +119,7 @@ vivado*.log
 !*.edn
 !*.dtsi
 !*.bbappend
+!*.ltx
 !*.csv
 !*.slabtimeproj
 !Makefile
