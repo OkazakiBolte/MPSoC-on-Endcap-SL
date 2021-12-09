@@ -21,8 +21,8 @@
       "debug_bridge_1": "",
       "ila_0": "",
       "JTAG_bridge_XCVU13P": "",
-      "heartbeat_0": "",
-      "counter_0": ""
+      "counter_0": "",
+      "heartbeat_0": ""
     },
     "interface_ports": {
       "GMII": {
@@ -3577,6 +3577,50 @@
           }
         }
       },
+      "counter_0": {
+        "vlnv": "xilinx.com:module_ref:counter:1.0",
+        "xci_name": "design_1_counter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "counter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "resetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_1_pl_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "99999001",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "dout": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          }
+        }
+      },
       "heartbeat_0": {
         "vlnv": "xilinx.com:module_ref:heartbeat:1.0",
         "xci_name": "design_1_heartbeat_0_0",
@@ -3624,53 +3668,15 @@
             "right": "0"
           }
         }
-      },
-      "counter_0": {
-        "vlnv": "xilinx.com:module_ref:counter:1.0",
-        "xci_name": "design_1_counter_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "counter",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "resetn",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_1_pl_clk0",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "99999001",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "resetn": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "dout": {
-            "direction": "O",
-            "left": "5",
-            "right": "0"
-          }
-        }
       }
     },
     "interface_nets": {
+      "debug_bridge_0_m0_bscan": {
+        "interface_ports": [
+          "debug_bridge_1/S_BSCAN",
+          "debug_bridge_0/m0_bscan"
+        ]
+      },
       "axi_smc_M00_AXI": {
         "interface_ports": [
           "axi_smc/M00_AXI",
@@ -3681,18 +3687,6 @@
         "interface_ports": [
           "blk_mem_gen_0/BRAM_PORTA",
           "axi_bram_ctrl_0/BRAM_PORTA"
-        ]
-      },
-      "debug_bridge_0_m0_bscan": {
-        "interface_ports": [
-          "debug_bridge_1/S_BSCAN",
-          "debug_bridge_0/m0_bscan"
-        ]
-      },
-      "zynq_ultra_ps_e_M_AXI_HPM0_LPD": {
-        "interface_ports": [
-          "zynq_ultra_ps_e/M_AXI_HPM0_LPD",
-          "axi_smc/S00_AXI"
         ]
       },
       "zynq_ultra_ps_e_GMII_ENET1": {
@@ -3730,6 +3724,12 @@
           "axi_smc/M02_AXI",
           "debug_bridge_0/S_AXI"
         ]
+      },
+      "zynq_ultra_ps_e_M_AXI_HPM0_LPD": {
+        "interface_ports": [
+          "zynq_ultra_ps_e/M_AXI_HPM0_LPD",
+          "axi_smc/S00_AXI"
+        ]
       }
     },
     "nets": {
@@ -3745,8 +3745,8 @@
           "debug_bridge_1/clk",
           "ila_0/clk",
           "JTAG_bridge_XCVU13P/s_axi_aclk",
-          "heartbeat_0/clk100",
-          "counter_0/clk"
+          "counter_0/clk",
+          "heartbeat_0/clk100"
         ]
       },
       "zynq_ultra_ps_e_pl_resetn0": {
@@ -3764,8 +3764,8 @@
           "led/s_axi_aresetn",
           "debug_bridge_0/s_axi_aresetn",
           "JTAG_bridge_XCVU13P/s_axi_aresetn",
-          "heartbeat_0/resetn",
-          "counter_0/resetn"
+          "counter_0/resetn",
+          "heartbeat_0/resetn"
         ]
       },
       "zynq_ultra_ps_e_pl_clk1": {

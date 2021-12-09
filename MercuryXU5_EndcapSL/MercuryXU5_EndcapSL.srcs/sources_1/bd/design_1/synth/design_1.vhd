@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Wed Dec  8 18:12:10 2021
+--Date        : Thu Dec  9 23:36:21 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -460,6 +460,13 @@ architecture STRUCTURE of design_1 is
     S_AXI_wvalid : in STD_LOGIC
   );
   end component design_1_debug_bridge_2_0;
+  component design_1_counter_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    resetn : in STD_LOGIC;
+    dout : out STD_LOGIC_VECTOR ( 5 downto 0 )
+  );
+  end component design_1_counter_0_0;
   component design_1_heartbeat_0_0 is
   port (
     clk100 : in STD_LOGIC;
@@ -468,13 +475,6 @@ architecture STRUCTURE of design_1 is
     dout : out STD_LOGIC_VECTOR ( 2 downto 0 )
   );
   end component design_1_heartbeat_0_0;
-  component design_1_counter_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    resetn : in STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 5 downto 0 )
-  );
-  end component design_1_counter_0_0;
   signal Net : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal ZYNQTDO_1 : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
