@@ -4,7 +4,10 @@
 # MPSoC on Endcap SL
 
 Endcap Sector Logic v1
-![width:550px](./figures/IMG_2253.JPG)
+
+<div align="center">
+    <img src="./figures/IMG_2253.JPG" width="500px">
+</div>
 
 - [MPSoC on Endcap SL](#mpsoc-on-endcap-sl)
   - [Environment](#environment)
@@ -15,10 +18,13 @@ Endcap Sector Logic v1
     - [失敗1：PAGE registerのことを知らずアクセスの仕方が間違っていた](#失敗1page-registerのことを知らずアクセスの仕方が間違っていた)
     - [例：Si5345レジスタアクセスの仕方](#例si5345レジスタアクセスの仕方)
     - [失敗2：`ioctl(I2C_RDWR)`を使うとバースト転送してしまう](#失敗2ioctli2c_rdwrを使うとバースト転送してしまう)
-  - [⬜️  Xilinx Virtual Cable](#️--xilinx-virtual-cable)
+  - [✅ Card Detectionの確認](#-card-detectionの確認)
+  - [✅ JTAGからのMPSoC PLのプログラム](#-jtagからのmpsoc-plのプログラム)
+  - [💓 heartbeat機能を追加](#-heartbeat機能を追加)
+  - [✅ Xilinx Virtual Cable](#-xilinx-virtual-cable)
     - [Reference](#reference)
-    - [MPSoCのPLを遠隔でプログラムする](#mpsocのplを遠隔でプログラムする)
-  - [How to set MAC address for PetaLinux OS](#how-to-set-mac-address-for-petalinux-os)
+    - [✅ MPSoCのPLを遠隔でデバッグする](#-mpsocのplを遠隔でデバッグする)
+    - [✅ :sparkles: XCVU13Pのプログラム](#-sparkles-xcvu13pのプログラム)
 
 ## Environment
 
@@ -72,6 +78,10 @@ set_property -dict {PACKAGE_PIN K5    IOSTANDARD LVCMOS18  } [get_ports {LED_N_t
 
   - VivadoプロジェクトのPSの設定で、CDに対応するMIO45を使わないようにしたところ、ブートが成功した
 
+<div align="center">
+    <img src="./figures/Screenshot_from_2021-11-04_14-12-50.png" width="400px">
+</div>
+
 
 ## ✅ PS Ethernet (ETH0)
 
@@ -97,7 +107,9 @@ Mercury XU5 PE1 reference designのblock diagram
 - Endcap SLには1つのI<sup>2</sup>C Multiplexerがあり、それを介してMPSoCはclock generators (SI5345B, SI5344B)、温度センサなどとI<sup>2</sup>C通信をしてコンフィグレーションを行う（[東大M1三島くんのスライド](https://indico.cern.ch/event/1086204/contributions/4566957/attachments/2331858/3975145/mishima_20211021.pdf)）
 - 過去に[ZCU102のSi570をMPSoCでコンフィギュレーションした経験](https://gitlab.cern.ch/kokazaki/zcu102-clock-gen.git)をもとに開発を進める
 
-![  width:600px  center ](./figures/_2021-11-17_16.00.12.png)
+<div align="center">
+    <img src="./figures/_2021-11-17_16.00.12.png" width="500px">
+</div>
 
 - このI<sup>2</sup>C MUXはZCU102に載っているものと同じなので、デバイスツリーはそれを真似して編集した（`plnx_MercuryXU5_EndcapSL/project-spec/meta-user/recipes-bsp/device-tree/files/endcap_sl.dtsi`）
 
@@ -294,11 +306,9 @@ Mercury XU5 PE1 reference designのblock diagram
 
 
 - [ClockBuilder Pro](https://www.skyworksinc.com/en/application-pages/clockbuilder-pro-software)を用いてコンフィグレーションのリストを`.csv`, `.h`の形式で出力した
-  - `./apps/`
+  - `./apps/si5345/Si5345-RevD-5345.okazaki_3-Registers.h`
 
 次にC言語でSi5345を操作するプログラムを作成した。しかしいくつか失敗していたことがあったのでメモ。
-
-----
 
 ### 失敗1：PAGE registerのことを知らずアクセスの仕方が間違っていた
 
@@ -345,7 +355,10 @@ Mercury XU5 PE1 reference designのblock diagram
 
 - `SCL`, `SDA`の信号をオシロスコープでみたところ、read時ページレジスタに値を書き込んだ後、STOP conditionを出さず7個続けて`0x00`を書き込んでいるようだった
 
-![  width:600px  center ](./figures/_2021-11-21_22.46.12.png)
+
+<div align="center">
+    <img src="./figures/_2021-11-21_22.46.12.png" width="500px">
+</div>
 
 
 - 調べてみると、`ioctl()`関数を`I2C_RDWR`モードで使うとバースト転送をするようだった（https://www.kernel.org/doc/Documentation/i2c/dev-interface）
@@ -473,39 +486,169 @@ int i2c_write(uint8_t reg_addr, uint8_t data) {
 }
 ```
 
-----
-
 このような紆余曲折があって、最終的にコードを完成させた。オプションで`--read-all`を使うと書き込む対象のレジスタの現在の値をすべて表示する。
 ClockBuilder Proを使って作成したヘッダファイルにはレジスタのアドレスと書き込む値が配列で書かれてある（要素は520くらいあった）。
 `--write-all`とすればこれらを一括で書き込んでくれて、オシロスコープでSi5345の出力周波数を確認すれば、確かに240 MHzが出ているようだった。
 
+<div align="center">
+    <img src="./figures/tek00016.png" width="500px">
+</div>
+
+オシロスコープでみると周波数と電圧が安定していないように見えるが、これは測定系由来のノイズであると考えられる（[名古屋大橋爪くんのスライド](https://indico.cern.ch/event/1097581/contributions/4617811/attachments/2356426/4021386/phase2_meeting_hashizume.pdf)）。
+
 ## ✅ I<sup>2</sup>Cで温度センサを見る
 
+- Si5345にI<sup>2</sup>Cアクセスしたのと同様に、SL上の温度センサ（Zynq MPSoC用、XCVU13P用）のレジスタの値をreadした
+  - [TMP431](https://www.ti.com/product/TMP431?qgpn=tmp431)という温度センサ
+- 回路基盤的に、remote temperatureではなくlocal temperatureを測るように決まっている
+- standard tempとextended tempというモードがあるが、今回はstandard tempモードだけを確認した
+- データシートを見るとレジスタ`0x00`と`0x15`を読めば温度がわかるようになっている
+  - `0x00`に書かれているのが温度（セルシウス度）の整数部分
+  - `0x15`の上位4 bitに書かれているのが少数部分（0.0625刻みで、例えば上位4 bitに`0x2`が書かれていたとすると、温度の少数部分は$`0.0625 \times 2 = 0.0125`$と解釈する。）
+- Si5345のようにページレジスタに最初に値を書いてから…という操作は必要ない
+- ソースコードは`apps/temperature/`にある
 
+```c
+static const uint8_t reg_lt_h = 0x00;  // local temperature high Byte
+static const uint8_t reg_lt_l = 0x15;  // local temperature low Byte
+
+float temp_standard() {
+    float   temp;
+    uint8_t data_lt_h = 0;
+    uint8_t data_lt_l = 0;
+    if (i2c_read(dev_file, dev_addr, reg_lt_h, &data_lt_h) < 0) {
+        return 0xFFFFFFFF;
+    }
+    if (i2c_read(dev_file, dev_addr, reg_lt_l, &data_lt_l) < 0) {
+        return 0xFFFFFFFF;
+    }
+    temp = (float)data_lt_h + 0.0625 * (float)((data_lt_l >> 4) & 0xFF);
+    return temp;
+}
+```
+
+- `--time`または`-t`で計測する時間を指定できるようにしている。0.5 s刻みで温度を測る
+
+```bash
+(sl-xu5-01) temperature $ sudo ./zynqmp --time=10
+Local temperature around ZynqMP.
+  0.0 sec: temp = 30.5625 DegC
+  0.5 sec: temp = 30.5625 DegC
+  1.0 sec: temp = 30.5625 DegC
+  1.5 sec: temp = 30.5625 DegC
+  2.0 sec: temp = 30.5625 DegC
+  2.5 sec: temp = 30.5625 DegC
+  # この辺で卓上扇風機をOFFにした
+  3.0 sec: temp = 30.6875 DegC
+  3.5 sec: temp = 30.6250 DegC
+  4.0 sec: temp = 30.6875 DegC
+  4.5 sec: temp = 30.6875 DegC
+  5.0 sec: temp = 30.7500 DegC
+  5.5 sec: temp = 30.7500 DegC
+  6.0 sec: temp = 30.8125 DegC
+  6.5 sec: temp = 30.8750 DegC
+  7.0 sec: temp = 30.8750 DegC
+  7.5 sec: temp = 30.9375 DegC
+  8.0 sec: temp = 31.0000 DegC
+  8.5 sec: temp = 31.0625 DegC
+  9.0 sec: temp = 31.0625 DegC
+  9.5 sec: temp = 31.1250 DegC
+```
+
+```bash
+(sl-xu5-01) temperature $ sudo ./fpga --time 10
+Local temperature around XCU13P.
+  0.0 sec: temp = 38.3125 DegC
+  0.5 sec: temp = 38.3750 DegC
+  1.0 sec: temp = 38.3125 DegC
+  1.5 sec: temp = 38.3750 DegC
+  2.0 sec: temp = 38.3125 DegC
+  2.5 sec: temp = 38.3125 DegC
+  3.0 sec: temp = 38.3125 DegC
+  3.5 sec: temp = 38.3125 DegC
+  4.0 sec: temp = 38.3125 DegC
+```
+
+- 時間の刻みをコマンドラインオプションでできるようにしたり、extended temp modeを指定できるように機能を拡張するのは後の人たちにお任せします…
 
 ## ✅ PL Ethernet (ETH1)
 
-ヒエラルキー
+Mercury XU5 PE1 reference designのblock diagram
+
+<div align="center">
+    <img src="./figures/_2021-11-01_14.51.31.png" width="500px">
+</div>
+
+- ここでもrefdesを参考にした
+- Mercury XU5にはEthernet PHYが2つ搭載されていて、図のようにPHYからEMIOを通じてPL領域に置いたGMII-to-RGMII convertorを介して、PSに入る
+- このGMII-to-RGMII convertorというのはVivadoのIPとして存在しているが、Mercuryの場合はEnclustraが提供したもの（`Enclustra_GMII2RGMII_ZU.edn`）を使わないといけないらしい
+  - refdesより
+
+ヒエラルキーは次のようにした。
 
 - `./MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/MercuryXU5_EndcapSL.vhd`
   - `./MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/design_1.bd`
   - `./MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn`
 
+またPetaLinuxでデバイスツリーも編集した（`./plnx_MercuryXU5_EndcapSL/project-spec/meta-user/recipes-bsp/device-tree/files/zynqmp_enclustra_mercury_xu5.dtsi`の`&gem1` node）
 
-## ⬜️ Card Detectionの確認
+- bootfilesを生成してSDカードにおき、起動するとETH1が使えるようになった
+  - 開発用PCと（もちろんスワップさせた）LANケーブルで繋ぎ、peer-to-peerでSSHログインなどができた
+- しかしETH1が使えるようになった途端、ETH0のMACアドレスなどがランダムに生成されるようになってしまった
+- そこで`uEnv.txt`を使ってETH0のMAC address & IP addressを設定することにした
+  - U-BootがデバイスツリーのMAC address & IP addressを書き換えてしまうらしく、デバイスツリーに記述してもあまり意味がない
+  - CentOS 7起動後にOSのrootfsを編集して設定することもできるが、初回起動時にSSHできないのはちょっと不便
+  - U-Bootは`uEnv.txt`に記述された環境変数を参照するので、ここに書いておくのが無難であると一般的に考えられているらしい
+- U-Bootが`uEnv.txt`を参照するよう、`boot.scr`を編集する必要がある。しかし`boot.scr`はバイナリのデータを含むファイルなので直接編集はできない。
+  - `./plnx_MercuryXU5_EndcapSL/project-spec/meta-user/recipes-bsp/u-boot/u-boot-zynq-scr/boot.cmd.default.initrd`を編集して`petalinux-build`すれば`boot.scr`に反映される
+- `uEnv.txt`も作る。`./plnx_MercuryXU5_EndcapSL/images/linux/`にあるので参照のこと
+- 念の為、`petalinux-config`で`Subsystem AUTO Hardware Settings  ---> Ethernet Settings  --->`の設定でMACアドレスなどを書いておいた
+- また`petalinux-config -c u-boot`で`[*] Networking support  ---> [ ]   Random ethaddr if unset`をアンチェックした
+- `petalinux-build`
+- ETH0のMAC addressとIP address、ETH1のMAC addressは`uEnv.txt`の通りになったが、どうしてもすべてを同時に設定する方法がわからなかった（調べてもどうやって書けばいいか全然出てこない）
+- ETH1の設定はCentOS 7の`nmtui`などで設定した
 
-## ⬜️ JTAGからのMPSoC PLのプログラム
+
+## ✅ Card Detectionの確認
+
+- [Card Detectionの問題](#card-detectionの問題)のところで、SD card detection信号がA81に入っていてU-Bootが止まると書いた
+- 本当は**A98**に入っていて欲しい
+- 池野さんにA81と**A98**を繋いでもらった
+
+<div align="center">
+    <img src="./figures/IMG_2257.jpeg" width="300px">
+</div>
+
+- MIO45にチェックを入れてCDの機能をオンにして、ブートができた
+
+## ✅ JTAGからのMPSoC PLのプログラム
 
 - SW6の5-8をONにして、Xilinx Platform USB Cable IIをCN55に接続、USBをVivadoがインストールされたPCに接続
 - VivadoでGenerate Bitstream --> Export Hardware --> Fixed --> Include Bitstream --> Finish
 - Open Hardware Manager
 - SLの電源を入れた
-- `xczu5`を検出。Program Device成功
+- `xczu5_0`を検出。Program Device成功
 - ETH1のLEDが光るようになった
 
-![  width:600px   drop-shadow:0,5px,10px,rgba(0,0,0,.4)](./figures/Screenshot_from_2021-11-29_20-27-30.png)
 
-## ⬜️  Xilinx Virtual Cable
+<div align="center">
+    <img src="./figures/Screenshot_from_2021-11-29_20-27-30.copy.png" width="500px">
+</div>
+
+## 💓 heartbeat機能を追加
+
+- 今さらだが、電源を入れたときに何も反応がないのは味気ないので、PLがプログラムされたら心臓の鼓動のようにLEDをブリンクさせるようにした
+- 200 ms ON, 200 ms OFF, 300 ms ON, 800 ms OFF
+
+<div align="center">
+    <img src="./figures/heartbeat.gif" width="500px">
+</div>
+
+- 愛着が湧いてしまうな。2年間ありがとう、Mercury XU5...
+
+
+
+## ✅ Xilinx Virtual Cable
 
 ### Reference
 - [Designing an XVC project for Remote Debugging of Zynq UltraScale+ devices](https://support.xilinx.com/s/article/974879)
@@ -514,13 +657,9 @@ ClockBuilder Proを使って作成したヘッダファイルにはレジスタ�
 - [田中さん＆杉崎さんのマニュアル](https://twiki.cern.ch/twiki/pub/Atlas/PhaseIITGCElectronics/XVC_Manual_for_ZC706.pdf)
   - [xvc server application for zc706](https://gitlab.cern.ch/-/snippets/858) - Xilinxから配布されているXVC server appはボードなどの環境によって異なるらしく、先輩方がどこで躓いたのか分かったり、躓いたところの修正がなされていてとてもありがたい。
 
+### ✅ MPSoCのPLを遠隔でデバッグする
 
-### MPSoCのPLを遠隔でプログラムする
-
-XVCの練習のため、MPSoCのPLを遠隔でプログラムする機能を実装する。
-MPSoCはOSのブート時にPLをプログラムするのでこの機能は必ずしも必要ではないが、
-FPGAビットストリームを更新するたびにPetaLinuxでブートイメージを作り、SDカードにそれをおき、リブートするのは
-時間がかかってしまう。遠隔でPLだけをリプログラミングできればかなりの時間の短縮になると思う。
+XVCの練習のため、MPSoCのPLを遠隔でデバッグする機能を実装する。
 
 基本的に[Designing an XVC project for Remote Debugging of Zynq UltraScale+ devices](https://support.xilinx.com/s/article/974879)をフォローする。しかし実際やってみると書いていることと違うことがあったので記しておく。
 
@@ -532,61 +671,18 @@ FPGAビットストリームを更新するたびにPetaLinuxでブートイメ�
     bootargs=earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk1p2 rootfstype=ext4 rw rootwait earlyprintk uio_pdrv_genirq.of_id=generic-uio cpuidle.off=1
     ```
 
--
 
+- [フォローしているチュートリアル](https://support.xilinx.com/s/article/974879)にはXVC server appをPetaLinuxでコンパイルして実行ファイルをrootfsに組み込んでいるが、その必要はなく、単にCentOS 7でコンパイルと実行すればいい
+-　起動してみると、`/dev/uio0`が`debug_bridge`に割り当てられていた
+  - [フォローしているチュートリアル](https://support.xilinx.com/s/article/974879)には、MPSoCの場合`/dev/uio1`に割り当てられると書いてあるが、そうではない
+- [GitHub - Xilinx/XilinxVirtualCable](https://github.com/Xilinx/XilinxVirtualCable.git)のZynqMP用のアプリで動作した
+- いちおうデバッグメッセージやXVCサーバアプリが起動した時にインストラクションが表示されるように改変した（`./apps/xvc/xvcserver.c`）
 
-[Designing an XVC project for Remote Debugging of Zynq UltraScale+ devices](https://support.xilinx.com/s/article/974879)と[GitHub - Xilinx/XilinxVirtualCable](https://github.com/Xilinx/XilinxVirtualCable.git)はそれぞれ別のXVCサーバアプリケーションを提供しているが、どちらも正しくワークしなかったので、Zynq-7000用だが先輩方の修正したコードも参考にして修正した。
+- MPSoCでXVCサーバアプリを起動し、MPSoCのCentOS 7にSSHができる && Vivadoがインストールされているパソコンで、VivadoのHardware Managerをopenした
+  - Open target > Open new target > Local server > Add Xilinx Virtual Cable (XVC)
+  - Host: `sl-xu5-eth0-01.kek.jp`, port: 2542
+- 執筆中
 
+### ✅ :sparkles: XCVU13Pのプログラム
 
------
-
-
-- [enclustra/Mercury_XU5_PE1_Reference_Design](https://github.com/enclustra/Mercury_XU5_PE1_Reference_Design.git)
-  - tag `2020.1_v10.0`
-
-
-- Edit `Mercury_XU5_PE1_Reference_Design/reference_design/scripts/settings.tcl`
-
-```diff
-# Modify this variable to select your module
--- if {![info exists module_name]} {set module_name ME-XU5-2CG-1E-D10H}
-++ if {![info exists module_name]} {set module_name ME-XU5-5EV-2I-D12E}
-if {![info exists baseboard]}   {set baseboard PE1}
-```
-
-- (007/525) Register 0x0016: 0x02 written
-- (008/525) Register 0x0017: 0xDC written
-- (009/525) Register 0x0018: 0xD5 written
-- (010/525) Register 0x0019: 0xDD written
-
-
-## How to set MAC address for PetaLinux OS
-
-- Linuxの方でMACアドレスを変更しても、U-BOOTによって上書きされてしまうらしい。
-- http://nahitafu.cocolog-nifty.com/nahitafu/2018/01/zynq.html
-
-- [これ](https://nokixa.hatenablog.com/entry/2019/08/15/141728)を参考にする
-
-```bash
-petalinux-config --get-hw-description=../MercuryXU5_EndcapSL/
-```
-
-```
--*- Subsystem AUTO Hardware Settings  ---> Ethernet Settings  --->
-          Primary Ethernet (psu_ethernet_0)  --->                                      │ │
-  │ │          [ ] Randomise MAC address                                                        │ │
-  │ │          (ca:9f:1e:3a:b6:24) Ethernet MAC address                                         │ │
-  │ │          [ ] Obtain IP address automatically                                              │ │
-  │ │          (130.87.242.129) Static IP address                                               │ │
-  │ │          (255.255.252.0) Static IP netmask                                                │ │
-  │ │          (130.87.240.1) Static IP gateway
-```
-
-```bash
-petalinux-config -c u-boot
-```
-
-```
-[*] Networking support  ---> [ ]   Random ethaddr if unset
-```
-
+- 執筆中

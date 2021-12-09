@@ -49,14 +49,14 @@ int main(int argc, char* argv[]) {
     int  opt;
     int  longindex;
 
-    int time = 0;
+    int time = 1;
 
     /* ---- Switch process according to the given option ---- */
     while ((opt = getopt_long(argc, argv, optstring, longopts, &longindex)) !=
            -1) {
         switch (opt) {
             case 't': time = (int)(strtol(optarg, NULL, 0)); break;
-            default: printf("Invalid option!\n\n"); return -1;
+            default: break;
         }
     }
 

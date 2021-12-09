@@ -29,7 +29,7 @@ module heartbeat(
     output [3-1:0] dout
 );
 
-    // 100 ms = 0.1 s = 1 / (10^7 Hz)
+    // 100 ms = 0.1 s = 10^7 / (100 MHz)
     parameter DECI_SECOND = 10000000;
 
     reg heartbeat;
@@ -43,7 +43,7 @@ module heartbeat(
         if (!resetn) begin
             counter <= {32 {1'b 0}};
             heartbeat <= 1'b 1; // OFF
-            phase <= {4'b 0};
+            phase <= {2'b 0};
         end else begin
             if (phase == 2'b 00) begin
                 heartbeat <= 1'b 0; // ON

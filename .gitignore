@@ -89,15 +89,6 @@
 #!git_push.sh
 
 
-## exclude
-.DS_Store
-*.log
-*.str
-*~le
-*\ 2.*
-*\ 3.*
-*\ 4.*
-rm.sh
 
 ## include
 !figures/*
@@ -108,8 +99,6 @@ rm.sh
 !README.md
 !logbook.md
 !*.log
-vivado.log
-vivado*.log
 
 !BOOT.BIN
 !image.ub
@@ -123,3 +112,15 @@ vivado*.log
 !*.csv
 !*.slabtimeproj
 !Makefile
+
+## exclude
+.DS_Store
+*.log
+*.str
+*~le
+*\ 2.*
+*\ 3.*
+*\ 4.*
+rm.sh
+vivado.log
+vivado*.log
