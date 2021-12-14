@@ -12,7 +12,8 @@ vhdl xil_defaultlib  \
 "../../../bd/design_1/ip/design_1_debug_bridge_2_0/bd_0/sim/bd_04e2.vhd" \
 "../../../bd/design_1/ip/design_1_debug_bridge_2_0/sim/design_1_debug_bridge_2_0.vhd" \
 "../../../bd/design_1/ip/design_1_heartbeat_0_0/sim/design_1_heartbeat_0_0.vhd" \
-"../../../bd/design_1/sim/design_1.vhd" \
 "../../../bd/design_1/ip/design_1_counter_0_0/sim/design_1_counter_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_ila_1_0/sim/design_1_ila_1_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
 
 nosort

@@ -1,0 +1,32 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"0.816949",
+   "Default View_TopLeft":"-253,0",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ScaleFactor":"0.860714",
+   "No Loops_TopLeft":"-224,0",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port GT_SERIAL_TX -pg 1 -lvl 3 -x 970 -y 280 -defaultsOSRD
+preplace port GT_SERIAL_RX -pg 1 -lvl 0 -x 0 -y 350 -defaultsOSRD
+preplace port GT_DIFF_REFCLK -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
+preplace inst axi_chip2chip_0 -pg 1 -lvl 1 -x 270 -y 160 -defaultsOSRD
+preplace inst axi_chip2chip_0_aurora64 -pg 1 -lvl 2 -x 720 -y 350 -defaultsOSRD
+preplace netloc axi_chip2chip_0_aurora64_user_clk_out 1 0 3 20 580 NJ 580 930
+preplace netloc axi_chip2chip_0_aurora64_channel_up 1 0 3 30 560 NJ 560 950
+preplace netloc axi_chip2chip_0_aurora64_mmcm_not_locked_out 1 0 3 40 570 NJ 570 940
+preplace netloc axi_chip2chip_0_aurora_pma_init_out 1 1 1 500 140n
+preplace netloc axi_chip2chip_0_aurora_reset_pb 1 1 1 490 160n
+preplace netloc Net 1 0 2 50 410 NJ
+preplace netloc axi_chip2chip_0_aurora64_USER_DATA_M_AXIS_RX 1 0 3 20 10 NJ 10 950
+preplace netloc axi_chip2chip_0_AXIS_TX 1 1 1 510 80n
+preplace netloc axi_chip2chip_0_aurora64_GT_SERIAL_TX 1 2 1 N 280
+preplace netloc GT_SERIAL_RX_1 1 0 2 NJ 350 NJ
+preplace netloc GT_DIFF_REFCLK_1 1 0 2 NJ 310 NJ
+levelinfo -pg 1 0 270 720 970
+pagesize -pg 1 -db -bbox -sgen -170 0 1130 590
+"
+}
+{
+   "da_axi_chip2chip_cnt":"1"
+}

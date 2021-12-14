@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="bd_c443_bs_switch_1_0_synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1638945960">
-  <File Type="VDS-TIMINGSUMMARY" Name="bd_c443_bs_switch_1_0_timing_summary_synth.rpt"/>
+<GenRun Id="bd_c443_bs_switch_1_0_synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1639296551">
   <File Type="RDS-DCP" Name="bd_c443_bs_switch_1_0.dcp"/>
   <File Type="RDS-UTIL-PB" Name="bd_c443_bs_switch_1_0_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="bd_c443_bs_switch_1_0_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="bd_c443_bs_switch_1_0_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="bd_c443_bs_switch_1_0.vds"/>
-  <File Type="REPORTS-TCL" Name="bd_c443_bs_switch_1_0_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="bd_c443_bs_switch_1_0_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="bd_c443_bs_switch_1_0.tcl"/>
+  <File Type="RDS-UTIL" Name="bd_c443_bs_switch_1_0_utilization_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="bd_c443_bs_switch_1_0_reports.tcl"/>
+  <File Type="RDS-RDS" Name="bd_c443_bs_switch_1_0.vds"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bd_c443_bs_switch_1_0">
     <File Path="$PSRCDIR/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/bd_0/ip/ip_2/bd_c443_bs_switch_1_0.xci">
       <FileInfo>

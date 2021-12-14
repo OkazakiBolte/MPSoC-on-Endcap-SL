@@ -155,6 +155,8 @@ OPTRACE "add files" START { }
   add_files /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
   read_edif /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn
+  add_files /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/Mercury_XU5/ip/Mercury_XU5_ddr4_0/bd_0/bd_8825.bmm
+  set_property SCOPED_TO_REF bd_8825 [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/Mercury_XU5/ip/Mercury_XU5_ddr4_0/bd_0/bd_8825.bmm]
 OPTRACE "read constraints: implementation" START { }
   read_xdc -unmanaged /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl
   read_xdc /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL.xdc

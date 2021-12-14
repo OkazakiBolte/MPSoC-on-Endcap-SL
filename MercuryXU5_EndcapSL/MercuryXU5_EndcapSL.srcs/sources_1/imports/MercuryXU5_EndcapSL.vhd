@@ -23,14 +23,19 @@ USE UNISIM.VCOMPONENTS.ALL;
 ---- Entity declaration ----
 ENTITY MercuryXU5_EndcapSL IS
     PORT (
+        CFGDONE : IN STD_LOGIC;
+        CFGINIT : IN STD_LOGIC;
+        CFGPROG : OUT STD_LOGIC_VECTOR (0 TO 0);
         -- RESETB for Si5345
         SIRST : OUT STD_LOGIC;
+        -- ResetB for Si5344
+        SI44RST : OUT STD_LOGIC;
         -- RESETB for FIrFly modules
         FIRRST : OUT STD_LOGIC;
         -- FirFly module select (active-low)
         FIRSEL : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
         -- 3-bit LED on the mezzanine
-        LED_N_tri_o : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
+        LED : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
         -- PL_Gigabit_Ethernet
         ETH1_MDC     : OUT STD_LOGIC;
         ETH1_RXCLK   : IN STD_LOGIC;
@@ -42,6 +47,14 @@ ENTITY MercuryXU5_EndcapSL IS
         ETH1_TXCTL   : OUT STD_LOGIC;
         ETH1_RXD     : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
         ETH1_TXD     : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+        -- GT serial lines
+        GT_DIFF_REFCLK1_clk_n : IN STD_LOGIC;
+        GT_DIFF_REFCLK1_clk_p : IN STD_LOGIC;
+        GT_SERIAL_F2Z_rxn     : IN STD_LOGIC_VECTOR (0 TO 0);
+        GT_SERIAL_F2Z_rxp     : IN STD_LOGIC_VECTOR (0 TO 0);
+        GT_SERIAL_Z2F_txn     : OUT STD_LOGIC_VECTOR (0 TO 0);
+        GT_SERIAL_Z2F_txp     : OUT STD_LOGIC_VECTOR (0 TO 0);
+        Si5345_INSEL          : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
         ---- JTAG lines for debugging XCVU13P
         ZYNQTCK : OUT STD_LOGIC;
         ZYNQTDI : OUT STD_LOGIC;
@@ -55,32 +68,41 @@ ARCHITECTURE RTL OF MercuryXU5_EndcapSL IS
     ---- Component declarations ----
     COMPONENT design_1 IS
         PORT (
-            ETH_CLK125       : OUT STD_LOGIC;
-            ETH_CLK125_90    : OUT STD_LOGIC;
-            ETH_CLK25        : OUT STD_LOGIC;
-            ETH_CLK10        : OUT STD_LOGIC;
-            ETH_resetn       : OUT STD_LOGIC;
-            LED_N_tri_o      : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
-            ZYNQTDI          : OUT STD_LOGIC;
-            ZYNQTDO          : IN STD_LOGIC;
-            ZYNQTCK          : OUT STD_LOGIC;
-            ZYNQTMS          : OUT STD_LOGIC;
-            GMII_rx_clk      : IN STD_LOGIC;
-            GMII_speed_mode  : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
-            GMII_crs         : IN STD_LOGIC;
-            GMII_col         : IN STD_LOGIC;
-            GMII_rxd         : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-            GMII_rx_er       : IN STD_LOGIC;
-            GMII_rx_dv       : IN STD_LOGIC;
-            GMII_tx_clk      : IN STD_LOGIC;
-            GMII_txd         : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-            GMII_tx_en       : OUT STD_LOGIC;
-            GMII_tx_er       : OUT STD_LOGIC;
-            MDIO_mdc         : OUT STD_LOGIC;
-            MDIO_mdio_i      : IN STD_LOGIC;
-            MDIO_mdio_o      : OUT STD_LOGIC;
-            MDIO_mdio_t      : OUT STD_LOGIC;
-            peripheral_reset : OUT STD_LOGIC_VECTOR (0 TO 0)
+            ETH_CLK125            : OUT STD_LOGIC;
+            ETH_CLK125_90         : OUT STD_LOGIC;
+            ETH_CLK25             : OUT STD_LOGIC;
+            ETH_CLK10             : OUT STD_LOGIC;
+            ETH_resetn            : OUT STD_LOGIC;
+            CFGPROG               : OUT STD_LOGIC_VECTOR (0 TO 0);
+            ZYNQTDI               : OUT STD_LOGIC;
+            ZYNQTDO               : IN STD_LOGIC;
+            ZYNQTCK               : OUT STD_LOGIC;
+            ZYNQTMS               : OUT STD_LOGIC;
+            LED                   : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
+            GT_SERIAL_Z2F_txn     : OUT STD_LOGIC_VECTOR (0 TO 0);
+            GT_SERIAL_Z2F_txp     : OUT STD_LOGIC_VECTOR (0 TO 0);
+            GT_DIFF_REFCLK1_clk_n : IN STD_LOGIC;
+            GT_DIFF_REFCLK1_clk_p : IN STD_LOGIC;
+            MDIO_mdc              : OUT STD_LOGIC;
+            MDIO_mdio_i           : IN STD_LOGIC;
+            MDIO_mdio_o           : OUT STD_LOGIC;
+            MDIO_mdio_t           : OUT STD_LOGIC;
+            GMII_rx_clk           : IN STD_LOGIC;
+            GMII_speed_mode       : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
+            GMII_crs              : IN STD_LOGIC;
+            GMII_col              : IN STD_LOGIC;
+            GMII_rxd              : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            GMII_rx_er            : IN STD_LOGIC;
+            GMII_rx_dv            : IN STD_LOGIC;
+            GMII_tx_clk           : IN STD_LOGIC;
+            GMII_txd              : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+            GMII_tx_en            : OUT STD_LOGIC;
+            GMII_tx_er            : OUT STD_LOGIC;
+            GT_SERIAL_F2Z_rxn     : IN STD_LOGIC_VECTOR (0 TO 0);
+            GT_SERIAL_F2Z_rxp     : IN STD_LOGIC_VECTOR (0 TO 0);
+            Si5345_INSEL          : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
+            CFGINIT               : IN STD_LOGIC;
+            CFGDONE               : IN STD_LOGIC
         );
     END COMPONENT design_1;
 
@@ -127,26 +149,25 @@ ARCHITECTURE RTL OF MercuryXU5_EndcapSL IS
     END COMPONENT Enclustra_GMII2RGMII_ZU;
 
     ---- Signal declarations ----
-    SIGNAL MDIO_mdio_i      : STD_LOGIC;
-    SIGNAL MDIO_mdio_o      : STD_LOGIC;
-    SIGNAL MDIO_mdio_t      : STD_LOGIC;
-    SIGNAL ETH_CLK125       : STD_LOGIC;
-    SIGNAL ETH_CLK125_90    : STD_LOGIC;
-    SIGNAL ETH_CLK25        : STD_LOGIC;
-    SIGNAL ETH_CLK10        : STD_LOGIC;
-    SIGNAL ETH_resetn       : STD_LOGIC;
-    SIGNAL GMII_col         : STD_LOGIC;
-    SIGNAL GMII_crs         : STD_LOGIC;
-    SIGNAL GMII_rx_clk      : STD_LOGIC;
-    SIGNAL GMII_rx_dv       : STD_LOGIC;
-    SIGNAL GMII_rx_er       : STD_LOGIC;
-    SIGNAL GMII_rxd         : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL GMII_speed_mode  : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL GMII_tx_clk      : STD_LOGIC;
-    SIGNAL GMII_tx_en       : STD_LOGIC;
-    SIGNAL GMII_tx_er       : STD_LOGIC;
-    SIGNAL GMII_txd         : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL peripheral_reset : STD_LOGIC_VECTOR(0 DOWNTO 0);
+    SIGNAL MDIO_mdio_i     : STD_LOGIC;
+    SIGNAL MDIO_mdio_o     : STD_LOGIC;
+    SIGNAL MDIO_mdio_t     : STD_LOGIC;
+    SIGNAL ETH_CLK125      : STD_LOGIC;
+    SIGNAL ETH_CLK125_90   : STD_LOGIC;
+    SIGNAL ETH_CLK25       : STD_LOGIC;
+    SIGNAL ETH_CLK10       : STD_LOGIC;
+    SIGNAL ETH_resetn      : STD_LOGIC;
+    SIGNAL GMII_col        : STD_LOGIC;
+    SIGNAL GMII_crs        : STD_LOGIC;
+    SIGNAL GMII_rx_clk     : STD_LOGIC;
+    SIGNAL GMII_rx_dv      : STD_LOGIC;
+    SIGNAL GMII_rx_er      : STD_LOGIC;
+    SIGNAL GMII_rxd        : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL GMII_speed_mode : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL GMII_tx_clk     : STD_LOGIC;
+    SIGNAL GMII_tx_en      : STD_LOGIC;
+    SIGNAL GMII_tx_er      : STD_LOGIC;
+    SIGNAL GMII_txd        : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 BEGIN
 
@@ -157,39 +178,50 @@ BEGIN
             O  => MDIO_mdio_i,
             T  => MDIO_mdio_t
         );
+
         design_1_i : COMPONENT design_1
             PORT MAP(
-                ETH_CLK10        => ETH_CLK10,
-                ETH_CLK125       => ETH_CLK125,
-                ETH_CLK125_90    => ETH_CLK125_90,
-                ETH_CLK25        => ETH_CLK25,
-                ETH_resetn       => ETH_resetn,
-                GMII_col         => GMII_col,
-                GMII_crs         => GMII_crs,
-                GMII_rx_clk      => GMII_rx_clk,
-                GMII_rx_dv       => GMII_rx_dv,
-                GMII_rx_er       => GMII_rx_er,
-                GMII_rxd         => GMII_rxd,
-                GMII_speed_mode  => GMII_speed_mode,
-                GMII_tx_clk      => GMII_tx_clk,
-                GMII_tx_en       => GMII_tx_en,
-                GMII_tx_er       => GMII_tx_er,
-                GMII_txd         => GMII_txd,
-                LED_N_tri_o      => LED_N_tri_o,
-                MDIO_mdc         => ETH1_MDC,
-                MDIO_mdio_i      => MDIO_mdio_i,
-                MDIO_mdio_o      => MDIO_mdio_o,
-                MDIO_mdio_t      => MDIO_mdio_t,
-                ZYNQTCK          => ZYNQTCK,
-                ZYNQTDI          => ZYNQTDI,
-                ZYNQTDO          => ZYNQTDO,
-                ZYNQTMS          => ZYNQTMS,
-                peripheral_reset => peripheral_reset
+                CFGDONE                  => CFGDONE,
+                CFGINIT                  => CFGINIT,
+                CFGPROG(0)               => CFGPROG(0),
+                Si5345_INSEL(1 DOWNTO 0) => Si5345_INSEL(1 DOWNTO 0),
+                ETH_CLK10                => ETH_CLK10,
+                ETH_CLK125               => ETH_CLK125,
+                ETH_CLK125_90            => ETH_CLK125_90,
+                ETH_CLK25                => ETH_CLK25,
+                ETH_resetn               => ETH_resetn,
+                GMII_col                 => GMII_col,
+                GMII_crs                 => GMII_crs,
+                GMII_rx_clk              => GMII_rx_clk,
+                GMII_rx_dv               => GMII_rx_dv,
+                GMII_rx_er               => GMII_rx_er,
+                GMII_rxd                 => GMII_rxd,
+                GMII_speed_mode          => GMII_speed_mode,
+                GMII_tx_clk              => GMII_tx_clk,
+                GMII_tx_en               => GMII_tx_en,
+                GMII_tx_er               => GMII_tx_er,
+                GMII_txd                 => GMII_txd,
+                LED                      => LED,
+                MDIO_mdc                 => ETH1_MDC,
+                MDIO_mdio_i              => MDIO_mdio_i,
+                MDIO_mdio_o              => MDIO_mdio_o,
+                MDIO_mdio_t              => MDIO_mdio_t,
+                ZYNQTCK                  => ZYNQTCK,
+                ZYNQTDI                  => ZYNQTDI,
+                ZYNQTDO                  => ZYNQTDO,
+                ZYNQTMS                  => ZYNQTMS,
+                GT_DIFF_REFCLK1_clk_n    => GT_DIFF_REFCLK1_clk_n,
+                GT_DIFF_REFCLK1_clk_p    => GT_DIFF_REFCLK1_clk_p,
+                GT_SERIAL_F2Z_rxn(0)     => GT_SERIAL_F2Z_rxn(0),
+                GT_SERIAL_F2Z_rxp(0)     => GT_SERIAL_F2Z_rxp(0),
+                GT_SERIAL_Z2F_txn(0)     => GT_SERIAL_Z2F_txn(0),
+                GT_SERIAL_Z2F_txp(0)     => GT_SERIAL_Z2F_txp(0)
             );
 
             -- resetb lines for peripherals on Endcap Sector Logic
-            SIRST  <= '1';
-            FIRRST <= '1';
+            SIRST   <= '1'; -- Si5345
+            SI44RST <= '1'; -- Si5344
+            FIRRST  <= '1'; -- FireFly
 
             -- FirFly module select (active-low)
             FIRSEL <= (OTHERS => '1');

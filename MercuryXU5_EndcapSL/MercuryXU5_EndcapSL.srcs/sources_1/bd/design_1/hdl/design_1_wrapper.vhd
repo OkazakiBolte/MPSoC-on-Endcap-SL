@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Wed Dec  8 18:12:10 2021
+--Date        : Tue Dec 14 17:14:02 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -13,6 +13,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_wrapper is
   port (
+    CFGDONE : in STD_LOGIC;
+    CFGINIT : in STD_LOGIC;
+    CFGPROG : out STD_LOGIC_VECTOR ( 0 to 0 );
     ETH_CLK10 : out STD_LOGIC;
     ETH_CLK125 : out STD_LOGIC;
     ETH_CLK125_90 : out STD_LOGIC;
@@ -29,14 +32,20 @@ entity design_1_wrapper is
     GMII_tx_en : out STD_LOGIC;
     GMII_tx_er : out STD_LOGIC;
     GMII_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    LED_N_tri_o : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    GT_DIFF_REFCLK1_clk_n : in STD_LOGIC;
+    GT_DIFF_REFCLK1_clk_p : in STD_LOGIC;
+    GT_SERIAL_F2Z_rxn : in STD_LOGIC_VECTOR ( 0 to 0 );
+    GT_SERIAL_F2Z_rxp : in STD_LOGIC_VECTOR ( 0 to 0 );
+    GT_SERIAL_Z2F_txn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    GT_SERIAL_Z2F_txp : out STD_LOGIC_VECTOR ( 0 to 0 );
+    LED : out STD_LOGIC_VECTOR ( 2 downto 0 );
     MDIO_mdc : out STD_LOGIC;
     MDIO_mdio_io : inout STD_LOGIC;
+    Si5345_INSEL : out STD_LOGIC_VECTOR ( 1 downto 0 );
     ZYNQTCK : out STD_LOGIC;
     ZYNQTDI : out STD_LOGIC;
     ZYNQTDO : in STD_LOGIC;
-    ZYNQTMS : out STD_LOGIC;
-    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
+    ZYNQTMS : out STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -48,12 +57,14 @@ architecture STRUCTURE of design_1_wrapper is
     ETH_CLK25 : out STD_LOGIC;
     ETH_CLK10 : out STD_LOGIC;
     ETH_resetn : out STD_LOGIC;
-    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    CFGPROG : out STD_LOGIC_VECTOR ( 0 to 0 );
     ZYNQTDI : out STD_LOGIC;
     ZYNQTDO : in STD_LOGIC;
     ZYNQTCK : out STD_LOGIC;
     ZYNQTMS : out STD_LOGIC;
-    LED_N_tri_o : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    LED : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    GT_SERIAL_Z2F_txn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    GT_SERIAL_Z2F_txp : out STD_LOGIC_VECTOR ( 0 to 0 );
     MDIO_mdc : out STD_LOGIC;
     MDIO_mdio_i : in STD_LOGIC;
     MDIO_mdio_o : out STD_LOGIC;
@@ -68,7 +79,14 @@ architecture STRUCTURE of design_1_wrapper is
     GMII_tx_clk : in STD_LOGIC;
     GMII_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
     GMII_tx_en : out STD_LOGIC;
-    GMII_tx_er : out STD_LOGIC
+    GMII_tx_er : out STD_LOGIC;
+    GT_SERIAL_F2Z_rxn : in STD_LOGIC_VECTOR ( 0 to 0 );
+    GT_SERIAL_F2Z_rxp : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Si5345_INSEL : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    CFGINIT : in STD_LOGIC;
+    CFGDONE : in STD_LOGIC;
+    GT_DIFF_REFCLK1_clk_n : in STD_LOGIC;
+    GT_DIFF_REFCLK1_clk_p : in STD_LOGIC
   );
   end component design_1;
   component IOBUF is
@@ -92,6 +110,9 @@ MDIO_mdio_iobuf: component IOBUF
     );
 design_1_i: component design_1
      port map (
+      CFGDONE => CFGDONE,
+      CFGINIT => CFGINIT,
+      CFGPROG(0) => CFGPROG(0),
       ETH_CLK10 => ETH_CLK10,
       ETH_CLK125 => ETH_CLK125,
       ETH_CLK125_90 => ETH_CLK125_90,
@@ -108,15 +129,21 @@ design_1_i: component design_1
       GMII_tx_en => GMII_tx_en,
       GMII_tx_er => GMII_tx_er,
       GMII_txd(7 downto 0) => GMII_txd(7 downto 0),
-      LED_N_tri_o(2 downto 0) => LED_N_tri_o(2 downto 0),
+      GT_DIFF_REFCLK1_clk_n => GT_DIFF_REFCLK1_clk_n,
+      GT_DIFF_REFCLK1_clk_p => GT_DIFF_REFCLK1_clk_p,
+      GT_SERIAL_F2Z_rxn(0) => GT_SERIAL_F2Z_rxn(0),
+      GT_SERIAL_F2Z_rxp(0) => GT_SERIAL_F2Z_rxp(0),
+      GT_SERIAL_Z2F_txn(0) => GT_SERIAL_Z2F_txn(0),
+      GT_SERIAL_Z2F_txp(0) => GT_SERIAL_Z2F_txp(0),
+      LED(2 downto 0) => LED(2 downto 0),
       MDIO_mdc => MDIO_mdc,
       MDIO_mdio_i => MDIO_mdio_i,
       MDIO_mdio_o => MDIO_mdio_o,
       MDIO_mdio_t => MDIO_mdio_t,
+      Si5345_INSEL(1 downto 0) => Si5345_INSEL(1 downto 0),
       ZYNQTCK => ZYNQTCK,
       ZYNQTDI => ZYNQTDI,
       ZYNQTDO => ZYNQTDO,
-      ZYNQTMS => ZYNQTMS,
-      peripheral_reset(0) => peripheral_reset(0)
+      ZYNQTMS => ZYNQTMS
     );
 end STRUCTURE;

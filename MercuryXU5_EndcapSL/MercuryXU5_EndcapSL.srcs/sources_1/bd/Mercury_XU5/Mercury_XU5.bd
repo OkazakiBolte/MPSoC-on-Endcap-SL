@@ -1144,22 +1144,16 @@
       }
     },
     "interface_nets": {
-      "zynq_ultra_ps_e_M_AXI_HPM0_LPD": {
+      "C0_SYS_CLK_1": {
         "interface_ports": [
-          "zynq_ultra_ps_e/M_AXI_HPM0_LPD",
-          "smartconnect_0/S00_AXI"
+          "C0_SYS_CLK",
+          "ddr4/C0_SYS_CLK"
         ]
       },
-      "smartconnect_0_M00_AXI": {
+      "smartconnect_1_M00_AXI": {
         "interface_ports": [
-          "smartconnect_0/M00_AXI",
-          "system_management_wiz/S_AXI_LITE"
-        ]
-      },
-      "smartconnect_0_M01_AXI": {
-        "interface_ports": [
-          "smartconnect_0/M01_AXI",
-          "led/S_AXI"
+          "smartconnect_1/M00_AXI",
+          "ddr4/C0_DDR4_S_AXI"
         ]
       },
       "zynq_ultra_ps_e_MDIO_ENET1": {
@@ -1174,22 +1168,28 @@
           "ddr4/C0_DDR4"
         ]
       },
-      "C0_SYS_CLK_1": {
+      "smartconnect_0_M00_AXI": {
         "interface_ports": [
-          "C0_SYS_CLK",
-          "ddr4/C0_SYS_CLK"
+          "smartconnect_0/M00_AXI",
+          "system_management_wiz/S_AXI_LITE"
+        ]
+      },
+      "zynq_ultra_ps_e_M_AXI_HPM0_LPD": {
+        "interface_ports": [
+          "zynq_ultra_ps_e/M_AXI_HPM0_LPD",
+          "smartconnect_0/S00_AXI"
+        ]
+      },
+      "smartconnect_0_M01_AXI": {
+        "interface_ports": [
+          "smartconnect_0/M01_AXI",
+          "led/S_AXI"
         ]
       },
       "zynq_ultra_ps_e_M_AXI_HPM0_FPD": {
         "interface_ports": [
           "zynq_ultra_ps_e/M_AXI_HPM0_FPD",
           "smartconnect_1/S00_AXI"
-        ]
-      },
-      "smartconnect_1_M00_AXI": {
-        "interface_ports": [
-          "smartconnect_1/M00_AXI",
-          "ddr4/C0_DDR4_S_AXI"
         ]
       },
       "zynq_ultra_ps_e_GMII_ENET1": {

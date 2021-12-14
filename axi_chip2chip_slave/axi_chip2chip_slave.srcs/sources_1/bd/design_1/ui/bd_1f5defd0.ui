@@ -1,0 +1,289 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"0.475882",
+   "Default View_TopLeft":"-620,0",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Interfaces View_ExpandedHierarchyInLayout":"",
+   "Interfaces View_Layers":"/sysclk15625_1:false|/aurora_64b66b_0_user_clk_out:false|/clk_wiz_2_clk_out1:false|/rst_clk_wiz_2_100M_peripheral_aresetn:false|/rst_clk_wiz_2_100M_peripheral_reset:false|/axi_chip2chip_0_aurora_reset_pb:false|/aurora_64b66b_0_gt_reset_out:false|",
+   "Interfaces View_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port GT_SERIAL_Z2F -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port GT_SERIAL_F2Z -pg 1 -lvl 3 -x 710 -y 200 -defaultsOSRD
+preplace port GT_DIFF_REFCLK1 -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port m_axi_arready -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace port m_axi_arvalid -pg 1 -lvl 3 -x 710 -y 120 -defaultsOSRD
+preplace port m_axi_awready -pg 1 -lvl 0 -x 0 -y 40 -defaultsOSRD
+preplace port m_axi_awvalid -pg 1 -lvl 3 -x 710 -y 260 -defaultsOSRD
+preplace port m_axi_bready -pg 1 -lvl 3 -x 710 -y 280 -defaultsOSRD
+preplace port m_axi_bvalid -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port m_axi_rlast -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace port m_axi_rready -pg 1 -lvl 3 -x 710 -y 300 -defaultsOSRD
+preplace port m_axi_rvalid -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace port m_axi_wlast -pg 1 -lvl 3 -x 710 -y 340 -defaultsOSRD
+preplace port m_axi_wready -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port m_axi_wvalid -pg 1 -lvl 3 -x 710 -y 400 -defaultsOSRD
+preplace portBus m_axi_araddr -pg 1 -lvl 3 -x 710 -y 20 -defaultsOSRD
+preplace portBus m_axi_arburst -pg 1 -lvl 3 -x 710 -y 40 -defaultsOSRD
+preplace portBus m_axi_arid -pg 1 -lvl 3 -x 710 -y 60 -defaultsOSRD
+preplace portBus m_axi_arlen -pg 1 -lvl 3 -x 710 -y 80 -defaultsOSRD
+preplace portBus m_axi_arsize -pg 1 -lvl 3 -x 710 -y 100 -defaultsOSRD
+preplace portBus m_axi_awaddr -pg 1 -lvl 3 -x 710 -y 140 -defaultsOSRD
+preplace portBus m_axi_awburst -pg 1 -lvl 3 -x 710 -y 160 -defaultsOSRD
+preplace portBus m_axi_awid -pg 1 -lvl 3 -x 710 -y 180 -defaultsOSRD
+preplace portBus m_axi_awlen -pg 1 -lvl 3 -x 710 -y 220 -defaultsOSRD
+preplace portBus m_axi_awsize -pg 1 -lvl 3 -x 710 -y 240 -defaultsOSRD
+preplace portBus m_axi_bid -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace portBus m_axi_bresp -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace portBus m_axi_rdata -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace portBus m_axi_rid -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace portBus m_axi_rresp -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace portBus m_axi_wdata -pg 1 -lvl 3 -x 710 -y 320 -defaultsOSRD
+preplace portBus m_axi_wstrb -pg 1 -lvl 3 -x 710 -y 360 -defaultsOSRD
+preplace portBus m_axi_wuser -pg 1 -lvl 3 -x 710 -y 380 -defaultsOSRD
+preplace inst axi_chip2chip_0 -pg 1 -lvl 1 -x 140 -y 150 -defaultsOSRD
+preplace inst aurora_64b66b_0 -pg 1 -lvl 2 -x 480 -y 190 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 2 -x 480 -y 60 -defaultsOSRD
+preplace netloc GT_SERIAL_Z2F_1 1 0 2 NJ 220 NJ
+preplace netloc aurora_64b66b_0_GT_SERIAL_TX 1 2 1 N 200
+preplace netloc GT_DIFF_REFCLK1_1 1 0 2 NJ 80 260J
+preplace netloc aurora_64b66b_0_USER_DATA_M_AXIS_RX 1 0 3 20 280 NJ 280 690
+preplace netloc axi_chip2chip_0_AXIS_TX 1 1 1 N 160
+preplace netloc axi_chip2chip_0_m_axi 1 1 1 270 60n
+levelinfo -pg 1 0 140 480 710
+pagesize -pg 1 -db -bbox -sgen -180 0 910 420
+",
+   "Interfaces View_ScaleFactor":"1.0",
+   "Interfaces View_TopLeft":"-234,-194",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port GT_SERIAL_Z2F -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace port GT_SERIAL_F2Z -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD -left
+preplace port GT_DIFF_REFCLK -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port sysclk15625 -pg 1 -lvl 0 -x 0 -y 640 -defaultsOSRD
+preplace portBus heartbeat -pg 1 -lvl 4 -x 1120 -y 640 -defaultsOSRD
+preplace inst axi_chip2chip_0 -pg 1 -lvl 2 -x 680 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 48 47 39 41 43 38 44 42 49 45 40 46 50 51 52} -defaultsOSRD -pinDir m_axi right -pinY m_axi 260R -pinDir AXIS_RX left -pinY AXIS_RX 0L -pinDir AXIS_TX left -pinY AXIS_TX 20L -pinDir m_aclk left -pinY m_aclk 340L -pinDir m_aresetn left -pinY m_aresetn 320L -pinBusDir axi_c2c_s2m_intr_in left -pinBusY axi_c2c_s2m_intr_in 80L -pinBusDir axi_c2c_m2s_intr_out right -pinBusY axi_c2c_m2s_intr_out 280R -pinDir axi_c2c_phy_clk left -pinY axi_c2c_phy_clk 240L -pinDir axi_c2c_aurora_channel_up left -pinY axi_c2c_aurora_channel_up 60L -pinDir aurora_do_cc right -pinY aurora_do_cc 300R -pinDir aurora_pma_init_in left -pinY aurora_pma_init_in 160L -pinDir aurora_init_clk left -pinY aurora_init_clk 360L -pinDir aurora_pma_init_out left -pinY aurora_pma_init_out 260L -pinDir aurora_mmcm_not_locked left -pinY aurora_mmcm_not_locked 140L -pinDir aurora_reset_pb left -pinY aurora_reset_pb 280L -pinDir axi_c2c_config_error_out right -pinY axi_c2c_config_error_out 320R -pinDir axi_c2c_link_status_out right -pinY axi_c2c_link_status_out 340R -pinDir axi_c2c_multi_bit_error_out right -pinY axi_c2c_multi_bit_error_out 360R
+preplace inst aurora_64b66b_0 -pg 1 -lvl 1 -x 230 -y 60 -swap {4 1 2 3 0 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 32 31 33 42 34 30 35 36 37 38 39 40 41} -defaultsOSRD -pinDir USER_DATA_S_AXIS_TX right -pinY USER_DATA_S_AXIS_TX 20R -pinDir USER_DATA_M_AXIS_RX right -pinY USER_DATA_M_AXIS_RX 0R -pinDir GT_DIFF_REFCLK1 left -pinY GT_DIFF_REFCLK1 0L -pinDir GT_DIFF_REFCLK1.gt_refclk1_n left -pinY GT_DIFF_REFCLK1.gt_refclk1_n 20L -pinDir GT_DIFF_REFCLK1.gt_refclk1_p left -pinY GT_DIFF_REFCLK1.gt_refclk1_p 40L -pinDir CORE_STATUS right -pinY CORE_STATUS 40R -pinDir CORE_STATUS.channel_up right -pinY CORE_STATUS.channel_up 60R -pinDir CORE_STATUS.gt_pll_lock right -pinY CORE_STATUS.gt_pll_lock 80R -pinDir CORE_STATUS.hard_err right -pinY CORE_STATUS.hard_err 100R -pinDir CORE_STATUS.lane_up right -pinY CORE_STATUS.lane_up 120R -pinDir CORE_STATUS.mmcm_not_locked_out right -pinY CORE_STATUS.mmcm_not_locked_out 140R -pinDir CORE_STATUS.soft_err right -pinY CORE_STATUS.soft_err 160R -pinDir CORE_CONTROL left -pinY CORE_CONTROL 60L -pinDir CORE_CONTROL.gt_rxcdrovrden_in left -pinY CORE_CONTROL.gt_rxcdrovrden_in 80L -pinDir CORE_CONTROL.loopback left -pinY CORE_CONTROL.loopback 100L -pinDir CORE_CONTROL.power_down left -pinY CORE_CONTROL.power_down 120L -pinDir GT_SERIAL_TX left -pinY GT_SERIAL_TX 140L -pinDir GT_SERIAL_RX left -pinY GT_SERIAL_RX 160L -pinDir QPLL_CONTROL_OUT right -pinY QPLL_CONTROL_OUT 180R -pinDir QPLL_CONTROL_OUT.gt_qplllock_quad1_out right -pinY QPLL_CONTROL_OUT.gt_qplllock_quad1_out 200R -pinDir QPLL_CONTROL_OUT.gt_qpllrefclklost_quad1_out right -pinY QPLL_CONTROL_OUT.gt_qpllrefclklost_quad1_out 220R -pinDir reset_pb right -pinY reset_pb 280R -pinDir pma_init right -pinY pma_init 260R -pinDir tx_out_clk right -pinY tx_out_clk 300R -pinDir init_clk right -pinY init_clk 480R -pinDir link_reset_out right -pinY link_reset_out 320R -pinDir user_clk_out right -pinY user_clk_out 240R -pinDir sync_clk_out right -pinY sync_clk_out 340R -pinDir gt_qpllclk_quad1_out right -pinY gt_qpllclk_quad1_out 360R -pinDir gt_qpllrefclk_quad1_out right -pinY gt_qpllrefclk_quad1_out 380R -pinDir sys_reset_out right -pinY sys_reset_out 400R -pinDir gt_reset_out right -pinY gt_reset_out 420R -pinDir gt_refclk1_out right -pinY gt_refclk1_out 440R -pinBusDir gt_powergood right -pinBusY gt_powergood 460R
+preplace inst ila_0 -pg 1 -lvl 3 -x 1000 -y 320 -defaultsOSRD -pinDir SLOT_0_AXI left -pinY SLOT_0_AXI 0L -pinDir clk left -pinY clk 60L
+preplace inst clk_wiz -pg 1 -lvl 1 -x 230 -y 640 -swap {0 1 2 4 3} -defaultsOSRD -pinDir CLK_IN1_D left -pinY CLK_IN1_D 0L -pinDir locked right -pinY locked 20R -pinDir clk100 right -pinY clk100 0R
+preplace inst ila_1 -pg 1 -lvl 3 -x 1000 -y 480 -defaultsOSRD -pinDir clk left -pinY clk 0L -pinBusDir probe0 left -pinBusY probe0 60L
+preplace inst counter_0 -pg 1 -lvl 2 -x 680 -y 540 -defaultsOSRD -pinDir clk left -pinY clk 0L -pinBusDir dout right -pinBusY dout 0R
+preplace inst heartbeat_0 -pg 1 -lvl 2 -x 680 -y 640 -defaultsOSRD -pinDir clk100 left -pinY clk100 0L -pinDir resetn left -pinY resetn 20L -pinBusDir dout right -pinBusY dout 0R
+preplace netloc aurora_64b66b_0_user_clk_out 1 1 1 N 300
+preplace netloc clk_wiz_2_clk_out1 1 1 2 460 480 900
+preplace netloc rst_clk_wiz_2_100M_peripheral_aresetn 1 1 1 440 380n
+preplace netloc axi_chip2chip_0_aurora_reset_pb 1 1 1 N 340
+preplace netloc aurora_64b66b_0_channel_up 1 1 1 N 120
+preplace netloc aurora_64b66b_0_mmcm_not_locked_out 1 1 1 N 200
+preplace netloc counter_0_dout 1 2 1 NJ 540
+preplace netloc heartbeat_0_dout 1 2 2 N 640 N
+preplace netloc axi_chip2chip_0_aurora_pma_init_out 1 1 1 N 320
+preplace netloc axi_chip2chip_0_m_axi 1 2 1 N 320
+preplace netloc GT_DIFF_REFCLK_1 1 0 1 NJ 60
+preplace netloc GT_SERIAL_Z2F_1 1 0 1 NJ 220
+preplace netloc axi_chip2chip_0_AXIS_TX 1 1 1 N 80
+preplace netloc sysclk15625_1 1 0 1 NJ 640
+preplace netloc aurora_64b66b_0_GT_SERIAL_TX 1 0 1 NJ 200
+preplace netloc aurora_64b66b_0_USER_DATA_M_AXIS_RX 1 1 1 N 60
+levelinfo -pg 1 0 230 680 1000 1120
+pagesize -pg 1 -db -bbox -sgen -170 0 1280 720
+",
+   "No Loops_ScaleFactor":"0.884722",
+   "No Loops_TopLeft":"-229,0",
+   "Reduced Jogs_ExpandedHierarchyInLayout":"",
+   "Reduced Jogs_Layers":"/sysclk15625_1:true|/aurora_64b66b_0_user_clk_out:true|/clk_wiz_2_clk_out1:true|/rst_clk_wiz_2_100M_peripheral_aresetn:true|/rst_clk_wiz_2_100M_peripheral_reset:true|/axi_chip2chip_0_aurora_reset_pb:true|/aurora_64b66b_0_gt_reset_out:true|",
+   "Reduced Jogs_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port GT_SERIAL_Z2F -pg 1 -lvl 0 -x 0 -y 1170 -defaultsOSRD
+preplace port GT_SERIAL_F2Z -pg 1 -lvl 3 -x 1320 -y 690 -defaultsOSRD
+preplace port GT_DIFF_REFCLK1 -pg 1 -lvl 0 -x 0 -y 1150 -defaultsOSRD
+preplace port sysclk15625 -pg 1 -lvl 0 -x 0 -y 1730 -defaultsOSRD
+preplace port m_axi_arready -pg 1 -lvl 0 -x 0 -y 990 -defaultsOSRD
+preplace port m_axi_arvalid -pg 1 -lvl 3 -x 1320 -y 250 -defaultsOSRD
+preplace port m_axi_awready -pg 1 -lvl 0 -x 0 -y 1010 -defaultsOSRD
+preplace port m_axi_awvalid -pg 1 -lvl 3 -x 1320 -y 390 -defaultsOSRD
+preplace port m_axi_bready -pg 1 -lvl 3 -x 1320 -y 410 -defaultsOSRD
+preplace port m_axi_bvalid -pg 1 -lvl 0 -x 0 -y 950 -defaultsOSRD
+preplace port m_axi_rlast -pg 1 -lvl 0 -x 0 -y 1070 -defaultsOSRD
+preplace port m_axi_rready -pg 1 -lvl 3 -x 1320 -y 550 -defaultsOSRD
+preplace port m_axi_rvalid -pg 1 -lvl 0 -x 0 -y 1110 -defaultsOSRD
+preplace port m_axi_wlast -pg 1 -lvl 3 -x 1320 -y 1310 -defaultsOSRD
+preplace port m_axi_wready -pg 1 -lvl 0 -x 0 -y 1130 -defaultsOSRD
+preplace port m_axi_wvalid -pg 1 -lvl 3 -x 1320 -y 1390 -defaultsOSRD
+preplace port m_aclk -pg 1 -lvl 3 -x 1320 -y 1410 -defaultsOSRD
+preplace portBus m_axi_araddr -pg 1 -lvl 3 -x 1320 -y 130 -defaultsOSRD
+preplace portBus m_axi_arburst -pg 1 -lvl 3 -x 1320 -y 150 -defaultsOSRD
+preplace portBus m_axi_arid -pg 1 -lvl 3 -x 1320 -y 170 -defaultsOSRD
+preplace portBus m_axi_arlen -pg 1 -lvl 3 -x 1320 -y 190 -defaultsOSRD
+preplace portBus m_axi_arsize -pg 1 -lvl 3 -x 1320 -y 230 -defaultsOSRD
+preplace portBus m_axi_awaddr -pg 1 -lvl 3 -x 1320 -y 270 -defaultsOSRD
+preplace portBus m_axi_awburst -pg 1 -lvl 3 -x 1320 -y 290 -defaultsOSRD
+preplace portBus m_axi_awid -pg 1 -lvl 3 -x 1320 -y 310 -defaultsOSRD
+preplace portBus m_axi_awlen -pg 1 -lvl 3 -x 1320 -y 330 -defaultsOSRD
+preplace portBus m_axi_awsize -pg 1 -lvl 3 -x 1320 -y 370 -defaultsOSRD
+preplace portBus m_axi_bid -pg 1 -lvl 0 -x 0 -y 1030 -defaultsOSRD
+preplace portBus m_axi_bresp -pg 1 -lvl 0 -x 0 -y 930 -defaultsOSRD
+preplace portBus m_axi_rdata -pg 1 -lvl 0 -x 0 -y 970 -defaultsOSRD
+preplace portBus m_axi_rid -pg 1 -lvl 0 -x 0 -y 1050 -defaultsOSRD
+preplace portBus m_axi_rresp -pg 1 -lvl 0 -x 0 -y 1090 -defaultsOSRD
+preplace portBus m_axi_wdata -pg 1 -lvl 3 -x 1320 -y 1290 -defaultsOSRD
+preplace portBus m_axi_wstrb -pg 1 -lvl 3 -x 1320 -y 1350 -defaultsOSRD
+preplace portBus m_axi_wuser -pg 1 -lvl 3 -x 1320 -y 1370 -defaultsOSRD
+preplace portBus m_aresetn -pg 1 -lvl 3 -x 1320 -y 1450 -defaultsOSRD
+preplace inst axi_chip2chip_0 -pg 1 -lvl 1 -x 280 -y 110 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 46 43 40 41 45 39 44 42 48 49 38 52 47 50 51} -defaultsOSRD -pinY m_axi 0R -pinY m_axi.m_axi_araddr 20R -pinY m_axi.m_axi_arburst 40R -pinY m_axi.m_axi_arid 60R -pinY m_axi.m_axi_arlen 80R -pinY m_axi.m_axi_arready 100R -pinY m_axi.m_axi_arsize 120R -pinY m_axi.m_axi_arvalid 140R -pinY m_axi.m_axi_awaddr 160R -pinY m_axi.m_axi_awburst 180R -pinY m_axi.m_axi_awid 200R -pinY m_axi.m_axi_awlen 220R -pinY m_axi.m_axi_awready 240R -pinY m_axi.m_axi_awsize 260R -pinY m_axi.m_axi_awvalid 280R -pinY m_axi.m_axi_bid 300R -pinY m_axi.m_axi_bready 320R -pinY m_axi.m_axi_bresp 340R -pinY m_axi.m_axi_bvalid 360R -pinY m_axi.m_axi_rdata 380R -pinY m_axi.m_axi_rid 400R -pinY m_axi.m_axi_rlast 420R -pinY m_axi.m_axi_rready 440R -pinY m_axi.m_axi_rresp 460R -pinY m_axi.m_axi_rvalid 480R -pinY m_axi.m_axi_wdata 500R -pinY m_axi.m_axi_wlast 520R -pinY m_axi.m_axi_wready 540R -pinY m_axi.m_axi_wstrb 560R -pinY m_axi.m_axi_wuser 580R -pinY m_axi.m_axi_wvalid 600R -pinY AXIS_RX 0L -pinY AXIS_TX 620R -pinY m_aclk 740L -pinY m_aresetn 700L -pinBusY axi_c2c_s2m_intr_in 60L -pinBusY axi_c2c_m2s_intr_out 640R -pinY axi_c2c_phy_clk 720L -pinY axi_c2c_aurora_channel_up 40L -pinY aurora_do_cc 660R -pinY aurora_pma_init_in 80L -pinY aurora_init_clk 760L -pinY aurora_pma_init_out 700R -pinY aurora_mmcm_not_locked 20L -pinY aurora_reset_pb 760R -pinY axi_c2c_config_error_out 680R -pinY axi_c2c_link_status_out 720R -pinY axi_c2c_multi_bit_error_out 740R
+preplace inst aurora_64b66b_0 -pg 1 -lvl 2 -x 1050 -y 610 -swap {7 1 2 3 4 5 6 17 8 9 10 11 12 13 14 15 16 0 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 42 35 36 37 38 41 39 40} -defaultsOSRD -pinY USER_DATA_S_AXIS_TX 120L -pinY USER_DATA_M_AXIS_RX 0R -pinY GT_DIFF_REFCLK1 540L -pinY CORE_STATUS 20R -pinY CORE_STATUS.channel_up 40R -pinY CORE_STATUS.mmcm_not_locked_out 60R -pinY CORE_CONTROL 0L -pinY GT_SERIAL_TX 80R -pinY GT_SERIAL_RX 560L -pinY QPLL_CONTROL_OUT 100R -pinY reset_pb 580L -pinY pma_init 600L -pinY tx_out_clk 120R -pinY init_clk 620L -pinY link_reset_out 140R -pinY user_clk_out 620R -pinY sync_clk_out 160R -pinY gt_qpllclk_quad1_out 180R -pinY gt_qpllrefclk_quad1_out 200R -pinY sys_reset_out 220R -pinY gt_reset_out 600R -pinY gt_refclk1_out 240R -pinBusY gt_powergood 260R
+preplace inst ila_0 -pg 1 -lvl 2 -x 1050 -y 470 -defaultsOSRD -pinY SLOT_0_AXI 0L -pinY clk 20L
+preplace inst clk_wiz -pg 1 -lvl 1 -x 280 -y 1710 -defaultsOSRD -pinY reset 0L -pinY clk_in1 20L -pinY clk_out1 0R -pinY locked 20R
+preplace inst rst_clk_wiz_2_100M -pg 1 -lvl 2 -x 1050 -y 1510 -swap {1 0 2 3 4 6 7 9 8 5} -defaultsOSRD -pinY slowest_sync_clk 20L -pinY ext_reset_in 0L -pinY aux_reset_in 40L -pinY mb_debug_sys_rst 60L -pinY dcm_locked 80L -pinY mb_reset 20R -pinBusY bus_struct_reset 40R -pinBusY peripheral_reset 80R -pinBusY interconnect_aresetn 60R -pinBusY peripheral_aresetn 0R
+preplace netloc aurora_64b66b_0_user_clk_out 1 0 3 40 1330 NJ 1330 1260
+preplace netloc clk_wiz_2_clk_out1 1 0 3 60 1190 760 1410 NJ
+preplace netloc clk_wiz_2_locked 1 1 1 840 1590n
+preplace netloc rst_clk_wiz_2_100M_peripheral_aresetn 1 0 3 20 1450 NJ 1450 1280
+preplace netloc rst_clk_wiz_2_100M_peripheral_reset 1 0 3 60 1650 NJ 1650 1260
+preplace netloc sysclk15625_1 1 0 1 NJ 1730
+preplace netloc axi_chip2chip_0_aurora_reset_pb 1 1 1 780 870n
+preplace netloc aurora_64b66b_0_channel_up 1 0 3 20 30 NJ 30 1280
+preplace netloc aurora_64b66b_0_mmcm_not_locked_out 1 0 3 60 50 NJ 50 1260
+preplace netloc aurora_64b66b_0_gt_reset_out 1 1 2 840 1430 1280
+preplace netloc axi_chip2chip_0_m_axi_araddr 1 1 2 NJ 130 NJ
+preplace netloc axi_chip2chip_0_m_axi_arburst 1 1 2 NJ 150 NJ
+preplace netloc axi_chip2chip_0_m_axi_arid 1 1 2 NJ 170 NJ
+preplace netloc axi_chip2chip_0_m_axi_arlen 1 1 2 NJ 190 NJ
+preplace netloc m_axi_arready_1 1 0 2 NJ 990 700
+preplace netloc axi_chip2chip_0_m_axi_arsize 1 1 2 NJ 230 NJ
+preplace netloc axi_chip2chip_0_m_axi_arvalid 1 1 2 NJ 250 NJ
+preplace netloc axi_chip2chip_0_m_axi_awaddr 1 1 2 NJ 270 NJ
+preplace netloc axi_chip2chip_0_m_axi_awburst 1 1 2 NJ 290 NJ
+preplace netloc axi_chip2chip_0_m_axi_awid 1 1 2 NJ 310 NJ
+preplace netloc axi_chip2chip_0_m_axi_awlen 1 1 2 NJ 330 NJ
+preplace netloc m_axi_awready_1 1 0 2 NJ 1010 680
+preplace netloc axi_chip2chip_0_m_axi_awsize 1 1 2 NJ 370 NJ
+preplace netloc axi_chip2chip_0_m_axi_awvalid 1 1 2 NJ 390 NJ
+preplace netloc m_axi_bid_1 1 0 2 NJ 1030 660
+preplace netloc axi_chip2chip_0_m_axi_bready 1 1 2 820J 410 NJ
+preplace netloc m_axi_bresp_1 1 0 2 NJ 930 540
+preplace netloc m_axi_bvalid_1 1 0 2 NJ 950 520
+preplace netloc m_axi_rdata_1 1 0 2 NJ 970 500
+preplace netloc m_axi_rid_1 1 0 2 NJ 1050 640
+preplace netloc m_axi_rlast_1 1 0 2 NJ 1070 620
+preplace netloc axi_chip2chip_0_m_axi_rready 1 1 2 NJ 550 NJ
+preplace netloc m_axi_rresp_1 1 0 2 NJ 1090 600
+preplace netloc m_axi_rvalid_1 1 0 2 NJ 1110 580
+preplace netloc axi_chip2chip_0_m_axi_wdata 1 1 2 840J 1290 NJ
+preplace netloc axi_chip2chip_0_m_axi_wlast 1 1 2 820J 1310 NJ
+preplace netloc m_axi_wready_1 1 0 2 NJ 1130 560
+preplace netloc axi_chip2chip_0_m_axi_wstrb 1 1 2 800J 1350 NJ
+preplace netloc axi_chip2chip_0_m_axi_wuser 1 1 2 740J 1370 NJ
+preplace netloc axi_chip2chip_0_m_axi_wvalid 1 1 2 720J 1390 NJ
+preplace netloc GT_SERIAL_Z2F_1 1 0 2 NJ 1170 NJ
+preplace netloc aurora_64b66b_0_GT_SERIAL_TX 1 2 1 NJ 690
+preplace netloc GT_DIFF_REFCLK1_1 1 0 2 NJ 1150 NJ
+preplace netloc aurora_64b66b_0_USER_DATA_M_AXIS_RX 1 0 3 40 10 NJ 10 1300
+preplace netloc axi_chip2chip_0_AXIS_TX 1 1 1 N 730
+preplace netloc axi_chip2chip_0_m_axi 1 1 1 840 110n
+levelinfo -pg 1 0 280 1050 1320
+pagesize -pg 1 -db -bbox -sgen -180 0 1520 1790
+",
+   "Reduced Jogs_ScaleFactor":"0.451955",
+   "Reduced Jogs_TopLeft":"-651,0",
+   "commentid":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port GT_SERIAL_Z2F -pg 1 -lvl 0 -x 0 -y 1070 -defaultsOSRD
+preplace port GT_SERIAL_F2Z -pg 1 -lvl 3 -x 1250 -y 1000 -defaultsOSRD
+preplace port GT_DIFF_REFCLK1 -pg 1 -lvl 0 -x 0 -y 1030 -defaultsOSRD
+preplace port sysclk15625 -pg 1 -lvl 0 -x 0 -y 1640 -defaultsOSRD
+preplace port m_axi_arready -pg 1 -lvl 0 -x 0 -y 850 -defaultsOSRD
+preplace port m_axi_arvalid -pg 1 -lvl 3 -x 1250 -y 210 -defaultsOSRD
+preplace port m_axi_awready -pg 1 -lvl 0 -x 0 -y 870 -defaultsOSRD
+preplace port m_axi_awvalid -pg 1 -lvl 3 -x 1250 -y 350 -defaultsOSRD
+preplace port m_axi_bready -pg 1 -lvl 3 -x 1250 -y 490 -defaultsOSRD
+preplace port m_axi_bvalid -pg 1 -lvl 0 -x 0 -y 830 -defaultsOSRD
+preplace port m_axi_rlast -pg 1 -lvl 0 -x 0 -y 950 -defaultsOSRD
+preplace port m_axi_rready -pg 1 -lvl 3 -x 1250 -y 510 -defaultsOSRD
+preplace port m_axi_rvalid -pg 1 -lvl 0 -x 0 -y 990 -defaultsOSRD
+preplace port m_axi_wlast -pg 1 -lvl 3 -x 1250 -y 590 -defaultsOSRD
+preplace port m_axi_wready -pg 1 -lvl 0 -x 0 -y 1010 -defaultsOSRD
+preplace port m_axi_wvalid -pg 1 -lvl 3 -x 1250 -y 1320 -defaultsOSRD
+preplace port m_aclk -pg 1 -lvl 3 -x 1250 -y 1340 -defaultsOSRD
+preplace portBus m_axi_araddr -pg 1 -lvl 3 -x 1250 -y 90 -defaultsOSRD
+preplace portBus m_axi_arburst -pg 1 -lvl 3 -x 1250 -y 110 -defaultsOSRD
+preplace portBus m_axi_arid -pg 1 -lvl 3 -x 1250 -y 130 -defaultsOSRD
+preplace portBus m_axi_arlen -pg 1 -lvl 3 -x 1250 -y 150 -defaultsOSRD
+preplace portBus m_axi_arsize -pg 1 -lvl 3 -x 1250 -y 190 -defaultsOSRD
+preplace portBus m_axi_awaddr -pg 1 -lvl 3 -x 1250 -y 230 -defaultsOSRD
+preplace portBus m_axi_awburst -pg 1 -lvl 3 -x 1250 -y 250 -defaultsOSRD
+preplace portBus m_axi_awid -pg 1 -lvl 3 -x 1250 -y 270 -defaultsOSRD
+preplace portBus m_axi_awlen -pg 1 -lvl 3 -x 1250 -y 290 -defaultsOSRD
+preplace portBus m_axi_awsize -pg 1 -lvl 3 -x 1250 -y 330 -defaultsOSRD
+preplace portBus m_axi_bid -pg 1 -lvl 0 -x 0 -y 890 -defaultsOSRD
+preplace portBus m_axi_bresp -pg 1 -lvl 0 -x 0 -y 810 -defaultsOSRD
+preplace portBus m_axi_rdata -pg 1 -lvl 0 -x 0 -y 910 -defaultsOSRD
+preplace portBus m_axi_rid -pg 1 -lvl 0 -x 0 -y 930 -defaultsOSRD
+preplace portBus m_axi_rresp -pg 1 -lvl 0 -x 0 -y 970 -defaultsOSRD
+preplace portBus m_axi_wdata -pg 1 -lvl 3 -x 1250 -y 570 -defaultsOSRD
+preplace portBus m_axi_wstrb -pg 1 -lvl 3 -x 1250 -y 1280 -defaultsOSRD
+preplace portBus m_axi_wuser -pg 1 -lvl 3 -x 1250 -y 1300 -defaultsOSRD
+preplace portBus m_aresetn -pg 1 -lvl 3 -x 1250 -y 1360 -defaultsOSRD
+preplace inst axi_chip2chip_0 -pg 1 -lvl 1 -x 360 -y 450 -defaultsOSRD
+preplace inst aurora_64b66b_0 -pg 1 -lvl 2 -x 990 -y 1070 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 2 -x 990 -y 420 -defaultsOSRD
+preplace inst clk_wiz -pg 1 -lvl 1 -x 360 -y 1630 -defaultsOSRD
+preplace inst rst_clk_wiz_2_100M -pg 1 -lvl 2 -x 990 -y 1460 -swap {0 1 2 3 4 6 8 7 9 5} -defaultsOSRD
+preplace netloc aurora_64b66b_0_user_clk_out 1 0 3 120 1330 NJ 1330 1210
+preplace netloc clk_wiz_2_clk_out1 1 0 3 110 1080 750 1340 NJ
+preplace netloc clk_wiz_2_locked 1 1 1 780 1500n
+preplace netloc rst_clk_wiz_2_100M_peripheral_aresetn 1 0 3 100 1350 NJ 1350 1220
+preplace netloc rst_clk_wiz_2_100M_peripheral_reset 1 0 3 140 1560 NJ 1560 1200
+preplace netloc sysclk15625_1 1 0 1 NJ 1640
+preplace netloc axi_chip2chip_0_aurora_reset_pb 1 1 1 710 770n
+preplace netloc aurora_64b66b_0_channel_up 1 0 3 130 1010 690J 850 1210
+preplace netloc aurora_64b66b_0_mmcm_not_locked_out 1 0 3 140 1020 770J 860 1200
+preplace netloc aurora_64b66b_0_gt_reset_out 1 1 2 780 1360 1200
+preplace netloc axi_chip2chip_0_m_axi_araddr 1 1 2 NJ 90 NJ
+preplace netloc axi_chip2chip_0_m_axi_arburst 1 1 2 NJ 110 NJ
+preplace netloc axi_chip2chip_0_m_axi_arid 1 1 2 NJ 130 NJ
+preplace netloc axi_chip2chip_0_m_axi_arlen 1 1 2 NJ 150 NJ
+preplace netloc m_axi_arready_1 1 0 2 70J 910 680
+preplace netloc axi_chip2chip_0_m_axi_arsize 1 1 2 NJ 190 NJ
+preplace netloc axi_chip2chip_0_m_axi_arvalid 1 1 2 NJ 210 NJ
+preplace netloc axi_chip2chip_0_m_axi_awaddr 1 1 2 NJ 230 NJ
+preplace netloc axi_chip2chip_0_m_axi_awburst 1 1 2 760J 240 1230J
+preplace netloc axi_chip2chip_0_m_axi_awid 1 1 2 NJ 270 NJ
+preplace netloc axi_chip2chip_0_m_axi_awlen 1 1 2 NJ 290 NJ
+preplace netloc m_axi_awready_1 1 0 2 60J 920 670
+preplace netloc axi_chip2chip_0_m_axi_awsize 1 1 2 NJ 330 NJ
+preplace netloc axi_chip2chip_0_m_axi_awvalid 1 1 2 NJ 350 NJ
+preplace netloc m_axi_bid_1 1 0 2 50J 930 660
+preplace netloc axi_chip2chip_0_m_axi_bready 1 1 2 760J 490 NJ
+preplace netloc m_axi_bresp_1 1 0 2 90J 890 590
+preplace netloc m_axi_bvalid_1 1 0 2 80J 900 580
+preplace netloc m_axi_rdata_1 1 0 2 40J 940 650
+preplace netloc m_axi_rid_1 1 0 2 30J 950 640
+preplace netloc m_axi_rlast_1 1 0 2 20J 960 630
+preplace netloc axi_chip2chip_0_m_axi_rready 1 1 2 NJ 510 NJ
+preplace netloc m_axi_rresp_1 1 0 2 NJ 970 620
+preplace netloc m_axi_rvalid_1 1 0 2 NJ 990 610
+preplace netloc axi_chip2chip_0_m_axi_wdata 1 1 2 NJ 570 NJ
+preplace netloc axi_chip2chip_0_m_axi_wlast 1 1 2 NJ 590 NJ
+preplace netloc m_axi_wready_1 1 0 2 60J 1000 600
+preplace netloc axi_chip2chip_0_m_axi_wstrb 1 1 2 740J 1280 NJ
+preplace netloc axi_chip2chip_0_m_axi_wuser 1 1 2 720J 1300 NJ
+preplace netloc axi_chip2chip_0_m_axi_wvalid 1 1 2 700J 1320 NJ
+preplace netloc GT_SERIAL_Z2F_1 1 0 2 NJ 1070 NJ
+preplace netloc aurora_64b66b_0_GT_SERIAL_TX 1 2 1 NJ 1000
+preplace netloc GT_DIFF_REFCLK1_1 1 0 2 NJ 1030 NJ
+preplace netloc aurora_64b66b_0_USER_DATA_M_AXIS_RX 1 0 3 140 10 780J 250 1220
+preplace netloc axi_chip2chip_0_AXIS_TX 1 1 1 730 690n
+preplace netloc axi_chip2chip_0_m_axi 1 1 1 770 70n
+levelinfo -pg 1 0 360 990 1250
+pagesize -pg 1 -db -bbox -sgen -180 0 1450 1700
+"
+}
+{
+   "da_board_cnt":"1",
+   "da_clkrst_cnt":"11"
+}

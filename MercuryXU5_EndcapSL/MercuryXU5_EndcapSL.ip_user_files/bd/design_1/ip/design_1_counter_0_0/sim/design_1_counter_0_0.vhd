@@ -55,9 +55,9 @@ USE ieee.numeric_std.ALL;
 
 ENTITY design_1_counter_0_0 IS
   PORT (
-    clk100 : IN STD_LOGIC;
+    clk : IN STD_LOGIC;
     resetn : IN STD_LOGIC;
-    dout : IN STD_LOGIC_VECTOR(5 DOWNTO 0)
+    dout : OUT STD_LOGIC_VECTOR(5 DOWNTO 0)
   );
 END design_1_counter_0_0;
 
@@ -66,9 +66,9 @@ ARCHITECTURE design_1_counter_0_0_arch OF design_1_counter_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_counter_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT counter IS
     PORT (
-      clk100 : IN STD_LOGIC;
+      clk : IN STD_LOGIC;
       resetn : IN STD_LOGIC;
-      dout : IN STD_LOGIC_VECTOR(5 DOWNTO 0)
+      dout : OUT STD_LOGIC_VECTOR(5 DOWNTO 0)
     );
   END COMPONENT counter;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -77,10 +77,12 @@ ARCHITECTURE design_1_counter_0_0_arch OF design_1_counter_0_0 IS
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF resetn: SIGNAL IS "XIL_INTERFACENAME resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF resetn: SIGNAL IS "xilinx.com:signal:reset:1.0 resetn RST";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, ASSOCIATED_RESET resetn, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk CLK";
 BEGIN
   U0 : counter
     PORT MAP (
-      clk100 => clk100,
+      clk => clk,
       resetn => resetn,
       dout => dout
     );

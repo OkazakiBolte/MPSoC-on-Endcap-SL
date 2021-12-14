@@ -8,5 +8,6 @@
 ################################################################################
 create_clock -name GMII_rx_clk -period 10 [get_ports GMII_rx_clk]
 create_clock -name GMII_tx_clk -period 10 [get_ports GMII_tx_clk]
+create_clock -name GT_DIFF_REFCLK1_clk_p -period 8 [get_ports GT_DIFF_REFCLK1_clk_p]
 
 ################################################################################
