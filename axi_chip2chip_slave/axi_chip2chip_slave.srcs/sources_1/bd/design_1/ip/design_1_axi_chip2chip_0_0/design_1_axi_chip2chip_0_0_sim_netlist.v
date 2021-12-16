@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Sun Dec 12 22:19:02 2021
+// Date        : Wed Dec 15 21:01:03 2021
 // Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_axi_chip2chip_0_0/design_1_axi_chip2chip_0_0_sim_netlist.v
@@ -65,7 +65,7 @@ module design_1_axi_chip2chip_0_0
     axi_c2c_config_error_out,
     axi_c2c_link_status_out,
     axi_c2c_multi_bit_error_out);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_aclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_aclk, ASSOCIATED_BUSIF m_axi, ASSOCIATED_RESET m_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_clk_wiz_2_1_clk_out1, INSERT_VIP 0" *) input m_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_aclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_aclk, ASSOCIATED_BUSIF m_axi, ASSOCIATED_RESET m_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_clk_wiz_2_1_clk100, INSERT_VIP 0" *) input m_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 m_aresetn RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input m_aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi AWID" *) output [5:0]m_axi_awid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi AWADDR" *) output [31:0]m_axi_awaddr;
@@ -96,19 +96,19 @@ module design_1_axi_chip2chip_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi RRESP" *) input [1:0]m_axi_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi RLAST" *) input m_axi_rlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi RVALID" *) input m_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axi, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 16, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 100000000, ID_WIDTH 6, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 4, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, MAX_BURST_LENGTH 256, PHASE 0.0, CLK_DOMAIN design_1_clk_wiz_2_1_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) output m_axi_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_axi RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axi, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 16, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 100000000, ID_WIDTH 6, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 4, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, MAX_BURST_LENGTH 256, PHASE 0.0, CLK_DOMAIN design_1_clk_wiz_2_1_clk100, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) output m_axi_rready;
   input [3:0]axi_c2c_s2m_intr_in;
   output [3:0]axi_c2c_m2s_intr_out;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 axi_c2c_phy_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME axi_c2c_phy_clk, ASSOCIATED_BUSIF AXIS_TX:AXIS_RX, ASSOCIATED_RESET aurora_reset_pb, FREQ_HZ 161132813, FREQ_TOLERANCE_HZ 0, PHASE 0, CLK_DOMAIN design_1_aurora_64b66b_0_0_user_clk_out, INSERT_VIP 0" *) input axi_c2c_phy_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 axi_c2c_phy_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME axi_c2c_phy_clk, ASSOCIATED_BUSIF AXIS_TX:AXIS_RX, ASSOCIATED_RESET aurora_reset_pb, FREQ_HZ 128906250, FREQ_TOLERANCE_HZ 0, PHASE 0, CLK_DOMAIN design_1_aurora_64b66b_0_0_user_clk_out, INSERT_VIP 0" *) input axi_c2c_phy_clk;
   input axi_c2c_aurora_channel_up;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXIS_TX TREADY" *) input axi_c2c_aurora_tx_tready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXIS_TX TDATA" *) output [63:0]axi_c2c_aurora_tx_tdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXIS_TX TVALID" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXIS_TX, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 161132813, PHASE 0, CLK_DOMAIN design_1_aurora_64b66b_0_0_user_clk_out, LAYERED_METADATA undef, INSERT_VIP 0" *) output axi_c2c_aurora_tx_tvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXIS_TX TVALID" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXIS_TX, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 128906250, PHASE 0, CLK_DOMAIN design_1_aurora_64b66b_0_0_user_clk_out, LAYERED_METADATA undef, INSERT_VIP 0" *) output axi_c2c_aurora_tx_tvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXIS_RX TDATA" *) input [63:0]axi_c2c_aurora_rx_tdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXIS_RX TVALID" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXIS_RX, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 161132813, PHASE 0, CLK_DOMAIN design_1_aurora_64b66b_0_0_user_clk_out, LAYERED_METADATA undef, INSERT_VIP 0" *) input axi_c2c_aurora_rx_tvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXIS_RX TVALID" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXIS_RX, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 128906250, PHASE 0, CLK_DOMAIN design_1_aurora_64b66b_0_0_user_clk_out, LAYERED_METADATA undef, INSERT_VIP 0" *) input axi_c2c_aurora_rx_tvalid;
   output aurora_do_cc;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 AURORA_PMA_INIT_IN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AURORA_PMA_INIT_IN, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input aurora_pma_init_in;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 INIT_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME INIT_CLK, ASSOCIATED_RESET aurora_pma_init_out, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_clk_wiz_2_1_clk_out1, INSERT_VIP 0" *) input aurora_init_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 INIT_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME INIT_CLK, ASSOCIATED_RESET aurora_pma_init_out, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_clk_wiz_2_1_clk100, INSERT_VIP 0" *) input aurora_init_clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 AURORA_PMA_INIT_OUT RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AURORA_PMA_INIT_OUT, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) output aurora_pma_init_out;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 AURORA_MMCM_NOT_LOCKED RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AURORA_MMCM_NOT_LOCKED, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input aurora_mmcm_not_locked;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 AURORA_RST_OUT RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AURORA_RST_OUT, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) output aurora_reset_pb;

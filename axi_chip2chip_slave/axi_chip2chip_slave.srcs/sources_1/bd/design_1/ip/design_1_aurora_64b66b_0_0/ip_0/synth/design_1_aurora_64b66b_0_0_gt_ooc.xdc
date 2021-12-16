@@ -59,22 +59,22 @@ create_clock -period 10.0 [get_ports gtwiz_reset_clk_freerun_in]
 # CPLL reference clock constraint (will be overridden by required constraint on IBUFDS_GTE4 input in context)
 
 # Internal TX user clock constraint (will be overridden by required reference clock constraint propagated through CHANNEL primitive in context)
-create_clock -period 6.206 [get_ports txusrclk_in[0]]
+create_clock -period 7.757 [get_ports txusrclk_in[0]]
 
 # External TX user clock constraint (will be overridden by required reference clock constraint propagated through CHANNEL primitive in context)
-create_clock -period 6.206 [get_ports txusrclk2_in[0]]
+create_clock -period 7.757 [get_ports txusrclk2_in[0]]
 
 # TXOUTCLK constraint, required in OOC flows when reference clock input port is external to the IP instance
-create_clock -period 6.206 [get_pins -filter {REF_PIN_NAME=~*TXOUTCLK} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[15].*gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST}]]
+create_clock -period 7.757 [get_pins -filter {REF_PIN_NAME=~*TXOUTCLK} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[15].*gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST}]]
 
 # Internal RX user clock constraint (will be overridden by required reference clock constraint propagated through CHANNEL primitive in context)
-create_clock -period 6.206 [get_ports rxusrclk_in[0]]
+create_clock -period 7.757 [get_ports rxusrclk_in[0]]
 
 # External RX user clock constraint (will be overridden by required reference clock constraint propagated through CHANNEL primitive in context)
-create_clock -period 6.206 [get_ports rxusrclk2_in[0]]
+create_clock -period 7.757 [get_ports rxusrclk2_in[0]]
 
 # RXOUTCLK constraint, required in OOC flows when reference clock input port is external to the IP instance
-create_clock -period 6.206 [get_pins -filter {REF_PIN_NAME=~*RXOUTCLK} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[15].*gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST}]]
+create_clock -period 7.757 [get_pins -filter {REF_PIN_NAME=~*RXOUTCLK} -of_objects [get_cells -hierarchical -filter {NAME =~ *gen_channel_container[15].*gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST}]]
 
 # DRP clock constraint for CHANNEL primitive
 create_clock -period 10.0 [get_ports drpclk_in[0]]

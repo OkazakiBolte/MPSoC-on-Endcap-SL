@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# counter, heartbeat
+# counter, heartbeat, pma_init_generator
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -162,19 +162,19 @@ proc create_root_design { parentCell } {
 
 
   # Create interface ports
-  set GT_DIFF_REFCLK [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 GT_DIFF_REFCLK ]
+  set GT_DIFF_REFCLK1 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 GT_DIFF_REFCLK1 ]
   set_property -dict [ list \
-   CONFIG.FREQ_HZ {156250000} \
-   ] $GT_DIFF_REFCLK
+   CONFIG.FREQ_HZ {125000000} \
+   ] $GT_DIFF_REFCLK1
 
   set GT_SERIAL_F2Z [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_aurora:GT_Serial_Transceiver_Pins_TX_rtl:1.0 GT_SERIAL_F2Z ]
 
   set GT_SERIAL_Z2F [ create_bd_intf_port -mode Slave -vlnv xilinx.com:display_aurora:GT_Serial_Transceiver_Pins_RX_rtl:1.0 GT_SERIAL_Z2F ]
 
-  set sysclk15625 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 sysclk15625 ]
+  set clk125_D [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 clk125_D ]
   set_property -dict [ list \
-   CONFIG.FREQ_HZ {156250000} \
-   ] $sysclk15625
+   CONFIG.FREQ_HZ {125000000} \
+   ] $clk125_D
 
 
   # Create ports
@@ -187,7 +187,9 @@ proc create_root_design { parentCell } {
    CONFIG.C_AURORA_LANES {1} \
    CONFIG.C_GT_LOC_2 {X} \
    CONFIG.C_INIT_CLK {100} \
-   CONFIG.C_REFCLK_SOURCE {MGTREFCLK0_of_Quad_X0Y15} \
+   CONFIG.C_LINE_RATE {8.25} \
+   CONFIG.C_REFCLK_FREQUENCY {125} \
+   CONFIG.C_REFCLK_SOURCE {MGTREFCLK1_of_Quad_X0Y15} \
    CONFIG.C_START_LANE {X0Y60} \
    CONFIG.C_START_QUAD {Quad_X0Y15} \
    CONFIG.C_UCOLUMN_USED {left} \
@@ -195,6 +197,15 @@ proc create_root_design { parentCell } {
    CONFIG.drp_mode {Disabled} \
    CONFIG.interface_mode {Streaming} \
  ] $aurora_64b66b_0
+
+  # Create instance: axi_bram_ctrl_0, and set properties
+  set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0 ]
+
+  # Create instance: axi_bram_ctrl_0_bram, and set properties
+  set axi_bram_ctrl_0_bram [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 axi_bram_ctrl_0_bram ]
+  set_property -dict [ list \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+ ] $axi_bram_ctrl_0_bram
 
   # Create instance: axi_chip2chip_0, and set properties
   set axi_chip2chip_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_chip2chip:5.0 axi_chip2chip_0 ]
@@ -209,23 +220,25 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz, and set properties
   set clk_wiz [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz ]
   set_property -dict [ list \
-   CONFIG.CLKIN1_JITTER_PS {64.0} \
-   CONFIG.CLKOUT1_JITTER {163.213} \
-   CONFIG.CLKOUT1_PHASE_ERROR {184.532} \
+   CONFIG.CLKIN1_JITTER_PS {80.0} \
+   CONFIG.CLKOUT1_JITTER {177.983} \
+   CONFIG.CLKOUT1_PHASE_ERROR {222.305} \
    CONFIG.CLKOUT2_JITTER {98.954} \
    CONFIG.CLKOUT2_PHASE_ERROR {83.183} \
    CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {156.25} \
    CONFIG.CLKOUT2_USED {false} \
    CONFIG.CLK_OUT1_PORT {clk100} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {38.000} \
-   CONFIG.MMCM_CLKIN1_PERIOD {6.400} \
-   CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {11.875} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {48.000} \
+   CONFIG.MMCM_CLKIN1_PERIOD {8.000} \
+   CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {12.000} \
    CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
    CONFIG.MMCM_DIVCLK_DIVIDE {5} \
    CONFIG.NUM_OUT_CLKS {1} \
-   CONFIG.PRIM_IN_FREQ {156.25} \
+   CONFIG.PRIM_IN_FREQ {125} \
    CONFIG.PRIM_SOURCE {Differential_clock_capable_pin} \
+   CONFIG.RESET_PORT {resetn} \
+   CONFIG.RESET_TYPE {ACTIVE_LOW} \
    CONFIG.USE_RESET {false} \
  ] $clk_wiz
 
@@ -251,59 +264,6 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: ila_0, and set properties
-  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
-  set_property -dict [ list \
-   CONFIG.ALL_PROBE_SAME_MU_CNT {2} \
-   CONFIG.C_ADV_TRIGGER {true} \
-   CONFIG.C_DATA_DEPTH {8192} \
-   CONFIG.C_EN_STRG_QUAL {1} \
-   CONFIG.C_PROBE0_MU_CNT {2} \
-   CONFIG.C_PROBE10_MU_CNT {2} \
-   CONFIG.C_PROBE11_MU_CNT {2} \
-   CONFIG.C_PROBE12_MU_CNT {2} \
-   CONFIG.C_PROBE13_MU_CNT {2} \
-   CONFIG.C_PROBE14_MU_CNT {2} \
-   CONFIG.C_PROBE15_MU_CNT {2} \
-   CONFIG.C_PROBE16_MU_CNT {2} \
-   CONFIG.C_PROBE17_MU_CNT {2} \
-   CONFIG.C_PROBE18_MU_CNT {2} \
-   CONFIG.C_PROBE19_MU_CNT {2} \
-   CONFIG.C_PROBE1_MU_CNT {2} \
-   CONFIG.C_PROBE20_MU_CNT {2} \
-   CONFIG.C_PROBE21_MU_CNT {2} \
-   CONFIG.C_PROBE22_MU_CNT {2} \
-   CONFIG.C_PROBE23_MU_CNT {2} \
-   CONFIG.C_PROBE24_MU_CNT {2} \
-   CONFIG.C_PROBE25_MU_CNT {2} \
-   CONFIG.C_PROBE26_MU_CNT {2} \
-   CONFIG.C_PROBE27_MU_CNT {2} \
-   CONFIG.C_PROBE28_MU_CNT {2} \
-   CONFIG.C_PROBE29_MU_CNT {2} \
-   CONFIG.C_PROBE2_MU_CNT {2} \
-   CONFIG.C_PROBE30_MU_CNT {2} \
-   CONFIG.C_PROBE31_MU_CNT {2} \
-   CONFIG.C_PROBE32_MU_CNT {2} \
-   CONFIG.C_PROBE33_MU_CNT {2} \
-   CONFIG.C_PROBE34_MU_CNT {2} \
-   CONFIG.C_PROBE35_MU_CNT {2} \
-   CONFIG.C_PROBE36_MU_CNT {2} \
-   CONFIG.C_PROBE37_MU_CNT {2} \
-   CONFIG.C_PROBE38_MU_CNT {2} \
-   CONFIG.C_PROBE39_MU_CNT {2} \
-   CONFIG.C_PROBE3_MU_CNT {2} \
-   CONFIG.C_PROBE40_MU_CNT {2} \
-   CONFIG.C_PROBE41_MU_CNT {2} \
-   CONFIG.C_PROBE42_MU_CNT {2} \
-   CONFIG.C_PROBE43_MU_CNT {2} \
-   CONFIG.C_PROBE4_MU_CNT {2} \
-   CONFIG.C_PROBE5_MU_CNT {2} \
-   CONFIG.C_PROBE6_MU_CNT {2} \
-   CONFIG.C_PROBE7_MU_CNT {2} \
-   CONFIG.C_PROBE8_MU_CNT {2} \
-   CONFIG.C_PROBE9_MU_CNT {2} \
- ] $ila_0
-
   # Create instance: ila_1, and set properties
   set ila_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_1 ]
   set_property -dict [ list \
@@ -318,27 +278,84 @@ proc create_root_design { parentCell } {
    CONFIG.C_PROBE0_WIDTH {6} \
  ] $ila_1
 
+  # Create instance: ila_2, and set properties
+  set ila_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_2 ]
+  set_property -dict [ list \
+   CONFIG.ALL_PROBE_SAME_MU_CNT {2} \
+   CONFIG.C_ADV_TRIGGER {true} \
+   CONFIG.C_DATA_DEPTH {8192} \
+   CONFIG.C_ENABLE_ILA_AXI_MON {false} \
+   CONFIG.C_EN_STRG_QUAL {1} \
+   CONFIG.C_MONITOR_TYPE {Native} \
+   CONFIG.C_NUM_OF_PROBES {1} \
+   CONFIG.C_PROBE0_MU_CNT {2} \
+   CONFIG.C_PROBE0_WIDTH {14} \
+   CONFIG.C_PROBE10_MU_CNT {2} \
+   CONFIG.C_PROBE11_MU_CNT {2} \
+   CONFIG.C_PROBE12_MU_CNT {2} \
+   CONFIG.C_PROBE1_MU_CNT {2} \
+   CONFIG.C_PROBE2_MU_CNT {2} \
+   CONFIG.C_PROBE3_MU_CNT {2} \
+   CONFIG.C_PROBE4_MU_CNT {2} \
+   CONFIG.C_PROBE5_MU_CNT {2} \
+   CONFIG.C_PROBE6_MU_CNT {2} \
+   CONFIG.C_PROBE7_MU_CNT {2} \
+   CONFIG.C_PROBE8_MU_CNT {2} \
+   CONFIG.C_PROBE9_MU_CNT {2} \
+ ] $ila_2
+
+  # Create instance: pma_init_generator_0, and set properties
+  set block_name pma_init_generator
+  set block_cell_name pma_init_generator_0
+  if { [catch {set pma_init_generator_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $pma_init_generator_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+  set_property -dict [ list \
+   CONFIG.NUM_PORTS {14} \
+ ] $xlconcat_0
+
   # Create interface connections
-  connect_bd_intf_net -intf_net GT_DIFF_REFCLK_1 [get_bd_intf_ports GT_DIFF_REFCLK] [get_bd_intf_pins aurora_64b66b_0/GT_DIFF_REFCLK1]
+  connect_bd_intf_net -intf_net GT_DIFF_REFCLK1_1 [get_bd_intf_ports GT_DIFF_REFCLK1] [get_bd_intf_pins aurora_64b66b_0/GT_DIFF_REFCLK1]
   connect_bd_intf_net -intf_net GT_SERIAL_Z2F_1 [get_bd_intf_ports GT_SERIAL_Z2F] [get_bd_intf_pins aurora_64b66b_0/GT_SERIAL_RX]
   connect_bd_intf_net -intf_net aurora_64b66b_0_GT_SERIAL_TX [get_bd_intf_ports GT_SERIAL_F2Z] [get_bd_intf_pins aurora_64b66b_0/GT_SERIAL_TX]
   connect_bd_intf_net -intf_net aurora_64b66b_0_USER_DATA_M_AXIS_RX [get_bd_intf_pins aurora_64b66b_0/USER_DATA_M_AXIS_RX] [get_bd_intf_pins axi_chip2chip_0/AXIS_RX]
+  connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTA [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins axi_bram_ctrl_0_bram/BRAM_PORTA]
+  connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTB [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTB] [get_bd_intf_pins axi_bram_ctrl_0_bram/BRAM_PORTB]
   connect_bd_intf_net -intf_net axi_chip2chip_0_AXIS_TX [get_bd_intf_pins aurora_64b66b_0/USER_DATA_S_AXIS_TX] [get_bd_intf_pins axi_chip2chip_0/AXIS_TX]
-connect_bd_intf_net -intf_net axi_chip2chip_0_m_axi [get_bd_intf_pins axi_chip2chip_0/m_axi] [get_bd_intf_pins ila_0/SLOT_0_AXI]
-  connect_bd_intf_net -intf_net sysclk15625_1 [get_bd_intf_ports sysclk15625] [get_bd_intf_pins clk_wiz/CLK_IN1_D]
+  connect_bd_intf_net -intf_net axi_chip2chip_0_m_axi [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins axi_chip2chip_0/m_axi]
+  connect_bd_intf_net -intf_net clk125_D_1 [get_bd_intf_ports clk125_D] [get_bd_intf_pins clk_wiz/CLK_IN1_D]
 
   # Create port connections
-  connect_bd_net -net aurora_64b66b_0_channel_up [get_bd_pins aurora_64b66b_0/channel_up] [get_bd_pins axi_chip2chip_0/axi_c2c_aurora_channel_up]
-  connect_bd_net -net aurora_64b66b_0_mmcm_not_locked_out [get_bd_pins aurora_64b66b_0/mmcm_not_locked_out] [get_bd_pins axi_chip2chip_0/aurora_mmcm_not_locked]
+  connect_bd_net -net aurora_64b66b_0_channel_up [get_bd_pins aurora_64b66b_0/channel_up] [get_bd_pins axi_chip2chip_0/axi_c2c_aurora_channel_up] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net aurora_64b66b_0_gt_powergood [get_bd_pins aurora_64b66b_0/gt_powergood] [get_bd_pins xlconcat_0/In7]
+  connect_bd_net -net aurora_64b66b_0_gt_qplllock_quad1_out [get_bd_pins aurora_64b66b_0/gt_qplllock_quad1_out] [get_bd_pins xlconcat_0/In2]
+  connect_bd_net -net aurora_64b66b_0_gt_qpllrefclklost_quad1_out [get_bd_pins aurora_64b66b_0/gt_qpllrefclklost_quad1_out] [get_bd_pins xlconcat_0/In3]
+  connect_bd_net -net aurora_64b66b_0_gt_reset_out [get_bd_pins aurora_64b66b_0/gt_reset_out] [get_bd_pins xlconcat_0/In6]
+  connect_bd_net -net aurora_64b66b_0_link_reset_out [get_bd_pins aurora_64b66b_0/link_reset_out] [get_bd_pins xlconcat_0/In4]
+  connect_bd_net -net aurora_64b66b_0_mmcm_not_locked_out [get_bd_pins aurora_64b66b_0/mmcm_not_locked_out] [get_bd_pins axi_chip2chip_0/aurora_mmcm_not_locked] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net aurora_64b66b_0_sys_reset_out [get_bd_pins aurora_64b66b_0/sys_reset_out] [get_bd_pins xlconcat_0/In5]
   connect_bd_net -net aurora_64b66b_0_user_clk_out [get_bd_pins aurora_64b66b_0/user_clk_out] [get_bd_pins axi_chip2chip_0/axi_c2c_phy_clk]
-  connect_bd_net -net axi_chip2chip_0_aurora_pma_init_out [get_bd_pins aurora_64b66b_0/pma_init] [get_bd_pins axi_chip2chip_0/aurora_pma_init_out]
-  connect_bd_net -net axi_chip2chip_0_aurora_reset_pb [get_bd_pins aurora_64b66b_0/reset_pb] [get_bd_pins axi_chip2chip_0/aurora_reset_pb]
-  connect_bd_net -net clk_wiz_2_clk_out1 [get_bd_pins aurora_64b66b_0/init_clk] [get_bd_pins axi_chip2chip_0/aurora_init_clk] [get_bd_pins axi_chip2chip_0/m_aclk] [get_bd_pins clk_wiz/clk100] [get_bd_pins counter_0/clk] [get_bd_pins heartbeat_0/clk100] [get_bd_pins ila_0/clk] [get_bd_pins ila_1/clk]
+  connect_bd_net -net axi_chip2chip_0_aurora_pma_init_out [get_bd_pins aurora_64b66b_0/pma_init] [get_bd_pins axi_chip2chip_0/aurora_pma_init_out] [get_bd_pins xlconcat_0/In10]
+  connect_bd_net -net axi_chip2chip_0_aurora_reset_pb [get_bd_pins aurora_64b66b_0/reset_pb] [get_bd_pins axi_chip2chip_0/aurora_reset_pb] [get_bd_pins xlconcat_0/In8]
+  connect_bd_net -net axi_chip2chip_0_axi_c2c_config_error_out [get_bd_pins axi_chip2chip_0/axi_c2c_config_error_out] [get_bd_pins xlconcat_0/In11]
+  connect_bd_net -net axi_chip2chip_0_axi_c2c_link_status_out [get_bd_pins axi_chip2chip_0/axi_c2c_link_status_out] [get_bd_pins xlconcat_0/In12]
+  connect_bd_net -net axi_chip2chip_0_axi_c2c_multi_bit_error_out [get_bd_pins axi_chip2chip_0/axi_c2c_multi_bit_error_out] [get_bd_pins xlconcat_0/In13]
+  connect_bd_net -net clk_wiz_2_clk_out1 [get_bd_pins aurora_64b66b_0/init_clk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_chip2chip_0/aurora_init_clk] [get_bd_pins axi_chip2chip_0/m_aclk] [get_bd_pins clk_wiz/clk100] [get_bd_pins counter_0/clk] [get_bd_pins heartbeat_0/clk100] [get_bd_pins ila_1/clk] [get_bd_pins ila_2/clk] [get_bd_pins pma_init_generator_0/aur_init_clk]
   connect_bd_net -net counter_0_dout [get_bd_pins counter_0/dout] [get_bd_pins ila_1/probe0]
   connect_bd_net -net heartbeat_0_dout [get_bd_ports heartbeat] [get_bd_pins heartbeat_0/dout]
-  connect_bd_net -net rst_clk_wiz_2_100M_peripheral_aresetn [get_bd_pins axi_chip2chip_0/m_aresetn] [get_bd_pins clk_wiz/locked] [get_bd_pins heartbeat_0/resetn]
+  connect_bd_net -net pma_init_generator_0_pma_init_in [get_bd_pins axi_chip2chip_0/aurora_pma_init_in] [get_bd_pins pma_init_generator_0/pma_init_in] [get_bd_pins xlconcat_0/In9]
+  connect_bd_net -net rst_clk_wiz_2_100M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_chip2chip_0/m_aresetn] [get_bd_pins clk_wiz/locked] [get_bd_pins heartbeat_0/resetn] [get_bd_pins pma_init_generator_0/resetn]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins ila_2/probe0] [get_bd_pins xlconcat_0/dout]
 
   # Create address segments
+  assign_bd_address -offset 0xC0000000 -range 0x00002000 -target_address_space [get_bd_addr_spaces axi_chip2chip_0/MAXI] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
 
 
   # Restore current instance

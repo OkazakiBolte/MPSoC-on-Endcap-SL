@@ -70,8 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "design_1_clk_wiz_2_1_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 12
-set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config  -id {Vivado_Tcl 4-416}  -new_severity {WARNING} 
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 set_param project.vivado.isBlockSynthRun true

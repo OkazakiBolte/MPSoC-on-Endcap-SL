@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date                      : Tue Dec 14 17:26:47 2021
+| Date                      : Thu Dec 16 21:01:31 2021
 | Host                      : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command                   : report_io -file MercuryXU5_EndcapSL_io_placed.rpt
 | Design                    : MercuryXU5_EndcapSL
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            57 |
+|            56 |
 +---------------+
 
 
@@ -292,7 +292,7 @@ Table of Contents
 | B3         |                       | High Performance | IO_L9P_T1L_N4_AD12P_66             | User IO       |             |      66 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | B4         |                       | High Performance | IO_L10P_T1U_N6_QBC_AD4P_66         | User IO       |             |      66 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | B5         |                       | High Performance | IO_L19P_T3L_N0_DBC_AD9P_66         | User IO       |             |      66 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
-| B6         | CFGPROG[0]            | High Performance | IO_L20N_T3L_N3_AD1N_66             | OUTPUT        | LVCMOS18    |      66 |         12 |                         | SLOW |                   |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| B6         |                       | High Performance | IO_L20N_T3L_N3_AD1N_66             | User IO       |             |      66 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | B7         |                       | High Performance | VCCO_66                            | VCCO          |             |      66 |            |                         |      |                   |                      |      1.80 |            |           |          |      |                  |              |                   |              |
 | B8         |                       | High Performance | IO_L22N_T3U_N7_DBC_AD0N_66         | User IO       |             |      66 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |
 | B9         |                       | High Performance | IO_L24N_T3U_N11_66                 | User IO       |             |      66 |            |                         |      |                   |                      |           |            |           |          |      |                  |              |                   |              |

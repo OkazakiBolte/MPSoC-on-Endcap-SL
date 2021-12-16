@@ -114,7 +114,11 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config  -id {Vivado_Tcl 4-416}  -new_severity {WARNING} 
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 
@@ -135,7 +139,11 @@ OPTRACE "Design Initialization: pre hook" START { }
     return -code error
   }
 OPTRACE "Design Initialization: pre hook" END { }
+  set_param power.enableLutRouteBelPower 1
+  set_param power.enableCarry8RouteBelPower 1
+  set_param power.enableUnconnectedCarry8PinPower 1
   set_param chipscope.maxJobs 12
+  set_param power.BramSDPPropagationFix 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xczu5ev-sfvc784-2-i
   set_property design_mode GateLvl [current_fileset]
@@ -144,6 +152,8 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.cache/wt [current_project]
   set_property parent.project_path /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.xpr [current_project]
+  set_property ip_repo_paths /home/okazaki/projects/mpsoc-on-endcap-sl/ip_repo/my_axi4_pattern_generator_1.0 [current_project]
+  update_ip_catalog
   set_property ip_output_repo /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]

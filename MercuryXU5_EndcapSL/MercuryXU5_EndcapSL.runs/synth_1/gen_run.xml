@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1639469667">
+<GenRun Id="synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1639655179">
   <File Type="VDS-TIMINGSUMMARY" Name="MercuryXU5_EndcapSL_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="MercuryXU5_EndcapSL.dcp"/>
   <File Type="RDS-UTIL-PB" Name="MercuryXU5_EndcapSL_utilization_synth.pb"/>
@@ -25,6 +25,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/pma_init_generator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../Mercury_XU5_PE1_Reference_Design/reference_design/src/Enclustra_GMII2RGMII_ZU.edn"/>
@@ -42,6 +49,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/MercuryXU5_EndcapSL.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/my_traffic_generator.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -151,14 +165,14 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design" PreStepTclHook="$PSRCDIR/utils_1/imports/scripts/settings.tcl"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_pma_init_generator_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_smc_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_ila_2_2"/>
   <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_zynq_ultra_ps_e_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_ddr4_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_2_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_2_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_aurora_64b66b_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_chip2chip_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_smartconnect_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_counter_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_04e2_axi_jtag_0"/>
@@ -178,6 +192,7 @@
   <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps8_99M_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_led_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_blk_mem_gen_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_1"/>

@@ -254,14 +254,12 @@ void help() {
 
 void instruction() {
     printf("\n---- Instruction ----\n");
-    printf("0. Make sure you're going to open %s. If needed, change the "
-           "variable UIO_PATH in the source code.\n",
-           UIO_PATH);
+    printf("0. Make sure you're going to open %s. If needed,\n", UIO_PATH);
+    printf("   change the variable UIO_PATH in the source code.\n");
     printf("1. Check my IP address first.\n");
     printf("2. Open Hardware Manager in Vivado in your computer.\n");
-    printf("3. \"Open Target\" > \"Open New Target\" > \"Local server\" > "
-           "\"Add Xilinx Virtual "
-           "Cable\".\n");
+    printf("3. \"Open Target\" > \"Open New Target\" > \"Local server\"\n");
+    printf("   > \"Add Xilinx Virtual Cable (XVC)\".\n");
     printf("4. Enter hostname: <my IP address>, port: %u.\n", XVC_PORT);
     printf("5. Enjoy!\n");
     printf("---------------------\n\n");
@@ -269,7 +267,6 @@ void instruction() {
 }
 
 int main(int argc, char *argv[]) {
-    printf("\nXilinx Virtual Cable server starting.\n");
     instruction();
 
     /* ---- option analysis ---- */
@@ -292,6 +289,8 @@ int main(int argc, char *argv[]) {
             default: help(); return -1;
         }
     }
+
+    printf("\nXilinx Virtual Cable server starting.\n");
 
     int                i;
     int                s;

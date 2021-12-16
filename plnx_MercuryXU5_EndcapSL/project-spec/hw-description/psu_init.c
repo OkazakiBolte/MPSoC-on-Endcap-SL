@@ -12974,7 +12974,7 @@ unsigned long psu_mio_init_data(void)
     * Level 2 Mux Select 0= Level 3 Mux Output 1= sd0, Input, sd0_data_in[3]-
     * (8-bit Data bus) = sd0, Output, sdio0_data_out[3]- (8-bit Data bus) 2= s
     * d1, Input, sdio1_wp- (SD card write protect from connector) 3= Not Used
-    *  PSU_IOU_SLCR_MIO_PIN_44_L2_SEL                              0
+    *  PSU_IOU_SLCR_MIO_PIN_44_L2_SEL                              2
 
     * Level 3 Mux Select 0= gpio1, Input, gpio_1_pin_in[18]- (GPIO bank 1) 0=
     * gpio1, Output, gpio_1_pin_out[18]- (GPIO bank 1) 1= can1, Output, can1_p
@@ -12987,9 +12987,9 @@ unsigned long psu_mio_init_data(void)
     *  PSU_IOU_SLCR_MIO_PIN_44_L3_SEL                              0
 
     * Configures MIO Pin 44 peripheral interface mapping
-    * (OFFSET, MASK, VALUE)      (0XFF1800B0, 0x000000FEU ,0x00000000U)
+    * (OFFSET, MASK, VALUE)      (0XFF1800B0, 0x000000FEU ,0x00000010U)
     */
-	PSU_Mask_Write(IOU_SLCR_MIO_PIN_44_OFFSET, 0x000000FEU, 0x00000000U);
+	PSU_Mask_Write(IOU_SLCR_MIO_PIN_44_OFFSET, 0x000000FEU, 0x00000010U);
 /*##################################################################### */
 
     /*
@@ -14180,7 +14180,7 @@ unsigned long psu_mio_init_data(void)
     *  PSU_IOU_SLCR_MIO_MST_TRI1_PIN_43_TRI                        0
 
     * Master Tri-state Enable for pin 44, active high
-    *  PSU_IOU_SLCR_MIO_MST_TRI1_PIN_44_TRI                        0
+    *  PSU_IOU_SLCR_MIO_MST_TRI1_PIN_44_TRI                        1
 
     * Master Tri-state Enable for pin 45, active high
     *  PSU_IOU_SLCR_MIO_MST_TRI1_PIN_45_TRI                        1
@@ -14240,10 +14240,10 @@ unsigned long psu_mio_init_data(void)
     *  PSU_IOU_SLCR_MIO_MST_TRI1_PIN_63_TRI                        0
 
     * MIO pin Tri-state Enables, 63:32
-    * (OFFSET, MASK, VALUE)      (0XFF180208, 0xFFFFFFFFU ,0x00B0207FU)
+    * (OFFSET, MASK, VALUE)      (0XFF180208, 0xFFFFFFFFU ,0x00B0307FU)
     */
 	PSU_Mask_Write(IOU_SLCR_MIO_MST_TRI1_OFFSET,
-		0xFFFFFFFFU, 0x00B0207FU);
+		0xFFFFFFFFU, 0x00B0307FU);
 /*##################################################################### */
 
     /*
@@ -20058,21 +20058,6 @@ unsigned long psu_afi_config(void)
     /*
     * AFIFM INTERFACE WIDTH
     */
-    /*
-    * Register : afi_fs @ 0XFD615000
-
-    * Select the 32/64/128-bit data width selection for the Slave 0 00: 32-bit
-    *  AXI data width (default) 01: 64-bit AXI data width 10: 128-bit AXI data
-    *  width 11: reserved
-    *  PSU_FPD_SLCR_AFI_FS_DW_SS0_SEL                              0x2
-
-    * afi fs SLCR control register. This register is static and should not be
-    * modified during operation.
-    * (OFFSET, MASK, VALUE)      (0XFD615000, 0x00000300U ,0x00000200U)
-    */
-	PSU_Mask_Write(FPD_SLCR_AFI_FS_OFFSET, 0x00000300U, 0x00000200U);
-/*##################################################################### */
-
     /*
     * Register : afi_fs @ 0XFF419000
 

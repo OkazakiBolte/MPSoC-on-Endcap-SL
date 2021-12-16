@@ -94,8 +94,6 @@ set_property src_info {type:XDC file:7 line:52 export:INPUT save:INPUT read:READ
 set_property -dict {PACKAGE_PIN A5  IOSTANDARD LVCMOS18} [get_ports {Si5345_INSEL[0]}]; # B103
 set_property src_info {type:XDC file:7 line:53 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN C6  IOSTANDARD LVCMOS18} [get_ports {Si5345_INSEL[1]}]; # B107
-set_property src_info {type:XDC file:7 line:55 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict {PACKAGE_PIN B6  IOSTANDARD LVCMOS18} [get_ports {CFGPROG}]; # B109
 set_property src_info {type:XDC file:7 line:56 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN A7  IOSTANDARD LVCMOS18} [get_ports {CFGINIT}]; # B111
 set_property src_info {type:XDC file:7 line:57 export:INPUT save:INPUT read:READ} [current_design]

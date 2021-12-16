@@ -12,9 +12,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_ch
 # IP: bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0 || ORIG_REF_NAME==design_1_aurora_64b66b_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_ila_0_0 || ORIG_REF_NAME==design_1_ila_0_0} -quiet] -quiet
-
 # IP: bd/design_1/ip/design_1_clk_wiz_2_1/design_1_clk_wiz_2_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_clk_wiz_2_1 || ORIG_REF_NAME==design_1_clk_wiz_2_1} -quiet] -quiet
 
@@ -26,5 +23,20 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_ila_1_
 
 # IP: bd/design_1/ip/design_1_heartbeat_0_0/design_1_heartbeat_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_heartbeat_0_0 || ORIG_REF_NAME==design_1_heartbeat_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_xlconcat_0_4/design_1_xlconcat_0_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xlconcat_0_4 || ORIG_REF_NAME==design_1_xlconcat_0_4} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_ila_2_0/design_1_ila_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_ila_2_0 || ORIG_REF_NAME==design_1_ila_2_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_pma_init_generator_0_0/design_1_pma_init_generator_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_pma_init_generator_0_0 || ORIG_REF_NAME==design_1_pma_init_generator_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_bram_ctrl_0_0 || ORIG_REF_NAME==design_1_axi_bram_ctrl_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_bram_ctrl_0_bram_0 || ORIG_REF_NAME==design_1_axi_bram_ctrl_0_bram_0} -quiet] -quiet
 
 # XDC: bd/design_1/design_1_ooc.xdc

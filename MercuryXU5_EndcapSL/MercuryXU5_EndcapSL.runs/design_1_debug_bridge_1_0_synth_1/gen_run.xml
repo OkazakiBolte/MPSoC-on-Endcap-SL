@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="design_1_debug_bridge_1_0_synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1639296552">
+<GenRun Id="design_1_debug_bridge_1_0_synth_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1639557159">
   <File Type="RDS-DCP" Name="design_1_debug_bridge_1_0.dcp"/>
   <File Type="RDS-UTIL-PB" Name="design_1_debug_bridge_1_0_utilization_synth.pb"/>
   <File Type="PA-TCL" Name="design_1_debug_bridge_1_0.tcl"/>

@@ -4,22 +4,22 @@
 # IP: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0.xci
 # IP: The module: 'design_1_aurora_64b66b_0_0' is the root of the design. Do not add the DONT_TOUCH constraint.
 
-# IP: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/design_1_aurora_64b66b_0_0_gt.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_gt || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_gt} -quiet] -quiet
-
 # IP: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_1/design_1_aurora_64b66b_0_0_fifo_gen_master.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master} -quiet] -quiet
 
-# XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/synth/design_1_aurora_64b66b_0_0_gt_ooc.xdc
-
-# XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/synth/design_1_aurora_64b66b_0_0_gt.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_gt || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_gt} -quiet] {/inst } ]/inst ] -quiet] -quiet
+# IP: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/design_1_aurora_64b66b_0_0_gt.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_gt || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_gt} -quiet] -quiet
 
 # XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_1/design_1_aurora_64b66b_0_0_fifo_gen_master.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_1/design_1_aurora_64b66b_0_0_fifo_gen_master_clocks.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/synth/design_1_aurora_64b66b_0_0_gt_ooc.xdc
+
+# XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/synth/design_1_aurora_64b66b_0_0_gt.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_gt || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_gt} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_ooc.xdc
 # XDC: The top module name and the constraint reference have the same name: 'design_1_aurora_64b66b_0_0'. Do not add the DONT_TOUCH constraint.
@@ -36,22 +36,22 @@ set_property DONT_TOUCH TRUE [get_cells inst -quiet] -quiet
 # IP: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0.xci
 # IP: The module: 'design_1_aurora_64b66b_0_0' is the root of the design. Do not add the DONT_TOUCH constraint.
 
-# IP: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/design_1_aurora_64b66b_0_0_gt.xci
-#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_gt || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_gt} -quiet] -quiet
-
 # IP: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_1/design_1_aurora_64b66b_0_0_fifo_gen_master.xci
 #dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master} -quiet] -quiet
 
-# XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/synth/design_1_aurora_64b66b_0_0_gt_ooc.xdc
-
-# XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/synth/design_1_aurora_64b66b_0_0_gt.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_gt || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_gt} -quiet] {/inst } ]/inst ] -quiet] -quiet
+# IP: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/design_1_aurora_64b66b_0_0_gt.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_gt || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_gt} -quiet] -quiet
 
 # XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_1/design_1_aurora_64b66b_0_0_fifo_gen_master.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_1/design_1_aurora_64b66b_0_0_fifo_gen_master_clocks.xdc
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_fifo_gen_master} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/synth/design_1_aurora_64b66b_0_0_gt_ooc.xdc
+
+# XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/ip_0/synth/design_1_aurora_64b66b_0_0_gt.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_aurora_64b66b_0_0_gt || ORIG_REF_NAME==design_1_aurora_64b66b_0_0_gt} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
 # XDC: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_ooc.xdc
 # XDC: The top module name and the constraint reference have the same name: 'design_1_aurora_64b66b_0_0'. Do not add the DONT_TOUCH constraint.

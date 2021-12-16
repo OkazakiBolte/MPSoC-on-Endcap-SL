@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "bd_c443_bs_switch_2_synth_1" START { ROLLUP_AUTO }
+set_msg_config  -id {Vivado_Tcl 4-416}  -new_severity {WARNING} 
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 set_param project.vivado.isBlockSynthRun true

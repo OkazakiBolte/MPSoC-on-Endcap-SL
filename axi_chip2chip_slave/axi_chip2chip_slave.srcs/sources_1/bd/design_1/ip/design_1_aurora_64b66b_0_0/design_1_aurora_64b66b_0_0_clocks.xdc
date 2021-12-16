@@ -64,7 +64,7 @@
  ##
  ##
 ################################################################################ 
-		#create_clock -period 409.6 [get_ports user_clk_out] 
+		#create_clock -period 512.0 [get_ports user_clk_out] 
 		#create_clock -period 10.000	 [get_ports init_clk] 
  
 ################################################################################

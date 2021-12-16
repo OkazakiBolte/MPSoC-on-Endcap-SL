@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Tue Dec 14 15:50:28 2021
+// Date        : Wed Dec 15 17:36:05 2021
 // Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_2_2/design_1_ila_2_2_stub.v
@@ -15,7 +15,7 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "ila,Vivado 2020.1" *)
 module design_1_ila_2_2(clk, probe0)
-/* synthesis syn_black_box black_box_pad_pin="clk,probe0[2:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clk,probe0[1:0]" */;
   input clk;
-  input [2:0]probe0;
+  input [1:0]probe0;
 endmodule

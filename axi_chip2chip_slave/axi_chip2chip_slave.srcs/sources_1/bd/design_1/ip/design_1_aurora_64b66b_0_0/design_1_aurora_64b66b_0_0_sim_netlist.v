@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Sun Dec 12 22:19:12 2021
+// Date        : Thu Dec 16 17:28:05 2021
 // Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_sim_netlist.v
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "aurora_64b66b_v12_0_2, Coregen v14.3_ip3, Number of lanes = 1, Line rate is double10.3125Gbps, Reference Clock is double156.25MHz, Interface is Streaming, Flow Control is None and is operating in DUPLEX configuration" *) 
+(* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "aurora_64b66b_v12_0_2, Coregen v14.3_ip3, Number of lanes = 1, Line rate is double8.25Gbps, Reference Clock is double125.0MHz, Interface is Streaming, Flow Control is None and is operating in DUPLEX configuration" *) 
 (* NotValidForBitStream *)
 module design_1_aurora_64b66b_0_0
    (s_axi_tx_tdata,
@@ -32150,14 +32150,14 @@ module design_1_aurora_64b66b_0_0_design_1_aurora_64b66b_0_0_gt
   (* C_RX_DATA_DECODING = "2" *) 
   (* C_RX_ENABLE = "1" *) 
   (* C_RX_INT_DATA_WIDTH = "64" *) 
-  (* C_RX_LINE_RATE = "10.312500" *) 
+  (* C_RX_LINE_RATE = "8.250000" *) 
   (* C_RX_MASTER_CHANNEL_IDX = "60" *) 
   (* C_RX_OUTCLK_BUFG_GT_DIV = "1" *) 
-  (* C_RX_OUTCLK_FREQUENCY = "161.132812" *) 
+  (* C_RX_OUTCLK_FREQUENCY = "128.906250" *) 
   (* C_RX_OUTCLK_SOURCE = "1" *) 
   (* C_RX_PLL_TYPE = "1" *) 
   (* C_RX_RECCLK_OUTPUT = "192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" *) 
-  (* C_RX_REFCLK_FREQUENCY = "156.250000" *) 
+  (* C_RX_REFCLK_FREQUENCY = "125.000000" *) 
   (* C_RX_SLIDE_MODE = "0" *) 
   (* C_RX_USER_CLOCKING_CONTENTS = "0" *) 
   (* C_RX_USER_CLOCKING_INSTANCE_CTRL = "0" *) 
@@ -32165,8 +32165,8 @@ module design_1_aurora_64b66b_0_0_design_1_aurora_64b66b_0_0_gt
   (* C_RX_USER_CLOCKING_RATIO_FUSRCLK_FUSRCLK2 = "1" *) 
   (* C_RX_USER_CLOCKING_SOURCE = "0" *) 
   (* C_RX_USER_DATA_WIDTH = "64" *) 
-  (* C_RX_USRCLK2_FREQUENCY = "161.132812" *) 
-  (* C_RX_USRCLK_FREQUENCY = "161.132812" *) 
+  (* C_RX_USRCLK2_FREQUENCY = "128.906250" *) 
+  (* C_RX_USRCLK_FREQUENCY = "128.906250" *) 
   (* C_SECONDARY_QPLL_ENABLE = "0" *) 
   (* C_SECONDARY_QPLL_REFCLK_FREQUENCY = "257.812500" *) 
   (* C_SIM_CPLL_CAL_BYPASS = "1" *) 
@@ -32175,28 +32175,28 @@ module design_1_aurora_64b66b_0_0_design_1_aurora_64b66b_0_0_gt
   (* C_TOTAL_NUM_COMMONS_EXAMPLE = "1" *) 
   (* C_TXPROGDIV_FREQ_ENABLE = "0" *) 
   (* C_TXPROGDIV_FREQ_SOURCE = "1" *) 
-  (* C_TXPROGDIV_FREQ_VAL = "161.132812" *) 
+  (* C_TXPROGDIV_FREQ_VAL = "128.906250" *) 
   (* C_TX_BUFFBYPASS_MODE = "0" *) 
   (* C_TX_BUFFER_BYPASS_INSTANCE_CTRL = "0" *) 
   (* C_TX_BUFFER_MODE = "1" *) 
   (* C_TX_DATA_ENCODING = "2" *) 
   (* C_TX_ENABLE = "1" *) 
   (* C_TX_INT_DATA_WIDTH = "64" *) 
-  (* C_TX_LINE_RATE = "10.312500" *) 
+  (* C_TX_LINE_RATE = "8.250000" *) 
   (* C_TX_MASTER_CHANNEL_IDX = "60" *) 
   (* C_TX_OUTCLK_BUFG_GT_DIV = "1" *) 
-  (* C_TX_OUTCLK_FREQUENCY = "161.132812" *) 
+  (* C_TX_OUTCLK_FREQUENCY = "128.906250" *) 
   (* C_TX_OUTCLK_SOURCE = "1" *) 
   (* C_TX_PLL_TYPE = "1" *) 
-  (* C_TX_REFCLK_FREQUENCY = "156.250000" *) 
+  (* C_TX_REFCLK_FREQUENCY = "125.000000" *) 
   (* C_TX_USER_CLOCKING_CONTENTS = "0" *) 
   (* C_TX_USER_CLOCKING_INSTANCE_CTRL = "0" *) 
   (* C_TX_USER_CLOCKING_RATIO_FSRC_FUSRCLK = "1" *) 
   (* C_TX_USER_CLOCKING_RATIO_FUSRCLK_FUSRCLK2 = "1" *) 
   (* C_TX_USER_CLOCKING_SOURCE = "0" *) 
   (* C_TX_USER_DATA_WIDTH = "64" *) 
-  (* C_TX_USRCLK2_FREQUENCY = "161.132812" *) 
-  (* C_TX_USRCLK_FREQUENCY = "161.132812" *) 
+  (* C_TX_USRCLK2_FREQUENCY = "128.906250" *) 
+  (* C_TX_USRCLK_FREQUENCY = "128.906250" *) 
   (* C_USER_GTPOWERGOOD_DELAY_EN = "1" *) 
   design_1_aurora_64b66b_0_0_design_1_aurora_64b66b_0_0_gt_gtwizard_top inst
        (.bgbypassb_in(1'b1),
@@ -34243,23 +34243,23 @@ endmodule
 (* C_RX_CC_LEN_SEQ = "1" *) (* C_RX_CC_NUM_SEQ = "0" *) (* C_RX_CC_PERIODICITY = "5000" *) 
 (* C_RX_CC_VAL = "80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000" *) (* C_RX_COMMA_M_ENABLE = "0" *) (* C_RX_COMMA_M_VAL = "10'b1010000011" *) 
 (* C_RX_COMMA_P_ENABLE = "0" *) (* C_RX_COMMA_P_VAL = "10'b0101111100" *) (* C_RX_DATA_DECODING = "2" *) 
-(* C_RX_ENABLE = "1" *) (* C_RX_INT_DATA_WIDTH = "64" *) (* C_RX_LINE_RATE = "10.312500" *) 
-(* C_RX_MASTER_CHANNEL_IDX = "60" *) (* C_RX_OUTCLK_BUFG_GT_DIV = "1" *) (* C_RX_OUTCLK_FREQUENCY = "161.132812" *) 
+(* C_RX_ENABLE = "1" *) (* C_RX_INT_DATA_WIDTH = "64" *) (* C_RX_LINE_RATE = "8.250000" *) 
+(* C_RX_MASTER_CHANNEL_IDX = "60" *) (* C_RX_OUTCLK_BUFG_GT_DIV = "1" *) (* C_RX_OUTCLK_FREQUENCY = "128.906250" *) 
 (* C_RX_OUTCLK_SOURCE = "1" *) (* C_RX_PLL_TYPE = "1" *) (* C_RX_RECCLK_OUTPUT = "192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" *) 
-(* C_RX_REFCLK_FREQUENCY = "156.250000" *) (* C_RX_SLIDE_MODE = "0" *) (* C_RX_USER_CLOCKING_CONTENTS = "0" *) 
+(* C_RX_REFCLK_FREQUENCY = "125.000000" *) (* C_RX_SLIDE_MODE = "0" *) (* C_RX_USER_CLOCKING_CONTENTS = "0" *) 
 (* C_RX_USER_CLOCKING_INSTANCE_CTRL = "0" *) (* C_RX_USER_CLOCKING_RATIO_FSRC_FUSRCLK = "1" *) (* C_RX_USER_CLOCKING_RATIO_FUSRCLK_FUSRCLK2 = "1" *) 
-(* C_RX_USER_CLOCKING_SOURCE = "0" *) (* C_RX_USER_DATA_WIDTH = "64" *) (* C_RX_USRCLK2_FREQUENCY = "161.132812" *) 
-(* C_RX_USRCLK_FREQUENCY = "161.132812" *) (* C_SECONDARY_QPLL_ENABLE = "0" *) (* C_SECONDARY_QPLL_REFCLK_FREQUENCY = "257.812500" *) 
+(* C_RX_USER_CLOCKING_SOURCE = "0" *) (* C_RX_USER_DATA_WIDTH = "64" *) (* C_RX_USRCLK2_FREQUENCY = "128.906250" *) 
+(* C_RX_USRCLK_FREQUENCY = "128.906250" *) (* C_SECONDARY_QPLL_ENABLE = "0" *) (* C_SECONDARY_QPLL_REFCLK_FREQUENCY = "257.812500" *) 
 (* C_SIM_CPLL_CAL_BYPASS = "1" *) (* C_TOTAL_NUM_CHANNELS = "1" *) (* C_TOTAL_NUM_COMMONS = "0" *) 
 (* C_TOTAL_NUM_COMMONS_EXAMPLE = "1" *) (* C_TXPROGDIV_FREQ_ENABLE = "0" *) (* C_TXPROGDIV_FREQ_SOURCE = "1" *) 
-(* C_TXPROGDIV_FREQ_VAL = "161.132812" *) (* C_TX_BUFFBYPASS_MODE = "0" *) (* C_TX_BUFFER_BYPASS_INSTANCE_CTRL = "0" *) 
+(* C_TXPROGDIV_FREQ_VAL = "128.906250" *) (* C_TX_BUFFBYPASS_MODE = "0" *) (* C_TX_BUFFER_BYPASS_INSTANCE_CTRL = "0" *) 
 (* C_TX_BUFFER_MODE = "1" *) (* C_TX_DATA_ENCODING = "2" *) (* C_TX_ENABLE = "1" *) 
-(* C_TX_INT_DATA_WIDTH = "64" *) (* C_TX_LINE_RATE = "10.312500" *) (* C_TX_MASTER_CHANNEL_IDX = "60" *) 
-(* C_TX_OUTCLK_BUFG_GT_DIV = "1" *) (* C_TX_OUTCLK_FREQUENCY = "161.132812" *) (* C_TX_OUTCLK_SOURCE = "1" *) 
-(* C_TX_PLL_TYPE = "1" *) (* C_TX_REFCLK_FREQUENCY = "156.250000" *) (* C_TX_USER_CLOCKING_CONTENTS = "0" *) 
+(* C_TX_INT_DATA_WIDTH = "64" *) (* C_TX_LINE_RATE = "8.250000" *) (* C_TX_MASTER_CHANNEL_IDX = "60" *) 
+(* C_TX_OUTCLK_BUFG_GT_DIV = "1" *) (* C_TX_OUTCLK_FREQUENCY = "128.906250" *) (* C_TX_OUTCLK_SOURCE = "1" *) 
+(* C_TX_PLL_TYPE = "1" *) (* C_TX_REFCLK_FREQUENCY = "125.000000" *) (* C_TX_USER_CLOCKING_CONTENTS = "0" *) 
 (* C_TX_USER_CLOCKING_INSTANCE_CTRL = "0" *) (* C_TX_USER_CLOCKING_RATIO_FSRC_FUSRCLK = "1" *) (* C_TX_USER_CLOCKING_RATIO_FUSRCLK_FUSRCLK2 = "1" *) 
-(* C_TX_USER_CLOCKING_SOURCE = "0" *) (* C_TX_USER_DATA_WIDTH = "64" *) (* C_TX_USRCLK2_FREQUENCY = "161.132812" *) 
-(* C_TX_USRCLK_FREQUENCY = "161.132812" *) (* C_USER_GTPOWERGOOD_DELAY_EN = "1" *) (* ORIG_REF_NAME = "design_1_aurora_64b66b_0_0_gt_gtwizard_top" *) 
+(* C_TX_USER_CLOCKING_SOURCE = "0" *) (* C_TX_USER_DATA_WIDTH = "64" *) (* C_TX_USRCLK2_FREQUENCY = "128.906250" *) 
+(* C_TX_USRCLK_FREQUENCY = "128.906250" *) (* C_USER_GTPOWERGOOD_DELAY_EN = "1" *) (* ORIG_REF_NAME = "design_1_aurora_64b66b_0_0_gt_gtwizard_top" *) 
 module design_1_aurora_64b66b_0_0_design_1_aurora_64b66b_0_0_gt_gtwizard_top
    (gtwiz_userclk_tx_reset_in,
     gtwiz_userclk_tx_active_in,
@@ -42427,7 +42427,7 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtwiz_reset
         .Q(sm_reset_rx_cdr_to_clr),
         .S(gtwiz_reset_rx_any_sync));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    .INIT(64'hFFFFFFFFFFFFFFFD)) 
     \sm_reset_rx_cdr_to_ctr[0]_i_1 
        (.I0(sm_reset_rx_cdr_to_ctr_reg[0]),
         .I1(sm_reset_rx_cdr_to_ctr_reg[1]),
@@ -42437,12 +42437,12 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtwiz_reset
         .I5(\sm_reset_rx_cdr_to_ctr[0]_i_6_n_0 ),
         .O(\sm_reset_rx_cdr_to_ctr[0]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFDFFFFFFFFF)) 
+    .INIT(64'hFFDFFFFFFFFFFFFF)) 
     \sm_reset_rx_cdr_to_ctr[0]_i_3 
        (.I0(sm_reset_rx_cdr_to_ctr_reg[18]),
         .I1(sm_reset_rx_cdr_to_ctr_reg[19]),
-        .I2(sm_reset_rx_cdr_to_ctr_reg[16]),
-        .I3(sm_reset_rx_cdr_to_ctr_reg[17]),
+        .I2(sm_reset_rx_cdr_to_ctr_reg[17]),
+        .I3(sm_reset_rx_cdr_to_ctr_reg[16]),
         .I4(sm_reset_rx_cdr_to_ctr_reg[15]),
         .I5(sm_reset_rx_cdr_to_ctr_reg[14]),
         .O(\sm_reset_rx_cdr_to_ctr[0]_i_3_n_0 ));
@@ -42457,22 +42457,22 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtwiz_reset
         .I5(sm_reset_rx_cdr_to_ctr_reg[20]),
         .O(\sm_reset_rx_cdr_to_ctr[0]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFF7FFFFFFFFF)) 
+    .INIT(64'hFFDFFFFFFFFFFFFF)) 
     \sm_reset_rx_cdr_to_ctr[0]_i_5 
        (.I0(sm_reset_rx_cdr_to_ctr_reg[12]),
         .I1(sm_reset_rx_cdr_to_ctr_reg[13]),
-        .I2(sm_reset_rx_cdr_to_ctr_reg[11]),
-        .I3(sm_reset_rx_cdr_to_ctr_reg[10]),
+        .I2(sm_reset_rx_cdr_to_ctr_reg[10]),
+        .I3(sm_reset_rx_cdr_to_ctr_reg[11]),
         .I4(sm_reset_rx_cdr_to_ctr_reg[9]),
         .I5(sm_reset_rx_cdr_to_ctr_reg[8]),
         .O(\sm_reset_rx_cdr_to_ctr[0]_i_5_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFDFFFFFFFF)) 
+    .INIT(64'hFFFFFF7FFFFFFFFF)) 
     \sm_reset_rx_cdr_to_ctr[0]_i_6 
-       (.I0(sm_reset_rx_cdr_to_ctr_reg[7]),
-        .I1(sm_reset_rx_cdr_to_ctr_reg[6]),
-        .I2(sm_reset_rx_cdr_to_ctr_reg[4]),
-        .I3(sm_reset_rx_cdr_to_ctr_reg[5]),
+       (.I0(sm_reset_rx_cdr_to_ctr_reg[6]),
+        .I1(sm_reset_rx_cdr_to_ctr_reg[7]),
+        .I2(sm_reset_rx_cdr_to_ctr_reg[5]),
+        .I3(sm_reset_rx_cdr_to_ctr_reg[4]),
         .I4(sm_reset_rx_cdr_to_ctr_reg[3]),
         .I5(sm_reset_rx_cdr_to_ctr_reg[2]),
         .O(\sm_reset_rx_cdr_to_ctr[0]_i_6_n_0 ));
@@ -42729,7 +42729,7 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtwiz_reset
         .I2(sm_reset_rx_cdr_to_clr),
         .O(sm_reset_rx_cdr_to_sat_i_1_n_0));
   LUT6 #(
-    .INIT(64'h0000000000008000)) 
+    .INIT(64'h0000000080000000)) 
     sm_reset_rx_cdr_to_sat_i_2
        (.I0(sm_reset_rx_cdr_to_sat_i_3_n_0),
         .I1(sm_reset_rx_cdr_to_sat_i_4_n_0),
@@ -42739,14 +42739,14 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtwiz_reset
         .I5(sm_reset_rx_cdr_to_ctr_reg[1]),
         .O(sm_reset_rx_cdr_to_sat_i_2_n_0));
   LUT6 #(
-    .INIT(64'h0000001000000000)) 
+    .INIT(64'h0020000000000000)) 
     sm_reset_rx_cdr_to_sat_i_3
-       (.I0(sm_reset_rx_cdr_to_ctr_reg[4]),
-        .I1(sm_reset_rx_cdr_to_ctr_reg[5]),
+       (.I0(sm_reset_rx_cdr_to_ctr_reg[5]),
+        .I1(sm_reset_rx_cdr_to_ctr_reg[4]),
         .I2(sm_reset_rx_cdr_to_ctr_reg[2]),
         .I3(sm_reset_rx_cdr_to_ctr_reg[3]),
-        .I4(sm_reset_rx_cdr_to_ctr_reg[6]),
-        .I5(sm_reset_rx_cdr_to_ctr_reg[7]),
+        .I4(sm_reset_rx_cdr_to_ctr_reg[7]),
+        .I5(sm_reset_rx_cdr_to_ctr_reg[6]),
         .O(sm_reset_rx_cdr_to_sat_i_3_n_0));
   LUT6 #(
     .INIT(64'h0000000000000001)) 
@@ -42759,20 +42759,20 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtwiz_reset
         .I5(sm_reset_rx_cdr_to_ctr_reg[24]),
         .O(sm_reset_rx_cdr_to_sat_i_4_n_0));
   LUT6 #(
-    .INIT(64'h0000002000000000)) 
+    .INIT(64'h0000200000000000)) 
     sm_reset_rx_cdr_to_sat_i_5
-       (.I0(sm_reset_rx_cdr_to_ctr_reg[16]),
-        .I1(sm_reset_rx_cdr_to_ctr_reg[17]),
+       (.I0(sm_reset_rx_cdr_to_ctr_reg[17]),
+        .I1(sm_reset_rx_cdr_to_ctr_reg[16]),
         .I2(sm_reset_rx_cdr_to_ctr_reg[14]),
         .I3(sm_reset_rx_cdr_to_ctr_reg[15]),
         .I4(sm_reset_rx_cdr_to_ctr_reg[19]),
         .I5(sm_reset_rx_cdr_to_ctr_reg[18]),
         .O(sm_reset_rx_cdr_to_sat_i_5_n_0));
   LUT6 #(
-    .INIT(64'h0020000000000000)) 
+    .INIT(64'h0000200000000000)) 
     sm_reset_rx_cdr_to_sat_i_6
-       (.I0(sm_reset_rx_cdr_to_ctr_reg[11]),
-        .I1(sm_reset_rx_cdr_to_ctr_reg[10]),
+       (.I0(sm_reset_rx_cdr_to_ctr_reg[10]),
+        .I1(sm_reset_rx_cdr_to_ctr_reg[11]),
         .I2(sm_reset_rx_cdr_to_ctr_reg[8]),
         .I3(sm_reset_rx_cdr_to_ctr_reg[9]),
         .I4(sm_reset_rx_cdr_to_ctr_reg[13]),
@@ -44530,7 +44530,7 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtye4_channel
     .CHAN_BOND_SEQ_2_ENABLE(4'b1111),
     .CHAN_BOND_SEQ_2_USE("FALSE"),
     .CHAN_BOND_SEQ_LEN(1),
-    .CH_HSPMUX(16'h4040),
+    .CH_HSPMUX(16'h2020),
     .CKCAL1_CFG_0(16'b1100000011000000),
     .CKCAL1_CFG_1(16'b0001000011000000),
     .CKCAL1_CFG_2(16'b0010000000001000),
@@ -44659,7 +44659,7 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtye4_channel
     .PD_TRANS_TIME_FROM_P2(12'h03C),
     .PD_TRANS_TIME_NONE_P2(8'h19),
     .PD_TRANS_TIME_TO_P2(8'h64),
-    .PREIQ_FREQ_BST(1),
+    .PREIQ_FREQ_BST(0),
     .RATE_SW_USE_DRP(1'b1),
     .RCLK_SIPO_DLY_ENB(1'b0),
     .RCLK_SIPO_INV_EN(1'b0),
@@ -44783,7 +44783,7 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtye4_channel
     .RXPHSAMP_CFG(16'h2100),
     .RXPHSLIP_CFG(16'h9933),
     .RXPH_MONITOR_SEL(5'b00000),
-    .RXPI_CFG0(16'h0102),
+    .RXPI_CFG0(16'h0100),
     .RXPI_CFG1(16'b0000000001010100),
     .RXPMACLK_SEL("DATA"),
     .RXPMARESET_TIME(5'b00011),
@@ -44799,7 +44799,7 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtye4_channel
     .RX_BIAS_CFG0(16'h12B0),
     .RX_BUFFER_CFG(6'b000000),
     .RX_CAPFF_SARC_ENB(1'b0),
-    .RX_CLK25_DIV(7),
+    .RX_CLK25_DIV(5),
     .RX_CLKMUX_EN(1'b1),
     .RX_CLK_SLIP_OVRD(5'b00000),
     .RX_CM_BUF_CFG(4'b1010),
@@ -44910,7 +44910,7 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtye4_channel
     .TXSYNC_MULTILANE(1'b0),
     .TXSYNC_OVRD(1'b0),
     .TXSYNC_SKIP_DA(1'b0),
-    .TX_CLK25_DIV(7),
+    .TX_CLK25_DIV(5),
     .TX_CLKMUX_EN(1'b1),
     .TX_DATA_WIDTH(64),
     .TX_DCC_LOOP_RST_CFG(16'h0004),
@@ -44940,7 +44940,7 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtye4_channel
     .TX_MARGIN_LOW_4(7'b1000000),
     .TX_PHICAL_CFG0(16'h0020),
     .TX_PHICAL_CFG1(16'h0040),
-    .TX_PI_BIASSET(1),
+    .TX_PI_BIASSET(0),
     .TX_PMADATA_OPT(1'b0),
     .TX_PMA_POWER_SAVE(1'b0),
     .TX_PMA_RSV0(16'h0000),
@@ -45502,7 +45502,7 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtye4_common
     .COMMON_CFG1(16'h0000),
     .POR_CFG(16'h0000),
     .PPF0_CFG(16'h0600),
-    .PPF1_CFG(16'h0600),
+    .PPF1_CFG(16'h0400),
     .QPLL0CLKOUT_RATE("HALF"),
     .QPLL0_CFG0(16'h331C),
     .QPLL0_CFG1(16'hD038),
@@ -45534,11 +45534,11 @@ module design_1_aurora_64b66b_0_0_gtwizard_ultrascale_v1_7_8_gtye4_common
     .QPLL1_CFG2(16'h0FC3),
     .QPLL1_CFG2_G3(16'h0FC3),
     .QPLL1_CFG3(16'h0120),
-    .QPLL1_CFG4(16'h0002),
+    .QPLL1_CFG4(16'h0001),
     .QPLL1_CP(10'b0011111111),
     .QPLL1_CP_G3(10'b0001111111),
     .QPLL1_FBDIV(66),
-    .QPLL1_FBDIV_G3(80),
+    .QPLL1_FBDIV_G3(64),
     .QPLL1_INIT_CFG0(16'h02B2),
     .QPLL1_INIT_CFG1(8'h00),
     .QPLL1_LOCK_CFG(16'h25E8),

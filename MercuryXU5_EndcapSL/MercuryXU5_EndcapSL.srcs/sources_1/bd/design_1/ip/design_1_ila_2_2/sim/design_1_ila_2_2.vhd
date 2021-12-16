@@ -55,7 +55,7 @@ PORT (
 clk : IN STD_LOGIC;
 
 
-probe0 : IN STD_LOGIC_VECTOR(2 DOWNTO 0)
+probe0 : IN STD_LOGIC_VECTOR(1 DOWNTO 0)
 );
 END design_1_ila_2_2;
 

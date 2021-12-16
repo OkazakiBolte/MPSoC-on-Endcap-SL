@@ -8,8 +8,8 @@ set_property BITSTREAM.CONFIG.UNUSEDPIN PULLNONE [current_design];
 # ----------------------------------------------------------------------------------
 
 # GT reference clock for Aurora
-set_property PACKAGE_PIN H39 [get_ports GT_DIFF_REFCLK_clk_p];
-set_property PACKAGE_PIN H40 [get_ports GT_DIFF_REFCLK_clk_n];
+set_property PACKAGE_PIN H39 [get_ports GT_DIFF_REFCLK1_clk_p];
+set_property PACKAGE_PIN H40 [get_ports GT_DIFF_REFCLK1_clk_n];
 
 # GT serial lines between ZynqMP and the main FPGA
 set_property PACKAGE_PIN E32 [get_ports {GT_SERIAL_Z2F_rxp[0]}];
@@ -18,8 +18,8 @@ set_property PACKAGE_PIN D35 [get_ports {GT_SERIAL_Z2F_rxn[0]}];
 set_property PACKAGE_PIN E37 [get_ports {GT_SERIAL_F2Z_txp[0]}];
 set_property PACKAGE_PIN E38 [get_ports {GT_SERIAL_F2Z_txn[0]}];
 
-set_property -dict {PACKAGE_PIN AY36 IOSTANDARD LVDS} [get_ports sysclk15625_clk_n];
-set_property -dict {PACKAGE_PIN AY35 IOSTANDARD LVDS} [get_ports sysclk15625_clk_p];
+set_property -dict {PACKAGE_PIN AY36 IOSTANDARD LVDS} [get_ports clk125_D_clk_n];
+set_property -dict {PACKAGE_PIN AY35 IOSTANDARD LVDS} [get_ports clk125_D_clk_p];
 
 ## JTAG 4 lines between MPSoC and XCVU13P
 #set_property -dict {PACKAGE_PIN AE14  IOSTANDARD LVCMOS18} [get_ports zynq_jtag_tms];

@@ -2,21 +2,21 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Dec 14 17:17:08 2021
-# Process ID: 33798
+# Start of session at: Thu Dec 16 20:51:19 2021
+# Process ID: 12306
 # Current directory: /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1
 # Command line: vivado -log MercuryXU5_EndcapSL.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MercuryXU5_EndcapSL.tcl
 # Log file: /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/MercuryXU5_EndcapSL.vds
 # Journal file: /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source MercuryXU5_EndcapSL.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/okazaki/projects/mpsoc-on-endcap-sl/ip_repo/my_axi4_pattern_generator_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.1/data/ip'.
 source /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/utils_1/imports/scripts/settings.tcl
 Mercury_XU5 PE1
 INFO: settings.tcl file loaded.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.1/data/ip'.
-add_files: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2400.664 ; gain = 240.117 ; free physical = 216340 ; free virtual = 236319
+add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2382.688 ; gain = 224.109 ; free physical = 183720 ; free virtual = 212116
 Command: synth_design -top MercuryXU5_EndcapSL -part xczu5ev-sfvc784-2-i
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu5ev'
@@ -24,9 +24,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu5ev
 INFO: [Device 21-403] Loading part xczu5ev-sfvc784-2-i
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 38587
+INFO: [Synth 8-7075] Helper process launched with PID 12755
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2708.898 ; gain = 7.934 ; free physical = 214695 ; free virtual = 234697
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2696.930 ; gain = 7.934 ; free physical = 182702 ; free virtual = 211108
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'MercuryXU5_EndcapSL' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/MercuryXU5_EndcapSL.vhd:66]
 WARNING: [Synth 8-3819] Generic 'BG_WIDTH' not present in instantiated entity will be ignored
@@ -38,52 +38,50 @@ INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/tools/Xilinx/Vivado/2020.1/sc
 	Parameter SLEW bound to: SLOW - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (1#1) [/tools/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:36238]
 INFO: [Synth 8-3491] module 'design_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/MercuryXU5_EndcapSL.vhd:182]
-INFO: [Synth 8-638] synthesizing module 'design_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:58]
-INFO: [Synth 8-3491] module 'design_1_debug_bridge_2_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_debug_bridge_2_0_stub.vhdl:5' bound to instance 'JTAG_bridge_XCVU13P' of component 'design_1_debug_bridge_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1071]
-INFO: [Synth 8-638] synthesizing module 'design_1_debug_bridge_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_debug_bridge_2_0_stub.vhdl:36]
-INFO: [Synth 8-3491] module 'design_1_xlconstant_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57' bound to instance 'si5345_insel_RnM' of component 'design_1_xlconstant_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1099]
+INFO: [Synth 8-638] synthesizing module 'design_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:57]
+INFO: [Synth 8-3491] module 'design_1_debug_bridge_2_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_debug_bridge_2_0_stub.vhdl:5' bound to instance 'JTAG_bridge_XCVU13P' of component 'design_1_debug_bridge_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1016]
+INFO: [Synth 8-638] synthesizing module 'design_1_debug_bridge_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_debug_bridge_2_0_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'design_1_xlconstant_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57' bound to instance 'si5345_insel_RnM' of component 'design_1_xlconstant_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1044]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 	Parameter CONST_VAL bound to: 1 - type: integer 
 	Parameter CONST_WIDTH bound to: 2 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (2#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_0_0' (3#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
-INFO: [Synth 8-3491] module 'design_1_aurora_64b66b_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_aurora_64b66b_0_0_stub.vhdl:5' bound to instance 'aurora_64b66b_0' of component 'design_1_aurora_64b66b_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1103]
-INFO: [Synth 8-638] synthesizing module 'design_1_aurora_64b66b_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_aurora_64b66b_0_0_stub.vhdl:46]
-INFO: [Synth 8-3491] module 'design_1_axi_bram_ctrl_0_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_axi_bram_ctrl_0_1_stub.vhdl:5' bound to instance 'axi_bram_ctrl_0' of component 'design_1_axi_bram_ctrl_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1204]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_bram_ctrl_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_axi_bram_ctrl_0_1_stub.vhdl:58]
-INFO: [Synth 8-3491] module 'design_1_axi_chip2chip_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_axi_chip2chip_0_0_stub.vhdl:5' bound to instance 'axi_chip2chip_0' of component 'design_1_axi_chip2chip_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1254]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_chip2chip_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_axi_chip2chip_0_0_stub.vhdl:57]
-INFO: [Synth 8-3491] module 'design_1_axi_smc_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_axi_smc_1_stub.vhdl:5' bound to instance 'axi_smc' of component 'design_1_axi_smc_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1366]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_smc_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_axi_smc_1_stub.vhdl:179]
-INFO: [Synth 8-3491] module 'design_1_blk_mem_gen_0_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_blk_mem_gen_0_1_stub.vhdl:5' bound to instance 'blk_mem_gen_0' of component 'design_1_blk_mem_gen_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1537]
-INFO: [Synth 8-638] synthesizing module 'design_1_blk_mem_gen_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_blk_mem_gen_0_1_stub.vhdl:27]
-INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1558]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_clk_wiz_0_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'design_1_counter_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_counter_0_0_stub.vhdl:5' bound to instance 'counter_0' of component 'design_1_counter_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1568]
-INFO: [Synth 8-638] synthesizing module 'design_1_counter_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_counter_0_0_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'design_1_debug_bridge_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_debug_bridge_0_0_stub.vhdl:5' bound to instance 'debug_bridge_0' of component 'design_1_debug_bridge_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1574]
-INFO: [Synth 8-638] synthesizing module 'design_1_debug_bridge_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_debug_bridge_0_0_stub.vhdl:44]
-INFO: [Synth 8-3491] module 'design_1_debug_bridge_1_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_debug_bridge_1_0_stub.vhdl:5' bound to instance 'debug_bridge_1' of component 'design_1_debug_bridge_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1610]
-INFO: [Synth 8-638] synthesizing module 'design_1_debug_bridge_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_debug_bridge_1_0_stub.vhdl:24]
-INFO: [Synth 8-3491] module 'design_1_led_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_led_1_stub.vhdl:5' bound to instance 'gpio_led' of component 'design_1_led_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1626]
-INFO: [Synth 8-638] synthesizing module 'design_1_led_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_led_1_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'design_1_heartbeat_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_heartbeat_0_0_stub.vhdl:5' bound to instance 'heartbeat_0' of component 'design_1_heartbeat_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1649]
-INFO: [Synth 8-638] synthesizing module 'design_1_heartbeat_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_heartbeat_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_1_ila_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_0_0_stub.vhdl:5' bound to instance 'ila_6bit_counter' of component 'design_1_ila_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1656]
-INFO: [Synth 8-638] synthesizing module 'design_1_ila_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_0_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_ila_2_2' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_2_2_stub.vhdl:5' bound to instance 'ila_CFG' of component 'design_1_ila_2_2' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1661]
-INFO: [Synth 8-638] synthesizing module 'design_1_ila_2_2' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_2_2_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_ila_2_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_2_1_stub.vhdl:5' bound to instance 'ila_aurora64b66b_mas' of component 'design_1_ila_2_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1666]
-INFO: [Synth 8-638] synthesizing module 'design_1_ila_2_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_2_1_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_ila_1_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_1_0_stub.vhdl:5' bound to instance 'ila_axi4' of component 'design_1_ila_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1671]
-INFO: [Synth 8-638] synthesizing module 'design_1_ila_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_1_0_stub.vhdl:56]
-INFO: [Synth 8-3491] module 'design_1_ila_2_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_2_0_stub.vhdl:5' bound to instance 'ila_axi_chip2chip_mas' of component 'design_1_ila_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1719]
-INFO: [Synth 8-638] synthesizing module 'design_1_ila_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_ila_2_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'design_1_rst_ps8_99M_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_rst_ps8_99M_1_stub.vhdl:5' bound to instance 'rst_ps8_99M' of component 'design_1_rst_ps8_99M_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1724]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps8_99M_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_rst_ps8_99M_1_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_1_xlconcat_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58' bound to instance 'xlconcat_0' of component 'design_1_xlconcat_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1737]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58]
+INFO: [Synth 8-3491] module 'design_1_aurora_64b66b_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_aurora_64b66b_0_0_stub.vhdl:5' bound to instance 'aurora_64b66b_0' of component 'design_1_aurora_64b66b_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1048]
+INFO: [Synth 8-638] synthesizing module 'design_1_aurora_64b66b_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_aurora_64b66b_0_0_stub.vhdl:46]
+INFO: [Synth 8-3491] module 'design_1_axi_bram_ctrl_0_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_axi_bram_ctrl_0_1_stub.vhdl:5' bound to instance 'axi_bram_ctrl_0' of component 'design_1_axi_bram_ctrl_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1149]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_bram_ctrl_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_axi_bram_ctrl_0_1_stub.vhdl:58]
+INFO: [Synth 8-3491] module 'design_1_axi_chip2chip_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_axi_chip2chip_0_0_stub.vhdl:5' bound to instance 'axi_chip2chip_0' of component 'design_1_axi_chip2chip_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1199]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_chip2chip_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_axi_chip2chip_0_0_stub.vhdl:57]
+INFO: [Synth 8-3491] module 'design_1_axi_smc_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_axi_smc_1_stub.vhdl:5' bound to instance 'axi_smc' of component 'design_1_axi_smc_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1311]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_smc_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_axi_smc_1_stub.vhdl:179]
+INFO: [Synth 8-3491] module 'design_1_blk_mem_gen_0_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_blk_mem_gen_0_1_stub.vhdl:5' bound to instance 'blk_mem_gen_0' of component 'design_1_blk_mem_gen_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1482]
+INFO: [Synth 8-638] synthesizing module 'design_1_blk_mem_gen_0_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_blk_mem_gen_0_1_stub.vhdl:27]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1503]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_clk_wiz_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'design_1_counter_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_counter_0_0_stub.vhdl:5' bound to instance 'counter_0' of component 'design_1_counter_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1513]
+INFO: [Synth 8-638] synthesizing module 'design_1_counter_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_counter_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_debug_bridge_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_debug_bridge_0_0_stub.vhdl:5' bound to instance 'debug_bridge_0' of component 'design_1_debug_bridge_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1519]
+INFO: [Synth 8-638] synthesizing module 'design_1_debug_bridge_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_debug_bridge_0_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'design_1_debug_bridge_1_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_debug_bridge_1_0_stub.vhdl:5' bound to instance 'debug_bridge_1' of component 'design_1_debug_bridge_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1555]
+INFO: [Synth 8-638] synthesizing module 'design_1_debug_bridge_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_debug_bridge_1_0_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'design_1_led_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_led_1_stub.vhdl:5' bound to instance 'gpio_led' of component 'design_1_led_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1571]
+INFO: [Synth 8-638] synthesizing module 'design_1_led_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_led_1_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'design_1_heartbeat_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_heartbeat_0_0_stub.vhdl:5' bound to instance 'heartbeat_0' of component 'design_1_heartbeat_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1594]
+INFO: [Synth 8-638] synthesizing module 'design_1_heartbeat_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_heartbeat_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_ila_0_2' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_ila_0_2_stub.vhdl:5' bound to instance 'ila_0' of component 'design_1_ila_0_2' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1601]
+INFO: [Synth 8-638] synthesizing module 'design_1_ila_0_2' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_ila_0_2_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'design_1_ila_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_ila_0_0_stub.vhdl:5' bound to instance 'ila_6bit_counter' of component 'design_1_ila_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1606]
+INFO: [Synth 8-638] synthesizing module 'design_1_ila_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_ila_0_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'design_1_ila_2_2' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_ila_2_2_stub.vhdl:5' bound to instance 'ila_CFG' of component 'design_1_ila_2_2' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1611]
+INFO: [Synth 8-638] synthesizing module 'design_1_ila_2_2' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_ila_2_2_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'design_1_pma_init_generator_0_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_pma_init_generator_0_0_stub.vhdl:5' bound to instance 'pma_init_generator_0' of component 'design_1_pma_init_generator_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1616]
+INFO: [Synth 8-638] synthesizing module 'design_1_pma_init_generator_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_pma_init_generator_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_rst_ps8_99M_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_rst_ps8_99M_1_stub.vhdl:5' bound to instance 'rst_ps8_99M' of component 'design_1_rst_ps8_99M_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1622]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps8_99M_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_rst_ps8_99M_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_xlconcat_0_4' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_4/synth/design_1_xlconcat_0_4.v:58' bound to instance 'xlconcat_0' of component 'design_1_xlconcat_0_4' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1635]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_4' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_4/synth/design_1_xlconcat_0_4.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
 	Parameter IN1_WIDTH bound to: 1 - type: integer 
@@ -117,12 +115,12 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/okaza
 	Parameter IN29_WIDTH bound to: 1 - type: integer 
 	Parameter IN30_WIDTH bound to: 1 - type: integer 
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
-	Parameter dout_width bound to: 9 - type: integer 
-	Parameter NUM_PORTS bound to: 9 - type: integer 
+	Parameter dout_width bound to: 19 - type: integer 
+	Parameter NUM_PORTS bound to: 19 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (4#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_0_0' (5#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58]
-INFO: [Synth 8-3491] module 'design_1_xlconcat_1_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_1_0/synth/design_1_xlconcat_1_0.v:58' bound to instance 'xlconcat_1' of component 'design_1_xlconcat_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1750]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_1_0/synth/design_1_xlconcat_1_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_0_4' (5#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_4/synth/design_1_xlconcat_0_4.v:58]
+INFO: [Synth 8-3491] module 'design_1_xlconcat_2_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_2_0/synth/design_1_xlconcat_2_0.v:58' bound to instance 'xlconcat_2' of component 'design_1_xlconcat_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1658]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_2_0/synth/design_1_xlconcat_2_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
 	Parameter IN1_WIDTH bound to: 1 - type: integer 
@@ -156,67 +154,28 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterize
 	Parameter IN29_WIDTH bound to: 1 - type: integer 
 	Parameter IN30_WIDTH bound to: 1 - type: integer 
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
-	Parameter dout_width bound to: 7 - type: integer 
-	Parameter NUM_PORTS bound to: 7 - type: integer 
+	Parameter dout_width bound to: 2 - type: integer 
+	Parameter NUM_PORTS bound to: 2 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized0' (5#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_1_0' (6#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_1_0/synth/design_1_xlconcat_1_0.v:58]
-INFO: [Synth 8-3491] module 'design_1_xlconcat_2_0' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_2_0/synth/design_1_xlconcat_2_0.v:58' bound to instance 'xlconcat_2' of component 'design_1_xlconcat_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1761]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_2_0/synth/design_1_xlconcat_2_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-	Parameter IN0_WIDTH bound to: 1 - type: integer 
-	Parameter IN1_WIDTH bound to: 1 - type: integer 
-	Parameter IN2_WIDTH bound to: 1 - type: integer 
-	Parameter IN3_WIDTH bound to: 1 - type: integer 
-	Parameter IN4_WIDTH bound to: 1 - type: integer 
-	Parameter IN5_WIDTH bound to: 1 - type: integer 
-	Parameter IN6_WIDTH bound to: 1 - type: integer 
-	Parameter IN7_WIDTH bound to: 1 - type: integer 
-	Parameter IN8_WIDTH bound to: 1 - type: integer 
-	Parameter IN9_WIDTH bound to: 1 - type: integer 
-	Parameter IN10_WIDTH bound to: 1 - type: integer 
-	Parameter IN11_WIDTH bound to: 1 - type: integer 
-	Parameter IN12_WIDTH bound to: 1 - type: integer 
-	Parameter IN13_WIDTH bound to: 1 - type: integer 
-	Parameter IN14_WIDTH bound to: 1 - type: integer 
-	Parameter IN15_WIDTH bound to: 1 - type: integer 
-	Parameter IN16_WIDTH bound to: 1 - type: integer 
-	Parameter IN17_WIDTH bound to: 1 - type: integer 
-	Parameter IN18_WIDTH bound to: 1 - type: integer 
-	Parameter IN19_WIDTH bound to: 1 - type: integer 
-	Parameter IN20_WIDTH bound to: 1 - type: integer 
-	Parameter IN21_WIDTH bound to: 1 - type: integer 
-	Parameter IN22_WIDTH bound to: 1 - type: integer 
-	Parameter IN23_WIDTH bound to: 1 - type: integer 
-	Parameter IN24_WIDTH bound to: 1 - type: integer 
-	Parameter IN25_WIDTH bound to: 1 - type: integer 
-	Parameter IN26_WIDTH bound to: 1 - type: integer 
-	Parameter IN27_WIDTH bound to: 1 - type: integer 
-	Parameter IN28_WIDTH bound to: 1 - type: integer 
-	Parameter IN29_WIDTH bound to: 1 - type: integer 
-	Parameter IN30_WIDTH bound to: 1 - type: integer 
-	Parameter IN31_WIDTH bound to: 1 - type: integer 
-	Parameter dout_width bound to: 3 - type: integer 
-	Parameter NUM_PORTS bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat__parameterized1' (6#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_2_0' (7#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_2_0/synth/design_1_xlconcat_2_0.v:58]
-INFO: [Synth 8-3491] module 'design_1_zynq_ultra_ps_e_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_zynq_ultra_ps_e_1_stub.vhdl:5' bound to instance 'zynq_ultra_ps_e' of component 'design_1_zynq_ultra_ps_e_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1768]
-INFO: [Synth 8-638] synthesizing module 'design_1_zynq_ultra_ps_e_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-33798-lhcelec01/realtime/design_1_zynq_ultra_ps_e_1_stub.vhdl:74]
-INFO: [Synth 8-256] done synthesizing module 'design_1' (8#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:58]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconcat_2_0' (6#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_2_0/synth/design_1_xlconcat_2_0.v:58]
+INFO: [Synth 8-3491] module 'design_1_zynq_ultra_ps_e_1' declared at '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_zynq_ultra_ps_e_1_stub.vhdl:5' bound to instance 'zynq_ultra_ps_e' of component 'design_1_zynq_ultra_ps_e_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:1664]
+INFO: [Synth 8-638] synthesizing module 'design_1_zynq_ultra_ps_e_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/.Xil/Vivado-12306-lhcelec01/realtime/design_1_zynq_ultra_ps_e_1_stub.vhdl:74]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (7#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/synth/design_1.vhd:57]
 INFO: [Synth 8-637] synthesizing blackbox instance 'i_gmii2rgmii' of component 'Enclustra_GMII2RGMII_ZU' [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/MercuryXU5_EndcapSL.vhd:232]
-INFO: [Synth 8-256] done synthesizing module 'MercuryXU5_EndcapSL' (9#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/MercuryXU5_EndcapSL.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'MercuryXU5_EndcapSL' (8#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/MercuryXU5_EndcapSL.vhd:66]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2755.805 ; gain = 54.840 ; free physical = 215349 ; free virtual = 235352
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2742.836 ; gain = 53.840 ; free physical = 182748 ; free virtual = 211155
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2771.648 ; gain = 70.684 ; free physical = 215349 ; free virtual = 235352
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2759.680 ; gain = 70.684 ; free physical = 182743 ; free virtual = 211151
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2771.648 ; gain = 70.684 ; free physical = 215349 ; free virtual = 235352
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2759.680 ; gain = 70.684 ; free physical = 182743 ; free virtual = 211151
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2781.555 ; gain = 0.000 ; free physical = 215341 ; free virtual = 235345
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2770.586 ; gain = 0.000 ; free physical = 182749 ; free virtual = 211147
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -260,8 +219,6 @@ Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_counter_0_0/design_1_counter_0_0/design_1_counter_0_0_in_context.xdc] for cell 'design_1_i/counter_0'
 Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_chip2chip_0_0/design_1_axi_chip2chip_0_0/design_1_axi_chip2chip_0_0_in_context.xdc] for cell 'design_1_i/axi_chip2chip_0'
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_chip2chip_0_0/design_1_axi_chip2chip_0_0/design_1_axi_chip2chip_0_0_in_context.xdc] for cell 'design_1_i/axi_chip2chip_0'
-Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_1_0/design_1_ila_1_0/design_1_ila_1_0_in_context.xdc] for cell 'design_1_i/ila_axi4'
-Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_1_0/design_1_ila_1_0/design_1_ila_1_0_in_context.xdc] for cell 'design_1_i/ila_axi4'
 Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_in_context.xdc] for cell 'design_1_i/aurora_64b66b_0'
 WARNING: [Vivado 12-584] No ports matched ''. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_in_context.xdc:2]
 WARNING: [Vivado 12-584] No ports matched ''. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_in_context.xdc:4]
@@ -269,12 +226,12 @@ WARNING: [Vivado 12-584] No ports matched ''. [/home/okazaki/projects/mpsoc-on-e
 WARNING: [Vivado 12-584] No ports matched ''. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_in_context.xdc:8]
 WARNING: [Vivado 12-584] No ports matched ''. [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_in_context.xdc:10]
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_in_context.xdc] for cell 'design_1_i/aurora_64b66b_0'
-Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_2_0/design_1_ila_2_0/design_1_ila_2_0_in_context.xdc] for cell 'design_1_i/ila_axi_chip2chip_mas'
-Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_2_0/design_1_ila_2_0/design_1_ila_2_0_in_context.xdc] for cell 'design_1_i/ila_axi_chip2chip_mas'
-Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_2_1/design_1_ila_2_1/design_1_ila_2_1_in_context.xdc] for cell 'design_1_i/ila_aurora64b66b_mas'
-Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_2_1/design_1_ila_2_1/design_1_ila_2_1_in_context.xdc] for cell 'design_1_i/ila_aurora64b66b_mas'
 Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_2_2/design_1_ila_2_2/design_1_ila_2_2_in_context.xdc] for cell 'design_1_i/ila_CFG'
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_2_2/design_1_ila_2_2/design_1_ila_2_2_in_context.xdc] for cell 'design_1_i/ila_CFG'
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_pma_init_generator_0_0/design_1_pma_init_generator_0_0/design_1_pma_init_generator_0_0_in_context.xdc] for cell 'design_1_i/pma_init_generator_0'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_pma_init_generator_0_0/design_1_pma_init_generator_0_0/design_1_pma_init_generator_0_0_in_context.xdc] for cell 'design_1_i/pma_init_generator_0'
+Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_0_2/design_1_ila_0_2/design_1_ila_0_2_in_context.xdc] for cell 'design_1_i/ila_0'
+Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_ila_0_2/design_1_ila_0_2/design_1_ila_0_2_in_context.xdc] for cell 'design_1_i/ila_0'
 Sourcing Tcl File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl]
 Finished Sourcing Tcl File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/MercuryXU5_EndcapSL_propImpl.xdc].
@@ -498,15 +455,15 @@ Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2872.352 ; gain = 0.000 ; free physical = 215273 ; free virtual = 235280
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2860.352 ; gain = 0.000 ; free physical = 182670 ; free virtual = 211067
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUFCTRL, INBUF, OBUFT): 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2872.352 ; gain = 0.000 ; free physical = 215273 ; free virtual = 235280
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2860.352 ; gain = 0.000 ; free physical = 182670 ; free virtual = 211067
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/blk_mem_gen_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2872.352 ; gain = 171.387 ; free physical = 215340 ; free virtual = 235350
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 2860.352 ; gain = 171.355 ; free physical = 182724 ; free virtual = 211132
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -514,7 +471,7 @@ Start Loading Part and Timing Information
 Loading part: xczu5ev-sfvc784-2-i
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2872.352 ; gain = 171.387 ; free physical = 215340 ; free virtual = 235350
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 2860.352 ; gain = 171.355 ; free physical = 182724 ; free virtual = 211132
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -546,20 +503,18 @@ Applied set_property DONT_TOUCH = true for design_1_i/JTAG_bridge_XCVU13P. (cons
 Applied set_property DONT_TOUCH = true for design_1_i/heartbeat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/counter_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/axi_chip2chip_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/ila_axi4. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/aurora_64b66b_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/ila_axi_chip2chip_mas. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/ila_aurora64b66b_mas. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/si5345_insel_RnM. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ila_CFG. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/pma_init_generator_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ila_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 2872.352 ; gain = 171.387 ; free physical = 215340 ; free virtual = 235350
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 2860.352 ; gain = 171.355 ; free physical = 182725 ; free virtual = 211132
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 2872.352 ; gain = 171.387 ; free physical = 215339 ; free virtual = 235350
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2860.352 ; gain = 171.355 ; free physical = 182728 ; free virtual = 211136
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -581,25 +536,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2872.352 ; gain = 171.387 ; free physical = 215336 ; free virtual = 235351
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 2860.352 ; gain = 171.355 ; free physical = 182724 ; free virtual = 211135
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:01:06 . Memory (MB): peak = 3286.500 ; gain = 585.535 ; free physical = 214735 ; free virtual = 234772
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:01:02 . Memory (MB): peak = 3273.531 ; gain = 584.535 ; free physical = 182152 ; free virtual = 210554
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:01:06 . Memory (MB): peak = 3286.500 ; gain = 585.535 ; free physical = 214735 ; free virtual = 234771
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:01:02 . Memory (MB): peak = 3273.531 ; gain = 584.535 ; free physical = 182152 ; free virtual = 210554
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:01:06 . Memory (MB): peak = 3307.547 ; gain = 606.582 ; free physical = 214734 ; free virtual = 234771
+Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:01:02 . Memory (MB): peak = 3293.570 ; gain = 604.574 ; free physical = 182151 ; free virtual = 210552
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -617,113 +572,110 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3313.484 ; gain = 612.520 ; free physical = 214729 ; free virtual = 234767
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 3299.508 ; gain = 610.512 ; free physical = 182140 ; free virtual = 210551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3313.484 ; gain = 612.520 ; free physical = 214729 ; free virtual = 234767
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 3299.508 ; gain = 610.512 ; free physical = 182140 ; free virtual = 210551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3313.484 ; gain = 612.520 ; free physical = 214729 ; free virtual = 234767
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 3299.508 ; gain = 610.512 ; free physical = 182140 ; free virtual = 210551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3313.484 ; gain = 612.520 ; free physical = 214729 ; free virtual = 234767
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 3299.508 ; gain = 610.512 ; free physical = 182140 ; free virtual = 210551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3313.484 ; gain = 612.520 ; free physical = 214729 ; free virtual = 234767
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 3299.508 ; gain = 610.512 ; free physical = 182140 ; free virtual = 210551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3313.484 ; gain = 612.520 ; free physical = 214729 ; free virtual = 234767
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 3299.508 ; gain = 610.512 ; free physical = 182140 ; free virtual = 210551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+---------------------------+----------+
-|      |BlackBox name              |Instances |
-+------+---------------------------+----------+
-|1     |design_1_debug_bridge_2_0  |         1|
-|2     |design_1_aurora_64b66b_0_0 |         1|
-|3     |design_1_axi_bram_ctrl_0_1 |         1|
-|4     |design_1_axi_chip2chip_0_0 |         1|
-|5     |design_1_axi_smc_1         |         1|
-|6     |design_1_blk_mem_gen_0_1   |         1|
-|7     |design_1_clk_wiz_0_0       |         1|
-|8     |design_1_counter_0_0       |         1|
-|9     |design_1_debug_bridge_0_0  |         1|
-|10    |design_1_debug_bridge_1_0  |         1|
-|11    |design_1_led_1             |         1|
-|12    |design_1_heartbeat_0_0     |         1|
-|13    |design_1_ila_0_0           |         1|
-|14    |design_1_ila_2_2           |         1|
-|15    |design_1_ila_2_1           |         1|
-|16    |design_1_ila_1_0           |         1|
-|17    |design_1_ila_2_0           |         1|
-|18    |design_1_rst_ps8_99M_1     |         1|
-|19    |design_1_zynq_ultra_ps_e_1 |         1|
-|20    |Enclustra_GMII2RGMII_ZU    |         1|
-+------+---------------------------+----------+
++------+--------------------------------+----------+
+|      |BlackBox name                   |Instances |
++------+--------------------------------+----------+
+|1     |design_1_debug_bridge_2_0       |         1|
+|2     |design_1_aurora_64b66b_0_0      |         1|
+|3     |design_1_axi_bram_ctrl_0_1      |         1|
+|4     |design_1_axi_chip2chip_0_0      |         1|
+|5     |design_1_axi_smc_1              |         1|
+|6     |design_1_blk_mem_gen_0_1        |         1|
+|7     |design_1_clk_wiz_0_0            |         1|
+|8     |design_1_counter_0_0            |         1|
+|9     |design_1_debug_bridge_0_0       |         1|
+|10    |design_1_debug_bridge_1_0       |         1|
+|11    |design_1_led_1                  |         1|
+|12    |design_1_heartbeat_0_0          |         1|
+|13    |design_1_ila_0_2                |         1|
+|14    |design_1_ila_0_0                |         1|
+|15    |design_1_ila_2_2                |         1|
+|16    |design_1_pma_init_generator_0_0 |         1|
+|17    |design_1_rst_ps8_99M_1          |         1|
+|18    |design_1_zynq_ultra_ps_e_1      |         1|
+|19    |Enclustra_GMII2RGMII_ZU         |         1|
++------+--------------------------------+----------+
 
 Report Cell Usage: 
-+------+--------------------------------+------+
-|      |Cell                            |Count |
-+------+--------------------------------+------+
-|1     |Enclustra_GMII2RGMII_ZU_bbox    |     1|
-|2     |design_1_aurora_64b66b_0_0_bbox |     1|
-|3     |design_1_axi_bram_ctrl_0_1_bbox |     1|
-|4     |design_1_axi_chip2chip_0_0_bbox |     1|
-|5     |design_1_axi_smc_1_bbox         |     1|
-|6     |design_1_blk_mem_gen_0_1_bbox   |     1|
-|7     |design_1_clk_wiz_0_0_bbox       |     1|
-|8     |design_1_counter_0_0_bbox       |     1|
-|9     |design_1_debug_bridge_0_0_bbox  |     1|
-|10    |design_1_debug_bridge_1_0_bbox  |     1|
-|11    |design_1_debug_bridge_2_0_bbox  |     1|
-|12    |design_1_heartbeat_0_0_bbox     |     1|
-|13    |design_1_ila_0_0_bbox           |     1|
-|14    |design_1_ila_1_0_bbox           |     1|
-|15    |design_1_ila_2_0_bbox           |     1|
-|16    |design_1_ila_2_1_bbox           |     1|
-|17    |design_1_ila_2_2_bbox           |     1|
-|18    |design_1_led_1_bbox             |     1|
-|19    |design_1_rst_ps8_99M_1_bbox     |     1|
-|20    |design_1_zynq_ultra_ps_e_1_bbox |     1|
-|21    |LUT1                            |    15|
-|22    |IBUF                            |     9|
-|23    |IOBUF                           |     1|
-|24    |OBUF                            |    40|
-+------+--------------------------------+------+
++------+-------------------------------------+------+
+|      |Cell                                 |Count |
++------+-------------------------------------+------+
+|1     |Enclustra_GMII2RGMII_ZU_bbox         |     1|
+|2     |design_1_aurora_64b66b_0_0_bbox      |     1|
+|3     |design_1_axi_bram_ctrl_0_1_bbox      |     1|
+|4     |design_1_axi_chip2chip_0_0_bbox      |     1|
+|5     |design_1_axi_smc_1_bbox              |     1|
+|6     |design_1_blk_mem_gen_0_1_bbox        |     1|
+|7     |design_1_clk_wiz_0_0_bbox            |     1|
+|8     |design_1_counter_0_0_bbox            |     1|
+|9     |design_1_debug_bridge_0_0_bbox       |     1|
+|10    |design_1_debug_bridge_1_0_bbox       |     1|
+|11    |design_1_debug_bridge_2_0_bbox       |     1|
+|12    |design_1_heartbeat_0_0_bbox          |     1|
+|13    |design_1_ila_0_0_bbox                |     1|
+|14    |design_1_ila_0_2_bbox                |     1|
+|15    |design_1_ila_2_2_bbox                |     1|
+|16    |design_1_led_1_bbox                  |     1|
+|17    |design_1_pma_init_generator_0_0_bbox |     1|
+|18    |design_1_rst_ps8_99M_1_bbox          |     1|
+|19    |design_1_zynq_ultra_ps_e_1_bbox      |     1|
+|20    |IBUF                                 |     9|
+|21    |IOBUF                                |     1|
+|22    |OBUF                                 |    39|
++------+-------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3313.484 ; gain = 612.520 ; free physical = 214729 ; free virtual = 234767
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 3299.508 ; gain = 610.512 ; free physical = 182140 ; free virtual = 210551
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:01:00 . Memory (MB): peak = 3313.484 ; gain = 511.816 ; free physical = 214767 ; free virtual = 234805
-Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3313.492 ; gain = 612.520 ; free physical = 214767 ; free virtual = 234805
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:56 . Memory (MB): peak = 3299.508 ; gain = 509.840 ; free physical = 182177 ; free virtual = 210589
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 3299.516 ; gain = 610.512 ; free physical = 182177 ; free virtual = 210589
 INFO: [Project 1-571] Translating synthesized netlist
 Parsing EDIF File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn]
 Finished Parsing EDIF File [/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn]
-Netlist sorting complete. Time (s): cpu = 00:00:05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3325.992 ; gain = 0.000 ; free physical = 214835 ; free virtual = 234873
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3311.414 ; gain = 0.000 ; free physical = 182173 ; free virtual = 210585
 INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 4 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2019.1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3383.789 ; gain = 0.000 ; free physical = 214776 ; free virtual = 234815
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3371.180 ; gain = 0.000 ; free physical = 182188 ; free virtual = 210599
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 12 instances were transformed.
   IBUF => IBUF (IBUFCTRL, INBUF): 9 instances
@@ -731,11 +683,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM64M8 => RAM64M8 (RAMD64E(x8)): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-170 Infos, 144 Warnings, 0 Critical Warnings and 0 Errors encountered.
+163 Infos, 144 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:28 . Memory (MB): peak = 3383.789 ; gain = 983.125 ; free physical = 214906 ; free virtual = 234945
+synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:22 . Memory (MB): peak = 3371.180 ; gain = 988.492 ; free physical = 182318 ; free virtual = 210729
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.runs/synth_1/MercuryXU5_EndcapSL.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MercuryXU5_EndcapSL_utilization_synth.rpt -pb MercuryXU5_EndcapSL_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 14 17:18:59 2021...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 16 20:53:03 2021...

@@ -66,14 +66,14 @@
 
  ################################ CLOCK CONSTRAINTS ##############################
 ### ## TX/RX OUTCLK constrain
-### create_clock -period 3.103	 [get_pins -filter {REF_PIN_NAME=~*txoutclk_out[0]} -of_objects [get_cells -hierarchical -filter {NAME =~ *multi_gt_i*_gt_i*}]]
+### create_clock -period 3.878	 [get_pins -filter {REF_PIN_NAME=~*txoutclk_out[0]} -of_objects [get_cells -hierarchical -filter {NAME =~ *multi_gt_i*_gt_i*}]]
 ### set_clock_groups -asynchronous -group [get_clocks -of_objects [get_pins -filter {REF_PIN_NAME=~*txoutclk_out[0]} -of_objects [get_cells -hierarchical -filter {NAME =~ *multi_gt_i*_gt_i*}]] -include_generated_clocks]
-### create_clock -period 3.103	 [get_pins -filter {REF_PIN_NAME=~*rxoutclk_out[0]} -of_objects [get_cells -hierarchical -filter {NAME =~ *multi_gt_i*_gt_i*}]]
+### create_clock -period 3.878	 [get_pins -filter {REF_PIN_NAME=~*rxoutclk_out[0]} -of_objects [get_cells -hierarchical -filter {NAME =~ *multi_gt_i*_gt_i*}]]
 ### set_clock_groups -asynchronous -group [get_clocks -of_objects [get_pins -filter {REF_PIN_NAME=~*rxoutclk_out[0]} -of_objects [get_cells -hierarchical -filter {NAME =~ *multi_gt_i*_gt_i*}]] -include_generated_clocks]
 ### 
  ### Reference clock location; provided for reference
- ### set_property LOC J41 [get_ports GTYQ0_P]
- ### set_property LOC J42 [get_ports GTYQ0_N]
+ ### set_property LOC H39 [get_ports GTYQ0_P]
+ ### set_property LOC H40 [get_ports GTYQ0_N]
 
 ################################################################################
 

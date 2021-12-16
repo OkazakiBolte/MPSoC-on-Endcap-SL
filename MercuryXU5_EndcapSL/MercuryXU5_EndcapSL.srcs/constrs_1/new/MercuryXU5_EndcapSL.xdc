@@ -52,7 +52,7 @@ set_property -dict {PACKAGE_PIN A3  IOSTANDARD LVCMOS18  } [get_ports {SI44RST}]
 set_property -dict {PACKAGE_PIN A5  IOSTANDARD LVCMOS18} [get_ports {Si5345_INSEL[0]}]; # B103
 set_property -dict {PACKAGE_PIN C6  IOSTANDARD LVCMOS18} [get_ports {Si5345_INSEL[1]}]; # B107
 
-set_property -dict {PACKAGE_PIN B6  IOSTANDARD LVCMOS18} [get_ports {CFGPROG}]; # B109
+#set_property -dict {PACKAGE_PIN B6  IOSTANDARD LVCMOS18} [get_ports {CFGPROG}]; # B109
 set_property -dict {PACKAGE_PIN A7  IOSTANDARD LVCMOS18} [get_ports {CFGINIT}]; # B111
 set_property -dict {PACKAGE_PIN A6  IOSTANDARD LVCMOS18} [get_ports {CFGDONE}]; # B113
 

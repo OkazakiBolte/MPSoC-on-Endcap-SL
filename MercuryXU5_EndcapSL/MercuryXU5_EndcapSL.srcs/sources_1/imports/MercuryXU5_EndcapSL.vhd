@@ -25,7 +25,7 @@ ENTITY MercuryXU5_EndcapSL IS
     PORT (
         CFGDONE : IN STD_LOGIC;
         CFGINIT : IN STD_LOGIC;
-        CFGPROG : OUT STD_LOGIC_VECTOR (0 TO 0);
+--        CFGPROG : OUT STD_LOGIC_VECTOR (0 TO 0);
         -- RESETB for Si5345
         SIRST : OUT STD_LOGIC;
         -- ResetB for Si5344
@@ -73,7 +73,7 @@ ARCHITECTURE RTL OF MercuryXU5_EndcapSL IS
             ETH_CLK25             : OUT STD_LOGIC;
             ETH_CLK10             : OUT STD_LOGIC;
             ETH_resetn            : OUT STD_LOGIC;
-            CFGPROG               : OUT STD_LOGIC_VECTOR (0 TO 0);
+--            CFGPROG               : OUT STD_LOGIC_VECTOR (0 TO 0);
             ZYNQTDI               : OUT STD_LOGIC;
             ZYNQTDO               : IN STD_LOGIC;
             ZYNQTCK               : OUT STD_LOGIC;
@@ -183,7 +183,7 @@ BEGIN
             PORT MAP(
                 CFGDONE                  => CFGDONE,
                 CFGINIT                  => CFGINIT,
-                CFGPROG(0)               => CFGPROG(0),
+--                CFGPROG(0)               => CFGPROG(0),
                 Si5345_INSEL(1 DOWNTO 0) => Si5345_INSEL(1 DOWNTO 0),
                 ETH_CLK10                => ETH_CLK10,
                 ETH_CLK125               => ETH_CLK125,

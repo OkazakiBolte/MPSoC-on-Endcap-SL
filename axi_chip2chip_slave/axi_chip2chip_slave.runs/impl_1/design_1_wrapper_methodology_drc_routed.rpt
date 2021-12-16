@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Mon Dec 13 21:04:43 2021
+| Date         : Thu Dec 16 20:29:15 2021
 | Host         : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -5105,27 +5105,27 @@ Related violations: <none>
 
 TIMING-26#1 Warning
 Missing clock on gigabit transceiver (GT)  
-The output clock pin design_1_i/aurora_64b66b_0/inst/design_1_aurora_64b66b_0_0_core_i/design_1_aurora_64b66b_0_0_wrapper_i/design_1_aurora_64b66b_0_0_multi_gt_i/design_1_aurora_64b66b_0_0_gt_i/inst/gen_gtwizard_gtye4_top.design_1_aurora_64b66b_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[15].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK_clk_p input port in order to let Vivado auto-derive the missing GT clocks
+The output clock pin design_1_i/aurora_64b66b_0/inst/design_1_aurora_64b66b_0_0_core_i/design_1_aurora_64b66b_0_0_wrapper_i/design_1_aurora_64b66b_0_0_multi_gt_i/design_1_aurora_64b66b_0_0_gt_i/inst/gen_gtwizard_gtye4_top.design_1_aurora_64b66b_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[15].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK1_clk_p input port in order to let Vivado auto-derive the missing GT clocks
 Related violations: <none>
 
 TIMING-26#2 Warning
 Missing clock on gigabit transceiver (GT)  
-The output clock pin design_1_i/aurora_64b66b_0/inst/design_1_aurora_64b66b_0_0_core_i/design_1_aurora_64b66b_0_0_wrapper_i/design_1_aurora_64b66b_0_0_multi_gt_i/design_1_aurora_64b66b_0_0_gt_i/inst/gen_gtwizard_gtye4_top.design_1_aurora_64b66b_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[15].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK_clk_p input port in order to let Vivado auto-derive the missing GT clocks
+The output clock pin design_1_i/aurora_64b66b_0/inst/design_1_aurora_64b66b_0_0_core_i/design_1_aurora_64b66b_0_0_wrapper_i/design_1_aurora_64b66b_0_0_multi_gt_i/design_1_aurora_64b66b_0_0_gt_i/inst/gen_gtwizard_gtye4_top.design_1_aurora_64b66b_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[15].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK1_clk_p input port in order to let Vivado auto-derive the missing GT clocks
 Related violations: <none>
 
 TIMING-26#3 Warning
 Missing clock on gigabit transceiver (GT)  
-The output clock pin design_1_i/aurora_64b66b_0/inst/design_1_aurora_64b66b_0_0_core_i/design_1_aurora_64b66b_0_0_wrapper_i/design_1_aurora_64b66b_0_0_multi_gt_i/design_1_aurora_64b66b_0_0_gt_i/inst/gen_gtwizard_gtye4_top.design_1_aurora_64b66b_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[15].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK_clk_p input port in order to let Vivado auto-derive the missing GT clocks
+The output clock pin design_1_i/aurora_64b66b_0/inst/design_1_aurora_64b66b_0_0_core_i/design_1_aurora_64b66b_0_0_wrapper_i/design_1_aurora_64b66b_0_0_multi_gt_i/design_1_aurora_64b66b_0_0_gt_i/inst/gen_gtwizard_gtye4_top.design_1_aurora_64b66b_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[15].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK1_clk_p input port in order to let Vivado auto-derive the missing GT clocks
 Related violations: <none>
 
 TIMING-26#4 Warning
 Missing clock on gigabit transceiver (GT)  
-The output clock pin design_1_i/aurora_64b66b_0/inst/ultrascale_gt_common_1/design_1_aurora_64b66b_0_0_gt_gtye4_common_wrapper_i/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/QPLL1OUTCLK does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK_clk_p input port in order to let Vivado auto-derive the missing GT clocks
+The output clock pin design_1_i/aurora_64b66b_0/inst/ultrascale_gt_common_1/design_1_aurora_64b66b_0_0_gt_gtye4_common_wrapper_i/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/QPLL1OUTCLK does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK1_clk_p input port in order to let Vivado auto-derive the missing GT clocks
 Related violations: <none>
 
 TIMING-26#5 Warning
 Missing clock on gigabit transceiver (GT)  
-The output clock pin design_1_i/aurora_64b66b_0/inst/ultrascale_gt_common_1/design_1_aurora_64b66b_0_0_gt_gtye4_common_wrapper_i/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/QPLL1OUTREFCLK does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK_clk_p input port in order to let Vivado auto-derive the missing GT clocks
+The output clock pin design_1_i/aurora_64b66b_0/inst/ultrascale_gt_common_1/design_1_aurora_64b66b_0_0_gt_gtye4_common_wrapper_i/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/QPLL1OUTREFCLK does not have clock defined. Create a primary clock on the GT_DIFF_REFCLK1_clk_p input port in order to let Vivado auto-derive the missing GT clocks
 Related violations: <none>
 
 
