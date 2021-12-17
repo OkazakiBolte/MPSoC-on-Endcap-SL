@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x58E028746DDAFD7E",
+      "boundary_crc": "0x4A34B41C9AA0FD30",
       "device": "xczu5ev-sfvc784-2-i",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -17,20 +17,21 @@
       "axi_smc": "",
       "rst_ps8_99M": "",
       "clk_wiz_0": "",
-      "debug_bridge_0": "",
+      "debug_bridge_PL": "",
       "debug_bridge_1": "",
       "ila_6bit_counter": "",
       "JTAG_bridge_XCVU13P": "",
-      "counter_0": "",
       "heartbeat_0": "",
       "axi_chip2chip_0": "",
       "aurora_64b66b_0": "",
-      "Si5345_INSEL": "",
       "xlconcat_2": "",
       "ila_CFG": "",
       "pma_init_generator_0": "",
       "xlconcat_0": "",
-      "ila_0": ""
+      "ila_0": "",
+      "Si5345_INSEL": "",
+      "system_management_wiz": "",
+      "c_counter_binary_0": ""
     },
     "interface_ports": {
       "GMII": {
@@ -67,6 +68,10 @@
             "value": "125000000"
           }
         }
+      },
+      "Si5345_INSEL": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
       }
     },
     "ports": {
@@ -240,11 +245,6 @@
       "LED": {
         "direction": "O",
         "left": "2",
-        "right": "0"
-      },
-      "Si5345_INSEL": {
-        "direction": "O",
-        "left": "1",
         "right": "0"
       },
       "CFGINIT": {
@@ -3159,7 +3159,7 @@
         "xci_name": "design_1_axi_smc_1",
         "parameters": {
           "NUM_MI": {
-            "value": "5"
+            "value": "7"
           },
           "NUM_SI": {
             "value": "1"
@@ -3174,7 +3174,9 @@
               "M01_AXI",
               "M02_AXI",
               "M03_AXI",
-              "M04_AXI"
+              "M04_AXI",
+              "M05_AXI",
+              "M06_AXI"
             ],
             "parameters": {
               "NUM_READ_OUTSTANDING": {
@@ -3304,6 +3306,54 @@
                 "value": "0"
               }
             }
+          },
+          "M05_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
+              "NUM_READ_OUTSTANDING": {
+                "value": "8"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "8"
+              },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
+                "value": "0"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0"
+              }
+            }
+          },
+          "M06_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
+              "NUM_READ_OUTSTANDING": {
+                "value": "8"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "8"
+              },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
+                "value": "0"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0"
+              }
+            }
           }
         },
         "addressing": {
@@ -3315,7 +3365,9 @@
                 "M01_AXI",
                 "M02_AXI",
                 "M03_AXI",
-                "M04_AXI"
+                "M04_AXI",
+                "M05_AXI",
+                "M06_AXI"
               ]
             }
           }
@@ -3427,7 +3479,7 @@
           }
         }
       },
-      "debug_bridge_0": {
+      "debug_bridge_PL": {
         "vlnv": "xilinx.com:ip:debug_bridge:3.0",
         "xci_name": "design_1_debug_bridge_0_0",
         "parameters": {
@@ -3627,50 +3679,6 @@
           }
         }
       },
-      "counter_0": {
-        "vlnv": "xilinx.com:module_ref:counter:1.0",
-        "xci_name": "design_1_counter_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "counter",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "resetn",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_1_pl_clk0",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "99999001",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "resetn": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "dout": {
-            "direction": "O",
-            "left": "5",
-            "right": "0"
-          }
-        }
-      },
       "heartbeat_0": {
         "vlnv": "xilinx.com:module_ref:heartbeat:1.0",
         "xci_name": "design_1_heartbeat_0_0",
@@ -3767,15 +3775,6 @@
           },
           "interface_mode": {
             "value": "Streaming"
-          }
-        }
-      },
-      "Si5345_INSEL": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "design_1_xlconstant_0_0",
-        "parameters": {
-          "CONST_WIDTH": {
-            "value": "2"
           }
         }
       },
@@ -3906,6 +3905,45 @@
             "value": "19"
           }
         }
+      },
+      "Si5345_INSEL": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "xci_name": "design_1_axi_gpio_0_0",
+        "parameters": {
+          "C_ALL_INPUTS": {
+            "value": "0"
+          },
+          "C_ALL_OUTPUTS": {
+            "value": "1"
+          },
+          "C_DOUT_DEFAULT": {
+            "value": "0x00000001"
+          },
+          "C_GPIO_WIDTH": {
+            "value": "2"
+          },
+          "C_IS_DUAL": {
+            "value": "0"
+          }
+        }
+      },
+      "system_management_wiz": {
+        "vlnv": "xilinx.com:ip:system_management_wiz:1.3",
+        "xci_name": "design_1_system_management_wiz_0",
+        "parameters": {
+          "CHANNEL_ENABLE_VP_VN": {
+            "value": "false"
+          }
+        }
+      },
+      "c_counter_binary_0": {
+        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+        "xci_name": "design_1_c_counter_binary_0_0",
+        "parameters": {
+          "Output_Width": {
+            "value": "6"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -3913,6 +3951,12 @@
         "interface_ports": [
           "GT_SERIAL_Z2F",
           "aurora_64b66b_0/GT_SERIAL_TX"
+        ]
+      },
+      "Si5345_INSEL_GPIO": {
+        "interface_ports": [
+          "Si5345_INSEL",
+          "Si5345_INSEL/GPIO"
         ]
       },
       "zynq_ultra_ps_e_GMII_ENET1": {
@@ -3924,7 +3968,7 @@
       "axi_smc_M02_AXI": {
         "interface_ports": [
           "axi_smc/M02_AXI",
-          "debug_bridge_0/S_AXI"
+          "debug_bridge_PL/S_AXI"
         ]
       },
       "axi_bram_ctrl_0_BRAM_PORTB": {
@@ -3984,7 +4028,7 @@
       "debug_bridge_0_m0_bscan": {
         "interface_ports": [
           "debug_bridge_1/S_BSCAN",
-          "debug_bridge_0/m0_bscan"
+          "debug_bridge_PL/m0_bscan"
         ]
       },
       "axi_smc_M00_AXI": {
@@ -4004,6 +4048,18 @@
           "blk_mem_gen_0/BRAM_PORTA",
           "axi_bram_ctrl_0/BRAM_PORTA"
         ]
+      },
+      "axi_smc_M05_AXI": {
+        "interface_ports": [
+          "axi_smc/M05_AXI",
+          "Si5345_INSEL/S_AXI"
+        ]
+      },
+      "axi_smc_M06_AXI": {
+        "interface_ports": [
+          "axi_smc/M06_AXI",
+          "system_management_wiz/S_AXI_LITE"
+        ]
       }
     },
     "nets": {
@@ -4015,18 +4071,20 @@
           "axi_bram_ctrl_0/s_axi_aclk",
           "rst_ps8_99M/slowest_sync_clk",
           "gpio_led/s_axi_aclk",
-          "debug_bridge_0/s_axi_aclk",
+          "debug_bridge_PL/s_axi_aclk",
           "debug_bridge_1/clk",
           "ila_6bit_counter/clk",
           "JTAG_bridge_XCVU13P/s_axi_aclk",
-          "counter_0/clk",
           "heartbeat_0/clk100",
           "axi_chip2chip_0/s_aclk",
           "aurora_64b66b_0/init_clk",
           "axi_chip2chip_0/aurora_init_clk",
           "ila_CFG/clk",
           "pma_init_generator_0/aur_init_clk",
-          "ila_0/clk"
+          "ila_0/clk",
+          "Si5345_INSEL/s_axi_aclk",
+          "system_management_wiz/s_axi_aclk",
+          "c_counter_binary_0/CLK"
         ]
       },
       "zynq_ultra_ps_e_pl_resetn0": {
@@ -4042,11 +4100,12 @@
           "axi_bram_ctrl_0/s_axi_aresetn",
           "axi_smc/aresetn",
           "gpio_led/s_axi_aresetn",
-          "debug_bridge_0/s_axi_aresetn",
+          "debug_bridge_PL/s_axi_aresetn",
           "JTAG_bridge_XCVU13P/s_axi_aresetn",
-          "counter_0/resetn",
           "heartbeat_0/resetn",
-          "axi_chip2chip_0/s_aresetn"
+          "axi_chip2chip_0/s_aresetn",
+          "Si5345_INSEL/s_axi_aresetn",
+          "system_management_wiz/s_axi_aresetn"
         ]
       },
       "zynq_ultra_ps_e_pl_clk1": {
@@ -4121,12 +4180,6 @@
           "LED"
         ]
       },
-      "Net": {
-        "ports": [
-          "counter_0/dout",
-          "ila_6bit_counter/probe0"
-        ]
-      },
       "axi_chip2chip_0_aurora_reset_pb": {
         "ports": [
           "axi_chip2chip_0/aurora_reset_pb",
@@ -4159,12 +4212,6 @@
           "axi_chip2chip_0/aurora_pma_init_out",
           "aurora_64b66b_0/pma_init",
           "xlconcat_0/In5"
-        ]
-      },
-      "Si5345_INSEL_dout": {
-        "ports": [
-          "Si5345_INSEL/dout",
-          "Si5345_INSEL"
         ]
       },
       "xlconcat_2_dout": {
@@ -4287,6 +4334,12 @@
           "xlconcat_0/dout",
           "ila_0/probe0"
         ]
+      },
+      "c_counter_binary_0_Q": {
+        "ports": [
+          "c_counter_binary_0/Q",
+          "ila_6bit_counter/probe0"
+        ]
       }
     },
     "addressing": {
@@ -4301,6 +4354,11 @@
                 "offset": "0x0080010000",
                 "range": "64K"
               },
+              "SEG_Si5345_INSEL_Reg": {
+                "address_block": "/Si5345_INSEL/S_AXI/Reg",
+                "offset": "0x0080040000",
+                "range": "64K"
+              },
               "SEG_axi_bram_ctrl_0_Mem0": {
                 "address_block": "/axi_bram_ctrl_0/S_AXI/Mem0",
                 "offset": "0x0080000000",
@@ -4308,17 +4366,22 @@
               },
               "SEG_axi_chip2chip_0_Mem0": {
                 "address_block": "/axi_chip2chip_0/s_axi/Mem0",
-                "offset": "0x0080040000",
+                "offset": "0x0080030000",
                 "range": "64K"
               },
-              "SEG_debug_bridge_0_Reg0": {
-                "address_block": "/debug_bridge_0/S_AXI/Reg0",
+              "SEG_debug_bridge_PL_Reg0": {
+                "address_block": "/debug_bridge_PL/S_AXI/Reg0",
                 "offset": "0x0080020000",
                 "range": "64K"
               },
               "SEG_gpio_led_Reg": {
                 "address_block": "/gpio_led/S_AXI/Reg",
-                "offset": "0x0080030000",
+                "offset": "0x0080050000",
+                "range": "64K"
+              },
+              "SEG_system_management_wiz_Reg": {
+                "address_block": "/system_management_wiz/S_AXI_LITE/Reg",
+                "offset": "0x0080060000",
                 "range": "64K"
               }
             }

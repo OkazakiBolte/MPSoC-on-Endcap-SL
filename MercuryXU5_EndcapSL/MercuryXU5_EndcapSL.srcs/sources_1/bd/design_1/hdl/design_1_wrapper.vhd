@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
---Date        : Thu Dec 16 20:46:03 2021
+--Date        : Fri Dec 17 12:21:24 2021
 --Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -40,7 +40,7 @@ entity design_1_wrapper is
     LED : out STD_LOGIC_VECTOR ( 2 downto 0 );
     MDIO_mdc : out STD_LOGIC;
     MDIO_mdio_io : inout STD_LOGIC;
-    Si5345_INSEL : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    Si5345_INSEL_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     ZYNQTCK : out STD_LOGIC;
     ZYNQTDI : out STD_LOGIC;
     ZYNQTDO : in STD_LOGIC;
@@ -61,7 +61,6 @@ architecture STRUCTURE of design_1_wrapper is
     ZYNQTCK : out STD_LOGIC;
     ZYNQTMS : out STD_LOGIC;
     LED : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    Si5345_INSEL : out STD_LOGIC_VECTOR ( 1 downto 0 );
     CFGINIT : in STD_LOGIC;
     CFGDONE : in STD_LOGIC;
     MDIO_mdc : out STD_LOGIC;
@@ -84,7 +83,8 @@ architecture STRUCTURE of design_1_wrapper is
     GMII_tx_clk : in STD_LOGIC;
     GMII_txd : out STD_LOGIC_VECTOR ( 7 downto 0 );
     GMII_tx_en : out STD_LOGIC;
-    GMII_tx_er : out STD_LOGIC
+    GMII_tx_er : out STD_LOGIC;
+    Si5345_INSEL_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component design_1;
   component IOBUF is
@@ -137,7 +137,7 @@ design_1_i: component design_1
       MDIO_mdio_i => MDIO_mdio_i,
       MDIO_mdio_o => MDIO_mdio_o,
       MDIO_mdio_t => MDIO_mdio_t,
-      Si5345_INSEL(1 downto 0) => Si5345_INSEL(1 downto 0),
+      Si5345_INSEL_tri_o(1 downto 0) => Si5345_INSEL_tri_o(1 downto 0),
       ZYNQTCK => ZYNQTCK,
       ZYNQTDI => ZYNQTDI,
       ZYNQTDO => ZYNQTDO,

@@ -1,7 +1,7 @@
 set_property SRC_FILE_INFO {cfile:/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_1/design_1_zynq_ultra_ps_e_1/design_1_zynq_ultra_ps_e_1_in_context.xdc rfile:../../../MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_1/design_1_zynq_ultra_ps_e_1/design_1_zynq_ultra_ps_e_1_in_context.xdc id:1 order:EARLY scoped_inst:design_1_i/zynq_ultra_ps_e} [current_design]
 set_property SRC_FILE_INFO {cfile:/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_1/design_1_axi_bram_ctrl_0_1/design_1_axi_bram_ctrl_0_1_in_context.xdc rfile:../../../MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_1/design_1_axi_bram_ctrl_0_1/design_1_axi_bram_ctrl_0_1_in_context.xdc id:2 order:EARLY scoped_inst:design_1_i/axi_bram_ctrl_0} [current_design]
 set_property SRC_FILE_INFO {cfile:/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc rfile:../../../MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc id:3 order:EARLY scoped_inst:design_1_i/clk_wiz_0} [current_design]
-set_property SRC_FILE_INFO {cfile:/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/design_1_debug_bridge_0_0/design_1_debug_bridge_0_0_in_context.xdc rfile:../../../MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/design_1_debug_bridge_0_0/design_1_debug_bridge_0_0_in_context.xdc id:4 order:EARLY scoped_inst:design_1_i/debug_bridge_0} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/design_1_debug_bridge_0_0/design_1_debug_bridge_0_0_in_context.xdc rfile:../../../MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_debug_bridge_0_0/design_1_debug_bridge_0_0/design_1_debug_bridge_0_0_in_context.xdc id:4 order:EARLY scoped_inst:design_1_i/debug_bridge_PL} [current_design]
 set_property SRC_FILE_INFO {cfile:/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_in_context.xdc rfile:../../../MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0_in_context.xdc id:5 order:EARLY scoped_inst:design_1_i/aurora_64b66b_0} [current_design]
 set_property SRC_FILE_INFO {cfile:/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl rfile:../../../MercuryXU5_EndcapSL.srcs/constrs_1/imports/src/Mercury_XU5_rgmii_loc.tcl id:6 unmanaged:yes} [current_design]
 set_property SRC_FILE_INFO {cfile:/home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL.xdc rfile:../../../MercuryXU5_EndcapSL.srcs/constrs_1/new/MercuryXU5_EndcapSL.xdc id:7} [current_design]
@@ -28,7 +28,7 @@ create_generated_clock -source [get_ports clk_in1] -edges {1 2 3} -edge_shift {0
 set_property src_info {type:SCOPED_XDC file:3 line:8 export:INPUT save:INPUT read:READ} [current_design]
 create_generated_clock -source [get_ports clk_in1] -edges {1 2 3} -edge_shift {0.000 -6.000 -12.000} [get_ports {}]
 current_instance
-current_instance design_1_i/debug_bridge_0
+current_instance design_1_i/debug_bridge_PL
 set_property src_info {type:SCOPED_XDC file:4 line:2 export:INPUT save:INPUT read:READ} [current_design]
 create_clock -period 5.000 [get_ports {}]
 current_instance
@@ -91,9 +91,9 @@ set_property -dict {PACKAGE_PIN A2  IOSTANDARD LVCMOS18  } [get_ports {SIRST}];
 set_property src_info {type:XDC file:7 line:50 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN A3  IOSTANDARD LVCMOS18  } [get_ports {SI44RST}];
 set_property src_info {type:XDC file:7 line:52 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict {PACKAGE_PIN A5  IOSTANDARD LVCMOS18} [get_ports {Si5345_INSEL[0]}]; # B103
+set_property -dict {PACKAGE_PIN A5  IOSTANDARD LVCMOS18} [get_ports {Si5345_INSEL_tri_o[0]}]; # B103
 set_property src_info {type:XDC file:7 line:53 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict {PACKAGE_PIN C6  IOSTANDARD LVCMOS18} [get_ports {Si5345_INSEL[1]}]; # B107
+set_property -dict {PACKAGE_PIN C6  IOSTANDARD LVCMOS18} [get_ports {Si5345_INSEL_tri_o[1]}]; # B107
 set_property src_info {type:XDC file:7 line:56 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN A7  IOSTANDARD LVCMOS18} [get_ports {CFGINIT}]; # B111
 set_property src_info {type:XDC file:7 line:57 export:INPUT save:INPUT read:READ} [current_design]

@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# counter, heartbeat, pma_init_generator
+# heartbeat, pma_init_generator
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -175,17 +175,18 @@ proc create_root_design { parentCell } {
 
   set MDIO [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:mdio_rtl:1.0 MDIO ]
 
+  set Si5345_INSEL [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 Si5345_INSEL ]
+
 
   # Create ports
   set CFGDONE [ create_bd_port -dir I CFGDONE ]
   set CFGINIT [ create_bd_port -dir I CFGINIT ]
   set ETH_CLK10 [ create_bd_port -dir O -type clk ETH_CLK10 ]
+  set ETH_CLK125 [ create_bd_port -dir O -type clk ETH_CLK125 ]
   set ETH_CLK125_90 [ create_bd_port -dir O -type clk ETH_CLK125_90 ]
   set ETH_CLK25 [ create_bd_port -dir O -type clk ETH_CLK25 ]
-  set ETH_CLK125 [ create_bd_port -dir O -type clk ETH_CLK125 ]
   set ETH_resetn [ create_bd_port -dir O -type rst ETH_resetn ]
   set LED [ create_bd_port -dir O -from 2 -to 0 LED ]
-  set Si5345_INSEL [ create_bd_port -dir O -from 1 -to 0 Si5345_INSEL ]
   set ZYNQTCK [ create_bd_port -dir O -type clk ZYNQTCK ]
   set ZYNQTDI [ create_bd_port -dir O -type data ZYNQTDI ]
   set ZYNQTDO [ create_bd_port -dir I -type data ZYNQTDO ]
@@ -198,9 +199,13 @@ proc create_root_design { parentCell } {
  ] $JTAG_bridge_XCVU13P
 
   # Create instance: Si5345_INSEL, and set properties
-  set Si5345_INSEL [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 Si5345_INSEL ]
+  set Si5345_INSEL [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 Si5345_INSEL ]
   set_property -dict [ list \
-   CONFIG.CONST_WIDTH {2} \
+   CONFIG.C_ALL_INPUTS {0} \
+   CONFIG.C_ALL_OUTPUTS {1} \
+   CONFIG.C_DOUT_DEFAULT {0x00000001} \
+   CONFIG.C_GPIO_WIDTH {2} \
+   CONFIG.C_IS_DUAL {0} \
  ] $Si5345_INSEL
 
   # Create instance: aurora_64b66b_0, and set properties
@@ -234,7 +239,7 @@ proc create_root_design { parentCell } {
   # Create instance: axi_smc, and set properties
   set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {5} \
+   CONFIG.NUM_MI {7} \
    CONFIG.NUM_SI {1} \
  ] $axi_smc
 
@@ -243,6 +248,12 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.Memory_Type {True_Dual_Port_RAM} \
  ] $blk_mem_gen_0
+
+  # Create instance: c_counter_binary_0, and set properties
+  set c_counter_binary_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0 ]
+  set_property -dict [ list \
+   CONFIG.Output_Width {6} \
+ ] $c_counter_binary_0
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
@@ -281,28 +292,17 @@ proc create_root_design { parentCell } {
    CONFIG.USE_LOCKED {true} \
  ] $clk_wiz_0
 
-  # Create instance: counter_0, and set properties
-  set block_name counter
-  set block_cell_name counter_0
-  if { [catch {set counter_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $counter_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: debug_bridge_0, and set properties
-  set debug_bridge_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:debug_bridge:3.0 debug_bridge_0 ]
+  # Create instance: debug_bridge_1, and set properties
+  set debug_bridge_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:debug_bridge:3.0 debug_bridge_1 ]
+
+  # Create instance: debug_bridge_PL, and set properties
+  set debug_bridge_PL [ create_bd_cell -type ip -vlnv xilinx.com:ip:debug_bridge:3.0 debug_bridge_PL ]
   set_property -dict [ list \
    CONFIG.C_BSCAN_MUX {2} \
    CONFIG.C_DEBUG_MODE {2} \
    CONFIG.C_NUM_BS_MASTER {1} \
    CONFIG.C_XVC_HW_ID {0x0002} \
- ] $debug_bridge_0
-
-  # Create instance: debug_bridge_1, and set properties
-  set debug_bridge_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:debug_bridge:3.0 debug_bridge_1 ]
+ ] $debug_bridge_PL
 
   # Create instance: gpio_led, and set properties
   set gpio_led [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 gpio_led ]
@@ -380,6 +380,12 @@ proc create_root_design { parentCell } {
   
   # Create instance: rst_ps8_99M, and set properties
   set rst_ps8_99M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps8_99M ]
+
+  # Create instance: system_management_wiz, and set properties
+  set system_management_wiz [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_management_wiz:1.3 system_management_wiz ]
+  set_property -dict [ list \
+   CONFIG.CHANNEL_ENABLE_VP_VN {false} \
+ ] $system_management_wiz
 
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
@@ -1904,6 +1910,7 @@ proc create_root_design { parentCell } {
   # Create interface connections
   connect_bd_intf_net -intf_net GT_DIFF_REFCLK1_1 [get_bd_intf_ports GT_DIFF_REFCLK1] [get_bd_intf_pins aurora_64b66b_0/GT_DIFF_REFCLK1]
   connect_bd_intf_net -intf_net GT_SERIAL_F2Z_1 [get_bd_intf_ports GT_SERIAL_F2Z] [get_bd_intf_pins aurora_64b66b_0/GT_SERIAL_RX]
+  connect_bd_intf_net -intf_net Si5345_INSEL_GPIO [get_bd_intf_ports Si5345_INSEL] [get_bd_intf_pins Si5345_INSEL/GPIO]
   connect_bd_intf_net -intf_net aurora_64b66b_0_GT_SERIAL_TX [get_bd_intf_ports GT_SERIAL_Z2F] [get_bd_intf_pins aurora_64b66b_0/GT_SERIAL_TX]
   connect_bd_intf_net -intf_net aurora_64b66b_0_USER_DATA_M_AXIS_RX [get_bd_intf_pins aurora_64b66b_0/USER_DATA_M_AXIS_RX] [get_bd_intf_pins axi_chip2chip_0/AXIS_RX]
   connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTA [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
@@ -1911,10 +1918,12 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_chip2chip_0_AXIS_TX [get_bd_intf_pins aurora_64b66b_0/USER_DATA_S_AXIS_TX] [get_bd_intf_pins axi_chip2chip_0/AXIS_TX]
   connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins axi_smc/M00_AXI]
   connect_bd_intf_net -intf_net axi_smc_M01_AXI [get_bd_intf_pins axi_smc/M01_AXI] [get_bd_intf_pins gpio_led/S_AXI]
-  connect_bd_intf_net -intf_net axi_smc_M02_AXI [get_bd_intf_pins axi_smc/M02_AXI] [get_bd_intf_pins debug_bridge_0/S_AXI]
+  connect_bd_intf_net -intf_net axi_smc_M02_AXI [get_bd_intf_pins axi_smc/M02_AXI] [get_bd_intf_pins debug_bridge_PL/S_AXI]
   connect_bd_intf_net -intf_net axi_smc_M03_AXI [get_bd_intf_pins JTAG_bridge_XCVU13P/S_AXI] [get_bd_intf_pins axi_smc/M03_AXI]
   connect_bd_intf_net -intf_net axi_smc_M04_AXI [get_bd_intf_pins axi_chip2chip_0/s_axi] [get_bd_intf_pins axi_smc/M04_AXI]
-  connect_bd_intf_net -intf_net debug_bridge_0_m0_bscan [get_bd_intf_pins debug_bridge_0/m0_bscan] [get_bd_intf_pins debug_bridge_1/S_BSCAN]
+  connect_bd_intf_net -intf_net axi_smc_M05_AXI [get_bd_intf_pins Si5345_INSEL/S_AXI] [get_bd_intf_pins axi_smc/M05_AXI]
+  connect_bd_intf_net -intf_net axi_smc_M06_AXI [get_bd_intf_pins axi_smc/M06_AXI] [get_bd_intf_pins system_management_wiz/S_AXI_LITE]
+  connect_bd_intf_net -intf_net debug_bridge_0_m0_bscan [get_bd_intf_pins debug_bridge_1/S_BSCAN] [get_bd_intf_pins debug_bridge_PL/m0_bscan]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_GMII_ENET1 [get_bd_intf_ports GMII] [get_bd_intf_pins zynq_ultra_ps_e/GMII_ENET1]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_MDIO_ENET1 [get_bd_intf_ports MDIO] [get_bd_intf_pins zynq_ultra_ps_e/MDIO_ENET1]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_M_AXI_HPM0_LPD [get_bd_intf_pins axi_smc/S00_AXI] [get_bd_intf_pins zynq_ultra_ps_e/M_AXI_HPM0_LPD]
@@ -1922,8 +1931,6 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net CFGDONE_1 [get_bd_ports CFGDONE] [get_bd_pins xlconcat_2/In1]
   connect_bd_net -net CFGINIT_1 [get_bd_ports CFGINIT] [get_bd_pins xlconcat_2/In0]
-  connect_bd_net -net Net [get_bd_pins counter_0/dout] [get_bd_pins ila_6bit_counter/probe0]
-  connect_bd_net -net Si5345_INSEL_dout [get_bd_ports Si5345_INSEL] [get_bd_pins Si5345_INSEL/dout]
   connect_bd_net -net ZYNQTDO_1 [get_bd_ports ZYNQTDO] [get_bd_pins JTAG_bridge_XCVU13P/tap_tdo]
   connect_bd_net -net aurora_64b66b_0_channel_up [get_bd_pins aurora_64b66b_0/channel_up] [get_bd_pins axi_chip2chip_0/axi_c2c_aurora_channel_up] [get_bd_pins xlconcat_0/In7]
   connect_bd_net -net aurora_64b66b_0_gt_pll_lock [get_bd_pins aurora_64b66b_0/gt_pll_lock] [get_bd_pins xlconcat_0/In9]
@@ -1944,6 +1951,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axi_chip2chip_0_axi_c2c_link_error_out [get_bd_pins axi_chip2chip_0/axi_c2c_link_error_out] [get_bd_pins xlconcat_0/In2]
   connect_bd_net -net axi_chip2chip_0_axi_c2c_link_status_out [get_bd_pins axi_chip2chip_0/axi_c2c_link_status_out] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net axi_chip2chip_0_axi_c2c_multi_bit_error_out [get_bd_pins axi_chip2chip_0/axi_c2c_multi_bit_error_out] [get_bd_pins xlconcat_0/In3]
+  connect_bd_net -net c_counter_binary_0_Q [get_bd_pins c_counter_binary_0/Q] [get_bd_pins ila_6bit_counter/probe0]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports ETH_CLK125] [get_bd_pins clk_wiz_0/clk_out1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_ports ETH_CLK125_90] [get_bd_pins clk_wiz_0/clk_out2]
   connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_ports ETH_CLK25] [get_bd_pins clk_wiz_0/clk_out3]
@@ -1955,20 +1963,22 @@ proc create_root_design { parentCell } {
   connect_bd_net -net heartbeat_0_dout [get_bd_ports LED] [get_bd_pins heartbeat_0/dout]
   connect_bd_net -net led_gpio_io_o [get_bd_pins gpio_led/gpio_io_o] [get_bd_pins heartbeat_0/din]
   connect_bd_net -net pma_init_generator_0_pma_init_in [get_bd_pins axi_chip2chip_0/aurora_pma_init_in] [get_bd_pins pma_init_generator_0/pma_init_in] [get_bd_pins xlconcat_0/In6]
-  connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_chip2chip_0/s_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins counter_0/resetn] [get_bd_pins debug_bridge_0/s_axi_aresetn] [get_bd_pins gpio_led/s_axi_aresetn] [get_bd_pins heartbeat_0/resetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn]
+  connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aresetn] [get_bd_pins Si5345_INSEL/s_axi_aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_chip2chip_0/s_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins debug_bridge_PL/s_axi_aresetn] [get_bd_pins gpio_led/s_axi_aresetn] [get_bd_pins heartbeat_0/resetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn] [get_bd_pins system_management_wiz/s_axi_aresetn]
   connect_bd_net -net rst_ps8_99M_peripheral_reset [get_bd_pins pma_init_generator_0/periph_reset] [get_bd_pins rst_ps8_99M/peripheral_reset]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins ila_0/probe0] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconcat_2_dout [get_bd_pins ila_CFG/probe0] [get_bd_pins xlconcat_2/dout]
-  connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aclk] [get_bd_pins aurora_64b66b_0/init_clk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_chip2chip_0/aurora_init_clk] [get_bd_pins axi_chip2chip_0/s_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins counter_0/clk] [get_bd_pins debug_bridge_0/s_axi_aclk] [get_bd_pins debug_bridge_1/clk] [get_bd_pins gpio_led/s_axi_aclk] [get_bd_pins heartbeat_0/clk100] [get_bd_pins ila_0/clk] [get_bd_pins ila_6bit_counter/clk] [get_bd_pins ila_CFG/clk] [get_bd_pins pma_init_generator_0/aur_init_clk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]
+  connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aclk] [get_bd_pins Si5345_INSEL/s_axi_aclk] [get_bd_pins aurora_64b66b_0/init_clk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_chip2chip_0/aurora_init_clk] [get_bd_pins axi_chip2chip_0/s_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins c_counter_binary_0/CLK] [get_bd_pins debug_bridge_1/clk] [get_bd_pins debug_bridge_PL/s_axi_aclk] [get_bd_pins gpio_led/s_axi_aclk] [get_bd_pins heartbeat_0/clk100] [get_bd_pins ila_0/clk] [get_bd_pins ila_6bit_counter/clk] [get_bd_pins ila_CFG/clk] [get_bd_pins pma_init_generator_0/aur_init_clk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins system_management_wiz/s_axi_aclk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]
   connect_bd_net -net zynq_ultra_ps_e_pl_clk1 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins zynq_ultra_ps_e/pl_clk1]
   connect_bd_net -net zynq_ultra_ps_e_pl_resetn0 [get_bd_pins clk_wiz_0/resetn] [get_bd_pins rst_ps8_99M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e/pl_resetn0]
 
   # Create address segments
   assign_bd_address -offset 0x80010000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs JTAG_bridge_XCVU13P/S_AXI/Reg0] -force
+  assign_bd_address -offset 0x80040000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs Si5345_INSEL/S_AXI/Reg] -force
   assign_bd_address -offset 0x80000000 -range 0x00002000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
-  assign_bd_address -offset 0x80040000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs axi_chip2chip_0/s_axi/Mem0] -force
-  assign_bd_address -offset 0x80020000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs debug_bridge_0/S_AXI/Reg0] -force
-  assign_bd_address -offset 0x80030000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs gpio_led/S_AXI/Reg] -force
+  assign_bd_address -offset 0x80030000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs axi_chip2chip_0/s_axi/Mem0] -force
+  assign_bd_address -offset 0x80020000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs debug_bridge_PL/S_AXI/Reg0] -force
+  assign_bd_address -offset 0x80050000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs gpio_led/S_AXI/Reg] -force
+  assign_bd_address -offset 0x80060000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs system_management_wiz/S_AXI_LITE/Reg] -force
 
 
   # Restore current instance
