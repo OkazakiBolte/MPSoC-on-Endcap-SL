@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-//Date        : Thu Dec 16 20:18:40 2021
+//Date        : Fri Dec 24 01:06:29 2021
 //Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -47,14 +47,14 @@ module design_1
   wire aurora_64b66b_0_mmcm_not_locked_out;
   wire aurora_64b66b_0_sys_reset_out;
   wire aurora_64b66b_0_user_clk_out;
-  wire [12:0]axi_bram_ctrl_0_BRAM_PORTA_ADDR;
+  wire [15:0]axi_bram_ctrl_0_BRAM_PORTA_ADDR;
   wire axi_bram_ctrl_0_BRAM_PORTA_CLK;
   wire [31:0]axi_bram_ctrl_0_BRAM_PORTA_DIN;
   wire [31:0]axi_bram_ctrl_0_BRAM_PORTA_DOUT;
   wire axi_bram_ctrl_0_BRAM_PORTA_EN;
   wire axi_bram_ctrl_0_BRAM_PORTA_RST;
   wire [3:0]axi_bram_ctrl_0_BRAM_PORTA_WE;
-  wire [12:0]axi_bram_ctrl_0_BRAM_PORTB_ADDR;
+  wire [15:0]axi_bram_ctrl_0_BRAM_PORTB_ADDR;
   wire axi_bram_ctrl_0_BRAM_PORTB_CLK;
   wire [31:0]axi_bram_ctrl_0_BRAM_PORTB_DIN;
   wire [31:0]axi_bram_ctrl_0_BRAM_PORTB_DOUT;
@@ -159,7 +159,7 @@ module design_1
         .bram_wrdata_a(axi_bram_ctrl_0_BRAM_PORTA_DIN),
         .bram_wrdata_b(axi_bram_ctrl_0_BRAM_PORTB_DIN),
         .s_axi_aclk(clk_wiz_2_clk_out1),
-        .s_axi_araddr(axi_chip2chip_0_m_axi_ARADDR[12:0]),
+        .s_axi_araddr(axi_chip2chip_0_m_axi_ARADDR[15:0]),
         .s_axi_arburst(axi_chip2chip_0_m_axi_ARBURST),
         .s_axi_arcache({1'b0,1'b0,1'b1,1'b1}),
         .s_axi_aresetn(rst_clk_wiz_2_100M_peripheral_aresetn),
@@ -170,7 +170,7 @@ module design_1
         .s_axi_arready(axi_chip2chip_0_m_axi_ARREADY),
         .s_axi_arsize(axi_chip2chip_0_m_axi_ARSIZE),
         .s_axi_arvalid(axi_chip2chip_0_m_axi_ARVALID),
-        .s_axi_awaddr(axi_chip2chip_0_m_axi_AWADDR[12:0]),
+        .s_axi_awaddr(axi_chip2chip_0_m_axi_AWADDR[15:0]),
         .s_axi_awburst(axi_chip2chip_0_m_axi_AWBURST),
         .s_axi_awcache({1'b0,1'b0,1'b1,1'b1}),
         .s_axi_awid(axi_chip2chip_0_m_axi_AWID),
@@ -196,8 +196,8 @@ module design_1
         .s_axi_wstrb(axi_chip2chip_0_m_axi_WSTRB),
         .s_axi_wvalid(axi_chip2chip_0_m_axi_WVALID));
   design_1_axi_bram_ctrl_0_bram_0 axi_bram_ctrl_0_bram
-       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_0_BRAM_PORTA_ADDR}),
-        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_0_BRAM_PORTB_ADDR}),
+       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_0_BRAM_PORTA_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_0_BRAM_PORTB_ADDR}),
         .clka(axi_bram_ctrl_0_BRAM_PORTA_CLK),
         .clkb(axi_bram_ctrl_0_BRAM_PORTB_CLK),
         .dina(axi_bram_ctrl_0_BRAM_PORTA_DIN),

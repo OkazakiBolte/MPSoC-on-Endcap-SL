@@ -182,9 +182,9 @@ proc create_root_design { parentCell } {
   set CFGDONE [ create_bd_port -dir I CFGDONE ]
   set CFGINIT [ create_bd_port -dir I CFGINIT ]
   set ETH_CLK10 [ create_bd_port -dir O -type clk ETH_CLK10 ]
-  set ETH_CLK125 [ create_bd_port -dir O -type clk ETH_CLK125 ]
   set ETH_CLK125_90 [ create_bd_port -dir O -type clk ETH_CLK125_90 ]
   set ETH_CLK25 [ create_bd_port -dir O -type clk ETH_CLK25 ]
+  set ETH_CLK125 [ create_bd_port -dir O -type clk ETH_CLK125 ]
   set ETH_resetn [ create_bd_port -dir O -type rst ETH_resetn ]
   set LED [ create_bd_port -dir O -from 2 -to 0 LED ]
   set ZYNQTCK [ create_bd_port -dir O -type clk ZYNQTCK ]
@@ -236,10 +236,17 @@ proc create_root_design { parentCell } {
    CONFIG.C_INTERFACE_TYPE {2} \
  ] $axi_chip2chip_0
 
+  # Create instance: axi_gpio_0, and set properties
+  set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
+  set_property -dict [ list \
+   CONFIG.C_ALL_OUTPUTS {1} \
+   CONFIG.C_GPIO_WIDTH {1} \
+ ] $axi_gpio_0
+
   # Create instance: axi_smc, and set properties
   set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {7} \
+   CONFIG.NUM_MI {8} \
    CONFIG.NUM_SI {1} \
  ] $axi_smc
 
@@ -378,6 +385,10 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] [get_bd_pins /pma_init_generator_0/gpio_reset]
+
   # Create instance: rst_ps8_99M, and set properties
   set rst_ps8_99M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps8_99M ]
 
@@ -1923,6 +1934,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_smc_M04_AXI [get_bd_intf_pins axi_chip2chip_0/s_axi] [get_bd_intf_pins axi_smc/M04_AXI]
   connect_bd_intf_net -intf_net axi_smc_M05_AXI [get_bd_intf_pins Si5345_INSEL/S_AXI] [get_bd_intf_pins axi_smc/M05_AXI]
   connect_bd_intf_net -intf_net axi_smc_M06_AXI [get_bd_intf_pins axi_smc/M06_AXI] [get_bd_intf_pins system_management_wiz/S_AXI_LITE]
+  connect_bd_intf_net -intf_net axi_smc_M07_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins axi_smc/M07_AXI]
   connect_bd_intf_net -intf_net debug_bridge_0_m0_bscan [get_bd_intf_pins debug_bridge_1/S_BSCAN] [get_bd_intf_pins debug_bridge_PL/m0_bscan]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_GMII_ENET1 [get_bd_intf_ports GMII] [get_bd_intf_pins zynq_ultra_ps_e/GMII_ENET1]
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_MDIO_ENET1 [get_bd_intf_ports MDIO] [get_bd_intf_pins zynq_ultra_ps_e/MDIO_ENET1]
@@ -1951,6 +1963,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axi_chip2chip_0_axi_c2c_link_error_out [get_bd_pins axi_chip2chip_0/axi_c2c_link_error_out] [get_bd_pins xlconcat_0/In2]
   connect_bd_net -net axi_chip2chip_0_axi_c2c_link_status_out [get_bd_pins axi_chip2chip_0/axi_c2c_link_status_out] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net axi_chip2chip_0_axi_c2c_multi_bit_error_out [get_bd_pins axi_chip2chip_0/axi_c2c_multi_bit_error_out] [get_bd_pins xlconcat_0/In3]
+  connect_bd_net -net axi_gpio_0_gpio_io_o [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins pma_init_generator_0/gpio_reset]
   connect_bd_net -net c_counter_binary_0_Q [get_bd_pins c_counter_binary_0/Q] [get_bd_pins ila_6bit_counter/probe0]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports ETH_CLK125] [get_bd_pins clk_wiz_0/clk_out1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_ports ETH_CLK125_90] [get_bd_pins clk_wiz_0/clk_out2]
@@ -1963,11 +1976,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net heartbeat_0_dout [get_bd_ports LED] [get_bd_pins heartbeat_0/dout]
   connect_bd_net -net led_gpio_io_o [get_bd_pins gpio_led/gpio_io_o] [get_bd_pins heartbeat_0/din]
   connect_bd_net -net pma_init_generator_0_pma_init_in [get_bd_pins axi_chip2chip_0/aurora_pma_init_in] [get_bd_pins pma_init_generator_0/pma_init_in] [get_bd_pins xlconcat_0/In6]
-  connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aresetn] [get_bd_pins Si5345_INSEL/s_axi_aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_chip2chip_0/s_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins debug_bridge_PL/s_axi_aresetn] [get_bd_pins gpio_led/s_axi_aresetn] [get_bd_pins heartbeat_0/resetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn] [get_bd_pins system_management_wiz/s_axi_aresetn]
-  connect_bd_net -net rst_ps8_99M_peripheral_reset [get_bd_pins pma_init_generator_0/periph_reset] [get_bd_pins rst_ps8_99M/peripheral_reset]
+  connect_bd_net -net rst_ps8_99M_peripheral_aresetn [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aresetn] [get_bd_pins Si5345_INSEL/s_axi_aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_chip2chip_0/s_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins debug_bridge_PL/s_axi_aresetn] [get_bd_pins gpio_led/s_axi_aresetn] [get_bd_pins heartbeat_0/resetn] [get_bd_pins pma_init_generator_0/resetn] [get_bd_pins rst_ps8_99M/peripheral_aresetn] [get_bd_pins system_management_wiz/s_axi_aresetn]
+  connect_bd_net -net rst_ps8_99M_peripheral_reset [get_bd_pins rst_ps8_99M/peripheral_reset]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins ila_0/probe0] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconcat_2_dout [get_bd_pins ila_CFG/probe0] [get_bd_pins xlconcat_2/dout]
-  connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aclk] [get_bd_pins Si5345_INSEL/s_axi_aclk] [get_bd_pins aurora_64b66b_0/init_clk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_chip2chip_0/aurora_init_clk] [get_bd_pins axi_chip2chip_0/s_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins c_counter_binary_0/CLK] [get_bd_pins debug_bridge_1/clk] [get_bd_pins debug_bridge_PL/s_axi_aclk] [get_bd_pins gpio_led/s_axi_aclk] [get_bd_pins heartbeat_0/clk100] [get_bd_pins ila_0/clk] [get_bd_pins ila_6bit_counter/clk] [get_bd_pins ila_CFG/clk] [get_bd_pins pma_init_generator_0/aur_init_clk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins system_management_wiz/s_axi_aclk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]
+  connect_bd_net -net zynq_ultra_ps_e_pl_clk0 [get_bd_pins JTAG_bridge_XCVU13P/s_axi_aclk] [get_bd_pins Si5345_INSEL/s_axi_aclk] [get_bd_pins aurora_64b66b_0/init_clk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_chip2chip_0/aurora_init_clk] [get_bd_pins axi_chip2chip_0/s_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins c_counter_binary_0/CLK] [get_bd_pins debug_bridge_1/clk] [get_bd_pins debug_bridge_PL/s_axi_aclk] [get_bd_pins gpio_led/s_axi_aclk] [get_bd_pins heartbeat_0/clk100] [get_bd_pins ila_0/clk] [get_bd_pins ila_6bit_counter/clk] [get_bd_pins ila_CFG/clk] [get_bd_pins pma_init_generator_0/init_clk] [get_bd_pins rst_ps8_99M/slowest_sync_clk] [get_bd_pins system_management_wiz/s_axi_aclk] [get_bd_pins zynq_ultra_ps_e/maxihpm0_lpd_aclk] [get_bd_pins zynq_ultra_ps_e/pl_clk0]
   connect_bd_net -net zynq_ultra_ps_e_pl_clk1 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins zynq_ultra_ps_e/pl_clk1]
   connect_bd_net -net zynq_ultra_ps_e_pl_resetn0 [get_bd_pins clk_wiz_0/resetn] [get_bd_pins rst_ps8_99M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e/pl_resetn0]
 
@@ -1976,8 +1989,9 @@ proc create_root_design { parentCell } {
   assign_bd_address -offset 0x80040000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs Si5345_INSEL/S_AXI/Reg] -force
   assign_bd_address -offset 0x80000000 -range 0x00002000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
   assign_bd_address -offset 0x80030000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs axi_chip2chip_0/s_axi/Mem0] -force
+  assign_bd_address -offset 0x80070000 -range 0x00000080 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x80020000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs debug_bridge_PL/S_AXI/Reg0] -force
-  assign_bd_address -offset 0x80050000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs gpio_led/S_AXI/Reg] -force
+  assign_bd_address -offset 0x80050000 -range 0x00000080 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs gpio_led/S_AXI/Reg] -force
   assign_bd_address -offset 0x80060000 -range 0x00010000 -target_address_space [get_bd_addr_spaces zynq_ultra_ps_e/Data] [get_bd_addr_segs system_management_wiz/S_AXI_LITE/Reg] -force
 
 

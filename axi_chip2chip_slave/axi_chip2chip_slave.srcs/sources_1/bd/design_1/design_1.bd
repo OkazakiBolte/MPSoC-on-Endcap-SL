@@ -462,24 +462,6 @@
       }
     },
     "interface_nets": {
-      "aurora_64b66b_0_GT_SERIAL_TX": {
-        "interface_ports": [
-          "GT_SERIAL_F2Z",
-          "aurora_64b66b_0/GT_SERIAL_TX"
-        ]
-      },
-      "axi_chip2chip_0_AXIS_TX": {
-        "interface_ports": [
-          "axi_chip2chip_0/AXIS_TX",
-          "aurora_64b66b_0/USER_DATA_S_AXIS_TX"
-        ]
-      },
-      "GT_SERIAL_Z2F_1": {
-        "interface_ports": [
-          "GT_SERIAL_Z2F",
-          "aurora_64b66b_0/GT_SERIAL_RX"
-        ]
-      },
       "aurora_64b66b_0_USER_DATA_M_AXIS_RX": {
         "interface_ports": [
           "axi_chip2chip_0/AXIS_RX",
@@ -498,10 +480,28 @@
           "aurora_64b66b_0/GT_DIFF_REFCLK1"
         ]
       },
-      "clk125_D_1": {
+      "axi_chip2chip_0_AXIS_TX": {
         "interface_ports": [
-          "clk125_D",
-          "clk_wiz/CLK_IN1_D"
+          "axi_chip2chip_0/AXIS_TX",
+          "aurora_64b66b_0/USER_DATA_S_AXIS_TX"
+        ]
+      },
+      "GT_SERIAL_Z2F_1": {
+        "interface_ports": [
+          "GT_SERIAL_Z2F",
+          "aurora_64b66b_0/GT_SERIAL_RX"
+        ]
+      },
+      "aurora_64b66b_0_GT_SERIAL_TX": {
+        "interface_ports": [
+          "GT_SERIAL_F2Z",
+          "aurora_64b66b_0/GT_SERIAL_TX"
+        ]
+      },
+      "axi_bram_ctrl_0_BRAM_PORTB": {
+        "interface_ports": [
+          "axi_bram_ctrl_0_bram/BRAM_PORTB",
+          "axi_bram_ctrl_0/BRAM_PORTB"
         ]
       },
       "axi_bram_ctrl_0_BRAM_PORTA": {
@@ -510,10 +510,10 @@
           "axi_bram_ctrl_0/BRAM_PORTA"
         ]
       },
-      "axi_bram_ctrl_0_BRAM_PORTB": {
+      "clk125_D_1": {
         "interface_ports": [
-          "axi_bram_ctrl_0_bram/BRAM_PORTB",
-          "axi_bram_ctrl_0/BRAM_PORTB"
+          "clk125_D",
+          "clk_wiz/CLK_IN1_D"
         ]
       }
     },
@@ -664,8 +664,8 @@
             "segments": {
               "SEG_axi_bram_ctrl_0_Mem0": {
                 "address_block": "/axi_bram_ctrl_0/S_AXI/Mem0",
-                "offset": "0xC0000000",
-                "range": "8K"
+                "offset": "0x80040000",
+                "range": "64K"
               }
             }
           }

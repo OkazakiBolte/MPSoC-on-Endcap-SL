@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Thu Dec 16 14:10:05 2021
+// Date        : Fri Dec 24 01:03:49 2021
 // Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_pma_init_generator_0_0/design_1_pma_init_generator_0_0_stub.v
@@ -14,9 +14,10 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "pma_init_generator,Vivado 2020.1" *)
-module design_1_pma_init_generator_0_0(aur_init_clk, periph_reset, pma_init_in)
-/* synthesis syn_black_box black_box_pad_pin="aur_init_clk,periph_reset,pma_init_in" */;
-  input aur_init_clk;
-  input periph_reset;
+module design_1_pma_init_generator_0_0(init_clk, resetn, gpio_reset, pma_init_in)
+/* synthesis syn_black_box black_box_pad_pin="init_clk,resetn,gpio_reset,pma_init_in" */;
+  input init_clk;
+  input resetn;
+  input gpio_reset;
   output pma_init_in;
 endmodule

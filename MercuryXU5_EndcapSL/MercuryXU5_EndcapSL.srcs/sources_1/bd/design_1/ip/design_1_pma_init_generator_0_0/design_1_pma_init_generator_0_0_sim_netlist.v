@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Thu Dec 16 14:10:05 2021
+// Date        : Fri Dec 24 01:03:49 2021
 // Host        : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_pma_init_generator_0_0/design_1_pma_init_generator_0_0_sim_netlist.v
@@ -16,33 +16,38 @@
 (* x_core_info = "pma_init_generator,Vivado 2020.1" *) 
 (* NotValidForBitStream *)
 module design_1_pma_init_generator_0_0
-   (aur_init_clk,
-    periph_reset,
+   (init_clk,
+    resetn,
+    gpio_reset,
     pma_init_in);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 aur_init_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME aur_init_clk, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk0, INSERT_VIP 0" *) input aur_init_clk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 periph_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME periph_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input periph_reset;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 init_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME init_clk, ASSOCIATED_RESET resetn, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk0, INSERT_VIP 0" *) input init_clk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 resetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input resetn;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 gpio_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME gpio_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input gpio_reset;
   output pma_init_in;
 
-  wire aur_init_clk;
-  wire periph_reset;
+  wire gpio_reset;
+  wire init_clk;
   wire pma_init_in;
+  wire resetn;
 
   design_1_pma_init_generator_0_0_pma_init_generator U0
-       (.aur_init_clk(aur_init_clk),
-        .periph_reset(periph_reset),
-        .pma_init_in(pma_init_in));
+       (.gpio_reset(gpio_reset),
+        .init_clk(init_clk),
+        .pma_init_in(pma_init_in),
+        .resetn(resetn));
 endmodule
 
 (* ORIG_REF_NAME = "pma_init_generator" *) 
 module design_1_pma_init_generator_0_0_pma_init_generator
    (pma_init_in,
-    periph_reset,
-    aur_init_clk);
+    init_clk,
+    gpio_reset,
+    resetn);
   output pma_init_in;
-  input periph_reset;
-  input aur_init_clk;
+  input init_clk;
+  input gpio_reset;
+  input resetn;
 
-  wire aur_init_clk;
   wire counter0_carry__0_n_2;
   wire counter0_carry__0_n_3;
   wire counter0_carry__0_n_4;
@@ -57,18 +62,21 @@ module design_1_pma_init_generator_0_0_pma_init_generator
   wire counter0_carry_n_5;
   wire counter0_carry_n_6;
   wire counter0_carry_n_7;
+  wire \counter[15]_i_1_n_0 ;
   wire [15:4]counter_reg;
   wire \counter_reg_n_0_[0] ;
   wire \counter_reg_n_0_[1] ;
   wire \counter_reg_n_0_[2] ;
   wire \counter_reg_n_0_[3] ;
+  wire gpio_reset;
+  wire init_clk;
   wire [15:0]p_0_in;
-  wire periph_reset;
   wire pma_init_in;
   wire pma_init_in_i_1_n_0;
   wire pma_init_in_i_2_n_0;
   wire pma_init_in_i_3_n_0;
   wire pma_init_in_i_4_n_0;
+  wire resetn;
   wire [7:6]NLW_counter0_carry__0_CO_UNCONNECTED;
   wire [7:7]NLW_counter0_carry__0_O_UNCONNECTED;
 
@@ -93,110 +101,117 @@ module design_1_pma_init_generator_0_0_pma_init_generator
     \counter[0]_i_1 
        (.I0(\counter_reg_n_0_[0] ),
         .O(p_0_in[0]));
+  LUT2 #(
+    .INIT(4'hB)) 
+    \counter[15]_i_1 
+       (.I0(gpio_reset),
+        .I1(resetn),
+        .O(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[0] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[0]),
         .Q(\counter_reg_n_0_[0] ),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[10] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[10]),
         .Q(counter_reg[10]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[11] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[11]),
         .Q(counter_reg[11]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[12] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[12]),
         .Q(counter_reg[12]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[13] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[13]),
         .Q(counter_reg[13]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[14] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[14]),
         .Q(counter_reg[14]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[15] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[15]),
         .Q(counter_reg[15]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[1] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[1]),
         .Q(\counter_reg_n_0_[1] ),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[2] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[2]),
         .Q(\counter_reg_n_0_[2] ),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[3] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[3]),
         .Q(\counter_reg_n_0_[3] ),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[4] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[4]),
         .Q(counter_reg[4]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[5] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[5]),
         .Q(counter_reg[5]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[6] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[6]),
         .Q(counter_reg[6]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[7] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[7]),
         .Q(counter_reg[7]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[8] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[8]),
         .Q(counter_reg[8]),
-        .R(periph_reset));
+        .R(\counter[15]_i_1_n_0 ));
   FDRE \counter_reg[9] 
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(pma_init_in),
         .D(p_0_in[9]),
         .Q(counter_reg[9]),
-        .R(periph_reset));
-  LUT5 #(
-    .INIT(32'hFFFF0100)) 
+        .R(\counter[15]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF0100FFFF)) 
     pma_init_in_i_1
        (.I0(pma_init_in_i_2_n_0),
         .I1(pma_init_in_i_3_n_0),
         .I2(pma_init_in_i_4_n_0),
         .I3(pma_init_in),
-        .I4(periph_reset),
+        .I4(resetn),
+        .I5(gpio_reset),
         .O(pma_init_in_i_1_n_0));
   LUT4 #(
     .INIT(16'hFFFE)) 
@@ -223,7 +238,7 @@ module design_1_pma_init_generator_0_0_pma_init_generator
         .I3(counter_reg[11]),
         .O(pma_init_in_i_4_n_0));
   FDRE pma_init_in_reg
-       (.C(aur_init_clk),
+       (.C(init_clk),
         .CE(1'b1),
         .D(pma_init_in_i_1_n_0),
         .Q(pma_init_in),

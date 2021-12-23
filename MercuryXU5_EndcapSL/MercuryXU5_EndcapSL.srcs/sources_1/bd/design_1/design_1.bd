@@ -26,12 +26,13 @@
       "aurora_64b66b_0": "",
       "xlconcat_2": "",
       "ila_CFG": "",
-      "pma_init_generator_0": "",
       "xlconcat_0": "",
       "ila_0": "",
       "Si5345_INSEL": "",
       "system_management_wiz": "",
-      "c_counter_binary_0": ""
+      "c_counter_binary_0": "",
+      "pma_init_generator_0": "",
+      "axi_gpio_0": ""
     },
     "interface_ports": {
       "GMII": {
@@ -3159,7 +3160,7 @@
         "xci_name": "design_1_axi_smc_1",
         "parameters": {
           "NUM_MI": {
-            "value": "7"
+            "value": "8"
           },
           "NUM_SI": {
             "value": "1"
@@ -3176,7 +3177,8 @@
               "M03_AXI",
               "M04_AXI",
               "M05_AXI",
-              "M06_AXI"
+              "M06_AXI",
+              "M07_AXI"
             ],
             "parameters": {
               "NUM_READ_OUTSTANDING": {
@@ -3354,6 +3356,30 @@
                 "value": "0"
               }
             }
+          },
+          "M07_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
+              "NUM_READ_OUTSTANDING": {
+                "value": "8"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "8"
+              },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
+                "value": "0"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0"
+              }
+            }
           }
         },
         "addressing": {
@@ -3367,7 +3393,8 @@
                 "M03_AXI",
                 "M04_AXI",
                 "M05_AXI",
-                "M06_AXI"
+                "M06_AXI",
+                "M07_AXI"
               ]
             }
           }
@@ -3823,50 +3850,6 @@
           }
         }
       },
-      "pma_init_generator_0": {
-        "vlnv": "xilinx.com:module_ref:pma_init_generator:1.0",
-        "xci_name": "design_1_pma_init_generator_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "pma_init_generator",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "aur_init_clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_1_pl_clk0",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "99999001",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "periph_reset": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_HIGH",
-                "value_src": "const_prop"
-              }
-            }
-          },
-          "pma_init_in": {
-            "direction": "O",
-            "parameters": {
-              "POLARITY": {
-                "value": "",
-                "value_src": "weak"
-              }
-            }
-          }
-        }
-      },
       "xlconcat_0": {
         "vlnv": "xilinx.com:ip:xlconcat:2.1",
         "xci_name": "design_1_xlconcat_0_4",
@@ -3944,51 +3927,78 @@
             "value": "6"
           }
         }
+      },
+      "pma_init_generator_0": {
+        "vlnv": "xilinx.com:module_ref:pma_init_generator:1.0",
+        "xci_name": "design_1_pma_init_generator_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pma_init_generator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "init_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "resetn",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_zynq_ultra_ps_e_1_pl_clk0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "99999001",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "resetn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "gpio_reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "pma_init_in": {
+            "direction": "O",
+            "parameters": {
+              "POLARITY": {
+                "value": "",
+                "value_src": "weak"
+              }
+            }
+          }
+        }
+      },
+      "axi_gpio_0": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "xci_name": "design_1_axi_gpio_0_1",
+        "parameters": {
+          "C_ALL_OUTPUTS": {
+            "value": "1"
+          },
+          "C_GPIO_WIDTH": {
+            "value": "1"
+          }
+        }
       }
     },
     "interface_nets": {
-      "aurora_64b66b_0_GT_SERIAL_TX": {
-        "interface_ports": [
-          "GT_SERIAL_Z2F",
-          "aurora_64b66b_0/GT_SERIAL_TX"
-        ]
-      },
-      "Si5345_INSEL_GPIO": {
-        "interface_ports": [
-          "Si5345_INSEL",
-          "Si5345_INSEL/GPIO"
-        ]
-      },
-      "zynq_ultra_ps_e_GMII_ENET1": {
-        "interface_ports": [
-          "GMII",
-          "zynq_ultra_ps_e/GMII_ENET1"
-        ]
-      },
-      "axi_smc_M02_AXI": {
-        "interface_ports": [
-          "axi_smc/M02_AXI",
-          "debug_bridge_PL/S_AXI"
-        ]
-      },
-      "axi_bram_ctrl_0_BRAM_PORTB": {
-        "interface_ports": [
-          "blk_mem_gen_0/BRAM_PORTB",
-          "axi_bram_ctrl_0/BRAM_PORTB"
-        ]
-      },
-      "axi_smc_M01_AXI": {
-        "interface_ports": [
-          "axi_smc/M01_AXI",
-          "gpio_led/S_AXI"
-        ]
-      },
-      "zynq_ultra_ps_e_MDIO_ENET1": {
-        "interface_ports": [
-          "MDIO",
-          "zynq_ultra_ps_e/MDIO_ENET1"
-        ]
-      },
       "GT_DIFF_REFCLK1_1": {
         "interface_ports": [
           "GT_DIFF_REFCLK1",
@@ -4043,12 +4053,6 @@
           "aurora_64b66b_0/USER_DATA_S_AXIS_TX"
         ]
       },
-      "axi_bram_ctrl_0_BRAM_PORTA": {
-        "interface_ports": [
-          "blk_mem_gen_0/BRAM_PORTA",
-          "axi_bram_ctrl_0/BRAM_PORTA"
-        ]
-      },
       "axi_smc_M05_AXI": {
         "interface_ports": [
           "axi_smc/M05_AXI",
@@ -4059,6 +4063,60 @@
         "interface_ports": [
           "axi_smc/M06_AXI",
           "system_management_wiz/S_AXI_LITE"
+        ]
+      },
+      "zynq_ultra_ps_e_MDIO_ENET1": {
+        "interface_ports": [
+          "MDIO",
+          "zynq_ultra_ps_e/MDIO_ENET1"
+        ]
+      },
+      "axi_smc_M01_AXI": {
+        "interface_ports": [
+          "axi_smc/M01_AXI",
+          "gpio_led/S_AXI"
+        ]
+      },
+      "axi_bram_ctrl_0_BRAM_PORTB": {
+        "interface_ports": [
+          "blk_mem_gen_0/BRAM_PORTB",
+          "axi_bram_ctrl_0/BRAM_PORTB"
+        ]
+      },
+      "axi_smc_M02_AXI": {
+        "interface_ports": [
+          "axi_smc/M02_AXI",
+          "debug_bridge_PL/S_AXI"
+        ]
+      },
+      "zynq_ultra_ps_e_GMII_ENET1": {
+        "interface_ports": [
+          "GMII",
+          "zynq_ultra_ps_e/GMII_ENET1"
+        ]
+      },
+      "axi_bram_ctrl_0_BRAM_PORTA": {
+        "interface_ports": [
+          "blk_mem_gen_0/BRAM_PORTA",
+          "axi_bram_ctrl_0/BRAM_PORTA"
+        ]
+      },
+      "aurora_64b66b_0_GT_SERIAL_TX": {
+        "interface_ports": [
+          "GT_SERIAL_Z2F",
+          "aurora_64b66b_0/GT_SERIAL_TX"
+        ]
+      },
+      "Si5345_INSEL_GPIO": {
+        "interface_ports": [
+          "Si5345_INSEL",
+          "Si5345_INSEL/GPIO"
+        ]
+      },
+      "axi_smc_M07_AXI": {
+        "interface_ports": [
+          "axi_smc/M07_AXI",
+          "axi_gpio_0/S_AXI"
         ]
       }
     },
@@ -4080,11 +4138,12 @@
           "aurora_64b66b_0/init_clk",
           "axi_chip2chip_0/aurora_init_clk",
           "ila_CFG/clk",
-          "pma_init_generator_0/aur_init_clk",
           "ila_0/clk",
           "Si5345_INSEL/s_axi_aclk",
           "system_management_wiz/s_axi_aclk",
-          "c_counter_binary_0/CLK"
+          "c_counter_binary_0/CLK",
+          "axi_gpio_0/s_axi_aclk",
+          "pma_init_generator_0/init_clk"
         ]
       },
       "zynq_ultra_ps_e_pl_resetn0": {
@@ -4105,7 +4164,9 @@
           "heartbeat_0/resetn",
           "axi_chip2chip_0/s_aresetn",
           "Si5345_INSEL/s_axi_aresetn",
-          "system_management_wiz/s_axi_aresetn"
+          "system_management_wiz/s_axi_aresetn",
+          "axi_gpio_0/s_axi_aresetn",
+          "pma_init_generator_0/resetn"
         ]
       },
       "zynq_ultra_ps_e_pl_clk1": {
@@ -4241,8 +4302,7 @@
       },
       "rst_ps8_99M_peripheral_reset": {
         "ports": [
-          "rst_ps8_99M/peripheral_reset",
-          "pma_init_generator_0/periph_reset"
+          "rst_ps8_99M/peripheral_reset"
         ]
       },
       "axi_chip2chip_0_axi_c2c_link_status_out": {
@@ -4340,6 +4400,12 @@
           "c_counter_binary_0/Q",
           "ila_6bit_counter/probe0"
         ]
+      },
+      "axi_gpio_0_gpio_io_o": {
+        "ports": [
+          "axi_gpio_0/gpio_io_o",
+          "pma_init_generator_0/gpio_reset"
+        ]
       }
     },
     "addressing": {
@@ -4369,6 +4435,11 @@
                 "offset": "0x0080030000",
                 "range": "64K"
               },
+              "SEG_axi_gpio_0_Reg": {
+                "address_block": "/axi_gpio_0/S_AXI/Reg",
+                "offset": "0x0080070000",
+                "range": "128"
+              },
               "SEG_debug_bridge_PL_Reg0": {
                 "address_block": "/debug_bridge_PL/S_AXI/Reg0",
                 "offset": "0x0080020000",
@@ -4377,7 +4448,7 @@
               "SEG_gpio_led_Reg": {
                 "address_block": "/gpio_led/S_AXI/Reg",
                 "offset": "0x0080050000",
-                "range": "64K"
+                "range": "128"
               },
               "SEG_system_management_wiz_Reg": {
                 "address_block": "/system_management_wiz/S_AXI_LITE/Reg",

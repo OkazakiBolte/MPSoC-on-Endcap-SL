@@ -70,14 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "design_1_pma_init_generator_0_0_synth_1" START { ROLLUP_AUTO }
-set_param power.enableLutRouteBelPower 1
-set_param power.enableCarry8RouteBelPower 1
-set_param power.enableUnconnectedCarry8PinPower 1
-set_param chipscope.maxJobs 12
-set_param power.BramSDPPropagationFix 1
 set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {Vivado_Tcl 4-416}  -new_severity {WARNING} 
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
@@ -94,6 +87,8 @@ set_property parent.project_path /home/okazaki/projects/mpsoc-on-endcap-sl/Mercu
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
+set_property ip_repo_paths /home/okazaki/projects/mpsoc-on-endcap-sl/ip_repo/my_axi4_pattern_generator_1.0 [current_project]
+update_ip_catalog
 set_property ip_output_repo /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 set_property generic BG_WIDTH=1 [current_fileset]

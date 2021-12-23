@@ -2,27 +2,11 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="bd_6f02" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1639711293"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1639711293"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1639711293"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1639711293"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1640275315"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1640275315"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1640275315"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1640275315"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="synth/bd_6f02.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-      </File>
-      <File Name="sim/bd_6f02.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="sim/bd_6f02.protoinst">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip/ip_0/bd_6f02_one_0.xci" Type="IP">
         <Instance HierarchyPath="clk_map/one"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -543,6 +527,73 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip/ip_65/bd_6f02_m07s2a_0.xci" Type="IP">
+        <Instance HierarchyPath="m07_sc2axi"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/ip_66/bd_6f02_m07arn_0.xci" Type="IP">
+        <Instance HierarchyPath="m07_nodes/m07_ar_node"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/ip_67/bd_6f02_m07rn_0.xci" Type="IP">
+        <Instance HierarchyPath="m07_nodes/m07_r_node"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/ip_68/bd_6f02_m07awn_0.xci" Type="IP">
+        <Instance HierarchyPath="m07_nodes/m07_aw_node"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/ip_69/bd_6f02_m07wn_0.xci" Type="IP">
+        <Instance HierarchyPath="m07_nodes/m07_w_node"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/ip_70/bd_6f02_m07bn_0.xci" Type="IP">
+        <Instance HierarchyPath="m07_nodes/m07_b_node"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/ip_71/bd_6f02_m07e_0.xci" Type="IP">
+        <Instance HierarchyPath="m07_exit_pipeline/m07_exit"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth/bd_6f02.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim/bd_6f02.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="hw_handoff/design_1_axi_smc_1.hwh" Type="HwHandoff">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -557,6 +608,11 @@
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="sim/bd_6f02.protoinst">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>
   </CompositeFile>

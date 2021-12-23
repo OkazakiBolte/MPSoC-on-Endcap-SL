@@ -55,8 +55,9 @@ USE ieee.numeric_std.ALL;
 
 ENTITY design_1_pma_init_generator_0_0 IS
   PORT (
-    aur_init_clk : IN STD_LOGIC;
-    periph_reset : IN STD_LOGIC;
+    init_clk : IN STD_LOGIC;
+    resetn : IN STD_LOGIC;
+    gpio_reset : IN STD_LOGIC;
     pma_init_in : OUT STD_LOGIC
   );
 END design_1_pma_init_generator_0_0;
@@ -69,8 +70,9 @@ ARCHITECTURE design_1_pma_init_generator_0_0_arch OF design_1_pma_init_generator
       PULSE_WIDTH : INTEGER
     );
     PORT (
-      aur_init_clk : IN STD_LOGIC;
-      periph_reset : IN STD_LOGIC;
+      init_clk : IN STD_LOGIC;
+      resetn : IN STD_LOGIC;
+      gpio_reset : IN STD_LOGIC;
       pma_init_in : OUT STD_LOGIC
     );
   END COMPONENT pma_init_generator;
@@ -84,18 +86,21 @@ ARCHITECTURE design_1_pma_init_generator_0_0_arch OF design_1_pma_init_generator
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_pma_init_generator_0_0_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF periph_reset: SIGNAL IS "XIL_INTERFACENAME periph_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF periph_reset: SIGNAL IS "xilinx.com:signal:reset:1.0 periph_reset RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF aur_init_clk: SIGNAL IS "XIL_INTERFACENAME aur_init_clk, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk0, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF aur_init_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 aur_init_clk CLK";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF gpio_reset: SIGNAL IS "XIL_INTERFACENAME gpio_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF gpio_reset: SIGNAL IS "xilinx.com:signal:reset:1.0 gpio_reset RST";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF resetn: SIGNAL IS "XIL_INTERFACENAME resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF resetn: SIGNAL IS "xilinx.com:signal:reset:1.0 resetn RST";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF init_clk: SIGNAL IS "XIL_INTERFACENAME init_clk, ASSOCIATED_RESET resetn, FREQ_HZ 99999001, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_1_pl_clk0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF init_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 init_clk CLK";
 BEGIN
   U0 : pma_init_generator
     GENERIC MAP (
       PULSE_WIDTH => 16
     )
     PORT MAP (
-      aur_init_clk => aur_init_clk,
-      periph_reset => periph_reset,
+      init_clk => init_clk,
+      resetn => resetn,
+      gpio_reset => gpio_reset,
       pma_init_in => pma_init_in
     );
 END design_1_pma_init_generator_0_0_arch;

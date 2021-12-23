@@ -759,7 +759,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ADDR_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.ADDR_WIDTH">13</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.ADDR_WIDTH">16</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>simulation.tlm</xilinx:parameterUsage>
@@ -1073,7 +1073,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MEM_SIZE</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.BRAM_PORTA.MEM_SIZE">8192</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.BRAM_PORTA.MEM_SIZE">65536</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1196,7 +1196,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MEM_SIZE</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.BRAM_PORTB.MEM_SIZE">8192</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.BRAM_PORTB.MEM_SIZE">65536</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1984,11 +1984,11 @@ The register is automatically cleared after the fault has been injected.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 16 10:29:25 UTC 2021</spirit:value>
+            <spirit:value>Fri Dec 17 11:12:02 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2b96d3fe</spirit:value>
+            <spirit:value>9:6cc38c59</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2002,11 +2002,11 @@ The register is automatically cleared after the fault has been injected.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 16 10:29:25 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 23 16:06:30 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2b96d3fe</spirit:value>
+            <spirit:value>9:6cc38c59</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2022,11 +2022,11 @@ The register is automatically cleared after the fault has been injected.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 16 10:29:25 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 23 16:06:30 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2b96d3fe</spirit:value>
+            <spirit:value>9:6cc38c59</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2041,11 +2041,11 @@ The register is automatically cleared after the fault has been injected.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 16 10:29:25 UTC 2021</spirit:value>
+            <spirit:value>Fri Dec 17 11:12:02 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5f82dec8</spirit:value>
+            <spirit:value>9:34057161</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2061,11 +2061,11 @@ The register is automatically cleared after the fault has been injected.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 16 10:29:25 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 23 16:06:30 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4ade9548</spirit:value>
+            <spirit:value>9:7a874afd</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -2089,11 +2089,11 @@ The register is automatically cleared after the fault has been injected.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 16 10:29:25 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 23 16:06:30 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5f82dec8</spirit:value>
+            <spirit:value>9:34057161</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2109,11 +2109,11 @@ The register is automatically cleared after the fault has been injected.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 16 10:29:25 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 23 16:06:30 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4ade9548</spirit:value>
+            <spirit:value>9:7a874afd</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -2131,11 +2131,11 @@ The register is automatically cleared after the fault has been injected.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Dec 16 10:31:41 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 23 16:08:42 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2b96d3fe</spirit:value>
+            <spirit:value>9:6cc38c59</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2245,7 +2245,7 @@ The register is automatically cleared after the fault has been injected.
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">12</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2634,7 +2634,7 @@ The register is automatically cleared after the fault has been injected.
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">12</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3396,7 +3396,7 @@ The register is automatically cleared after the fault has been injected.
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">12</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3555,7 +3555,7 @@ The register is automatically cleared after the fault has been injected.
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">12</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3747,17 +3747,17 @@ The register is automatically cleared after the fault has been injected.
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_MEMORY_DEPTH</spirit:name>
         <spirit:displayName>C Memory Depth</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MEMORY_DEPTH">2048</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MEMORY_DEPTH">16384</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_BRAM_ADDR_WIDTH</spirit:name>
         <spirit:displayName>C BRAm Addr Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_BRAM_ADDR_WIDTH">11</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_BRAM_ADDR_WIDTH">14</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S_AXI_ADDR_WIDTH</spirit:name>
         <spirit:displayName>C S Axi Addr Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH">13</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S_AXI_DATA_WIDTH</spirit:name>
@@ -4183,7 +4183,7 @@ The register is automatically cleared after the fault has been injected.
     <spirit:parameter>
       <spirit:name>MEM_DEPTH</spirit:name>
       <spirit:displayName>Memory Depth</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MEM_DEPTH" spirit:choiceRef="choice_list_022b8361" spirit:order="4">2048</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MEM_DEPTH" spirit:choiceRef="choice_list_022b8361" spirit:order="4">16384</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

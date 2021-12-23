@@ -105,11 +105,20 @@
         <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_ila_1_0/design_1_ila_1_0.xci">
           <Proxy FileSetName="design_1_ila_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_counter_0_0/design_1_counter_0_0.xci">
-          <Proxy FileSetName="design_1_counter_0_0"/>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_ila_2_0/design_1_ila_2_0.xci">
+          <Proxy FileSetName="design_1_ila_2_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_clk_wiz_2_1/design_1_clk_wiz_2_1.xci">
           <Proxy FileSetName="design_1_clk_wiz_2_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_counter_0_0/design_1_counter_0_0.xci">
+          <Proxy FileSetName="design_1_counter_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_pma_init_generator_0_0/design_1_pma_init_generator_0_0.xci">
+          <Proxy FileSetName="design_1_pma_init_generator_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0.xci">
+          <Proxy FileSetName="design_1_axi_bram_ctrl_0_bram_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_aurora_64b66b_0_0/design_1_aurora_64b66b_0_0.xci">
           <Proxy FileSetName="design_1_aurora_64b66b_0_0"/>
@@ -117,17 +126,8 @@
         <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_axi_chip2chip_0_0/design_1_axi_chip2chip_0_0.xci">
           <Proxy FileSetName="design_1_axi_chip2chip_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_ila_2_0/design_1_ila_2_0.xci">
-          <Proxy FileSetName="design_1_ila_2_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0.xci">
           <Proxy FileSetName="design_1_axi_bram_ctrl_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_pma_init_generator_0_0/design_1_pma_init_generator_0_0.xci">
-          <Proxy FileSetName="design_1_pma_init_generator_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_1.bd" FileRelPathName="ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0.xci">
-          <Proxy FileSetName="design_1_axi_bram_ctrl_0_bram_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
@@ -147,11 +147,11 @@
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_heartbeat_0_0/design_2_heartbeat_0_0.xci">
           <Proxy FileSetName="design_2_heartbeat_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_clk_wiz_0_0/design_2_clk_wiz_0_0.xci">
-          <Proxy FileSetName="design_2_clk_wiz_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_counter_0_0/design_2_counter_0_0.xci">
           <Proxy FileSetName="design_2_counter_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_clk_wiz_0_0/design_2_clk_wiz_0_0.xci">
+          <Proxy FileSetName="design_2_clk_wiz_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_ila_0_0/design_2_ila_0_0.xci">
           <Proxy FileSetName="design_2_ila_0_0"/>
@@ -465,9 +465,7 @@
     </Run>
     <Run Id="design_1_ila_2_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_ila_2_0" Part="xcvu13p-flga2577-1-e" ConstrsSet="design_1_ila_2_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_ila_2_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -477,9 +475,7 @@
     </Run>
     <Run Id="design_1_pma_init_generator_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_pma_init_generator_0_0" Part="xcvu13p-flga2577-1-e" ConstrsSet="design_1_pma_init_generator_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_pma_init_generator_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -489,9 +485,7 @@
     </Run>
     <Run Id="design_1_axi_bram_ctrl_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_axi_bram_ctrl_0_0" Part="xcvu13p-flga2577-1-e" ConstrsSet="design_1_axi_bram_ctrl_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_axi_bram_ctrl_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -501,9 +495,7 @@
     </Run>
     <Run Id="design_1_axi_bram_ctrl_0_bram_0_synth_1" Type="Ft3:Synth" SrcSet="design_1_axi_bram_ctrl_0_bram_0" Part="xcvu13p-flga2577-1-e" ConstrsSet="design_1_axi_bram_ctrl_0_bram_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_1_axi_bram_ctrl_0_bram_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -701,9 +693,7 @@
     </Run>
     <Run Id="design_1_ila_2_0_impl_1" Type="Ft2:EntireDesign" Part="xcvu13p-flga2577-1-e" ConstrsSet="design_1_ila_2_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_ila_2_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -720,9 +710,7 @@
     </Run>
     <Run Id="design_1_pma_init_generator_0_0_impl_1" Type="Ft2:EntireDesign" Part="xcvu13p-flga2577-1-e" ConstrsSet="design_1_pma_init_generator_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_pma_init_generator_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -739,9 +727,7 @@
     </Run>
     <Run Id="design_1_axi_bram_ctrl_0_0_impl_1" Type="Ft2:EntireDesign" Part="xcvu13p-flga2577-1-e" ConstrsSet="design_1_axi_bram_ctrl_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_axi_bram_ctrl_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -758,9 +744,7 @@
     </Run>
     <Run Id="design_1_axi_bram_ctrl_0_bram_0_impl_1" Type="Ft2:EntireDesign" Part="xcvu13p-flga2577-1-e" ConstrsSet="design_1_axi_bram_ctrl_0_bram_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_1_axi_bram_ctrl_0_bram_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

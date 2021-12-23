@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Dec 16 20:18:52 2021
-# Process ID: 48691
+# Start of session at: Fri Dec 24 01:09:16 2021
+# Process ID: 22712
 # Current directory: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/design_1_wrapper.vds
@@ -13,7 +13,7 @@ source design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.1/data/ip'.
-add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2294.211 ; gain = 144.070 ; free physical = 182494 ; free virtual = 210957
+add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2302.145 ; gain = 144.070 ; free physical = 126196 ; free virtual = 230596
 Command: synth_design -top design_1_wrapper -part xcvu13p-flga2577-1-e
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xcvu13p'
@@ -21,14 +21,14 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvu13p
 INFO: [Device 21-403] Loading part xcvu13p-flga2577-1-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 906
+INFO: [Synth 8-7075] Helper process launched with PID 22963
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2975.750 ; gain = 198.715 ; free physical = 181230 ; free virtual = 209693
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2975.684 ; gain = 198.715 ; free physical = 126023 ; free virtual = 230418
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_aurora_64b66b_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_aurora_64b66b_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_aurora_64b66b_0_0' (1#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_aurora_64b66b_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_aurora_64b66b_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_aurora_64b66b_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_aurora_64b66b_0_0' (1#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_aurora_64b66b_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'gt_refclk1_out' of module 'design_1_aurora_64b66b_0_0' is unconnected for instance 'aurora_64b66b_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:119]
 WARNING: [Synth 8-7071] port 'hard_err' of module 'design_1_aurora_64b66b_0_0' is unconnected for instance 'aurora_64b66b_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:119]
 WARNING: [Synth 8-7071] port 'soft_err' of module 'design_1_aurora_64b66b_0_0' is unconnected for instance 'aurora_64b66b_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:119]
@@ -39,33 +39,33 @@ WARNING: [Synth 8-7071] port 'gt_qpllclk_quad1_out' of module 'design_1_aurora_6
 WARNING: [Synth 8-7071] port 'gt_qpllrefclk_quad1_out' of module 'design_1_aurora_64b66b_0_0' is unconnected for instance 'aurora_64b66b_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:119]
 WARNING: [Synth 8-7071] port 'tx_out_clk' of module 'design_1_aurora_64b66b_0_0' is unconnected for instance 'aurora_64b66b_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:119]
 WARNING: [Synth 8-7023] instance 'aurora_64b66b_0' of module 'design_1_aurora_64b66b_0_0' has 35 connections declared, but only 26 given [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:119]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_bram_ctrl_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_axi_bram_ctrl_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_bram_ctrl_0_0' (2#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_axi_bram_ctrl_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_bram_ctrl_0_bram_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_bram_ctrl_0_bram_0' (3#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_bram_ctrl_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_bram_ctrl_0_0' (2#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_bram_ctrl_0_bram_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_bram_ctrl_0_bram_0' (3#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'rsta_busy' of module 'design_1_axi_bram_ctrl_0_bram_0' is unconnected for instance 'axi_bram_ctrl_0_bram' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:198]
 WARNING: [Synth 8-7071] port 'rstb_busy' of module 'design_1_axi_bram_ctrl_0_bram_0' is unconnected for instance 'axi_bram_ctrl_0_bram' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:198]
 WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_0_bram' of module 'design_1_axi_bram_ctrl_0_bram_0' has 16 connections declared, but only 14 given [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:198]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_chip2chip_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_axi_chip2chip_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_chip2chip_0_0' (4#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_axi_chip2chip_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_chip2chip_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_axi_chip2chip_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_chip2chip_0_0' (4#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_axi_chip2chip_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_wuser' of module 'design_1_axi_chip2chip_0_0' is unconnected for instance 'axi_chip2chip_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:213]
 WARNING: [Synth 8-7071] port 'axi_c2c_m2s_intr_out' of module 'design_1_axi_chip2chip_0_0' is unconnected for instance 'axi_chip2chip_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:213]
 WARNING: [Synth 8-7071] port 'aurora_do_cc' of module 'design_1_axi_chip2chip_0_0' is unconnected for instance 'axi_chip2chip_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:213]
 WARNING: [Synth 8-7023] instance 'axi_chip2chip_0' of module 'design_1_axi_chip2chip_0_0' has 50 connections declared, but only 47 given [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:213]
-INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_2_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_clk_wiz_2_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_2_1' (5#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_clk_wiz_2_1_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'design_1_counter_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_counter_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_counter_0_0' (6#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_counter_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_heartbeat_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_heartbeat_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_heartbeat_0_0' (7#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_heartbeat_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_2_1' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_clk_wiz_2_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_2_1' (5#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_clk_wiz_2_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_counter_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_counter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_counter_0_0' (6#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_counter_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_heartbeat_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_heartbeat_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_heartbeat_0_0' (7#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_heartbeat_0_0_stub.v:6]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:273]
-INFO: [Synth 8-6157] synthesizing module 'design_1_ila_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_ila_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_ila_1_0' (8#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_ila_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ila_1_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_ila_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ila_1_0' (8#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_ila_1_0_stub.v:6]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:276]
-INFO: [Synth 8-6157] synthesizing module 'design_1_ila_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_ila_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_ila_2_0' (9#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_ila_2_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_pma_init_generator_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_pma_init_generator_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_pma_init_generator_0_0' (10#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-48691-lhcelec01/realtime/design_1_pma_init_generator_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ila_2_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_ila_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ila_2_0' (9#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_ila_2_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_pma_init_generator_0_0' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_pma_init_generator_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_pma_init_generator_0_0' (10#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/.Xil/Vivado-22712-lhcelec01/realtime/design_1_pma_init_generator_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_4' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_4/synth/design_1_xlconcat_0_4.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
@@ -111,18 +111,18 @@ INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance '
 INFO: [Synth 8-6155] done synthesizing module 'design_1' (13#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/synth/design_1.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (14#1) [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 3019.656 ; gain = 242.621 ; free physical = 181321 ; free virtual = 209785
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 3019.590 ; gain = 242.621 ; free physical = 126680 ; free virtual = 231077
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 3037.500 ; gain = 260.465 ; free physical = 181316 ; free virtual = 209780
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 3037.434 ; gain = 260.465 ; free physical = 126673 ; free virtual = 231069
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 3037.500 ; gain = 260.465 ; free physical = 181316 ; free virtual = 209780
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 3037.434 ; gain = 260.465 ; free physical = 126673 ; free virtual = 231069
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3037.500 ; gain = 0.000 ; free physical = 181309 ; free virtual = 209773
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3037.434 ; gain = 0.000 ; free physical = 126666 ; free virtual = 231062
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -162,14 +162,14 @@ Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/
 Finished Parsing XDC File [/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3160.480 ; gain = 0.000 ; free physical = 181191 ; free virtual = 209654
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3161.414 ; gain = 0.000 ; free physical = 126238 ; free virtual = 230634
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3160.480 ; gain = 0.000 ; free physical = 181191 ; free virtual = 209654
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3161.414 ; gain = 0.000 ; free physical = 126238 ; free virtual = 230634
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/axi_bram_ctrl_0_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 3164.449 ; gain = 387.414 ; free physical = 181294 ; free virtual = 209757
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 3164.383 ; gain = 387.414 ; free physical = 126333 ; free virtual = 230729
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -177,7 +177,7 @@ Start Loading Part and Timing Information
 Loading part: xcvu13p-flga2577-1-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 3164.449 ; gain = 387.414 ; free physical = 181293 ; free virtual = 209757
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 3164.383 ; gain = 387.414 ; free physical = 126333 ; free virtual = 230729
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -211,10 +211,10 @@ Applied set_property DONT_TOUCH = true for design_1_i/pma_init_generator_0. (con
 Applied set_property DONT_TOUCH = true for design_1_i/axi_bram_ctrl_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/axi_bram_ctrl_0_bram. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 3164.449 ; gain = 387.414 ; free physical = 181293 ; free virtual = 209757
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 3164.383 ; gain = 387.414 ; free physical = 126326 ; free virtual = 230722
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 3164.449 ; gain = 387.414 ; free physical = 181295 ; free virtual = 209760
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 3164.383 ; gain = 387.414 ; free physical = 126328 ; free virtual = 230724
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -236,25 +236,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 3164.449 ; gain = 387.414 ; free physical = 181281 ; free virtual = 209748
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 3164.383 ; gain = 387.414 ; free physical = 126304 ; free virtual = 230704
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:01:05 . Memory (MB): peak = 3468.012 ; gain = 690.977 ; free physical = 180784 ; free virtual = 209251
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:01:09 . Memory (MB): peak = 3467.945 ; gain = 690.977 ; free physical = 124701 ; free virtual = 229100
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:01:05 . Memory (MB): peak = 3468.012 ; gain = 690.977 ; free physical = 180784 ; free virtual = 209251
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:01:09 . Memory (MB): peak = 3467.945 ; gain = 690.977 ; free physical = 124701 ; free virtual = 229100
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:01:05 . Memory (MB): peak = 3487.043 ; gain = 710.008 ; free physical = 180783 ; free virtual = 209250
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:01:09 . Memory (MB): peak = 3486.977 ; gain = 710.008 ; free physical = 124699 ; free virtual = 229099
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -272,37 +272,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3492.980 ; gain = 715.945 ; free physical = 180774 ; free virtual = 209252
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:01:12 . Memory (MB): peak = 3492.914 ; gain = 715.945 ; free physical = 124691 ; free virtual = 229090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3492.980 ; gain = 715.945 ; free physical = 180774 ; free virtual = 209252
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:01:12 . Memory (MB): peak = 3492.914 ; gain = 715.945 ; free physical = 124691 ; free virtual = 229090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3492.980 ; gain = 715.945 ; free physical = 180774 ; free virtual = 209252
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:01:12 . Memory (MB): peak = 3492.914 ; gain = 715.945 ; free physical = 124691 ; free virtual = 229090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3492.980 ; gain = 715.945 ; free physical = 180774 ; free virtual = 209252
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:01:12 . Memory (MB): peak = 3492.914 ; gain = 715.945 ; free physical = 124691 ; free virtual = 229090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3492.980 ; gain = 715.945 ; free physical = 180774 ; free virtual = 209252
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:01:12 . Memory (MB): peak = 3492.914 ; gain = 715.945 ; free physical = 124691 ; free virtual = 229090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3492.980 ; gain = 715.945 ; free physical = 180774 ; free virtual = 209252
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:01:12 . Memory (MB): peak = 3492.914 ; gain = 715.945 ; free physical = 124691 ; free virtual = 229090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -341,23 +341,23 @@ Report Cell Usage:
 |11    |OBUF                          |     1|
 +------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3492.980 ; gain = 715.945 ; free physical = 180774 ; free virtual = 209252
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:01:12 . Memory (MB): peak = 3492.914 ; gain = 715.945 ; free physical = 124691 ; free virtual = 229090
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:01:00 . Memory (MB): peak = 3492.980 ; gain = 588.996 ; free physical = 180801 ; free virtual = 209278
-Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 3492.988 ; gain = 715.945 ; free physical = 180801 ; free virtual = 209278
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:01:04 . Memory (MB): peak = 3492.914 ; gain = 588.996 ; free physical = 124717 ; free virtual = 229117
+Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:01:12 . Memory (MB): peak = 3492.922 ; gain = 715.945 ; free physical = 124717 ; free virtual = 229117
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3501.887 ; gain = 0.000 ; free physical = 180872 ; free virtual = 209350
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3501.820 ; gain = 0.000 ; free physical = 124787 ; free virtual = 229186
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3572.543 ; gain = 0.000 ; free physical = 180780 ; free virtual = 209247
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3572.445 ; gain = 0.000 ; free physical = 124647 ; free virtual = 229046
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 49 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:06 ; elapsed = 00:01:36 . Memory (MB): peak = 3572.543 ; gain = 1278.332 ; free physical = 180910 ; free virtual = 209377
+synth_design: Time (s): cpu = 00:01:09 ; elapsed = 00:01:41 . Memory (MB): peak = 3572.445 ; gain = 1270.301 ; free physical = 124774 ; free virtual = 229174
 INFO: [Common 17-1381] The checkpoint '/home/okazaki/projects/mpsoc-on-endcap-sl/axi_chip2chip_slave/axi_chip2chip_slave.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 16 20:20:47 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 24 01:11:16 2021...

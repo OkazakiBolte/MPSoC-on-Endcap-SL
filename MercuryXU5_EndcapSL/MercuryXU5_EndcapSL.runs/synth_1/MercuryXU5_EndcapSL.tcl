@@ -70,15 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param power.enableLutRouteBelPower 1
-set_param power.enableCarry8RouteBelPower 1
-set_param power.enableUnconnectedCarry8PinPower 1
-set_param chipscope.maxJobs 12
-set_param power.BramSDPPropagationFix 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {Vivado_Tcl 4-416}  -new_severity {WARNING} 
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
@@ -174,6 +166,12 @@ set_property used_in_implementation false [get_files -all /home/okazaki/projects
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_61/bd_6f02_m06awn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_62/bd_6f02_m06wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_63/bd_6f02_m06bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_65/bd_6f02_m07s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_66/bd_6f02_m07arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_67/bd_6f02_m07rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_68/bd_6f02_m07awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_69/bd_6f02_m07wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_70/bd_6f02_m07bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_rst_ps8_99M_1/design_1_rst_ps8_99M_1_board.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_rst_ps8_99M_1/design_1_rst_ps8_99M_1.xdc]
@@ -232,6 +230,9 @@ set_property used_in_implementation false [get_files -all /home/okazaki/projects
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_system_management_wiz_0/design_1_system_management_wiz_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_system_management_wiz_0/design_1_system_management_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1_1/design_1_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1_1/design_1_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1_1/design_1_axi_gpio_0_1.xdc]
 set_property used_in_implementation false [get_files -all /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 
 read_edif /home/okazaki/projects/mpsoc-on-endcap-sl/MercuryXU5_EndcapSL/MercuryXU5_EndcapSL.srcs/sources_1/imports/src/Enclustra_GMII2RGMII_ZU.edn

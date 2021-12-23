@@ -355,7 +355,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net xlconcat_0_dout [get_bd_pins ila_2/probe0] [get_bd_pins xlconcat_0/dout]
 
   # Create address segments
-  assign_bd_address -offset 0xC0000000 -range 0x00002000 -target_address_space [get_bd_addr_spaces axi_chip2chip_0/MAXI] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x80040000 -range 0x00010000 -target_address_space [get_bd_addr_spaces axi_chip2chip_0/MAXI] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
 
 
   # Restore current instance

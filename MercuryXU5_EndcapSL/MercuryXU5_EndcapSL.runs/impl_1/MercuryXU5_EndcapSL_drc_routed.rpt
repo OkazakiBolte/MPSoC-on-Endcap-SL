@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Fri Dec 17 12:34:12 2021
+| Date         : Fri Dec 24 01:18:29 2021
 | Host         : lhcelec01 running 64-bit Ubuntu 18.04.6 LTS
 | Command      : report_drc -file MercuryXU5_EndcapSL_drc_routed.rpt -pb MercuryXU5_EndcapSL_drc_routed.pb -rpx MercuryXU5_EndcapSL_drc_routed.rpx
 | Design       : MercuryXU5_EndcapSL
@@ -65,8 +65,8 @@ design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/EXT_BSCAN.tms_i,
 design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
 design_1_i/debug_bridge_PL/U0/bs_mux/inst/capture_i,
 design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0],
-design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1],
 design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1],
+design_1_i/debug_bridge_1/U0/xsdbm/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1],
 design_1_i/system_management_wiz/U0/AXI_SYSMON_CORE_I/daddr_C_master_reg2[7:0],
 design_1_i/system_management_wiz/U0/AXI_SYSMON_CORE_I/daddr_C_master_reg[7:0],
 design_1_i/system_management_wiz/U0/AXI_SYSMON_CORE_I/daddr_C_slave0_reg2[7:0],

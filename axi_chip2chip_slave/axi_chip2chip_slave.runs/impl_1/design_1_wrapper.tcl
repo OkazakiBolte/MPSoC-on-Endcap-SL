@@ -114,10 +114,7 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {Vivado_Tcl 4-416}  -new_severity {WARNING} 
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
@@ -128,11 +125,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param power.enableLutRouteBelPower 1
-  set_param power.enableCarry8RouteBelPower 1
-  set_param power.enableUnconnectedCarry8PinPower 1
   set_param chipscope.maxJobs 12
-  set_param power.BramSDPPropagationFix 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xcvu13p-flga2577-1-e
   set_property design_mode GateLvl [current_fileset]
