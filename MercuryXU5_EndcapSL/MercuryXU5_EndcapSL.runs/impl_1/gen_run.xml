@@ -1,80 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xczu5ev-sfvc784-2-i" LaunchTime="1640275326">
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="RDI-RDI" Name="MercuryXU5_EndcapSL.vdi"/>
-  <File Type="BG-DRC" Name="MercuryXU5_EndcapSL.drc"/>
-  <File Type="BG-BGN" Name="MercuryXU5_EndcapSL.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="MercuryXU5_EndcapSL.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="MercuryXU5_EndcapSL.ltx"/>
   <File Type="RBD_FILE" Name="MercuryXU5_EndcapSL.rbd"/>
   <File Type="NPI_FILE" Name="MercuryXU5_EndcapSL.npi"/>
   <File Type="RNPI_FILE" Name="MercuryXU5_EndcapSL.rnpi"/>
   <File Type="CFI_FILE" Name="MercuryXU5_EndcapSL.cfi"/>
   <File Type="RCFI_FILE" Name="MercuryXU5_EndcapSL.rcfi"/>
   <File Type="PDI-FILE" Name="MercuryXU5_EndcapSL.pdi"/>
-  <File Type="BITSTR-MMI" Name="MercuryXU5_EndcapSL.mmi"/>
-  <File Type="BITSTR-BMM" Name="MercuryXU5_EndcapSL_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="MercuryXU5_EndcapSL.nky"/>
-  <File Type="BITSTR-RBT" Name="MercuryXU5_EndcapSL.rbt"/>
-  <File Type="BITSTR-MSK" Name="MercuryXU5_EndcapSL.msk"/>
-  <File Type="BG-BIN" Name="MercuryXU5_EndcapSL.bin"/>
-  <File Type="BG-BIT" Name="MercuryXU5_EndcapSL.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="MercuryXU5_EndcapSL_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="MercuryXU5_EndcapSL_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="MercuryXU5_EndcapSL_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="MercuryXU5_EndcapSL_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="MercuryXU5_EndcapSL_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_postroute_physopted.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="MercuryXU5_EndcapSL_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-RPX" Name="MercuryXU5_EndcapSL_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MercuryXU5_EndcapSL_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="MercuryXU5_EndcapSL_methodology_drc_routed.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="MercuryXU5_EndcapSL_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="MercuryXU5_EndcapSL_postroute_physopt.dcp"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="MercuryXU5_EndcapSL_bus_skew_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="MercuryXU5_EndcapSL_bus_skew_routed.pb"/>
+  <File Type="PHYSOPT-DCP" Name="MercuryXU5_EndcapSL_physopt.dcp"/>
+  <File Type="PLACE-IO" Name="MercuryXU5_EndcapSL_io_placed.rpt"/>
+  <File Type="OPT-DRC" Name="MercuryXU5_EndcapSL_drc_opted.rpt"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="MercuryXU5_EndcapSL.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="MercuryXU5_EndcapSL.sysdef"/>
+  <File Type="BITSTR-MMI" Name="MercuryXU5_EndcapSL.mmi"/>
+  <File Type="BITSTR-BMM" Name="MercuryXU5_EndcapSL_bd.bmm"/>
+  <File Type="PLACE-UTIL-PB" Name="MercuryXU5_EndcapSL_utilization_placed.pb"/>
+  <File Type="BG-BGN" Name="MercuryXU5_EndcapSL.bgn"/>
+  <File Type="PLACE-DCP" Name="MercuryXU5_EndcapSL_placed.dcp"/>
+  <File Type="OPT-HWDEF" Name="MercuryXU5_EndcapSL.hwdef"/>
+  <File Type="BG-BIT" Name="MercuryXU5_EndcapSL.bit"/>
   <File Type="ROUTE-BUS-SKEW" Name="MercuryXU5_EndcapSL_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="MercuryXU5_EndcapSL_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="MercuryXU5_EndcapSL_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="MercuryXU5_EndcapSL_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="MercuryXU5_EndcapSL_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="MercuryXU5_EndcapSL_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="MercuryXU5_EndcapSL_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="MercuryXU5_EndcapSL_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="MercuryXU5_EndcapSL_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="MercuryXU5_EndcapSL_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="MercuryXU5_EndcapSL_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MercuryXU5_EndcapSL_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="MercuryXU5_EndcapSL_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="MercuryXU5_EndcapSL_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="MercuryXU5_EndcapSL_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="MercuryXU5_EndcapSL_drc_routed.pb"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="PA-TCL" Name="MercuryXU5_EndcapSL.tcl"/>
+  <File Type="REPORTS-TCL" Name="MercuryXU5_EndcapSL_reports.tcl"/>
+  <File Type="PLACE-UTIL" Name="MercuryXU5_EndcapSL_utilization_placed.rpt"/>
+  <File Type="BG-DRC" Name="MercuryXU5_EndcapSL.drc"/>
+  <File Type="OPT-DCP" Name="MercuryXU5_EndcapSL_opt.dcp"/>
+  <File Type="PLACE-CTRL" Name="MercuryXU5_EndcapSL_control_sets_placed.rpt"/>
+  <File Type="RDI-RDI" Name="MercuryXU5_EndcapSL.vdi"/>
+  <File Type="BG-BIN" Name="MercuryXU5_EndcapSL.bin"/>
+  <File Type="PWROPT-DCP" Name="MercuryXU5_EndcapSL_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="MercuryXU5_EndcapSL.msk"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="MercuryXU5_EndcapSL_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-RBT" Name="MercuryXU5_EndcapSL.rbt"/>
+  <File Type="BITSTR-NKY" Name="MercuryXU5_EndcapSL.nky"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="MercuryXU5_EndcapSL_incremental_reuse_pre_placed.rpt"/>
   <File Type="ROUTE-DRC" Name="MercuryXU5_EndcapSL_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="MercuryXU5_EndcapSL_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC-PB" Name="MercuryXU5_EndcapSL_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="MercuryXU5_EndcapSL_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="MercuryXU5_EndcapSL_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="MercuryXU5_EndcapSL_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="MercuryXU5_EndcapSL_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="MercuryXU5_EndcapSL_route_status.pb"/>
   <File Type="ROUTE-DCP" Name="MercuryXU5_EndcapSL_routed.dcp"/>
   <File Type="ROUTE-ERROR-DCP" Name="MercuryXU5_EndcapSL_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="MercuryXU5_EndcapSL_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="MercuryXU5_EndcapSL_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="MercuryXU5_EndcapSL_postplace_pwropt.dcp"/>
-  <File Type="PLACE-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="MercuryXU5_EndcapSL_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="MercuryXU5_EndcapSL_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="MercuryXU5_EndcapSL_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="MercuryXU5_EndcapSL_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="MercuryXU5_EndcapSL_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="MercuryXU5_EndcapSL_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="MercuryXU5_EndcapSL_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="MercuryXU5_EndcapSL_placed.dcp"/>
-  <File Type="PWROPT-DRC" Name="MercuryXU5_EndcapSL_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="MercuryXU5_EndcapSL_pwropt.dcp"/>
-  <File Type="OPT-HWDEF" Name="MercuryXU5_EndcapSL.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="MercuryXU5_EndcapSL_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="MercuryXU5_EndcapSL_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="MercuryXU5_EndcapSL_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_init.rpt"/>
-  <File Type="PWROPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_pwropted.rpt"/>
-  <File Type="REPORTS-TCL" Name="MercuryXU5_EndcapSL_reports.tcl"/>
-  <File Type="OPT-TIMING" Name="MercuryXU5_EndcapSL_timing_summary_opted.rpt"/>
-  <File Type="PA-TCL" Name="MercuryXU5_EndcapSL.tcl"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="MercuryXU5_EndcapSL_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="MercuryXU5_EndcapSL_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="MercuryXU5_EndcapSL_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="MercuryXU5_EndcapSL_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-CLK" Name="MercuryXU5_EndcapSL_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="MercuryXU5_EndcapSL_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="MercuryXU5_EndcapSL_bus_skew_routed.rpx"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/heartbeat.v">
@@ -231,39 +213,40 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_smc_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_pma_init_generator_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_2_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_system_management_wiz_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_zynq_ultra_ps_e_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_c_counter_binary_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_smartconnect_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_blk_mem_gen_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_led_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps8_99M_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_c443_bs_switch_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_0412_xsdbm_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_debug_bridge_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_ddr4_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_aurora_64b66b_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_c443_bs_mux_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_c443_axi_jtag_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_debug_bridge_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_zynq_ultra_ps_e_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_system_management_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_smc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_pma_init_generator_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_smartconnect_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_c_counter_binary_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_2_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_chip2chip_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_04e2_axi_jtag_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_debug_bridge_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_c443_bs_switch_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_heartbeat_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_0412_lut_buffer_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_debug_bridge_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_c443_bs_mux_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_c443_bs_switch_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_smartconnect_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_c443_bsip_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_c443_axi_jtag_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_debug_bridge_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_0412_xsdbm_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_c443_bs_switch_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps8_99M_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_led_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_blk_mem_gen_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Mercury_XU5_smartconnect_0_0"/>
 </GenRun>
